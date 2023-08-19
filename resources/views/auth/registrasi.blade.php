@@ -71,16 +71,18 @@
     </div>
 </body>
 </html>
+@if (session()->has('berhasil'))
 <script>
     function showSuccessAlert() {
         Swal.fire({
             icon: 'success',
-            title: 'Pesan berhasil disimpan',
+            title: '{{ session('berhasil') }}',
             showConfirmButton: false,
             timer: 1500
         });
     }
-</script>
+    </script>
+@endif
 
 
 
