@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <title>Registrasi</title>
+    <title>Login</title>
     <style>
         body{
 	    background-color: #19123B;
@@ -139,20 +139,12 @@
                     <div class="division">
                         <div class="row">
                             <div class="col-3"><div class="line l"></div></div>
-                            <div class="col-6"><span>R e g i s</span></div>
+                            <div class="col-6"><span>L o g i n</span></div>
                             <div class="col-3"><div class="line r"></div></div>
                         </div>
                     </div>
                     <form class="myform" method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="form-group">
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror " name="nama" placeholder="Nama" value="{{ old('nama') }}">
-                            @error('nama')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
                         <div class="form-group">
                             <input type="email" class="form-control @error('email') is-invalid @enderror " name="email" placeholder="Email" value="{{ old('email') }}">
                             @error('email')
@@ -162,22 +154,17 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control @error('notelpn') is-invalid @enderror " name="notelpn" placeholder="No Telpon" value="{{ old('notelpn') }}">
-                            @error('notelpn')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <input type="password" class="form-control" name="password" placeholder="Password ente masokkan sekarang">
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small>P</small></button>
+                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small>L o g i n</small></button>
                         </div>
                         <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <p>Belum punya akun? <a href="/registrasi" class="text-decoration-none">BuatAkun</a></p>
+                            <div class="col d-flex justify-content-start">
+                                <a class="text-decoration-none" href="#">Lupa Password</a>
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <a href="/registrasi" class="text-decoration-none">Buat Akun</a>
                             </div>
                         </div>
                     </form>

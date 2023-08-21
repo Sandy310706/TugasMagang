@@ -1,8 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Halaman Dashboard')
+@section('title', 'Dashboard')
 
 @section('content')
 
 
 
+<a href="/logout">LogOut</a>
 @endsection

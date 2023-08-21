@@ -18,6 +18,16 @@ Route::get('/registrasi', function () {
     ];
     return view('auth.registrasi', compact('genderOption'));
 });
-Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
+Route::get('/login', function () {
+    $genderOption = [
+        'laki laki' => 'Laki-laki',
+        'perempuan' =>'Perempuan'
+    ];
+    return view('auth.login', compact('genderOption'));
+});
 
-Route::get('/dashboard', [UserController::class, 'index']);
+Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
+Route::post('/', [AuthController::class, 'authtentication'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [UserController::class, 'index'])->middleware('auth');
