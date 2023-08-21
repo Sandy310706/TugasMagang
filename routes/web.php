@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -18,3 +19,5 @@ Route::get('/registrasi', function () {
     return view('auth.registrasi', compact('genderOption'));
 });
 Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
+
+Route::get('/dashboard', [UserController::class, 'index']);
