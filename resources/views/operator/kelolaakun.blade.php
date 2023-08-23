@@ -39,7 +39,7 @@
                         <div class="row mb-1">
                             <label for="Nama" class="form-label">Role : </label>
                             <select class="form-select" aria-label="Default select example" id="Role">
-                                <option selected>Buka untuk melihat menu</option>
+                                <option selected>Buka untuk melihat menu error</option>
                                 @foreach ($role as $roles => $value )
                                     <option value="{{ $value }}">{{ $roles }}</option>
                                 @endforeach
