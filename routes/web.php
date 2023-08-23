@@ -1,12 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaakunAjaxController;
 use App\Http\Controllers\KelolaakunAjaxControllers;
-
 
 Route::fallback(function () {
     return view('errors.404');
@@ -48,6 +49,7 @@ Route::get('/dashboard', [UserController::class, 'index'])->middleware('auth');
 Route::get('/operator/dashboard', [OperatorController::class, 'index']);
 Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
 Route::resource('Coba', KelolaakunAjaxController::class);
+Route::get('/menu', [MenuController::class, 'index'])->name('index');
 
 Route::get('/Ajax', [KelolaakunAjaxControllers::class, 'index']);
 Route::post('/Ajax', [KelolaakunAjaxControllers::class, 'store']);
