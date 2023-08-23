@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('email')->unique();
-            $table->string('notelpn');
-            $table->enum('kelamin', ['laki laki', 'perempuan']);
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('role', ['admin', 'guest']);
+            $table->enum('role', ['admin', 'guest', 'operator']);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

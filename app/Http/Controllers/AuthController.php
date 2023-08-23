@@ -30,10 +30,18 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         if(Auth::attempt($credential)) {
-            $request->session()->regenerate();
-            return view('user.dashboard');
+            if(Auth::user()->role == 'guest'){
+                $request->session()->regenerate();
+                return view('user.dashboard');
+            }elseif(Auth::user()->role == 'admin'){
+                $request->session()->regenerate();
+                return view('user.dashboard');
+            }elseif(Auth::user()->role == 'operator'){
+                $request->session()->regenerate();
+                return redirect('/operator/dashboard');
+            }
         }else{
-            return back()->with('gagal');
+            return back()->withErrors('Email atau Password anda salah !!');
         }
     }
     public function logout(Request $request)
@@ -41,6 +49,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/login');
     }
 }

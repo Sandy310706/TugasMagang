@@ -1,5 +1,12 @@
-<footer class="fixed-bottom bg-dark text-white text-center pt-3">
-    <div class="container">
-        <p class="d-flex justify-content-center align-item-center">&copy; 2023 Nama Anda. Hak Cipta Dilindungi Undang-Undang.</p>
+<footer class="z-1 py-4 bg-light mt-auto">
+    <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+            <div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
+            </div>
+        </div>
     </div>
 </footer>

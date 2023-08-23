@@ -135,6 +135,13 @@
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                @if( $errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger" role="alert">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
                 <div class="card py-3 px-2">
                     <div class="division">
                         <div class="row">
