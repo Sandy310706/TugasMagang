@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Registrasi</title>
     <style>
         body{
-	    background-color: #19123B;
-        cursor: progress;
+	        background-color: #19123B;
         }
         .card{
             border: none;
@@ -143,10 +143,10 @@
                             <div class="col-3"><div class="line r"></div></div>
                         </div>
                     </div>
-                    <form class="myform" method="POST" action="{{ route('login') }}">
+                    <form class="myform" method="POST" action="{{ route('registrasi') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror " name="nama" placeholder="Nama" value="{{ old('nama') }}">
+                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Nama" value="{{ old('nama') }}">
                             @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -154,30 +154,23 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror " name="email" placeholder="Email" value="{{ old('email') }}">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}">
                             @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control @error('notelpn') is-invalid @enderror " name="notelpn" placeholder="No Telpon" value="{{ old('notelpn') }}">
-                            @error('notelpn')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password ente masokkan sekarang">
+                        <div class="input-group">
+                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
+                            <span class="input-group-text" id="cekPassword" onclick="change()"><i class="bi bi-eye-fill"></i></span>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small>P</small></button>
+                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small>Masukan</small></button>
                         </div>
                         <div class="row">
                             <div class="col d-flex justify-content-center">
-                                <p>Belum punya akun? <a href="/registrasi" class="text-decoration-none">BuatAkun</a></p>
+                                <p>Sudah punya akun? <a href="/login" class="text-decoration-none">Login</a></p>
                             </div>
                         </div>
                     </form>
@@ -185,5 +178,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function change()
+        {
+            var x = document.getElementById('Password').type;
+            if ( x == 'password'){
+                document.getElementById('Password').type = 'text';
+                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+            }else{
+                document.getElementById('Password').type = 'password';
+                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-fill"></i>';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Login</title>
     <style>
         body{
-	    background-color: #19123B;
-        cursor: progress;
+	        background-color: #19123B;
         }
         .card{
             border: none;
@@ -142,6 +142,12 @@
                         </div>
                     @endforeach
                 @endif
+                @if (session('berhasil'))
+                <div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session('berhasil') }}
+                </div>
+                @endif
                 <div class="card py-3 px-2">
                     <div class="division">
                         <div class="row">
@@ -160,8 +166,9 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password ente masokkan sekarang">
+                        <div class="input-group">
+                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
+                            <span class="input-group-text" id="cekPassword" onclick="change()"><i class="bi bi-eye-fill"></i></span>
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-block btn-primary btn-lg"><small>L o g i n</small></button>
@@ -179,5 +186,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function change()
+        {
+            var x = document.getElementById('Password').type;
+            if ( x == 'password'){
+                document.getElementById('Password').type = 'text';
+                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+            }else{
+                document.getElementById('Password').type = 'password';
+                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-fill"></i>';
+            }
+        }
+    </script>
 </body>
 </html>
