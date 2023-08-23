@@ -7,7 +7,6 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaakunAjaxController;
-use App\Http\Controllers\KelolaakunAjaxControllers;
 
 Route::fallback(function () {
     return view('errors.404');
@@ -51,5 +50,5 @@ Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])-
 Route::resource('Coba', KelolaakunAjaxController::class);
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
 
-Route::get('/Ajax', [KelolaakunAjaxControllers::class, 'index']);
-Route::post('/Ajax', [KelolaakunAjaxControllers::class, 'store']);
+Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
+Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store']);
