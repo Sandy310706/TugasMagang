@@ -99,7 +99,7 @@
 
             $('#Save').click( function(){
                 $.ajax({
-                    url: 'Ajax',
+                    url: {{ url('Ajax-Store') }}',
                     type: 'POST',
                     data:{
                         nama: $('#Nama').val(),
