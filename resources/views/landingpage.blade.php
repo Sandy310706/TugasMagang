@@ -24,7 +24,7 @@
                 <p class="navbar-brand">Welcome
                     @if(Route::has('login'))
                         @auth
-                        {{ Auth::user()->nama }}
+                            {{ Auth::user()->nama }}
                         @endauth
                     @endif
                 </p>
@@ -40,6 +40,8 @@
                             @auth
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                             @endauth
+                            @else
+                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                         @endif
                     </ul>
                 </div>
