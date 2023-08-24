@@ -52,7 +52,12 @@ Route::resource('Coba', KelolaakunAjaxController::class);
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
 
 Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
+<<<<<<< HEAD
 Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
 
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
 Route::get('/admin/menu', [MenuController::class, 'index'])->name('menuSetting');
+=======
+Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store']);
+
+>>>>>>> f8e85ef85d6a43d20a9bf117e692e769d4b359cd
