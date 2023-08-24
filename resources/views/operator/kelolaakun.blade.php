@@ -98,12 +98,13 @@
                 let nama = $('#Nama').val();
                 let email = $('#Email').val();
                 let role = $('Role').val();
-                let password  = $
+                let password  = $('#Password').val();
                 $.ajax({
                     url: '{{ url('Ajax-Store') }}',
                     type: 'POST',
                     cache: false,
                     data:{
+                        _token: $('input[name="_token"]').val(),
                         nama: $('#Nama').val(),
                         email: $('#Email').val(),
                         role: $('#Role').val(),
