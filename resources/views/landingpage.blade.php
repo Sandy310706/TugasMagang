@@ -53,14 +53,9 @@
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
                 <div class="masthead-subheading">Silahkan Pesan</div>
                 <div class="masthead-heading text-uppercase"></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">MENU</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">L O G I N</a>
             </div>
         </header>
-        <hr>
-        <!-- Services-->
-        {{-- <section class="page-section" id="services">
-
-        </section> --}}
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
