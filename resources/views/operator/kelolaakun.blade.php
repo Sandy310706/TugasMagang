@@ -98,8 +98,12 @@
             $('#KelolaModal').modal('show');
 
             $('#Save').click( function(){
+                let nama = $('#Nama').val();
+                let email = $('#Email').val();
+                let role = $('Role').val();
+                let password  = $
                 $.ajax({
-                    url: {{ url('Ajax-Store') }}',
+                    url: '{{ url('Ajax-Store') }}',
                     type: 'POST',
                     data:{
                         nama: $('#Nama').val(),
