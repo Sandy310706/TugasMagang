@@ -21,6 +21,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
+                <p class="navbar-brand">Welcome
+                    @if(Route::has('login'))
+                        @auth
+                        {{ Auth::user()->nama }}
+                        @endauth
+                    @endif
+                </p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list width:10px"></i>
                 
@@ -30,7 +37,6 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
                     </ul>
                 </div>
             </div>
