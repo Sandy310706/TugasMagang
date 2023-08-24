@@ -91,6 +91,10 @@
   }
 }
 
+h4.drick#drick{
+  font-size: 1;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -10954,7 +10958,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/SMKN7.jpg");
+  background-image: url("../assets/img/fredrick\ gacor.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

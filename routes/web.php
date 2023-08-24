@@ -54,5 +54,5 @@ Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
 Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
 
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
-Route::get('/admin/menu', [MenuController::class, 'index'])->name('menuSetting');
+Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
 
