@@ -40,6 +40,7 @@
                             @auth
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                             @endauth
+                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                         @endif
                     </ul>
                 </div>
@@ -51,7 +52,7 @@
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
                 <div class="masthead-subheading">Silahkan Pesan</div>
                 <div class="masthead-heading text-uppercase"></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">L O G I N</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#">L O G I N</a>
             </div>
         </header>
         <!-- Portfolio Grid-->
@@ -67,7 +68,7 @@
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">nasi goreng campur ****</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 10.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -77,7 +78,7 @@
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Nasgor campur</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 10.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -87,7 +88,7 @@
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">nasi campur kecap</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 15.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -97,7 +98,7 @@
                             <img src="template/landingPage/assets/img/minuman.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Boba</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 12.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -107,7 +108,7 @@
                             <img src="template/landingPage/assets/img/arak.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Minuman Hangat</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 40.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -117,7 +118,7 @@
                             <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">vodka Rusia</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 50.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -199,8 +200,8 @@
                     <div class="col-lg-3">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
-                            <h4>Dr.Frederick Adventino</h4>
-                            <p class="text-muted">Manager Programmer</p>
+                            <h4 class="drick" id="drick">PPLG.Frederick A</h4>
+                            <p class="text-muted">Manager SMKN 7 Pontianak</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -210,7 +211,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
                             <h4>Robin Beset</h4>
-                            <p class="text-muted">Backend</p>
+                            <p class="text-muted">Admin Teguh Belajar</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -220,7 +221,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
                             <h4>Sandy Pencandu</h4>
-                            <p class="text-muted">Backend</p>
+                            <p class="text-muted">Orang Baik kalo ada maunya</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -230,7 +231,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
-                            <p class="text-muted">Front End</p>
+                            <p class="text-muted">Optional tergantung Mood</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>

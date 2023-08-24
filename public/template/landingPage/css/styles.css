@@ -91,6 +91,10 @@
   }
 }
 
+h4.drick#drick{
+  font-size: 1;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
