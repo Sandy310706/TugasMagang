@@ -50,9 +50,10 @@ Route::get('/operator/dashboard', [OperatorController::class, 'index']);
 Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
 
+
 Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
 Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
 
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
-Route::get('/admin/menu', [MenuController::class, 'index'])->name('menuSetting');
+Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
 
