@@ -39,7 +39,7 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
-                <div class="masthead-subheading">Silahkan Pesan</div>
+                <div class="masthead-subheading">Silahkan Pesann</div>
                 <div class="masthead-heading text-uppercase"></div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">MENU</a>
             </div>
