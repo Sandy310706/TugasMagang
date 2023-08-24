@@ -21,9 +21,14 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-             
+                   
+                        @if(Route::has('login'))
+                            @auth 
+                                {{ Auth::user()->nama }}</p>
+                            @endauth
+                        @endif
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars ms-1"></i>
+                    <i class="fas fa-bars ms-1 text-center" ></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
@@ -39,8 +44,9 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome Silahkan Pesan!</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Menu</a>
+                <div class="masthead-subheading">Welcome To Kantin Sekolah SMKN 7 Pontianak</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="login">L o g i n</a>
             </div>
         </header>
         <!-- Portfolio Grid-->

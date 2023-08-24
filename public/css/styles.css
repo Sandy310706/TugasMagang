@@ -4542,6 +4542,15 @@ textarea.form-control-lg {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+
+.card{
+  margin: auto;
+}
+
+.card:hover{
+   
+}
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;

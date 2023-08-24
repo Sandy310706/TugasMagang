@@ -15,24 +15,22 @@ class AuthController extends Controller
         $dataValidasi = $request->validate([
             'nama' => ['required', 'max:100'],
             'email' => ['required', 'email', 'unique:users'],
-            'notelpn' => ['required', ''],
-            'kelamin' => ['required'],
             'password' => ['required'],
         ]);
         Hash::make($dataValidasi['password']);
         User::create($dataValidasi);
-        return redirect('/registrasi')->with('berhasil', 'Akun berhasil di tambahkan');
+        return redirect('/login')->with('berhasil', 'Akun berhasil di tambahkan');
     }
     public function authtentication(Request $request)
     {
         $credential = $request->validate([
-            'email' => ['required', 'email:dns'],
+            'email' => ['required', 'email'],
             'password' => 'required'
         ]);
         if(Auth::attempt($credential)) {
             if(Auth::user()->role == 'guest'){
                 $request->session()->regenerate();
-                return view('user.dashboard');
+                return redirect('');
             }elseif(Auth::user()->role == 'admin'){
                 $request->session()->regenerate();
                 return view('user.dashboard');
