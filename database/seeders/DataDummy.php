@@ -18,6 +18,7 @@ class DataDummy extends Seeder
             'nama' => 'Sandy',
             'email' => 'operator@gmail.com',
             'password' => Hash::make('sandy'),
+        
             'role' => 'operator'
         ]);
     }

@@ -50,3 +50,4 @@ Route::resource('Coba', KelolaakunAjaxController::class);
 
 Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
 Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store']);
+

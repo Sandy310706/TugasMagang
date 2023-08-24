@@ -14,8 +14,8 @@ class AuthController extends Controller
     {
         $dataValidasi = $request->validate([
             'nama' => ['required', 'max:100'],
-            'email' => ['required', 'email:dns', 'unique:users'],
-            'notelpn' => ['required', 'min:12'],
+            'email' => ['required', 'email', 'unique:users'],
+            'notelpn' => ['required', ''],
             'kelamin' => ['required'],
             'password' => ['required'],
         ]);
