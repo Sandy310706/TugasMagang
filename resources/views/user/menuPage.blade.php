@@ -28,10 +28,10 @@
 <!-- body -->
 <body class="main-layout Recipes_page">
     <!-- loader  -->
-        <div class="loader_bg">
+        {{-- <div class="loader_bg">
             <div class="loader"><img src="{{asset("template/menuPage/images/loading.gif")}}" alt="" /></div>
         </div>
-        <div class="wrapper">
+        <div class="wrapper"> --}}
     <!-- end loader -->
             <div id="content">
     <!-- header -->
