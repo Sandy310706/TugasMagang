@@ -48,14 +48,11 @@ Route::get('/home', function() {
 Route::get('/dashboard', [UserController::class, 'index'])->middleware('auth');
 Route::get('/operator/dashboard', [OperatorController::class, 'index']);
 Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
-Route::resource('Coba', KelolaakunAjaxController::class);
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
 
 Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
-
 Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
 
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
 Route::get('/admin/menu', [MenuController::class, 'index'])->name('menuSetting');
 
-Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store']);
