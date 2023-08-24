@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaakunAjaxController;
 
@@ -51,4 +52,7 @@ Route::resource('Coba', KelolaakunAjaxController::class);
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
 
 Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
-Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store']);
+Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
+
+Route::get('/admin/dashboard', [AdminController::class, 'index']);
+Route::get('/admin/menu', [MenuController::class, 'index'])->name('menuSetting');

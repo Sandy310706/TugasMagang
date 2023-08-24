@@ -18,6 +18,13 @@ class KelolaakunAjaxController extends Controller
 
     public function store(Request $request)
     {
-        return "Berhasil";
+        $validator = $request->validate([
+            'nama' => 'required',
+            'email' => ['required', 'email'],
+            'password' => 'required',
+            'role' => 'required'
+        ]);
+
+        User::create($validator);
     }
 }

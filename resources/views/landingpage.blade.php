@@ -18,7 +18,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
                 <p class="navbar-brand">Welcome
                     @if(Route::has('login'))
@@ -42,7 +42,6 @@
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                             @endauth
                         @endif
-
                     </ul>
                 </div>
             </div>
