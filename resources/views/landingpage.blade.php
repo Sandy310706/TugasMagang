@@ -19,7 +19,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
                 <p class="navbar-brand">Welcome
                     @if(Route::has('login'))
@@ -30,13 +30,17 @@
                 </p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list width:10px"></i>
-                
+
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        @if(Route::has('login'))
+                            @auth
+                                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                            @endauth
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -47,7 +51,7 @@
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
                 <div class="masthead-subheading">Silahkan Pesan</div>
                 <div class="masthead-heading text-uppercase"></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">MENU</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">L O G I N</a>
             </div>
         </header>
         <!-- Portfolio Grid-->
@@ -321,8 +325,8 @@
         </footer>
         <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
-       
-      
+
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
