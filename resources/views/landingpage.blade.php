@@ -15,13 +15,14 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="template/landingPage/css/styles.css" rel="stylesheet" />
+        {{-- <link href="template/landingPage/css/styles.css" rel="stylesheet" /> --}}
+        <link href="template/landingPage/css/css.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <p class="navbar-brand">Welcome
+                <p class="navbar-brand"><i class="bi bi-person-circle"></i>
                     @if(Route::has('login'))
                         @auth
                             {{ Auth::user()->nama }}
@@ -34,12 +35,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="menu nav-link" href="menu">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
                         @if(Route::has('login'))
                             @auth
-                                <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"><i class="bi bi-door-open"></i>LOGOUT</a></li>
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
@@ -51,7 +53,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
+                <div class="masthead-subheading text-center text-light">Welcome To Kantin SMKN 7 PTK</div>
                 <div class="masthead-subheading"></div>
                 <div class="masthead-heading text-uppercase"></div>
             </div>
@@ -62,14 +64,14 @@
             
         </section> --}}
         <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Produk Bestseller</h2>
-                    <h3 class="section-subheading text-muted">Makanan Dan Minuman Yang sering Dipesan</h3>
+        <section class="content page-section bg-blue" id="portfolio">
+            <div class="content">
+                <div class=" text-center">
+                    <h2 class="produk section-heading text-uppercase">Produk Bestseller</h2>
+                    <h3 class="prdk section-subheading text-muted">Makanan Yang sering Dipesan</h3>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/rs1.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -79,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/rs3.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -89,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -99,7 +101,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">Nasi Goreng</h5>
+                            <p class="card-text">RP. 15.000,00</p>
+                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="minumann text-center">
+                        <h2 class="minum section-heading text-uppercase">Produk Bestseller</h2>
+                        <h3 class="minuman section-subheading text-muted"> Minuman Yang sering Dipesan</h3>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/minuman.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -109,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/arak.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -119,7 +136,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">vodka Rusia</h5>
+                            <p class="card-text">RP. 50.000,00</p>
+                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -195,20 +222,19 @@
             </div>
         </section> --}}
         <!-- Team-->
-        <hr>
-        <section class="page-section bg-light" id="team">
-            <div class="container">
+       <section class="item page-section bg-grey" id="team">
+            <div class="team">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Team Programmer</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="programmer section-heading text-uppercase">Team Programmer</h2>
+                    <h3 class="section-subheading text-light">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
-                            <h4 class="drick" id="drick">PPLG.Frederick A</h4>
-                            <p class="text-muted">Manager SMKN 7 Pontianak</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
+                            <h4 class="drick" id="drick">Frederick A</h4>
+                            <p class="text-light">Manager SMKN 7 Pontianak</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/rickk__76" aria-label="Parveen Anand Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -217,8 +243,8 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
                             <h4>Robin Beset</h4>
-                            <p class="text-muted">Admin Teguh Belajar</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <p class="text-light">Admin Teguh Belajar</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/robinsilalahi_" aria-label="Diana Petersen Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -227,8 +253,8 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
                             <h4>Sandy Pencandu</h4>
-                            <p class="text-muted">Orang Baik kalo ada maunya</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <p class="text-light">Orang Baik kalo ada maunya</p>
+                            <a class="btn btn-dark btn-social mx-2" href="" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -237,8 +263,8 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
-                            <p class="text-muted">Optional tergantung Mood</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <p class="text-light">Optional tergantung Mood</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/jonathan.birila" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -254,7 +280,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Pesan atau Saran</h3>
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->
@@ -269,7 +295,7 @@
                             <div class="form-group">
                                 <!-- Name input-->
                                 <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
@@ -314,18 +340,19 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer py-4">
+        <footer class="footer py-4 bg-black">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Frederick 2023</div>
+                    <div class="col-lg-2 text-lg-start text-light">Copy right by:Frederick</div>
+                    <div class="col-lg-2 text-lg-start"></div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/smkn7ptkofficial" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="bi bi-youtube"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none me-3" href="#!"></a>
+                        <a class="link-dark text-decoration-none" href="#!"></a>
                     </div>
                 </div>
             </div>
