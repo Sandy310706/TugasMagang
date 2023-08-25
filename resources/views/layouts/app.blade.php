@@ -28,13 +28,25 @@
                             Dashboard
                         </a>
                         @if(Auth::user()->role == 'operator')
-                        <div class="sb-sidenav-menu-heading">Fitur</div>
-                        <a class="nav-link" href="{{ route('akunSetting') }}">
-                            <div class="sb-nav-link-icon"><i class="bi bi-person-fill"></i></div>
-                            Kelola Akun User
-                        </a>
-                        @elseif(Auth::user()->role == 'guest')
-                         <p>Fitur Guest</p>
+                            @auth
+                                <div class="sb-sidenav-menu-heading">Fitur</div>
+                                <a class="nav-link" href="{{ route('akunSetting') }}">
+                                    <div class="sb-nav-link-icon"><i class="bi bi-person-fill"></i></div>
+                                    Kelola Akun User
+                                </a>
+                            @endauth
+                        @elseif(Auth::user()->role == 'admin')
+                            @auth
+                                <div class="sb-sidenav-menu-heading">Fitur</div>
+                                <a class="nav-link" href="{{ route('menuSetting') }}">
+                                    <div class="sb-nav-link-icon"><i class="bi bi-journals"></i></div>
+                                    Kelola Menu
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="bi bi-cart-fill"></i></div>
+                                    Kelola Pesanan
+                                </a>
+                            @endauth
                         @endif
                     </div>
                 </div>
@@ -43,7 +55,8 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    @yield('content')
+                    @yield('Kelola Akun')
+                    @yield('Kelola Menu')
                 </div>
             </main>
             @include('layouts.footer')

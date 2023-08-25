@@ -19,19 +19,31 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
+                <p class="navbar-brand">Welcome
+                    @if(Route::has('login'))
+                        @auth
+                            {{ Auth::user()->nama }}
+                        @endauth
+                    @endif
+                </p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list width:10px"></i>
-                
+
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
+                        @if(Route::has('login'))
+                            @auth
+                                <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"></a></li>
+                            @else
+                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                            @endauth
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -59,10 +71,20 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
+                            <img src="template/landingPage/assets/img/rs1.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">nasi goreng campur ****</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <h5 class="card-title">Ikan Gulai</h5>
+                            <p class="card-text">RP. 20.000,00</p>
+                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="template/landingPage/assets/img/rs3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">Telur Mata  Sapi</h5>
+                            <p class="card-text">RP. 10.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -71,18 +93,8 @@
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">Nasgor campur</h5>
-                            <p class="card-text">RP.1000.000.000</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">nasi campur kecap</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <h5 class="card-title">Nasi Goreng</h5>
+                            <p class="card-text">RP. 15.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -92,7 +104,7 @@
                             <img src="template/landingPage/assets/img/minuman.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Boba</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 12.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -102,7 +114,7 @@
                             <img src="template/landingPage/assets/img/arak.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Minuman Hangat</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 40.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -112,7 +124,7 @@
                             <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">vodka Rusia</h5>
-                            <p class="card-text">RP.1000.000.000</p>
+                            <p class="card-text">RP. 50.000,00</p>
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
@@ -193,9 +205,9 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
-                            <h4>Dr.Frederick Adventino</h4>
-                            <p class="text-muted">Manager Programmer</p>
+                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
+                            <h4 class="drick" id="drick">PPLG.Frederick A</h4>
+                            <p class="text-muted">Manager SMKN 7 Pontianak</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -205,7 +217,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
                             <h4>Robin Beset</h4>
-                            <p class="text-muted">Backend</p>
+                            <p class="text-muted">Admin Teguh Belajar</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -215,7 +227,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
                             <h4>Sandy Pencandu</h4>
-                            <p class="text-muted">Backend</p>
+                            <p class="text-muted">Orang Baik kalo ada maunya</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -225,7 +237,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
-                            <p class="text-muted">Front End</p>
+                            <p class="text-muted">Optional tergantung Mood</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -320,8 +332,8 @@
         </footer>
         <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
-       
-      
+
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

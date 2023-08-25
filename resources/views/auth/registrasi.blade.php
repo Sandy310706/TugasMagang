@@ -66,9 +66,13 @@
             border: 1px solid #57557A;
             border-radius: 3px;
             background: #212042;
-            margin-bottom: 20px;
             letter-spacing: 1px;
 
+        }
+        .input-group-text{
+            background-color: #212042;
+            border: 1px solid white;
+            border: none
         }
         .form-control:focus{
             border: 1px solid #57557A;
@@ -146,7 +150,7 @@
                     <form class="myform" method="POST" action="{{ route('registrasi') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Nama" value="{{ old('nama') }}">
+                            <input type="text" class="form-control @error('nama') is-invalid @enderror m-0" name="nama" placeholder="Nama" value="{{ old('nama') }}">
                             @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -154,16 +158,21 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror m-0" name="email" placeholder="Email" value="{{ old('email') }}">
                             @error('email')
-                                <div class="invalid-feedback">
+                                <div class="invalid-feedback mt-1">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="input-group">
-                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
                             <span class="input-group-text" id="cekPassword" onclick="change()"><i class="bi bi-eye-fill"></i></span>
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-block btn-primary btn-lg"><small>Masukan</small></button>

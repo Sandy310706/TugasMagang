@@ -10,22 +10,21 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function store(Request $request)
+    public function login()
     {
-        $dataValidasi = $request->validate([
-            'nama' => ['required', 'max:100'],
-            'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required'],
-        ]);
-        Hash::make($dataValidasi['password']);
-        User::create($dataValidasi);
-        return redirect('/login')->with('berhasil', 'Akun berhasil di tambahkan');
+        return view('auth.login');
     }
+
     public function authtentication(Request $request)
     {
         $credential = $request->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
+        ],
+        [
+            'email.required' => 'Email wajib di isi',
+            'email.email' => 'Format email wajib di isi',
+            'password' => 'Password wajib di isi'
         ]);
         if(Auth::attempt($credential)) {
             if(Auth::user()->role == 'guest'){
@@ -39,9 +38,32 @@ class AuthController extends Controller
                 return redirect('/operator/dashboard');
             }
         }else{
-            return back()->withErrors('Email atau Password anda salah !!');
+            return back()->with('gagal', 'Email atau Password anda salah');
         }
     }
+
+    public function registrasi()
+    {
+        return view('auth.registrasi');
+    }
+
+    public function store(Request $request)
+    {
+        $dataValidasi = $request->validate([
+            'nama' => ['required', 'max:100'],
+            'email' => ['required', 'email:dns', 'unique:users'],
+            'password' => ['required', 'min:7, max:20']
+        ],[
+            'nama.required' => 'Nama wajib di isi',
+            'email.required' => 'Email wajib di isi',
+            'email.email' => 'Format email wajib di tulis',
+            'password' => 'Password wajib di isi',
+        ]);
+        Hash::make($dataValidasi['password']);
+        User::create($dataValidasi);
+        return redirect('/login')->with('berhasil', 'Akun berhasil di tambahkan');
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();
