@@ -16,6 +16,29 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="template/landingPage/css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert("Terimakasih sudah memesan");
+            });
+            $("#btn2").click(function(){
+                alert("Terimakasih sudah memesan");
+            });
+            $("#btn3").click(function(){
+                alert("Terimakasih sudah memesan");
+            });
+            $("#btn4").click(function(){
+                alert("Terimakasih sudah memesan");
+            });
+            $("#btn5").click(function(){
+                alert("Terimakasih sudah memesan");
+            });
+            $("#btn6").click(function(){
+                alert("Terimakasih sudah memesan");
+            });
+        });
+    </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -135,7 +158,7 @@
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                      <button type="button" id="btn1" class="btn btn-primary">Tambahkan</button>
                                     </div>
                                   </div>
                                 </div>
@@ -197,7 +220,7 @@
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                      <button type="button" id="btn2" class="btn btn-primary">Tambahkan</button>
                                     </div>
                                   </div>
                                 </div>
@@ -274,7 +297,7 @@
                                         </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                      <button type="button" id="btn3" class="btn btn-primary">Tambahkan</button>
                                     </div>
                                   </div>
                                 </div>
@@ -351,7 +374,7 @@
                                             </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                          <button type="button" class="btn btn-primary">Tambahkan</button>
+                                          <button type="button" id="btn4" class="btn btn-primary">Tambahkan</button>
                                         </div>
                                       </div>
                                     </div>
@@ -428,7 +451,7 @@
                                         </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                      <button type="button" id="btn5" class="btn btn-primary">Tambahkan</button>
                                     </div>
                                   </div>
                                 </div>
@@ -490,7 +513,7 @@
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                      <button type="button" id="btn6" class="btn btn-primary">Tambahkan</button>
                                     </div>
                                   </div>
                                 </div>
