@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- icon bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    {{-- link dan cdn bootstrap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
 <!-- body -->
 <body class="main-layout Recipes_page">
@@ -68,7 +73,7 @@
                                 <div class="owl-carousel owl-theme">
                                     <div class="item">
                                         <div class="product_blog_img">
-                                            <img src="{{asset("template/menuPage/images/rs1.png")}}" alt="#" />
+                                            <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                         </div>
                                         <div class="product_blog_cont">
                                             <h3>Ikan semur </h3>
@@ -77,7 +82,7 @@
                                     </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/rs2.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Spageti</h3>
@@ -86,7 +91,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/rs3.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                 <div class="product_blog_cont">
                                     <h3>Telur Mata Sapi</h3>
@@ -95,7 +100,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Kare</h3>
@@ -104,7 +109,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Roti Canai</h3>
@@ -113,7 +118,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs1.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Ikan Semur</h3>
@@ -122,7 +127,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs2.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Spageti</h3>
@@ -131,7 +136,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs3.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Telur Mata Sapi</h3>
@@ -140,7 +145,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Kare</h3>
@@ -149,7 +154,7 @@
                             </div>
                             <div class="item">
                                 <div class="product_blog_img">
-                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" alt="#" />
+                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3>Roti Canai</h3>
@@ -181,7 +186,7 @@
                                 <div class="owl-carousel owl-theme">
                                     <div class="item">
                                         <div class="product_blog_img">
-                                            <img src="{{asset("template/menuPage/images/smoothie-1.png")}}" alt="#" />
+                                            <img src="{{asset("template/menuPage/images/smoothie-1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                         </div>
                                     <div class="product_blog_cont">
                                         <h3>Homemade</h3>
@@ -190,7 +195,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/smoothie-2.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/smoothie-2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Noodles</h3>
@@ -199,7 +204,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/smoothie-3.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/smoothie-3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Egg</h3>
@@ -208,7 +213,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/smoothie-4.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/smoothie-4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Sushi Dizzy</h3>
@@ -217,7 +222,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/hot-americano.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/hot-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>The Coffee Break</h3>
@@ -226,7 +231,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/hot-cappuccino.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/hot-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Homemade</h3>
@@ -235,7 +240,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/hot-espresso.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/hot-espresso.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Noodles</h3>
@@ -244,7 +249,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/hot-latte.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/hot-latte.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Egg</h3>
@@ -253,7 +258,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/iced-americano.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/iced-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>Sushi Dizzy</h3>
@@ -262,7 +267,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="{{asset("template/menuPage/images/iced-cappuccino.png")}}" alt="#" />
+                                        <img src="{{asset("template/menuPage/images/iced-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>The Coffee Break</h3>
@@ -294,6 +299,26 @@
                 </footer>
             </div>
         </div>
+
+            <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="overlay"></div>
     <!-- Javascript files-->
     <script src="{{asset("template/menuPage/js/jquery.min.js")}}"></script>

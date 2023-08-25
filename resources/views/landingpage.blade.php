@@ -19,7 +19,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
             <div class="container">
                 <p class="navbar-brand">Welcome
                     @if(Route::has('login'))
@@ -38,9 +38,8 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
-                            @auth   
+                            @auth 
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                            @endauth
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
