@@ -52,7 +52,7 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
-                <div class="masthead-subheading">Silahkan Pesann</div>
+                <div class="masthead-subheading"></div>
                 <div class="masthead-heading text-uppercase"></div>
             </div>
         </header>
