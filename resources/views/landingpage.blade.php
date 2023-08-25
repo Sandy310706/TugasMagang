@@ -38,8 +38,9 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
-                            @auth
-                                <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"></a></li>
+                            @auth   
+                                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                            @endauth
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
