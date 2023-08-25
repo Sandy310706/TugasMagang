@@ -38,10 +38,10 @@
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
                             @auth
-                                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                            @endauth
+                                <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"></a></li>
                             @else
-                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                            @endauth
                         @endif
                     </ul>
                 </div>
