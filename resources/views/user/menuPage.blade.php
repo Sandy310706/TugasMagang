@@ -49,7 +49,7 @@
                       <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="right_header_info">
                             <li class="button_user d-flex justify-content-end">
-                                <a class="button mr-4" href="/">back</a>
+                                <a class="button mr-4 bi bi-arrow-left" href="/"> back</a>
                                 <a class="button active mr-2" href="{{ url('/login') }}">Login</a>
                                 <a class="button" href="{{ url('/registrasi') }}">Register</a>
                             </li>
@@ -76,7 +76,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="owl-carousel owl-theme">
-                                    <div class="item">
+                                    <div class="item seluruh">
                                         <div class="product_blog_img foto">
                                             <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                         </div>
@@ -85,7 +85,7 @@
                                             <h4><span class="theme_color">Rp.  </span>30.000,00</h4>
                                         </div>
                                     </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -94,7 +94,7 @@
                                         <h4><span class="theme_color">Rp. </span>60.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -103,7 +103,7 @@
                                     <h4><span class="theme_color">Rp. </span>50.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -112,7 +112,7 @@
                                     <h4><span class="theme_color">Rp. </span>40.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -121,7 +121,7 @@
                                     <h4><span class="theme_color">Rp. </span>40.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -130,7 +130,7 @@
                                     <h4><span class="theme_color">Rp. </span>30.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -139,7 +139,7 @@
                                     <h4><span class="theme_color">Rp. </span>70.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -148,7 +148,7 @@
                                     <h4><span class="theme_color">Rp. </span>20.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -157,7 +157,7 @@
                                     <h4><span class="theme_color">Rp. </span>60.000,00</h4>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item seluruh">
                                 <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
@@ -189,7 +189,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="owl-carousel owl-theme">
-                                    <div class="item">
+                                    <div class="item seluruh">
                                         <div class="product_blog_img foto">
                                             <img src="{{asset("template/menuPage/images/smoothie-1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                         </div>
@@ -198,7 +198,7 @@
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/smoothie-2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -207,7 +207,7 @@
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/smoothie-3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -216,7 +216,7 @@
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/smoothie-4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -225,7 +225,7 @@
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -234,7 +234,7 @@
                                         <h4><span class="theme_color">Rp. </span>12.500,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -243,7 +243,7 @@
                                         <h4><span class="theme_color">Rp. </span>10.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-espresso.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -252,7 +252,7 @@
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-latte.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -261,7 +261,7 @@
                                         <h4><span class="theme_color">Rp. </span>12.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/iced-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
@@ -270,7 +270,7 @@
                                         <h4><span class="theme_color">Rp. </span>20.000,00</h4>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <div class="item seluruh">
                                     <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/iced-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
