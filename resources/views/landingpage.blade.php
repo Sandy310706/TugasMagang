@@ -34,7 +34,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
                             @auth
@@ -51,11 +52,15 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
-                <div class="masthead-subheading">Silahkan Pesan</div>
+                <div class="masthead-subheading">Silahkan Pesann</div>
                 <div class="masthead-heading text-uppercase"></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#">L O G I N</a>
             </div>
         </header>
+       
+        <!-- Services-->
+        {{-- <section class="page-section" id="services">
+            
+        </section> --}}
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
