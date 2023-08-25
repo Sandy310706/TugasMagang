@@ -19,7 +19,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
             <div class="container">
                 <p class="navbar-brand">Welcome
                     @if(Route::has('login'))
@@ -38,9 +38,8 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
-                            @auth   
+                            @auth
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                            @endauth
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
@@ -57,10 +56,10 @@
                 <div class="masthead-heading text-uppercase"></div>
             </div>
         </header>
-       
+
         <!-- Services-->
         {{-- <section class="page-section" id="services">
-            
+
         </section> --}}
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
@@ -208,10 +207,9 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
                             <h4 class="drick" id="drick">PPLG.Frederick A</h4>
-                            <p class="text-muted">Manager SMKN 7 Pontianak</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <p class="text-muted">Tak pernah Juara</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Instagram Profile"><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -219,9 +217,8 @@
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
                             <h4>Robin Beset</h4>
                             <p class="text-muted">Admin Teguh Belajar</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Instagram Profile"><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -229,9 +226,9 @@
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
                             <h4>Sandy Pencandu</h4>
                             <p class="text-muted">Orang Baik kalo ada maunya</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -239,9 +236,9 @@
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
                             <p class="text-muted">Optional tergantung Mood</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -320,9 +317,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Frederick 2023</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>

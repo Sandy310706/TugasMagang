@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use function Laravel\Prompts\password;
+
 class DataDummy extends Seeder
 {
     /**
@@ -14,6 +16,6 @@ class DataDummy extends Seeder
      */
     public function run(): void
     {
-      
+
     }
 }
