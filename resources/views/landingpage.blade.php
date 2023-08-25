@@ -34,11 +34,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
-                            @auth 
+                            @auth
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
@@ -56,10 +56,10 @@
                 <div class="masthead-heading text-uppercase"></div>
             </div>
         </header>
-       
+
         <!-- Services-->
         {{-- <section class="page-section" id="services">
-            
+
         </section> --}}
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">

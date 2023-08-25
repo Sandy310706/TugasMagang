@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Kantin Sekolah</title>
+    <title id="judul">Kantin Sekolah</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -42,13 +42,18 @@
     <!-- header -->
                 <nav class="navbar navbar-expand-lg bg-dark p4">
                     <div class="container-fluid">
-                      <span class="navbar-brand" style="color: white;" href="#">Kantin Si Imut :)</span>
+                      <span class="navbar-brand kantin" href="#" >Kantin Si Imut :)</span>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="right_header_info">
-                            <li class="button_user d-flex justify-content-end"><a class="button active" href="{{ url('/login') }}">Login</a><a class="button" href="{{ url('/registrasi') }}">Register</a></li>
+                            <li class="button_user d-flex justify-content-end">
+                                <a class="button mr-4" href="/">back</a>
+                                <a class="button active mr-2" href="{{ url('/login') }}">Login</a>
+                                <a class="button" href="{{ url('/registrasi') }}">Register</a>
+                            </li>
+
                         </div>
                       </div>
                     </div>
@@ -72,91 +77,91 @@
                             <div class="col-md-12">
                                 <div class="owl-carousel owl-theme">
                                     <div class="item">
-                                        <div class="product_blog_img">
+                                        <div class="product_blog_img foto">
                                             <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                         </div>
-                                        <div class="product_blog_cont">
+                                        <div class="product_blog_cont foto">
                                             <h3>Ikan semur </h3>
                                             <h4><span class="theme_color">Rp.  </span>30.000,00</h4>
                                         </div>
                                     </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Spageti</h3>
                                         <h4><span class="theme_color">Rp. </span>60.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Telur Mata Sapi</h3>
                                     <h4><span class="theme_color">Rp. </span>50.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Kare</h3>
                                     <h4><span class="theme_color">Rp. </span>40.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Roti Canai</h3>
                                     <h4><span class="theme_color">Rp. </span>40.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Ikan Semur</h3>
                                     <h4><span class="theme_color">Rp. </span>30.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Spageti</h3>
                                     <h4><span class="theme_color">Rp. </span>70.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Telur Mata Sapi</h3>
                                     <h4><span class="theme_color">Rp. </span>20.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Kare</h3>
                                     <h4><span class="theme_color">Rp. </span>60.000,00</h4>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="product_blog_img">
+                                <div class="product_blog_img foto">
                                     <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                 </div>
-                                <div class="product_blog_cont">
+                                <div class="product_blog_cont foto">
                                     <h3>Roti Canai</h3>
                                     <h4><span class="theme_color">Rp. </span>40.000,00</h4>
                                 </div>
@@ -185,91 +190,91 @@
                             <div class="col-md-12">
                                 <div class="owl-carousel owl-theme">
                                     <div class="item">
-                                        <div class="product_blog_img">
+                                        <div class="product_blog_img foto">
                                             <img src="{{asset("template/menuPage/images/smoothie-1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                         </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto foto ">
                                         <h3>Homemade</h3>
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/smoothie-2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Noodles</h3>
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/smoothie-3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Egg</h3>
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/smoothie-4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Sushi Dizzy</h3>
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>The Coffee Break</h3>
                                         <h4><span class="theme_color">Rp. </span>12.500,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Homemade</h3>
                                         <h4><span class="theme_color">Rp. </span>10.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-espresso.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Noodles</h3>
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/hot-latte.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Egg</h3>
                                         <h4><span class="theme_color">Rp. </span>12.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/iced-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>Sushi Dizzy</h3>
                                         <h4><span class="theme_color">Rp. </span>20.000,00</h4>
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="product_blog_img">
+                                    <div class="product_blog_img foto">
                                         <img src="{{asset("template/menuPage/images/iced-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
                                     </div>
-                                    <div class="product_blog_cont">
+                                    <div class="product_blog_cont foto">
                                         <h3>The Coffee Break</h3>
                                         <h4><span class="theme_color">Rp. </span>15.000,00</h4>
                                     </div>
