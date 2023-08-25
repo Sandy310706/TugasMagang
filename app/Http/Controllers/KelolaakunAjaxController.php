@@ -20,11 +20,15 @@ class KelolaakunAjaxController extends Controller
     {
         $validator = $request->validate([
             'nama' => 'required',
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email:dns', 'unique:users'],
             'password' => 'required',
             'role' => 'required'
         ]);
 
         User::create($validator);
+    }
+    public function update(Request $request, String $id)
+    {
+
     }
 }

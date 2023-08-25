@@ -9,50 +9,45 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaakunAjaxController;
 
+// == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
 });
+//
+
 Route::get('/', function () {
     return view('landingpage');
-});
-Route::get('/registrasi', function () {
-    $genderOption = [
-        'laki laki' => 'Laki-laki',
-        'perempuan' =>'Perempuan'
-    ];
-    return view('auth.registrasi', compact('genderOption'));
-});
-Route::get('/login', function () {
-    $genderOption = [
-        'laki laki' => 'Laki-laki',
-        'perempuan' =>'Perempuan'
-    ];
-    return view('auth.login', compact('genderOption'));
-})->middleware('guest');
+})->middleware('web');
 
+// == Authentikasi Route ==
+Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
+Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
+Route::get('/registrasi', [AuthController::class, 'registrasi'])->middleware('guest');
 Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
-Route::post('/', [AuthController::class, 'authtentication'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
-        return redirect('dashboard');
+        return redirect('');
     }elseif(Auth::user()->role == 'admin'){
-        return redirect('dashboard');
+        return redirect()->url('/admin/dashboard');
     }elseif(Auth::user()->role == 'operator'){
-        return redirect('dashboard');
+        return redirect()->url('/operator/dashboard');
     }else{
         return redirect('login');
     }
 });
+//
 
-Route::get('/dashboard', [UserController::class, 'index'])->middleware('auth');
+// == Operator Route ==
 Route::get('/operator/dashboard', [OperatorController::class, 'index']);
 Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
-
 Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
 Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
+//
 
+// == Admin Route ==
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
 Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
+//
 

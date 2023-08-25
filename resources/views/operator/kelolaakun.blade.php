@@ -22,7 +22,7 @@
         <div class="modal-dialog">
             <div class="modal-content ">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Akun</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -32,7 +32,12 @@
                         </div>
                         <div class="row mb-1">
                             <label for="Email" class="form-label">Email : </label>
-                            <input type="email" class="form-control" id="Email" name="email">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="Email" name="email">
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="row mb-1">
                             <label for="Nama" class="form-label">Role : </label>
@@ -93,7 +98,6 @@
         $('body').on('click', '#btnTambah', function(e){
             e.preventDefault();
             $('#KelolaModal').modal('show');
-
             $('#Save').click( function(){
                 let nama = $('#Nama').val();
                 let email = $('#Email').val();
@@ -104,14 +108,14 @@
                     type: 'POST',
                     cache: false,
                     data:{
-                        _token: $('input[name="_token"]').val(),
                         nama: $('#Nama').val(),
                         email: $('#Email').val(),
                         role: $('#Role').val(),
                         password: $('#Password').val()
                     },
                     success: function(response){
-
+                        $('#akunTable').DataTable().ajax.reload()
+                        $('KelolaModal').modal('hide');
                     }
                 });
             });

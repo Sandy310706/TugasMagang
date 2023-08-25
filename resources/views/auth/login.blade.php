@@ -129,18 +129,20 @@
         .row .col a{
             font-family:  "Comic Sans MS", cursive, sans-serif;;
         }
+        .input-group-text{
+            background-color: #212042;
+            border: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                @if( $errors->any())
-                    @foreach ($errors->all() as $error)
-                        <div class="alert alert-danger" role="alert">
-                            {{ $error }}
-                        </div>
-                    @endforeach
+                @if( session('gagal'))
+                    <div class="alert" style="background-color: rgba(255, 0, 0, 0.634);" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill" style="color: white;"> </i><span style="color: white;">{{ session('gagal') }}</span>
+                    </div>
                 @endif
                 @if (session('berhasil'))
                 <div class="alert alert-success fade in">
@@ -159,7 +161,7 @@
                     <form class="myform" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror " name="email" placeholder="Email" value="{{ old('email') }}">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror m-0" name="email" placeholder="Email" value="{{ old('email') }}">
                             @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -167,8 +169,13 @@
                             @enderror
                         </div>
                         <div class="input-group">
-                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
                             <span class="input-group-text" id="cekPassword" onclick="change()"><i class="bi bi-eye-fill"></i></span>
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-block btn-primary btn-lg"><small>L o g i n</small></button>
