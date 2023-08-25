@@ -34,7 +34,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
@@ -75,7 +75,71 @@
                             <div class="card-body">
                             <h5 class="card-title">Ikan Gulai</h5>
                             <p class="card-text">RP. 20.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop6">Pesan</a>
+                            <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel6" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel6">Custom Pesanan</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Sambal Bawang</span>
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+                                                    <label class="form-check-label" for="flexCheckDefault6">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Sambal Terasi</span>
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+                                                    <label class="form-check-label" for="flexCheckDefault6">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Sambal Mata</span>
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+                                                    <label class="form-check-label" for="flexCheckDefault6">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3"></div>
+                                            <h4>Catatan</h4>
+                                                <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
+                                            <label for="floatingTextarea2">Tambahan</label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -85,7 +149,59 @@
                             <div class="card-body">
                             <h5 class="card-title">Telur Mata  Sapi</h5>
                             <p class="card-text">RP. 10.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop5">Pesan</a>
+                            <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel5" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel5">Custom Pesanan</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Extra Telor</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+                                                    <label class="form-check-label" for="flexCheckDefault5">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Extra Mata Si Imut</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+                                                    <label class="form-check-label" for="flexCheckDefault5">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3"></div>
+                                            <h4>Catatan</h4>
+                                                <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
+                                            <label for="floatingTextarea2">Tambahan</label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -95,7 +211,74 @@
                             <div class="card-body">
                             <h5 class="card-title">Nasi Goreng</h5>
                             <p class="card-text">RP. 15.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">Pesan</a>
+                            <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel4">Custom Pesanan</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Extra Telor</span>
+                                                <hr class="opacity" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                                                    <label class="form-check-label" for="flexCheckDefault4">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Extra Udang</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                                                    <label class="form-check-label" for="flexCheckDefault4">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Extra Ayam</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                            <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                                                    <label class="form-check-label" for="flexCheckDefault4">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3"></div>
+                                            <h4>Catatan</h4>
+                                                <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Tambahan</label>
+                                            </div>
+                                        </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -103,9 +286,76 @@
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/minuman.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h5 class="card-title">Boba</h5>
-                            <p class="card-text">RP. 12.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                                <h5 class="card-title">Boba</h5>
+                                <p class="card-text">RP. 12.000,00</p>
+                                 <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Pesan</a>
+                                 <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="staticBackdropLabel3">Custom Pesanan</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <span>Extra Jelly</span>
+                                                    <hr class="opacity-50" width="455px">
+                                                </div>
+                                                <div class="col-6 d-flex justify-content-end">
+                                                <span>Rp.5000</span>
+                                                    <div class="col-1"></div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                                        <label class="form-check-label" for="flexCheckDefault1">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <span>Extra Oreo</span>
+                                                    <hr class="opacity-50" width="455px">
+                                                </div>
+                                                <div class="col-6 d-flex justify-content-end">
+                                                <span>Rp.5000</span>
+                                                    <div class="col-1"></div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                                        <label class="form-check-label" for="flexCheckDefault1">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <span>Extra Kacang Mentai</span>
+                                                    <hr class="opacity-50" width="455px">
+                                                </div>
+                                                <div class="col-6 d-flex justify-content-end">
+                                                <span>Rp.5000</span>
+                                                    <div class="col-1"></div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                                        <label class="form-check-label" for="flexCheckDefault1">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-3"></div>
+                                                <h4>Catatan</h4>
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                    <label for="floatingTextarea2">Tambahan</label>
+                                                </div>
+                                            </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                          <button type="button" class="btn btn-primary">Tambahkan</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
@@ -115,7 +365,74 @@
                             <div class="card-body">
                             <h5 class="card-title">Minuman Hangat</h5>
                             <p class="card-text">RP. 40.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Pesan</a>
+                            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel1">Custom Pesanan</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Rasa Angggur</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                                    <label class="form-check-label" for="flexCheckDefault1">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Rasa Lemon</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                                    <label class="form-check-label" for="flexCheckDefault1">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Rasa Strowberry</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                            <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                                    <label class="form-check-label" for="flexCheckDefault1">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3"></div>
+                                            <h4>Catatan</h4>
+                                                <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Tambahan</label>
+                                             </div>
+                                        </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -125,7 +442,60 @@
                             <div class="card-body">
                             <h5 class="card-title">vodka Rusia</h5>
                             <p class="card-text">RP. 50.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pesan</a>
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Custom Pesanan</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Rasa Strawberry</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span>Rasa Lemon</span>
+                                                <hr class="opacity-50" width="455px">
+                                            </div>
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <span>Rp.5000</span>
+                                                <div class="col-1"></div>
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3"></div>
+                                        <h4>Catatan</h4>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
+                                            <label for="floatingTextarea2">Tambahan</label>
+                                          </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                      <button type="button" class="btn btn-primary">Tambahkan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </button>
                             </div>
                         </div>
                     </div>
