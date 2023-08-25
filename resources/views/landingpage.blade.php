@@ -27,7 +27,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
@@ -41,10 +42,9 @@
                 <div class="masthead-subheading">Welcome To Kantin SMKN 7 PTK</div>
                 <div class="masthead-subheading">Silahkan Pesann</div>
                 <div class="masthead-heading text-uppercase"></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">MENU</a>
             </div>
         </header>
-        <hr>
+       
         <!-- Services-->
         {{-- <section class="page-section" id="services">
             
