@@ -19,7 +19,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
             <div class="container">
                 <p class="navbar-brand">Welcome
                     @if(Route::has('login'))
@@ -34,13 +34,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#Menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
-                            @auth   
+                            @auth
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                            @endauth
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
@@ -57,16 +56,16 @@
                 <div class="masthead-heading text-uppercase"></div>
             </div>
         </header>
-       
+
         <!-- Services-->
         {{-- <section class="page-section" id="services">
-            
+
         </section> --}}
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Produk Bestseller</h2>
+                    <h2 class="section-heading text-uppercase">Produk Makanan Bestseller</h2>
                     <h3 class="section-subheading text-muted">Makanan Dan Minuman Yang sering Dipesan</h3>
                 </div>
                 <div class="row">
@@ -99,6 +98,10 @@
                             <a href="#" class="btn btn-danger">Selengkapnya</a>
                             </div>
                         </div>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Produk Minuman Bestseller</h2>
+                        <h3 class="section-subheading text-muted">Makanan Dan Minuman Yang sering Dipesan</h3>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">

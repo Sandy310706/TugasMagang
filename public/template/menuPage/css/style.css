@@ -4,6 +4,42 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 /*--------------------------------------------------------------------- basic ---------------------------------------------------------------------*/
+
+.foto{
+    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+
+.seluruh {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+
+}
+
+.seluruh:hover .foto{
+    position: relative;
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    opacity: 1;
+    z-index: 2;
+    color: red;
+}
+
+span.kantin {
+    color: white;
+    font-size: 2em;
+    font-family: 'Bowlby One', cursive;
+}
+
+h2 {
+    font-family: 'Bowlby One', cursive;
+    color: rgba(255, 255, 255, 0.596);
+    text-shadow: 20px 0px 10px rgb(0, 0, 0);
+
+}
+
 body {
     color: #666666;
     font-size: 14px;
@@ -43,10 +79,10 @@ h2 {
     font-size: 22px;
 }
 h3 {
-    font-size: 18px;
+    font-size: 15px;
 }
 h4 {
-    font-size: 16px;
+    font-size: 12px;
 }
 h5 {
     font-size: 14px;
@@ -429,7 +465,7 @@ header .container-fluid {
     color: #f8c90d !important;
 }
 .resip_section {
-    background: #212020;
+    background: black;
     margin-top: 0;
     padding: 60px 0px 50px 0px;
     border-top: solid rgba(255, 255, 255, 0.1) 1px;
