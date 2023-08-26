@@ -49,7 +49,7 @@
                       <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="right_header_info">
                             <li class="button_user d-flex justify-content-end">
-                                <a class="button mr-4 bi bi-arrow-left" href="/"> back</a>
+                                <a class="button mr-4 bi bi-arrow-left" href="/"> Back</a>
                                 <a class="button active mr-2" href="{{ url('/login') }}">Login</a>
                                 <a class="button" href="{{ url('/registrasi') }}">Register</a>
                             </li>
