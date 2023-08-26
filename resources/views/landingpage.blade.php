@@ -58,10 +58,10 @@
                 <div class="masthead-heading text-uppercase"></div>
             </div>
         </header>
-       
+
         <!-- Services-->
         {{-- <section class="page-section" id="services">
-            
+
         </section> --}}
         <!-- Portfolio Grid-->
         <section class="content page-section bg-blue" id="portfolio">
@@ -111,7 +111,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="minumann text-center">
                         <h2 class="minum section-heading text-uppercase">Produk Bestseller</h2>
                         <h3 class="minuman section-subheading text-muted"> Minuman Yang sering Dipesan</h3>

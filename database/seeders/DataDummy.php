@@ -14,6 +14,6 @@ class DataDummy extends Seeder
      */
     public function run(): void
     {
-      
+
     }
 }
