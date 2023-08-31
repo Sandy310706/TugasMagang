@@ -66,7 +66,7 @@
         <!-- Portfolio Grid-->
         <section class="content page-section bg-blue" id="portfolio">
             <div class="content">
-                <div class=" text-center">
+                <div class="text-center">
                     <h2 class="produk section-heading text-uppercase">Produk Bestseller</h2>
                     <h3 class="prdk section-subheading text-muted">Makanan Yang sering Dipesan</h3>
                 </div>
@@ -232,7 +232,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
                             <h4 class="drick" id="drick">Frederick A</h4>
-                            <p class="text-light">Manager SMKN 7 Pontianak</p>
+                            <p class="text-light">Mael CS SMKN 7 Pontianak</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/rickk__76" aria-label="Parveen Anand Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
