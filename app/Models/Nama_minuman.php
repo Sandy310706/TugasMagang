@@ -10,10 +10,5 @@ class Nama_minuman extends Model
 {
     use HasFactory;
 
-    protected $table = 'nama_minumanas';
 
-    public function Menus():HasMany
-    {
-        return $this->hasMany(Menu::class);
-    }
 }

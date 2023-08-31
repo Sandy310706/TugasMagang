@@ -10,10 +10,5 @@ class Kelola_user extends Model
 {
     use HasFactory;
 
-    protected $table = 'kelola_users';
 
-    public function Users():BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
 }

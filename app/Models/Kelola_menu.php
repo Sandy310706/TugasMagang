@@ -10,10 +10,5 @@ class Kelola_menu extends Model
 {
     use HasFactory;
 
-    protected $table = 'kelola_menus';
 
-    public function Menus():HasOne
-    {
-        return $this->hasOne(Menu::class);
-    }
 }

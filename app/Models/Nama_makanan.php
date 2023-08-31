@@ -10,10 +10,5 @@ class Nama_makanan extends Model
 {
     use HasFactory;
 
-    protected $table = 'nama_makanans';
 
-    public function Menus():HasMany
-    {
-        return $this->hasMany(Menu::class);
-    }
 }

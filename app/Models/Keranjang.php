@@ -10,10 +10,5 @@ class Keranjang extends Model
 {
     use HasFactory;
 
-    protected $table = 'keranjangs';
 
-    public function Pesans():BelongsTo
-    {
-        return $this->belongsTo(Pesan::class);
-    }
 }

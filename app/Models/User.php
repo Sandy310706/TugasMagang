@@ -46,8 +46,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function Kelola_users():HasOne
-    {
-        return $this->hasOne(Kelola_user::class);
-    }
+c
 }

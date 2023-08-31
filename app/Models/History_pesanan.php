@@ -10,10 +10,5 @@ class History_pesanan extends Model
 {
     use HasFactory;
 
-    protected $table = 'history_pesanans';
 
-    public function Pesans():BelongsTo
-    {
-        return $this->belongsTo(Pesan::class);
-    }
 }
