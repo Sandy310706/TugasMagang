@@ -24,7 +24,6 @@ class KelolaMakananController extends Controller
     public function delete($id)
     {
         $delete = Makanan::find($id);
-        dd($delete);
         $delete->delete();
         return redirect()->back()->with('hapus', 'Menu berhasil di hapus');
     }
