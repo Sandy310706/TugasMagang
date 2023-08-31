@@ -38,9 +38,8 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         @if(Route::has('login'))
-                            @auth   
+                            @auth
                                 <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                            @endauth
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
@@ -57,10 +56,10 @@
                 <div class="masthead-heading text-uppercase"></div>
             </div>
         </header>
-       
+
         <!-- Services-->
         {{-- <section class="page-section" id="services">
-            
+
         </section> --}}
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
