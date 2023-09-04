@@ -11787,10 +11787,13 @@ section#contact form#contactForm :-ms-input-placeholder {
 .content{
     background-color: ivory;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> main
+=======
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
 }
 .item{
 background-color: grey;
@@ -11812,29 +11815,39 @@ border-top: 5px solid black;
     border-bottom: 2px solid goldenrod;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> main
+=======
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
 }
 
 .prdk{
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
     5px 4px 0px rgba(0, 0, 0, 0.15);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> main
+=======
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
 }
 
 .produk{
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
 <<<<<<< HEAD
+<<<<<<< HEAD
     5px 4px 0px rgba(0, 0, 0, 0.15);
 =======
     5px 4px 0px rgba(0, 0, 0, 0.15);    
 >>>>>>> main
+=======
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
 }
 
 .programmer{
@@ -11849,28 +11862,41 @@ border-top: 5px solid black;
 .minum{
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
 <<<<<<< HEAD
-    5px 4px 0px rgba(0, 0, 0, 0.15);
-=======
-    5px 4px 0px rgba(0, 0, 0, 0.15);    
->>>>>>> main
-}
-
-.minuman{
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
 <<<<<<< HEAD
     5px 4px 0px rgba(0, 0, 0, 0.15);
 =======
     5px 4px 0px rgba(0, 0, 0, 0.15);    
 >>>>>>> main
+=======
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
+}
+
+.minuman{
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+<<<<<<< HEAD
+<<<<<<< HEAD
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+=======
+    5px 4px 0px rgba(0, 0, 0, 0.15);    
+>>>>>>> main
+=======
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
 }
 
 @media (min-width: 768px){
     .card{
         margin: auto;
         height: 400px;
+<<<<<<< HEAD
     }
 <<<<<<< HEAD
 }
 =======
 }
 >>>>>>> main
+=======
+}
+>>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
