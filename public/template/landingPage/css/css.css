@@ -427,7 +427,10 @@ legend + * {
   height: auto;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* rtl:raw:
 [type="tel"],
 [type="url"],
@@ -11802,3 +11805,11 @@ border-top: 5px solid black;
 }
 
 
+<<<<<<< HEAD
+=======
+.minuman{
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+
+}
+>>>>>>> main

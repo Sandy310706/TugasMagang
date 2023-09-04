@@ -1,351 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title id="judul">Kantin Sekolah</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/bootstrap.min.css")}}">
-    <!-- owl css -->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/owl.carousel.min.css")}}">
-    <!-- style css -->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/style.css")}}">
-    <!-- responsive-->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/responsive.css")}}">
-    <!-- awesome fontfamily -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- icon bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    {{-- link dan cdn bootstrap --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="template/menuPage/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<!-- body -->
-<body class="main-layout Recipes_page">
-    <!-- loader  -->
-        {{-- <div class="loader_bg">
-            <div class="loader"><img src="{{asset("template/menuPage/images/loading.gif")}}" alt="" /></div>
-        </div>
-        <div class="wrapper"> --}}
-    <!-- end loader -->
-            <div id="content">
-    <!-- header -->
-                <nav class="navbar navbar-expand-lg p4"  >
-                    <div class="container-fluid">
-                      <span class="navbar-brand kantin" href="#" >Kantin Si Imut :)</span>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNav">
-                        <div class="right_header_info">
-                            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                                <li class="nav-item"><a class="home nav-link" href="home">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#keranjang">Keranjang</a></li>
-                                @if(Route::has('login'))
-                                    @auth
-                                        <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"><i class="bi bi-door-open"></i>LOGOUT</a></li>
-                                    @else
-                                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                    @endauth
-                                @endif
+<body class="main-layout">
+
+        <div id="content">
+            <div class="bg segitiga1">
+                <svg class="segitiga1" xmlns="http://www.w3.org/2000/svg" width="485" height="643" viewBox="0 0 485 643" fill="none">
+                    <path d="M-3.39903 -10.3134L484.12 -7.80797L-6.75414 642.664L-3.39903 -10.3134Z" fill="#016A70"/>
+                </svg>
+                        <div class="navbar mx-4 p-2 bg-transparant">
+                            <span class="kantin d-flex justify-content-start" href="#">SMKN 7 Pontianak</span>
+                            <ul class="nav p-2 mx-4 justify-content-end">
+                                <li class="nav-item ">
+                                    <a class="btn" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn" href="#">Menu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn" href="#">Keranjang</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link">Login</a>
+                                </li>
+                                <svg class="segitiga3" xmlns="http://www.w3.org/2000/svg" width="201" height="204" viewBox="0 0 201 204" fill="none">
+                                    <path d="M200.797 -1.19117L200.797 203.5L0.998473 -1.19123L200.797 -1.19117Z" fill="#D2DE32"/>
+                                </svg>
                             </ul>
                         </div>
-                      </div>
-                    </div>
-                  </nav>
-    <!-- end header -->
-                <div class="yellow_bg">
-                    <div class="container">
+
+        <div class="bg">
+            <h1>Makanan</h1>
+                <div class="container mb-5">
+                    <div class="owl-carousel owl-theme">
                         <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h2>Makanan Kami</h2>
+                            <div class="col-sm-3 mb-5">
+                                <div class="card text-center">
+                                    <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h4>Teh Es</h4>
+                                    <h2 class="harga">Rp. 15.000,00</h2>
+                                    <button type="button" href="#" class="pesan btn1 btn-primary ">Pesan</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-5">
+                                <div class="card text-center">
+                                    <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <h4>Teh Es</h4>
+                                    <h2 class="harga">Rp. 15.000,00</h2>
+                                    <button type="button" href="#" class="pesan btn1 btn-primary ">Pesan</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-5">
+                                <div class="card text-center">
+                                    <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h4>Teh Es</h4>
+                                    <h2 class="harga">Rp. 15.000,00</h2>
+                                    <button type="button" href="#" class="pesan btn1 btn-primary">Pesan</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-5">
+                                <div class="card text-center">
+                                    <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h4>Teh Es</h4>
+                                    <h2 class="harga">Rp. 15.000,00</h2>
+                                    <button type="button" href="#" class="pesan btn1 btn-primary">Pesan</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="space">
+                <div class="bg2">
+                    <h3>Minuman </h3>
+                    <svg class="segitiga2" xmlns="http://www.w3.org/2000/svg" width="486" height="649" viewBox="0 0 486 649" fill="none">
+                        <path d="M487.523 653.202L-0.000226755 654.612L485.634 0.218854L487.523 653.202Z" fill="#016A70"/>
+                    </svg>
+
+                    <div class="container mb-5">
+                        <div class="owl-carousel owl-theme">
+                            <div class="row">
+                                <div class="col-sm-3 mb-5">
+                                    <div class="card text-center">
+                                        <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h4>Teh Es</h4>
+                                        <h2 class="harga">Rp. 15.000,00</h5>
+                                        <button type="button" href="#" class="pesan btn1 btn-primary ">Pesan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 mb-5">
+                                    <div class="card text-center">
+                                        <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h4>Teh Es</h4>
+                                        <h2 class="harga">Rp. 15.000,00</h5>
+                                        <button type="button" href="#" class="pesan btn1 btn-primary ">Pesan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 mb-5">
+                                    <div class="card text-center">
+                                        <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h4>Teh Es</h4>
+                                        <h2 class="harga">Rp. 15.000,00</h5>
+                                        <button type="button" href="#" class="pesan btn1 btn-primary">Pesan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 mb-5">
+                                    <div class="card text-center">
+                                        <img src="{{asset("template/menuPage/images/Foto Menu.png")}}" class="image card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h4>Teh Es</h4>
+                                        <h2 class="harga">Rp. 15.000,00</h5>
+                                        <button type="button" href="#" class="pesan btn1 btn-primary">Pesan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <footer>
+                <div class="footer">
+                    <div class="copyright">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-3 p-4" >
+                                <svg class="segitiga4" xmlns="http://www.w3.org/2000/svg" width="199" height="200" viewBox="0 0 199 200" fill="none">
+                                    <path d="M-0.873278 204.687L0.466947 1.76706e-05L198.921 205.995L-0.873278 204.687Z" fill="#D2DE32"/>
+                                </svg>
+                                <span class="dinone" style="color: black">KantinSekolah@gmail.com</span>
+                                <span class="dinone" style="color: black">089493453413</span>
+                                <span class="dinone" style="color: black">KantinSekolah</span>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center pt-5">
+                                <p style="color: black">© 2023 All Rights Reserved. Design by Si Imut</a>   <i class="bi bi-emoji-smile-fill" style="color: black;"></i>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-    <!-- section makanan -->
-                <section class="resip_section image">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item seluruh">
-                                        <div class="product_blog_img foto">
-                                            <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                        </div>
-                                        <div class="product_blog_cont foto">
-                                            <h3>Ikan semur </h3>
-                                            <h4><span class="theme_color">Rp.  </span>30.000,00</h4>
-                                        </div>
-                                    </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Spageti</h3>
-                                        <h4><span class="theme_color">Rp. </span>60.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Telur Mata Sapi</h3>
-                                    <h4><span class="theme_color">Rp. </span>50.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Kare</h3>
-                                    <h4><span class="theme_color">Rp. </span>40.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Roti Canai</h3>
-                                    <h4><span class="theme_color">Rp. </span>40.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Ikan Semur</h3>
-                                    <h4><span class="theme_color">Rp. </span>30.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Spageti</h3>
-                                    <h4><span class="theme_color">Rp. </span>70.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Telur Mata Sapi</h3>
-                                    <h4><span class="theme_color">Rp. </span>20.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Kare</h3>
-                                    <h4><span class="theme_color">Rp. </span>60.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Roti Canai</h3>
-                                    <h4><span class="theme_color">Rp. </span>40.000,00</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                </section>
-        {{-- end section makanan --}}
-                <div class="yellow_bg">
-                    <div class="container">
-                        <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h2>Minuman Kami</h2>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-        <!-- section Minuman -->
-                <section class="resip_section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item seluruh">
-                                        <div class="product_blog_img foto">
-                                            <img src="{{asset("template/menuPage/images/smoothie-1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                        </div>
-                                    <div class="product_blog_cont foto foto ">
-                                        <h3>Homemade</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/smoothie-2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Noodles</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/smoothie-3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Egg</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/smoothie-4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Sushi Dizzy</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>The Coffee Break</h3>
-                                        <h4><span class="theme_color">Rp. </span>12.500,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Homemade</h3>
-                                        <h4><span class="theme_color">Rp. </span>10.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-espresso.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Noodles</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-latte.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Egg</h3>
-                                        <h4><span class="theme_color">Rp. </span>12.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/iced-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Sushi Dizzy</h3>
-                                        <h4><span class="theme_color">Rp. </span>20.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/iced-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>The Coffee Break</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <footer>
-                    <div class="footer">
-                        <div class="copyright bg-secondary">
-                            <div class="container">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-3 p-4" >
-                                        <span class="dinone" style="color: white">Kontak Kami :</span>
-                                        <li class="dinone" style="color: white;"><i class="bi bi-telephone-fill"></i>   <a href="#">    089796756453</a></li>
-                                        <li class="dinone" style="color: white;"><i class="bi bi-envelope-fill"></i>    <a href="#">    KantinSekolah@gmail.com</a></li>
-                                        <li class="dinone" style="color: white;"><i class="bi bi-house-door-fill"></i>  <a href="#">    Jl. Tanjung Raya 2 , Pontianak</a></li>
-                                    </div>
-                                    <div class="col-9 d-flex justify-content-center pt-5">
-                                        <p style="color: white">© 2023 All Rights Reserved. Design by Si Imut</a>   <i class="bi bi-emoji-smile-fill" style="color: black;"></i>.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+            </footer>
             </div>
         </div>
-
-            <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nama Makanan</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="product_blog_img foto">
-            <img class="fotomodal" src="{{asset("template/menuPage/images/hot-americano.png")}}" alt="">
-        </div>
-        <hr>
-        <li>Nama: Boostie Juice</li>
-        <li>harga: Rp. 15.000,00</li>
-        <li>Paket Special</li>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <div class="overlay"></div>
-    <!-- Javascript files-->
-    <script src="{{asset("template/menuPage/js/jquery.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/popper.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/bootstrap.bundle.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/owl.carousel.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/custom.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/jquery.mCustomScrollbar.concat.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/jquery-3.0.0.min.js")}}"></script>
-<script>
+        <script>
          $(document).ready(function() {
            var owl = $('.owl-carousel');
            owl.owlCarousel({
@@ -365,6 +186,38 @@
              }
            })
          })
+
+        //     const scrollingCardsContainer = document.querySelector('.scrolling-cards-container');
+        //     const scrollingCards = document.querySelector('.scrolling-cards');
+
+        //     scrollingCardsContainer.addEventListener('wheel', (e) => {
+        //         const scrollAmount = e.deltaY;
+        //         scrollingCards.scrollLeft += scrollAmount;
+        //         e.preventDefault();
+        //    });
+
+
+            // document.addEventListener("DOMContentLoaded", () => {
+            // const menuLinks = document.querySelectorAll("nav ul li a");
+
+            // menuLinks.forEach((link) => {
+            //     link.addEventListener("click", (e) => {
+            //     e.preventDefault();
+            //     const targetId = link.getAttribute("href");
+            //     const targetElement = document.querySelector(targetId);
+
+            //     if (targetElement) {
+            //         window.scrollTo({
+            //         top: targetElement.offsetTop,
+            //         behavior: "smooth",
+            //         });
+            //     }
+            //     });
+            // });
+            // });
+
       </script>
+
 </body>
 </html>
+

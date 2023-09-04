@@ -427,12 +427,15 @@ select:disabled {
     display: none !important;
 }
 
+<<<<<<< HEAD
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled) {
     cursor: pointer;
 }
+=======
+>>>>>>> main
 
 ::-moz-focus-inner {
     padding: 0;
@@ -481,7 +484,10 @@ legend + * {
     height: auto;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* rtl:raw:
 [type="tel"],
 [type="url"],
@@ -498,7 +504,10 @@ legend + * {
     padding: 0;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 output {
     display: inline-block;
 }
