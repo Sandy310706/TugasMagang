@@ -121,6 +121,8 @@ body {
  
 
 
+
+
 hr {
     margin: 1rem 0;
     color: inherit;
@@ -11383,7 +11385,6 @@ header.masthead .masthead-heading {
 
 .content{
     background-color: ivory;
-    
 }
 .item{
 background-color: grey;
