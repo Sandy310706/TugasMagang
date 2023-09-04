@@ -1,5 +1,4 @@
 
-
 .nav-link{
     color: #016A70;
     text-align: center;
@@ -17,15 +16,6 @@
     color: white;
 }
 
-.kantin {
-    color: black;
-    text-align: center;
-    font-family: Amaranth;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 
 h1 {
     color: #016A70;
@@ -40,12 +30,11 @@ h1 {
 h3 {
     color: #016A70;
     text-align: center;
-    font-family: Satisfy;
-    font-size: 75px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;    
+    min-height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
 }
+
 
 h4 {
     color: #000;
@@ -114,7 +103,7 @@ h4 {
 
 .main-layout {
     background-color: #FFFFDD ;
-    
+
 }
 
 .dinone {
@@ -178,11 +167,5 @@ p {
     margin-right: 10px;
 
 
-}
-
-.btn:hover {
-    background-color: #016A70;
-    cursor: pointer;
-    color: white;
 }
 

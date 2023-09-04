@@ -42,7 +42,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <p class="navbar-brand"><i class="bi bi-person-circle"></i>
                     @if(Route::has('login'))
@@ -57,13 +57,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="menu">Menu</a></li>
+                        <li class="nav-item"><a class="menu nav-link" href="menu">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
                         @if(Route::has('login'))
                             @auth
-                                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"><i class="bi bi-door-open"></i>LOGOUT</a></li>
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             @endauth
@@ -88,7 +88,7 @@
         <!-- Portfolio Grid-->
         <section class="content page-section bg-blue" id="portfolio">
             <div class="content">
-                <div class=" text-center">
+                <div class="text-center">
                     <h2 class="produk section-heading text-uppercase">Produk Bestseller</h2>
                     <h3 class="prdk section-subheading text-muted">Makanan Yang sering Dipesan</h3>
                 </div>
@@ -316,6 +316,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">Nasi Goreng</h5>
+                            <p class="card-text">RP. 15.000,00</p>
+                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="minumann text-center">
                         <h2 class="minum section-heading text-uppercase">Produk Bestseller</h2>
                         <h3 class="minuman section-subheading text-muted"> Minuman Yang sering Dipesan</h3>
@@ -490,6 +500,16 @@
                             <div class="card-body">
                             <h5 class="card-title">vodka Rusia</h5>
                             <p class="card-text">RP. 50.000,00</p>
+                            <a href="#" class="btn btn-danger">Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">vodka Rusia</h5>
+                            <p class="card-text">RP. 50.000,00</p>
                             <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pesan</a>
                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -622,10 +642,10 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
-                            <h4 class="drick" id="drick">PPLG.Frederick A</h4>
-                            <p class="text-muted">Tak pernah Juara</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
+                            <h4 class="drick" id="drick">Frederick A</h4>
+                            <p class="text-light">Mael CS SMKN 7 Pontianak</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/rickk__76" aria-label="Parveen Anand Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
@@ -633,17 +653,17 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
                             <h4>Robin Beset</h4>
-                            <p class="text-muted">Admin Teguh Belajar</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            <p class="text-light">Admin Teguh Belajar</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/robinsilalahi_" aria-label="Diana Petersen Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
-                            <h4>Sandy Pencandu</h4>
-                            <p class="text-muted">Orang Baik kalo ada maunya</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            <h4>Sandy</h4>
+                            <p class="text-light">Orang Baik</p>
+                            <a class="btn btn-dark btn-social mx-2" href="" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
 
                         </div>
@@ -652,8 +672,8 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
-                            <p class="text-muted">Optional tergantung Mood</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            <p class="text-light">Optional tergantung Mood</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/jonathan.birila" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
 
                         </div>
@@ -735,8 +755,9 @@
                     <div class="col-lg-2 text-lg-start text-light">Copy right by:Frederick</div>
                     <div class="col-lg-2 text-lg-start"></div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/smkn7ptkofficial" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="bi bi-youtube"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!"></a>
