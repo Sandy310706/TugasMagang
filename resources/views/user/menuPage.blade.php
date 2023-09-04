@@ -40,7 +40,7 @@
     <!-- end loader -->
             <div id="content">
     <!-- header -->
-                <nav class="navbar navbar-expand-lg bg-dark p4">
+                <nav class="navbar navbar-expand-lg p4"  >
                     <div class="container-fluid">
                       <span class="navbar-brand kantin" href="#" >Kantin Si Imut :)</span>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,12 +48,18 @@
                       </button>
                       <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="right_header_info">
-                            <li class="button_user d-flex justify-content-end">
-                                <a class="button mr-4 bi bi-arrow-left" href="/"> back</a>
-                                <a class="button active mr-2" href="{{ url('/login') }}">Login</a>
-                                <a class="button" href="{{ url('/registrasi') }}">Register</a>
-                            </li>
-
+                            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                                <li class="nav-item"><a class="home nav-link" href="home">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#keranjang">Keranjang</a></li>
+                                @if(Route::has('login'))
+                                    @auth
+                                        <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"><i class="bi bi-door-open"></i>LOGOUT</a></li>
+                                    @else
+                                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                                    @endauth
+                                @endif
+                            </ul>
                         </div>
                       </div>
                     </div>
@@ -71,8 +77,8 @@
                     </div>
                 </div>
     <!-- section makanan -->
-                <section class="resip_section">
-                    <div class="container">
+                <section class="resip_section image">
+                    <div class="container ">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="owl-carousel owl-theme">
@@ -171,7 +177,7 @@
                     </div>
                     </div>
                 </section>
-    {{-- end section makanan --}}
+        {{-- end section makanan --}}
                 <div class="yellow_bg">
                     <div class="container">
                         <div class="row">
@@ -310,11 +316,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nama Makanan</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="product_blog_img foto">
+            <img class="fotomodal" src="{{asset("template/menuPage/images/hot-americano.png")}}" alt="">
+        </div>
+        <hr>
+        <li>Nama: Boostie Juice</li>
+        <li>harga: Rp. 15.000,00</li>
+        <li>Paket Special</li>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

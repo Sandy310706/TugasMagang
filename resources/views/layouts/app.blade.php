@@ -11,6 +11,7 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
@@ -23,9 +24,9 @@
                 <div class="z-2 sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="/">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                            Home
                         </a>
                         @if(Auth::user()->role == 'operator')
                             @auth
@@ -46,6 +47,10 @@
                                     <div class="sb-nav-link-icon"><i class="bi bi-cart-fill"></i></div>
                                     Kelola Pesanan
                                 </a>
+                                <a class="nav-link" href="{{ route('logout') }}">
+                                    <div class="sb-nav-link-icon pl-1"><i class="bi bi-box-arrow-right"></i></i></div>
+                                    Log out
+                                </a>
                             @endauth
                         @endif
                     </div>
@@ -57,6 +62,7 @@
                 <div class="container-fluid px-4">
                     @yield('Kelola Akun')
                     @yield('Kelola Menu')
+                    @yield('Kelola Menu Makanan')
                 </div>
             </main>
             @include('layouts.footer')
@@ -65,5 +71,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="{{ asset('template/adminlte/js/scripts.js') }}"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
 </body>
 </html>

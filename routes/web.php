@@ -7,6 +7,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\KelolaMakananController;
+use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingpageController;
@@ -40,18 +42,29 @@ Route::get('/home', function() {
 });
 //
 
-// == Operator Route ==
-Route::get('/operator/dashboard', [OperatorController::class, 'index']);
-Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
-Route::get('/menu', [MenuController::class, 'index'])->name('index');
-Route::get('/Ajax', [KelolaakunAjaxController::class, 'index']);
-Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('tambahAkuns');
-//
+Route::middleware('auth')->group(function() {
+    // == Operator Route ==
+    Route::get('/operator/dashboard', [OperatorController::class, 'index']);
+    Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
+    Route::get('/menu', [MenuController::class, 'index'])->name('index');
+    Route::get('/Ajax', [KelolaakunAjaxController::class, 'index'])->name('Ajaxakun.Index');
+    Route::post('/Ajax', [KelolaakunAjaxController::class, 'store'])->name('Ajaxakun.Store');
+    Route::get('/Ajax/{id}/Edit', [KelolaakunAjaxController::class, 'edit'])->name('Ajaxakun.Edit');
+    Route::put('/Ajax/{id}', [KelolaakunAjaxController::class, 'update'])->name('Ajaxakun.Update');
+    Route::delete('/Ajax/{id}', [KelolaakunAjaxController::class, 'destroy'])->name('Ajaxakun.Destroy');
+    Route::resource('KelolaAkun', AkunkelolaAjaxController::class);
 
-// == Admin Route ==
-Route::get('/admin/dashboard', [AdminController::class, 'index']);
-Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
-//
+    // == Admin Route ==
+    Route::get('/admin/dashboard', [AdminController::class, 'index']);
+    Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
+    Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
+    Route::post('/admin/menu/makanan', [KelolaMakananController::class, 'store'])->name('Store.Makanan');
+    Route::delete('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'delete'])->name('Delete.Makanan');
+    Route::put('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'update'])->name('Update.Makanan');
+
+});
+
+
 
 
 Route::get('/',[ContactController::class,'index']);
