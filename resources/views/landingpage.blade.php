@@ -15,13 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-<<<<<<< HEAD
-<<<<<<< HEAD
-        {{-- <link href="template/landingPage/css/styles.css" rel="stylesheet" /> --}}
         <link href="template/landingPage/css/css.css" rel="stylesheet" />
-=======
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
         <link href="template/landingPage/css/styles.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script>
@@ -46,10 +40,6 @@
             });
         });
     </script>
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -68,15 +58,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <li class="nav-item"><a class="menu nav-link" href="menu">Menu</a></li>
-=======
                         <li class="nav-item"><a class="nav-link" href="menu">Menu</a></li>
->>>>>>> main
-=======
                         <li class="nav-item"><a class="menu nav-link" href="menu">Menu</a></li>
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
@@ -107,15 +91,9 @@
         <!-- Portfolio Grid-->
         <section class="content page-section bg-blue" id="portfolio">
             <div class="content">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <div class="text-center">
-=======
                 <div class=" text-center">
->>>>>>> main
-=======
                 <div class="text-center">
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                     <h2 class="produk section-heading text-uppercase">Produk Bestseller</h2>
                     <h3 class="prdk section-subheading text-muted">Makanan Yang sering Dipesan</h3>
                 </div>
@@ -257,11 +235,6 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 mb-4">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -339,10 +312,6 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 mb-4">
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -352,10 +321,6 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                     <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
@@ -370,15 +335,10 @@
                         <h2 class="minum section-heading text-uppercase">Produk Bestseller</h2>
                         <h3 class="minuman section-subheading text-muted"> Minuman Yang sering Dipesan</h3>
                     </div>
-<<<<<<< HEAD
-=======
                     <div class="minumann text-center">
                         <h2 class="minum section-heading text-uppercase">Produk Bestseller</h2>
                         <h3 class="minuman section-subheading text-muted"> Minuman Yang sering Dipesan</h3>
                     </div>
->>>>>>> main
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                     <div class="col-lg-3 col-sm-6 mb-4">
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/minuman.jpg" class="card-img-top" alt="...">
@@ -534,10 +494,6 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 mb-4">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -548,11 +504,6 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 mb-4">
-<<<<<<< HEAD
-=======
->>>>>>> main
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                         <div class="card" style="width: 18rem;">
                             <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -700,23 +651,15 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="team-member">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
                             <h4 class="drick" id="drick">Frederick A</h4>
                             <p class="text-light">Mael CS SMKN 7 Pontianak</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/rickk__76" aria-label="Parveen Anand Twitter Profile"><i class="bi bi-instagram"></i></a>
-<<<<<<< HEAD
-=======
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
                             <h4 class="drick" id="drick">PPLG.Frederick A</h4>
                             <p class="text-muted">Tak pernah Juara</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Instagram Profile"><i class="fab fa-instagram"></i></a>
->>>>>>> main
-=======
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
+
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
@@ -724,38 +667,26 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
                             <h4>Robin Beset</h4>
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <p class="text-light">Admin Teguh Belajar</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/robinsilalahi_" aria-label="Diana Petersen Twitter Profile"><i class="bi bi-instagram"></i></a>
-=======
                             <p class="text-muted">Admin Teguh Belajar</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Instagram Profile"><i class="fab fa-instagram"></i></a>
->>>>>>> main
-=======
                             <p class="text-light">Admin Teguh Belajar</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/robinsilalahi_" aria-label="Diana Petersen Twitter Profile"><i class="bi bi-instagram"></i></a>
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
-<<<<<<< HEAD
                             <h4>Sandy Pencandu</h4>
-<<<<<<< HEAD
                             <p class="text-light">Orang Baik kalo ada maunya</p>
                             <a class="btn btn-dark btn-social mx-2" href="" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
-=======
                             <p class="text-muted">Orang Baik kalo ada maunya</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
->>>>>>> main
-=======
                             <h4>Sandy</h4>
                             <p class="text-light">Orang Baik</p>
                             <a class="btn btn-dark btn-social mx-2" href="" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
 
                         </div>
@@ -764,18 +695,12 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <p class="text-light">Optional tergantung Mood</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/jonathan.birila" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
-=======
                             <p class="text-muted">Optional tergantung Mood</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
->>>>>>> main
-=======
                             <p class="text-light">Optional tergantung Mood</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/jonathan.birila" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
 
                         </div>
@@ -857,20 +782,14 @@
                     <div class="col-lg-2 text-lg-start text-light">Copy right by:Frederick</div>
                     <div class="col-lg-2 text-lg-start"></div>
                     <div class="col-lg-4 my-3 my-lg-0">
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/smkn7ptkofficial" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="bi bi-youtube"></i></a>
-=======
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
->>>>>>> main
-=======
                         <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/smkn7ptkofficial" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="bi bi-youtube"></i></a>
->>>>>>> 2edb2d681b60cdab6ba398104514570ba644c8f2
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!"></a>
