@@ -17,3 +17,4 @@ class MenuController extends Controller
         return view('user.menuPage');
     }
 }
+

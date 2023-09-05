@@ -651,10 +651,6 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/frederick.02.jpg" alt="..." />
-                            <h4 class="drick" id="drick">Frederick A</h4>
-                            <p class="text-light">Mael CS SMKN 7 Pontianak</p>
-                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/rickk__76" aria-label="Parveen Anand Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
                             <h4 class="drick" id="drick">PPLG.Frederick A</h4>
                             <p class="text-muted">Tak pernah Juara</p>
@@ -669,10 +665,6 @@
                             <h4>Robin Beset</h4>
                             <p class="text-light">Admin Teguh Belajar</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/robinsilalahi_" aria-label="Diana Petersen Twitter Profile"><i class="bi bi-instagram"></i></a>
-                            <p class="text-muted">Admin Teguh Belajar</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Instagram Profile"><i class="fab fa-instagram"></i></a>
-                            <p class="text-light">Admin Teguh Belajar</p>
-                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/robinsilalahi_" aria-label="Diana Petersen Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
@@ -682,11 +674,6 @@
                             <h4>Sandy Pencandu</h4>
                             <p class="text-light">Orang Baik kalo ada maunya</p>
                             <a class="btn btn-dark btn-social mx-2" href="" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
-                            <p class="text-muted">Orang Baik kalo ada maunya</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
-                            <h4>Sandy</h4>
-                            <p class="text-light">Orang Baik</p>
-                            <a class="btn btn-dark btn-social mx-2" href="" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
 
                         </div>
@@ -695,10 +682,6 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
                             <h4>Kura Kura</h4>
-                            <p class="text-light">Optional tergantung Mood</p>
-                            <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/jonathan.birila" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
-                            <p class="text-muted">Optional tergantung Mood</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
                             <p class="text-light">Optional tergantung Mood</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://instagram.com/jonathan.birila" aria-label="Larry Parker Twitter Profile"><i class="bi bi-instagram"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
