@@ -10,6 +10,8 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMakananController;
 use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LandingpageController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -17,9 +19,9 @@ Route::fallback(function () {
 });
 //
 
-Route::get('/', function () {
-    return view('landingpage');
-})->middleware('web');
+// Route::get('/', function () {
+//     return view('landingpage');
+// })->middleware('web');
 
 // == Authentikasi Route ==
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
@@ -64,3 +66,7 @@ Route::middleware('auth')->group(function() {
 
 
 
+
+Route::get('/',[ContactController::class,'index']);
+Route::get('/Landing',[Landingpage::class,'landingpage']);
+Route::post('contact_mail',[ContactController::class,'contact_mail_send']);

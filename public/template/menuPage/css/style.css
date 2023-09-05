@@ -5,9 +5,19 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 /*--------------------------------------------------------------------- basic ---------------------------------------------------------------------*/
 
+
+/* .image {
+    height: 991px;
+    width: 1270px;
+} */
+
 .foto{
     /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
     /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+
+img.fotomenu {
+
 }
 
 .seluruh {
@@ -162,6 +172,11 @@ img {
 .navbar-form input {
     border: none !important;
 }
+
+.navbar {
+    background: #3255AB;
+}
+
 .badge {
     font-weight: 500;
 }
@@ -465,12 +480,23 @@ header .container-fluid {
     color: #f8c90d !important;
 }
 .resip_section {
-    background: black;
+    background: #D9D9D9;
     margin-top: 0;
     padding: 60px 0px 50px 0px;
-    border-top: solid rgba(255, 255, 255, 0.1) 1px;
-    box-shadow: inset 0 10px 30px -16px #000;
+    /* height: 911cm;
+    width: 1270cm; */
+    /* border-top: solid rgba(255, 255, 255, 0.1) 1px; */
+    /* box-shadow: inset 0 10px 30px -16px #000; */
 }
+
+/* .image {
+    width: 911px;
+    height: 1270px;
+    background-repeat:  no-repeat;
+    background-image: url("template/menuPage/images/gambar.gelombang pasti 2.jpg");
+    background-size: cover;
+} */
+
 .ourheading h2 {
     font-size: 45px;
     font-weight: 500;
@@ -967,13 +993,20 @@ a.article:hover {
     font-weight: 500;
 }
 .yellow_bg {
-    background-color: #e3d105;
+    background-color: #D9D9D9;
     padding: 20px 0px;
 }
 .yellow_bg .title {
     padding-bottom: 0px;
     text-align: center;
 }
+
+.resip-section .image {
+    background-image: url(../images/gambar\ gelombang\ pasti\ 2.jpg);
+
+
+}
+
 .about_page .about span {
     padding-top: 15px;
 }
