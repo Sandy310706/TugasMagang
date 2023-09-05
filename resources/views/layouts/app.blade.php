@@ -39,7 +39,7 @@
                         @elseif(Auth::user()->role == 'admin')
                             @auth
                                 <div class="sb-sidenav-menu-heading">Fitur</div>
-                                <a class="nav-link" href="{{ route('menuSetting') }}">
+                                <a class="nav-link" href="{{ route('Admin.Menu') }}">
                                     <div class="sb-nav-link-icon"><i class="bi bi-journals"></i></div>
                                     Kelola Menu
                                 </a>

@@ -31,7 +31,7 @@ Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
         return redirect('');
     }elseif(Auth::user()->role == 'admin'){
-        return redirect()->url('/admin/dashboard');
+        return redirect()->route('Admin.Dashboard');
     }elseif(Auth::user()->role == 'operator'){
         return redirect()->url('/operator/dashboard');
     }else{
@@ -53,8 +53,8 @@ Route::middleware('auth')->group(function() {
     Route::resource('KelolaAkun', AkunkelolaAjaxController::class);
 
     // == Admin Route ==
-    Route::get('/admin/dashboard', [AdminController::class, 'index']);
-    Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('Admin.Dashboard');
+    Route::get('/admin/menu', [MenuController::class, 'index'])->name('Admin.Menu');
     Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
     Route::post('/admin/menu/makanan', [KelolaMakananController::class, 'store'])->name('Store.Makanan');
     Route::delete('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'delete'])->name('Delete.Makanan');
