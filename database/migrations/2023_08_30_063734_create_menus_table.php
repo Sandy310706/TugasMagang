@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nama_makanan_id')->constrained('nama_makanans');
-            $table->foreignId('nama_minuman_id')->constrained('nama_minumans');
             $table->foreignId('kelola_menu_id')->constrained('kelola_menus');
             $table->string('nama');
             $table->integer('harga');

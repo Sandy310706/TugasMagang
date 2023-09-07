@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaakunAjaxController;
 
@@ -49,5 +50,8 @@ Route::post('/Ajax-Store', [KelolaakunAjaxController::class, 'store'])->name('ta
 // == Admin Route ==
 Route::get('/admin/dashboard', [AdminController::class, 'index']);
 Route::get('/admin/menu', [MenuController::class, 'adminMenu'])->name('menuSetting');
+Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
 //
+Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+Route::Post('/invoice-store', [InvoiceController::class, 'store'])->name('invoiceCreate');
 

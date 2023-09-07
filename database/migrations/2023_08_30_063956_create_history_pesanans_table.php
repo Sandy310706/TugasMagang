@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('history_pesanans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pesan_id')->constrained('pesans');
-            $table->string('nama_makanan');
-            $table->string('nama_minuman');
+            $table->string('nama');
+            // $table->foreignId('pesan_id')->constrained('pesans');
             $table->integer('total_harga');
             $table->timestamps();
         });

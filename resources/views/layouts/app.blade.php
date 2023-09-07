@@ -46,6 +46,10 @@
                                     <div class="sb-nav-link-icon"><i class="bi bi-cart-fill"></i></div>
                                     Kelola Pesanan
                                 </a>
+                                <a class="nav-link" href="{{ route('History') }}">
+                                    <div class="sb-nav-link-icon"><i class="bi bi-cart-fill"></i></div>
+                                    Invoice
+                                </a>
                             @endauth
                         @endif
                     </div>
@@ -57,6 +61,7 @@
                 <div class="container-fluid px-4">
                     @yield('Kelola Akun')
                     @yield('Kelola Menu')
+                    @yield('History')
                 </div>
             </main>
             @include('layouts.footer')

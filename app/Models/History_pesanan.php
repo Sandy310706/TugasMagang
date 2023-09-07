@@ -10,5 +10,10 @@ class History_pesanan extends Model
 {
     use HasFactory;
 
-
+    protected $guarded = ['id', 'pesan_id'];
+    protected $fillable = ['nama','pesan_id','total_harga'];
+    public function Pesan():BelongsTo
+    {
+        return $this -> belongsTo (pesan::class);
+    }
 }
