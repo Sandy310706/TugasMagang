@@ -10,7 +10,6 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMakananController;
 use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingpageController;
 
 // == Errors Route ==
@@ -19,9 +18,9 @@ Route::fallback(function () {
 });
 //
 
-// Route::get('/', function () {
-//     return view('landingpage');
-// })->middleware('web');
+Route::get('/', function () {
+    return view('landingpage');
+})->middleware('web');
 
 // == Authentikasi Route ==
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
@@ -57,16 +56,15 @@ Route::middleware('auth')->group(function() {
     // == Admin Route ==
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('Admin.Dashboard');
     Route::get('/admin/menu', [MenuController::class, 'index'])->name('Admin.Menu');
+    Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
+    Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
     Route::post('/admin/menu/makanan', [KelolaMakananController::class, 'store'])->name('Store.Makanan');
     Route::delete('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'delete'])->name('Delete.Makanan');
     Route::put('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'update'])->name('Update.Makanan');
-
 });
 
-
-
-
-Route::get('/',[ContactController::class,'index']);
-Route::get('/Landing',[Landingpage::class,'landingpage']);
-Route::post('contact_mail',[ContactController::class,'contact_mail_send']);
+Route::get('/menuapa', function()
+{
+    return view('admin.menu');
+});

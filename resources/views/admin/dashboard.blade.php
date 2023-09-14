@@ -1,9 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.Admin')
 
-@section('title', 'Dasboard | Admin')
+@section('title')
 
-@section('content')
-
-    
-
+@section('dashboard')
+     <p>Dashboard</p>
 @endsection

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <title>@yield('title')</title>
 </head>
-<body>
-    @yield('Admin.Dashboard')
-    @yield('Admin.KelolaMenu')
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<body class="bg-slate-200 flex">
+    @include('layouts.sidebar')
+    <div class="ml-[20%]">
+        @include('layouts.navbar')
+        @yield('dashboard')
+    </div>
 </body>
 </html>
