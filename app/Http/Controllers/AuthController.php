@@ -32,7 +32,7 @@ class AuthController extends Controller
                 return redirect('');
             }elseif(Auth::user()->role == 'admin'){
                 $request->session()->regenerate();
-                return view('user.dashboard');
+                return view('admin.dashboard');
             }elseif(Auth::user()->role == 'operator'){
                 $request->session()->regenerate();
                 return redirect('/operator/dashboard');
