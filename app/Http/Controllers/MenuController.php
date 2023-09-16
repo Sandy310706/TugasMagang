@@ -8,18 +8,18 @@ use function PHPUnit\Framework\fileExists;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function KelolaMenu()
     {
-        $data = Menu::all();
-        return view('admin.menu', compact('data'));
+        $data = Menu::latest()->paginate('10');
+        return view('admin.kelolamenu', compact('data'));
     }
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
-            'harga' => 'required|numeric',
             'foto' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'nama' => 'required',
             'kategori' => 'required',
+            'harga' => 'required|numeric',
         ]);
         $data = new Menu;
         $data->nama = $request->nama;

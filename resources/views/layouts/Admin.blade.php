@@ -17,11 +17,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <title>@yield('title')</title>
 </head>
-<body class="bg-slate-200 flex">
-    @include('layouts.sidebar')
-    <div class="ml-[20%]">
-        @include('layouts.navbar')
-        @yield('dashboard')
-    </div>
+<body class="bg-slate-200">
+    <div class="flex">
+        @include('layouts.sidebar')
+        <div class="ml-[20%] w-full">
+            <div class="bg-teal-400 h-20 flex">
+                <h1 class="text-white font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
+            </div>
+            <div class="container p-4">
+                @yield('dashboard')
+                @yield('kelola menu')
+                @yield('modalCreate')
+            </div>
+        </div>
+      </div>
 </body>
 </html>

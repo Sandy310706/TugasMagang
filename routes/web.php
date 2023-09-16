@@ -54,8 +54,8 @@ Route::middleware('auth')->group(function() {
     Route::resource('KelolaAkun', AkunkelolaAjaxController::class);
 
     // == Admin Route ==
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('Admin.Dashboard');
-    Route::get('/admin/menu', [MenuController::class, 'index'])->name('Admin.Menu');
+    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
+Route::get('/admin/menu', [MenuController::class, 'KelolaMenu'])->name('Admin.Menu');
     Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
@@ -67,4 +67,8 @@ Route::middleware('auth')->group(function() {
 Route::get('/menuapa', function()
 {
     return view('admin.menu');
+});
+
+Route::get('/ModalCreate', function(){
+    return view('components.modal-create');
 });
