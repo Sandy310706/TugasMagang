@@ -11,5 +11,5 @@ class Makanan extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['nama', 'harga'];
+    protected $fillable = ['nama', 'harga', 'foto'];
 }

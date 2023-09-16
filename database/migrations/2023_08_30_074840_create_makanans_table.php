@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->integer('harga');
+            $table->string('foto');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });
