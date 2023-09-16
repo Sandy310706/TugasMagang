@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaakunAjaxController;
+use App\Http\Controllers\PostController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -54,4 +55,9 @@ Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
 //
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
 Route::Post('/invoice-store', [InvoiceController::class, 'store'])->name('invoiceCreate');
+
+// ==Feedback Route==
+Route::get('/landingpage',[PostController::class,'index'])->name('feedback');
+Route::post('/landingpage',[PostController::class,'comment'])->name('feedbacks');
+
 
