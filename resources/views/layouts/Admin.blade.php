@@ -25,6 +25,7 @@
                 <h1 class="text-white font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
             </div>
             <div class="container p-4">
+                @yield('testing')
                 @yield('dashboard')
                 @yield('kelola menu')
                 @yield('modalCreate')

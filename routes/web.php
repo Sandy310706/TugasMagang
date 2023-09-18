@@ -66,7 +66,7 @@ Route::get('/admin/menu', [MenuController::class, 'KelolaMenu'])->name('Admin.Me
 
 Route::get('/menuapa', function()
 {
-    return view('admin.menu');
+    return view('welcome');
 });
 
 Route::get('/ModalCreate', function(){

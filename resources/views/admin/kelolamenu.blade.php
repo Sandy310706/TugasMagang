@@ -4,7 +4,7 @@
 @section('headerNav', 'Kelola Menu')
 @section('kelola menu')
 <div class="w-full">
-    <button class="my-2 p-2 bg-blue-400 text-white rounded-md font-outfit hover:bg-blue-500">Tambah Menu</button>
+    <button data-modal-trigger="modal" id="showModal" class="my-2 p-2 bg-blue-400 text-white rounded-md font-outfit hover:bg-blue-500">Tambah Menu</button>
     <table class="table-fixed w-full p-4 rounded-lg font-outfit">
         <thead class="bg-slate-300">
             <th>No</th>
@@ -30,7 +30,7 @@
         </tbody>
     </table>
 </div>
-<div class="w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute top-5">
+<div id="modal" class="wc-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute top-5 hidden">
     <div class="p-4 mb-2">
         <h1 class="text-4xl font-outfit">Tambah Data</h1>
     </div>
@@ -57,10 +57,11 @@
                 <input type="file" id="file" name="file" class="rounded p-1">
             </div>
             <div class="flex justify-end">
-                <button class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-slate-500 to-slate-800 text-white mr-2">Tutup</button>
-                <button class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white">Input</button>
+                <button data-modal-hide="defaultModal" type="button" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-slate-500 to-slate-800 text-white mr-2">Tutup</button>
+                <button data-modal-hide="defaultModal" type="button" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white">Input</button>
             </div>
         </form>
     </div>
 </div>
+<script src="{{ asset('js/admin.js') }}"></script>
 @endsection
