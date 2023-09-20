@@ -1,11 +1,3 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="index.html">Welcome @auth {{ Auth::user()->nama }} @endauth</a>
-    <!-- Sidebar Toggle-->
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-    <!-- Navbar Search-->
-    <!-- Navbar-->
-    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-
-    </ul>
-</nav>
+<div class="bg-teal-400 h-20 flex">
+    <h1 class="text-white font-medium text-3xl my-auto ml-4">@yield('Nav Header')</h1>
+</div>
