@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #ffffdd;
+  background-color: #f0f0f0;
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -146,37 +146,6 @@ body {
   transform: scale(0);
 }
 
-#naskun {
-  top: 60px;
-  left: 1000px;
-  z-index: -3;
-}
-
-#naskun img {
-  height: 400px;
-}
-
-#nasgor {
-  top: 300px;
-  left: 800px;
-  z-index: -1;
-}
-
-#nasgor img {
-  height: 400px;
-}
-
-#geprek {
-  display: inline;
-  top: 300px;
-  left: 1080px;
-  z-index: -2;
-}
-
-#geprek img {
-  height: 400px;
-}
-
 /* Menu rekomendasi */
 
 section .menu {
@@ -299,7 +268,7 @@ h1.makanan {
 }
 
 .about {
-  background-color: #a2c579;
+  background-color:#96C291;
 }
 
 .about-1 {
