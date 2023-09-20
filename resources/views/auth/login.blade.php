@@ -99,6 +99,5 @@
             }
         }
     </script>
-        </script>
     </body>
 </html>

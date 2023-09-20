@@ -11,6 +11,7 @@ use App\Http\Controllers\KelolaMakananController;
 use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\FeedbackController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -72,3 +73,12 @@ Route::get('/menuapa', function()
 Route::get('/ModalCreate', function(){
     return view('components.modal-create');
 });
+
+
+Route::middleware('auth')->group(function(){
+
+    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
+    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
+
+});
+
