@@ -1,370 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title id="judul">Kantin Sekolah</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/bootstrap.min.css")}}">
-    <!-- owl css -->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/owl.carousel.min.css")}}">
-    <!-- style css -->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/style.css")}}">
-    <!-- responsive-->
-    <link rel="stylesheet" href="{{asset("template/menuPage/css/responsive.css")}}">
-    <!-- awesome fontfamily -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- icon bootstrap -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    {{-- link dan cdn bootstrap --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <title>Document</title>
 </head>
-<!-- body -->
-<body class="main-layout Recipes_page">
-    <!-- loader  -->
-        {{-- <div class="loader_bg">
-            <div class="loader"><img src="{{asset("template/menuPage/images/loading.gif")}}" alt="" /></div>
-        </div>
-        <div class="wrapper"> --}}
-    <!-- end loader -->
-            <div id="content">
-    <!-- header -->
-                <nav class="navbar navbar-expand-lg p4"  >
-                    <div class="container-fluid">
-                      <span class="navbar-brand kantin" href="#" >Kantin Si Imut :)</span>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNav">
-                        <div class="right_header_info">
-                            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                                <li class="nav-item"><a class="home nav-link" href="home">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#keranjang">Keranjang</a></li>
-                                @if(Route::has('login'))
-                                    @auth
-                                        <li class="nav-item"><a class="nav-link" href="{{ url('logout') }}"><i class="bi bi-door-open"></i>LOGOUT</a></li>
-                                    @else
-                                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                    @endauth
-                                @endif
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </nav>
-    <!-- end header -->
-                <div class="yellow_bg">
-                    <div class="container">
-                        <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h2>Makanan Kami</h2>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-    <!-- section makanan -->
-                <section class="resip_section image">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item seluruh">
-                                        <div class="product_blog_img foto">
-                                            <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                        </div>
-                                        <div class="product_blog_cont foto">
-                                            <h3>Ikan semur </h3>
-                                            <h4><span class="theme_color">Rp.  </span>30.000,00</h4>
-                                        </div>
-                                    </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Spageti</h3>
-                                        <h4><span class="theme_color">Rp. </span>60.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Telur Mata Sapi</h3>
-                                    <h4><span class="theme_color">Rp. </span>50.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Kare</h3>
-                                    <h4><span class="theme_color">Rp. </span>40.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Roti Canai</h3>
-                                    <h4><span class="theme_color">Rp. </span>40.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Ikan Semur</h3>
-                                    <h4><span class="theme_color">Rp. </span>30.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Spageti</h3>
-                                    <h4><span class="theme_color">Rp. </span>70.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Telur Mata Sapi</h3>
-                                    <h4><span class="theme_color">Rp. </span>20.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Kare</h3>
-                                    <h4><span class="theme_color">Rp. </span>60.000,00</h4>
-                                </div>
-                            </div>
-                            <div class="item seluruh">
-                                <div class="product_blog_img foto">
-                                    <img src="{{asset("template/menuPage/images/rs5.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                </div>
-                                <div class="product_blog_cont foto">
-                                    <h3>Roti Canai</h3>
-                                    <h4><span class="theme_color">Rp. </span>40.000,00</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                </section>
-        {{-- end section makanan --}}
-                <div class="yellow_bg">
-                    <div class="container">
-                        <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h2>Minuman Kami</h2>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-        <!-- section Minuman -->
-                <section class="resip_section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item seluruh">
-                                        <div class="product_blog_img foto">
-                                            <img src="{{asset("template/menuPage/images/smoothie-1.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                        </div>
-                                    <div class="product_blog_cont foto foto ">
-                                        <h3>Homemade</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/smoothie-2.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Noodles</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/smoothie-3.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Egg</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/smoothie-4.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Sushi Dizzy</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>The Coffee Break</h3>
-                                        <h4><span class="theme_color">Rp. </span>12.500,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Homemade</h3>
-                                        <h4><span class="theme_color">Rp. </span>10.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-espresso.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Noodles</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/hot-latte.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Egg</h3>
-                                        <h4><span class="theme_color">Rp. </span>12.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/iced-americano.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>Sushi Dizzy</h3>
-                                        <h4><span class="theme_color">Rp. </span>20.000,00</h4>
-                                    </div>
-                                </div>
-                                <div class="item seluruh">
-                                    <div class="product_blog_img foto">
-                                        <img src="{{asset("template/menuPage/images/iced-cappuccino.png")}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="#" />
-                                    </div>
-                                    <div class="product_blog_cont foto">
-                                        <h3>The Coffee Break</h3>
-                                        <h4><span class="theme_color">Rp. </span>15.000,00</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <footer>
-                    <div class="footer">
-                        <div class="copyright bg-secondary">
-                            <div class="container">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-3 p-4" >
-                                        <span class="dinone" style="color: white">Kontak Kami :</span>
-                                        <li class="dinone" style="color: white;"><i class="bi bi-telephone-fill"></i>   <a href="#">    089796756453</a></li>
-                                        <li class="dinone" style="color: white;"><i class="bi bi-envelope-fill"></i>    <a href="#">    KantinSekolah@gmail.com</a></li>
-                                        <li class="dinone" style="color: white;"><i class="bi bi-house-door-fill"></i>  <a href="#">    Jl. Tanjung Raya 2 , Pontianak</a></li>
-                                    </div>
-                                    <div class="col-9 d-flex justify-content-center pt-5">
-                                        <p style="color: white">© 2023 All Rights Reserved. Design by Si Imut</a>   <i class="bi bi-emoji-smile-fill" style="color: black;"></i>.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+
+<body>
+    <nav class=" navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <h3 class="navbar-brand">SMKN7Pontianak</h3>
+            <div class="justift-content-center">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>
+                            Log Out</a></li>
+                </ul>
             </div>
         </div>
-
-            <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nama Makanan</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="product_blog_img foto">
-            <img class="fotomodal" src="{{asset("template/menuPage/images/hot-americano.png")}}" alt="">
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <hr>
-        <li>Nama: Boostie Juice</li>
-        <li>harga: Rp. 15.000,00</li>
-        <li>Paket Special</li>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
+    </nav>
 
-    <div class="overlay"></div>
-    <!-- Javascript files-->
-    <script src="{{asset("template/menuPage/js/jquery.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/popper.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/bootstrap.bundle.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/owl.carousel.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/custom.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/jquery.mCustomScrollbar.concat.min.js")}}"></script>
-    <script src="{{asset("template/menuPage/js/jquery-3.0.0.min.js")}}"></script>
-<script>
-         $(document).ready(function() {
-           var owl = $('.owl-carousel');
-           owl.owlCarousel({
-             margin: 10,
-             nav: true,
-             loop: true,
-             responsive: {
-               0: {
-                 items: 1
-               },
-               600: {
-                 items: 2
-               },
-               1000: {
-                 items: 5
-               }
-             }
-           })
-         })
-      </script>
+    <div class="card-container">
+        <h1 class="makanan text-center">makanan</h1>
+        <div class="card-menu">
+            <div class="card">
+                <img src="template/menupage/images/geprek.jpeg" alt="">
+                <div class="kontent">
+                    <h3>geprek</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn">Pesan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="template/menupage/images/ayam panggang.jpeg" alt="">
+                <div class="kontent">
+                    <h3>ayam mael</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn ">Pesan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="template/menupage/images/wagyu.jpg" alt="">
+                <div class="kontent">
+                    <h3>sapi kacong dipanggang</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn">Pesan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="template/menupage/images/bipang.jpg" alt="">
+                <div class="kontent">
+                    <h3>makanan budak sanak</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn ">Pesan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <h1 class="minuman text-center">Minuman</h1>
+        <div class="card-menu">
+            <div class="card">
+                <img src="template/menupage/images/vodka.jpeg" alt="">
+                <div class="kontent">
+                    <h3>geprek</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn">Pesan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="template/menupage/images/jack daniel.jpeg" alt="">
+                <div class="kontent">
+                    <h3>ayam mael</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn ">Pesan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="template/menupage/images/anggur malaysia.jpg" alt="">
+                <div class="kontent">
+                    <h3>sapi kacong dipanggang</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn">Pesan</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="template/menupage/images/anggur merah.jpg" alt="">
+                <div class="kontent">
+                    <h3>makanan budak sanak</h3>
+                    <p>Rp.100.000</p>
+                    <button class="btn ">Pesan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+        <div class="container footer-container">
+            <div class="sosmed">
+                <ul>
+                    <li><a href=""><i class="bi bi-envelope-fill"> SMKN7Pontianak@gmail.com</i></a></li>
+                    <li><a href=""><i class="bi bi-telephone-fill"></i> 1244234</a></li>
+                    <li><a href=""><i class="bi bi-instagram"></i> SMKN7Pontianak</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copy right by Babang Frederick</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        </script>
+    <script src="template/menupage/js/script.js"></script>
 </body>
+
 </html>
