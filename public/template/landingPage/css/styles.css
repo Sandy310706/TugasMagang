@@ -509,7 +509,7 @@ section#contact {
     opacity: 1;
     transform: translateX(0);
   }
-  
+
   #mainNav .navbar-brand {
      font-size: 20px;
   }
@@ -792,7 +792,7 @@ section#contact {
     flex-direction: row;
     width: 100%;
   }
-  
+
   .hijau{
     width: 0;
   }
@@ -823,7 +823,7 @@ section#contact {
     font-size: 1em;
     letter-spacing: -1px;
   }
-  
+
   .welcome{
     font-size: 20px;
     line-height: 30px;
@@ -910,7 +910,7 @@ section#contact {
 }
 
 @media only screen and (min-width: 1200px) {
-  
+
   .welcome{
     font-size: 30px;
     line-height: 40px;
@@ -928,6 +928,6 @@ section#contact {
     width: 300px;
     top:840px;
   }
+
 }
 
-  

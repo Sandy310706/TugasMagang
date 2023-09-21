@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.Admin')
+@section('title', 'Admin | Dashboard')
+@section('headerNav', 'Dashboard')
 
-@section('title', 'Dasboard | Admin')
-
-@section('content')
-
-    
-
+@section('dashboard')
+    <p>Total Menu = {{ $totalMenu }}</p>
+    <p>Total Pengguna= {{ $totalAkun }}</p>
 @endsection
