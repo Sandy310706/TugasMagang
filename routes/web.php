@@ -4,17 +4,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
-use App\Http\Controllers\KelolaMenuController;
-use App\Http\Controllers\HistoriController;
+use App\Http\Controllers\KelolaMakananController;
+use App\Http\Controllers\AkunkelolaAjaxController;
+use App\Http\Controllers\KelolaakunAjaxController;
+use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\FeedbackController;
 
+// == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
 });
+//
+
 Route::get('/', function () {
     return view('landingpage');
 })->middleware('web');
+
 // == Authentikasi Route ==
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
@@ -32,21 +40,48 @@ Route::get('/home', function() {
         return redirect('login');
     }
 });
-Route::middleware('auth')->group(function() {
+
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
+//
+
+Route::middleware('auth')->group(function() {
+
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
+    Route::get('/menu', [MenuController::class, 'index'])->name('index');
+    Route::get('/Ajax', [KelolaakunAjaxController::class, 'index'])->name('Ajaxakun.Index');
+    Route::post('/Ajax', [KelolaakunAjaxController::class, 'store'])->name('Ajaxakun.Store');
+    Route::get('/Ajax/{id}/Edit', [KelolaakunAjaxController::class, 'edit'])->name('Ajaxakun.Edit');
+    Route::put('/Ajax/{id}', [KelolaakunAjaxController::class, 'update'])->name('Ajaxakun.Update');
+    Route::delete('/Ajax/{id}', [KelolaakunAjaxController::class, 'destroy'])->name('Ajaxakun.Destroy');
     Route::resource('KelolaAkun', AkunkelolaAjaxController::class);
 
     // == Admin Route ==
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
-    Route::get('/admin/kelolamenu', [KelolaMenuController::class, 'index'])->name('Admin.KelolaMenu');
-    Route::post('/admin/createmenu', [KelolaMenuController::class, 'store'])->name('Menu.Store');
-    Route::put('/admin/updatemenu/{id}', [KelolaMenuController::class, 'update'])->name('Menu.Update');
-    Route::delete('/admin/deletemenu/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
+    Route::get('/admin/menu', [MenuController::class, 'KelolaMenu'])->name('Admin.Menu');
+    Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
+    Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
+    Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
+    Route::post('/admin/menu/makanan', [KelolaMakananController::class, 'store'])->name('Store.Makanan');
+    Route::delete('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'delete'])->name('Delete.Makanan');
+    Route::put('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'update'])->name('Update.Makanan');
 });
 
-Route::get('/histori', [HistoriController::class, 'index']);
-Route::get('/menu', [MenuController::class, 'index'])->name('index');
+Route::get('/menuapa', function()
+{
+    return view('admin.menu');
+});
+
+Route::get('/ModalCreate', function(){
+    return view('components.modal-create');
+});
+
+
+Route::middleware('auth')->group(function(){
+
+
+
+});
+

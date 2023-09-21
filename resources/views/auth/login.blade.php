@@ -56,6 +56,11 @@
         </style>
     </head>
     <body>
+        @if(session('error'))
+        <div class="alert alert-danger">
+            <p class="alerts">{{session('error')}}</p>
+        </div>
+        @endif
         <svg xmlns="http://www.w3.org/2000/svg" width="245" height="247" viewBox="0 0 245 247" fill="none" class="kiri-atas">
             <path d="M245 123.5C245 191.707 190.155 247 122.5 247C54.8451 247 0 191.707 0 123.5C0 55.2928 54.8451 0 122.5 0C190.155 0 245 55.2928 245 123.5Z" fill="#1F6E8C"/>
         </svg>

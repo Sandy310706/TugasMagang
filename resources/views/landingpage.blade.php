@@ -9,12 +9,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="template/landingPage/css/styles.css">
-    <title>Document</title>
+    <title>Landing Page</title>
 </head>
 
 <body>
+
+    @if (session('login'))
+    <div class="alert alert-success">
+        <h1>{{session('login')}}</h1>
+    @endif
     <div class="svg-container">
         <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646"
             viewBox="0 0 517 646" fill="none">
@@ -22,17 +29,16 @@
                 d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z"
                 fill="#016A70" />
         </svg>
-        <svg class="hijau position-relative" id="biru" xmlns="http://www.w3.org/2000/svg" width="355" height="433"
-            viewBox="0 0 355 433" fill="none">
-            <path
-                d="M306.16 421.347C179.081 488.795 260.601 228.62 179.161 182.068C26.1006 222.62 -66.3994 111.12 60.5 -41.5001C158.112 -158.897 356.144 -40.134 420.226 80.604C484.309 201.342 433.24 353.898 306.16 421.347Z"
-                fill="#D2DE32" />
-        </svg>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
+        <div class="container-fluid d-flex">
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <h3 class="navbar-brand ml-5">SMKN7Pontianak</h3>
-
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
@@ -44,13 +50,6 @@
                 </ul>
             </div>
         </div>
-
-        <div class="menu-toggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </nav>
     <div class="masthead">
         <div class="container">
@@ -60,7 +59,7 @@
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="image"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
+                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -71,7 +70,7 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -79,7 +78,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -87,7 +86,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -95,7 +94,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -113,12 +112,6 @@
             <path
                 d="M421.605 420.051C354.627 549.81 167.928 586.657 4.60249 502.352C-158.723 418.047 -228.704 248.708 -161.725 118.949C-94.747 -10.8097 138.286 -23.7404 247.153 32.454C410.479 116.759 488.584 290.292 421.605 420.051Z"
                 fill="#016A70" />
-        </svg>
-        <svg class="about-kuning position-absolute" xmlns="http://www.w3.org/2000/svg" width="438" height="657"
-            viewBox="0 0 438 657" fill="none">
-            <path
-                d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z"
-                fill="#D2DE32" />
         </svg>
         <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353" height="483"
             viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
@@ -155,10 +148,10 @@
         </div>
 
         <div class="contact page-section" id="feedback">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase mb-5">Contact Us</h2>
+            </div>
             <div class="container contact-form">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase mb-5">Contact Us</h2>
-                </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->
                 <!-- * * * * * * * * * * * * * * *-->
@@ -166,20 +159,13 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form method="POST" action="{{route('Feedback')}}" data-sb-form-api-token="API_TOKEN" style="position: relative; z-index: 9999;">
+                <form method="POST" action="{{route('Feedback')}}" style="position: relative; z-index: 9999;">
                     @csrf
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" name="nama" id="nama" type="text" placeholder="Your Name *"
-                                    data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="nama:required">A name is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="feedback" name="feedback" placeholder="Feedback*"
+                                <textarea class="form-control" id="feedback" name="feedback" placeholder="zuma pung pung*"
                                     data-sb-validations="required"></textarea>
                                 <div class="invalid-feedback" data-sb-feedback="feedback    :required">A Feedback is required.</div>
                             </div>
@@ -231,7 +217,7 @@
             </div>
         </div>
     </footer>
-    <script src="landingPage/js/script.js"></script>
+    <script src="template/landingPage/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
