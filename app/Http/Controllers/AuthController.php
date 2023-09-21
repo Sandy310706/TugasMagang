@@ -32,7 +32,7 @@ class AuthController extends Controller
                 return redirect('');
             }elseif(Auth::user()->role == 'admin'){
                 $request->session()->regenerate();
-                return view('admin.dashboard');
+                return redirect('admin/dashboard');
             }elseif(Auth::user()->role == 'operator'){
                 $request->session()->regenerate();
                 return redirect('/operator/dashboard');
@@ -40,6 +40,7 @@ class AuthController extends Controller
         }else{
             return back()->with('gagal', 'Email atau Password anda salah');
         }
+
     }
 
     public function registrasi()
@@ -61,7 +62,7 @@ class AuthController extends Controller
         ]);
         Hash::make($dataValidasi['password']);
         User::create($dataValidasi);
-        return redirect('/login')->with('berhasil', 'Akun berhasil di tambahkan');
+        return redirect('/login')->with('login', 'Akun berhasil di login');
     }
 
     public function logout(Request $request)
