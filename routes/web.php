@@ -8,16 +8,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMenuController;
 
-// == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
 });
-//
-
 Route::get('/', function () {
     return view('landingpage');
 })->middleware('web');
-
 // == Authentikasi Route ==
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
@@ -35,9 +31,9 @@ Route::get('/home', function() {
         return redirect('login');
     }
 });
-//
-
 Route::middleware('auth')->group(function() {
+    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
+    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
@@ -52,20 +48,4 @@ Route::middleware('auth')->group(function() {
     Route::delete('/admin/deletemenu/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
 });
 
-Route::get('/menuapa', function()
-{
-    return view('welcome');
-});
-
-Route::get('/ModalCreate', function(){
-    return view('components.modal-create');
-});
-
-
-Route::middleware('auth')->group(function(){
-
-    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
-    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
-
-});
 
