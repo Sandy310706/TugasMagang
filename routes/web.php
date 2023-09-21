@@ -12,6 +12,7 @@ use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\HistoriController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -61,8 +62,9 @@ Route::middleware('auth')->group(function() {
     Route::post('/admin/menu/makanan', [KelolaMakananController::class, 'store'])->name('Store.Makanan');
     Route::delete('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'delete'])->name('Delete.Makanan');
     Route::put('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'update'])->name('Update.Makanan');
-
 });
+
+    Route::get('/histori', [historiController::class, 'index']);
 
 
 
