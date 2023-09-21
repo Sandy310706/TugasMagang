@@ -13,30 +13,27 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        if(auth()->check()) {
-            return view('landingpage');
-        }else{
-            return redirect()->route('login')->with('error','anda belum login');
-        }
+        $feedback = Feedback::latest()->paginate('10');
+        return view('admin.feedback', compact('feedback'));
     }
 
     public function store(Request $request)
     {
-        $validasiData = $request -> validate([
+        $nama = Feedback::all();
+        if(auth()->check()) {
 
-            'nama'  => 'required|string|max:250',
-            'feedback' => 'required|string|max:500',
-        ]);
-
-       $p =  Feedback::create([
-            'user_id' => auth()->user()->id,
-            'nama' => $request ->input('nama'),
-            'feedback' => $request->input('feedback'),
-        ]);
-
-        dd($p);
-
-        return redirect('')->route('/feedback')->with('success','Feedback berhasil terkirim');
+            $validasiData = $request -> validate([
+                'feedback' => 'required|string',
+            ]);
+            Feedback::create([
+                'user_id' => auth()->user()->id,
+                'nama_id'  => auth()->user()->nama,
+                'feedback' => $request->input('feedback'),
+            ]);
+            return redirect('/')->with('success','Feedback berhasil terkirim');
+        }else{
+            return redirect()->route('login')->with('error','anda belum login');
+        }
     }
 
 

@@ -10,6 +10,10 @@
     <title>Home</title>
 </head>
 <body>
+    @if (session('login'))
+    <div class="alert alert-success">
+        <h1>{{session('login')}}</h1>
+    @endif
     <div class="svg-container">
         <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646" viewBox="0 0 517 646" fill="none">
             <path d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z" fill="#016A70" />
@@ -24,8 +28,7 @@
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                 </ul>
@@ -133,7 +136,7 @@
             </div>
         </div>
 
-        <div class="contact page-section">
+        <div class="contact page-section" id="feedback">
             <div class="container contact-form">
                 <div class="text-center mt-5">
                     <h2 class="tentang section-heading text-capatalize mb-5">Feedback</h2>

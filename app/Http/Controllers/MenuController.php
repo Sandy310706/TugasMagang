@@ -13,7 +13,7 @@ class MenuController extends Controller
     public function index()
     {
         $data = Menu::latest()->paginate('10');
-        return view('admin.kelolamenu', compact('data'));
+        return view('user.menuPage', compact('data'));
     }
     public function store(Request $request)
     {
