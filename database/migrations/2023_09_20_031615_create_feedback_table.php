@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->constrained('users');
-            $table->string('nama');
+            $table->string('nama_id')->constrained('users');
             $table->string('feedback');
             $table->timestamps();
         });
