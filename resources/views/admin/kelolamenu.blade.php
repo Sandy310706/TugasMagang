@@ -15,7 +15,6 @@
             <th>Foto</th>
             <th>Nama</th>
             <th>Kategori</th>
-            <th>Harga</th>
             <th>Aksi</th>
         </thead>
         <tbody class="text-center">

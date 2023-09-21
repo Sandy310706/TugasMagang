@@ -39,36 +39,37 @@
     </nav>
 
     <div class="card-container">
-        <h1 class="makanan text-center">makanan</h1>
+        <h1 class="makanan text-center">Makanan</h1>
         <div class="card-menu">
-            @foreach ($data as $datas)
+            @foreach ($makanan as $makanans)
+            <div class="card-menu">
                 <div class="card">
-                    <img src="{{ asset("storage/fileMenu/". $datas->foto) }}" alt="">
+                    <img src="{{ asset('storage/filemenu/' . $makanans->foto) }}" alt="">
                     <div class="kontent">
-                        <h3>{{ $datas->nama }}</h3>
-                        <p>Rp. {{ $datas->harga }}</p>
+                        <h3>{{$makanans->nama}}</h3>
+                        <p>{{$makanans->harga}}</p>
                         <button class="btn">Pesan</button>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
-    </div>
-    <div class="card-container">
-        <h1 class="minuman text-center">Minuman</h1>
+        <h1 class="makanan text-center">Minuman</h1>
         <div class="card-menu">
-            @foreach ($data as $datas)
+            @foreach ($minuman as $minum)
+            <div class="card-menu">
                 <div class="card">
-                    <img src="template/menupage/images/vodka.jpeg" alt="">
+                    <img src="{{ asset('storage/filemenu/' . $minum->foto) }}" alt="">
                     <div class="kontent">
-                        <h3>{{ $datas->nama }}</h3>
-                        <p>Rp. {{ $datas->harga }}</p>
+                        <h3>{{$minum->nama}}</h3>
+                        <p>{{$minum->harga}}</p>
                         <button class="btn">Pesan</button>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
-
 <footer class="footer">
         <div class="container footer-container">
             <div class="sosmed">
