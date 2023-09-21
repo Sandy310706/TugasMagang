@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
@@ -15,16 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>@yield('title')</title>
 </head>
 <body class="bg-slate-200">
     <div class="flex">
         @include('layouts.sidebar')
         <div class="ml-[20%] w-full">
-            <div class="bg-teal-400 h-20 flex">
-                <h1 class="text-white font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
-            </div>
-            <div class="container p-4">
+            @include('layouts.navbar')
+            <div class="container px-4 py-2">
+                @yield('testing')
                 @yield('dashboard')
                 @yield('kelola menu')
                 @yield('modalCreate')
