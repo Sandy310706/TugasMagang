@@ -12,6 +12,7 @@ use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\KelolaMenuController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -61,13 +62,15 @@ Route::middleware('auth')->group(function() {
 
     // == Admin Route ==
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
-    Route::get('/admin/menu', [MenuController::class, 'KelolaMenu'])->name('Admin.Menu');
+    Route::get('admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
+    Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
     Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
     Route::post('/admin/menu/makanan', [KelolaMakananController::class, 'store'])->name('Store.Makanan');
     Route::delete('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'delete'])->name('Delete.Makanan');
     Route::put('/admin/menu/makanan/{id}', [KelolaMakananController::class, 'update'])->name('Update.Makanan');
+
 });
 
 Route::get('/menuapa', function()
@@ -82,7 +85,6 @@ Route::get('/ModalCreate', function(){
 
 Route::middleware('auth')->group(function(){
 
-
-
 });
+
 

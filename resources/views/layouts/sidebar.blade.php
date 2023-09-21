@@ -13,13 +13,13 @@
         <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="#"><span><i class="bi bi-bar-chart-fill group-hover:text-white"></i> Kelola Keuangan</span></a></div>
     </div>
     <div class="oontainer w-3/4 font-outfit text-md group mt-1">
-        <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="{{ route('Admin.KelolaMenu') }}"><span><i class="bi bi-journal-bookmark-fill group-hover:text-white"></i> Kelola Menu</span></a></div>
+        <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="{{ route('Admin.Menu') }}"><span><i class="bi bi-journal-bookmark-fill group-hover:text-white"></i> Kelola Menu</span></a></div>
     </div>
     <div class="oontainer w-3/4 font-outfit text-md group mt-1">
         <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="#"><span>Kelola Pesanan</span></a></div>
     </div>
     <div class="oontainer w-3/4 font-outfit text-md group mt-1">
-        <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="#"><span><i class="bi bi-chat-left-dots-fill group-hover:text-white"></i> Feedback</span></a></div>
+        <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="{{ route('Admin.Feedback') }}"><span><i class="bi bi-chat-left-dots-fill group-hover:text-white"></i> Feedback</span></a></div>
     </div>
     <div class="oontainer w-3/4 font-outfit text-md group mt-1">
         <div class="py-2 pl-3 text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><a href="/logout"><span>Logout</span></a></div>
