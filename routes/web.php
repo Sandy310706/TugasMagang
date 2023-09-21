@@ -7,6 +7,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\HistoriController;
 
 Route::fallback(function () {
     return view('errors.404');
@@ -48,4 +49,4 @@ Route::middleware('auth')->group(function() {
     Route::delete('/admin/deletemenu/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
 });
 
-
+Route::get('/histori', [HistoriController::class, 'index']);

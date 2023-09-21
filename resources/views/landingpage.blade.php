@@ -36,9 +36,9 @@
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>
                             Log Out</a></li>
                 </ul>
@@ -154,7 +154,7 @@
             </div>
         </div>
 
-        <div class="contact page-section">
+        <div class="contact page-section" id="feedback">
             <div class="container contact-form">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase mb-5">Contact Us</h2>
