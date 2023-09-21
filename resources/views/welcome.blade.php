@@ -1,54 +1,37 @@
 @extends('layouts.Admin')
 
 @section('testing')
-    <!-- Tombol untuk membuka modal -->
-<button data-modal-trigger="my-modal" class="bg-blue-500 text-white px-4 py-2 rounded-md">Buka Modal</button>
-
-<!-- Modal -->
-<div id="my-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
-  <!-- Latar belakang semi-transparan untuk modal -->
-  <div class="absolute inset-0 bg-black opacity-50"></div>
-
-  <!-- Kontainer modal -->
-  <div class="bg-white p-8 rounded-lg shadow-lg">
-    <!-- Judul modal -->
-    <h2 class="text-xl font-semibold">Judul Modal</h2>
-
-    <!-- Isi modal -->
-    <p>Isi modal di sini.</p>
-
-    <!-- Tombol penutup modal -->
-    <button data-modal-close="my-modal" class="absolute top-0 right-0 mt-2 mr-2 text-gray-500 hover:text-gray-700 focus:outline-none">
-      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-  </div>
+<div id="modal" class="wc-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute top-5">
+    <div class="p-4 mb-2">
+        <h1 class="text-4xl font-outfit">Tambah Data</h1>
+    </div>
+    <div class="">
+        <form action="" method="POST" class="p-3">
+            @csrf
+            <div class="mb-2 flex flex-col">
+                <label for="nama" class="mb-1 font-outfit">Nama</label>
+                <input type="text" id="nama" name="nama" class="rounded p-1 outline-none ring-1 ring-blue-600 border border-sky-500 bg-slate-300 shadow-slate-900 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800">
+            </div>
+            <div class="mb-2 flex flex-col">
+                <label for="harga" class="mb-1 font-outfit">Harga</label>
+                <input type="text" id="harga" name="harga" class="rounded p-1 outline-none ring-1 ring-blue-600 border border-sky-500 bg-slate-300 shadow-slate-800 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800">
+            </div>
+            <div class="mb-2 flex flex-col">
+                <label for="kategori" class="mb-1 font-outfit">Kategori</label>
+                <select name="kategori" id="kategori" class="rounded p-1 outline-none ring-1 ring-blue-600 border border-sky-500 bg-slate-300 shadow-slate-800 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800">
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                </select>
+            </div>
+            <div class="mb-2 flex flex-col">
+                <label for="file" class="mb-1 font-outfit">Foto</label>
+                <input type="file" id="file" name="file" class="rounded p-1">
+            </div>
+            <div class="flex justify-end">
+                <button data-modal-hide="defaultModal" type="button" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-slate-500 to-slate-800 text-white mr-2">Tutup</button>
+                <button data-modal-hide="defaultModal" type="button" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white">Input</button>
+            </div>
+        </form>
+    </div>
 </div>
-<script>
-    // Fungsi untuk membuka modal
-function openModal(modalId) {
-  const modal = document.getElementById(modalId);
-  modal.classList.remove('hidden');
-}
-
-// Fungsi untuk menutup modalp
-function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  modal.classList.add('hidden');
-}
-
-// Event listener untuk tombol pembuka modal
-const modalTrigger = document.querySelector('[data-modal-trigger="my-modal"]');
-modalTrigger.addEventListener('click', () => {
-  openModal('my-modal');
-});
-
-// Event listener untuk tombol penutup modal
-const modalCloseButton = document.querySelector('[data-modal-close="my-modal"]');
-modalCloseButton.addEventListener('click', () => {
-  closeModal('my-modal');
-});
-
-</script>
 @endsection
