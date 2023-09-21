@@ -9,12 +9,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="template/landingPage/css/styles.css">
     <title>Document</title>
 </head>
 
 <body>
+
+    @if (session('login'))
+    <div class="alert alert-success">
+        <h1>{{session('login')}}</h1>
+    @endif
     <div class="svg-container">
         <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646"
             viewBox="0 0 517 646" fill="none">
@@ -166,16 +173,9 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form method="POST" action="{{route('Feedback')}}" data-sb-form-api-token="API_TOKEN" style="position: relative; z-index: 9999;">
+                <form method="POST" action="{{route('Feedback')}}" style="position: relative; z-index: 9999;">
                     @csrf
                     <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" name="nama" id="nama" type="text" placeholder="Your Name *"
-                                    data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="nama:required">A name is required.</div>
-                            </div>
-                        </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->

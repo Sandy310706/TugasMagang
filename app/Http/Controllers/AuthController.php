@@ -40,6 +40,7 @@ class AuthController extends Controller
         }else{
             return back()->with('gagal', 'Email atau Password anda salah');
         }
+
     }
 
     public function registrasi()
@@ -61,7 +62,7 @@ class AuthController extends Controller
         ]);
         Hash::make($dataValidasi['password']);
         User::create($dataValidasi);
-        return redirect('/login')->with('berhasil', 'Akun berhasil di tambahkan');
+        return redirect('/login')->with('login', 'Akun berhasil di login');
     }
 
     public function logout(Request $request)

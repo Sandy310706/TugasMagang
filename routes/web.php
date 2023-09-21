@@ -40,9 +40,13 @@ Route::get('/home', function() {
         return redirect('login');
     }
 });
+
+    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
+    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
 //
 
 Route::middleware('auth')->group(function() {
+
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
@@ -56,7 +60,7 @@ Route::middleware('auth')->group(function() {
 
     // == Admin Route ==
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
-Route::get('/admin/menu', [MenuController::class, 'KelolaMenu'])->name('Admin.Menu');
+    Route::get('/admin/menu', [MenuController::class, 'KelolaMenu'])->name('Admin.Menu');
     Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::get('/admin/menu/makanan', [KelolaMakananController::class, 'index'])->name('Menu.Makanan');
@@ -77,8 +81,7 @@ Route::get('/ModalCreate', function(){
 
 Route::middleware('auth')->group(function(){
 
-    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
-    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
+
 
 });
 
