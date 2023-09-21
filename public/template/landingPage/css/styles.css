@@ -1,0 +1,933 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* navbar */
+
+.masthead {
+  padding-top: 10.5rem;
+  text-align: center;
+  color: #000000;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  height: 750px;
+}
+
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #ffffdd;
+}
+
+#mainNav {
+  background-color: transparent;
+}
+
+#mainNav .navbar-toggler {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#mainNav .navbar-brand {
+  color: #000000;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+#mainNav .navbar-brand img {
+  height: 1.5rem;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 0.95rem;
+  color: gray;
+  letter-spacing: 0.0625em;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #ffc800;
+}
+
+.svg-container {
+  position: absolute;
+}
+
+.biru {
+  z-index: -1;
+}
+
+.hijau {
+  z-index: -5;
+  left: 1163px;
+}
+
+.welcome {
+  margin-top: 150px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 35px;
+  margin-left: 0px;
+  text-align: center;
+  line-height: 80px;
+}
+
+/* hamburger menu */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  background-color: transparent;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* hamburger menu animation*/
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Menu rekomendasi */
+
+section .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: #ffffdd;
+  flex-direction: column;
+}
+
+h1.makanan {
+  text-transform: capitalize;
+  color: #016A70;
+  font-family: 'Satisfy', cursive;
+  font-size: 75px;
+  font-weight: 400;
+  line-height: 108px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.Menu-Page {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.Menu-Page .box {
+  position: relative;
+  height: 350px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.box:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.Menu-Page .box .image {
+  width: 100%;
+  height: 60%;
+  background-size: auto;
+}
+
+.Menu-Page .box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Menu-Page .box h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.Menu-Page .box p {
+  font-family: 'Righteous', cursive;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.Menu-Page .btn {
+  width: 80%;
+}
+
+.menu {
+  margin-top: 200px;
+}
+
+.Menu {
+  color: #016A70;
+  text-align: center;
+  font-family: Satisfy;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal
+}
+
+.about-biru {
+  z-index: 1;
+  left: -100px;
+  top: 15px;
+}
+
+.about-kuning {
+  z-index: 1;
+  left: 1080px;
+  top: 300px;
+}
+
+.contact-hijau {
+  z-index: 1;
+  top: 933px;
+}
+
+/* About */
+.tentang {
+  color: #016A70;
+  text-align: center;
+  font-family: Satisfy;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.about {
+  background-color:#96C291;
+}
+
+.about-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 65px auto;
+}
+
+.about-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 65px auto;
+}
+
+.kantin-content {
+  flex: 1;
+  width: 300px;
+  margin: 0px 30px;
+  z-index: 2;
+}
+
+.kantin-content h2 {
+  color: #FFF;
+  font-family: Amaranth;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.kantin-content p {
+  color: #FFF;
+  font-family: Amaranth;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  text-indent: 30px;
+  text-align: justify;
+}
+
+.img-1 {
+  flex: 1;
+  margin: auto;
+  z-index: 2;
+}
+
+.img-2 {
+  flex: 1;
+  margin: auto;
+  z-index: 2;
+}
+
+.img-1 img {
+  width: 100%;
+  height: auto;
+}
+
+.img-2 img {
+  width: 100%;
+  height: auto;
+}
+
+/* section contact */
+
+section#contact {
+  background-color: #a2c579;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+}
+
+.contact .section-heading {
+  color: #fff;
+}
+
+.contact form#contactForm .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact form#contactForm .form-group input,
+.contact form#contactForm .form-group textarea {
+  padding: 1.25rem;
+}
+
+.contact form#contactForm .form-group input.form-control {
+  height: auto;
+}
+
+.contact form#contactForm .form-group-textarea {
+  height: 100%;
+  z-index: 9999;
+}
+
+.contact form#contactForm .form-group-textarea textarea {
+  height: 100%;
+  min-height: 10rem;
+}
+
+.contact form#contactForm p.help-block {
+  margin: 0;
+}
+
+.contact form#contactForm .form-control:focus {
+  border-color: #ffc800;
+  box-shadow: none;
+}
+
+.contact form#contactForm ::-webkit-input-placeholder {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #ced4da;
+}
+
+.contact form#contactForm :-moz-placeholder {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #ced4da;
+}
+
+.contact form#contactForm ::-moz-placeholder {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #ced4da;
+}
+
+.contact form#contactForm :-ms-input-placeholder {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #ced4da;
+}
+
+/* footer */
+
+.footer {
+  height: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.sosmed {
+  flex: 1;
+  width: 100%;
+  margin: auto;
+}
+
+.sosmed ul li a {
+  color: #000;
+  font-family: Amaranth;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  align-items: start;
+}
+
+.sosmed ul {
+  text-align: start;
+  margin-top: 20px;
+}
+
+.sosmed ul li a:hover {
+  color: #380170;
+}
+
+.copyright p {
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Amaranth;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  flex: 1;
+  width: 100%;
+  margin: 0px 30px;
+}
+
+.footer ul li {
+  list-style: none;
+}
+
+.button {
+  margin-bottom: 50px;
+  padding: 25px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+@media only screen and (max-width: 600px)  {
+  body{
+    max-width: 100%;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    margin-left: 88%;
+    z-index: 9999;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  #mainNav .navbar-brand {
+     font-size: 20px;
+  }
+
+  .masthead{
+    height: 100%;
+  }
+
+  .welcome {
+    font-size: 15px;
+    line-height: 28px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Menu-Page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Menu-Page .box {
+    width: 270px;
+  }
+
+  .about {
+    margin: 0px;
+  }
+
+  .about-1 {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px 40px;
+  }
+
+  .about-2 {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px 40px;
+  }
+
+  .kantin-content {
+    width: 90%;
+    max-width: 35px 0px;
+    order: 2;
+  }
+
+  .kantin-content h2 {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .kantin-content p {
+    font-size: 19px;
+    margin-bottom: 25px;
+    text-align: justify;
+    letter-spacing: -1px;
+    text-indent: 20px;
+  }
+
+  .img {
+    width: 90%;
+    order: 1;
+    margin-top: 50px;
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+
+  .sosmed ul li a {
+    font-size: 46%;
+    margin-top: 10px;
+  }
+
+  .copyright p {
+    font-size: 10px;
+  }
+
+  .biru {
+    width: 250px;
+    top: -160px;
+  }
+
+  .hijau{
+    width: 0;
+    left: 0px;
+    top: 0;
+  }
+
+  .about-biru{
+    width: 300px;
+    top: 0;
+    left: 0;
+  }
+
+  .about-kuning{
+    width: 0;
+    left: 0 ;
+  }
+
+  .contact-hijau{
+    width: 200px;
+    top: 1200px;
+    left: 0;
+  }
+
+  .image img{
+  width: 100%;
+  margin-top: 100px;
+
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    margin-left: 88%;
+    z-index: 9999;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .welcome {
+    font-size: 20px;
+    line-height: 30px;
+    z-index: 4;
+  }
+  .masthead{
+     height: 100%;
+  }
+
+  .Menu-Page .box {
+    width: 100%;
+    margin: auto;
+  }
+
+  .Menu-Page .box .image img {
+    width: 70%;
+  }
+
+  .about {
+    margin: 0px;
+  }
+
+  .about-1 {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px 40px;
+  }
+
+  .about-2 {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px 40px;
+  }
+
+  .kantin-content {
+    width: 90%;
+    max-width: 35px 0px;
+    order: 2;
+  }
+
+  .kantin-content h2 {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .kantin-content p {
+    font-size: 19px;
+    margin-bottom: 25px;
+    text-align: justify;
+    letter-spacing: -1px;
+    text-indent: 20px;
+  }
+
+  .img {
+    width: 90%;
+    order: 1;
+    margin-top: 50px;
+  }
+
+  .contact-hijau {
+    top: 1250px;
+    width: 300px;
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+
+  .sosmed ul li a {
+    font-size: 13px;
+  }
+
+  .copyright p {
+    font-size: 13px;
+  }
+
+  .biru {
+    width: 400px;
+    top: -121px;
+  }
+
+  .hijau{
+    width: 0;
+  }
+
+  .about-kuning{
+    width: 0;
+  }
+
+  .image img{
+     width: 100%;
+     margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    margin-left: 88%;
+    z-index: 9999;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .about-biru{
+    width: 420px;
+    top: 0;
+  }
+
+  .contact-hijau{
+    width: 300px;
+    top: 90vh;
+  }
+  .about-1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .hijau{
+    width: 0;
+  }
+
+  .about-kuning{
+    width: 0;
+  }
+
+  .img-1{
+    order: 2;
+  }
+
+  .about-2 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .about-1 h2{
+    margin-top: 50px;
+  }
+
+  .img-1 img{
+    width: 100%;
+  }
+
+  .kantin-content p{
+    font-size: 1em;
+    letter-spacing: -1px;
+  }
+
+  .welcome{
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+
+  .sosmed ul li a {
+    font-size: 20px;
+  }
+
+  .copyright p {
+    font-size: 20px;
+  }
+
+  .image img{
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .masthead{
+   height: 100%;
+  }
+
+  .welcome{
+    font-size: 22px;
+    line-height: 38px;
+  }
+
+  .about{
+    width: 100vw;
+  }
+
+  .about-1 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .about-2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .img-1 {
+    order: 2;
+  }
+
+  .hijau {
+    width: 0;
+  }
+
+  .about-kuning{
+    width: 0;
+  }
+
+  .contact-hijau {
+    width: 250px;
+    top: 650px;
+  }
+
+  .about-kuning {
+    left: 553px;
+  }
+
+  .kantin-content p{
+    font-size: 20px;
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+
+  .sosmed ul li a {
+    font-size: 20px;
+  }
+
+  .copyright p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .welcome{
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .hijau{
+    width: 0;
+  }
+
+  .about-kuning{
+    width: 0;
+  }
+
+  .contact-hijau{
+    width: 300px;
+    top:840px;
+  }
+
+}
+

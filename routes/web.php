@@ -6,7 +6,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
-use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaMenuController;
 
 // == Errors Route ==
@@ -61,3 +60,12 @@ Route::get('/menuapa', function()
 Route::get('/ModalCreate', function(){
     return view('components.modal-create');
 });
+
+
+Route::middleware('auth')->group(function(){
+
+    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
+    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
+
+});
+
