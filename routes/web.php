@@ -29,6 +29,7 @@ Route::post('/login', [AuthController::class, 'authtentication'])->name('login')
 Route::get('/registrasi', [AuthController::class, 'registrasi'])->middleware('guest');
 Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/menu', [MenuController::class, 'index'])->name('index');
 Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
         return redirect('');
@@ -50,7 +51,6 @@ Route::middleware('auth')->group(function() {
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
-    Route::get('/menu', [MenuController::class, 'index'])->name('index');
     Route::get('/Ajax', [KelolaakunAjaxController::class, 'index'])->name('Ajaxakun.Index');
     Route::post('/Ajax', [KelolaakunAjaxController::class, 'store'])->name('Ajaxakun.Store');
     Route::get('/Ajax/{id}/Edit', [KelolaakunAjaxController::class, 'edit'])->name('Ajaxakun.Edit');
