@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=""id>
 
 <head>
     <meta charset="UTF-8">
@@ -13,11 +13,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="template/landingPage/css/styles.css">
-    <title>Document</title>
+    <title>Home</title>
 </head>
-
 <body>
-
     @if (session('login'))
     <div class="alert alert-success">
         <h1>{{session('login')}}</h1>
@@ -110,7 +108,6 @@
             </div>
         </div>
     </section>
-
     <div class="text-center mt-5">
         <h2 class="tentang section-heading text-capatalize mb-5">Tentang Kami</h2>
     </div>
@@ -139,7 +136,8 @@
             <div class="about-1">
                 <div class="kantin-content">
                     <h2>Sejarah Kantin</h2>
-                    <p>Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
+                    <p>
+                        Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
                         semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
                         komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
                     </p>
@@ -154,9 +152,11 @@
                 </div>
                 <div class="kantin-content">
                     <h2>Sejarah Kantin</h2>
-                    <p>Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
+                    <p>
+                        Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
                         semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
-                        komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.</p>
+                        komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
+                    </p>
                 </div>
             </div>
         </div>
@@ -166,57 +166,35 @@
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase mb-5">Contact Us</h2>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
                 <form method="POST" action="{{route('Feedback')}}" style="position: relative; z-index: 9999;">
                     @csrf
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="feedback" name="feedback" placeholder="Feedback*"
+                                <textarea class="form-control w-100" id="feedback" name="feedback" placeholder="Feedback*"
                                     data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="feedback    :required">A Feedback is required.</div>
+                                <div class="invalid-feedback" >A Feedback is required.</div>
                             </div>
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center text-white mb-3">
                             <div class="fw-bolder">Form submission successful!</div>
                             To activate this form, sign up at
                             <br />
-                            <a
-                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                         </div>
                     </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
                     <div class="d-none" id="submitErrorMessage">
                         <div class="text-center text-danger mb-3">Error sending message!</div>
                     </div>
-                    <!-- Submit Button-->
                     <div class="text-end"><button class="button btn btn-info btn-xl text-capatalize" id="submitButton"
                             type="submit">Send Message</button></div>
                 </form>
             </div>
         </div>
     </section>
-
-    <!-- <section class=" contact page-section" id="contact">
-    <!-- </section> -->
-    <!-- Footer-->
-
     <footer class="footer">
         <div class="container footer-container">
             <div class="sosmed">
@@ -227,14 +205,11 @@
                 </ul>
             </div>
             <div class="copyright">
-                <p>Copy right by Babang Frederick</p>
+                <p>Copy right by Babang Frederick SUNDAL</p>
             </div>
         </div>
     </footer>
     <script src="landingPage/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"crossorigin="anonymous"></script>
 </body>
-
 </html>

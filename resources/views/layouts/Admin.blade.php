@@ -26,6 +26,7 @@
                 @yield('dashboard')
                 @yield('kelola menu')
                 @yield('modalCreate')
+                @yield('feedback')
             </div>
         </div>
       </div>
