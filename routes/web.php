@@ -49,4 +49,4 @@ Route::middleware('auth')->group(function() {
     Route::delete('/admin/deletemenu/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
 });
 
-Route::get('/histori', [HistoriController::class, 'index']);
+   Route::get('/histori', [HistoriController::class, 'index']);
