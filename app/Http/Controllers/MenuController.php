@@ -12,8 +12,10 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $data = Menu::latest()->paginate('10');
-        return view('user.menuPage', compact('data'));
+        $makanan = Menu::where('kategori','makanan')->get();
+        $minuman = Menu::where('kategori','minuman')->get();
+        return view('user.menuPage', compact('makanan'), compact('minuman'));
+
     }
     public function store(Request $request)
     {

@@ -43,6 +43,8 @@ Route::get('/home', function() {
 
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
+
+    Route::get('/menu', [MenuController::class, 'index'])->name('index');
 //
 
 Route::middleware('auth')->group(function() {
@@ -50,7 +52,6 @@ Route::middleware('auth')->group(function() {
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
-    Route::get('/menu', [MenuController::class, 'index'])->name('index');
     Route::get('/Ajax', [KelolaakunAjaxController::class, 'index'])->name('Ajaxakun.Index');
     Route::post('/Ajax', [KelolaakunAjaxController::class, 'store'])->name('Ajaxakun.Store');
     Route::get('/Ajax/{id}/Edit', [KelolaakunAjaxController::class, 'edit'])->name('Ajaxakun.Edit');

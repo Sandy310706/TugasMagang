@@ -39,79 +39,40 @@
     </nav>
 
     <div class="card-container">
-        <h1 class="makanan text-center">makanan</h1>
+        <h1 class="makanan text-center">Makanan</h1>
         <div class="card-menu">
-            <div class="card">
-                <img src="template/menupage/images/geprek.jpeg" alt="">
-                <div class="kontent">
-                    <h3>geprek</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn">Pesan</button>
+            @foreach ($makanan as $makanans)
+            <div class="card-menu">
+                <div class="card">
+                    <img src="{{ asset('storage/img/' . $makanans->foto) }}" alt="">
+                    <div class="kontent">
+                        <h3>{{$makanans->nama}}</h3>
+                        <p>{{$makanans->harga}}</p>
+                        <button class="btn">Pesan</button>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="template/menupage/images/ayam panggang.jpeg" alt="">
-                <div class="kontent">
-                    <h3>ayam mael</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn ">Pesan</button>
+            @endforeach
+        </div>
+        <h1 class="makanan text-center">Minuman</h1>
+        <div class="card-menu">
+            @foreach ($minuman as $minum)
+            <div class="card-menu">
+                <div class="card">
+                    <img src="{{ asset('storage/img/' . $minum->foto) }}" alt="">
+                    <div class="kontent">
+                        <h3>{{$minum->nama}}</h3>
+                        <p>{{$minum->harga}}</p>
+                        <button class="btn">Pesan</button>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="template/menupage/images/wagyu.jpg" alt="">
-                <div class="kontent">
-                    <h3>sapi kacong dipanggang</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn">Pesan</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="template/menupage/images/bipang.jpg" alt="">
-                <div class="kontent">
-                    <h3>makanan budak sanak</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn ">Pesan</button>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <div class="card-container">
-        <h1 class="minuman text-center">Minuman</h1>
-        <div class="card-menu">
-            <div class="card">
-                <img src="template/menupage/images/vodka.jpeg" alt="">
-                <div class="kontent">
-                    <h3>geprek</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn">Pesan</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="template/menupage/images/jack daniel.jpeg" alt="">
-                <div class="kontent">
-                    <h3>ayam mael</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn ">Pesan</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="template/menupage/images/anggur malaysia.jpg" alt="">
-                <div class="kontent">
-                    <h3>sapi kacong dipanggang</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn">Pesan</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="template/menupage/images/anggur merah.jpg" alt="">
-                <div class="kontent">
-                    <h3>makanan budak sanak</h3>
-                    <p>Rp.100.000</p>
-                    <button class="btn ">Pesan</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+
 
 <footer class="footer">
         <div class="container footer-container">
