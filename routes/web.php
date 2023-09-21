@@ -38,7 +38,6 @@ Route::middleware('auth')->group(function() {
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
-    Route::get('/menu', [MenuController::class, 'index'])->name('index');
     Route::resource('KelolaAkun', AkunkelolaAjaxController::class);
 
     // == Admin Route ==
@@ -49,4 +48,5 @@ Route::middleware('auth')->group(function() {
     Route::delete('/admin/deletemenu/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
 });
 
+Route::get('/menu', [MenuController::class, 'index'])->name('index');
 Route::get('/histori', [HistoriController::class, 'index']);
