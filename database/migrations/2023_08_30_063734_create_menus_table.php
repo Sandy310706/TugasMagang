@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kelola_menu_id')->constrained('kelola_menus');
             $table->string('nama');
             $table->string('foto');
             $table->enum('kategori', ['makanan', 'minuman']);
