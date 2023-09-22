@@ -488,7 +488,6 @@ section#contact {
   .menu-toggle {
     display: flex;
     position: relative;
-    margin-left: 88%;
     z-index: 9999;
   }
 
@@ -632,10 +631,8 @@ section#contact {
   .menu-toggle {
     display: flex;
     position: relative;
-    margin-left: 88%;
     z-index: 9999;
   }
-
     nav ul {
         position: absolute;
         right: 0;
@@ -756,7 +753,6 @@ section#contact {
   .menu-toggle {
     display: flex;
     position: relative;
-    margin-left: 88%;
     z-index: 9999;
   }
 
