@@ -15,13 +15,14 @@
             <th>Foto</th>
             <th>Nama</th>
             <th>Kategori</th>
+            <th>Harga</th>
             <th>Aksi</th>
         </thead>
         <tbody class="text-center">
             @foreach ($data as $menu )
             <tr class="group border-b border-gray-400">
                 <td class="p-2 group-hover:bg-zinc-300">{{ $loop->iteration }}</td>
-                <td class="p-2 group-hover:bg-zinc-300"><img src="{{ asset('storage/fileMenu/'.$menu->foto) }}" alt=""></td>
+                <td class="p-2 group-hover:bg-zinc-300"><img src="{{ asset('storage/fileMenu/'.$menu->foto) }}" alt="foto menu" class="w-23 h-23 animate-spin"></td>
                 <td class="p-2 group-hover:bg-zinc-300">{{ $menu->nama }}</td>
                 <td class="p-2 group-hover:bg-zinc-300">{{ $menu->kategori }}</td>
                 <td class="p-2 group-hover:bg-zinc-300">Rp. {{ $menu->harga }}</td>
