@@ -48,6 +48,13 @@
                     <div class="kontent">
                         <h3>{{$makanans->nama}}</h3>
                         <p>{{$makanans->harga}}</p>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
                         <button class="btn">Pesan</button>
                     </div>
                 </div>
@@ -63,6 +70,13 @@
                     <div class="kontent">
                         <h3>{{$minum->nama}}</h3>
                         <p>{{$minum->harga}}</p>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
                         <button class="btn">Pesan</button>
                     </div>
                 </div>

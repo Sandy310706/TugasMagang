@@ -20,7 +20,7 @@
         </svg>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="containerd-fluid -flex">
+        <div class="container-fluid d-flex">
             <h3 class="navbar-brand ml-5">SMKN7 Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">

@@ -100,7 +100,7 @@ body {
   background-color: transparent;
   justify-content: space-between;
   position: relative;
-  order: 2 !important;
+  order: 2!important;
 }
 
 .menu-toggle input {
@@ -113,6 +113,7 @@ body {
     opacity: 0;
     cursor: pointer;
     z-index: 2;
+    order: 2!important;
 }
 
 .menu-toggle span {
