@@ -100,6 +100,7 @@ body {
   background-color: transparent;
   justify-content: space-between;
   position: relative;
+  order: 2 !important;
 }
 
 .menu-toggle input {
@@ -351,7 +352,7 @@ section#contact {
 }
 
 .contact .section-heading {
-  color: #fff;
+  color: #016a70;
 }
 
 .contact form#contactForm .form-group {

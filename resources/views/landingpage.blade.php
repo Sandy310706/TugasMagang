@@ -18,9 +18,6 @@
         <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646" viewBox="0 0 517 646" fill="none">
             <path d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z" fill="#016A70" />
         </svg>
-        <svg class="hijau position-relative" id="biru" xmlns="http://www.w3.org/2000/svg" width="355" height="433" viewBox="0 0 355 433" fill="none">
-            <path d="M306.16 421.347C179.081 488.795 260.601 228.62 179.161 182.068C26.1006 222.62 -66.3994 111.12 60.5 -41.5001C158.112 -158.897 356.144 -40.134 420.226 80.604C484.309 201.342 433.24 353.898 306.16 421.347Z" fill="#D2DE32" />
-        </svg>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -174,7 +171,7 @@
             </div>
         </div>
     </footer>
-    <script src="landingPage/js/script.js"></script>
+    <script src="template/landingPage/js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
