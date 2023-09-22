@@ -44,6 +44,7 @@ Route::get('/home', function() {
 
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
+
     Route::get('/menu', [MenuController::class, 'index'])->name('index');
 //
 
@@ -85,4 +86,5 @@ Route::get('/ModalCreate', function(){
 Route::middleware('auth')->group(function(){
 
 });
+
 
