@@ -27,10 +27,11 @@
             <h3 class="navbar-brand ml-5">SMKN7 Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                 </ul>
             </div>
         </div>
