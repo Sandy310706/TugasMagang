@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -72,3 +73,5 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 </body>
 </html>
+=======
+>>>>>>> 78bf9ffd879387dd441f020d928af447c25b14ac

@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kelola_menu_id')->constrained('kelola_menus');
             $table->string('nama');
+            $table->string('foto');
+            $table->enum('kategori', ['makanan', 'minuman']);
             $table->integer('harga');
-            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }

@@ -1,675 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Landing Page</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="template/landingPage/css/styles.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-        <script>
-        $(document).ready(function(){
-            $("#btn1").click(function(){
-                alert("Terimakasih sudah memesan");
-            });
-            $("#btn2").click(function(){
-                alert("Terimakasih sudah memesan");
-            });
-            $("#btn3").click(function(){
-                alert("Terimakasih sudah memesan");
-            });
-            $("#btn4").click(function(){
-                alert("Terimakasih sudah memesan");
-            });
-            $("#btn5").click(function(){
-                alert("Terimakasih sudah memesan");
-            });
-            $("#btn6").click(function(){
-                alert("Terimakasih sudah memesan");
-            });
-        });
-    </script>
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparant fixed-top" id="mainNav">
-            <div class="container">
-                <p class="navbar-brand"><i class="bi bi-person-circle"></i>
-                    @if(Route::has('login'))
-                        @auth
-                            {{ Auth::user()->nama }}
-                        @endauth
-                    @endif
-                </p>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list width:10px"></i>
-
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="menu">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
-                        @if(Route::has('login'))
-                            @auth
-                                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                            @else
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                            @endauth
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container">
-                <div class="masthead-subheading text-center text-light">Welcome To Kantin SMKN 7 PTK</div>
-                <div class="masthead-subheading"></div>
-                <div class="masthead-heading text-uppercase"></div>
-            </div>
-        </header>
-
-        <!-- Services-->
-        {{-- <section class="page-section" id="services">
-
-        </section> --}}
-        <!-- Portfolio Grid-->
-        <section class="content page-section bg-blue" id="portfolio">
-            <div class="content">
-                <div class=" text-center">
-                    <h2 class="produk section-heading text-uppercase">Produk Bestseller</h2>
-                    <h3 class="prdk section-subheading text-muted">Makanan Yang sering Dipesan</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/rs1.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">Ikan Gulai</h5>
-                            <p class="card-text">RP. 20.000,00</p>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop6">Pesan</a>
-                            <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel6" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h1 class="modal-title fs-5" id="staticBackdropLabel6">Custom Pesanan</h1>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Sambal Bawang</span>
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-                                                    <label class="form-check-label" for="flexCheckDefault6">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Sambal Terasi</span>
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-                                                    <label class="form-check-label" for="flexCheckDefault6">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Sambal Mata</span>
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-                                                    <label class="form-check-label" for="flexCheckDefault6">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3"></div>
-                                            <h4>Catatan</h4>
-                                                <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
-                                            <label for="floatingTextarea2">Tambahan</label>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" id="btn1" class="btn btn-primary">Tambahkan</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/rs3.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">Telur Mata  Sapi</h5>
-                            <p class="card-text">RP. 10.000,00</p>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop5">Pesan</a>
-                            <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel5" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h1 class="modal-title fs-5" id="staticBackdropLabel5">Custom Pesanan</h1>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Extra Telor</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-                                                    <label class="form-check-label" for="flexCheckDefault5">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Extra Mata Si Imut</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-                                                    <label class="form-check-label" for="flexCheckDefault5">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3"></div>
-                                            <h4>Catatan</h4>
-                                                <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
-                                            <label for="floatingTextarea2">Tambahan</label>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" id="btn2" class="btn btn-primary">Tambahkan</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">Nasi Goreng</h5>
-                            <p class="card-text">RP. 15.000,00</p>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">Pesan</a>
-                            <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h1 class="modal-title fs-5" id="staticBackdropLabel4">Custom Pesanan</h1>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Extra Telor</span>
-                                                <hr class="opacity" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                                                    <label class="form-check-label" for="flexCheckDefault4">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Extra Udang</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                                                    <label class="form-check-label" for="flexCheckDefault4">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Extra Ayam</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                            <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                                                    <label class="form-check-label" for="flexCheckDefault4">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3"></div>
-                                            <h4>Catatan</h4>
-                                                <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
-                                                <label for="floatingTextarea2">Tambahan</label>
-                                            </div>
-                                        </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" id="btn3" class="btn btn-primary">Tambahkan</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/nasgor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">Nasi Goreng</h5>
-                            <p class="card-text">RP. 15.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="minumann text-center">
-                        <h2 class="minum section-heading text-uppercase">Produk Bestseller</h2>
-                        <h3 class="minuman section-subheading text-muted"> Minuman Yang sering Dipesan</h3>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/minuman.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Boba</h5>
-                                <p class="card-text">RP. 12.000,00</p>
-                                 <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Pesan</a>
-                                 <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h1 class="modal-title fs-5" id="staticBackdropLabel3">Custom Pesanan</h1>
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <span>Extra Jelly</span>
-                                                    <hr class="opacity-50" width="455px">
-                                                </div>
-                                                <div class="col-6 d-flex justify-content-end">
-                                                <span>Rp.5000</span>
-                                                    <div class="col-1"></div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                                        <label class="form-check-label" for="flexCheckDefault1">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <span>Extra Oreo</span>
-                                                    <hr class="opacity-50" width="455px">
-                                                </div>
-                                                <div class="col-6 d-flex justify-content-end">
-                                                <span>Rp.5000</span>
-                                                    <div class="col-1"></div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                                        <label class="form-check-label" for="flexCheckDefault1">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <span>Extra Kacang Mentai</span>
-                                                    <hr class="opacity-50" width="455px">
-                                                </div>
-                                                <div class="col-6 d-flex justify-content-end">
-                                                <span>Rp.5000</span>
-                                                    <div class="col-1"></div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                                        <label class="form-check-label" for="flexCheckDefault1">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mt-3"></div>
-                                                <h4>Catatan</h4>
-                                                <div class="form-floating">
-                                                    <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
-                                                    <label for="floatingTextarea2">Tambahan</label>
-                                                </div>
-                                            </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                          <button type="button" id="btn4" class="btn btn-primary">Tambahkan</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/arak.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">Minuman Hangat</h5>
-                            <p class="card-text">RP. 40.000,00</p>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Pesan</a>
-                            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h1 class="modal-title fs-5" id="staticBackdropLabel1">Custom Pesanan</h1>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Rasa Angggur</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                                    <label class="form-check-label" for="flexCheckDefault1">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Rasa Lemon</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                                    <label class="form-check-label" for="flexCheckDefault1">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Rasa Strowberry</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                            <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                                    <label class="form-check-label" for="flexCheckDefault1">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3"></div>
-                                            <h4>Catatan</h4>
-                                                <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
-                                                <label for="floatingTextarea2">Tambahan</label>
-                                             </div>
-                                        </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" id="btn5" class="btn btn-primary">Tambahkan</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">vodka Rusia</h5>
-                            <p class="card-text">RP. 50.000,00</p>
-                            <a href="#" class="btn btn-danger">Selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="template/landingPage/assets/img/vodka.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h5 class="card-title">vodka Rusia</h5>
-                            <p class="card-text">RP. 50.000,00</p>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pesan</a>
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Custom Pesanan</h1>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Rasa Strawberry</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Rasa Lemon</span>
-                                                <hr class="opacity-50" width="455px">
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <span>Rp.5000</span>
-                                                <div class="col-1"></div>
-                                                <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3"></div>
-                                        <h4>Catatan</h4>
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Tambahkan Sesuatu" id="floatingTextarea2" style="height: 100px"></textarea>
-                                            <label for="floatingTextarea2">Tambahan</label>
-                                          </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                      <button type="button" id="btn6" class="btn btn-primary">Tambahkan</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About-->
-        {{-- <section class="page-section" id="about">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="template/landingPage/assets/img/elon musk.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Elon Musk Berkunjung KeKantin SMKN 7 Pontianak</h4>
-                                <h4 class="subheading">Pada 2009</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="template/landingPage/assets/img/soeharto.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>pak Harto Berkunjung </h4>
-                                <h4 class="subheading">Pada 2002</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>December 2015</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>July 2020</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>
-                                Be Part
-                                <br />
-                                Of Our
-                                <br />
-                                Story!
-                            </h4>
-                        </div>
-                    </li>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="template/landingPage/css/styles.css">
+    <title>Home</title>
+</head>
+<body>
+    @if (session('login'))
+    <div class="alert alert-success">
+        <h1>{{session('login')}}</h1>
+    @endif
+    <div class="svg-container">
+        <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646" viewBox="0 0 517 646" fill="none">
+            <path d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z" fill="#016A70" />
+        </svg>
+        <svg class="hijau position-relative" id="biru" xmlns="http://www.w3.org/2000/svg" width="355" height="433" viewBox="0 0 355 433" fill="none">
+            <path d="M306.16 421.347C179.081 488.795 260.601 228.62 179.161 182.068C26.1006 222.62 -66.3994 111.12 60.5 -41.5001C158.112 -158.897 356.144 -40.134 420.226 80.604C484.309 201.342 433.24 353.898 306.16 421.347Z" fill="#D2DE32" />
+        </svg>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <h3 class="navbar-brand ml-5">SMKN7 Pontianak</h3>
+            <div class="justift-content-end">
+                <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                 </ul>
             </div>
-        </section> --}}
-        <!-- Team-->
-       <section class="item page-section bg-grey" id="team">
-            <div class="team">
-                <div class="text-center">
-                    <h2 class="programmer section-heading text-uppercase">Team Programmer</h2>
-                    <h3 class="section-subheading text-light">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="welcome">Welcome to Kantin SMKN 7 Pontianak</h3>
                 </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/fredrick gacor.png" alt="..." />
-                            <h4 class="drick" id="drick">PPLG.Frederick A</h4>
-                            <p class="text-muted">Tak pernah Juara</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Instagram Profile"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        </div>
+                <div class="col">
+                    <div class="makanan">
+                        <div class="image"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/robin.jpeg" alt="..." />
-                            <h4>Robin Beset</h4>
-                            <p class="text-muted">Admin Teguh Belajar</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Instagram Profile"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/sandy.jpeg" alt="..." />
-                            <h4>Sandy Pencandu</h4>
-                            <p class="text-muted">Orang Baik kalo ada maunya</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="template/landingPage/assets/img/jonathan.jpeg" alt="..." />
-                            <h4>Kura Kura</h4>
-                            <p class="text-muted">Optional tergantung Mood</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Instagram Profile"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"></p></div>
                 </div>
             </div>
-        </section>
-        <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Pesan atau Saran</h3>
+        </div>
+    </div>
+    <section class="menu page-section" id="portfolio">
+        <h1 class="makanan mt-5">Makanan</h1>
+        <div class="container Menu-Page mb-5">
+            <div class="box">
+                <div class="image">
+                    <img src="template/landingPage/assets/img/rs3.png" alt="">
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->
@@ -678,54 +69,119 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form method="POST" action="{{route('feedbacks')}}">
-                    @csrf
-                    @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                    @endif
-                    <div class="form-group">
-                      <label for="nama">nama</label>
-                      <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama"  style="width : 50%" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="Saran">Saran</label>
-                      <textarea class="form-control" name="saran" id="saran" class="form-control" placeholder="Saran"  style="width : 50%" required></textarea><br>
-                    </div>
-                <button type="submit" class="btn btn-primary">Kirim</button>
-                </form>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <button class="btn btn-primary">Pesan</button>
             </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer py-4 bg-black">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-2 text-lg-start text-light">Copy right by:Frederick</div>
-                    <div class="col-lg-2 text-lg-start"></div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!"></a>
-                        <a class="link-dark text-decoration-none" href="#!"></a>
-                    </div>
+            <div class="box">
+                <div class="image">
+                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                </div>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <button class="btn btn-primary">Pesan</button>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                </div>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <button class="btn btn-primary">Pesan</button>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                </div>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <button class="btn btn-primary">Pesan</button>
+            </div>
+        </div>
+    </section>
+    <div class="svg-container">
+        <svg class="about-biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="446" height="548" viewBox="0 0 446 548" fill="none">
+            <path d="M421.605 420.051C354.627 549.81 167.928 586.657 4.60249 502.352C-158.723 418.047 -228.704 248.708 -161.725 118.949C-94.747 -10.8097 138.286 -23.7404 247.153 32.454C410.479 116.759 488.584 290.292 421.605 420.051Z" fill="#016A70" />
+        </svg>
+        <svg class="about-kuning position-absolute" xmlns="http://www.w3.org/2000/svg" width="438" height="657" viewBox="0 0 438 657" fill="none">
+            <path d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z" fill="#D2DE32" />
+        </svg>
+        <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353" height="483" viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
+            <path d="M-95.03 245.61C-106.006 115.736 -363.615 25.7327 -116.363 4.83633C130.89 -16.0601 309.185 29.1495 351.202 202.156C362.178 332.029 262.251 458.38 14.9986 479.276C-232.254 500.173 -36.4232 423.189 -95.03 245.61Z" fill="#A3A847" />
+        </svg>
+    </div>
+    <section class="about" id="about">
+        <div class="text-center mt-5">
+            <h2 class="tentang section-heading text-capatalize mb-5">Tentang Kami</h2>
+        </div>
+        <div class="About container">
+            <div class="about-1">
+                <div class="kantin-content">
+                    <h2>Sejarah Kantin</h2>
+                    <p>
+                        Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
+                        semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
+                        komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
+                    </p>
+                </div>
+                <div class="img-1 mt-5">
+                    <img src="template/landingPage/assets/img/kantin 1.png" alt="">
                 </div>
             </div>
-        </footer>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
+            <div class="about-2">
+                <div class="img-2">
+                    <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                </div>
+                <div class="kantin-content">
+                    <h2>Sejarah Kantin</h2>
+                    <p>
+                        Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
+                        semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
+                        komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="template/landingpage/js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+        <div class="contact page-section" id="feedback">
+            <div class="container contact-form">
+                <div class="text-center mt-5">
+                    <h2 class="tentang section-heading text-capatalize mb-5">Feedback</h2>
+                </div>
+                <form method="POST" action="{{route('Feedback')}}" data-sb-form-api-token="API_TOKEN" style="position: relative; z-index: 9999;">
+                    @csrf
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
+                                    data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback">A Feedback is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim Feedback</button></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="sosmed">
+                <ul>
+                    <li class="my-2"><a href=""><i class="bi bi-envelope-fill"></i> SMKN7@gmail.com</a></li>
+                    <li class="my-2"><a href=""><i class="bi bi-telephone-fill"></i> 1244234</a></li>
+                    <li class="my-2"><a href=""><i class="bi bi-instagram"></i> SMKN7Pontianak</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copyright&copy; by Babang Frederick</p>
+            </div>
+        </div>
+    </footer>
+    <script src="landingPage/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
 </html>
