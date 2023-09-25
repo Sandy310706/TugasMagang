@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HistoriController extends Controller
+class KeranjangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('histori.histori');
+        return view('Keranjang.keranjang');
     }
-    
 
     /**
      * Show the form for creating a new resource.
