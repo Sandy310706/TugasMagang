@@ -23,13 +23,23 @@ export default {
                     "0%": { left: "35%", top: "10" },
                     "100%": { left: "35%", top: "-100%" },
                 },
+                showDropdownMenu: {
+                    from: { opacity: "0" },
+                    to: { opacity: "100" },
+                },
+                hideDropdownMenu: {
+                    from: { opacity: "100" },
+                    to: { opacity: "0" },
+                },
             },
             animation: {
                 showModal: "ToptoBottom 0.7s ease-in-out",
                 hideModal: "BottomtoTop 1s ease-in-out",
+                showDropdownMenu: "showDropdownMenu 0.5s ease-in-out",
+                hideDropdownMenu: "hideDropdownMenu 0.5s ease-in-out",
             },
             screens: {
-                HandPhone: "@media (max-width: 640px)",
+                HandPhone: { max: "600px" },
             },
         },
     },

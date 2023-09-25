@@ -25,7 +25,7 @@
 <body class="bg-slate-100">
     <div class="flex">
         @include('layouts.sidebar')
-        <div class="ml-[20%] w-4/5">
+        <div class="HandPhone:ml-0 HandPhone:w-full ml-[20%] w-4/5">
             @include('layouts.navbar')
             <div class="container px-4 py-2">
                 @yield('testing')

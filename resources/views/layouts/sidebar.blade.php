@@ -1,4 +1,4 @@
-<div class="w-1/5 h-screen left-0 top-0 bg-slate-800 text-slate-200 shadow-lg shadow-black fixed">
+<div class="w-1/5 h-screen left-0 top-0 bg-slate-800 text-slate-200 shadow-lg shadow-black fixed HandPhone:hidden HandPhone:w-0">
     <div class="h-1/5 flex">
         <img class="mx-auto pt-6 text-4xl font-sans scale-150" src="{{ asset('img/Apah.png') }}"></img>
     </div>

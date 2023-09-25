@@ -42,7 +42,7 @@
                     </form>
                 </td>
             </tr>
-            <div id="modalEdit" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 animate-showModal {{ $errors->any() ? 'block' : 'hidden' }}">
+            <div id="modalEdit" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 animate-showModal z-50 {{ $errors->any() ? 'block' : 'hidden' }}">
                 <div class="mb-2">
                     <h1 class="text-4xl font-outfit">Edit Data</h1>
                 </div>
@@ -143,6 +143,36 @@
         </form>
     </div>
 </div>
-<script src="{{ asset('js/main.js') }}">
+<script>
+    const modal = document.getElementById("modal");
+    const showModal = document.getElementById("showModal");
+    const closeModal = document.getElementById("closeModal");
+
+    showModal.addEventListener("click", function () {
+        modal.classList.remove("hidden");
+        modal.classList.add("animate-showModal");
+        modal.classList.remove("animate-hideModal")
+    });
+    closeModal.addEventListener("click", function () {
+        setTimeout(() => {
+            modal.classList.add("hidden");
+            modalEdit.classList.add("hidden");
+        }, 1000);
+        modal.classList.add("animate-hideModal");
+        modal.classList.remove("animate-showModal");
+    });
+
+    function modalEdit(idData) {
+        const modalEdit = document.getElementById("modalEdit");
+        modalEdit.classList.remove("hidden");
+    }
+    function closeEditModal() {
+        const modalEdit = document.getElementById("modalEdit");
+        setTimeout(() => {
+            modalEdit.classList.add("hidden");
+        }, 900);
+        modalEdit.classList.remove("animate-showModal")
+        modalEdit.classList.add("animate-hideModal");
+    }
 </script>
 @endsection
