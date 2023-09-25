@@ -2,7 +2,7 @@
 
 @section('title', 'Admin | Pesanan')
 @section('headerNav', 'Kelola Pesanan')
-@section('pesanan')
+    @section('pesanan')
     <div class="w-full">
         <button class="my-2 p-2 bg-blue-400 text-white rounded-md font-outfit hover:bg-blue-500">Tambah Menu</button>
         <table class="table-fixed w-full p-4 rounded-lg font-outfit">
