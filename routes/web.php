@@ -8,6 +8,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\KeranjangController;
+
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -34,10 +36,10 @@ Route::get('/home', function() {
         return redirect('login');
     }
 });
+Route::middleware('auth')->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedbackindex');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
     Route::get('/menu', [MenuController::class, 'index'])->name('index');
-Route::middleware('auth')->group(function() {
     // == Operator Route ==
     Route::get('/operator/dashboard', [OperatorController::class, 'index']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('akunSetting');
@@ -48,5 +50,9 @@ Route::middleware('auth')->group(function() {
     Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
 });
+Route::get('carts', [KeranjangController::class, 'index']);
+
+
+
 
 
