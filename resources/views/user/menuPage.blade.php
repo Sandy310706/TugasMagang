@@ -12,8 +12,14 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <h3 class="navbar-brand ml-5">SMKN7 Pontianak</h3>
+        <div class="container-fluid d-flex">
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h3 class="navbar-brand">SMKN7 Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -24,12 +30,7 @@
                 </ul>
             </div>
         </div>
-        <div class="menu-toggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+       
     </nav>
     <div class="card-container">
         <h1 class="makanan text-center">Makanan</h1>
@@ -78,6 +79,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="template/menupage/js/script.js"></script>
+    <script src="script.js/script.js"></script>
 </body>
 </html>

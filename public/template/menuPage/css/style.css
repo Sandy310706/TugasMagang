@@ -38,7 +38,7 @@ body {
 
 #mainNav .navbar-brand {
     color: #000000;
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 700;
     letter-spacing: 0.0625em;
     text-transform: uppercase;
@@ -70,6 +70,7 @@ body {
     background-color: transparent;
     justify-content: space-between;
     position: relative;
+    order: 2 !important;
 }
 
 .menu-toggle input {
@@ -103,42 +104,17 @@ body {
     transform-origin: 0 100%;
 }
 
-.menu-toggle input:checked ~ span:nth-child(2) {
+.menu-toggle input:checked~span:nth-child(2) {
     background-color: white;
     transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.menu-toggle input:checked ~ span:nth-child(4) {
+.menu-toggle input:checked~span:nth-child(4) {
     background-color: white;
     transform: rotate(-45deg) translate(-1px, 0);
 }
 
-.menu-toggle input:checked ~ span:nth-child(3) {
-    opacity: 0;
-    transform: scale(0);
-}
-
-/* hamburger menu animation*/
-
-.menu-toggle span:nth-child(2) {
-    transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4) {
-    transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked ~ span:nth-child(2) {
-    background-color: white;
-    transform: rotate(45deg) translate(-1px, -1px);
-}
-
-.menu-toggle input:checked ~ span:nth-child(4) {
-    background-color: white;
-    transform: rotate(-45deg) translate(-1px, 0);
-}
-
-.menu-toggle input:checked ~ span:nth-child(3) {
+.menu-toggle input:checked~span:nth-child(3) {
     opacity: 0;
     transform: scale(0);
 }
@@ -317,9 +293,6 @@ body {
 
     .menu-toggle {
         display: flex;
-        position: relative;
-        margin-left: 88%;
-        z-index: 9999;
     }
 
     nav ul {
@@ -328,7 +301,7 @@ body {
         top: 0;
         width: 100%;
         height: 70vh;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
         background-color: black;
@@ -336,6 +309,8 @@ body {
         transform: translatey(-100%);
         transition: all 1s;
         opacity: 0;
+        color: #FFF;
+        gap: 10px;
     }
 
     nav ul.slide {
@@ -387,9 +362,6 @@ body {
 @media only screen and (min-width: 600px) and (max-width: 767px) {
     .menu-toggle {
         display: flex;
-        position: relative;
-        margin-left: 88%;
-        z-index: 9999;
     }
 
     nav ul {
@@ -451,9 +423,6 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .menu-toggle {
         display: flex;
-        position: relative;
-        margin-left: 88%;
-        z-index: 9999;
     }
 
     nav ul {
