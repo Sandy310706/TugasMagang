@@ -28,6 +28,9 @@ export default {
                 showModal: "ToptoBottom 0.7s ease-in-out",
                 hideModal: "BottomtoTop 1s ease-in-out",
             },
+            screens: {
+                HandPhone: "@media (max-width: 640px)",
+            },
         },
     },
     plugins: [],
