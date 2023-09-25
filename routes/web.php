@@ -17,6 +17,7 @@ Route::fallback(function () {
 Route::get('/', function () {
     return view('landingpage');
 })->middleware('web');
+
 // == Authentikasi Route ==
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
@@ -48,5 +49,7 @@ Route::middleware('auth')->group(function() {
     Route::post('menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
 });
+
+
 
 
