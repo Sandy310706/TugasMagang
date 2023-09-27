@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pesan_id')->constrained('pesans');
+            $table->integer('menu_id')->constrained('menus');
+            $table->string('nama');
+            $table->string('foto');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

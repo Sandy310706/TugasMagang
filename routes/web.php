@@ -11,7 +11,7 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMakananController;
 use App\Http\Controllers\AkunkelolaAjaxController;
 use App\Http\Controllers\KelolaakunAjaxController;
-
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\LandingpageController;
@@ -51,6 +51,7 @@ Route::get('/home', function() {
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback');
 
     Route::get('/menu', [MenuController::class, 'index'])->name('index');
+    Route::get('/keranjang',[KeranjangController::class, 'index'])->name('index');
 //
 
 Route::middleware('auth')->group(function() {
@@ -102,8 +103,6 @@ Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
 Route::Post('/invoice-store', [InvoiceController::class, 'store'])->name('invoiceCreate');
 
 // ==Feedback Route==
-Route::get('/landingpage',[PostController::class,'index'])->name('feedback');
-Route::post('/landingpage',[PostController::class,'comment'])->name('feedbacks');
 
 
 

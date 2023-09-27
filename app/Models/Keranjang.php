@@ -10,5 +10,16 @@ class Keranjang extends Model
 {
     use HasFactory;
 
+    protected $fillabel = [
+        'menu_id',
+        'nama',
+        'foto',
+        'harga'
+    ];
+
+    public function menus():BelongsTo
+    {
+        return $this ->belongsTo(Menu::class);
+    }
 
 }
