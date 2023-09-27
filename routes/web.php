@@ -7,10 +7,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KeranjangController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaMenuController;
-use App\Http\Controllers\KeranjangController;
 
 
 // == Errors Route ==
@@ -55,8 +53,8 @@ Route::middleware('auth')->group(function() {
 
 
 
-// == Admin Route ==
-Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
+// // == Admin Route ==
+// Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
 
 
 
