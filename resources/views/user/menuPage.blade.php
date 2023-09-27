@@ -42,7 +42,7 @@
                     <div class="kontent">
                         <h3>{{$makanans->nama}}</h3>
                         <p>{{$makanans->harga}}</p>
-                        <button class="btn">Pesan</button>
+                        <a href= "keranjang" button class="btn">Pesan</a>
                     </div>
                 </div>
             </div>
