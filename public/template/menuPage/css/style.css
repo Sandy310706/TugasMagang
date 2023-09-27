@@ -29,7 +29,9 @@ body {
 #mainNav .navbar-toggler {
     padding: 0.75rem;
     font-size: 0.75rem;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -48,7 +50,7 @@ body {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-    font-family: 'Amaranth', sans-serif;
+    font-family: "Amaranth", sans-serif;
     font-size: 0.95rem;
     color: gray;
     letter-spacing: 0.0625em;
@@ -68,6 +70,7 @@ body {
     background-color: transparent;
     justify-content: space-between;
     position: relative;
+    order: 2 !important;
 }
 
 .menu-toggle input {
@@ -116,34 +119,9 @@ body {
     transform: scale(0);
 }
 
-/* hamburger menu animation*/
-
-.menu-toggle span:nth-child(2) {
-    transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4) {
-    transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked~span:nth-child(2) {
-    background-color: white;
-    transform: rotate(45deg) translate(-1px, -1px);
-}
-
-.menu-toggle input:checked~span:nth-child(4) {
-    background-color: white;
-    transform: rotate(-45deg) translate(-1px, 0);
-}
-
-.menu-toggle input:checked~span:nth-child(3) {
-    opacity: 0;
-    transform: scale(0);
-}
-
 .makanan {
     margin-top: 100px;
-    color: #016A70;
+    color: #016a70;
     text-align: center;
     font-family: Satisfy;
     font-size: 75px;
@@ -155,7 +133,7 @@ body {
 
 .minuman {
     margin-top: 50px;
-    color: #016A70;
+    color: #016a70;
     text-align: center;
     font-family: Satisfy;
     font-size: 75px;
@@ -193,7 +171,6 @@ body {
     height: 50%;
     background-position: center;
     border: 10px solid white;
-
 }
 
 .kontent {
@@ -239,13 +216,13 @@ body {
 }
 
 .btn:hover {
-    background-color: rgb(0, 150, 0)
+    background-color: rgb(0, 150, 0);
 }
 
 .footer {
     width: 100%;
     height: 100%;
-    background-color: #B5B5B5;
+    background-color: #b5b5b5;
     margin-top: 50px;
 }
 
@@ -264,12 +241,13 @@ body {
 
 .sosmed ul li a {
     color: #000;
-    font-family: Amaranth;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
+    font-family: Outfit;
+    font-size: 18px;
+    font-style: bold;
+    font-weight: 200;
     line-height: normal;
     text-decoration: none;
+    align-items: start;
 }
 
 .sosmed ul {
@@ -282,7 +260,7 @@ body {
 }
 
 .copyright p {
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 0.5);
     font-family: Amaranth;
     font-size: 20px;
     font-style: normal;
@@ -316,9 +294,6 @@ body {
 
     .menu-toggle {
         display: flex;
-        position: relative;
-        margin-left: 88%;
-        z-index: 9999;
     }
 
     nav ul {
@@ -327,7 +302,7 @@ body {
         top: 0;
         width: 100%;
         height: 70vh;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
         background-color: black;
@@ -335,14 +310,14 @@ body {
         transform: translatey(-100%);
         transition: all 1s;
         opacity: 0;
+        color: #FFF;
+        gap: 10px;
     }
 
     nav ul.slide {
         opacity: 1;
         transform: translateX(0);
     }
-
-
 
     .card {
         display: flex;
@@ -388,9 +363,6 @@ body {
 @media only screen and (min-width: 600px) and (max-width: 767px) {
     .menu-toggle {
         display: flex;
-        position: relative;
-        margin-left: 88%;
-        z-index: 9999;
     }
 
     nav ul {
@@ -413,7 +385,6 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
-
 
     .footer-container {
         width: 100%;
@@ -453,9 +424,6 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .menu-toggle {
         display: flex;
-        position: relative;
-        margin-left: 88%;
-        z-index: 9999;
     }
 
     nav ul {
@@ -478,6 +446,4 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
-
-
 }

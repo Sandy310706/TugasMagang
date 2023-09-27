@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class KelolaMenuController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $data = Menu::latest()->paginate('10');
         return view('admin.kelolamenu', compact('data'));
