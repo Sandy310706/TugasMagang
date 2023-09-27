@@ -61,6 +61,13 @@
                 <div class="image">
                     <img src="template/landingPage/assets/img/rs3.png" alt="">
                 </div>
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
                 <h1>nasi</h1>
                 <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
