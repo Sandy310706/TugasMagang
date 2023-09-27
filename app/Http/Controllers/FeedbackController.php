@@ -35,6 +35,4 @@ class FeedbackController extends Controller
             return redirect()->route('login')->with('error','anda belum login');
         }
     }
-
-
 }

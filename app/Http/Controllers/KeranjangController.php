@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Keranjang;
 
 class KeranjangController extends Controller
@@ -15,5 +16,4 @@ class KeranjangController extends Controller
         return view('user.keranjang', compact('keranjangs'));
 
     }
-
 }

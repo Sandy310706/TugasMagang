@@ -13,6 +13,7 @@ class HistoriController extends Controller
     {
         return view('histori.histori');
     }
+    
 
     /**
      * Show the form for creating a new resource.

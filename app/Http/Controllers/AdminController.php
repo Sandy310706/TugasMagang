@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feedback;
 use App\Models\Menu;
 
 use App\Models\History_pesanan;
@@ -17,7 +18,8 @@ class AdminController extends Controller
         $menu = Menu::all();
         $totalMenu = Menu::count();
         $totalAkun = User::count();
-        return view('admin.dashboard', compact('totalMenu'), compact('totalAkun'));
+        $totalMasukan = Feedback::count();
+        return view('admin.dashboard', compact('totalMenu', 'totalAkun', 'totalMasukan'));
     }
     public function kelolaMenu()
     {
