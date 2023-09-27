@@ -4,13 +4,19 @@
 @section('headerNav', 'KELOLA MENU')
 @section('kelola menu')
 <div class="w-full">
-    <div class="flex">
+    <div class="flex mb-2 h-auto">
         <div class="w-1/2">
-            <button id="showModal" class="mb-2 p-2 w-44 bg-pink-500 text-white rounded-md font-outfit hover:bg-blue-500">Tambah Menu</button>
+            <button id="showModal" class="mb-2 p-2 w-44 bg-sky-500 text-white rounded-md font-outfit hover:bg-sky-600">Tambah Menu</button>
+        </div>
+        <div class="w-1/2 h-auto flex justify-end items-center">
+        <form action="/admin/menu" method="GET">
+            <input type="text" name="search" class="h-1/2 p-1 outline-none">
+            <button class="py-2 px-4 text-white rounded-md bg-green-500">Cari</button>
+        </form>
         </div>
     </div>
-    <table class="table-fixed w-full p-4 rounded-lg font-outfit">
-        <thead class="bg-slate-300">
+    <table class="table-fixed w-full p-4 rounded-lg font-outfit h-12">
+        <thead class="bg-slate-400">
             <th>No</th>
             <th>Foto</th>
             <th>Nama</th>
@@ -18,15 +24,15 @@
             <th>Harga</th>
             <th>Aksi</th>
         </thead>
-        <tbody class="text-center">
+        <tbody class="text-center bg-white odd:bg-sky-300">
             @foreach ($data as $menu )
-            <tr class="group border-b border-gray-400">
-                <td class="p-2 group-hover:bg-zinc-300">{{ $loop->iteration }}</td>
-                <td class="p-2 group-hover:bg-zinc-300"><img src="{{ asset('storage/fileMenu/'.$menu->foto) }}" alt=""></td>
-                <td class="p-2 group-hover:bg-zinc-300">{{ $menu->nama }}</td>
-                <td class="p-2 group-hover:bg-zinc-300">{{ $menu->kategori }}</td>
-                <td class="p-2 group-hover:bg-zinc-300">Rp. {{ $menu->harga }}</td>
-                <td class="p-2 group-hover:bg-zinc-300">
+            <tr class="group border-b border-gray-400 h-5">
+                <td class="p-2 group-hover:bg-slate-200">{{ $loop->iteration }}</td>
+                <td class="p-2 group-hover:bg-slate-200"><img src="{{ asset('storage/fileMenu/'. $menu->foto) }}" alt="foto menu" class="w-21 h-20"></td>
+                <td class="p-2 group-hover:bg-slate-200">{{ $menu->nama }}</td>
+                <td class="p-2 group-hover:bg-slate-200">{{ $menu->kategori }}</td>
+                <td class="p-2 group-hover:bg-slate-200">Rp. {{ $menu->harga }}</td>
+                <td class="p-2 group-hover:bg-slate-200">
                     <button id="btnEdit" onclick="modalEdit({{ $menu->id }})" class="text-yellow-600">Edit</button>
                     <p class="inline"> | </p>
                     <form action="{{ route('Menu.Delete', $menu->id) }}" method="POST" class="inline"  >
@@ -36,7 +42,7 @@
                     </form>
                 </td>
             </tr>
-            <div id="modalEdit" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 animate-showModal {{ $errors->any() ? 'block' : 'hidden' }}">
+            <div id="modalEdit" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 animate-showModal z-50 {{ $errors->any() ? 'block' : 'hidden' }}">
                 <div class="mb-2">
                     <h1 class="text-4xl font-outfit">Edit Data</h1>
                 </div>
@@ -91,7 +97,7 @@
         {{ $data->links('vendor.pagination.simple-tailwind') }}
     </div>
 </div>
-<div id="modal" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 {{ $errors->any() ? 'block' : 'hidden' }}">
+<div id="modal" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 {{ $errors->any() ? 'block' : 'hidden' }} z-50">
     <div class="p-4 mb-2">
         <h1 class="text-4xl font-outfit">Tambah Data</h1>
     </div>
@@ -137,6 +143,36 @@
         </form>
     </div>
 </div>
-<script src="{{ asset('js/main.js') }}">
+<script>
+    const modal = document.getElementById("modal");
+    const showModal = document.getElementById("showModal");
+    const closeModal = document.getElementById("closeModal");
+
+    showModal.addEventListener("click", function () {
+        modal.classList.remove("hidden");
+        modal.classList.add("animate-showModal");
+        modal.classList.remove("animate-hideModal")
+    });
+    closeModal.addEventListener("click", function () {
+        setTimeout(() => {
+            modal.classList.add("hidden");
+            modalEdit.classList.add("hidden");
+        }, 1000);
+        modal.classList.add("animate-hideModal");
+        modal.classList.remove("animate-showModal");
+    });
+
+    function modalEdit(idData) {
+        const modalEdit = document.getElementById("modalEdit");
+        modalEdit.classList.remove("hidden");
+    }
+    function closeEditModal() {
+        const modalEdit = document.getElementById("modalEdit");
+        setTimeout(() => {
+            modalEdit.classList.add("hidden");
+        }, 900);
+        modalEdit.classList.remove("animate-showModal")
+        modalEdit.classList.add("animate-hideModal");
+    }
 </script>
 @endsection

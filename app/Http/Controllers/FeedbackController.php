@@ -13,7 +13,8 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-
+        $feedback = Feedback::latest()->paginate('10');
+        return view('admin.feedback', compact('feedback'));
     }
 
     public function store(Request $request)
@@ -22,7 +23,7 @@ class FeedbackController extends Controller
         if(auth()->check()) {
 
             $validasiData = $request -> validate([
-                'feedback' => 'required|string|max:500',
+                'feedback' => 'required|string',
             ]);
             Feedback::create([
                 'user_id' => auth()->user()->id,
@@ -34,6 +35,4 @@ class FeedbackController extends Controller
             return redirect()->route('login')->with('error','anda belum login');
         }
     }
-
-
 }
