@@ -39,6 +39,8 @@ Route::get('/home', function() {
         return redirect('login');
     }
 });
+
+
 Route::middleware('auth')->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
@@ -51,8 +53,6 @@ Route::middleware('auth')->group(function() {
     Route::get('/operator/dashboard', [OperatorController::class, 'Operator']);
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('Operator.Akun');
 });
-
-
 
 
 // == Admin Route ==
