@@ -59,6 +59,7 @@ Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
 Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
 Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
 Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
+Route::get('/phei', [AuthController::class, 'phei']);
 
 
 
