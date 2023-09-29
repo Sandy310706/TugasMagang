@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function() {
 
 // // == Admin Route ==
 // Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
-
+    
 
 
 

@@ -8,7 +8,8 @@
                     <h1 class="text-4xl font-montserrat">L o g i n</h1>
                 </div>
                 <div class="w-full">
-                    <form action="" class="flex flex-col justify-center items-center">
+                    <form action="{{ route ('login')}}" method="POST" class="flex flex-col justify-center items-center">
+                        @csrf
                         <div class="w-3/4 h-10 border-neutral-600 border-1 ring-1 ring-neutral-600 rounded-lg flex justify-start mb-8">
                             <div class="w-1/6 h-full">
                                 <img src="{{ asset('img/Email.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
