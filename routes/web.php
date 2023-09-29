@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OperatorController;
-use App\Http\Controllers\KeranjangController;
+use App\Livewire\Keranjang;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaMenuController;
@@ -44,7 +44,8 @@ Route::get('/home', function() {
 Route::middleware('auth')->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
-    Route::get('/carts', [KeranjangController::class, 'index'])->name('Keranjang');
+    Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
+    Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
     Route::get('admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
     Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
