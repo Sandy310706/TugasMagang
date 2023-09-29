@@ -30,7 +30,6 @@
                 </ul>
             </div>
         </div>
-       
     </nav>
     <div class="card-container">
         <h1 class="makanan text-center">Makanan</h1>
