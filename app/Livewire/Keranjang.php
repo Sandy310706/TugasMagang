@@ -24,3 +24,4 @@ class Keranjang extends Component
         return redirect('menu')->with('tambah', 'Data berhasil di tambahkan');
     }
 }
+ 
