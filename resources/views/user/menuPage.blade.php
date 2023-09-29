@@ -36,9 +36,9 @@
             </div>
         </div>
     </nav>
-    <form action="{{route('Keranjang.store')}}" method="post">
-        @csrf
-        <div class="card-container">
+    <div class="card-container">
+        <form action="{{route('Keranjang.store')}}" method="post">
+            @csrf
             <h1 class="makanan text-center">Makanan</h1>
             <div class="card-menu">
                 @foreach ($makanan as $makanans)
@@ -54,6 +54,9 @@
                 </div>
                 @endforeach
             </div>
+        </form>
+        <form action="{{route('Keranjang.store')}}" method="POST">
+            @csrf
             <h1 class="makanan text-center">Minuman</h1>
             <div class="card-menu">
                 @foreach ($minuman as $minum)
@@ -63,14 +66,15 @@
                         <div class="kontent">
                             <h3>{{$minum->nama}}</h3>
                             <p>{{$minum->harga}}</p>
-                            <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Pesan</button></div>
+                            <div class="text-end"><button class="button btn btn-info" id="submitButton1" type="submit">Pesan</button></div>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+
     <footer class="footer">
         <div class="container footer-container">
             <div class="sosmed">
