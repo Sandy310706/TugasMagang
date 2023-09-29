@@ -19,7 +19,7 @@ Route::fallback(function () {
 Route::get('/', function () {
     return view('landingpage');
 })->middleware('web');
-Route::get('/menu', [MenuController::class, 'index'])->name('Menu');
+
 // == Authentikasi Route ==
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
@@ -51,9 +51,9 @@ Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
 Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
 Route::get('/operator/dashboard', [OperatorController::class, 'Operator']);
 Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('Operator.Akun');
-Route::middleware('auth')->group(function() {
-});
-
+Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
+Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
+Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
 Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
 
 
