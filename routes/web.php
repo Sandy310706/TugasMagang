@@ -52,6 +52,7 @@ Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delet
 Route::get('/operator/dashboard', [OperatorController::class, 'Operator']);
 Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('Operator.Akun');
 Route::middleware('auth')->group(function() {
+    
 });
 
 Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
