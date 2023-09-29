@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
+use Illuminate\Console\View\Components\Component;
 use App\Models\Menu;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
