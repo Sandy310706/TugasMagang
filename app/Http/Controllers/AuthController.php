@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function phei()
+    {
+        return view('auth.loginAlternatif');
+    }
     public function login()
     {
         return view('auth.login');
