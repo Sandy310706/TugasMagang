@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
-            $table->integer('menu_id')->constrained('menus');
-            $table->string('nama');
-            $table->string('foto');
-            $table->integer('harga');
+            $table->string('nama_id')->constrained('menus');
+            $table->string('foto_id')->constrained('menus');
+            $table->integer('harga_id')->constrained('harga');
             $table->timestamps();
         });
     }

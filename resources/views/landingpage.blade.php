@@ -32,7 +32,7 @@
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-					<li class="nav-item"><a class="nav-link" href="/Menu">Menu</a></li>
+					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
 					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
 					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>
 							Log Out</a></li>

@@ -24,6 +24,7 @@
 		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
 		rel="stylesheet">
 	<title>Keranjang</title>
+    @livewireStyles
 </head>
 
 <body>
@@ -69,14 +70,17 @@
 
 			</div>
 		</div>
-		<div class="card-pembungkus">
+
+
+        @foreach ($keranjangs as $keranjang)
+        <div class="card-pembungkus">
 			<div class="content">
 				<div class="content-table foto">
-					<img src="img/geprek.jpeg" alt="foto menu">
-					<p>Ayam geperek</p>
+					<img src="{{ asset('storage/fileMenu/' . $keranjang->foto) }} "alt="foto menu">
+					<p>{{$keranjang->nama}}</p>
 				</div>
 				<div class="content-table harga">
-					<p>20.000</p>
+					<p>{{$keranjang->harga}}</p>
 				</div>
 				<div class="content-table btns">
 					<button class="decrement"><i class="bi bi-dash"></i></button>
@@ -84,13 +88,16 @@
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">
-					<p>100.000</p>
+					<p></p>
 				</div>
 				<div class="content-table remove">
 					<a href=""><i class="bi bi-trash3-fill"></i></a>
 				</div>
 			</div>
 		</div>
+        @endforeach
+
+
 	</div>
 
 	<div class="container mt-3">
@@ -114,6 +121,8 @@
 	<script src="assets/bootstrap/js/scripts.js"></script>
     <script src="script.js/script.js"></script>
     <script src="script.js/scripts.js"></script>
+    @livewireScripts
 </body>
 
 </html>
+
