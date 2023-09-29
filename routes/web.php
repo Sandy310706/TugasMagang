@@ -62,4 +62,3 @@ Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
 
 
 
-
