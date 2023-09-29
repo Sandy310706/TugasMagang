@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use App\Models\Menu;
-
-use App\Models\History_pesanan;
-
 use App\Models\User;
-
 use Illuminate\Http\Request;
 
 class AdminController extends Controller

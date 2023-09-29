@@ -13,6 +13,8 @@ export default {
                 oswald: ["Oswald"],
                 archivo: ["Archivo Black"],
                 amaranth: ["Amaranth"],
+                montserrat: ["Montserrat Alternates"],
+                nunito: ["Nunito Sans"],
             },
             keyframes: {
                 ToptoBottom: {
