@@ -11,8 +11,6 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaMenuController;
 
-
-
 // == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
@@ -55,8 +53,6 @@ Route::middleware('auth')->group(function() {
     Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('Operator.Akun');
 });
 
-
-// == Admin Route ==
 Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
 
 

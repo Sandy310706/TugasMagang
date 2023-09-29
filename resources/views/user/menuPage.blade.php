@@ -35,7 +35,6 @@
                 </ul>
             </div>
         </div>
-
     </nav>
     <form action="{{route('Keranjang.store')}}" method="post">
         @csrf

@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use App\Models\Menu;
-
-use App\Models\History_pesanan;
-
 use App\Models\User;
-
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -26,9 +22,9 @@ class AdminController extends Controller
         return view('admin.kelolamenu');
     }
 
-    public function bukti()
-    {
-        $invoice = History_pesanan::all();
-        return view('admin.invoice', compact('invoice'));
-    }
+    // public function bukti()
+    // {
+    //     $invoice = History_pesanan::all();
+    //     return view('admin.invoice', compact('invoice'));
+    // }
 }
