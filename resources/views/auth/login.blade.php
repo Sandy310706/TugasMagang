@@ -58,7 +58,7 @@
     <body>
         @if(session('error'))
         <div class="alert alert-danger">
-            <p class="alerts">{{session('error')}}</p>
+            <h1>{{session('error')}}</h1>
         </div>
         @endif
         <svg xmlns="http://www.w3.org/2000/svg" width="245" height="247" viewBox="0 0 245 247" fill="none" class="kiri-atas">
@@ -83,26 +83,26 @@
                         <div class="input-group">
                             <input type="password" class="form-control" name="password" id="password" aria-describedby="cekPassword" />
                             <span class="input-group-text" id="cekPassword" onclick="change()"><i class="bi bi-eye-fill"></i></span>
-                        </div>
-                        <span>Lupa password? <a href="#">Reset</a></span>
                     </div>
-                    <button type="submit" class="btn btn-info w-100">Login</button>
-                    <span>Belum punya akun? <a href="{{ route('registrasi') }}">Registrasi</a></span>
-                </form>
+                    </form>
+                    <div class="w-full h-8 flex">
+                        <span class="font-outfit text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                    </div>
+                </div>
             </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <script>
-         function change()
+        </div>
+    </div>
+    <script>
+        function change()
         {
-            var x = document.getElementById('password').type;
+            var x = document.getElementById('Password').type;
             if ( x == 'password'){
-                document.getElementById('password').type = 'text';
-                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+                document.getElementById('Password').type = 'text';
+                document.getElementById('cekPassword').innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
             }else{
-                document.getElementById('password').type = 'password';
-                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-fill"></i>';
+                document.getElementById('Password').type = 'password';
+                document.getElementById('cekPassword').innerHTML = '<i class="fa-regular fa-eye"></i>';
             }
         }
     </script>
-    </body>
-</html>
+@endsection
