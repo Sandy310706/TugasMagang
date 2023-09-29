@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="template/landingPage/css/styles.css">
-    <title>Home</title>
+    <title>Document</title>
 </head>
 <body>
     @if (session('login'))
@@ -20,7 +20,7 @@
         </svg>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container-fluid d-flex">
+        <div class="container-fluid d-flex">
 			<div class="menu-toggle">
 				<input type="checkbox">
 				<span></span>
@@ -39,7 +39,6 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
     <div class="masthead">
         <div class="container">
             <div class="row">
@@ -59,7 +58,7 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->
@@ -74,7 +73,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -82,7 +81,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -90,7 +89,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -105,6 +104,7 @@
         <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353" height="483" viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
             <path d="M-95.03 245.61C-106.006 115.736 -363.615 25.7327 -116.363 4.83633C130.89 -16.0601 309.185 29.1495 351.202 202.156C362.178 332.029 262.251 458.38 14.9986 479.276C-232.254 500.173 -36.4232 423.189 -95.03 245.61Z" fill="#A3A847" />
         </svg>
+    
     </div>
     <section class="about" id="about">
         <div class="text-center mt-5">
@@ -141,14 +141,22 @@
 
         <div class="contact page-section" id="feedback">
             <div class="container contact-form">
-                <div class="text-center mt-5">
-                    <h2 class="tentang section-heading text-capatalize mb-5">Feedback</h2>
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase mb-5">Contact Us</h2>
                 </div>
-                <form method="POST" action="{{route('Feedback')}}" data-sb-form-api-token="API_TOKEN" style="position: relative; z-index: 9999;">
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form method="POST" action="{{route('Feedback')}}" style="position: relative; z-index: 9999;">
                     @csrf
                     <div class="row align-items-stretch mb-5">
                         <div class="col">
                             <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
                                 <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
                                     data-sb-validations="required"></textarea>
                                 <div class="invalid-feedback">A Feedback is required.</div>
