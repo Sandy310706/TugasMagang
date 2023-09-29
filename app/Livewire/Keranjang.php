@@ -21,7 +21,6 @@ class Keranjang extends Component
             'harga' => request('harga')
         ];
 
-        return redirect('menu')->with('tambah', 'Data berhasil di tambahkan');
+        return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
     }
 }
- 

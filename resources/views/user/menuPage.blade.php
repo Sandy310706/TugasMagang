@@ -11,6 +11,11 @@
     <title>Halaman Menu</title>
 </head>
 <body>
+    @if(session('tambah'))
+    <div class="alert alert-success">
+        <h1>{{session('tambah')}}</h1>
+    @endif
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
