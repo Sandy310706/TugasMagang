@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,500&display=swap" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
-<body class="bg-slate-300">
+<body class="bg-teal-300 bg-opacity-30">
     @yield('login')
 </body>
 </html>
