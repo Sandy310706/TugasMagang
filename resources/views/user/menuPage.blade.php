@@ -11,6 +11,11 @@
     <title>Halaman Menu</title>
 </head>
 <body>
+    @if(session('tambah'))
+    <div class="alert alert-success">
+        <h1>{{session('tambah')}}</h1>
+    @endif
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -30,40 +35,42 @@
                 </ul>
             </div>
         </div>
-       
     </nav>
-    <div class="card-container">
-        <h1 class="makanan text-center">Makanan</h1>
-        <div class="card-menu">
-            @foreach ($makanan as $makanans)
+    <form action="{{route('Keranjang.store')}}" method="post">
+        @csrf
+        <div class="card-container">
+            <h1 class="makanan text-center">Makanan</h1>
             <div class="card-menu">
-                <div class="card">
-                    <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
-                    <div class="kontent">
-                        <h3>{{$makanans->nama}}</h3>
-                        <p>{{$makanans->harga}}</p>
-                        <a href= "keranjang" button class="btn">Pesan</a>
+                @foreach ($makanan as $makanans)
+                <div class="card-menu">
+                    <div class="card">
+                        <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
+                        <div class="kontent">
+                            <h3>{{$makanans->nama}}</h3>
+                            <p>{{$makanans->harga}}</p>
+                            <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Pesan</button></div>
+                        </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
-        </div>
-        <h1 class="makanan text-center">Minuman</h1>
-        <div class="card-menu">
-            @foreach ($minuman as $minum)
+            <h1 class="makanan text-center">Minuman</h1>
             <div class="card-menu">
-                <div class="card">
-                    <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
-                    <div class="kontent">
-                        <h3>{{$minum->nama}}</h3>
-                        <p>{{$minum->harga}}</p>
-                        <button class="btn">Pesan</button>
+                @foreach ($minuman as $minum)
+                <div class="card-menu">
+                    <div class="card">
+                        <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
+                        <div class="kontent">
+                            <h3>{{$minum->nama}}</h3>
+                            <p>{{$minum->harga}}</p>
+                            <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Pesan</button></div>
+                        </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
-    </div>
+    </form>
     <footer class="footer">
         <div class="container footer-container">
             <div class="sosmed">

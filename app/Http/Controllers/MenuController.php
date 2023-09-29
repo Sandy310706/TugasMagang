@@ -15,7 +15,6 @@ class MenuController extends Controller
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori','minuman')->get();
         return view('user.menuPage', compact('makanan'), compact('minuman'));
-
     }
     public function store(Request $request)
     {
