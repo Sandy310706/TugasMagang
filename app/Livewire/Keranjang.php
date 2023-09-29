@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Illuminate\Console\View\Components\Component;
 use App\Models\Menu;
+use Illuminate\Http\Request;
 
 class Keranjang extends Component
 {
@@ -13,13 +14,9 @@ class Keranjang extends Component
         return view('livewire.keranjang' , compact('keranjangs'));
     }
 
-    public function store()
+    public function store(request $request)
     {
-        $data = [
-            'nama' => request('nama'),
-            'foto' => request('foto'),
-            'harga' => request('harga')
-        ];
+        Menu::created($request->all());
 
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
     }
