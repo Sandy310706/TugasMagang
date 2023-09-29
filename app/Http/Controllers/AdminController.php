@@ -21,4 +21,10 @@ class AdminController extends Controller
     {
         return view('admin.kelolamenu');
     }
+
+    // public function bukti()
+    // {
+    //     $invoice = History_pesanan::all();
+    //     return view('admin.invoice', compact('invoice'));
+    // }
 }
