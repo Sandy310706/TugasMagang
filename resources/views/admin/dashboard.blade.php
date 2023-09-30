@@ -13,7 +13,7 @@
                 <div class="w-full flex p-1"><a href="{{ route('Admin.Menu') }}" class="m-auto font-amaranth text-sm text-white">Selengkapnya<i class="bi bi-arrow-right-circle"></i></a></div>
             </div>
         </div>
-        <div class="relative w-[212px] h-32 bg-emerald-400 text-white rounded-md">
+        <div class="relative w-[212px] h-32 bg-emerald-400 text-white rounded-md hover:scale-110 duration-1000">
             <div class="p-1">
                 <h2 class="pl-1 font-semibold text-2xl">0</h2>
                 <h1 class="pl-1 font-amaranth text-3xl">Pesanan</h1>
