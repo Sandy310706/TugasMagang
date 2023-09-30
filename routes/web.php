@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -10,6 +9,7 @@ use App\Livewire\Keranjang;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\HistoriController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -53,6 +53,10 @@ Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
 Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
 Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
 Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
+Route::get('/phei', [AuthController::class,'phei']);
+Route::get('/lanchiaw', [HistoriController::class,'index']);
+
+
 
 
 
