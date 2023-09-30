@@ -68,3 +68,4 @@ class MenuController extends Controller
         }
     }
 }
+
