@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function() {
         Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
     });
     Route::middleware(['operator'])->group(function(){
-        Route::get('/operator/dashboard', [OperatorController::class, 'Operator']);
+        Route::get('/operator/dashboard', [OperatorController::class, 'index'])->name('Operator.Dashboard');
         Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('Operator.Akun');
     });
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
@@ -63,7 +63,3 @@ Route::middleware('auth')->group(function() {
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
 });
-
-
-
-
