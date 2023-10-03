@@ -19,11 +19,11 @@ class Keranjang extends Component
     public function store(request $request, $id)
     {
         $makanan = Menu::find($id);
-        $minuman     = Menu::find($id);
+        $minum  = Menu::find($id);
 
-        if(auth()->check()){
-        return redirect('login');
-        }
+        // // if(auth()->check()){
+        // // return redirect('login');
+        // }
         $keranjang = new Keranjangs;
         $keranjang->user_id = auth()->user()->id;
         $keranjang->menu_id = $makanan->id;
