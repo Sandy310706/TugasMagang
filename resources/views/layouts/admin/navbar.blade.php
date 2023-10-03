@@ -2,7 +2,7 @@
     <div class="bg-slate-900 h-20 flex fixed w-4/5 text-white z-50 HandPhone:w-full">
         <h1 class="w-1/2 font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
         <div class="w-1/2 relative" style="z-index: 2">
-            <button class="absolute right-20 top-7 hover:text-slate-300 " id="dropdownTrigger">Hallo, klen<i class="HandPhone:hidden fa-solid fa-play scale-75" style="transition: transform 1s;" id="dropdownIcon"></i></button>
+            <button class="absolute right-20 top-7 hover:text-slate-300 " id="dropdownTrigger">Hallo, {{ auth()->user()->nama }} <i class="HandPhone:hidden fa-solid fa-play scale-75" style="transition: transform 1s;" id="dropdownIcon"></i></button>
             <div class="absolute right-4 top-14 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden" id="dropdownMenu">
                 <ul>
                     <li><a href="#" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Profile</a></li>
