@@ -37,29 +37,29 @@
         </div>
     </nav>
     <div class="card-container">
-        <form action="{{route('Keranjang.store')}}" method="post">
-            @csrf
             <h1 class="makanan text-center">Makanan</h1>
             <div class="card-menu">
                 @foreach ($makanan as $makanans)
+                    <form action="{{url('carts/'.$makanans->id)}}" method="POST">
+                    @csrf
                 <div class="card-menu">
                     <div class="card">
                         <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
                         <div class="kontent">
                             <h3>{{$makanans->nama}}</h3>
                             <p>{{$makanans->harga}}</p>
-                            <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Pesan</button></div>
+                            <div class="text-end"><button class="button btn btn-info" type="submit">Pesan</button></div>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
         </form>
-        <form action="{{route('Keranjang.store')}}" method="POST">
-            @csrf
             <h1 class="makanan text-center">Minuman</h1>
             <div class="card-menu">
                 @foreach ($minuman as $minum)
+                <form action="{{url('carts/'.$minum->id)}}" method="POST">
+                    @csrf
                 <div class="card-menu">
                     <div class="card">
                         <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
