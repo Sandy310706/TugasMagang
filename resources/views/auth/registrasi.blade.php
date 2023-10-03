@@ -1,188 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Registrasi</title>
-    <style>
-        body{
-	        background-color: #19123B;
-        }
-        .card{
-            border: none;
-            border-top: 5px solid  rgb(176,106,252);
-            background: #212042;
-            color: #57557A;
-        }
-        p{
-            font-weight: 600;
-            font-size: 15px;
-        }
-        .fab{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            background: #2A284D;
-            height: 40px;
-            width: 90px;
-        }
-        .division{
-            float: none;
-            position: relative;
-            margin: 30px auto 20px;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .division .line{
-            border-top: 1.5px solid #57557A;;
-            position: absolute;
-            top: 13px;
-            width: 85%;
-        }
-        .line.l{
-            left: 52px;
-        }
-        .line.r{
-            right: 45px;
-
-        }
-        .division span{
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .myform{
-            padding: 0 25px 0 33px;
-        }
-        .form-control{
-            border: 1px solid #57557A;
-            border-radius: 3px;
-            background: #212042;
-            letter-spacing: 1px;
-
-        }
-        .input-group-text{
-            background-color: #212042;
-            border: 1px solid white;
-            border: none
-        }
-        .form-control:focus{
-            border: 1px solid #57557A;
-            border-radius: 3px;
-            box-shadow: none;
-            background: #212042;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-        .bn{
-            text-decoration: underline;
-        }
-        .bn:hover{
-            cursor: pointer;
-        }
-        .form-check-input {
-            margin-top: 8px!important;
-            }
-        .btn-primary{
-        background: linear-gradient(135deg, rgba(176,106,252,1) 39%,rgba(116,17,255,1) 101%);
-        border: none;
-        border-radius: 50px;
-        }
-        .btn-primary:focus{
-            box-shadow: none;
-            border: none;
-        }
-        small{
-            color: #F2CEFF;
-        }
-        .far.fa-user{
-            font-size: 13px;
-        }
-
-        @media(min-width: 767px){
-            .bn{
-                text-align: right;
-            }
-        }
-        @media(max-width: 767px){
-            .form-check{
-                text-align: center;
-            }
-            .bn{
-                text-align: center;
-                align-items: center;
-            }
-        }
-        @media(max-width: 450px){
-            .fab{
-                width: 100%;
-                height: 100%;
-            }
-            .division .line{
-                width: 50%;
-            }
-        }
-        .row .col a{
-            font-family:  "Comic Sans MS", cursive, sans-serif;;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-5">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card py-3 px-2">
-                    <div class="division">
-                        <div class="row">
-                            <div class="col-3"><div class="line l"></div></div>
-                            <div class="col-6"><span>R e g i s</span></div>
-                            <div class="col-3"><div class="line r"></div></div>
+@extends('layouts.Auth.app')
+@section('title', 'Halaman Registrasi')
+@section('registrasi')
+    <div class="w-full h-screen flex flex-col justify-center items-center ">
+        @if (session('berhasil'))
+            <div class="w-[35%] h-[8%] rounded-lg flex justify-center items-center mt-4 bg-green-500 shadow-xl shadow-stone-500 text-white">
+                <p><i class="fa-solid fa-circle-check"></i> {{ session('berhasil') }}</p>
+            </div>
+        @endif
+        <div class="w-full h-[92%] flex justify-center items-center">
+            <div class="w-[35%] bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25">
+                <div class="w-full h-full flex flex-col mt-10 items-center">
+                    <div class="w-full flex justify-center items-center mb-10">
+                        <h1 class="text-4xl font-montserrat">R e g i s</h1>
+                    </div>
+                    <div class="w-full">
+                        <form action="{{ route('registrasi') }}" method="POST" class="flex flex-col justify-center items-center">
+                            @csrf
+                            <div class="w-3/4 h-10 border-1 border-neutral-600 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('nama') ? 'border-red-500 ring-red-600 mb-0' : 'mb-10'}}">
+                                <div class="w-1/6 h-full">
+                                    <img src="{{ asset('img/Nama.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
+                                </div>
+                                <input type="text" placeholder="Masukan Nama" value="{{ old('nama') }}" name="nama" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
+                            </div>
+                                @error('nama')
+                                    <div class="mb-5 w-3/4 pl-2 flex justify-start">
+                                        <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
+                                    </div>
+                                @enderror
+                            <div class="w-3/4 h-10 border-1 border-neutral-600 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('email') ? 'border-red-500 ring-red-600 mb-0' : 'mb-10'}}">
+                                <div class="w-1/6 h-full">
+                                    <img src="{{ asset('img/Email.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
+                                </div>
+                                <input type="email" placeholder="Masukan Email" value="{{ old('email') }}" name="email" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
+                            </div>
+                                @error('email')
+                                    <div class="mb-5 w-3/4 pl-2 flex justify-start">
+                                        <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
+                                    </div>
+                                @enderror
+                            <div class="w-3/4 h-10 border-neutral-600 border-1 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('password') ? 'border-red-500 ring-red-600 m-0' : 'mb-10'}}">
+                                <div class="w-1/6 h-full">
+                                    <img src="{{ asset('img/Password.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
+                                </div>
+                                <input type="password" id="Password" placeholder="Masukan Password" name="password" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
+                                <div class="w-1/6 h-full flex justify-center items-center">
+                                    <span id="cekPassword" onclick="change()"><i class="fa-regular fa-eye"></i></span>
+                                </div>
+                            </div>
+                                @error('password')
+                                    <div class="mb-5 w-3/4 pl-2 flex justify-start">
+                                        <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
+                                    </div>
+                                @enderror
+                            <div class="w-full h-8 flex justify-center items-center">
+                                <button class="bg-zinc-700 text-white h-full py-1 w-1/2 justify-center items-center rounded-xl" type="submit">Regis</button>
+                            </div>
+                        </form>
+                        <div class="w-full h-8 flex mb-10">
+                            <span class="font-outfit text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                            <span class="font-outfit text-sm m-auto">Sudah Punya akun? <a href="{{ route('login') }}" class="text-blue-700 hover:underline">Login</a></span>
                         </div>
                     </div>
-                    <form class="myform" method="POST" action="{{ route('registrasi') }}">
-                        @csrf
-                        <div class="form-group">
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror m-0" name="nama" placeholder="Nama" value="{{ old('nama') }}">
-                            @error('nama')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror m-0" name="email" placeholder="Email" value="{{ old('email') }}">
-                            @error('email')
-                                <div class="invalid-feedback mt-1">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="input-group">
-                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="Password" placeholder="Password" aria-describedby="cekPassword">
-                            <span class="input-group-text" id="cekPassword" onclick="change()"><i class="bi bi-eye-fill"></i></span>
-                            @error('password')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group mt-3">
-                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small>Masukan</small></button>
-                        </div>
-                        <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <p>Sudah punya akun? <a href="/login" class="text-decoration-none">Login</a></p>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -193,12 +71,11 @@
             var x = document.getElementById('Password').type;
             if ( x == 'password'){
                 document.getElementById('Password').type = 'text';
-                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+                document.getElementById('cekPassword').innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
             }else{
                 document.getElementById('Password').type = 'password';
-                document.getElementById('cekPassword').innerHTML = '<i class="bi bi-eye-fill"></i>';
+                document.getElementById('cekPassword').innerHTML = '<i class="fa-regular fa-eye"></i>';
             }
         }
     </script>
-</body>
-</html>
+@endsection

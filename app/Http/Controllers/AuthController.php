@@ -7,9 +7,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function phei()
+    {
+        return view('auth.loginAlternatif');
+    }
     public function login()
     {
         return view('auth.login');
@@ -17,7 +23,7 @@ class AuthController extends Controller
 
     public function authtentication(Request $request)
     {
-        $credential = $request->validate([
+        $credential = Validator::make($request->all(), [
             'email' => ['required', 'email'],
             'password' => 'required'
         ],
@@ -26,19 +32,28 @@ class AuthController extends Controller
             'email.email' => 'Format email wajib di isi',
             'password' => 'Password wajib di isi'
         ]);
-        if(Auth::attempt($credential)) {
-            if(Auth::user()->role == 'guest'){
-                $request->session()->regenerate();
-                return redirect('');
-            }elseif(Auth::user()->role == 'admin'){
-                $request->session()->regenerate();
-                return view('admin.dashboard');
-            }elseif(Auth::user()->role == 'operator'){
-                $request->session()->regenerate();
+        if($credential->fails()){
+            return redirect()->back()
+            ->withErrors($credential)
+            ->withInput();
+        }
+        $userEmail = User::where('email', $request->email)->first();
+        if (!$userEmail) {
+            return redirect()->back()
+            ->withErrors(['email' => 'Email tidak terdaftar']);
+        }
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $request->session()->regenerate();
+            $user = Auth::user();
+            if ($user->role == 'guest') {
+                return redirect('/');
+            } elseif ($user->role == 'admin') {
+                return redirect('admin/dashboard');
+            } elseif ($user->role == 'operator') {
                 return redirect('/operator/dashboard');
             }
-        }else{
-            return back()->with('gagal', 'Email atau Password anda salah');
+        } else {
+            return redirect()->back()->withErrors(['password' => 'Password salah']);
         }
     }
 
@@ -52,16 +67,20 @@ class AuthController extends Controller
         $dataValidasi = $request->validate([
             'nama' => ['required', 'max:100'],
             'email' => ['required', 'email:dns', 'unique:users'],
-            'password' => ['required', 'min:7, max:20']
+            'password' => ['required', 'min:8, max:20']
         ],[
             'nama.required' => 'Nama wajib di isi',
+            'nama.max' => 'Maksimal 100 digit',
             'email.required' => 'Email wajib di isi',
             'email.email' => 'Format email wajib di tulis',
-            'password' => 'Password wajib di isi',
+            'email.unique' => 'Email sudah di pakai',
+            'password.required' => 'Password wajib di isi',
+            'password.min' => 'Minimal 8 digit',
+            'password.max' => 'Maksimal 20 digit',
         ]);
         Hash::make($dataValidasi['password']);
         User::create($dataValidasi);
-        return redirect('/login')->with('berhasil', 'Akun berhasil di tambahkan');
+        return redirect('/login')->with('berhasil', 'Akun berhasil di di buat, Silahkan login');
     }
 
     public function logout(Request $request)
