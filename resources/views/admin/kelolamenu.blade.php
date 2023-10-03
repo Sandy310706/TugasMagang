@@ -1,4 +1,4 @@
-@extends('layouts.Admin')
+@extends('layouts.admin.Admin')
 
 @section('title', 'Admin | Kelola Menu')
 @section('headerNav', 'KELOLA MENU')
@@ -133,9 +133,6 @@
             <div class="mb-2 flex flex-col">
                 <label for="file" class="font-outfit after:content-['*'] after:text-red-500 after:text-sm after:font-medium">Foto</label>
                 <input type="file" id="file" name="foto" value="{{ old('foto') }}" class="rounded p-1 text-sm {{ $errors->has('foto') ? 'text-red-500' : ''}}">
-                @error('foto')
-                    <p class="pt-1 text-xs text-red-500">{{ $message }}</p>
-                @enderror
             </div>
             <div class="flex justify-end">
                 <button class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white hover:from-blue-500 hover:to-blue-800">Input</button>
@@ -153,15 +150,6 @@
         modal.classList.add("animate-showModal");
         modal.classList.remove("animate-hideModal")
     });
-    closeModal.addEventListener("click", function () {
-        setTimeout(() => {
-            modal.classList.add("hidden");
-            modalEdit.classList.add("hidden");
-        }, 1000);
-        modal.classList.add("animate-hideModal");
-        modal.classList.remove("animate-showModal");
-    });
-
     function modalEdit(idData) {
         const modalEdit = document.getElementById("modalEdit");
         modalEdit.classList.remove("hidden");
