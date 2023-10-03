@@ -3,14 +3,14 @@
 @section('login')
     <div class="w-full h-screen flex flex-col justify-center items-center ">
         @if (session('berhasil'))
-        <div class="relative w-[35%] h-[8%] rounded-lg mt-4 bg-green-400 shadow-sm shadow-stone-500 text-white" id="alert">
-            <div class="flex justify-center items-center w-full h-full">
-                <p><i class="fa-solid fa-circle-check"></i> {{ session('berhasil') }} </p>
+            <div class="relative w-[35%] h-[8%] rounded-lg mt-4 bg-green-400 shadow-sm shadow-stone-500 text-white" id="alert">
+                <div class="flex justify-center items-center w-full h-full">
+                    <p><i class="fa-solid fa-circle-check"></i> {{ session('berhasil') }} </p>
+                </div>
+                <div class="absolute -right-3 -top-3">
+                    <button id="trigger" class="bg-white w-6 scale-110 rounded-full"><i class="fa-solid fa-xmark text-black"></i></button>
+                </div>
             </div>
-            <div class="absolute -right-2 -top-3">
-                <button id="trigger" class="bg-white w-5 scale-125 rounded-full"><i class="fa-solid fa-xmark text-black"></i></button>
-            </div>
-        </div>
         @endif
         <div class="w-full h-[92%] flex justify-center items-center">
             <div class="w-[35%] h-96 bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25">
