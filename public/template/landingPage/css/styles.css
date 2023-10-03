@@ -83,34 +83,17 @@ body {
 }
 
 .welcome {
-<<<<<<< HEAD
-  font-family: 'Rock Salt', cursive;
-  font-size: 35px;
-  margin-left: 0px;
-  text-align: center;
-  line-height: 80px;
-=======
-    margin-top: 150px;
-    font-family: "Rock Salt", cursive;
+    font-family: 'Rock Salt', cursive;
     font-size: 35px;
     margin-left: 0px;
     text-align: center;
     line-height: 80px;
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
+
 }
 
 /* hamburger menu */
 
 .menu-toggle {
-<<<<<<< HEAD
-  display: none;
-  flex-direction: column;
-  height: 20px;
-  background-color: transparent;
-  justify-content: space-between;
-  position: relative;
-  order: 2 !important;
-=======
     display: none;
     flex-direction: column;
     height: 20px;
@@ -118,7 +101,6 @@ body {
     justify-content: space-between;
     position: relative;
     order: 2 !important;
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
 }
 
 .menu-toggle input {
@@ -152,17 +134,17 @@ body {
     transform-origin: 0 100%;
 }
 
-.menu-toggle input:checked ~ span:nth-child(2) {
+.menu-toggle input:checked~span:nth-child(2) {
     background-color: white;
     transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.menu-toggle input:checked ~ span:nth-child(4) {
+.menu-toggle input:checked~span:nth-child(4) {
     background-color: white;
     transform: rotate(-45deg) translate(-1px, 0);
 }
 
-.menu-toggle input:checked ~ span:nth-child(3) {
+.menu-toggle input:checked~span:nth-child(3) {
     opacity: 0;
     transform: scale(0);
 }
@@ -289,11 +271,8 @@ h1.makanan {
 }
 
 .about {
-<<<<<<< HEAD
-  background-color: #96C291;
-=======
-    background-color: #96c291;
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
+    background-color: #96C291;
+
 }
 
 .about-1 {
@@ -363,11 +342,12 @@ h1.makanan {
 
 /* section contact */
 
-<<<<<<< HEAD
+
 .contact .section-heading {
-  color: #fff;
-  z-index: 3;
-=======
+    color: #fff;
+    z-index: 3;
+}
+
 section#contact {
     background-color: #a2c579;
     background-repeat: no-repeat;
@@ -444,7 +424,6 @@ section#contact {
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     color: #ced4da;
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
 }
 
 /* footer */
@@ -517,710 +496,303 @@ section#contact {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        max-width: 100%;
-    }
-
-<<<<<<< HEAD
-@media only screen and (max-width: 600px) {
-  body {
-    max-width: 100%;
-  }
-
-  .menu-toggle {
-    display: flex;
-    position: relative;
-    z-index: 9999;
-  }
-=======
-    .menu-toggle {
-        display: flex;
-    }
-
-    nav ul {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 70vh;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        background-color: black;
-        z-index: -1;
-        transform: translatey(-100%);
-        transition: all 1s;
-        opacity: 0;
-        color: #fff;
-        gap: 10px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    nav ul.slide {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    #mainNav .navbar-brand {
-        font-size: 20px;
-    }
-
-<<<<<<< HEAD
-  #mainNav .navbar-brand {
-    font-size: 20px;
-  }
-
-  .masthead {
-    height: 100%;
-  }
-
-  .welcome {
-    font-size: 15px;
-    line-height: 28px;
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-  }
-
-  .Menu-Page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Menu-Page .box {
-    width: 290px;
-  }
-=======
-    .masthead {
-        height: 100%;
-    }
-
-    .welcome {
-        font-size: 15px;
-        line-height: 28px;
-        z-index: 5;
-        display: flex;
-        justify-content: center;
-    }
-
-    .Menu-Page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Menu-Page .box {
-        width: 270px;
-    }
-
-    .about {
-        margin: 0px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .about-1 {
-        width: 100%;
-        flex-direction: column;
-        padding: 0px 40px;
-    }
-
-    .about-2 {
-        width: 100%;
-        flex-direction: column;
-        padding: 0px 40px;
-    }
-
-    .kantin-content {
-        width: 90%;
-        max-width: 35px 0px;
-        order: 2;
-    }
-
-    .kantin-content h2 {
-        font-size: 28px;
-        margin-top: 30px;
-    }
-
-    .kantin-content p {
-        font-size: 19px;
-        margin-bottom: 25px;
-        text-align: justify;
-        letter-spacing: -1px;
-        text-indent: 20px;
-    }
-
-    .img {
-        width: 90%;
-        order: 1;
-        margin-top: 50px;
-    }
-
-    .footer-container {
-        width: 100%;
-    }
-
-    .sosmed ul li a {
-        font-size: 46%;
-        margin-top: 10px;
-    }
-
-    .copyright p {
-        font-size: 10px;
-    }
-
-    .biru {
-        width: 250px;
-        top: -160px;
-    }
-
-    .hijau {
-        width: 0;
-        left: 0px;
-        top: 0;
-    }
-
-<<<<<<< HEAD
-  .about-biru {
-    width: 300px;
-    top: 0;
-    left: 0;
-  }
-
-  .contact-hijau {
-    width: 170px;
-    top: 1000px;
-    left: 0;
-  }
-
-  .image img {
-    width: 100%;
-  }
-
-  .images img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-}
-
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-    position: relative;
-    z-index: 9999;
-  }
-=======
-    .about-biru {
-        width: 300px;
-        top: 0;
-        left: 0;
-    }
-
-    .about-kuning {
-        width: 0;
-        left: 0;
-    }
-
-    .contact-hijau {
-        width: 200px;
-        top: 1200px;
-        left: 0;
-    }
-
-    .images img {
-        width: 100%;
-        margin-top: 100px;
-    }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 767px) {
-    .menu-toggle {
-        display: flex;
-        position: relative;
-        z-index: 9999;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    nav ul {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 70vh;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
-        background-color: black;
-        z-index: -1;
-        transform: translatey(-100%);
-        transition: all 1s;
-        opacity: 0;
-    }
-
-    nav ul.slide {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-<<<<<<< HEAD
-  .welcome {
-    font-size: 20px;
-    line-height: 30px;
-    z-index: 4;
-    margin-top: 65px;
-  }
-
-  .masthead {
-    height: 100%;
-  }
-
-  .Menu-Page .box {
-    width: 60%;
-    margin: auto;
-  }
-
-  .Menu-Page .box .image img {
-    width: 100%;
-  }
-=======
-    .welcome {
-        font-size: 20px;
-        line-height: 30px;
-        z-index: 4;
-    }
-
-    .masthead {
-        height: 100%;
-    }
-
-    .Menu-Page .box {
-        width: 100%;
-        margin: auto;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .Menu-Page .box .image img {
-        width: 70%;
-    }
-
-    .about {
-        margin: 0px;
-    }
-
-    .about-1 {
-        width: 100%;
-        flex-direction: column;
-        padding: 0px 40px;
-    }
-
-    .about-2 {
-        width: 100%;
-        flex-direction: column;
-        padding: 0px 40px;
-    }
-
-    .kantin-content {
-        width: 90%;
-        max-width: 35px 0px;
-        order: 2;
-    }
-
-    .kantin-content h2 {
-        font-size: 28px;
-        margin-top: 30px;
-    }
-
-    .kantin-content p {
-        font-size: 19px;
-        margin-bottom: 25px;
-        text-align: justify;
-        letter-spacing: -1px;
-        text-indent: 20px;
-    }
-
-<<<<<<< HEAD
-  .contact-hijau {
-    top: 1000px;
-    width: 220px;
-  }
-=======
-    .img {
-        width: 90%;
-        order: 1;
-        margin-top: 50px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .contact-hijau {
-        top: 1250px;
-        width: 300px;
-    }
+    @media only screen and (max-width: 600px) {
+        body {
+            max-width: 100%;
+        }
+
+        .menu-toggle {
+            display: flex;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        nav ul {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 70vh;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: black;
+            z-index: -1;
+            transform: translatey(-100%);
+            transition: all 1s;
+            opacity: 0;
+            color: #fff;
+            gap: 10px;
+        }
+
+
+        nav ul.slide {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #mainNav .navbar-brand {
+            font-size: 20px;
+        }
+
+
+        #mainNav .navbar-brand {
+            font-size: 20px;
+        }
+
+        .masthead {
+            height: 100%;
+        }
+
+        .welcome {
+            font-size: 15px;
+            line-height: 28px;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .Menu-Page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Menu-Page .box {
+            width: 290px;
+        }
+
+        .masthead {
+            height: 100%;
+        }
+
+        .welcome {
+            font-size: 15px;
+            line-height: 28px;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .Menu-Page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Menu-Page .box {
+            width: 270px;
+        }
+
+        .about {
+            margin: 0px;
+        }
+
+
+        .about-1 {
+            width: 100%;
+            flex-direction: column;
+            padding: 0px 40px;
+        }
+
+        .about-2 {
+            width: 100%;
+            flex-direction: column;
+            padding: 0px 40px;
+        }
+
+        .kantin-content {
+            width: 90%;
+            max-width: 35px 0px;
+            order: 2;
+        }
+
+        .kantin-content h2 {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        .kantin-content p {
+            font-size: 19px;
+            margin-bottom: 25px;
+            text-align: justify;
+            letter-spacing: -1px;
+            text-indent: 20px;
+        }
+
+        .img {
+            width: 90%;
+            order: 1;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            width: 100%;
+        }
+
+        .sosmed ul li a {
+            font-size: 46%;
+            margin-top: 10px;
+        }
+
+        .copyright p {
+            font-size: 10px;
+        }
+
+        .biru {
+            width: 250px;
+            top: -160px;
+        }
+
+        .hijau {
+            width: 0;
+            left: 0px;
+            top: 0;
+        }
+
+        .about-biru {
+            width: 300px;
+            top: 0;
+            left: 0;
+        }
+
+        .contact-hijau {
+            width: 170px;
+            top: 1000px;
+            left: 0;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .images img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .about-biru {
+            width: 300px;
+            top: 0;
+            left: 0;
+        }
+
+        .about-kuning {
+            width: 0;
+            left: 0;
+        }
+
+        .contact-hijau {
+            width: 200px;
+            top: 1200px;
+            left: 0;
+        }
+
+        .images img {
+            width: 100%;
+            margin-top: 100px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+        .menu-toggle {
+            display: flex;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .biru {
+            width: 400px;
+            top: -121px;
+        }
+
+        .hijau {
+            width: 0;
+        }
+
+        .about-kuning {
+            width: 0;
+        }
+
+        .images img {
+            width: 100%;
+            margin-top: 80px;
+        }
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+        x .masthead {
+            height: 100%;
+        }
+
+        .welcome {
+            font-size: 22px;
+            line-height: 38px;
+            margin-top: 150px;
+        }
+
+        .about {
+            width: 100vw;
+        }
+
+        .copyright p {
+            font-size: 20px;
+        }
+
+        .images img {
+            width: 100%;
+            margin-top: 50px;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .welcome {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        .welcome {
+            font-size: 30px;
+            line-height: 40px;
+            margin-top: 180px;
+        }
+
+        .hijau {
+            width: 0;
+        }
+
+        .about-kuning {
+            width: 0;
+        }
+
+        .contact-hijau {
+            width: 250px;
+            top: 650px;
+        }
+
+        .images img {
+            width: 100%;
+        }
+        .contact-hijau {
+            width: 300px;
+            top: 840px;
+        }
 
-    .footer-container {
-        width: 100%;
     }
 
-    .sosmed ul li a {
-        font-size: 13px;
-    }
-
-    .copyright p {
-        font-size: 13px;
-    }
-
-<<<<<<< HEAD
-
-  .image img {
-    width: 100%;
-  }
-
-  .images img {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .menu-toggle {
-    display: flex;
-    position: relative;
-    z-index: 9999;
-  }
-=======
-    .biru {
-        width: 400px;
-        top: -121px;
-    }
-
-    .hijau {
-        width: 0;
-    }
-
-    .about-kuning {
-        width: 0;
-    }
-
-    .images img {
-        width: 100%;
-        margin-top: 80px;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .menu-toggle {
-        display: flex;
-        position: relative;
-        z-index: 9999;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    nav ul {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 70vh;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
-        background-color: black;
-        z-index: -1;
-        transform: translatey(-100%);
-        transition: all 1s;
-        opacity: 0;
-    }
-
-    nav ul.slide {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-<<<<<<< HEAD
-  .Menu-Page .box {
-    position: relative;
-    height: 400px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-  }
-
-  .Menu-Page .box .image {
-    width: 100%;
-    height: 50%;
-    background-size: auto;
-  }
-
-  .Menu-Page.box h1 {
-    margin-top: 100px;
-  }
-
-  .about-biru {
-    width: 420px;
-    top: 0;
-  }
-
-  .contact-hijau {
-    width: 250px;
-    top: 80vh;
-  }
-
-  .about-1 {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .img-1 {
-    order: 2;
-  }
-=======
-    .about-biru {
-        width: 420px;
-        top: 0;
-    }
-
-    .contact-hijau {
-        width: 300px;
-        top: 90vh;
-    }
-
-    .about-1 {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .hijau {
-        width: 0;
-    }
-
-    .about-kuning {
-        width: 0;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .img-1 {
-        order: 2;
-    }
-
-<<<<<<< HEAD
-  .about-1 h2 {
-    margin-top: 50px;
-  }
-
-  .img-1 img {
-    width: 100%;
-  }
-
-  .kantin-content p {
-    font-size: 1em;
-    letter-spacing: -1px;
-  }
-
-  .welcome {
-    font-size: 20px;
-    line-height: 30px;
-    margin-top: 120px;
-  }
-=======
-    .about-2 {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .about-1 h2 {
-        margin-top: 50px;
-    }
-
-    .img-1 img {
-        width: 100%;
-    }
-
-    .kantin-content p {
-        font-size: 1em;
-        letter-spacing: -1px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .welcome {
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    .footer-container {
-        width: 100%;
-    }
-
-    .sosmed ul li a {
-        font-size: 20px;
-    }
-
-<<<<<<< HEAD
-  .images img{
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {x  
-  .masthead {
-    height: 100%;
-  }
-
-  .welcome {
-    font-size: 22px;
-    line-height: 38px;
-    margin-top: 150px;
-  }
-
-  .about {
-    width: 100vw;
-  }
-=======
-    .copyright p {
-        font-size: 20px;
-    }
-
-    .images img {
-        width: 100%;
-        margin-top: 50px;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .masthead {
-        height: 100%;
-    }
-
-    .welcome {
-        font-size: 22px;
-        line-height: 38px;
-    }
-
-    .about {
-        width: 100vw;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .about-1 {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .about-2 {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .img-1 {
-        order: 2;
-    }
-
-    .hijau {
-        width: 0;
-    }
 
-<<<<<<< HEAD
-  .about-kuning {
-    width: 0;
-  }
-
-  .contact-hijau {
-    width: 250px;
-    top: 600px;
-  }
-=======
-    .about-kuning {
-        width: 0;
-    }
-
-    .contact-hijau {
-        width: 250px;
-        top: 650px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .about-kuning {
-        left: 553px;
-    }
-
-<<<<<<< HEAD
-  .kantin-content p {
-    font-size: 20px;
-  }
-=======
-    .kantin-content p {
-        font-size: 20px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-
-    .footer-container {
-        width: 100%;
-    }
 
-    .sosmed ul li a {
-        font-size: 20px;
-    }
-
-<<<<<<< HEAD
-  .copyright p {
-    font-size: 20px;
-  }
-
-  .images img{
-    width: 100%;
-  }
-=======
-    .copyright p {
-        font-size: 20px;
-    }
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
-}
-
-@media only screen and (min-width: 1200px) {
-    .welcome {
-        font-size: 30px;
-        line-height: 40px;
-    }
-
-<<<<<<< HEAD
-  .welcome {
-    font-size: 30px;
-    line-height: 40px;
-    margin-top: 180px;
-  }
-
-  .hijau {
-    width: 0;
-  }
-
-  .about-kuning {
-    width: 0;
-  }
-
-  .contact-hijau {
-    width: 250px;
-    top: 650px;
-  }
-
-  .images img{
-    width: 100%;
-  }
-
-}
-=======
-    .hijau {
-        width: 0;
-    }
-
-    .about-kuning {
-        width: 0;
-    }
-
-    .contact-hijau {
-        width: 300px;
-        top: 840px;
-    }
-}
->>>>>>> b561916a85ed0307042f625610bee6d04e11e6ed
