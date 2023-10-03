@@ -2,7 +2,8 @@
 
 namespace App\Livewire;
 
-use Illuminate\Console\View\Components\Component;
+use Livewire\Component;
+use Illuminate\Support\Str;
 use App\Models\Menu;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
@@ -15,10 +16,25 @@ class Keranjang extends Component
         return view('livewire.keranjang' , compact('keranjangs'));
     }
 
-    public function store(request $request)
+    public function store(request $request, $id)
     {
-        Keranjangs::created($request->all());
+        $makanan = Menu::find($id);
+        $minuman     = Menu::find($id);
 
+        if(auth()->check()){
+        return redirect('login');
+        }
+        $keranjang = new Keranjangs;
+        $keranjang->user_id = auth()->user()->id;
+        $keranjang->menu_id = $makanan->id;
+        $keranjang->save();
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
+    }
+
+    public function delete($id)
+    {
+        $keranjang = Keranjangs::where('id',$id);
+        $keranjang->delete();
+        return redirect('carts');
     }
 }
