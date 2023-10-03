@@ -23,7 +23,8 @@ Route::get('/', function () {
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/menu', [MenuController::class, 'index'])->name('index');
 Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
-Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
+Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store');
+Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
 Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
         return redirect('');

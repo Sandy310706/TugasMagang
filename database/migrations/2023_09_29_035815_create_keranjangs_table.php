@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_id')->constrained('menus');
-            $table->string('foto_id')->constrained('menus');
-            $table->integer('harga_id')->constrained('harga');
+            $table->string('user_id')->constrained('user');
+            $table->foreignId('menu_id');
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });
     }

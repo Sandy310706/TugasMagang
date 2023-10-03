@@ -20,7 +20,7 @@ class Menu extends Model
 
     public function Keranjang():BelongsTo
     {
-        return $this -> belongsTo(Keranjang::class);
+        return $this -> belongsTo(Keranjangs::class);
     }
 
 }
