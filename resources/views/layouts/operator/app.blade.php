@@ -22,6 +22,7 @@
         <div class="ml-[20%] w-full">
             @include('layouts.operator.navbar')
             <div class="container px-4 py-2">
+                @yield('dashboard')
                 @yield('kelola akun')
             </div>
         </div>

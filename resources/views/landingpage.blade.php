@@ -19,29 +19,7 @@
             <path d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z" fill="#016A70" />
         </svg>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container-fluid d-flex">
-			<div class="menu-toggle">
-				<input type="checkbox">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<h3 class="navbar-brand ml-5">SMKN7Pontianak</h3>
-			<div class="justift-content-end">
-				<ul class="navbar-nav text-uppercase">
-					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    @if (auth())
-                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                    @else
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    @endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+    @include('user.navbar')
     <div class="masthead">
         <div class="container">
             <div class="row">

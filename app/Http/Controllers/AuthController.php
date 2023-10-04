@@ -67,7 +67,8 @@ class AuthController extends Controller
         $dataValidasi = $request->validate([
             'nama' => ['required', 'max:100'],
             'email' => ['required', 'email:dns', 'unique:users'],
-            'password' => ['required', 'min:8, max:20']
+            'password' => ['required', 'min:8, max:20'],
+            ''
         ],[
             'nama.required' => 'Nama wajib di isi',
             'nama.max' => 'Maksimal 100 digit',

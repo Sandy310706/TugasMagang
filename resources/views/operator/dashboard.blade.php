@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.operator.app')
 
 @section('title', 'Dashboard | Operator')
-
-@section('content')
-
-
+@section('headerNav', 'Dashboard')
+@section('dashboard')
+    <p>Hello World</p>
 @endsection
