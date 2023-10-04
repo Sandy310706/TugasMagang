@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
-            $table->string('namamenu');
-            $table->string('namapemesan');
-            $table->enum('kategori', ['makanan', 'minuman']);
-            $table->bigInteger('harga');
+            $table->string('user_id')->constrained('user');
+            $table->string('token');
+            $table->foreignId('keranjang_id');
+            $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
             $table->timestamps();
         });
     }
