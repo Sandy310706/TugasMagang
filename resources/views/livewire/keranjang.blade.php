@@ -76,23 +76,24 @@
         <div class="card-pembungkus">
 			<div class="content">
 				<div class="content-table foto">
-					<img src="{{ asset('storage/fileMenu/' . $keranjang->foto) }} "alt="foto menu">
-					<p>{{$keranjang->nama}}</p>
+					<img src="{{ asset('storage/fileMenu/' . $keranjang->foto_id) }}" alt="Menupage">
+					<p>{{$keranjang->nama_id}}</p>
 				</div>
 				<div class="content-table harga">
-					<p>{{$keranjang->harga}}</p>
+					<p>{{$keranjang->harga_id}}</p>
 				</div>
 				<div class="content-table btns">
 					<button class="decrement"><i class="bi bi-dash"></i></button>
-					<span class="count">0</span>
+					<span class="count">1</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">
 					<p></p>
 				</div>
 				<div class="content-table remove">
-					<a href=""><i class="bi bi-trash3-fill"></i></a>
+					<a href="{{url('carts'.$keranjang->id)}}"><i class="bi bi-trash3-fill"></i></a>
 				</div>
+
 			</div>
 		</div>
         @endforeach

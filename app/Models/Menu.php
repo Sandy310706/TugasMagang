@@ -11,12 +11,22 @@ class Menu extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'nama',
         'harga',
         'kategori',
         'foto'
     ];
+
+    public function getTableName()
+    {
+        $Menu = $this->getTable();
+
+        $Keranjangs=  Menu::table($Menu)->get();
+
+        return $this->getTable();
+    }
 
     public function Keranjang():BelongsTo
     {
