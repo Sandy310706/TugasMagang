@@ -50,7 +50,7 @@ class AuthController extends Controller
             } elseif ($user->role == 'admin') {
                 return redirect('admin/dashboard');
             } elseif ($user->role == 'operator') {
-                return redirect('/operator/dashboard');
+                return redirect()->route('Operator.Dashboard');
             }
         } else {
             return redirect()->back()->withErrors(['password' => 'Password salah']);
