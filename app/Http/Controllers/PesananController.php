@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Keranjangs;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
 use Illuminate\Queue\Jobs\RedisJob;
+use Dirape\Token\Token;
 use Illuminate\Support\Facades\Redirect;
 
 class PesananController extends Controller
@@ -37,5 +39,14 @@ class PesananController extends Controller
 
         return redirect()->route('pesanan');
     }
+
+    public function menu($id)
+    {
+        $Keranjang = Keranjangs::find($id);
+
+        $pesanan = new pesanan;
+
+    }
+
 
 }

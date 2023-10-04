@@ -42,13 +42,17 @@
                 @foreach ($makanan as $makanans)
                     <form action="{{url('carts/'.$makanans->id)}}" method="POST">
                     @csrf
+
                 <div class="card-menu">
                     <div class="card">
                         <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
                         <div class="kontent">
                             <h3>{{$makanans->nama}}</h3>
                             <p>{{$makanans->harga}}</p>
-                            <div class="text-end"><button class="button btn btn-info" type="submit">Pesan</button></div>
+                            <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST" class="inline"  >
+                                @csrf
+                                <button type="submit">Pesan</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -66,7 +70,10 @@
                         <div class="kontent">
                             <h3>{{$minum->nama}}</h3>
                             <p>{{$minum->harga}}</p>
-                            <div class="text-end"><button class="button btn btn-info" id="submitButton1" type="submit">Pesan</button></div>
+                            <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST" class="inline"  >
+                                @csrf
+                                <button type="submit">Pesan</button>
+                            </form>
                         </div>
                     </div>
                 </div>
