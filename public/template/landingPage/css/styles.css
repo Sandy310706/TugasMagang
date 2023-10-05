@@ -243,20 +243,13 @@ h1.makanan {
 }
 
 .about-biru {
-    z-index: 1;
     left: -100px;
     top: 15px;
 }
 
 .about-kuning {
-    z-index: 1;
     left: 1080px;
     top: 300px;
-}
-
-.contact-hijau {
-    z-index: 1;
-    top: 933px;
 }
 
 /* About */
@@ -281,6 +274,13 @@ h1.makanan {
     align-items: center;
     width: 100%;
     margin: 65px auto;
+    transition: 0.9s;
+}
+
+.about-1:hover{
+    transform: scale(1.1);
+    z-index:2 ;
+   
 }
 
 .about-2 {
@@ -289,6 +289,12 @@ h1.makanan {
     align-items: center;
     width: 100%;
     margin: 65px auto;
+    transition: 0.9s;
+}
+
+.about-2:hover{
+    transform: scale(1.1);
+    z-index:2 ;
 }
 
 .kantin-content {
@@ -327,7 +333,7 @@ h1.makanan {
 .img-2 {
     flex: 1;
     margin: auto;
-    z-index: 2;
+    z-index: 999;
 }
 
 .img-1 img {
