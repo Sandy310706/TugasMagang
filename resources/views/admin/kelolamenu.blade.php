@@ -6,7 +6,7 @@
 <div class="w-full">
     <div class="flex mb-2 h-auto">
         <div class="w-1/2">
-            <button id="showModal" class="mb-2 p-2 w-44 bg-sky-500 text-white rounded-md font-outfit hover:bg-sky-600">Tambah Menu</button>
+            <button id="showModal" onclick="closeModal()" class="mb-2 p-2 w-44 bg-sky-500 text-white rounded-md font-outfit hover:bg-sky-600">Tambah Menu</button>
         </div>
         <div class="w-1/2 h-auto flex justify-end items-center">
         <form action="/admin/menu" method="GET">
@@ -150,6 +150,15 @@
         modal.classList.add("animate-showModal");
         modal.classList.remove("animate-hideModal")
     });
+    function OpenModal
+    function closeModal() {
+        const modal = document.getElementById("modal");
+        setTimeout(() => {
+            modal.classList.add("hidden");
+        }, 900);
+        modal.classList.remove("animate-showModal")
+        modal.classList.add("animate-hideModal");
+    }
     function modalEdit(idData) {
         const modalEdit = document.getElementById("modalEdit");
         modalEdit.classList.remove("hidden");
