@@ -13,33 +13,23 @@ class Keranjang extends Component
 {
     public function render()
     {
-        $keranjangs = Keranjangs::all();
+        $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         return view('livewire.keranjang' , compact('keranjangs'));
     }
 
     public function store(request $request, $id)
     {
+        $menu = Menu::find($id);
         $makanan = Menu::find($id);
         $minum  = Menu::find($id);
         $keranjang = $makanan->keranjang;
-      
         if(!auth()){  
-
         return redirect('login');
-        }
-      
+        } 
         $keranjang = new Keranjangs;
         $keranjang->user_id = auth()->user()->id;
-        $keranjang->menu_id = $makanan->id;
-        $keranjang->nama_id = $makanan->nama;
-        $keranjang->harga_id = $makanan->harga;
-        $keranjang->foto_id = $makanan->foto;
-        
-        $keranjang->user_id = auth()->user()->id;
-        $keranjang->menu_id = $minum->id;
-        $keranjang->nama_id = $minum->nama;
-        $keranjang->harga_id = $minum->harga;
-        $keranjang->foto_id = $minum->foto;
+        $keranjang->menu_id = $menu->id;
+        $keranjang->jumlah = 1;
         $keranjang->save();
 
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
