@@ -28,58 +28,66 @@
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/menu">Keranjang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/menu">Keranjang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
                        @if (auth())
                          <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                        @else 
                          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                     @endif
-               
-                  
                 </ul>
             </div>
         </div>
     </nav>
     <div class="card-container">
             <h1 class="makanan text-center">Makanan</h1>
-            <div class="card-menu">
-                @foreach ($makanan as $makanans)
-                    <form action="{{url('carts/'.$makanans->id)}}" method="POST" style="display: inline;">
-                        @csrf
-                        <div class="card-menu">
-                            <div class="card">
-                                <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
-                                <div class="kontent">
-                                    <h3>{{$makanans->nama}}</h3>
-                                    <p>{{$makanans->harga}}</p>
-                                    <div class="text-end"><button class="button btn btn-info" type="submit">Pesan</button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>      
-                @endforeach
-            </div>
-            <h1 class="makanan text-center">Minuman</h1>
-            <div class="card-menu">
-                @foreach ($minuman as $minum)
-                <form action="{{url('carts/'.$minum->id)}}" method="POST">
-                    @csrf
-                <div class="card-menu">
-                    <div class="card">
-                        <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
+        <div class="card-menu">
+            @foreach ($makanan as $makanans)
+                <form action="{{url('carts/'.$makanans->id)}}" method="POST" style="display: inline">
+                @csrf
+                    <div class="card-menu">
+                        <div class="card">
+                        <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
                         <div class="kontent">
-                            <h3>{{$minum->nama}}</h3>
-                            <p>{{$minum->harga}}</p>
-                            <div class="text-end"><button class="button btn btn-info" id="submitButton1" type="submit">Pesan</button></div>
+                            <h3>{{$makanans->nama}}</h3>
+                            <p>Rp.{{$makanans->harga}}</p>
+                            <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST" class="inline"  >
+                                @csrf
+                                <button type="submit" class="btn">Pesan</button>
+                            </form>
                         </div>
                     </div>
-                </div>
-                @endforeach
-            </div>
-        </form>
+                </form>      
+            @endforeach
+        </div>
     </div>
 
+    <div class="card-container">
+            <h1 class="makanan text-center">Minuman</h1>
+        <div class="card-menu">
+            @foreach ($minuman as $minum)
+                <form action="{{url('carts/'.$minum->id)}}" method="POST" style="display:inline;">
+                    @csrf
+                    <div class="card-menu">
+                        <div class="card">
+                            <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
+                            <div class="kontent">
+                                <h3>{{$minum->nama}}</h3>
+                                <p>{{$minum->harga}}</p>
+                                <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    <div class="kontent">
+                                       <button type="submit" class="btn">Pesan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="footer-containers">
     <footer class="footer">
         <div class="container footer-container">
             <div class="sosmed">
@@ -94,6 +102,7 @@
             </div>
         </div>
     </footer>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
 </body>

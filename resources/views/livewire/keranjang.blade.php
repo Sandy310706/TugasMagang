@@ -40,11 +40,13 @@
 			<h3 class="navbar-brand">SMKN7Pontianak</h3>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
-					<li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>
-							Log Out</a></li>
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
+					@if (auth())
+					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+				    @else 
+					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+			        @endif
 				</ul>
 			</div>
 		</div>
@@ -76,23 +78,24 @@
         <div class="card-pembungkus">
 			<div class="content">
 				<div class="content-table foto">
-					<img src="{{ asset('storage/fileMenu/' . $keranjang->foto) }} "alt="foto menu">
-					<p>{{$keranjang->nama}}</p>
+					<img src="{{ asset('storage/fileMenu/' . $keranjang->foto_id) }}" alt="Menupage">
+					  <p>{{$keranjang->nama_id}}</p>
 				</div>
 				<div class="content-table harga">
-					<p>{{$keranjang->harga}}</p>
+					<p>{{$keranjang->harga_id}}</p>
 				</div>
 				<div class="content-table btns">
 					<button class="decrement"><i class="bi bi-dash"></i></button>
-					<span class="count">0</span>
+					<span class="count">1</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">
 					<p></p>
 				</div>
 				<div class="content-table remove">
-					<a href=""><i class="bi bi-trash3-fill"></i></a>
+					<a href="{{url('carts'.$keranjang->id)}}"><i class="bi bi-trash3-fill"></i></a>
 				</div>
+
 			</div>
 		</div>
         @endforeach

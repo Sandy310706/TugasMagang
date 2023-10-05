@@ -31,7 +31,9 @@
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li> 
+					<li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li> 
+					
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
                     @if (auth())
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
