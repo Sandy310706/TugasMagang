@@ -152,11 +152,12 @@ h1.text-center {
 .content p {
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 17px;
 }
 
 .card-pembungkus img {
-	width: 150px;
+	width: 100px;
+	height: 100px;
 	border-radius: 10px;
 }
 
@@ -206,7 +207,7 @@ h1.text-center {
 
 .buttons:hover {
 	background-color: #140e0e;
-	transform: rotate(200deg);
+	
 }
 
 .remove i {
@@ -273,10 +274,6 @@ h1.text-center {
 
 	.Header-table {
 		width: 34%;
-	}
-
-	.foto img {
-		width: 50px;
 	}
 
 	.content-table {
@@ -359,10 +356,6 @@ h1.text-center {
 		font-size: 15px;
 	}
 
-	.foto img {
-		width: 80px;
-	}
-
 	.harga-satuan {
 		display: none;
 	}
@@ -429,9 +422,6 @@ h1.text-center {
 		font-size: 15px;
 	}
 
-	.foto img {
-		width: 80px;
-	}
 
 	.harga-satuan {
 		display: none;

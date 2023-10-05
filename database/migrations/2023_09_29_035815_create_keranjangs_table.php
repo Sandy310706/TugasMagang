@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('user_id')->constrained('user');
             $table->foreignId('menu_id');
-            $table->string('nama_id')->constrained('menus');
-            $table->string('harga_id')->constrained('menus');
-            $table->string('foto_id')->constrained('menus');
+            $table->string('nama');
+            $table->string('harga');
+            $table->string('foto');
+            $table->string('total_harga');
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Keranjangs;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Queue\Jobs\RedisJob;
 use Dirape\Token\Token;
 use Illuminate\Support\Facades\Redirect;
@@ -42,9 +43,14 @@ class PesananController extends Controller
 
     public function menu($id)
     {
-        $Keranjang = Keranjangs::find($id);
+        $randomString = Str::acak(3);
 
-        $pesanan = new pesanan;
+        $keranjang = Keranjangs::find($id);
+
+        $pesanan = new Pesanan;
+        $pesanan->nama_id = auth()->user()->nama;
+        $pesanan->nama_menu = $keranjang->nama_id;
+        $pesanan->totalharga_id = $keranjang->harga;
 
     }
 

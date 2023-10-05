@@ -23,6 +23,5 @@ class DataDummy extends Seeder
         //     'role'  => 'guest',
         //     'password' => hash::make('robin'),
         // ]);
-
     }
 }
