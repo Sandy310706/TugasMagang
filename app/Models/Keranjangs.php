@@ -12,12 +12,12 @@ class Keranjangs extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','nama_menu', 'harga_menu', 'foto_id'];
+    protected $fillable = ['user_id','nama_id', 'harga_id', 'foto_id'];
 
-    public function Menu():HasMany
-    {
-        return $this -> hasMany(Menu::class);
-    }
+    // public function Menu():HasMany
+    // {
+    //     return $this -> hasMany(Menu::class);
+    // }
     public function User():HasOne
     {
         return $this -> hasOne(User::class);
@@ -25,6 +25,11 @@ class Keranjangs extends Model
     public function Pesanan():BelongsTo
     {
         return $this -> belongsTo(Pesanan::class);
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo('App\Models\Menu', 'menu_id');
     }
 
 }

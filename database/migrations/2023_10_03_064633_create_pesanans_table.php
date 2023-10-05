@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->constrained('user');
-            $table->string('token');
+            $table->string('nama_id')->constrained('user');
             $table->foreignId('keranjang_id');
+            $table->string('nama_menu')->constrained('keranjangs');
+            $table->string('totalharga_id')->constrained('keranjangs');
+            $table->string('token');
             $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
             $table->timestamps();
         });

@@ -206,7 +206,7 @@ h1.text-center {
 
 .buttons:hover {
 	background-color: #140e0e;
-	transform: rotate(200deg);
+	
 }
 
 .remove i {
