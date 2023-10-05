@@ -40,11 +40,13 @@
 			<h3 class="navbar-brand">SMKN7Pontianak</h3>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
-					<li class="nav-item"><a class="nav-link" href="#portfolio">Produk</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>
-							Log Out</a></li>
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
+					@if (auth())
+					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+				    @else 
+					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+			        @endif
 				</ul>
 			</div>
 		</div>
@@ -76,19 +78,22 @@
         <div class="card-pembungkus">
 			<div class="content">
 				<div class="content-table foto">
-					<img src="{{ asset('storage/fileMenu/' . $keranjang->foto_id) }}" alt="Menupage">
-					<p>{{$keranjang->nama_id}}</p>
+					<img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
+					<p>{{$keranjang->menu->nama}}</p>
 				</div>
-				<div class="content-table harga">
-					<p>{{$keranjang->harga_id}}</p>
+				<div id="harga" class="content-table harga">
+					<p>{{$keranjang->menu->harga}}</p>
 				</div>
 				<div class="content-table btns">
 					<button class="decrement"><i class="bi bi-dash"></i></button>
-					<span class="count">1</span>
+                    @php
+                        $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
+                    @endphp
+					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count">1</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">
-					<p></p>
+					<p>{{$total_harga}}</p>
 				</div>
 				<div class="content-table remove">
 					<a href="{{url('carts'.$keranjang->id)}}"><i class="bi bi-trash3-fill"></i></a>
@@ -105,13 +110,26 @@
 		<div class="checkout">
 			<div class="subtotal">
 				<p>SubTotal:</p>
-				<p class="ml-2">Rp.100.000</p>
+				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
 			<div class="tombol-checkout mt-2">
 				<button class="buttons">Checkout</button>
 			</div>
 		</div>
 	</div>
+
+    <script>
+          function multiplyBy()
+        {
+          num1 = document.getElementById(
+            "harga").value;
+          num2 = document.getElementById(
+            "total_harga").value;
+          document.getElementById(
+            "total").innerHTML = num1 * num2;
+        }
+    </script>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 		crossorigin="anonymous"></script>
