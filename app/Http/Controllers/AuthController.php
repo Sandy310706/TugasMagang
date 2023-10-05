@@ -63,7 +63,7 @@ class AuthController extends Controller
             'nama' => ['required', 'max:100'],
             'email' => ['required', 'email:dns', 'unique:users'],
             'password' => ['required', 'min:8', 'max:20',],
-            'konfirmasiPassword' => ['required', 'max:20',],
+            'konfirmasiPassword' => ['required','min:8', 'max:20',],
         ],
         [
             'nama.required' => 'Nama wajib di isi.',
@@ -74,6 +74,9 @@ class AuthController extends Controller
             'password.required' => 'Password wajib di isi.',
             'password.min' => 'Minimal 8 digit.',
             'password.max' => 'Maksimal 20 digit.',
+            'konfirmasiPassword.required' => 'Konfirmasi Password wajib di isi.',
+            'konfirmasiPassword.min' => 'Minimal 8 digit.',
+            'konfirmasiPassword.max' => 'Maksimal 20 digit.',
         ]);
         if($dataValidasi->fails()) {
             return redirect()->back()->withErrors($dataValidasi)->withInput();
