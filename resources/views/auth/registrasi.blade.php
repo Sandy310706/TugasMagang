@@ -52,16 +52,16 @@
                                     <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
                                 </div>
                             @enderror
-                            <div class="w-3/4 h-10 border-neutral-600 border-1 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('password') ? 'border-red-500 ring-red-600 m-0' : 'mb-8'}}">
+                            <div class="w-3/4 h-10 border-neutral-600 border-1 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('konfirmasiPassword') ? 'border-red-500 ring-red-600 m-0' : 'mb-8'}}">
                                 <div class="w-1/6 h-full">
                                     <img src="{{ asset('img/Confirm.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
                                 </div>
-                                <input type="password" id="konfirmasiPassword" placeholder="Konfirmasi Password" name="konfimasiPassword" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
+                                <input type="password" id="konfirmasiPassword" placeholder="Konfirmasi Password" name="konfirmasiPassword" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
                                 <div class="w-1/6 h-full flex justify-center items-center">
                                     <span id="cekKonfirmasi" onclick="changeConfirm()"><i class="fa-regular fa-eye"></i></span>
                                 </div>
                             </div>
-                            @error('confirm')
+                            @error('konfirmasiPassword')
                                 <div class="mb-5 w-3/4 pl-2 flex justify-start">
                                     <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
                                 </div>
