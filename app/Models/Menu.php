@@ -28,9 +28,14 @@ class Menu extends Model
         return $this->getTable();
     }
 
-    public function Keranjang():BelongsTo
+    // public function keranjang():BelongsTo
+    // {
+    //     return $this -> belongsTo(Keranjangs::class);
+    // }
+
+    public function keranjang()
     {
-        return $this -> belongsTo(Keranjangs::class);
+        return $this->hasMany('App\Models\Keranjangs', 'menu_id');
     }
 
 }
