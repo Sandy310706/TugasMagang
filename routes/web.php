@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -9,7 +8,6 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Livewire\Keranjang;
-
 // == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
@@ -63,3 +61,7 @@ Route::middleware('auth')->group(function() {
     // Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     // Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
 });
+
+
+
+
