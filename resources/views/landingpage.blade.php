@@ -33,10 +33,10 @@
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    @if (auth())
-                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                    @else
+                    @if (!auth())
                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    @else
+                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     @endif
 				</ul>
 			</div>
