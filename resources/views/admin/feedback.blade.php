@@ -1,6 +1,6 @@
-@extends('layouts.admin.Admin')
+@extends('layouts.admin.app')
 @section('title', 'Admin | Baca Feedback')
-@section('headerNav', 'FEEDBACK')
+@section('headerNav', 'Feedback')
 @section('feedback')
     @foreach ($feedback as $data)
     <div class="bg-white rounded-md mb-5 flex flex-col">

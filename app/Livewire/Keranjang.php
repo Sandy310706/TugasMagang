@@ -14,7 +14,7 @@ class Keranjang extends Component
     public function render()
     {
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
-        return view('livewire.keranjang' , compact('keranjangs'));
+        return view('user.keranjang' , compact('keranjangs'));
     }
 
     public function store(request $request, $id)

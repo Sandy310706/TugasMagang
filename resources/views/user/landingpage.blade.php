@@ -31,6 +31,11 @@
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    @auth
+                        @if(Auth::user()->role == 'admin')
+                        <li class="nav-item"><a class="nav-link" href="{{ route('Admin.Dashboard') }}">Dashboard</a></li>
+                        @endif
+                    @endauth
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>

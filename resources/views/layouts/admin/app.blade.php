@@ -29,10 +29,9 @@
         <div class="HandPhone:ml-0 HandPhone:w-full ml-[20%] w-4/5">
             @include('layouts.admin.navbar')
             <div class="container px-4 py-2">
-                @yield('testing')
                 @yield('dashboard')
                 @yield('kelola menu')
-                @yield('modalCreate')
+                @yield('kelola pesanan')
                 @yield('feedback')
             </div>
         </div>

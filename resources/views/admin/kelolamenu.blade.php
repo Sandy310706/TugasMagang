@@ -1,12 +1,12 @@
-@extends('layouts.admin.Admin')
+@extends('layouts.admin.app')
 
 @section('title', 'Admin | Kelola Menu')
-@section('headerNav', 'KELOLA MENU')
+@section('headerNav', 'Kelola Menu')
 @section('kelola menu')
 <div class="w-full">
     <div class="flex mb-2 h-auto">
         <div class="w-1/2">
-            <button id="showModal" onclick="closeModal()" class="mb-2 p-2 w-44 bg-sky-500 text-white rounded-md font-outfit hover:bg-sky-600">Tambah Menu</button>
+            <button id="showModal" onclick="OpenModal()" class="mb-2 p-2 w-44 bg-sky-500 text-white rounded-md font-outfit hover:bg-sky-600">Tambah Menu</button>
         </div>
         <div class="w-1/2 h-auto flex justify-end items-center">
         <form action="/admin/menu" method="GET">
@@ -97,11 +97,11 @@
         {{ $data->links('vendor.pagination.simple-tailwind') }}
     </div>
 </div>
-<div id="modal" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8 {{ $errors->any() ? 'block' : 'hidden' }} z-50">
+<div id="modal" class="hidden w-1/2 bg-slate-200 shadow-sm shadow-black rounded-md absolute left-[35%] top-10 p-8  {{ $errors->any() ? 'block' : 'hidden' }} z-50">
     <div class="p-4 mb-2">
         <h1 class="text-4xl font-outfit">Tambah Data</h1>
     </div>
-    <button id="closeModal" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
+    <button id="closeModal" onclick="closeModal()" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -141,16 +141,12 @@
     </div>
 </div>
 <script>
-    const modal = document.getElementById("modal");
-    const showModal = document.getElementById("showModal");
-    const closeModal = document.getElementById("closeModal");
+    function OpenModal() {
+        const modal = document.getElementById("modal");
 
-    showModal.addEventListener("click", function () {
-        modal.classList.remove("hidden");
-        modal.classList.add("animate-showModal");
-        modal.classList.remove("animate-hideModal")
-    });
-    function OpenModal
+        modal.classList.remove('hidden');
+        modal.classList.add('animate-showModal');
+    }
     function closeModal() {
         const modal = document.getElementById("modal");
         setTimeout(() => {
@@ -162,6 +158,8 @@
     function modalEdit(idData) {
         const modalEdit = document.getElementById("modalEdit");
         modalEdit.classList.remove("hidden");
+        modalEdit.classList.add("animate-showModal");
+        modalEdit.classList.remove('animate-hideModal')
     }
     function closeEditModal() {
         const modalEdit = document.getElementById("modalEdit");

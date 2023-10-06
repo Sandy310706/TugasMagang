@@ -6,15 +6,13 @@ use App\Models\Keranjangs;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Queue\Jobs\RedisJob;
-use Dirape\Token\Token;
-use Illuminate\Support\Facades\Redirect;
+
 
 class PesananController extends Controller
 {
-    public function pesanan() {
+    public function index() {
         $data = Pesanan::all();
-        return view('admin.pesanan', compact('data'));
+        return view('admin.kelolapesanan', compact('data'));
     }
 
     public function tampilanpesanan() {
