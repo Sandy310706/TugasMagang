@@ -23,9 +23,9 @@ class Keranjang extends Component
         $makanan = Menu::find($id);
         $minum  = Menu::find($id);
         $keranjang = $makanan->keranjang;
-        if(!auth()){  
+        if(!auth()){
         return redirect('login');
-        } 
+        }
         $keranjang = new Keranjangs;
         $keranjang->user_id = auth()->user()->id;
         $keranjang->menu_id = $menu->id;
