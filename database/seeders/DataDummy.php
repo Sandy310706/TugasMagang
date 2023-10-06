@@ -17,6 +17,7 @@ class DataDummy extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
 
 
         DB::table('users')->insert([
@@ -33,12 +34,17 @@ class DataDummy extends Seeder
         //     'harga' => ('10000'),
         // ]);
 
+=======
+>>>>>>> 89a538fed3b6827678cff80262b548f2296c624a
         // DB::table('users')->insert([
         //     'nama' => 'robinGay',
         //     'email' => 'robin@gmail.com',
         //     'role'  => 'guest',
         //     'password' => hash::make('robin'),
         // ]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 89a538fed3b6827678cff80262b548f2296c624a
     }
 }

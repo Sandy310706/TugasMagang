@@ -33,15 +33,16 @@
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    @if (auth())
+                    <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
+                    @auth
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     @else
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    @endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    @endauth
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="masthead">
         <div class="container">
             <div class="row">
@@ -63,13 +64,6 @@
                 <div class="image">
                     <img src="template/landingPage/assets/img/rs3.png" alt="">
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
                 <h1>nasi</h1>
                 <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
