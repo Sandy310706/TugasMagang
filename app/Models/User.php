@@ -25,6 +25,7 @@ class User extends Authenticatable
         'email',
         'notelpn',
         'password',
+        'konfirmasiPassword',
         'role',
     ];
 
@@ -58,5 +59,10 @@ class User extends Authenticatable
     public function Feedbacks():HasOne
     {
         return $this -> hasOne(Feedback::class);
+    }
+
+    public function kelolapesan()
+    {
+        return $this->belongsTo('App\Models\kelolaPesan','kelolapesan_id');
     }
 }

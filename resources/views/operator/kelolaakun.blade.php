@@ -4,7 +4,7 @@
 
 @section('headerNav', 'Kelola Akun')
 
-@section('Kelola Akun')
+@section('kelola akun')
 <div class="w-full">
     <div class="flex">
         <div class="w-1/2">
@@ -89,5 +89,5 @@
             @endforeach
         </tbody>
     </table>
-    
+</div>
 @endsection

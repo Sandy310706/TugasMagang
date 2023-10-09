@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pesanan;
+use App\Models\Keranjangs;
+use App\Models\Test;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Queue\Jobs\RedisJob;
-use Illuminate\Support\Facades\Redirect;
 
 class PesananController extends Controller
 {
-    public function pesanan() {
-        $data = Pesanan::all();
-        return view('admin.pesanan', compact('data'));
+    public function index() {
+        $data = Test::all();
+        return view('admin.kelolapesanan', compact('data'));
     }
 
     public function tampilanpesanan() {
@@ -37,5 +38,19 @@ class PesananController extends Controller
 
         return redirect()->route('pesanan');
     }
+
+    public function menu($id)
+    {
+        $randomString = Str::acak(3);
+
+        $keranjang = Keranjangs::find($id);
+
+        $pesanan = new Pesanan;
+        $pesanan->nama_id = auth()->user()->nama;
+        $pesanan->nama_menu = $keranjang->nama_id;
+        $pesanan->totalharga_id = $keranjang->harga;
+
+    }
+
 
 }

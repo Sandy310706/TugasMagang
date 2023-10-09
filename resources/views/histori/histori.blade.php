@@ -16,10 +16,13 @@
             <h3 class="navbar-brand">SMKN7Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>
-                            Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
+                    @if (auth())
+                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                    @else 
+                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    @endif
                 </ul>
             </div>
         </div>

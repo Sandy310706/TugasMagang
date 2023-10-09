@@ -11,6 +11,7 @@ class Menu extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'nama',
         'harga',
@@ -18,9 +19,23 @@ class Menu extends Model
         'foto'
     ];
 
-    public function Keranjang():BelongsTo
+    public function getTableName()
     {
-        return $this -> belongsTo(Keranjangs::class);
+        $Menu = $this->getTable();
+
+        $Keranjangs=  Menu::table($Menu)->get();
+
+        return $this->getTable();
+    }
+
+    // public function keranjang():BelongsTo
+    // {
+    //     return $this -> belongsTo(Keranjangs::class);
+    // }
+
+    public function keranjang()
+    {
+        return $this->hasMany('App\Models\Keranjangs', 'menu_id');
     }
 
 }

@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Models\Menu;
+use Dirape\Token\Token;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 
@@ -12,22 +13,24 @@ class Keranjang extends Component
 {
     public function render()
     {
-        $keranjangs = Menu::with('Keranjang')->get();
-        return view('livewire.keranjang' , compact('keranjangs'));
+        $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
+        return view('user.keranjang' , compact('keranjangs'));
     }
 
     public function store(request $request, $id)
     {
-        $makanan = Menu::find($id);
-        $minuman     = Menu::find($id);
 
-        if(auth()->check()){
+        $menu = Menu::find($id);
+        if(!auth()){
         return redirect('login');
         }
+
         $keranjang = new Keranjangs;
         $keranjang->user_id = auth()->user()->id;
-        $keranjang->menu_id = $makanan->id;
+        $keranjang->menu_id = $menu->id;
+        $keranjang->jumlah = 1;
         $keranjang->save();
+
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
     }
 

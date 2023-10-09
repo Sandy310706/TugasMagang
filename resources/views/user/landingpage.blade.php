@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
     @if (session('login'))
     <div class="alert alert-success">
         <h1>{{session('login')}}</h1>
+    </div>
     @endif
     <div class="svg-container">
         <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646" viewBox="0 0 517 646" fill="none">
@@ -33,9 +34,12 @@
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>
-							Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
+                    @if (auth())
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    @else
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    @endif
 				</ul>
 			</div>
 		</div>
