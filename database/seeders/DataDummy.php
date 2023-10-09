@@ -18,12 +18,6 @@ class DataDummy extends Seeder
      */
     public function run(): void
     {
-        // DB::table('users')->insert([
-        //     'nama' => 'admin',
-        //     'email' => 'admin@gmail.com',
-        //     'role'  => 'admin',
-        //     'password' => hash::make('admin'),
-        // ]);
         DB::table('tests')->insert([
             'kode' => '30483',
             'pemesan' => 'Yanto',
