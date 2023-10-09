@@ -44,7 +44,7 @@
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
 					@if (auth())
 					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
-				    @else 
+				    @else
 					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
 			        @endif
 				</ul>
@@ -89,11 +89,11 @@
                     @php
                         $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
                     @endphp
-					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count">1</span>
+					<span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">
-					<p>{{$total_harga}}</p>
+					<p id="total"></p>
 				</div>
 				<div class="content-table remove">
 					<a href="{{url('carts'.$keranjang->id)}}"><i class="bi bi-trash3-fill"></i></a>
@@ -102,8 +102,6 @@
 			</div>
 		</div>
         @endforeach
-
-
 	</div>
 
 	<div class="container mt-3">
@@ -119,16 +117,10 @@
 	</div>
 
     <script>
-          function multiplyBy()
-        {
-          num1 = document.getElementById(
-            "harga").value;
-          num2 = document.getElementById(
-            "total_harga").value;
-          document.getElementById(
-            "total").innerHTML = num1 * num2;
-        }
-    </script>
+        let harga = {{$keranjang->menu->harga}};
+        let jumlah = {{$keranjang->jumlah}};
+        let total_harga = harga * jumlahdocument.getElementById("total");
+        </script>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
