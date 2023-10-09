@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama_menu')->constrained('keranjangs');
             $table->string('totalharga_id')->constrained('keranjangs');
             $table->string('token');
+            $table->boolean('status');
             $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
             $table->timestamps();
         });

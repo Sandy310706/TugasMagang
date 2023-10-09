@@ -71,8 +71,8 @@
                             </div>
                         </form>
                         <div class="w-full h-8 flex mb-10">
-                            <span class="font-outfit text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
-                            <span class="font-outfit text-sm m-auto">Sudah Punya akun? <a href="{{ route('login') }}" class="text-blue-700 hover:underline">Login</a></span>
+                            <span class="font-sans text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                            <span class="font-sans text-sm m-auto">Sudah Punya akun? <a href="{{ route('login') }}" class="text-blue-700 hover:underline">Login</a></span>
                         </div>
                     </div>
                 </div>

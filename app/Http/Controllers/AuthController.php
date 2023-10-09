@@ -66,7 +66,8 @@ class AuthController extends Controller
             'konfirmasiPassword' => ['required','min:8', 'max:20',],
         ],
         [
-            'nama.required' => 'Nama wajib di isi.',
+            'nama.required' => 'Nama wajib di isi.
+            ',
             'nama.max' => 'Maksimal 100 digit.',
             'email.required' => 'Email wajib di isi.',
             'email.email' => 'Format email wajib di tulis.',
