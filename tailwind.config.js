@@ -18,12 +18,12 @@ export default {
             },
             keyframes: {
                 ToptoBottom: {
-                    from: { left: "35%", top: "-10%" },
-                    to: { left: "35%", top: "10" },
+                    from: { top: "-10%" },
+                    to: { top: "10" },
                 },
                 BottomtoTop: {
-                    "0%": { left: "35%", top: "10" },
-                    "100%": { left: "35%", top: "-100%" },
+                    "0%": { top: "10" },
+                    "100%": { top: "-100%" },
                 },
                 showDropdownMenu: {
                     from: { opacity: "0" },
@@ -41,7 +41,8 @@ export default {
                 hideDropdownMenu: "hideDropdownMenu 0.5s ease-in-out",
             },
             screens: {
-                HandPhone: { max: "600px" },
+                mobile: { max: "640px" },
+                tablet: { max: "720px" },
             },
         },
     },

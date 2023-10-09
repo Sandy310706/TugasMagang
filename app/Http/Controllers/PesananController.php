@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keranjangs;
 use App\Models\Pesanan;
-use Illuminate\Http\Request;
+use App\Models\Keranjangs;
+use App\Models\Test;
 use Illuminate\Support\Str;
-
+use Illuminate\Http\Request;
 
 class PesananController extends Controller
 {
     public function index() {
-        $data = Pesanan::all();
+        $data = Test::all();
         return view('admin.kelolapesanan', compact('data'));
     }
 
