@@ -60,4 +60,9 @@ class User extends Authenticatable
     {
         return $this -> hasOne(Feedback::class);
     }
+
+    public function kelolapesan()
+    {
+        return $this->belongsTo('App\Models\kelolaPesan','kelolapesan_id');
+    }
 }
