@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Keranjang/css/style.css">
 	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap"
+		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
+		rel="stylesheet">
 	<title>Keranjang</title>
     @livewireStyles
 </head>
@@ -78,11 +88,11 @@
                     @php
                         $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
                     @endphp
-					<span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
+					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count">1</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">
-					<p id="total"></p>
+					<p>{{$total_harga}}</p>
 				</div>
 				<div class="content-table remove">
 					<a href="{{url('carts'.$keranjang->id)}}"><i class="bi bi-trash3-fill"></i></a>
@@ -91,6 +101,8 @@
 			</div>
 		</div>
         @endforeach
+
+
 	</div>
 
 	<div class="container mt-3">
@@ -106,10 +118,16 @@
 	</div>
 
     <script>
-        let harga = {{$keranjang->menu->harga}};
-        let jumlah = {{$keranjang->jumlah}};
-        let total_harga = harga * jumlahdocument.getElementById("total");
-        </script>
+          function multiplyBy()
+        {
+          num1 = document.getElementById(
+            "harga").value;
+          num2 = document.getElementById(
+            "total_harga").value;
+          document.getElementById(
+            "total").innerHTML = num1 * num2;
+        }
+    </script>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
