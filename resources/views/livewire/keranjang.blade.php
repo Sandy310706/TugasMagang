@@ -42,11 +42,11 @@
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-					@if (auth())
+					@auth
 					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
 				    @else 
 					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-			        @endif
+			        @endauth
 				</ul>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
                     @php
                         $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
                     @endphp
-					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count">1</span>
+					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count" style="padding: 15px">1</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">

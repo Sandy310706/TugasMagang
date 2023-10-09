@@ -35,11 +35,11 @@
 					<li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li> 
 					
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    @if (auth())
+                    @auth
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     @else
                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    @endif
+                    @endauth
 				</ul>
 			</div>
 		</div>
@@ -63,22 +63,7 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
-                </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <button class="btn btn-primary">Pesan</button>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="img/bipang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -86,7 +71,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="img/bipang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -94,7 +79,15 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="img/bipang.jpeg" alt="">
+                </div>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <button class="btn btn-primary">Pesan</button>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="img/bipang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -112,7 +105,7 @@
     </div>
     <section class="about" id="about">
         <div class="text-center mt-5">
-            <h2 class="tentang section-heading text-capatalize mb-5">Tentang Kami</h2>
+            <h2 class="tentang section-heading text-capatalize">Tentang Kami</h2>
         </div>
         <div class="About container">
             <div class="about-1">
@@ -197,7 +190,7 @@
             </div>
         </div>
     </footer>
-    <script src="script.js/scripts.js"></script>
+    <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

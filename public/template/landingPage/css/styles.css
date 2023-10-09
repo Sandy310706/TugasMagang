@@ -245,6 +245,7 @@ h1.makanan {
 .about-biru {
     left: -100px;
     top: 15px;
+    z-index: 1;
 }
 
 .about-kuning {
@@ -254,7 +255,7 @@ h1.makanan {
 
 /* About */
 .tentang {
-    color: #016a70;
+    color: white;
     text-align: center;
     font-family: Satisfy;
     font-size: 75px;
@@ -273,14 +274,13 @@ h1.makanan {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 65px auto;
     transition: 0.9s;
 }
 
-.about-1:hover{
+.about-1:hover {
     transform: scale(1.1);
-    z-index:2 ;
-   
+    z-index: 2;
+
 }
 
 .about-2 {
@@ -288,13 +288,12 @@ h1.makanan {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 65px auto;
     transition: 0.9s;
 }
 
-.about-2:hover{
+.about-2:hover {
     transform: scale(1.1);
-    z-index:2 ;
+    z-index: 2;
 }
 
 .kantin-content {
@@ -502,303 +501,520 @@ section#contact {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-    @media only screen and (max-width: 600px) {
-        body {
-            max-width: 100%;
-        }
-
-        .menu-toggle {
-            display: flex;
-            position: relative;
-            z-index: 9999;
-        }
-
-        .menu-toggle {
-            display: flex;
-        }
-
-        nav ul {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 100%;
-            height: 70vh;
-            justify-content: space-around;
-            align-items: center;
-            flex-direction: column;
-            background-color: black;
-            z-index: -1;
-            transform: translatey(-100%);
-            transition: all 1s;
-            opacity: 0;
-            color: #fff;
-            gap: 10px;
-        }
-
-
-        nav ul.slide {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        #mainNav .navbar-brand {
-            font-size: 20px;
-        }
-
-
-        #mainNav .navbar-brand {
-            font-size: 20px;
-        }
-
-        .masthead {
-            height: 100%;
-        }
-
-        .welcome {
-            font-size: 15px;
-            line-height: 28px;
-            z-index: 5;
-            display: flex;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .Menu-Page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .Menu-Page .box {
-            width: 290px;
-        }
-
-        .masthead {
-            height: 100%;
-        }
-
-        .welcome {
-            font-size: 15px;
-            line-height: 28px;
-            z-index: 5;
-            display: flex;
-            justify-content: center;
-        }
-
-        .Menu-Page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .Menu-Page .box {
-            width: 270px;
-        }
-
-        .about {
-            margin: 0px;
-        }
-
-
-        .about-1 {
-            width: 100%;
-            flex-direction: column;
-            padding: 0px 40px;
-        }
-
-        .about-2 {
-            width: 100%;
-            flex-direction: column;
-            padding: 0px 40px;
-        }
-
-        .kantin-content {
-            width: 90%;
-            max-width: 35px 0px;
-            order: 2;
-        }
-
-        .kantin-content h2 {
-            font-size: 28px;
-            margin-top: 30px;
-        }
-
-        .kantin-content p {
-            font-size: 19px;
-            margin-bottom: 25px;
-            text-align: justify;
-            letter-spacing: -1px;
-            text-indent: 20px;
-        }
-
-        .img {
-            width: 90%;
-            order: 1;
-            margin-top: 50px;
-        }
-
-        .footer-container {
-            width: 100%;
-        }
-
-        .sosmed ul li a {
-            font-size: 46%;
-            margin-top: 10px;
-        }
-
-        .copyright p {
-            font-size: 10px;
-        }
-
-        .biru {
-            width: 250px;
-            top: -160px;
-        }
-
-        .hijau {
-            width: 0;
-            left: 0px;
-            top: 0;
-        }
-
-        .about-biru {
-            width: 300px;
-            top: 0;
-            left: 0;
-        }
-
-        .contact-hijau {
-            width: 170px;
-            top: 1000px;
-            left: 0;
-        }
-
-        .image img {
-            width: 100%;
-        }
-
-        .images img {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
+@media only screen and (max-width: 600px) {
+    body {
+        max-width: 100%;
     }
 
-    @media only screen and (min-width: 600px) and (max-width: 768px) {
-        .menu-toggle {
-            display: flex;
-            position: relative;
-            z-index: 9999;
-        }
-
-        .about-biru {
-            width: 300px;
-            top: 0;
-            left: 0;
-        }
-
-        .about-kuning {
-            width: 0;
-            left: 0;
-        }
-
-        .contact-hijau {
-            width: 200px;
-            top: 1200px;
-            left: 0;
-        }
-
-        .images img {
-            width: 100%;
-            margin-top: 100px;
-        }
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 9999;
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 992px) {
-        .menu-toggle {
-            display: flex;
-            position: relative;
-            z-index: 9999;
-        }
-
-        .biru {
-            width: 400px;
-            top: -121px;
-        }
-
-        .hijau {
-            width: 0;
-        }
-
-        .about-kuning {
-            width: 0;
-        }
-
-        .images img {
-            width: 100%;
-            margin-top: 80px;
-        }
+    .menu-toggle {
+        display: flex;
     }
 
-    @media only screen and (min-width: 992px) and (max-width: 1200px) {
-        x .masthead {
-            height: 100%;
-        }
-
-        .welcome {
-            font-size: 22px;
-            line-height: 38px;
-            margin-top: 150px;
-        }
-
-        .about {
-            width: 100vw;
-        }
-
-        .copyright p {
-            font-size: 20px;
-        }
-
-        .images img {
-            width: 100%;
-            margin-top: 50px;
-        }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 70vh;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        z-index: -1;
+        transform: translatey(-100%);
+        transition: all 1s;
+        opacity: 0;
+        color: #fff;
+        gap: 10px;
     }
 
-    @media only screen and (min-width: 1200px) {
-        .welcome {
-            font-size: 30px;
-            line-height: 40px;
-        }
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-        .welcome {
-            font-size: 30px;
-            line-height: 40px;
-            margin-top: 180px;
-        }
-
-        .hijau {
-            width: 0;
-        }
-
-        .about-kuning {
-            width: 0;
-        }
-
-        .contact-hijau {
-            width: 250px;
-            top: 650px;
-        }
-
-        .images img {
-            width: 100%;
-        }
-        .contact-hijau {
-            width: 300px;
-            top: 840px;
-        }
-
+    #mainNav .navbar-brand {
+        font-size: 20px;
     }
 
 
+    #mainNav .navbar-brand {
+        font-size: 20px;
+    }
 
+    .masthead {
+        height: 100%;
+    }
+
+    .welcome {
+        font-size: 15px;
+        line-height: 28px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+    }
+
+    .Menu-Page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Menu-Page .box {
+        width: 290px;
+        border: 10px solid white;
+    }
+
+    .masthead {
+        height: 100%;
+    }
+
+    .welcome {
+        font-size: 15px;
+        line-height: 28px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Menu-Page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Menu-Page .box {
+        width: 270px;
+    }
+
+    .tentang{
+        font-size: 50px;
+    }
+
+    .about-1 {
+        width: 100%;
+        flex-direction: column;
+       
+    }
+
+    .about-2 {
+        width: 100%;
+        flex-direction: column;
+       
+    }
+
+    .kantin-content {
+        width: 90%;
+        max-width: 35px 0px;
+        order: 2;
+    }
+
+    .kantin-content h2 {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .kantin-content p {
+        font-size: 19px;
+        margin-bottom: 25px;
+        text-align: justify;
+        letter-spacing: -1px;
+        text-indent: 20px;
+    }
+
+    .img {
+        width: 90%;
+        order: 1;
+        margin-top: 50px;
+    }
+
+    .footer-container {
+        width: 100%;
+    }
+
+    .sosmed ul li a {
+        font-size: 46%;
+        margin-top: 10px;
+    }
+
+    .copyright p {
+        font-size: 10px;
+    }
+
+    .biru {
+        width: 250px;
+        top: -160px;
+    }
+
+    .about-biru {
+        width: 250px;
+        top: 180px;
+        left: 0;
+    }
+
+    .contact-hijau {
+        width: 200px;
+        top: 800px;
+        left: 0;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .images img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 9999;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 70vh;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        z-index: -1;
+        transform: translatey(-100%);
+        transition: all 1s;
+        opacity: 0;
+        color: #fff;
+        gap: 10px;
+    }
+
+
+    nav ul.slide {
+        opacity: 1;
+    }
+
+    .masthead {
+        height: 500px;
+    }
+
+    .welcome {
+        font-size: 20px;
+        line-height: 38px;
+        margin-top: 130px;
+    }
+
+    .biru {
+        width: 400px;
+        top: -100px;
+    }
+
+    .about-biru {
+        width: 300px;
+        top: 0;
+        left: 0;
+    }
+
+    .contact-hijau {
+        width: 300px;
+        top: 1180px;
+        left: 0;
+    }
+
+    .images img {
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .Menu-Page {
+        display: grid;
+        grid-template-columns: auto auto;
+
+    }
+
+    .Menu-Page .box {
+        width: 100%;
+        border: 10px solid white;
+    }
+
+    .Menu-Page .box .image img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .Menu-Page .box p {
+        font-size: 20px;
+    }
+
+    .Menu-Page .box h1 {
+        font-size: 28px;
+    }
+
+    .about-1 {
+        width: 100%;
+        flex-direction: column;
+        padding: 0px 40px;
+    }
+
+    .about-2 {
+        width: 100%;
+        flex-direction: column;
+        padding: 0px 40px;
+    }
+
+    .kantin-content {
+        width: 90%;
+        order: 2;
+    }
+
+    .kantin-content p {
+        font-size: 19px;
+        margin-bottom: 25px;
+        text-align: justify;
+        letter-spacing: -1px;
+        text-indent: 20px;
+    }
+
+    .img {
+        width: 90%;
+        order: 1;
+    }
+
+    .sosmed {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+    }
+
+    .sosmed ul li a {
+        font-size: 13px;
+    }
+
+    .copyright p {
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 9999;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 70vh;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        z-index: -1;
+        transform: translatey(-100%);
+        transition: all 1s;
+        opacity: 0;
+        color: #fff;
+        gap: 10px;
+    }
+
+
+    nav ul.slide {
+        opacity: 1;
+    }
+
+    .masthead {
+        height: 100%;
+    }
+
+    .welcome {
+        font-size: 20px;
+        line-height: 30px;
+        margin-top: 150px;
+    }
+
+    .biru {
+        width: 400px;
+        top: -121px;
+    }
+
+    .about-biru {
+        width: 380px;
+        top: 30px;
+        left: 0;
+    }
+
+    .contact-hijau {
+        width: 200px;
+        top: 670px;
+        left: 0;
+    }
+
+    .Menu-Page .box {
+        border: 10px solid white;
+    }
+
+    .Menu-Page .box h1 {
+        margin-top: 10px;
+    }
+
+    .images img {
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .img-1 {
+        order: 2;
+    }
+
+    .about-1 h2 {
+        margin-top: 50px;
+        font-size: 30px;
+    }
+
+    .about-2  {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .about-2  h2 {
+        font-size: 30px;
+    }
+
+    .img-1 img {
+        width: 100%;
+    }
+
+    .kantin-content p {
+        font-size: 1em;
+        letter-spacing: -1px;
+    }
+
+    .footer-container {
+        width: 100%;
+        margin:50px auto;
+      }
+    
+      .sosmed ul li a {
+        font-size: 20px;
+      }
+    
+      .copyright p {
+        font-size: 20px;
+      }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .masthead {
+        height: 100%;
+    }
+
+    .welcome {
+        font-size: 22px;
+        line-height: 38px;
+        margin-top: 150px;
+    }
+
+    .copyright p {
+        font-size: 20px;
+    }
+
+    .images img {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .Menu-Page {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+
+    }
+    
+    .Menu-Page .box{
+        margin: auto;
+        border: 10px solid white;
+    }
+
+    .contact-hijau {
+        width: 300px;
+        top: 700px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .welcome {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .welcome {
+        font-size: 30px;
+        line-height: 40px;
+        margin-top: 180px;
+    }
+
+    .hijau {
+        width: 0;
+    }
+
+    .about-kuning {
+        width: 0;
+    }
+
+    .contact-hijau {
+        width: 250px;
+        top: 650px;
+    }
+
+    .images img {
+        width: 100%;
+    }
+
+    .contact-hijau {
+        width: 300px;
+        top: 840px;
+    }
+
+    .Menu-Page {
+        display: grid;
+        grid-template-columns: 280px 280px 280px 280px;
+        justify-content: center;
+    }   
+
+    .Menu-Page .box{
+        width: 285px;
+        border: 10px solid white;
+    }
+    
+    .Menu-Page .box h1{
+        font-size: 28px;
+    }
+    .Menu-Page .box p{
+        font-size: 20px;
+    }
+
+}
