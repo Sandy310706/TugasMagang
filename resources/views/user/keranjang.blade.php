@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
 	<meta charset="utf-8">
@@ -26,7 +26,6 @@
 	<title>Keranjang</title>
     @livewireStyles
 </head>
-
 <body>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -42,11 +41,11 @@
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-					@auth
+					@if (auth())
 					<li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
-				    @else 
+				    @else
 					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-			        @endauth
+			        @endif
 				</ul>
 			</div>
 		</div>
@@ -89,7 +88,7 @@
                     @php
                         $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
                     @endphp
-					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count" style="padding: 15px">1</span>
+					<span id="total_harga" onclick="multiplyBy()" Value="multiply" class="count">1</span>
 					<button class="increment"><i class="bi bi-plus-lg"></i></button>
 				</div>
 				<div class="content-table total">

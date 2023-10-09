@@ -25,14 +25,14 @@
                                 <div class="w-1/6 h-full">
                                     <img src="{{ asset('img/Email.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
                                 </div>
-                                <input type="email" placeholder="Masukan Email" name="email" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
+                                <input type="email" placeholder="Masukan Email" name="email" value="{{ old('email') }}" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
                             </div>
                                 @error('email')
                                     <div class="mb-5 w-3/4 pl-2 flex justify-start">
                                         <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
                                     </div>
                                 @enderror
-                            <div class="w-3/4 h-10 border-neutral-600 border-1 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('password') ? 'border-red-500 ring-red-600 m-0' : 'mb-10'}}">
+                            <div class="w-3/4 h-10 border-neutral-600 border-1 ring-1 ring-neutral-600 rounded-lg flex justify-start {{ $errors->has('password') ? 'border-red-500 ring-red-600 m-0' : 'mb-8'}}">
                                 <div class="w-1/6 h-full">
                                     <img src="{{ asset('img/Password.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
                                 </div>
@@ -46,13 +46,13 @@
                                         <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
                                     </div>
                                 @enderror
-                            <div class="w-full h-8 flex">
-                                <button class="bg-zinc-700 text-white m-auto py-1 w-1/2 rounded-xl" type="submit">Login</button>
+                            <div class="w-full h-8 flex mb-1">
+                                <button class="bg-zinc-700 text-white m-auto w-1/2 py-1 rounded-xl" type="submit">L o g i n</button>
                             </div>
                         </form>
                         <div class="w-full h-8 flex">
-                            <span class="font-outfit text-sm m-auto">Belum punya akun? <a href="/registrasi" class="text-blue-700 hover:underline">Buat</a></span>
-                            <span class="font-outfit text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                            <span class="font-sans text-sm m-auto">Belum punya akun? <a href="/registrasi" class="text-blue-700 hover:underline">Buat</a></span>
+                            <span class="font-sans text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
                         </div>
                     </div>
                 </div>

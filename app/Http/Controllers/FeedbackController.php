@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class FeedbackController extends Controller
 {
@@ -22,9 +24,16 @@ class FeedbackController extends Controller
         $nama = Feedback::all();
         if(auth()->check()) {
 
-            $validasiData = $request -> validate([
-                'feedback' => 'required|string',
+            $validasiData = Validator::make($request->all(), [
+                'feedback' => 'required|string|max:200',
+            ],
+            [
+                'feedback.required' => 'Kolom feedback wajib di isi !',
+                'feedback.max' => 'Maksimal 200 digit.'
             ]);
+            if($validasiData->fails()) {
+                return redirect()->back()->withErrors($validasiData)->withInput();
+            }
             Feedback::create([
                 'user_id' => auth()->user()->id,
                 'nama_id'  => auth()->user()->nama,
