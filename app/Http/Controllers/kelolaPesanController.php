@@ -1,20 +1,33 @@
 <?php
 
+
 namespace App\Http\Controllers;
 use App\Models\kelolaPesan;
+use Illuminate\Support\Str;
+use Dirape\Token\Token;
+use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 
 class kelolaPesanController extends Controller
 {
-    protected $guarded = [];
+  public function index()
+  {
+     $kelola = KelolaPesan::where('user_id', auth()->user()->id)->get();
+     return view('babikau', compact('kelola'));
+  }
 
-    public function keranjang()
+  public function store(Request $request, $id)
     {
-        return $this->hasOne('App\Models\Keranjangs', 'menu_id');
-    }
+        $randomString = Str::random(3);
 
-    public function user()
-    {
-        return $this->hasOne('App\Models\User', 'user_id');
-    }
+        $keranjang = Keranjangs::find($id);
+
+        $kelola = new kelolaPesan;
+        $kelola->user_id = auth()->user()->id;
+        $kelola->keranjang_id = $keranjang->id;
+        $kelola->token = $randomString ;
+        $kelola->save();
+
+        return redirect('babi');
+  }
 }

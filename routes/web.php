@@ -9,6 +9,7 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\kelolaPesanController;
 // == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
@@ -24,6 +25,8 @@ Route::get('/menu', [MenuController::class, 'index'])->name('index');
 Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
 Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store');
 Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
+Route::get('/babi', [kelolaPesanController::class, 'index'])->name('kelolaPesan.index');
+Route::post('/babi/{id}', [kelolaPesanController::class, 'store'])->name('kelolaPesan.store');
 Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
         return redirect('');

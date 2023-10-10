@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class kelolaPesan extends Model
 {
-    use HasFactory;
+    protected $guarded = [];
+
+    public function keranjang()
+    {
+        return $this->hasOne('App\Models\Keranjangs', 'menu_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'user_id');
+    }
 }
