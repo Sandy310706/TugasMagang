@@ -43,7 +43,7 @@ class PesananController extends Controller
 
     public function menu($id)
     {
-        $randomString = Str::acak(3);
+        $randomString = Str::random(3);
 
         $keranjang = Keranjangs::find($id);
 

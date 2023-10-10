@@ -25,7 +25,7 @@ Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
 Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store');
 Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
 Route::get('/babi', [kelolaPesanController::class, 'index'])->name('kelolaPesan.index');
-Route::get('/babi/{id}', [kelolaPesanController::class, 'store'])->name('kelolaPesan.store');
+Route::post('/babi/{id}', [kelolaPesanController::class, 'store'])->name('kelolaPesan.store');
 Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
         return redirect('');

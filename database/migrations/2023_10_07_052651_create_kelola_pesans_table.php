@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('kelola_pesans', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id')->constained('users');
             $table->foreignId('keranjang_id');
-            $table->string('token'); 
+            $table->string('token');
             $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
             $table->timestamps();
         });
