@@ -51,8 +51,8 @@
                             </div>
                         </form>
                         <div class="w-full h-8 flex">
-                            <span class="font-outfit text-sm m-auto">Belum punya akun? <a href="/registrasi" class="text-blue-700 hover:underline">Buat</a></span>
-                            <span class="font-outfit text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                            <span class="font-sans text-sm m-auto">Belum punya akun? <a href="/registrasi" class="text-blue-700 hover:underline">Buat</a></span>
+                            <span class="font-sans text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
                         </div>
                     </div>
                 </div>

@@ -14,18 +14,18 @@ class Keranjang extends Component
     public function render()
     {
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
-        return view('livewire.keranjang' , compact('keranjangs'));
+        return view('user.keranjang' , compact('keranjangs'));
     }
 
     public function store(request $request, $id)
     {
+
         $menu = Menu::find($id);
-        $makanan = Menu::find($id);
-        $minum  = Menu::find($id);
-        $keranjang = $makanan->keranjang;
+
         if(!auth()){
         return redirect('login');
         }
+
         $keranjang = new Keranjangs;
         $keranjang->user_id = auth()->user()->id;
         $keranjang->menu_id = $menu->id;

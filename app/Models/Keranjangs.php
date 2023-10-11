@@ -32,4 +32,9 @@ class Keranjangs extends Model
         return $this->belongsTo('App\Models\Menu', 'menu_id');
     }
 
+    public function kelolapesan()
+    {
+        return $this->belongsto('App\Models\kelolapesan', 'kelolapesa_id');
+    }
+
 }
