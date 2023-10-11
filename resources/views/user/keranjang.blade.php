@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
 	<meta charset="utf-8">
@@ -26,7 +26,6 @@
 	<title>Keranjang</title>
     @livewireStyles
 </head>
-
 <body>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -103,9 +102,7 @@
                 </div>
             </div>
         @endforeach
-
 	</div>
-
 	<div class="container mt-3">
 		<div class="checkout">
 			<div class="subtotal">
@@ -118,7 +115,6 @@
 		</div>
 	</div>
 </form>
-
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 		crossorigin="anonymous"></script>
@@ -131,6 +127,5 @@
     <script src="script.js/scripts.js"></script>
     @livewireScripts
 </body>
-
 </html>
 

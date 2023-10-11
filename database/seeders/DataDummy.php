@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
+use Nette\Utils\Random;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use function Laravel\Prompts\password;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DataDummy extends Seeder
 {
@@ -17,22 +18,6 @@ class DataDummy extends Seeder
      */
     public function run(): void
     {
-
-
-        DB::table('users')->insert([
-            'nama' => 'bin',
-            'email' => 'bin@gmail.com',
-            'role'  => 'guest',
-            'password' => hash::make('robin'),
-        ]);
-
-        // DB::table('menus')->insert([
-        //     'nama' => 'teh es',
-        //     'foto' => 'tehes.jpg',
-        //     'kategori'  => 'minuman',
-        //     'harga' => ('10000'),
-        // ]);
-
 
 
     }

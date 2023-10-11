@@ -141,8 +141,18 @@ h1.text-center {
 
 .content-table {
 	width: 20%;
+	display: flex;
+	justify-content: center;
 	text-align: center;
+	align-items: center;
 	padding: 20px;
+}
+
+.harga {
+width: 20%;
+	display: flex;
+	text-align: center;
+	align-items: center;
 }
 
 .content-table.foto {
@@ -150,8 +160,7 @@ h1.text-center {
 }
 
 .content p {
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: bold;
+	font-weight: 500;
 	font-size: 17px;
 }
 

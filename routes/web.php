@@ -1,21 +1,22 @@
 <?php
+use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
-use App\Livewire\Keranjang;
 // == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
 });
 //
 Route::get('/', function () {
-    return view('landingpage');
+    return view('user.landingpage');
 })->middleware('web');
 
 // == Authentikasi Route ==
@@ -48,8 +49,9 @@ Route::middleware(['guest'])->group(function(){
 Route::middleware('auth')->group(function() {
     Route::middleware(['admin'])->group(function(){
         Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
-        Route::get('admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
+        Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
         Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
+        Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
         Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
     });
     Route::middleware(['operator'])->group(function(){

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('keranjangs', function (Blueprint $table) {
-            $table->dropColumn('nama');
-            $table->dropColumn('harga');
-            $table->dropColumn('foto');
-            $table->dropColumn('total_harga');
+        Schema::create('tests', function (Blueprint $table) {
+            $table->id();
+            $table->string('kode');
+            $table->string('pemesan');
+            $table->boolean('status');
+            $table->timestamps();
         });
     }
 
@@ -24,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('keranjangs', function (Blueprint $table) {
-            
-        });
+        Schema::dropIfExists('tests');
     }
 };

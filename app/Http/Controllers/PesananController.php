@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keranjangs;
 use App\Models\Pesanan;
-use Illuminate\Http\Request;
+use App\Models\Keranjangs;
+use App\Models\Test;
 use Illuminate\Support\Str;
-use Illuminate\Queue\Jobs\RedisJob;
-use Dirape\Token\Token;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 
 class PesananController extends Controller
 {
-    public function pesanan() {
-        $data = Pesanan::all();
-        return view('admin.pesanan', compact('data'));
+    public function index() {
+        $data = Test::all();
+        return view('admin.kelolapesanan', compact('data'));
     }
 
     public function tampilanpesanan() {
