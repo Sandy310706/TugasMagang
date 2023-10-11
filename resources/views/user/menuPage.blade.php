@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
                        @if (auth())
                          <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
-                       @else 
+                       @else
                          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                     @endif
                 </ul>
@@ -56,7 +56,7 @@
                             </form>
                         </div>
                     </div>
-                </form>      
+                </form>
             @endforeach
         </div>
     </div>
