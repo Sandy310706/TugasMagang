@@ -20,8 +20,8 @@ class DataDummy extends Seeder
 
 
         DB::table('users')->insert([
-            'nama' => 'robin',
-            'email' => 'robin@gmail.com',
+            'nama' => 'bin',
+            'email' => 'bin@gmail.com',
             'role'  => 'guest',
             'password' => hash::make('robin'),
         ]);
