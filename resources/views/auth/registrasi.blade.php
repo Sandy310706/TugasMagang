@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="w-full h-[92%] flex justify-center items-center">
-            <div class="w-[35%] bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25">
+            <div class="w-[35%] m-10 bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25 mobile:w-11/12 lgMobile:w-11/12 Tablet:w-[70%] lgTablet:w-[60%]">
                 <div class="w-full h-full flex flex-col mt-10 items-center">
                     <div class="w-full flex justify-center items-center mb-10">
                         <h1 class="text-4xl font-montserrat">R e g i s</h1>
@@ -66,13 +66,13 @@
                                     <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
                                 </div>
                             @enderror
-                            <div class="w-full h-8 flex justify-center items-center">
-                                <button class="bg-zinc-700 text-white h-full py-1 w-1/2 justify-center items-center rounded-xl" type="submit">Regis</button>
+                            <div class="w-full h-8 mb-4 flex justify-center items-center lgTablet:h-10">
+                                <button class="bg-zinc-700 text-white h-full py-1 w-1/2 justify-center items-center rounded-xl" type="submit">Daftar</button>
                             </div>
                         </form>
-                        <div class="w-full h-8 flex mb-10">
-                            <span class="font-sans text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
-                            <span class="font-sans text-sm m-auto">Sudah Punya akun? <a href="{{ route('login') }}" class="text-blue-700 hover:underline">Login</a></span>
+                        <div class="w-full h-8 mb-10 font-sans flex justify-evenly items-center text-sm mobile:flex-col lgTablet:text-lg">
+                            <span class="">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                            <span class="">Sudah Punya akun? <a href="{{ route('login') }}" class="text-blue-700 hover:underline">Login</a></span>
                         </div>
                     </div>
                 </div>
