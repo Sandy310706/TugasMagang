@@ -1,5 +1,5 @@
 <div class="h-20 box-border">
-    <div class="bg-slate-900 h-20 flex fixed w-4/5 text-white z-50 tablet:w-full">
+    <div class="bg-slate-900 h-20 flex fixed w-4/5 text-white z-50 lgTablet:w-full">
         <h1 class="w-1/2 font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
         <div class="w-1/2 relative" style="z-index: 2">
             <button class="absolute right-20 top-7 hover:text-slate-300" onclick="openDropdown()" id="dropdownTrigger">Hallo, {{ auth()->user()->nama }} <i class="HandPhone:hidden fa-solid fa-play scale-75" style="transition: transform 1s;" id="dropdownIcon"></i></button>

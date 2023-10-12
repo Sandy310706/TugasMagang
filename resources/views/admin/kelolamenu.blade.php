@@ -17,6 +17,7 @@
                 <th>Nama</th>
                 <th>Kategori</th>
                 <th>Harga</th>
+                <th>Stok</th>
                 <th>Aksi</th>
             </thead>
             <tbody class="text-center bg-white odd:bg-sky-300">
@@ -27,6 +28,7 @@
                         <td class="p-2 group-hover:bg-slate-200">{{ $menu->nama }}</td>
                         <td class="p-2 group-hover:bg-slate-200">{{ $menu->kategori }}</td>
                         <td class="p-2 group-hover:bg-slate-200">Rp. {{ $menu->harga }}</td>
+                        <td class="p-2 group-hover:bg-slate-200">Rp. {{ $menu->stok }}</td>
                         <td class="p-2 group-hover:bg-slate-200">
                             <button id="btnEdit" onclick="modalEdit({{ $menu->id }})" class="text-yellow-600">Edit</button>
                             <p class="inline"> | </p>
@@ -125,6 +127,13 @@
                     <option value="makanan">Makanan</option>
                     <option value="minuman">Minuman</option>
                 </select>
+            </div>
+            <div class="mb-2 flex flex-col">
+                <label for="stok" class="mb-1 font-outfit after:content-['*'] after:text-red-500 after:text-sm after:font-medium">Stok Barang</label>
+                <input type="text" id="stok" name="stok" value="{{ old('stok') }}" class="rounded p-1 outline-none ring-1 ring-slate-600 border-slate-500 bg-slate-300 shadow-slate-800 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800 {{ $errors->has('stok') ? 'border-red-500 ring-red-600' : ''}}">
+                @error('stok')
+                    <p class="pt-1 text-xs text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="mb-2 flex flex-col">
                 <label for="file" class="font-outfit after:content-['*'] after:text-red-500 after:text-sm after:font-medium">Foto</label>

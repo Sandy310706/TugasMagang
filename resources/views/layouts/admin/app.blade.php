@@ -23,12 +23,12 @@
     </style>
     <title>@yield('title')</title>
 </head>
-<body class="bg-slate-200" id="AdminBody">
+<body class="bg-slate-200">
     <div class="flex">
         @include('layouts.admin.sidebar')
-        <div class="ml-[20%] w-4/5 tablet:ml-0 tablet:w-full">
+        <div class="ml-[20%] w-4/5 lgTablet:ml-0 lgTablet:w-full">
             @include('layouts.admin.navbar')
-            <div class="container px-4 py-2 tablet:px-0">
+            <div class="container px-4 py-2 lgTablet:px-0">
                 @yield('dashboard')
                 @yield('kelola menu')
                 @yield('kelola pesanan')
