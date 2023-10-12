@@ -13,7 +13,7 @@
             </div>
         @endif
         <div class="w-full h-[92%] flex justify-center items-center">
-            <div class="w-[35%] h-96 bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25">
+            <div class="w-[35%]  bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25 mobile:w-11/12 lgMobile:w-11/12 Tablet:w-[70%] lgTablet:w-[60%]">
                 <div class="w-full h-full flex flex-col mt-10 items-center">
                     <div class="w-full flex justify-center items-center mb-10">
                         <h1 class="text-4xl font-montserrat">L o g i n</h1>
@@ -46,13 +46,13 @@
                                         <p class="mt-1 font-nunito text-xs text-red-600"><i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}</p>
                                     </div>
                                 @enderror
-                            <div class="w-full h-8 flex mb-1">
-                                <button class="bg-zinc-700 text-white m-auto w-1/2 py-1 rounded-xl" type="submit">L o g i n</button>
+                            <div class="w-full h-8 mb-4 flex justify-center items-center lgTablet:h-10">
+                                <button class="bg-zinc-700 text-white m-auto w-1/2 py-1 rounded-xl lgTablet:py-2" type="submit">L o g i n</button>
                             </div>
                         </form>
-                        <div class="w-full h-8 flex">
-                            <span class="font-sans text-sm m-auto">Belum punya akun? <a href="/registrasi" class="text-blue-700 hover:underline">Buat</a></span>
-                            <span class="font-sans text-sm m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
+                        <div class="w-full mb-4 h-8 flex text-sm lgTablet:text-lg">
+                            <span class="font-sans m-auto">Belum punya akun? <a href="/registrasi" class="text-blue-700 hover:underline">Buat</a></span>
+                            <span class="font-sans m-auto">Lupa password? <a href="#" class="text-blue-700 hover:underline">Reset</a></span>
                         </div>
                     </div>
                 </div>

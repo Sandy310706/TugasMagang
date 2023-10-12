@@ -3,7 +3,7 @@
 @section('headerNav', 'Dashboard')
 @section('dashboard')
     <div class="w-full h-28 mt-3 flex justify-evenly flex-wrap tablet:w-screen">
-        <div class="relative w-[212px] mb-2 h-32 bg-green-700 text-white rounded-md hover:bg-green-800">
+        <div class="relative w-[20%] mb-2 h-32 bg-green-700 text-white rounded-md hover:bg-green-800">
             <div class="p-1">
                 <h2 class="pl-1 font-font-semibold text-2xl">{{ $totalMenu }}</h2>
                 <h1 class="pl-1 font-amaranth text-4xl">Menu</h1>
@@ -13,7 +13,7 @@
                 <div class="w-full flex p-1"><a href="{{ route('Admin.Menu') }}" class="m-auto font-amaranth text-sm text-white">Selengkapnya<i class="bi bi-arrow-right-circle"></i></a></div>
             </div>
         </div>
-        <div class="relative w-[212px] mb-2 h-32 bg-emerald-400 text-white rounded-md hover:bg-emerald-500">
+        <div class="relative w-[20%] mb-2 h-32 bg-emerald-400 text-white rounded-md hover:bg-emerald-500">
             <div class="p-1">
                 <h2 class="pl-1 font-semibold text-2xl">0</h2>
                 <h1 class="pl-1 font-amaranth text-3xl">Pesanan</h1>
@@ -23,7 +23,7 @@
                 <div class="w-full flex p-1"><a href="" class="m-auto font-amaranth text-sm text-white">Selengkapnya<i class="bi bi-arrow-right-circle"></i></a></div>
             </div>
         </div>
-        <div class="relative w-[212px] mb-2 h-32 bg-amber-600 text-white rounded-md hover:bg-amber-700">
+        <div class="relative w-[20%] mb-2 h-32 bg-amber-600 text-white rounded-md hover:bg-amber-700">
             <div class="p-1">
                 <h2 class="pl-1 font-semibold text-2xl">{{ $totalMasukan }}</h2>
                 <h1 class="pl-1 font-amaranth text-3xl">Feedback</h1>
@@ -33,7 +33,7 @@
                 <div class="w-full flex p-1"><a href="{{ route('Admin.Feedback') }}" class="m-auto font-amaranth text-sm text-white">Selengkapnya<i class="bi bi-arrow-right-circle"></i></a></div>
             </div>
         </div>
-        <div class="relative w-[212px] mb-2 h-32 bg-red-800 text-white rounded-md hover:bg-red-900" style="z-index: 1">
+        <div class="relative w-[20%] mb-2 h-32 bg-red-800 text-white rounded-md hover:bg-red-900" style="z-index: 1">
             <div class="p-1">
                 <h2 class="pl-1 font-semibold text-2xl">{{ $totalAkun }}</h2>
                 <h1 class="pl-1 font-amaranth text-3xl">Akun</h1>
