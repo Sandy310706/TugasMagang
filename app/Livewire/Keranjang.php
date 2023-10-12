@@ -21,7 +21,6 @@ class Keranjang extends Component
     {
 
         $menu = Menu::find($id);
-
         if(!auth()){
         return redirect('login');
         }
