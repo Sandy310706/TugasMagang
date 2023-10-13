@@ -33,12 +33,22 @@ export default {
                     from: { opacity: "100" },
                     to: { opacity: "0" },
                 },
+                showSidebar: {
+                    from: { width: "0%" },
+                    to: { width: "30%" },
+                },
+                hideSidebar: {
+                    from: { width: "30%" },
+                    to: { width: "0%" },
+                },
             },
             animation: {
                 showModal: "ToptoBottom 0.7s ease-in-out",
                 hideModal: "BottomtoTop 1s ease-in-out",
                 showDropdownMenu: "showDropdownMenu 0.5s ease-in-out",
                 hideDropdownMenu: "hideDropdownMenu 0.5s ease-in-out",
+                showSidebar: "showSidebar 0.5s ease-in-out",
+                hideSidebar: "hideSidebar 0.5s  ease-in-out",
             },
             screens: {
                 mobile: { max: "480px" },
