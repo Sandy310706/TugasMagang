@@ -35,11 +35,11 @@
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
-                    @if (auth())
+                    @auth
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     @else
                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    @endif
+                    @endauth
 				</ul>
 			</div>
 		</div>
