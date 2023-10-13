@@ -28,7 +28,7 @@
 				<span></span>
 				<span></span>
 			</div>
-			<h3 class="navbar-brand ml-5">SMKN7Pontianak</h3>
+			<h3 class="navbar-brand ml-5">Phei....</h3>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
