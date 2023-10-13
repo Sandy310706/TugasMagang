@@ -27,8 +27,10 @@ class KelolaMenuController extends Controller
             'foto.required' => 'Kolom ini wajib di isi',
             'nama.required' => 'Kolom ini wajib di isi',
             'harga.required' => 'Kolom ini wajib di isi',
+            'nama' => 'Nama telah di gunakan',
             'foto.mimes' => 'Format file tidak sesuai',
-            'harga.numeric' => 'Wajib menggunakan angka'
+            'harga.numeric' => 'Wajib menggunakan angka',
+            'stok.numberic' => 'Wajib menggunakan angka',
         ]);
         if($dataValidasi->fails()){
             return redirect()->back()

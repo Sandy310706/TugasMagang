@@ -16,7 +16,8 @@ class Menu extends Model
         'nama',
         'harga',
         'kategori',
-        'foto'
+        'foto',
+        'stok',
     ];
 
     public function getTableName()

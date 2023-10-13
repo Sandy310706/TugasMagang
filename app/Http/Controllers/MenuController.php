@@ -20,25 +20,27 @@ class MenuController extends Controller
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
-            'nama' => 'required',
+            'nama' => 'required|unque:menus',
             'kategori' => 'required',
             'harga' => 'required|numeric',
+            'stok' => 'required|numberic',
         ],
         [
             'foto.required' => 'Kolom ini wajib di isi',
             'nama.required' => 'Kolom ini wajib di isi',
             'harga.required' => 'Kolom ini wajib di isi',
+            'nama' => 'Nama telah di gunakan',
             'foto.mimes' => 'Format file tidak sesuai',
-            'harga.numeric' => 'Wajib menggunakan angka'
+            'harga.numeric' => 'Wajib menggunakan angka',
+            'stok.numberic' => 'Wajib menggunakan angka',
         ]);
         if($dataValidasi->fails()){
-            return redirect()->back()
-            ->withErrors($dataValidasi)
-            ->withInput();
+            return redirect()->back()->withErrors($dataValidasi)->withInput();
         }
         $data = new Menu;
         $data->nama = $request->nama;
         $data->harga = $request->harga;
+        $data->stok = $request->stok;
         $data->kategori = $request->kategori;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
@@ -48,7 +50,7 @@ class MenuController extends Controller
                 $data->foto = $newName;
             }
         $data->save();
-        return redirect('/admin/menu')->with('Berhasil', 'Data berhasil di input');
+        return redirect()->route('Admin.Menu')->with('success', 'Data berhasil di input');
     }
     public function delete($id)
     {
