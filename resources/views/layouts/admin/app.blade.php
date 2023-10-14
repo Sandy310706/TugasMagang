@@ -26,7 +26,7 @@
 <body class="bg-slate-200">
     <div class="flex">
         @include('layouts.admin.sidebar')
-        <div class="ml-[20%] w-4/5 lgTablet:ml-0 Tablet:w-full">
+        <div class="ml-[20%] w-4/5  lgTablet:ml-0 Tablet:w-full">
             @include('layouts.admin.navbar')
             <div class="container px-4 py-2">
                 @yield('dashboard')
