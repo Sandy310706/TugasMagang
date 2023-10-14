@@ -19,17 +19,58 @@ class Keranjang extends Component
 
     public function store(request $request, $id)
     {
-
-        $menu = Menu::find($id);
         if(!auth()){
-        return redirect('login');
+            return redirect('login');
         }
 
-        $keranjang = new Keranjangs;
-        $keranjang->user_id = auth()->user()->id;
-        $keranjang->menu_id = $menu->id;
-        $keranjang->jumlah = 1;
-        $keranjang->save();
+        $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
+                            ->where('menu_id', $id)
+                            ->first();
+        if($cekKeranjang)
+        {
+            $keranjang = Keranjangs::find($cekKeranjang->id);
+            $jumlah = $keranjang->jumlah + 1;
+            $keranjang->jumlah = $jumlah;
+            $keranjang->save();
+        } else {
+            $keranjang = new Keranjangs;
+            $keranjang->menu_id = $id;
+            $keranjang->user_id = auth()->user()->id;
+            $keranjang->jumlah =  1;
+            $keranjang->save();
+        }
+
+
+        // $menu = Menu::find($id);
+        // // $dipesan = $menu->where('id', $id)->exists();
+
+        // // if($dipesan){
+        // //     $dipesan->jumlah + 1;
+        // // }else{
+        // //     return redirect('menu');
+        // // }
+
+
+        // if(!auth()){
+        // return redirect('login');
+        // }
+        // $keranjang = new Keranjangs;
+        // $keranjang->menu_id = $menu->id;
+        // $keranjang->user_id = auth()->user()->id;
+        // if($menu->id == $keranjang->menu_id){
+        //     $keranjang->jumlah = $menu->quantity + 1;
+        // }else{
+        //     $keranjang->jumlah =  1;
+        // }
+
+        // // dd($keranjang);
+        // $keranjang->save();
+
+
+        // // if($keranjang->menu_id >= 1 &&  $keranjang->jumlah >=1 ){
+        // //     $nilai = $keranjang->menu_id + $keranjang->jumlah;
+        // //     $keranjang->save;
+        // // }
 
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
     }
