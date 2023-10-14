@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth" class="dark">
 <head>
@@ -21,14 +20,15 @@
             transition: opacity 2s ease-in-out;
         }
     </style>
+    <link rel="icon" href="{{ asset('img/Phei.svg') }}" sizes="96x96">
     <title>@yield('title')</title>
 </head>
-<body class="bg-slate-200" id="AdminBody">
+<body class="bg-slate-200">
     <div class="flex">
         @include('layouts.admin.sidebar')
-        <div class="ml-[20%] w-4/5 tablet:ml-0 tablet:w-full">
+        <div class="ml-[20%] w-4/5 lgTablet:ml-0 Tablet:w-full">
             @include('layouts.admin.navbar')
-            <div class="container px-4 py-2 tablet:px-0">
+            <div class="container px-4 py-2">
                 @yield('dashboard')
                 @yield('kelola menu')
                 @yield('kelola pesanan')

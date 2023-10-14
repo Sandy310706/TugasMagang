@@ -18,16 +18,19 @@ class KelolaMenuController extends Controller
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
-            'nama' => 'required',
+            'nama' => 'required|unque:menus',
             'kategori' => 'required',
             'harga' => 'required|numeric',
+            'stok' => 'required|numberic',
         ],
         [
             'foto.required' => 'Kolom ini wajib di isi',
             'nama.required' => 'Kolom ini wajib di isi',
             'harga.required' => 'Kolom ini wajib di isi',
+            'nama' => 'Nama telah di gunakan',
             'foto.mimes' => 'Format file tidak sesuai',
-            'harga.numeric' => 'Wajib menggunakan angka'
+            'harga.numeric' => 'Wajib menggunakan angka',
+            'stok.numberic' => 'Wajib menggunakan angka',
         ]);
         if($dataValidasi->fails()){
             return redirect()->back()
@@ -37,6 +40,7 @@ class KelolaMenuController extends Controller
         $data = new Menu;
         $data->nama = $request->nama;
         $data->harga = $request->harga;
+        $data->stok = $request->stok;
         $data->kategori = $request->kategori;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
