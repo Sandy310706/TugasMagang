@@ -20,19 +20,19 @@ class MenuController extends Controller
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
-            'nama' => 'required|unque:menus',
+            'nama' => 'required|unique:menus',
             'kategori' => 'required',
             'harga' => 'required|numeric',
-            'stok' => 'required|numberic',
+            'stok' => 'required|numeric',
         ],
         [
             'foto.required' => 'Kolom ini wajib di isi',
             'nama.required' => 'Kolom ini wajib di isi',
             'harga.required' => 'Kolom ini wajib di isi',
-            'nama' => 'Nama telah di gunakan',
+            'nama.unique' => 'Nama telah di gunakan',
             'foto.mimes' => 'Format file tidak sesuai',
             'harga.numeric' => 'Wajib menggunakan angka',
-            'stok.numberic' => 'Wajib menggunakan angka',
+            'stok.numeric' => 'Wajib menggunakan angka',
         ]);
         if($dataValidasi->fails()){
             return redirect()->back()->withErrors($dataValidasi)->withInput();
