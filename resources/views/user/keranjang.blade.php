@@ -109,7 +109,7 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
-			<div class="tombol-checkout mt-2">
+            <div class="tombol-checkout mt-2">
 				<button class="sumbit">Checkout</button>
 			</div>
 		</div>

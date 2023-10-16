@@ -41,6 +41,14 @@ export default {
                     from: { width: "30%" },
                     to: { width: "0%" },
                 },
+                showMenu: {
+                    from: { height: "0" },
+                    to: { height: "328px" },
+                },
+                hideMenu: {
+                    from: { height: "328px" },
+                    to: { height: "0" },
+                },
             },
             animation: {
                 showModal: "ToptoBottom 0.7s ease-in-out",
@@ -49,6 +57,8 @@ export default {
                 hideDropdownMenu: "hideDropdownMenu 0.5s ease-in-out",
                 showSidebar: "showSidebar 0.5s ease-in-out",
                 hideSidebar: "hideSidebar 0.5s  ease-in-out",
+                showMenu: "showMenu 1s ease-in-out",
+                hideMenu: "hideMenu 1s ease-in-out",
             },
             screens: {
                 mobile: { max: "480px" },

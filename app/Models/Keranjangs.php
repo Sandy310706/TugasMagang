@@ -12,7 +12,7 @@ class Keranjangs extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','nama_id', 'harga_id', 'foto_id'];
+    protected $fillable = ['user_id','nama_id','menu_id', 'harga_id', 'foto_id'];
 
     // public function Menu():HasMany
     // {
