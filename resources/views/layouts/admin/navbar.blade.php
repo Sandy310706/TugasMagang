@@ -1,9 +1,10 @@
 <div class="h-20 box-border">
-    <div class="bg-slate-900 h-20 flex fixed w-4/5 text-white z-40 lgTablet:w-full">
+    <div class="mobile:w-full lgTablet:w-full h-20 bg-slate-900 flex fixed w-4/5 text-white z-40">
         <h1 class="w-1/2 font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
         <div class="w-1/2 relative" style="z-index: 2">
-            <button class="absolute right-20 top-7 hover:text-slate-300" onclick="openDropdown()" id="dropdownTrigger">Hallo, {{ auth()->user()->nama }} <i class="HandPhone:hidden fa-solid fa-play scale-75" style="transition: transform 1s;" id="dropdownIcon"></i></button>
-            <button onclick="showSidebar()" id="SidebarTrigger"><span class="hidden absolute right-10 top-7 scale-150 lgTablet:inline"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
+            <button class="absolute mobile:hidden right-20 top-7 hover:text-slate-300" onclick="openDropdown()" id="dropdownTrigger">Hallo, {{ auth()->user()->nama }} <i class="HandPhone:hidden fa-solid fa-play scale-75" style="transition: transform 1s;" id="dropdownIcon"></i></button>
+            <button onclick="showSidebar()" id="SidebarTrigger"><span class="hidden lgTablet:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
+            <button onclick="ShowMenu()" id="MenuTrigger"><span class="hidden mobile:inline lgTablet:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
             <div class="absolute right-4 top-14 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden" id="dropdownMenu">
                 <ul>
                     <li><a href="#" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Profile</a></li>
@@ -12,10 +13,31 @@
             </div>
         </div>
     </div>
-    <i class="fa-solid fa-xmark hidden"></i>
 </div>
-<div class="w-full h-30 bg-slate-900 text-red-800 ani">
-
+<div class="w-screen hidden fixed text-white bg-slate-800 z-50" id="MenuSidebar">
+    <div class="flex flex-col justify-center items-center">
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Beranda</a>
+        </div>
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Dashboard</a>
+        </div>
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Keuangan</a>
+        </div>
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Kelola Menu</a>
+        </div>
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Kelola Pesanan</a>
+        </div>
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Feedback</a>
+        </div>
+        <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
+            <a href="#" class="block">Logout</a>
+        </div>
+    </div>
 </div>
 <script>
     const dropdownTrigger = document.getElementById("dropdownTrigger");
@@ -86,11 +108,10 @@
 
     function showSidebar(){
         const Sidebar = document.getElementById("Sidebar")
-        const SidebarMenu = document.getElementById("SidebarMenu")
         if( Sidebar.classList.contains("lgTablet:hidden")){
             Sidebar.classList.remove("lgTablet:hidden");
             Sidebar.classList.remove("lgTablet:animate-hideSidebar")
-            Sidebar.classList.add("lgTablet:w-[35%]");
+            Sidebar.classList.add("lgTablet:w-[25%]");
             Sidebar.classList.add("lgTablet:animate-showSidebar");
         }else{
             setTimeout(function() {
@@ -98,6 +119,23 @@
             }, 400);
             Sidebar.classList.remove("lgTablet:animate-showSidebar");
             Sidebar.classList.add("lgTablet:animate-hideSidebar");
+        }
+    }
+    function ShowMenu(){
+        const MenuSidebar = document.getElementById("MenuSidebar");
+        const Menu = document.getElementById("Menu")
+        if( MenuSidebar.classList.contains("hidden")){
+            setTimeout(function() {
+                Menu.classList.remove("hidden");
+            }, 900);
+            MenuSidebar.classList.remove("hidden");
+            MenuSidebar.classList.add("animate-showMenu");
+        }else{
+            setTimeout(function() {
+                MenuSidebar.classList.add("hidden")
+            }, 1000);
+            MenuSidebar.classList.remove("animate-showMenu");
+            MenuSidebar.classList.add("animate-hideMenu")
         }
     }
 </script>
