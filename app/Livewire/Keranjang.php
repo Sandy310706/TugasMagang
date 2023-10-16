@@ -41,37 +41,6 @@ class Keranjang extends Component
         }
 
 
-        // $menu = Menu::find($id);
-        // // $dipesan = $menu->where('id', $id)->exists();
-
-        // // if($dipesan){
-        // //     $dipesan->jumlah + 1;
-        // // }else{
-        // //     return redirect('menu');
-        // // }
-
-
-        // if(!auth()){
-        // return redirect('login');
-        // }
-        // $keranjang = new Keranjangs;
-        // $keranjang->menu_id = $menu->id;
-        // $keranjang->user_id = auth()->user()->id;
-        // if($menu->id == $keranjang->menu_id){
-        //     $keranjang->jumlah = $menu->quantity + 1;
-        // }else{
-        //     $keranjang->jumlah =  1;
-        // }
-
-        // // dd($keranjang);
-        // $keranjang->save();
-
-
-        // // if($keranjang->menu_id >= 1 &&  $keranjang->jumlah >=1 ){
-        // //     $nilai = $keranjang->menu_id + $keranjang->jumlah;
-        // //     $keranjang->save;
-        // // }
-
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
     }
 
