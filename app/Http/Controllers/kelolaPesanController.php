@@ -30,5 +30,5 @@ class kelolaPesanController extends Controller
         $kelola->save();
 
         return redirect('babi');
-  }
+    }
 }

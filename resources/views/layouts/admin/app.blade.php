@@ -26,9 +26,9 @@
 <body class="bg-slate-200">
     <div class="flex">
         @include('layouts.admin.sidebar')
-        <div class="ml-[20%] w-4/5  lgTablet:ml-0 Tablet:w-full">
+        <div class="w-4/5 mobile:w-full lgTablet:w-full ml-[20%] mobile:ml-0 lgTablet:ml-0 Tablet:w-full">
             @include('layouts.admin.navbar')
-            <div class="container px-4 py-2">
+            <div class="w-full px-4 py-2">
                 @yield('dashboard')
                 @yield('kelola menu')
                 @yield('kelola pesanan')

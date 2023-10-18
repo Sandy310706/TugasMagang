@@ -19,21 +19,50 @@ class Keranjang extends Component
 
     public function store(request $request, $id)
     {
-
-        $menu = Menu::find($id);
         if(!auth()){
-        return redirect('login');
+            return redirect('login');
         }
 
-        $keranjang = new Keranjangs;
-        $keranjang->user_id = auth()->user()->id;
-        $keranjang->menu_id = $menu->id;
-        $keranjang->jumlah = 1;
-        $keranjang->save();
-
+        $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
+                            ->where('menu_id', $id)
+                            ->first();
+        $menu = Menu::where('id', $id)->first();
+        if($cekKeranjang)
+        {
+            $keranjang = Keranjangs::find($cekKeranjang->id);
+            $jumlah = $keranjang->jumlah + 1;
+            $keranjang->jumlah = $jumlah;
+            $total_harga = $menu->harga * $keranjang->jumlah;
+            $keranjang->total_harga = $total_harga;
+            $keranjang->save();
+        } else {
+            $keranjang = new Keranjangs;
+            $keranjang->menu_id = $id;
+            $keranjang->user_id = auth()->user()->id;
+            $keranjang->jumlah =  1;
+            $keranjang->total_harga = $menu->harga;
+            $keranjang->save();
+        }
         return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
     }
-
+    public function tambah($id, $menu_id)
+    {
+        $keranjang = Keranjangs::find($id);
+        $menu = Menu::find($menu_id);
+        $keranjang->jumlah = $keranjang->jumlah + 1;
+        $keranjang->total_harga = $menu->harga * $keranjang->jumlah;
+        $keranjang->save();
+        return redirect('carts');
+    }
+    public function kurang($id, $menu_id)
+    {
+        $keranjang = Keranjangs::find($id);
+        $menu = Menu::find($menu_id);
+        $keranjang->jumlah = $keranjang->jumlah - 1;
+        $keranjang->total_harga = $menu->harga * $keranjang->jumlah;
+        $keranjang->save();
+        return redirect('carts');
+    }
     public function delete($id)
     {
         $keranjang = Keranjangs::where('id',$id);

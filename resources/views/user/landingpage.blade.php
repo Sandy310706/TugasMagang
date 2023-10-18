@@ -32,6 +32,11 @@
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    @auth
+                        @if (auth()->user()->role == 'admin')
+                            <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
+                        @endif
+                    @endauth
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
@@ -65,13 +70,6 @@
                 <div class="image">
                     <img src="template/landingPage/assets/img/rs3.png" alt="">
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
                 <h1>nasi</h1>
                 <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
@@ -197,7 +195,7 @@
             </div>
         </div>
     </footer>
-    <script src="script.js/scripts.js"></script>
+    <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
