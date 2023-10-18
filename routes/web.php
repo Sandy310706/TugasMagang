@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
 // == Errors Route ==
@@ -29,6 +30,8 @@ Route::get('/cartsk/{id}/{menu_id}', [Keranjang::class, 'kurang'])->name('kurang
 Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
 Route::get('/babi', [kelolaPesanController::class, 'index'])->name('kelolaPesan.index');
 Route::post('/babi/{id}', [kelolaPesanController::class, 'store'])->name('kelolaPesan.store');
+Route::get('/invoice', [InvoiceController::class, 'index'])->name('Invoice');
+Route::post('/invoice/{id}',[InvoiceController::class, 'store'])->name('Invoice.store');
 Route::get('/home', function() {
     if(Auth::user()->role == 'guest'){
         return redirect('');
