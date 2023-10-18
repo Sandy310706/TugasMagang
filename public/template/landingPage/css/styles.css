@@ -69,6 +69,28 @@ body {
     color: #ffc800;
 }
 
+.keranjangs{
+    position:relative;
+    display:flex;
+}
+ 
+.ntif{
+    position:relative;
+    right:10px;
+    width:23px;
+    height:23px;
+    background-color:gray;
+    border-radius:50%;
+    text-align:center;
+    display:flex;
+    justify-content:center;'
+    align-items:center;
+}
+
+.ntif p{
+    color:white;
+}   
+
 .svg-container {
     position: absolute;
 }

@@ -61,6 +61,28 @@ body {
     color: #ffc800;
 }
 
+.keranjangs{
+    position:relative;
+    display:flex;
+}
+ 
+.ntif{
+    position:relative;
+    right:10px;
+    width:23px;
+    height:23px;
+    background-color:gray;
+    border-radius:50%;
+    text-align:center;
+    display:flex;
+    justify-content:center;'
+    align-items:center;
+}
+
+.ntif p{
+    color:white;
+}
+
 /* hamburger menu */
 
 .menu-toggle {
@@ -120,7 +142,7 @@ body {
 }
 
 .makanan {
-    margin-top: 80px;
+    margin-top: 20px;
     color: #016a70;
     text-align: center;
     font-family: Satisfy;
@@ -296,7 +318,7 @@ body {
     opacity: 1;
     transition: opacity 1s;
     width: 500px;
-    font-size: 30px;
+    font-size: 3;0px;
     font-family: 'Gabarito', sans-serif;
   }
 

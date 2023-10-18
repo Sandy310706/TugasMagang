@@ -11,10 +11,14 @@
     <title>Halaman Menu</title>
 </head>
 <body>
-    <div class="pembungkus-alert">
-        <div class="custom-alert" id="alerts" style="display: none;" >Pesanan Kake Udah Selesai Cong</div>
-    </div> 
-    </div>
+        <div class="pembungkus-alert">
+            <div class="custom-alert" id="alerts" style="display: none; font-sans" > Silahkan Pesan </div>
+        </div>
+
+        <div class="pembungkus-alert">
+            <div class="custom-alert" id="alerts" style="display: none; font-sans" > Pesanan Sudah Ditambahkan  </div>
+        </div>
+        
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -27,7 +31,12 @@
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
+                    <div class="keranjangs"> 
+                        <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
+                        <div class="ntif">
+                            <p>2</p>
+                        </div>
+                    </div>
                        @if (auth())
                          <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                        @else
@@ -103,17 +112,15 @@
     </footer>
 </div>
 
-<script>
-
-      const notifs = document.getElementById("alerts")
-      setTimeout(function() {
-          notifs.style.display = "block";
-      setTimeout(function() {
-          notifs.style.display = "none";
-        }, 5000); 
-      }, 1000)
-
-  </script>
+    <script>
+        const notifs = document.getElementById("alerts")
+        setTimeout(function() {
+            notifs.style.display = "block";
+        setTimeout(function() {
+            notifs.style.display = "none";
+            },1000); 
+        }, 1000)
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
