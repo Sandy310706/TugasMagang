@@ -18,4 +18,9 @@ class kelolaPesan extends Model
     {
         return $this->hasOne('App\Models\User', 'user_id');
     }
+
+    public function invoice()
+    {
+        return $this->hasOne('App\Models\Invoice', 'invoice_id');
+    }
 }

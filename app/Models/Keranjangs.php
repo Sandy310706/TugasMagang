@@ -12,7 +12,7 @@ class Keranjangs extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','nama_id','menu_id', 'harga_id', 'foto_id', 'total_harga'];
+    protected $fillable = ['user_id','nama_id','menu_id', 'harga_id', 'foto_id', 'total_harga', 'jumlah'];
 
     public function User():HasOne
     {
@@ -31,7 +31,12 @@ class Keranjangs extends Model
 
     public function kelolapesan()
     {
-        return $this->belongsto('App\Models\kelolapesan', 'kelolapesa_id');
+        return $this->belongsto('App\Models\kelolapesan', 'kelolapesan_id');
+    }
+
+    public function invoice()
+    {
+        return $this->belongsTo('App\Models\Invoice', 'invoice_id');
     }
 
 }

@@ -61,7 +61,6 @@
 			</div>
 		</div>
         @foreach ($keranjangs as $keranjang)
-            @csrf
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
@@ -100,9 +99,12 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
-            <div class="tombol-checkout mt-2">
-				<button class="sumbit">Checkout</button>
-			</div>
+            <form action="{{ route('Invoice.store', $keranjang->id) }}" method="post">
+                    @csrf
+                <div class="tombol-checkout mt-2">
+                <button class="sumbit">Checkout</button>
+                </div>
+            </form>
 		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

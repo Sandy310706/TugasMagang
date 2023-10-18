@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kelola_pesans', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->constained('users');
+            $table->foreignId('user_id');
             $table->foreignId('keranjang_id');
-            $table->string('token')->constained('invoices');
+            $table->string('nama');
+            $table->integer('harga');
+            $table->integer('total_harga');
+            $table->string('token');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
             $table->timestamps();
         });
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kelola_pesans');
+        Schema::dropIfExists('invoices');
     }
 };
