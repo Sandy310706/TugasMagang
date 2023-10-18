@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="pembungkus-alert">
-        <div class="custom-alert" id="alerts" style="display: none;" >Pesanan Kake Udah Selesai Cong</div>
-    </div> 
+        <div class="custom-alert" id="alerts" >Pesanan Kake Udah Selesai Cong 😜😜😜😜</div>
+    </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
@@ -110,13 +110,13 @@
           notifs.style.display = "block";
       setTimeout(function() {
           notifs.style.display = "none";
-        }, 5000); 
+        }, 5000);
       }, 1000)
 
   </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
-  
+
 </body>
 </html>
