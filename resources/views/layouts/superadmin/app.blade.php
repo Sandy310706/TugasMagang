@@ -18,11 +18,10 @@
 </head>
 <body class="bg-slate-200">
     <div class="flex">
-        @include('layouts.operator.sidebar')
+        @include('layouts.superadmin.sidebar')
         <div class="ml-[20%] w-full">
-            @include('layouts.operator.navbar')
+            @include('layouts.superadmin.navbar')
             <div class="container px-4 py-2">
-                @yield('dashboard')
                 @yield('kelola akun')
             </div>
         </div>
