@@ -28,7 +28,7 @@
 				<span></span>
 				<span></span>
 			</div>
-			<h3 class="navbar-brand ml-5">Phei....</h3>
+			<div class="navbar-brand ml-5"><img src="template/landingPage/assets/img/smk7.png" alt=""></div>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>

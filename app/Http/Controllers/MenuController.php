@@ -15,8 +15,9 @@ class MenuController extends Controller
     {
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori','minuman')->get();
+        $data = Keranjangs::count();
        
-        return view('user.menuPage', compact('makanan'), compact('minuman'));
+        return view('user.menuPage', compact('makanan', 'minuman', 'data'));
     }
     public function store(Request $request)
     {

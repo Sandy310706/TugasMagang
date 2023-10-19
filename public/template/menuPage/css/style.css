@@ -81,7 +81,21 @@ body {
 
 .ntif p{
     color:white;
+    font-size: 15px;
 }
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 999;
+  }
 
 /* hamburger menu */
 
