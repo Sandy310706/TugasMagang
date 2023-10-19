@@ -74,7 +74,7 @@
                         <form action="/cartsk/{{ $keranjang->id }}/{{ $keranjang->menu_id }}" method="GET">
                             <button type="submit" class="decrement"><i class="bi bi-dash"></i></button>
                         </form>
-                        <span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
+                        <span id="jumlah" style="padding: 10px" class="count">{{$keranjang->jumlah}}</span>
                         <form action="/cartst/{{ $keranjang->id }}/{{ $keranjang->menu_id }}" method="GET">
                             <button type="submit" class="decrement"><i class="bi bi-plus-lg"></i></button>
                         </form>

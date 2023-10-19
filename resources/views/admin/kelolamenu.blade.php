@@ -11,7 +11,7 @@
     </div>
     <div class="w-full">
         <table class="table-fixed w-full rounded-lg font-outfit text-xs h-12">
-            <thead class="bg-slate-400">
+            <thead class="">
                 <th>Foto</th>
                 <th>Nama</th>
                 <th>Kategori</th>
@@ -21,13 +21,13 @@
             </thead>
             <tbody class="text-center bg-white odd:bg-sky-300">
                 @foreach ($data as $menu )
-                    <tr class="group border-b border-gray-400">
-                        <td class="py-2 flex justify-center h-16 w-full group-hover:bg-slate-200"><img src="{{ asset('storage/fileMenu/'. $menu->foto) }}" alt="foto menu"></td>
-                        <td class="p-2 group-hover:bg-slate-200 selection:bg-green-700">{{ $menu->nama }}</td>
-                        <td class="p-2 group-hover:bg-slate-200">{{ $menu->kategori }}</td>
-                        <td class="p-2 group-hover:bg-slate-200">Rp. {{ $menu->harga }}</td>
-                        <td class="p-2 group-hover:bg-slate-200">{{ $menu->stok }}</td>
-                        <td class="p-2 group-hover:bg-slate-200">
+                    <tr class="group border-b even:bg-zinc-300 odd:bg-neutral-200 border-gray-400">
+                        <td class="py-2 flex justify-center h-16 w-full group-hover:bg-neutral-400"><img src="{{ asset('storage/fileMenu/'. $menu->foto) }}" alt="foto menu"></td>
+                        <td class="p-2 group-hover:bg-neutral-400">{{ $menu->nama }}</td>
+                        <td class="p-2 group-hover:bg-neutral-400">{{ $menu->kategori }}</td>
+                        <td class="p-2 group-hover:bg-neutral-400">Rp. {{ $menu->harga }}</td>
+                        <td class="p-2 group-hover:bg-neutral-400">{{ $menu->stok }}</td>
+                        <td class="p-2 group-hover:bg-neutral-400">
                             <button id="btnEdit" onclick="modalEdit({{ $menu->id }})" class="text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                             <p class="inline"> | </p>
                             <form action="{{ route('Menu.Delete', $menu->id) }}" method="POST" class="inline"  >
@@ -47,7 +47,7 @@
 </div>
 <div class="w-full flex justify-center">
     <div id="modal" class="hidden w-2/3 mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute  top-10 p-8  {{ $errors->any() ? 'block' : 'hidden' }} blur-none z-50 tablet:w-[80%] tablet:left-12">
-        <div class="p-4 mb-2">
+        <div class="mb-2">
             <h1 class="text-4xl font-outfit">Tambah Data</h1>
         </div>
         <button id="closeModal" onclick="closeModal()" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">

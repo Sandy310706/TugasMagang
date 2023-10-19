@@ -29,8 +29,6 @@ Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store')
 Route::get('/cartst/{id}/{menu_id}', [Keranjang::class, 'tambah'])->name('tambah');
 Route::get('/cartsk/{id}/{menu_id}', [Keranjang::class, 'kurang'])->name('kurang');
 Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
-Route::get('/babi', [kelolaPesanController::class, 'index'])->name('kelolaPesan.index');
-Route::post('/babi/{id}', [kelolaPesanController::class, 'store'])->name('kelolaPesan.store');
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('Invoice');
 Route::post('/invoice/{id}',[InvoiceController::class, 'store'])->name('Invoice.store');
 Route::get('/home', function() {
@@ -58,6 +56,7 @@ Route::middleware('auth')->group(function() {
         Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
         Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
         Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
+        Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
     });
     Route::middleware(['operator'])->group(function(){
     });

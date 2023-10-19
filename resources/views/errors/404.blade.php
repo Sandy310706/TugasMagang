@@ -4,12 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>404 Not Found</title>
-	<!-- Google font -->
+	<title>404 Tidak Ditemukan</title>
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
-	<!-- Font Awesome Icon -->
 	<link type="text/css" rel="stylesheet" href="{{ asset('error/css404/font-awesome.min.css') }}">
-	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="{{ asset('error/css404/style.css') }}">
 </head>
 <body>
@@ -21,7 +18,7 @@
 				<div></div>
 			</div>
 			<h1>oops!</h1>
-			<h2>Error 404 : Page Not Found</h2>
+			<h2>Error 404 : Halaman Tidak ditemukan</h2>
 		</div>
 	</div>
 </body>

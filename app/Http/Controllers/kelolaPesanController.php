@@ -2,6 +2,8 @@
 
 
 namespace App\Http\Controllers;
+
+use App\Models\Invoice;
 use App\Models\kelolaPesan;
 use Illuminate\Support\Str;
 use Dirape\Token\Token;
@@ -13,7 +15,8 @@ class kelolaPesanController extends Controller
   public function index()
   {
      $kelola = KelolaPesan::where('user_id', auth()->user()->id)->get();
-     return view('babikau', compact('kelola'));
+     $data = Invoice::with(['user'])->get();
+     return response()->json([$data]);
   }
 
   public function store(Request $request, $id)

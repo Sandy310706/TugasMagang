@@ -2,34 +2,26 @@
 @section('title', 'Admin | Kelola Pesanan')
 @section('headerNav', 'Kelola Pesanan')
 @section('kelola pesanan')
-    <div class="w-full">
-        <table class="w-full">
-            <thead class="bg-slate-500">
-                <tr>
-                    <th>No</th>
-                    <th>Kode Pesanan</th>
-                    <th>Nama Pemesan</th>
-                    <th>Status</th>
-                    <th></th>
+<div class="w-full">
+    <table class="table-fixed w-full rounded-lg font-outfit text-xs h-12">
+        <thead class="">
+            <th>No</th>
+            <th>Kode Pemasanan</th>
+            <th>Nama Pemesan</th>
+            <th></th>
+        </thead>
+        <tbody class="text-center bg-white odd:bg-sky-300">
+            @foreach ($data as $pesanan )
+                <tr class="group border-b even:bg-zinc-300 odd:bg-neutral-200 border-gray-400">
+                    <td class="p-2 group-hover:bg-neutral-400">{{ $loop->iteration }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->user_id }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->token }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">
+                        <button>detail</button>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($data as $pesanan )
-                    <tr>
-                        <td class="p-2 text-center">{{ $loop->iteration }}</td>
-                        <td class="text-center">{{ $pesanan->kode }}</td>
-                        <td class="text-center">{{ $pesanan->pemesan }}</td>
-                        <td class="text-center">
-                            @if($pesanan->status == 1)
-                                <span class="text-green-500">Selesai</span>
-                            @else
-                                <span class="text-red-500">Belum Selesai</span>
-                            @endif
-                        </td>
-                        <td class="text-center"><button><span class="text-red-500">Detail</span></button></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 @endsection

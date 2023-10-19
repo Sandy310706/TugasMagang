@@ -18,11 +18,9 @@ export default {
             },
             keyframes: {
                 ToptoBottom: {
-                    from: { top: "-10%" },
-                    to: { top: "10" },
+                    from: { top: "-100%" },
                 },
                 BottomtoTop: {
-                    "0%": { top: "10" },
                     "100%": { top: "-100%" },
                 },
                 showDropdownMenu: {
@@ -51,7 +49,7 @@ export default {
                 },
             },
             animation: {
-                showModal: "ToptoBottom 0.7s ease-in-out",
+                showModal: "ToptoBottom 1s ease-in-out",
                 hideModal: "BottomtoTop 1s ease-in-out",
                 showDropdownMenu: "showDropdownMenu 0.5s ease-in-out",
                 hideDropdownMenu: "hideDropdownMenu 0.5s ease-in-out",
