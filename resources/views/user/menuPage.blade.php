@@ -14,10 +14,8 @@
 <body>
         <div class="pembungkus-alert">
             <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
-        </div>
+        </div> 
 
-       
-        
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -64,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </form>     
             @endforeach
         </div>
     </div>
@@ -112,39 +110,24 @@
     </footer>
 </div>
 
+
     <script>
           
         $(document).ready(function(){
             $('#alerts').hide();
-        });
-        //     var inputData = $("#menu-card").val();
-        //     $.ajax({
-        //     url: "carts",
-        //     type: "POST",
-        //     data: { data: inputData },
-        //     success: function(response) {
-
-        // // Data berhasil dikirim, tampilkan pesan alert
-        //     showAlert("#alerts");
-        //     }
-
-        //     })
-        //     function showAlert(message) {
-        //     // Membuat dan menampilkan pesan alert
-        //     $("<div>")
-        //         .text(message)
-        //         .addClass("#alerts")
-        //         .appendTo("body")
-        //         .fadeIn();
-
-        //     // Sembunyikan alert setelah 3 detik (3000 ms)
-        //     setTimeout(function() {
-        //     $("#alerts").fadeOut(500, function() {
-        //         $(this).remove();
-        //     });
-        //     }, 3000);
-        // });
+   });
     </script>
+=======
+<script>
+      const notifs = document.getElementById("alerts")
+      setTimeout(function() {
+          notifs.style.display = "block";
+      setTimeout(function() {
+          notifs.style.display = "none";
+        }, 5000);
+      }, 1000)
+</script>
+
 
     //  {{-- / /     setTimeout(function() {
     //         //     notifs.style.display = "block";
@@ -155,6 +138,6 @@
             //    }) --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
-  
+
 </body>
 </html>

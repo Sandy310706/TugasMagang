@@ -23,7 +23,7 @@
                 @foreach ($data as $menu )
                     <tr class="group border-b border-gray-400">
                         <td class="py-2 flex justify-center h-16 w-full group-hover:bg-slate-200"><img src="{{ asset('storage/fileMenu/'. $menu->foto) }}" alt="foto menu"></td>
-                        <td class="p-2 group-hover:bg-slate-200">{{ $menu->nama }}</td>
+                        <td class="p-2 group-hover:bg-slate-200 selection:bg-green-700">{{ $menu->nama }}</td>
                         <td class="p-2 group-hover:bg-slate-200">{{ $menu->kategori }}</td>
                         <td class="p-2 group-hover:bg-slate-200">Rp. {{ $menu->harga }}</td>
                         <td class="p-2 group-hover:bg-slate-200">{{ $menu->stok }}</td>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('harga');
             $table->string('foto');
-            $table->string('total_harga');
+            $table->integer('total_harga');
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });

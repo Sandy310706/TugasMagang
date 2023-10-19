@@ -123,7 +123,7 @@
     }
     function ShowMenu(){
         const MenuSidebar = document.getElementById("MenuSidebar");
-        const Menu = document.getElementById("Menu")
+        const Menu = document.getElementById("Menu");
         if( MenuSidebar.classList.contains("hidden")){
             setTimeout(function() {
                 Menu.classList.remove("hidden");
