@@ -13,6 +13,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
+
         return view('admin.invoice', compact('invoices'));
     }
 
@@ -27,8 +28,8 @@ class InvoiceController extends Controller
         $invoice->keranjang_id = $keranjang->id;
         $invoice->token = $randomString;
         $invoice->save();
-
-        return redirect('admin.invoice');
+        dd($invoice);
+        return response()->json($invoice);
     }
 
 }

@@ -9,11 +9,17 @@ use Illuminate\Support\Facades\Validator;
 
 class KelolaMenuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index(Request $request)
     {
         $data = Menu::latest()->paginate('10');
         return view('admin.kelolamenu', compact('data'));
     }
+
     public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
@@ -52,6 +58,7 @@ class KelolaMenuController extends Controller
         $data->save();
         return redirect('/admin/kelolamenu')->with('Berhasil', 'Data berhasil di input');
     }
+
     public function update(Request $request, $id)
     {
         $dataValidasi = Validator::make($request->all(), [
@@ -89,6 +96,7 @@ class KelolaMenuController extends Controller
         $data->save();
         return redirect('/admin/kelolamenu')->with('Berhasil', 'Data berhasil diupdate');
     }
+
     public function delete($id)
     {
         $data = Menu::find($id);

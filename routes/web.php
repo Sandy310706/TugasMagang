@@ -1,4 +1,5 @@
 <?php
+use App\Models\Keranjangs;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -7,6 +8,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
@@ -17,7 +19,8 @@ Route::fallback(function () {
 });
 //
 Route::get('/', function () {
-    return view('user.landingpage');
+    $data = Keranjangs::count();
+    return view('user.landingpage',compact('data'));
 })->middleware('web');
 
 // == Authentikasi Route ==
@@ -28,8 +31,6 @@ Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store')
 Route::get('/cartst/{id}/{menu_id}', [Keranjang::class, 'tambah'])->name('tambah');
 Route::get('/cartsk/{id}/{menu_id}', [Keranjang::class, 'kurang'])->name('kurang');
 Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
-Route::get('/babi', [kelolaPesanController::class, 'index'])->name('kelolaPesan.index');
-Route::post('/babi/{id}', [kelolaPesanController::class, 'store'])->name('kelolaPesan.store');
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('Invoice');
 Route::post('/invoice/{id}',[InvoiceController::class, 'store'])->name('Invoice.store');
 Route::get('/home', function() {
@@ -57,10 +58,9 @@ Route::middleware('auth')->group(function() {
         Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
         Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
         Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
+        Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
     });
     Route::middleware(['operator'])->group(function(){
-        Route::get('/operator/dashboard', [OperatorController::class, 'index'])->name('Operator.Dashboard');
-        Route::get('/operator/akunsetting', [OperatorController::class, 'akunSetting'])->name('Operator.Akun');
     });
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
@@ -71,6 +71,10 @@ Route::middleware('auth')->group(function() {
     // Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
 });
 
+Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Kelolaakun');
+Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('tambah');
+Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');
+Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus');
 
 
 

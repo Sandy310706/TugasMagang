@@ -17,7 +17,7 @@
         </div>
         <div class="relative w-full mb-2 h-32 bg-emerald-400 text-white rounded-md hover:bg-emerald-500">
             <div class="p-1">
-                <h2 class="pl-1 font-semibold text-2xl">0</h2>
+                <h2 class="pl-1 font-semibold text-2xl">{{ $totalPesanan }}</h2>
                 <h1 class="pl-1 font-amaranth text-3xl">Pesanan</h1>
                 <img src="{{ asset('img/Pesanan.svg') }}" alt="card-icon" class="scale-110 lgTablet:scale-100 absolute right-4 lgTablet:-right-1 top-4">
             </div>

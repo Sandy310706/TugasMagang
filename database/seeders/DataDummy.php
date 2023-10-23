@@ -32,5 +32,13 @@ class DataDummy extends Seeder
         //     'foto' => 'ayam.jpg',
         //     'stok' => '50'
         // ]);
+
+        DB::table('users')->insert([
+            'nama' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin'),
+            'role' => 'admin',
+        ]);
+        
     }
 }

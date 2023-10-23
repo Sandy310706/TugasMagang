@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -14,7 +15,9 @@ class MenuController extends Controller
     {
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori','minuman')->get();
-        return view('user.menuPage', compact('makanan'), compact('minuman'));
+        $data = Keranjangs::count();
+       
+        return view('user.menuPage', compact('makanan', 'minuman', 'data'));
     }
     public function store(Request $request)
     {
@@ -54,9 +57,9 @@ class MenuController extends Controller
     }
     public function delete($id)
     {
-        $data = Menu::where('id', $id);
+        $data = Menu::where('id', $id)->first();
         $foto = $data->foto;
-        $fotoPath = public_path('storage/img/'.$foto);
+        $fotoPath = public_path('storage/fileMenu/'.$foto);
         if(fileExists($fotoPath)){
             if(unlink($fotoPath)){
                 $data->delete();
