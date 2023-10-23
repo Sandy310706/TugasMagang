@@ -97,7 +97,7 @@
 		<div class="checkout">
 			<div class="subtotal">
 				<p>SubTotal:</p>
-				<p id="total" class="ml-2">Rp.100.000</p>
+				<p id="total" class="ml-2">{{ $keranjang->subtotal}}</p>
 			</div>
             <form action="{{ route('Invoice.store', $keranjang->id) }}" method="post">
                     @csrf
