@@ -13,11 +13,9 @@
 </head>
 <body>
         <div class="pembungkus-alert">
-            <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
+            <div class="custom-alert" id="alerts" style="display: none; font-sans"user></div>
         </div>
 
-       
-        
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -26,6 +24,7 @@
                 <span></span>
                 <span></span>
             </div>
+            
             <h3 class="navbar-brand">SMKN7 Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
@@ -113,7 +112,6 @@
 </div>
 
     <script>
-          
         $(document).ready(function(){
             $('#alerts').hide();
         });
@@ -146,7 +144,7 @@
         // });
     </script>
 
-    //  {{-- / /     setTimeout(function() {
+      {{-- / /     setTimeout(function() {
     //         //     notifs.style.display = "block";
     //         //         setTimeout(function() {
     //         //         notifs.style.display = "none";

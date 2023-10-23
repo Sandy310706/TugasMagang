@@ -36,7 +36,7 @@
 				<span></span>
 				<span></span>
 			</div>
-			<h3 class="navbar-brand">SMKN7Pontianak</h3>
+			<h3 class="navbar-brand welcome">SMKN7Pontianak</h3>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -90,7 +90,7 @@
                         @php
                             $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
                         @endphp
-                        <span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
+                        <span id="jumlah" class="count" style="padding:15px">{{$keranjang->jumlah}}</span>
                         <button class="increment"><i class="bi bi-plus-lg"></i></button>
                     </div>
                     <div class="content-table total">
@@ -110,7 +110,7 @@
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
             <div class="tombol-checkout mt-2">
-				<button class="sumbit">Checkout</button>
+				<button class="sumbit buttons">Checkout</button>
 			</div>
 		</div>
 	</div>
