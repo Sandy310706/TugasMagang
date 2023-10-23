@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('makanans', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->integer('harga');
-            $table->string('foto');
-            $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+        Schema::table('invoices', function (Blueprint $table) {
+            $table->dropColumn('nama');
+            $table->dropColumn('harga');
+            $table->dropColumn('total_harga');
         });
     }
 
@@ -26,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('makanans');
+        Schema::table('invoinces', function (Blueprint $table) {
+            //
+        });
     }
 };

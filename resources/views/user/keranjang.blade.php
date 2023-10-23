@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Keranjang/css/style.css">
 	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap"
-		rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap"
-		rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap" rel="stylesheet">
 	<title>Keranjang</title>
     @livewireStyles
 </head>
@@ -68,36 +58,35 @@
 			</div>
 			<div class="Header-table 4">
 				<p>Hapus</p>
-
 			</div>
 		</div>
-
-
         @foreach ($keranjangs as $keranjang)
-        <form action="{{url('babi/'.$keranjang->id)}}" method="POST">
-            @csrf
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
-                        <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
+                        <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" style="margin-right: 10px" alt="Menupage">
                         <p>{{$keranjang->menu->nama}}</p>
                     </div>
                     <div id="harga" class="content-table harga">
-                        <p>{{$keranjang->menu->harga}}</p>
+                        <p>Rp. {{$keranjang->menu->harga}}</p>
                     </div>
                     <div class="content-table btns">
-                        <button class="decrement"><i class="bi bi-dash"></i></button>
+                    </div>                        <button class="decrement"><i class="bi bi-dash"></i></button>
                         @php
                             $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
                         @endphp
-                        <span id="jumlah" class="count" style="padding:15px">{{$keranjang->jumlah}}</span>
+                        <span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
                         <button class="increment"><i class="bi bi-plus-lg"></i></button>
-                    </div>
+
                     <div class="content-table total">
-                        <p id="total"></p>
+                        <p id="total">Rp. {{ $keranjang->total_harga }}</p>
                     </div>
                     <div class="content-table remove">
-                        <a href="{{url('carts'.$keranjang->id)}}"><i class="bi bi-trash3-fill"></i></a>
+                        <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
+                            @csrf
+                            @method('Delete')
+                            <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -109,12 +98,14 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
-            <div class="tombol-checkout mt-2">
-				<button class="sumbit buttons">Checkout</button>
+			<form action="{{ route('Invoice.store', $keranjang->id) }}" method="post">
+				@csrf
+			<div class="tombol-checkout mt-2">
+			<button class="sumbit">Checkout</button>
 			</div>
+		</form>
 		</div>
 	</div>
-</form>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 		crossorigin="anonymous"></script>

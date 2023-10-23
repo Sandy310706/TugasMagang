@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('keranjangs', function (Blueprint $table) {
-            $table->integer('jumlah')->nullable();
-            $table->integer('total_harga');
+        Schema::create('kelolaakuns', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -22,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('keranjangs', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('kelolaakuns');
     }
 };
