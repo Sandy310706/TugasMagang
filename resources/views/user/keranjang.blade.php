@@ -26,7 +26,7 @@
 				<span></span>
 				<span></span>
 			</div>
-			<h3 class="navbar-brand">SMKN7Pontianak</h3>
+			<h3 class="navbar-brand welcome">SMKN7Pontianak</h3>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -71,14 +71,13 @@
                         <p>Rp. {{$keranjang->menu->harga}}</p>
                     </div>
                     <div class="content-table btns">
-                        <form action="/cartsk/{{ $keranjang->id }}/{{ $keranjang->menu_id }}" method="GET">
-                            <button type="submit" class="decrement"><i class="bi bi-dash"></i></button>
-                        </form>
+                    </div>                        <button class="decrement"><i class="bi bi-dash"></i></button>
+                        @php
+                            $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
+                        @endphp
                         <span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
-                        <form action="/cartst/{{ $keranjang->id }}/{{ $keranjang->menu_id }}" method="GET">
-                            <button type="submit" class="decrement"><i class="bi bi-plus-lg"></i></button>
-                        </form>
-                    </div>
+                        <button class="increment"><i class="bi bi-plus-lg"></i></button>
+
                     <div class="content-table total">
                         <p id="total">Rp. {{ $keranjang->total_harga }}</p>
                     </div>
@@ -99,12 +98,12 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
-            <form action="{{ route('Invoice.store', $keranjang->id) }}" method="post">
-                    @csrf
-                <div class="tombol-checkout mt-2">
-                <button class="sumbit">Checkout</button>
-                </div>
-            </form>
+			<form action="{{ route('Invoice.store', $keranjang->id) }}" method="post">
+				@csrf
+			<div class="tombol-checkout mt-2">
+			<button class="sumbit">Checkout</button>
+			</div>
+		</form>
 		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

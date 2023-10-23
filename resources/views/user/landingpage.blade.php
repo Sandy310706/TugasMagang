@@ -28,7 +28,7 @@
 				<span></span>
 				<span></span>
 			</div>
-			<h3 class="navbar-brand ml-5">Phei....</h3>
+			<div class="navbar-brand ml-5"><h3>Welcome TO......</h3></div>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -39,7 +39,12 @@
                     @endauth
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
+                    <div class="keranjangs"> 
+                        <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
+                        <div class="ntif">
+                            <p>{{ $data }}</p>
+                        </div>
+                    </div>
                     @auth
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     @else
@@ -68,7 +73,7 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -76,7 +81,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/bipang.jpg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -84,7 +89,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/anggur malaysia.jpg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -92,7 +97,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/rs3.png" alt="">
+                    <img src="template/landingPage/assets/img/anggur merah.jpg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -197,5 +202,6 @@
     </footer>
     <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </body>
 </html>
