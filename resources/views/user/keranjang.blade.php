@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Keranjang/css/style.css">
 	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
@@ -71,15 +72,16 @@
                         <p>Rp. {{$keranjang->menu->harga}}</p>
                     </div>
                     <div class="content-table btns">
-                    </div>                        <button class="decrement"><i class="bi bi-dash"></i></button>
-                        @php
-                            $total_harga = $keranjang->jumlah * $keranjang->menu->harga;
-                        @endphp
-                        <span id="jumlah" class="count">{{$keranjang->jumlah}}</span>
-                        <button class="increment"><i class="bi bi-plus-lg"></i></button>
-
+                        <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
+                            <button class="kurang" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
+                        </div>
+                        <span class="jumlah-item" class="count" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
+                        <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
+                            <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
                     <div class="content-table total">
-                        <p id="total">Rp. {{ $keranjang->total_harga }}</p>
+                        <span id="total">Rp. {{ $keranjang->total_harga }}</span>
                     </div>
                     <div class="content-table remove">
                         <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
@@ -98,25 +100,53 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
-			<form action="{{ route('Invoice.store', $keranjang->id) }}" method="post">
-				@csrf
-			<div class="tombol-checkout mt-2">
-			<button class="sumbit">Checkout</button>
-			</div>
-		</form>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-		crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(".tambah").click(function() {
+                var keranjangId = $(this).data("keranjang-id");
+                var menuId = $(this).data("menu-id");
+
+                $.ajax({
+                    type: "GET",
+                    url: "/cartst/" + keranjangId + "/" + menuId,
+                    success: function(data) {
+                        $(".jumlah-item").text(data.jumlah);
+                        $("#total").text("Rp. " + data.total_harga);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+            $(".kurang").click(function() {
+                var keranjangId = $(this).data("keranjang-id");
+                var menuId = $(this).data("menu-id");
+                $.ajax({
+                    type: "GET",
+                    url: "/cartsk/" + keranjangId + "/" + menuId,
+                    success: function(data) {
+                        $(".jumlah-item").text(data.jumlah);
+                        $("#total").text("Rp. " + data.total_harga);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        });
+   </script>
 	<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/bootstrap/js/script.js"></script>
 	<script src="assets/bootstrap/js/scripts.js"></script>
-    <script src="script.js/script.js"></script>
-    <script src="script.js/scripts.js"></script>
-    @livewireScripts
+  <script src="script.js/script.js"></script>
+  <script src="script.js/scripts.js"></script>
+  <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  @livewireScripts
 </body>
 </html>
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->integer('total_harga');
             $table->string('token');
+            $table->boolean('status')->default('0');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('keranjang_id')->references('id')->on('keranjangs')->onDelete('cascade');
             $table->timestamps();

@@ -19,7 +19,7 @@ class admin
         if(Auth::user()->role == 'admin' ){
             return $next($request);
         }
-        return redirect('errors.404');
+        return redirect('');
 
     }
 }

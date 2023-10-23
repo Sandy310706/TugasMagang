@@ -57,9 +57,9 @@ class MenuController extends Controller
     }
     public function delete($id)
     {
-        $data = Menu::where('id', $id);
+        $data = Menu::where('id', $id)->first();
         $foto = $data->foto;
-        $fotoPath = public_path('storage/img/'.$foto);
+        $fotoPath = public_path('storage/fileMenu/'.$foto);
         if(fileExists($fotoPath)){
             if(unlink($fotoPath)){
                 $data->delete();
