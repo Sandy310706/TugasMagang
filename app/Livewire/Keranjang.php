@@ -46,8 +46,9 @@ class Keranjang extends Component
 
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
-        return redirect('menu');
 
+
+        return redirect('menu');
     }
     public function tambah($id, $menu_id)
     {
