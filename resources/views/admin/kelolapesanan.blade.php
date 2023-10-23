@@ -14,8 +14,8 @@
             @foreach ($data as $pesanan )
                 <tr class="group border-b even:bg-zinc-300 odd:bg-neutral-200 border-gray-400">
                     <td class="p-2 group-hover:bg-neutral-400">{{ $loop->iteration }}</td>
-                    <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->user_id }}</td>
                     <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->token }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->user->nama }}</td>
                     <td class="p-2 group-hover:bg-neutral-400">
                         <button>detail</button>
                     </td>

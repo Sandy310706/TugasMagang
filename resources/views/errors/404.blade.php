@@ -17,7 +17,7 @@
 				<div></div>
 				<div></div>
 			</div>
-			<h1>oops!</h1>
+			<h1>uups!</h1>
 			<h2>Error 404 : Halaman Tidak ditemukan</h2>
 		</div>
 	</div>

@@ -15,7 +15,7 @@ class kelolaPesanController extends Controller
   public function index()
   {
      $kelola = KelolaPesan::where('user_id', auth()->user()->id)->get();
-     $data = Invoice::with(['user'])->get();
+     $data = Invoice::all();
      return response()->json([$data]);
   }
 

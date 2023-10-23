@@ -61,6 +61,7 @@ class Keranjang extends Component
         $keranjang->jumlah = $keranjang->jumlah - 1;
         $keranjang->total_harga = $menu->harga * $keranjang->jumlah;
         $keranjang->save();
+        
         return redirect('carts');
     }
     public function delete($id)
