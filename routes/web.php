@@ -1,4 +1,5 @@
 <?php
+use App\Models\Keranjangs;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,8 @@ Route::fallback(function () {
 });
 //
 Route::get('/', function () {
-    return view('user.landingpage');
+    $data = Keranjangs::count();
+    return view('user.landingpage',compact('data'));
 })->middleware('web');
 
 // == Authentikasi Route ==
