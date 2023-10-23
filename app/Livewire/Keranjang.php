@@ -43,15 +43,11 @@ class Keranjang extends Component
             $keranjang->total_harga = $menu->harga;
             $keranjang->save();
         }
-<<<<<<< HEAD
+
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
-
-
         return redirect('menu');
-=======
-        return redirect('menu')->with('tambah', 'Pesanan berhasil di tambahkan');
->>>>>>> efd9ca3039a1e6ea51e05238b9e9aedfd2a5835d
+
     }
     public function tambah($id, $menu_id)
     {
