@@ -19,6 +19,7 @@ class KelolaakunController extends Controller
             'email' => 'required',
             'password' => 'required',
             'role' => 'required',
+            'ppk' => 'required',
         ]);
         $data = User::create($request->all());
         return redirect()->route('Kelolaakun');
