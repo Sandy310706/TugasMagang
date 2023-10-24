@@ -94,7 +94,7 @@
             </div>
         @endforeach
 	</div>
-	<div class="container mt-3">
+	<div class="container totals mt-3">
 		<div class="checkout">
 			<div class="subtotal">
 				<p>SubTotal:</p>
@@ -102,6 +102,15 @@
 			</div>
 		</div>
 	</div>
+    <div class="container checkouts">
+        <div class="cekout">
+            <div class="btnns">
+                <button class="buttons">checkout</button>
+            </div>
+        </div>
+    </div>
+
+    
     <script>
         $(document).ready(function() {
             $(".tambah").click(function() {
