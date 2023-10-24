@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -15,7 +16,9 @@ class MenuController extends Controller
     {
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori','minuman')->get();
-        return view('user.menuPage', compact('makanan'), compact('minuman'));
+        $data = Keranjangs::count();
+       
+        return view('user.menuPage', compact('makanan', 'minuman', 'data'));
     }
     public function store(Request $request)
     {

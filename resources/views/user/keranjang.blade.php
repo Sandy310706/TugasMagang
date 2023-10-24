@@ -27,7 +27,7 @@
 				<span></span>
 				<span></span>
 			</div>
-			<h3 class="navbar-brand">SMKN7Pontianak</h3>
+			<h3 class="navbar-brand welcome">SMKN7Pontianak</h3>
 			<div class="justift-content-end">
 				<ul class="navbar-nav text-uppercase">
 					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -100,10 +100,9 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">Rp.100.000</p>
 			</div>
-
 		</div>
 	</div>
-        <script>
+    <script>
         $(document).ready(function() {
             $(".tambah").click(function() {
                 var keranjangId = $(this).data("keranjang-id");
@@ -137,20 +136,17 @@
                 });
             });
         });
-        $(document).ready(function() {
-
-        });
-    </script>
+   </script>
 	<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/bootstrap/js/script.js"></script>
 	<script src="assets/bootstrap/js/scripts.js"></script>
-    <script src="script.js/script.js"></script>
-    <script src="script.js/scripts.js"></script>
-    <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
+  <script src="script.js/script.js"></script>
+  <script src="script.js/scripts.js"></script>
+  <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    @livewireScripts
+  @livewireScripts
 </body>
 </html>
 
