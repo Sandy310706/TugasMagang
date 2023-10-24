@@ -98,7 +98,7 @@
 		<div class="checkout">
 			<div class="subtotal">
 				<p>SubTotal:</p>
-				<p id="total" class="ml-2">{{ $keranjang->subtotal}}</p>
+				<p id="total" class="ml-2">{{ $keranjang->subtotal }}</p>
 			</div>
 		</div>
 	</div>

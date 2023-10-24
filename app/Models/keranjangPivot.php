@@ -9,6 +9,8 @@ class keranjangPivot extends Model
 {
     use HasFactory;
 
+    protected $table = 'keranjang_Pivot';
+
     protected $fillable = ['keranjang_id' , 'user_id' , 'total'];
 
     public function keranjang()

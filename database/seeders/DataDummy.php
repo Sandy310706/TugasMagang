@@ -33,12 +33,11 @@ class DataDummy extends Seeder
         //     'stok' => '50'
         // ]);
 
-        DB::table('users')->insert([
-            'nama' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin'),
-            'role' => 'admin',
+        DB::table('keranjang_Pivot')->insert([
+            // 'user_id' => '1',
+            // 'keranjang_id' => '2',
+            'total' => '10000',
         ]);
-        
+
     }
 }
