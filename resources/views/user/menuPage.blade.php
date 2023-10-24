@@ -15,7 +15,6 @@
     <div class="pembungkus-alert">
         <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
     </div>
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -24,12 +23,12 @@
                 <span></span>
                 <span></span>
             </div>
-            
+
             <h3 class="navbar-brand">SMKN7 Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <div class="keranjangs"> 
+                    <div class="keranjangs">
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
                         <div class="ntif">
                             <p>{{ $data }}</p>
@@ -111,6 +110,7 @@
     </footer>
 </div>
     <script>
+          
         $(document).ready(function(){
             $('#alerts').hide();
             setTimeout(function() {
@@ -150,7 +150,13 @@
         // });
     </script>
 
-      
+    //   {{-- / /     setTimeout(function() {
+    //         //     notifs.style.display = "block";
+    //         //         setTimeout(function() {
+    //         //         notifs.style.display = "none";
+    //         //         },1000); 
+    //         //       }, 1000)
+            //    }) --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
 
