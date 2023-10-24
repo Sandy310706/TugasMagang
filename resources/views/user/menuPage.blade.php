@@ -12,15 +12,10 @@
     <title>Halaman Menu</title>
 </head>
 <body>
-<<<<<<<<< Temporary merge branch 1
+    <div class="pembungkus-alert">
+        <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
+    </div>
 
-        <div class="pembungkus-alert">
-            <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
-        </div>
-
-       
-        
->>>>>>>>> Temporary merge branch 2
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -116,9 +111,14 @@
     </footer>
 </div>
     <script>
-          
         $(document).ready(function(){
             $('#alerts').hide();
+            setTimeout(function() {
+                 notifs.style.display = "block";
+                 setTimeout(function() {
+                 notifs.style.display = "none";
+                 },1000); 
+    -      }, 1000)
         });
         //     var inputData = $("#menu-card").val();
         //     $.ajax({
@@ -150,13 +150,7 @@
         // });
     </script>
 
-    //   {{-- / /     setTimeout(function() {
-    //         //     notifs.style.display = "block";
-    //         //         setTimeout(function() {
-    //         //         notifs.style.display = "none";
-    //         //         },1000); 
-    //         //       }, 1000)
-            //    }) --}}
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
 
