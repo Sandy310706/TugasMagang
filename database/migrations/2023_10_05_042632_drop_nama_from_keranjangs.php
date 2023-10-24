@@ -16,6 +16,7 @@ return new class extends Migration
             $table->dropColumn('harga');
             $table->dropColumn('foto');
             $table->dropColumn('total_harga');
+
         });
     }
 
@@ -25,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('keranjangs', function (Blueprint $table) {
-            
+
         });
     }
 };
