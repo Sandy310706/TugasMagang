@@ -63,14 +63,14 @@ Route::middleware('auth')->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
-    Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
+    Route::delete('/menu/delete/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     // Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     // Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     // Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
 });
 
 Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Kelolaakun');
-Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('tambah');
+Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah']);
 Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');
 Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus');
 

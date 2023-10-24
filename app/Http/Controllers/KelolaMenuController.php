@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 class KelolaMenuController extends Controller
@@ -16,7 +18,7 @@ class KelolaMenuController extends Controller
 
     public function index(Request $request)
     {
-        $data = Menu::latest()->paginate('10');
+        $data = Menu::latest()->paginate(10);
         return view('admin.kelolamenu', compact('data'));
     }
 

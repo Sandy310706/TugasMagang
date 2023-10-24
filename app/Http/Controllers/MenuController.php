@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use function PHPUnit\Framework\fileExists;
 
@@ -50,7 +51,8 @@ class MenuController extends Controller
                 $data->foto = $newName;
             }
         $data->save();
-        return redirect()->route('Admin.Menu')->with('success', 'Data berhasil di input');
+        Alert::success('Data berhasil di tambahkan');
+        return redirect()->route('Admin.Menu');
     }
     public function delete($id)
     {
@@ -60,12 +62,11 @@ class MenuController extends Controller
         if(fileExists($fotoPath)){
             if(unlink($fotoPath)){
                 $data->delete();
-                return redirect()->route('Admin.Menu');
+                return response()->json('berhasil');
             } else{
                 return redirect()->route('Admin.Dashboard');
             }
         }else{
-            $data->delete();
             return redirect()->route('Admin.Menu');
         }
     }
