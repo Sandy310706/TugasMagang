@@ -19,9 +19,9 @@
 </head>
 
 <body>
-   <div class="alert">
-    <div class="alerts"> Pesan Sudah Ditambahkan</div>
-   </div>
+    <div class="alert">
+        <div class="alerts"> Pesan Sudah Ditambahkan</div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -59,27 +59,24 @@
                 <form action="{{ url('carts/' . $makanans->id) }}" method="POST" style="display: inline"
                     id="menu-card">
                     @csrf
-                    <div class="card-menu">
-                        <div class="card">
-                            <div class="cards">
-                                <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
-                                </div>
-                                <div class="kontents">
-                                    <div class="kontent">
-                                        <h3>{{ $makanans->nama }}</h3>
-                                        <p>Rp.{{ $makanans->harga }}</p>
-                                    </div>
-                                </div>
-                                <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST"
-                                    class="inline">
-                                    @csrf
-                                    <div class="clicks">
-                                        <button type="submit" class="btn-submit btn"
-                                        onclick="showAutoCloseAlert()">Pesan</button>
-                                    </div>
-                                </form>
+                    <div class="card">
+                        <div class="cards">
+                            <div class="image">
+                                <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
                             </div>
+                            <div class="kontents">
+                                <div class="kontent">
+                                    <h3>{{ $makanans->nama }}</h3>
+                                    <p>Rp.{{ $makanans->harga }}</p>
+                                </div>
+                            </div>
+                            <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST" class="inline">
+                                @csrf
+                                <div class="clicks">
+                                    <button type="submit" class="btn-submit btn"
+                                        onclick="showAutoCloseAlert()">Pesan</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </form>
@@ -88,32 +85,30 @@
     </div>
 
     <div class="card-container">
-        <h1 class="makanan text-center">Minuman</h1>
+        <h1 class="minuman text-center">Minuman</h1>
         <div class="card-menu">
             @foreach ($minuman as $minum)
                 <form action="{{ url('carts/' . $minum->id) }}" method="POST" style="display:inline;">
                     @csrf
-                    <div class="card-menu">
-                        <div class="card">
-                            <div class="cards">
-                                <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
-                                </div>
-                                <div class="kontents">
-                                    <div class="kontent">
-                                        <h3>{{ $minum->nama }}</h3>
-                                        <p>{{ $minum->harga }}</p>
-                                        <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST"
-                                            style="display:inline;">
-                                            @csrf
-                                            <div class="clicks">
-                                                <button type="submit" class="btn"
-                                                    id="showAutoCloseAlert">Pesan</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                    <div class="card">
+                        <div class="cards">
+                            <div class="image">
+                                <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
+                            </div>
+                            <div class="kontents">
+                                <div class="kontent">
+                                    <h3>{{ $minum->nama }}</h3>
+                                    <p>{{ $minum->harga }}</p>
                                 </div>
                             </div>
+                            <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST"
+                                style="display:inline;">
+                                @csrf
+                                <div class="clicks">
+                                    <button type="submit" class="btn-submit btn"
+                                        id="showAutoCloseAlert">Pesan</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </form>
