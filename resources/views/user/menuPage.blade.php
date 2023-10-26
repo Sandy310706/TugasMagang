@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="template/menuPage/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Halaman Menu</title>
 </head>
 <body>
-        <div class="pembungkus-alert">
-            <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
+        <div class="alert" id="alerts">
+            <div class="alert" onclick="inputData(this)"></div>
         </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
@@ -23,7 +24,6 @@
                 <span></span>
                 <span></span>
             </div>
-
             <h3 class="navbar-brand">SMKN7 Pontianak</h3>
             <div class="justift-content-end">
                 <ul class="navbar-nav text-uppercase">
@@ -47,22 +47,19 @@
             <h1 class="makanan text-center">Makanan</h1>
         <div class="card-menu">
             @foreach ($makanan as $makanans)
-                <form action="{{url('carts/'.$makanans->id)}}" method="POST" style="display: inline" id="menu-card">
-                     @csrf
+                <div style="display: inline" id="menu-card">
                     <div class="card-menu">
                         <div class="card">
                             <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
                             <div class="kontent">
                                 <h3>{{$makanans->nama}}</h3>
                                 <p>Rp.{{$makanans->harga}}</p>
-                                <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST" class="inline"  >
-                                    @csrf
-                                    <button type="submit" class="btn" onclick="showAutoCloseAlert()">Pesan</button>
-                                </form>
+                                <button type="submit" onclick="inputData(this)" class="btn" data-id="{{ $makanans->id }}
+                                    ">Pesan</button>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             @endforeach
         </div>
     </div>
@@ -71,24 +68,20 @@
             <h1 class="makanan text-center">Minuman</h1>
         <div class="card-menu">
             @foreach ($minuman as $minum)
-                <form action="{{url('carts/'.$minum->id)}}" method="POST" style="display:inline;">
-                    @csrf
+                <div style="display:inline;">
                     <div class="card-menu">
                         <div class="card">
                             <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
                             <div class="kontent">
                                 <h3>{{$minum->nama}}</h3>
                                 <p>{{$minum->harga}}</p>
-                                <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    <div class="kontent">
-                                       <button type="submit" class="btn" id="showAutoCloseAlert">Pesan</button>
-                                    </div>
-                                </form>
+                                <div class="kontent">
+                                       <button type="submit" class="btn" id="showAutoCloseAlert"onclick="inputData()">Pesan</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             @endforeach
         </div>
     </div>
@@ -110,13 +103,84 @@
     </footer>
 </div>
     <script>
-
         $(document).ready(function(){
-            $('#alerts').hide();
+            $("#alert").hide();
+
+            $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
         });
+
+        var alerts = "pesan sudah di tambahkan"
+        // var id = $(this).data(id);
+
+        // document.getElementById('')
+        function inputData(el){
+            // el.prelDefault();
+            const id = el.getAttribute('data-id')
+
+            $.ajax({
+                url: `/carts/${id}`,
+                dataType: "json",
+                type: "POST",
+                data:{},
+                success: function(response){
+                    console.log(id);
+                    showAlert("#alerts");
+                    setTimeout(function(){
+                        alert(alerts);
+                    }, 3000);
+                }
+
+            })
+        }
+
+        // $(document).ready(function(){
+        //     $("inputData").sumbit(function(e){
+        //       e.preventDefault();
+
+        //         var
+
+        //     });
+        // });
+        // $(document).ready(function(){
+        //     $("#alert").hide();
+        // });
+
+        //     var inputData = $("#card-menu").val();
+        //     var id = $(this).data("id");
+
+        //     $.ajax({
+        //         url: "/carts/" + id ,
+        //         dataType: 'json',
+        //         type: "POST",
+        //         data: {},
+        //         success: function (respone){
+        //             console.log(id);
+        //             showAlert("#alerts");
+        //             setTimeout(function(){
+        //                 $("#alerts").fadeOut(3000,function(){
+        //                     $(this).remove();
+        //                 });
+        //             },3000);
+        //             $("<div>")
+        //             .text(message)
+        //             .addClass("#alerts")
+        //             .appendTo("body")
+        //             .fadeIn();
+        //         }
+
+        //     });
+
+
+        // $(document).ready(function(){
+        //     $('#alerts').hide();
+        // });
         //     var inputData = $("#menu-card").val();
         //     $.ajax({
-        //     url: "carts",
+        //     url: "carts/{id}",
         //     type: "POST",
         //     data: { data: inputData },
         //     success: function(response) {
@@ -133,26 +197,24 @@
         //         .addClass("#alerts")
         //         .appendTo("body")
         //         .fadeIn();
-
-
         //     // Sembunyikan alert setelah 3 detik (3000 ms)
         //     setTimeout(function() {
         //     $("#alerts").fadeOut(500, function() {
         //         $(this).remove();
         //     });
         //     }, 3000);
-        // });
+        // };
     </script>
 
-    //   {{-- / /     setTimeout(function() {
-    //         //     notifs.style.display = "block";
-    //         //         setTimeout(function() {
-    //         //         notifs.style.display = "none";
-    //         //         },1000);
-    //         //       }, 1000)
-            //    }) --}}
+        {{-- setTimeout(function() {
+        notifs.style.display = "block";
+        setTimeout(function() {
+        notifs.style.display = "none";
+        },1000);
+        }, 1000)
+        }) --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="script.js/script.js"></script>
+    {{-- <script src="script.js/script.js"></script> --}}
 
 </body>
 </html>
