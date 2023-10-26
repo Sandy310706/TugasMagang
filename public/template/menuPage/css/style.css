@@ -65,7 +65,7 @@ body {
     position:relative;
     display:flex;
 }
- 
+
 .ntif{
     position:relative;
     right:10px;
@@ -301,7 +301,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .sosmed {
@@ -358,25 +358,12 @@ body {
     margin-right: 300%;
 }
 
+.alert{
+   display: flex;
+   justify-content: center;
+    margin-top:70px;
+}
 
-.custom-alert {
-    background-color: #06e169;
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 1s;
-    width: 500px;
-    font-size: 30px;
-    font-family: 'Gabarito', sans-serif;
-  }
-
-  .pembungkus-alert{
-     display: flex;
-     justify-content: center;
-     margin-top:100px;
-  }
-  
 
 @media only screen and (max-width: 600px) {
     body {
