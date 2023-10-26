@@ -170,7 +170,7 @@ body {
 }
 
 .minuman {
-    margin-top: 50px;
+    margin-top: 80px;
     color: #016a70;
     text-align: center;
     font-family: Satisfy;
@@ -185,15 +185,18 @@ body {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
+p{
+    margin: 0;
+}
 .card {
     width: 300px;
     height: 1;
     border-radius: 8px;
     overflow: hidden;
-    margin: 20px;
+    margin: 8px;
     background-color: #f0f0f0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 380px;
