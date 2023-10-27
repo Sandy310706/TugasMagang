@@ -21,7 +21,7 @@
 
 <body>
     <div class="alert" id="alerts">
-        <div class="alert" onclick="inputData(this)"></div>
+         <div class="alert" onclick="inputData(this)"></div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
@@ -69,6 +69,9 @@
                                         <p>Rp.{{ $makanans->harga }}</p>
                                     </div>
                                 </div>
+                               @csrf 
+                            <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST" class="inline">
+                                @csrf
                                 <div class="clicks">
                                     <button type="submit" onclick="inputData(this)" class="btn-submit btn"
                                         data-id="{{ $makanans->id }}">Pesan</button>
@@ -92,12 +95,15 @@
                                     <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
                                 </div>
                                 <div class="kontents">
- 
+
                                     <div class="kontent">
                                         <h3>{{ $minum->nama }}</h3>
                                         <p>{{ $minum->harga }}</p>
                                     </div>
                                 </div>
+                            <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST"
+                                style="display:inline;">
+                                @csrf
                                 <div class="clicks">
                                     <button type="submit" class="btn-submit btn"
                                     id="showAutoCloseAlert"onclick="inputData()">Pesan</button>
