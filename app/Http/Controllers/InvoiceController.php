@@ -28,7 +28,6 @@ class InvoiceController extends Controller
         $invoice->keranjang_id = $keranjang->id;
         $invoice->token = $randomString;
         $invoice->save();
-        dd($invoice);
         return response()->json($invoice);
     }
 

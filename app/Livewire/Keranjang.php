@@ -14,7 +14,15 @@ class Keranjang extends Component
     public function render()
     {
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
-        return view('user.keranjang' , compact('keranjangs'));
+        $totalHarga = [];
+
+        foreach($keranjangs as $keranjang)
+        {
+            $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
+        }
+
+        $arraySum = array_sum($totalHarga);
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum'));
     }
 
     public function store($id)
@@ -28,8 +36,11 @@ class Keranjang extends Component
                             ->where('menu_id', $id)
                             ->first();
         $menu = Menu::where('id', $id)->first();
-        $keranjangPivot = keranjangPivot::where('id', $id)->first();
+
         $keranjang = Keranjangs::where('id', $id);
+
+
+
         if($cekKeranjang)
         {
             $keranjang = Keranjangs::find($cekKeranjang->id);
@@ -37,34 +48,18 @@ class Keranjang extends Component
             $keranjang->jumlah = $jumlah;
             $total_harga = $menu->harga * $keranjang->jumlah;
             $keranjang->total_harga = $total_harga;
-            $subtotal = $menu->harga * $keranjang->jumlah;
-            $keranjang->subtotal = $subtotal;
-            // $total = $menu->harga * $keranjang->jumlah;
-            // $keranjangPivot->total = $total;
-            // // $keranjang->subtotal = keranjangPivot::sum('total');
-            // dd($keranjang->subtotal);
-            //membuat array untuk menyimpan nilai lalu di sum
             $keranjang->save();
         } else {
             $keranjang = new Keranjangs;
             $keranjang->menu_id = $id;
             $keranjang->user_id = auth()->user()->id;
             $keranjang->jumlah =  1;
-            // $keranjangPivot->total = $menu->harga * $menu->quantity;
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
             $keranjang->save();
         }
 
-        $array1 = ['keranjang1' => $keranjang->subtotal];
-        $array2 = ['keranjang2' =>$keranjang->subtotal];
-        $subtotal = 0;
 
-        foreach ($array1 as $id => $value) {
-            if(isset($array2[$id])) {
-                $subtotal+= $value + $array2[$id];
-            }
-        }
 
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);

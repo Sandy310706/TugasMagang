@@ -25,19 +25,15 @@ class DataDummy extends Seeder
         //     'role' => 'guest',
         // ]);
 
-        // DB::table('menus')->insert([
-        //     'nama' => 'ayam ',
-        //     'harga' => '5000',
-        //     'kategori' => 'makanan',
-        //     'foto' => 'ayam.jpg',
-        //     'stok' => '50'
-        // ]);
-
-        DB::table('keranjang_Pivot')->insert([
-            // 'user_id' => '1',
-            // 'keranjang_id' => '2',
-            'total' => '10000',
+        DB::table('menus')->insert([
+            'nama' => 'kacang',
+            'harga' => '5000',
+            'kategori' => 'makanan',
+            'foto' => 'ayam.jpg',
+            'stok' => '50',
         ]);
+
+        //
 
     }
 }
