@@ -65,6 +65,7 @@
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
+                        <input type="checkbox">
                         <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" style="margin-right: 10px" alt="Menupage">
                         <p>{{$keranjang->menu->nama}}</p>
                     </div>
@@ -95,22 +96,20 @@
         @endforeach
 	</div>
 	<div class="container totals mt-3">
-		<div class="checkout">
-			<div class="subtotal">
-				<p>SubTotal:</p>
-				<p id="total" class="ml-2">{{ $keranjang->subtotal }}</p>
-			</div>
-		</div>
-	</div>
-    <div class="container checkouts">
-        <div class="cekout">
-            <div class="btnns">
-                <button class="buttons">checkout</button>
+        <div class="containers">
+            <div class="checkout">
+                <div class="subtotal">
+                    <p>SubTotal:</p>
+                    <p id="total" class="ml-2"></p>
+                </div>
+            </div>
+            <div class="cekout">
+                <div class="btnns">
+                    <button class="buttons">checkout</button>
+                </div>
             </div>
         </div>
-    </div>
-
-    
+	</div>
     <script>
         $(document).ready(function() {
             $(".tambah").click(function() {
