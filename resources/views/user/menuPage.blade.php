@@ -18,8 +18,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Halaman Menu</title>
 </head>
-<body>
 
+<body>
     <div class="alert" id="alerts">
          <div class="alert" onclick="inputData(this)"></div>
     </div>
@@ -56,25 +56,27 @@
         <h1 class="makanan text-center">Makanan</h1>
         <div class="card-menu">
             @foreach ($makanan as $makanans)
-                    @csrf
-                    <div class="card">
-                        <div class="cards">
-                            <div class="image">
-                                <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
-                            </div>
-                            <div class="kontents">
-                                <div class="kontent">
-                                    <h3>{{ $makanans->nama }}</h3>
-                                    <p>Rp.{{ $makanans->harga }}</p>
+                <div style="display: inline" id="menu-card">
+                    <div class="card-menu">
+                        <div class="card">
+                            <div class="cards">
+                                <div class="image">
+                                    <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
                                 </div>
-                              </div>
+                                <div class="kontents">
+                                    <div class="kontent">
+                                        <h3>{{ $makanans->nama }}</h3>
+                                        <p>Rp.{{ $makanans->harga }}</p>
+                                    </div>
+                                </div>
+                               @csrf 
                             <form action="{{ route('Keranjang.store', $makanans->id) }}" method="POST" class="inline">
                                 @csrf
                                 <div class="clicks">
-                                    <button type="submit" class="btn-submit btn"
-                                        onclick="showAutoCloseAlert()">Pesan</button>
+                                    <button type="submit" onclick="inputData(this)" class="btn-submit btn"
+                                        data-id="{{ $makanans->id }}">Pesan</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,25 +87,29 @@
         <h1 class="minuman text-center">Minuman</h1>
         <div class="card-menu">
             @foreach ($minuman as $minum)
-                    <div class="card">
-                        <div class="cards">
-                            <div class="image">
-                                <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
-                            </div>
-                            <div class="kontents">
-                                <div class="kontent">
-                                    <h3>{{ $minum->nama }}</h3>
-                                    <p>{{ $minum->harga }}</p>
-                                 </div>
-                            </div>
+                <div style="display:inline;">
+                    <div class="card-menu">
+                        <div class="card">
+                            <div class="cards">
+                                <div class="image">
+                                    <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
+                                </div>
+                                <div class="kontents">
+
+                                    <div class="kontent">
+                                        <h3>{{ $minum->nama }}</h3>
+                                        <p>{{ $minum->harga }}</p>
+                                    </div>
+                                </div>
                             <form action="{{ route('Keranjang.store', $minum->id) }}" method="POST"
                                 style="display:inline;">
                                 @csrf
                                 <div class="clicks">
                                     <button type="submit" class="btn-submit btn"
-                                        id="showAutoCloseAlert">Pesan</button>
+                                    id="showAutoCloseAlert"onclick="inputData()">Pesan</button>
                                 </div>
-                            </form>
+                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -126,49 +132,53 @@
                     <p>Copyright&copy; by Babang Frederick</p>
                 </div>
             </div>
-        </div>
+    </div>
     </footer>
-</div>
+    </div>
     <script>
-        $(document).ready(function(){
-            $("#alert").hide();
+        $(document).ready(function() {
+                    $("#alert").hide();
 
-            $.ajaxSetup({
-                headers:{
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            var alerts = "pesan sudah di tambahkan"
-            function inputData(el){
-                // el.prelDefault();
-                const id = el.getAttribute('data-id')
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    var alerts = "pesan sudah di tambahkan"
 
-                $.ajax({
-                    url: `/carts/${id}`,
-                    dataType: "json",
-                    type: "POST",
-                    data:{},
-                    success: function(response){
-                        console.log(id);
-                        showAlert("#alerts");
-                        setTimeout(function(){
-                            alert(alerts);
-                        }, 3000);
+                    function inputData(el) {
+                        // el.prelDefault();
+                        const id = el.getAttribute('data-id')
+
+                        $.ajax({
+                            url: `/carts/${id}`,
+                            dataType: "json",
+                            type: "POST",
+                            data: {},
+                            success: function(response) {
+                                console.log(id);
+                                showAlert("#alerts");
+                                setTimeout(function() {
+                                    alert(alerts);
+                                }, 3000);
+                            }
+
+                        })
                     }
-
-                })
-            }
-        // };
+                    // };
     </script>
 
-        {{-- setTimeout(function() {
+    {{-- setTimeout(function() {
         notifs.style.display = "block";
         setTimeout(function() {
         notifs.style.display = "none";
         },1000);
         }, 1000)
         }) --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
     <script src="script.js/script.js"></script>
 </body>
+
 </html>
