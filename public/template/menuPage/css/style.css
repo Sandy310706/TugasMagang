@@ -10,7 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     min-width: 100vh;
-    background-color: #f0f0f0;
+    background-color: #96C291;
     flex-direction: column;
     overflow-x: hidden;
 }
@@ -170,7 +170,7 @@ body {
 }
 
 .minuman {
-    margin-top: 50px;
+    margin-top: 80px;
     color: #016a70;
     text-align: center;
     font-family: Satisfy;
@@ -185,7 +185,11 @@ body {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+p{
+    margin: 0;
 }
 
 .card {
@@ -193,7 +197,7 @@ body {
     height: 1;
     border-radius: 8px;
     overflow: hidden;
-    margin: 20px;
+    margin: 8px;
     background-color: #f0f0f0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 380px;
@@ -268,7 +272,6 @@ body {
     text-align: center;
     display: inline-block;
     border-radius: 4px;
-
     background: green;
     width: 90%;
     color: #ffff;
@@ -279,8 +282,8 @@ body {
     line-height: normal;
 }
 
-.btn:hover {
-    background-color: rgb(0, 150, 0);
+.btn-submit:hover {
+    background-color: black;
 }
 
 .footer-containers{
@@ -289,7 +292,7 @@ body {
 
 .footer {
     width: 100%;
-    background-color: #b5b5b5;
+    background-color: #fff;
     margin-top: 50px;
 }
 
@@ -337,7 +340,6 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 20px;
     justify-content: center;
     align-items: center;
 }
