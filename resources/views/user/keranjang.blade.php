@@ -14,6 +14,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Keranjang</title>
     @livewireStyles
 </head>
@@ -75,7 +76,7 @@
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
                             <button class="kurang" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                         </div>
-                        <span class="jumlah-item" class="count" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
+                        <span class="jumlah-item" class="count" style="padding: 10px;" >{{ $keranjang->jumlah }}</span>
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
                             <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                         </div>
@@ -98,19 +99,19 @@
 		<div class="checkout">
 			<div class="subtotal">
 				<p>SubTotal:</p>
-				<p id="total" class="ml-2">{{ $keranjang->subtotal }}</p>
+				<p id="total" class="ml-2">{{$arraySum}}</p>
 			</div>
 		</div>
 	</div>
     <div class="container checkouts">
         <div class="cekout">
             <div class="btnns">
-                <button class="buttons">checkout</button>
+                <button type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick=" kirimData(this)">checkout</button>
             </div>
         </div>
     </div>
 
-    
+
     <script>
         $(document).ready(function() {
             $(".tambah").click(function() {
@@ -121,6 +122,7 @@
                     type: "GET",
                     url: "/cartst/" + keranjangId + "/" + menuId,
                     success: function(data) {
+                        location.reload();
                         $(".jumlah-item").text(data.jumlah);
                         $("#total").text("Rp. " + data.total_harga);
                     },
@@ -136,6 +138,7 @@
                     type: "GET",
                     url: "/cartsk/" + keranjangId + "/" + menuId,
                     success: function(data) {
+                        location.reload();
                         $(".jumlah-item").text(data.jumlah);
                         $("#total").text("Rp. " + data.total_harga);
                     },
@@ -145,7 +148,33 @@
                 });
             });
         });
+        
+        $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+        function kirimData(bi){
+
+        const id = bi.getAttribute('data-id')
+
+            $.ajax({
+            url: `/invoice/${id}`,
+            dataType: "json",
+            type: "POST",
+            data:{},
+            success: function(respone){
+                location.reload()
+                console.log ("berhasil");
+            },
+            error: function(respone){
+                console.log ("gagal");
+            }
+            });
+        };
    </script>
+
 	<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

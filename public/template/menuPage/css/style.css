@@ -23,7 +23,7 @@ body {
 }
 
 #mainNav {
-    background-color: rgb(17, 213, 17);
+    background-color: transparent;
 }
 
 #mainNav .navbar-toggler {
@@ -52,7 +52,7 @@ body {
 #mainNav .navbar-nav .nav-item .nav-link {
     font-family: "Amaranth", sans-serif;
     font-size: 0.95rem;
-    color: white;
+    color: gray ;
     letter-spacing: 0.0625em;
 }
 
@@ -268,7 +268,7 @@ body {
     text-align: center;
     display: inline-block;
     border-radius: 4px;
-   
+
     background: green;
     width: 90%;
     color: #ffff;
@@ -361,9 +361,13 @@ body {
 .alert{
    display: flex;
    justify-content: center;
-    margin-top:70px;
+   margin-top:40px;
+   background-color: rgb(91, 190, 91);
 }
 
+p{
+    margin: 0;
+}
 
 @media only screen and (max-width: 600px) {
     body {
