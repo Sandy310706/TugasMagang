@@ -13,6 +13,8 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
+use App\Http\Middleware\admin;
+
 // == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
@@ -53,15 +55,13 @@ Route::middleware(['guest'])->group(function(){
     Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
 });
 Route::middleware('auth')->group(function() {
-    Route::middleware(['admin'])->group(function(){
-        Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
-        Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
-        Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
-        Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
-        Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
-    });
-    Route::middleware(['operator'])->group(function(){
-    });
+
+    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard')->middleware('admin');
+    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback')->middleware('admin');
+    Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu')->middleware('admin');
+    Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History')->middleware('admin');
+    Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan')->middleware('admin');
+
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
@@ -69,12 +69,12 @@ Route::middleware('auth')->group(function() {
     // Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     // Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     // Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');
+    Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Kelolaakun')->middleware('superadmin');
+    Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('tambah')->middleware('superadmin');
+    Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit')->middleware('superadmin');
+    Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus')->middleware('superadmin');
 });
 
-Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Kelolaakun');
-Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('tambah');
-Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');
-Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus');
 
 
 

@@ -40,9 +40,9 @@ class Keranjang extends Component
             $keranjang->total_harga = $total_harga;
             $subtotal = $menu->harga * $keranjang->jumlah;
             $total = $menu->harga * $keranjang->jumlah;
-            $keranjangPivot->total = $total;
+            // $keranjangPivot->total = $total;
             // $keranjang->subtotal = keranjangPivot::sum('total');
-            dd($keranjang->subtotal);
+            // dd($keranjang->subtotal);
             //membuat array untuk menyimpan nilai lalu di sum
             $keranjang->save();
         } else {
@@ -50,7 +50,7 @@ class Keranjang extends Component
             $keranjang->menu_id = $id;
             $keranjang->user_id = auth()->user()->id;
             $keranjang->jumlah =  1;
-            $keranjangPivot->total = $menu->harga * $menu->quantity;
+            // $keranjangPivot->total = $menu->harga * $menu->quantity;
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
             $keranjang->save();
