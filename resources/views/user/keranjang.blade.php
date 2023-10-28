@@ -94,14 +94,23 @@
             </div>
         @endforeach
 	</div>
-	<div class="container mt-3">
+	<div class="container totals mt-3">
 		<div class="checkout">
 			<div class="subtotal">
 				<p>SubTotal:</p>
-				<p id="total" class="ml-2">Rp.100.000</p>
+				{{-- <p id="total" class="ml-2">{{ $keranjang->subtotal }}</p> --}}
 			</div>
 		</div>
 	</div>
+    <div class="container checkouts">
+        <div class="cekout">
+            <div class="btnns">
+                <button class="buttons">checkout</button>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         $(document).ready(function() {
             $(".tambah").click(function() {

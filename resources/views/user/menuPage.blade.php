@@ -12,6 +12,7 @@
     <title>Halaman Menu</title>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -110,6 +111,12 @@
 
         $(document).ready(function(){
             $('#alerts').hide();
+            setTimeout(function() {
+                 notifs.style.display = "block";
+                 setTimeout(function() {
+                 notifs.style.display = "none";
+                 },1000);
+    -      }, 1000)
         });
         //     var inputData = $("#menu-card").val();
         //     $.ajax({
