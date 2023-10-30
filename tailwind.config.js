@@ -40,12 +40,12 @@ export default {
                     to: { width: "0%" },
                 },
                 showMenu: {
-                    from: { height: "0" },
-                    to: { height: "328px" },
+                    from: { transform: 'translateY(-150%)' },
+                    to: { transform: 'translateY(0)' },
                 },
                 hideMenu: {
-                    from: { height: "328px" },
-                    to: { height: "0" },
+                    from: { transform: 'translateY(0)' },
+                    to: { transform: 'translateY(-150%)' },
                 },
             },
             animation: {

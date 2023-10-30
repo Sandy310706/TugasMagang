@@ -12,6 +12,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Halaman Menu</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
@@ -62,7 +63,7 @@
     </div>
 
     <div class="card-container">
-            <h1 class="makanan text-center">Minuman</h1>
+        <h1 class="makanan text-center">Minuman</h1>
         <div class="card-menu">
             @foreach ($minuman as $minum)
                 <div style="display:inline;">
@@ -96,26 +97,20 @@
             <div class="copyright">
                 <p>Copyright&copy; by Babang Frederick</p>
             </div>
-        </div>
+    </div>
     </footer>
-</div>
+    </div>
     <script>
-        $(document).ready(function(){
-            $("#alert").hide();
-
+        $(document).ready(function() {
+                    $("#alert").hide();
             $.ajaxSetup({
                 headers:{
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
         });
-
-
-
         function inputData(bi){
-
             const id = bi.getAttribute('data-id')
-
             $.ajax({
                 url: `/carts/${id}`,
                 dataType: "json",
@@ -132,15 +127,10 @@
                 error: function(){
                     console.log('gagal');
                 }
-
             });
-
         };
-
-
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     {{-- <script src="script.js/script.js"></script> --}}
-
 </body>
 </html>

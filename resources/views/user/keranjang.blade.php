@@ -66,6 +66,7 @@
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
+                        <input type="checkbox">
                         <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" style="margin-right: 10px" alt="Menupage">
                         <p>{{$keranjang->menu->nama}}</p>
                     </div>
@@ -110,8 +111,6 @@
             </div>
         </div>
     </div>
-
-
     <script>
         $(document).ready(function() {
             $(".tambah").click(function() {
