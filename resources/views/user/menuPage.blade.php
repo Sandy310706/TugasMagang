@@ -51,7 +51,15 @@
             </div>
         </div>
     </nav>
+   
     <div class="card-container">
+        <div class="dropdown-kantin">
+            <div class="Menu-kantin">
+                <a href="">Kantin-1</a>
+                <span>|</span>
+                <a href="">Kantin-2</a>
+            </div>
+        </div>
         <h1 class="makanan text-center">Makanan</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
