@@ -102,8 +102,14 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">{{$arraySum}}</p>
 			</div>
+            <div class="cekout">
+                <div class="btnns">
+                    <button type="sumbit" class="buttons" data-id="{{$keranjangs}}" onclick=" kirimData(this)">checkout</button>
+                </div>
+            </div>
 		</div>
 	</div>
+<<<<<<< HEAD
     <div class="container checkouts">
         <div class="cekout">
             <div class="btnns">
@@ -111,6 +117,8 @@
             </div>
         </div>
     </div>
+=======
+>>>>>>> 1c68c15ff5ad21c0a15fda41f812f01edb91bf59
     <script>
         $(document).ready(function() {
             $(".tambah").click(function() {

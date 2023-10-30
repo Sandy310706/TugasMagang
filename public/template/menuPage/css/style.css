@@ -157,8 +157,31 @@ body {
     transform: scale(0);
 }
 
+.dropdown-kantin{
+    display:flex;
+    height: 150px;
+    align-items: end;
+}
+
+.Menu-kantin{
+    margin: 30px;
+}
+
+.Menu-kantin a{
+    text-decoration: none;
+    color: wheat ;
+    font-size: 25px;
+}
+
+.Menu-kantin a:hover{
+    color: #ffc800;
+}
+
+span{
+    font-size: 28px;
+}
+
 .makanan {
-    margin-top: 20px;
     color: #016a70;
     text-align: center;
     font-family: Satisfy;
