@@ -17,17 +17,22 @@ class InvoiceController extends Controller
         return view('admin.invoice', compact('invoices'));
     }
 
-    public function store(Request $request, $id)
+    public function store($id)
     {
         $randomString = Str::random(3);
 
         $keranjang = Keranjangs::where('id',$id)->first();
 
         $invoice = new Invoice;
-        $invoice -> user_id = auth()->user()->id;
+        $invoice->user_id = auth()->user()->id;
         $invoice->keranjang_id = $keranjang->id;
         $invoice->token = $randomString;
+        $invoice->status = 0;
         $invoice->save();
+
+        
+
+
         return response()->json($invoice);
     }
 

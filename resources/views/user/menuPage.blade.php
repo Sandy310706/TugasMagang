@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Halaman Menu</title>
 </head>
 
@@ -51,11 +50,11 @@
             </div>
         </div>
     </nav>
-   
+
     <div class="card-container">
         <div class="dropdown-kantin">
             <div class="Menu-kantin">
-                <a href="">Kantin-1</a>
+                <a href="/menu">Kantin-1</a>
                 <span>|</span>
                 <a href="/menupage2">Kantin-2</a>
             </div>
@@ -158,7 +157,7 @@
                     console.log("berhasil");
                     setTimeout(() => {
                         document.getElementById('alerts').style.display = 'none';
-                    }, 3000);
+                    }, 7000);
                     document.getElementById('alerts').style.display = 'block';
                 },
                 error: function(error) {

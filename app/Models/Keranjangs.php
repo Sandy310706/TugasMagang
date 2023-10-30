@@ -39,9 +39,5 @@ class Keranjangs extends Model
         return $this->belongsTo('App\Models\Invoice', 'invoice_id');
     }
 
-    public function keranjangPivot()
-    {
-        return $this->belongsTo('App\Models\keranjangPivot', 'keranjangPivot_id');
-    }
 
 }
