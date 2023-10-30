@@ -13,24 +13,12 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DataDummy extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        DB::table('users')->insert([
-            'nama' => 'superadmin',
-            'email' => 'superadmin@superadmin.com',
-            'password' => Hash::make('superadmin'),
-            'role' => 'superadmin',
+        DB::table('keranjangs')->insert([
+            'user_id' => '1',
+            'keranjang_pivot_id' => '1',
+            'subtotal' =>  10000,
         ]);
-
-        // DB::table('menus')->insert([
-        //     'nama' => 'ayam ',
-        //     'harga' => '5000',
-        //     'kategori' => 'makanan',
-        //     'foto' => 'ayam.jpg',
-        //     'stok' => '50'
-        // ]);
     }
 }

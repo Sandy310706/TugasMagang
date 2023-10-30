@@ -6,12 +6,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaakunController;
-use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
 use Illuminate\Auth\Notifications\ResetPassword;
+use App\Http\Controllers\ResetPasswordController;
 
 Route::fallback(function () {
     return view('errors.404');

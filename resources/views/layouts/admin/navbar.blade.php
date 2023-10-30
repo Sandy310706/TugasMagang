@@ -7,14 +7,14 @@
             <button onclick="showMenu()" id="MenuTrigger"><span class="hidden lgMobile:inline mobile:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
             <div class="absolute right-4 top-14 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden" id="dropdownMenu">
                 <ul>
-                    <li><a href="" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Ubah Password</a></li>
+                    <li><a href="/ubahpassword/{{ auth()->user()->nama }}" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Ubah Password</a></li>
                     <li><a href="/logout" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-b-lg">Logout</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="w-screen hidden fixed text-white bg-slate-800 z-50" id="MenuSidebar">
+<div class="w-screen hidden fixed transition-all text-white bg-slate-800 z-50" id="MenuSidebar">
     <div class="flex flex-col justify-center items-center">
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
             <a href="/" class="block">Beranda</a>

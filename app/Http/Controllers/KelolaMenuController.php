@@ -20,7 +20,7 @@ class KelolaMenuController extends Controller
 
     public function index(Request $request)
     {
-        $data = Menu::latest()->paginate(10);
+        $data = Menu::latest()->paginate('10');
         return view('admin.kelolamenu', compact('data'));
     }
 

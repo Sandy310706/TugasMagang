@@ -1,0 +1,143 @@
+.judul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content {
+    display: flex;
+    border: 2px solid black;
+    width: 280px;
+    height: 50px;
+    align-items: center;
+    border-radius: 100px;
+    margin-bottom: 30px;
+}
+
+.image img {
+    width: 50px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.nama-akun {
+    width: 50%;
+}
+
+.content-akun p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contener {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 100px;
+    text-align: center;
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+    font-family: georgia;
+    text-shadow: -4px 3px 0 #3a50d9;
+    font-size: 25px;
+}
+
+.password-content {
+    color: #7c7c7c;
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.masukan-password {
+    display: block;
+    margin-top: 5px;
+    width: 550px;
+    padding: 10px;
+    font-size: 15px;
+    color: #7c7c7c;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.child-password {
+    font-size: 17px;
+    color: #7c7c7c;
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 5px;
+}
+
+.checkbox {
+    margin: 0;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.buttons button {
+    color: #fff;
+    text-align: center;
+    font-family: Amaranth;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 10px;
+    background: #3aa1ff;
+    width: 100px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .masukan-password {
+        width: 100%;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}

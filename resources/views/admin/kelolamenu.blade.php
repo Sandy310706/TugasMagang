@@ -22,7 +22,7 @@
                 <th>Stok</th>
                 <th>Aksi</th>
             </thead>
-            <tbody id="tbody" class="text-center bg-white odd:bg-sky-300">
+            <tbody id="tbody" class="text-center bg-white">
                 @foreach ($data as $menu )
                     <tr class="group border-b even:bg-zinc-300 odd:bg-neutral-200 border-gray-400">
                         <td class="py-2 flex justify-center h-16 w-full group-hover:bg-neutral-400"><img src="{{ asset('storage/fileMenu/'. $menu->foto) }}" alt="foto menu"></td>
