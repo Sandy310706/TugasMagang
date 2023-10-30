@@ -20,7 +20,12 @@ class MenuController extends Controller
         $data = Keranjangs::count();
 
 
+
         return view('user.menuPage', compact('makanan', 'minuman', 'data' , 'kantin1', 'kantin2'));
+
+        
+        return view('user.menuPage', compact('makanan', 'minuman', 'data'));
+
     }
     public function store(Request $request, $id)
     {
