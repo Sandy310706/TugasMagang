@@ -126,7 +126,7 @@
                     console.log("berhasil");
                     setTimeout(() => {
                         document.getElementById('alerts').style.display = 'none';
-                    }, 3000);
+                    }, 7000);
                     document.getElementById('alerts').style.display = 'block';
                 },
                 error: function(){

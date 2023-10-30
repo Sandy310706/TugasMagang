@@ -106,7 +106,7 @@
     <div class="container checkouts">
         <div class="cekout">
             <div class="btnns">
-                <button type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick=" kirimData(this)">checkout</button>
+                <button type="sumbit" class="buttons" data-id="{{$keranjangs->first()}}" onclick=" kirimData(this)">checkout</button>
             </div>
         </div>
     </div>
@@ -148,7 +148,7 @@
                 });
             });
         });
-        
+
         $.ajaxSetup({
                 headers:{
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
