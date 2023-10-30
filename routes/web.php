@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\Menu2Controller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
@@ -14,6 +13,8 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
+use App\Http\Controllers\TestController;
+
 // == Errors Route ==
 Route::fallback(function () {
     return view('errors.404');
@@ -67,7 +68,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
-    Route::delete('/menu2', [Menu2Controller::class, 'index']);
+    Route::get('/menu2', [TestController::class, 'index']);
     // Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     // Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     // Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');

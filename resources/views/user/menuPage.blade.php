@@ -57,7 +57,7 @@
             <div class="Menu-kantin">
                 <a href="">Kantin-1</a>
                 <span>|</span>
-                <a href="">Kantin-2</a>
+                <a href="/menupage2">Kantin-2</a>
             </div>
         </div>
         <h1 class="makanan text-center">Makanan</h1>
