@@ -11,6 +11,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\TestController;
 
 // == Errors Route ==
 Route::fallback(function () {
@@ -63,6 +64,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
+    Route::get('/menu2', [TestController::class, 'index']);
     // Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     // Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     // Route::post('/carts', [Keranjang::class, 'store'])->name('Keranjang.store');

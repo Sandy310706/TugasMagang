@@ -38,9 +38,5 @@ class Menu extends Model
         return $this->hasMany('App\Models\Keranjangs', 'menu_id');
     }
 
-    public function keranjangPivot()
-    {
-        return $this->belongsTo('App\Models\keranjangPivot', 'keranjangPivot_id');
-    }
 
 }
