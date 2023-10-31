@@ -9,11 +9,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaakunController;
-use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KelolaMenuController;
-use App\Http\Controllers\kelolaPesanController;
-use App\Http\Middleware\admin;
 
 // == Errors Route ==
 Route::fallback(function () {

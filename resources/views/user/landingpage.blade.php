@@ -39,7 +39,7 @@
                     @endauth
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    <div class="keranjangs"> 
+                    <div class="keranjangs">
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
                         <div class="ntif">
                             <p>{{ $data }}</p>
@@ -73,34 +73,34 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur malaysia.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur merah.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
         </div>
@@ -161,10 +161,6 @@
                             </div>
                         </div>
                     </div>
-                <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center text-white mb-3">
                             <div class="fw-bolder">Form submission successful!</div>
@@ -174,10 +170,6 @@
                                 href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                         </div>
                     </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
                     <div class="d-none" id="submitErrorMessage">
                         <div class="text-center text-danger mb-3">Error sending message!</div>
                     </div>
