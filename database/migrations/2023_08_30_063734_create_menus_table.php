@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('kategori', ['makanan', 'minuman']);
             $table->integer('harga');
             $table->integer('stok');
+            $table->enum('toko', ['kantin1', 'kantin2'])->default('kantin1');
             $table->timestamps();
         });
     }

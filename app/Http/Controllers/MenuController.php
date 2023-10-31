@@ -15,12 +15,19 @@ class MenuController extends Controller
     {
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori','minuman')->get();
+        $kantin1 = Menu::where('toko','kantin1')->first();
+        $kantin2 = Menu::where('toko','kantin2')->first();
         $data = Keranjangs::count();
+
+
+
+        return view('user.menuPage', compact('makanan', 'minuman', 'data' , 'kantin1', 'kantin2'));
+
         
         return view('user.menuPage', compact('makanan', 'minuman', 'data'));
-        
+
     }
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
@@ -28,6 +35,7 @@ class MenuController extends Controller
             'kategori' => 'required',
             'harga' => 'required|numeric',
             'stok' => 'required|numeric',
+            ''
         ],
         [
             'foto.required' => 'Kolom ini wajib di isi',
@@ -46,6 +54,7 @@ class MenuController extends Controller
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->kategori = $request->kategori;
+        $data->toko = $request->toko;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
                 $newName = uniqid().$fileFoto->getClientOriginalName();

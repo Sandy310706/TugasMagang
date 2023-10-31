@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Halaman Menu</title>
 </head>
 
@@ -62,7 +61,7 @@
                         </div>
                         <div class="kontents-kantin">
                             <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
+                                <a href="">Frederick Gay>
                             </div>
                         </div>
                     </div>
@@ -190,7 +189,7 @@
                     console.log("berhasil");
                     setTimeout(() => {
                         document.getElementById('alerts').style.display = 'none';
-                    }, 3000);
+                    }, 7000);
                     document.getElementById('alerts').style.display = 'block';
                 },
                 error: function(error) {
