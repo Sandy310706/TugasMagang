@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Keranjangs;
+use App\Models\Kantin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -15,16 +16,9 @@ class MenuController extends Controller
     {
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori','minuman')->get();
-        $kantin1 = Menu::where('toko','kantin1')->first();
-        $kantin2 = Menu::where('toko','kantin2')->first();
         $data = Keranjangs::count();
 
-
-
-        return view('user.menuPage', compact('makanan', 'minuman', 'data' , 'kantin1', 'kantin2'));
-
-        
-        return view('user.menuPage', compact('makanan', 'minuman', 'data'));
+        return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
 
     }
     public function store(Request $request, $id)

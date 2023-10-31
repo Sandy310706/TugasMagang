@@ -65,4 +65,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\kelolaPesan','kelolapesan_id');
     }
+
+    public function keranjang()
+    {
+        return $this->belongsTo('App\Models\Keranjangs','keranjang_id');
+    }
+
+    public function kantin()
+    {
+        return $this->belongsTo('App\Models\Kantin', 'kantin_id');
+    }
 }

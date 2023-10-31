@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Kantin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -17,6 +18,7 @@ class KelolaMenuController extends Controller
     public function index(Request $request)
     {
         $data = Menu::latest()->paginate('5');
+        $kantin = Menu::where('user_id', auth()->user()->id)->get();
         return view('admin.kelolamenu', compact('data'));
     }
 
