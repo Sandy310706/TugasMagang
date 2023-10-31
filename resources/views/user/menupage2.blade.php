@@ -50,48 +50,15 @@
             </div>
         </div>
     </nav>
-    <div class="card-container">
-        <h1 class="makanan text-center" style="margin-top: 100px">Makanan</h1>
-        <div class="card-menu">
-            <div class="card">
-                <div class="cards">
-                    <div class="image">
-                        <img src="img/geprek.jpeg" alt="">
-                    </div>
-                    <div class="kontents">
-                        <div class="kontent">
-                            <h3>geprek</h3>
-                            <p>Rp.100.000</p>
-                        </div>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn btn-submit">Pesan</button>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="hero-content">
+        <div class="kontent">
+            <div class="cards">
+                <div class="card-content"></div>
             </div>
         </div>
     </div>
-    <div class="card-container">
-        <h1 class="minuman text-center">Minuman</h1>
-        <div class="card-menu">
-            <div class="card">
-                <div class="cards">
-                    <div class="image">
-                        <img src="img/vodka.jpeg" alt="">
-                    </div>
-                    <div class="kontents">
-                        <div class="kontent">
-                            <h3>geprek</h3>
-                            <p>Rp.100.000</p>
-                        </div>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn btn-submit">Pesan</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 
     <footer class="footer">
         <div class="container footer-container">
