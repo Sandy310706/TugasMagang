@@ -51,16 +51,77 @@
             </div>
         </div>
     </nav>
-   
-    <div class="card-container">
-        <div class="dropdown-kantin">
-            <div class="Menu-kantin">
-                <a href="">Kantin-1</a>
-                <span>|</span>
-                <a href="/menupage2">Kantin-2</a>
+    <div class="swiper-container">
+        <h1 class="text-center kantin">kantin</h1>
+        <div class="content">
+            <div class="swiper-wrapper">
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Kantin 1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">kantin 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">toko pak mael</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">menengah ke atas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Menengah ke atas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <h1 class="makanan text-center">Makanan</h1>
+
+    </div>
+   
+    <div class="card-container">
+        <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
             @foreach ($makanan as $makanans)
@@ -89,35 +150,6 @@
         </div>
     </div>
 
-    <div class="card-container">
-        <h1 class="makanan text-center">Minuman</h1>
-        <div class="card-menu">
-            @foreach ($minuman as $minum)
-                <div style="display:inline;">
-                    <div class="card-menu">
-                        <div class="card">
-                            <div class="cards">
-                                <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
-                                </div>
-                                <div class="kontents">
-                                    <div class="kontent">
-                                        <h3>{{ $minum->nama }}</h3>
-                                        <p>{{ $minum->harga }}</p>
-                                    </div>
-                                </div>
-                                <div class="clicks">
-                                    <button type="submit" class="btn btn-submit"
-                                    id="showAutoCloseAlert"onclick="inputData(this)"
-                                    data-id="{{ $minum->id }}">Pesan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
 
     <div class="footer-containers">
         <footer class="footer">
