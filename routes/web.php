@@ -79,8 +79,6 @@ Route::middleware('auth')->group(function() {
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
-    Route::get('/menu2', [TestController::class, 'index']);
-
 });
 
 
