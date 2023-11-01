@@ -2,7 +2,7 @@
 @section('title', 'Admin | Dashboard')
 @section('headerNav', 'Dashboard')
 @section('dashboard')
-    <div class="w-full lgTablet:w-screen h-28 mt-3 grid grid-cols-4 mobile:grid-cols-2 gap-4 tablet:w-screen bg-opacity-90">
+    <div class="w-full lgTablet:w-screen h-28 mt-3 grid grid-cols-4 lgMobile:grid-cols-2 mobile:grid-cols-2 gap-4 tablet:w-screen bg-opacity-90">
         <div class="relative w-full mb-2 h-32 bg-green-700 text-white rounded-md hover:bg-green-800">
             <div class="p-1">
                 <h2 class="pl-1 font-font-semibold text-2xl">{{ $totalMenu }}</h2>
