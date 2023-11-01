@@ -158,7 +158,6 @@
         });
         $(".showModal").click(function() {
             const modal = document.getElementById("modal");
-            const body = document.getElementById('AdminBody');
             modal.classList.remove('hidden');
             modal.classList.add('animate-showModal');
         });

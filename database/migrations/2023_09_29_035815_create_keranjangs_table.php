@@ -14,8 +14,13 @@ return new class extends Migration
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->constrained('user');
-            $table->foreignId('keranjang_pivot_id');
+            $table->foreignId('menu_id');
+            $table->string('nama');
+            $table->string('harga');
+            $table->string('foto');
+            $table->integer('total_harga');
             $table->integer('subtotal');
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });
     }

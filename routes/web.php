@@ -1,4 +1,5 @@
 <?php
+use App\Models\Pesanan;
 use App\Models\Keranjangs;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
@@ -9,8 +10,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\kelolaPesanController;
 use Illuminate\Auth\Notifications\ResetPassword;
 use App\Http\Controllers\ResetPasswordController;
 
@@ -61,7 +64,10 @@ Route::middleware('auth')->group(function() {
     Route::post('/menu/edit/{id}', [KelolaMenuController::class, 'update'])->name('Menu.Edit');
     Route::delete('/menu/delete/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
     Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
+    Route::get('/admin/keuangan', [KeuanganController::class, 'index'])->name('Admin.Kuangan');
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
+    Route::post('/konfirmasipesaanan/{id}', [kelolaPesanController::class, 'konfirmasi'])->name('KonfirmasiPesanan');
+    Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan');
     Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun');
     Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah');
     Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');

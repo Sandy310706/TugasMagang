@@ -39,7 +39,7 @@
                     @endauth
 					<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
 					<li class="nav-item"><a class="nav-link" href="/menu">Menu</a></li>
-                    <div class="keranjangs"> 
+                    <div class="keranjangs">
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a></li>
                         <div class="ntif">
                             <p>{{ $data }}</p>
@@ -150,7 +150,7 @@
                 <div class="text-center mt-5">
                     <h2 class="tentang section-heading text-capatalize mb-5">Feedback</h2>
                 </div>
-                <form method="POST" action="{{route('Feedback')}}" data-sb-form-api-token="API_TOKEN" style="position: relative; z-index: 9999;">
+                <form method="POST" action="{{route('Feedback')}}" style="position: relative; z-index: 9999;">
                     @csrf
                     <div class="row align-items-stretch mb-5">
                         <div class="col">
@@ -160,26 +160,6 @@
                                 <div class="invalid-feedback">A Feedback is required.</div>
                             </div>
                         </div>
-                    </div>
-                <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a
-                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Error sending message!</div>
                     </div>
                     <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim Feedback</button></div>
                 </form>

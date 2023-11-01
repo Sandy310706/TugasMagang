@@ -15,10 +15,11 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
-        DB::table('keranjangs')->insert([
-            'user_id' => '1',
-            'keranjang_pivot_id' => '1',
-            'subtotal' =>  10000,
+        DB::table('users')->insert([
+            'nama' => 'Super Man',
+            'email' => 'super@gmail.com',
+            'role' =>  'superadmin',
+            'password' => Hash::make('super'),
         ]);
     }
 }

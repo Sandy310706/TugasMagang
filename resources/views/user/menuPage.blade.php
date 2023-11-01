@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Halaman Menu</title>
 </head>
 
@@ -133,36 +132,35 @@
     </div>
     <script>
         $(document).ready(function(){
-            $('#alerts').hide();
-            setTimeout(function() {
-                 notifs.style.display = "block";
-                 setTimeout(function() {
-                 notifs.style.display = "none";
-                 },1000);
-    -      }, 1000)
-        });
-
-        function inputData(bi) {
-            const id = bi.getAttribute('data-id')
-            $.ajax({
-                url: `/carts/${id}`,
-                dataType: "json",
-                type: "POST",
-                data: {},
-                success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').style.display = 'none';
-                    }, 3000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
+            $("#alert").hide();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-        };
+            });
+
+            function inputData(bi) {
+                const id = bi.getAttribute('data-id')
+                $.ajax({
+                    url: '/carts/'+ id,
+                    dataType: "json",
+                    type: "POST",
+                    data: {},
+                    success: function(response) {
+                        location.reload();
+                        console.log("berhasil");
+                        setTimeout(() => {
+                            document.getElementById('alerts').ustyle.display = 'none';
+                        }, 10000);
+                        document.getElementById('alerts').style.display = 'block';
+                    },
+                    error: function(error) {
+                        console.log('gagal');
+                        console.log(error)
+                    }
+                });
+            };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">

@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('keranjangs', function (Blueprint $table) {
-
+            $table->integer('jumlah')->nullable();
+            $table->integer('total_harga');
         });
     }
 
