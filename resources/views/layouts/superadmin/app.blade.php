@@ -14,6 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
 </head>
 <body class="bg-slate-200">
@@ -23,8 +29,10 @@
             @include('layouts.superadmin.navbar')
             <div class="container px-4 py-2">
                 @yield('kelola akun')
+                @yield('kelola kantin')
             </div>
         </div>
-      </div>
+    </div>
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 </body>
 </html>

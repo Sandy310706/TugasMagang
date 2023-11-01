@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('kategori', ['makanan', 'minuman']);
             $table->integer('harga');
             $table->integer('stok');
+            $table->foreignId('id_kantin');
             $table->timestamps();
         });
     }

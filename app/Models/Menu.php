@@ -40,7 +40,7 @@ class Menu extends Model
 
     public function kantin()
     {
-        return $this->belongsTo('App\Models\Kantin', 'kantin_id');
+        return $this->hasMany(Kantin::class, 'id_kantin');
     }
 
     public function user()
