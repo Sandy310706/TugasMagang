@@ -75,4 +75,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Kantin', 'kantin_id');
     }
+
+    public function menu()
+    {
+        return $this->belongsTo('App\Models\Menu','menu_id');
+    }
 }

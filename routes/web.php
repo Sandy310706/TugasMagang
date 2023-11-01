@@ -24,7 +24,8 @@ Route::fallback(function () {
 });
 
 Route::get('/', function () {
-    $data = Keranjangs::count();
+    $keranjang = Keranjangs::where('user_id')->get();
+    $data = count($keranjang);
     return view('user.landingpage',compact('data'));
 })->middleware('web');
 
@@ -79,6 +80,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::get('/menu2', [TestController::class, 'index']);
+
 });
 
 
