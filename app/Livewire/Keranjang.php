@@ -11,9 +11,12 @@ use PhpParser\Node\Stmt\Foreach_;
 
 class Keranjang extends Component
 {
-    public function render()
+    public function render(Request $id)
     {
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
+        $keranjang = Keranjangs::where('id', $id)->first();
+
+        
         $totalHarga = [];
 
         foreach($keranjangs as $keranjang)
@@ -22,7 +25,7 @@ class Keranjang extends Component
         }
 
         $arraySum = array_sum($totalHarga);
-        return view('user.keranjang' ,  compact('keranjangs', 'arraySum'));
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
     }
 
     public function store($id)
@@ -57,6 +60,11 @@ class Keranjang extends Component
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
             $keranjang->save();
+        }
+
+        if(auth()->check() && $keranjang->user_id == auth()->user()->id)
+        {
+            $cekKeranjang;
         }
 
 

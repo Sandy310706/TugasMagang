@@ -118,7 +118,7 @@
         </div>
 
     </div>
-   
+
     <div class="card-container">
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>

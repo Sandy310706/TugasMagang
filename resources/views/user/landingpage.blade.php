@@ -57,9 +57,9 @@
                         </div>
                     </div>
                     @auth
-                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
                     @else
-                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                     @endauth
                 </ul>
             </div>

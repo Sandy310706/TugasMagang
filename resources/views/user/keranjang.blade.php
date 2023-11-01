@@ -42,7 +42,6 @@
 			</div>
 		</div>
 	</nav>
-
 	<div class="container-fluid Keranjang-page ">
 		<h1 class="text-center">Keranjang</h1>
 		<div class="content-nav">
@@ -106,12 +105,10 @@
     <div class="container checkouts">
         <div class="cekout">
             <div class="btnns">
-                <button type="sumbit" class="buttons" data-id="{{$keranjangs->first()->id}}" onclick="kirimData(this)">checkout</button>
+                <a href="#"button type="sumbit" class="buttons" data-id="{{$keranjang}}" onclick="kirimData(this)">checkout</a>
             </div>
         </div>
     </div>
-
-
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
@@ -119,11 +116,9 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-
             $(".tambah").click(function() {
                 var keranjangId = $(this).data("keranjang-id");
                 var menuId = $(this).data("menu-id");
-
                 $.ajax({
                     type: "GET",
                     url: "/cartst/" + keranjangId + "/" + menuId,
@@ -154,9 +149,6 @@
                 });
             });
         });
-
-
-
         function kirimData(bi){
         const id = bi.getAttribute('data-id')
             $.ajax({
@@ -183,7 +175,6 @@
             });
         };
    </script>
-
 	<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
