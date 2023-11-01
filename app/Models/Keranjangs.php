@@ -38,6 +38,9 @@ class Keranjangs extends Model
     {
         return $this->belongsTo('App\Models\Invoice', 'invoice_id');
     }
-
+    public function kantin()
+    {
+        return $this->belongsTo(Kantin::class, 'kantin_id');
+    }
 
 }

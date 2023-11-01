@@ -70,4 +70,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Kantin::class, 'id_admin');
     }
+
+    public function menu()
+    {
+        return $this->belongsTo('App\Models\Menu','menu_id');
+    }
 }

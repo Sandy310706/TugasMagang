@@ -43,4 +43,9 @@ class Menu extends Model
         return $this->hasMany(Kantin::class, 'id_kantin');
     }
 
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'user_id');
+    }
+
 }
