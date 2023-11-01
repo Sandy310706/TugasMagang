@@ -13,11 +13,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DataDummy extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
+
         DB::table('users')->insert([
             'nama' => 'robins',
             'email' => 'robins@email.com',
@@ -34,6 +32,7 @@ class DataDummy extends Seeder
         // ]);
 
         //
+
 
     }
 }

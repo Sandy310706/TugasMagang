@@ -6,7 +6,11 @@ use App\Models\Menu;
 use App\Models\Kantin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
+
+use function PHPUnit\Framework\fileExists;
 
 class KelolaMenuController extends Controller
 {
@@ -26,24 +30,22 @@ class KelolaMenuController extends Controller
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
-            'nama' => 'required|unque:menus',
+            'nama' => 'required|unique:menus',
             'kategori' => 'required',
             'harga' => 'required|numeric',
-            'stok' => 'required|numberic',
+            'stok' => 'required|numeric',
         ],
         [
             'foto.required' => 'Kolom ini wajib di isi',
             'nama.required' => 'Kolom ini wajib di isi',
             'harga.required' => 'Kolom ini wajib di isi',
-            'nama' => 'Nama telah di gunakan',
+            'nama.unique' => 'Nama telah di gunakan',
             'foto.mimes' => 'Format file tidak sesuai',
             'harga.numeric' => 'Wajib menggunakan angka',
-            'stok.numberic' => 'Wajib menggunakan angka',
+            'stok.numeric' => 'Wajib menggunakan angka',
         ]);
         if($dataValidasi->fails()){
-            return redirect()->back()
-            ->withErrors($dataValidasi)
-            ->withInput();
+            return redirect()->back()->withErrors($dataValidasi)->withInput();
         }
         $data = new Menu;
         $data->nama = $request->nama;
@@ -58,57 +60,53 @@ class KelolaMenuController extends Controller
                 $data->foto = $newName;
             }
         $data->save();
-        return redirect('/admin/kelolamenu')->with('Berhasil', 'Data berhasil di input');
+        return response()->json($data);
     }
 
     public function update(Request $request, $id)
     {
-        $dataValidasi = Validator::make($request->all(), [
-            'foto' => 'nullable|mimes:png,jpg,jpeg',
-            'nama' => 'required',
-            'kategori' => 'required',
-            'harga' => 'required|numeric',
-        ],
-        [
-            'foto.mimes' => 'Format file tidak sesuai',
-        ]);
-        if ($dataValidasi->fails()) {
-            return redirect()->back()
-                ->withErrors($dataValidasi)
-                ->withInput();
-        }
         $data = Menu::find($id);
-        if (!$data) {
-            return redirect()->back()->with('Gagal', 'Data tidak ditemukan');
+        if(!$data){
+            Alert::error('Gagal', 'Data tidak di temukan');
+            return redirect()->back();
+        }
+        $dataValidasi = Validator::make($request->all(), [
+            'nama' => 'string',
+            'harga' => 'numeric',
+            'stok' => 'numeric',
+        ]);
+        if($dataValidasi->fails()){
+            return redirect()->back()->withErrors($dataValidasi)->withInput();
         }
         $data->nama = $request->nama;
         $data->harga = $request->harga;
+        $data->stok = $request->stok;
         $data->kategori = $request->kategori;
-        if ($request->hasFile('foto')) {
+        if($request->hasFile('foto')){
             $fileFoto = $request->file('foto');
-            $newName = uniqid() . $fileFoto->getClientOriginalName();
-            $path = 'fileMenu/' . $newName;
-            Storage::disk('public')->put($path, file_get_contents($fileFoto));
-
-            if ($data->foto) {
-                Storage::disk('public')->delete('fileMenu/' . $data->foto);
-            }
-            $data->foto = $newName;
+                $newName = uniqid().$fileFoto->getClientOriginalName();
+                $path = 'fileMenu/'.$newName;
+                Storage::disk('public')->put($path, file_get_contents($fileFoto));
+                $data->foto = $newName;
         }
         $data->save();
-        return redirect('/admin/kelolamenu')->with('Berhasil', 'Data berhasil diupdate');
+        return response()->json($data);
     }
 
     public function delete($id)
     {
-        $data = Menu::find($id);
-        if (!$data) {
-            return redirect()->back()->with('Gagal', 'Data tidak ditemukan');
+        $data = Menu::where('id', $id)->first();
+        $foto = $data->foto;
+        $fotoPath = public_path('storage/fileMenu/'.$foto);
+        if(fileExists($fotoPath)){
+            if(unlink($fotoPath)){
+                $data->delete();
+                return response()->json('berhasil');
+            } else{
+                return redirect()->route('Admin.Dashboard');
+            }
+        }else{
+            return redirect()->route('Admin.Menu');
         }
-        if ($data->foto) {
-            Storage::disk('public')->delete('fileMenu/' . $data->foto);
-        }
-        $data->delete();
-        return redirect('/admin/kelolamenu')->with('Berhasil', 'Data berhasil dihapus');
     }
 }

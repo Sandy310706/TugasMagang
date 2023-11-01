@@ -18,7 +18,7 @@ export default {
             },
             keyframes: {
                 ToptoBottom: {
-                    from: { top: "-100%" },
+                    from: { top: "-20%" },
                 },
                 BottomtoTop: {
                     "100%": { top: "-100%" },
@@ -32,24 +32,22 @@ export default {
                     to: { opacity: "0" },
                 },
                 showSidebar: {
-                    from: { width: "0%" },
-                    to: { width: "30%" },
+                    from: { transform: "translateX(-150%)" },
+                    to: { transform: "translateX(0%)" },
                 },
                 hideSidebar: {
-                    from: { width: "30%" },
-                    to: { width: "0%" },
+                    to: { transform: "translateX(-150%)" },
                 },
                 showMenu: {
-                    from: { transform: 'translateY(-150%)' },
-                    to: { transform: 'translateY(0)' },
+                    from: { transform: "translateY(-150%)" },
+                    to: { transform: "translateY(0%)" },
                 },
                 hideMenu: {
-                    from: { transform: 'translateY(0)' },
-                    to: { transform: 'translateY(-150%)' },
+                    to: { transform: "translateY(-150%)" },
                 },
             },
             animation: {
-                showModal: "ToptoBottom 1s ease-in-out",
+                showModal: "ToptoBottom 0.5s ease-in-out",
                 hideModal: "BottomtoTop 1s ease-in-out",
                 showDropdownMenu: "showDropdownMenu 0.5s ease-in-out",
                 hideDropdownMenu: "hideDropdownMenu 0.5s ease-in-out",

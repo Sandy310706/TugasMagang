@@ -75,7 +75,7 @@
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
                             <button class="kurang" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                         </div>
-                        <span class="jumlah-item" class="count" style="padding: 10px;" >{{ $keranjang->jumlah }}</span>
+                        <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" class="count" style="padding: 10px;" >{{ $keranjang->jumlah }}</span>
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
                             <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                         </div>
