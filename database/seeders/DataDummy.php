@@ -15,6 +15,14 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
-
+        DB::table('menus')->insert([
+            'nama' => 'Geprek Mael',
+            'foto' =>  'foto',
+            'quantity' => 1,
+            'kategori' => 'makanan',
+            'harga' => 1000,
+            'stok' => 99,
+            'id_kantin' => 1,
+        ]);
     }
 }

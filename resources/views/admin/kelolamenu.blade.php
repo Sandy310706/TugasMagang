@@ -29,7 +29,7 @@
                         <td class="p-2 group-hover:bg-neutral-400">{{ $menu->nama }}</td>
                         <td class="p-2 group-hover:bg-neutral-400">{{ $menu->kategori }}</td>
                         <td class="p-2 group-hover:bg-neutral-400">Rp. {{ $menu->harga }}</td>
-                        <td class="p-2 group-hover:bg-neutral-400">{{ $menu->stok }}</td>
+                        <td class="p-2 group-hover:bg-neutral-400">{{ $menu->kantin->namaKantin }}</td>
                         <td class="p-2 group-hover:bg-neutral-400">
                             <button id="btnEdit" data-id="{{ $menu->id }}" class="btnEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                             <p class="inline"> | </p>

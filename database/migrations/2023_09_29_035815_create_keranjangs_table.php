@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('foto');
             $table->integer('total_harga');
             $table->integer('subtotal');
-            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });
     }
