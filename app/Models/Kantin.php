@@ -24,4 +24,9 @@ class Kantin extends Model
     {
         return $this->hasOne('App\Models\Menu','menu_id');
     }
+    public function keranjang()
+    {
+        return $this->hasOne(Keranjang::class, 'keranjang_id');
+    }
+
 }
