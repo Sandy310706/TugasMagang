@@ -16,10 +16,10 @@ class MenuController extends Controller
     public function index()
     {
         $makanan = Menu::where('kategori','makanan')->get();
-
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $data = count($keranjang);
-        return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
+
+        return view('user.menuPage', compact('makanan','data',));
     }
     public function store(Request $request, $id)
     {

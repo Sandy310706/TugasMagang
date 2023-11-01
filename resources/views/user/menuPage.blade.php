@@ -238,29 +238,6 @@
                 }
             });
         });
-
-        function inputData(bi) {
-            const id = bi.getAttribute('data-id')
-            $.ajax({
-                url: `/carts/${id}`,
-                dataType: "json",
-                type: "POST",
-                data: {},
-                success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').style.display = 'none';
-                    }, 7000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
-            });
-            });
-
             function inputData(bi) {
                 const id = bi.getAttribute('data-id')
                 $.ajax({

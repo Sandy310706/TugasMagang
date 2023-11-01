@@ -12,6 +12,7 @@ class Kantin extends Model
     protected $fillable = [
         'user_id',
         'menu_id',
+        'namaToko',
         'keuangan',
     ];
 
