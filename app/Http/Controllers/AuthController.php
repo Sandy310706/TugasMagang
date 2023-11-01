@@ -44,8 +44,8 @@ class AuthController extends Controller
                 return redirect('/');
             } elseif ($user->role == 'admin') {
                 return redirect('admin/dashboard');
-            } elseif ($user->role == 'operator') {
-                return redirect()->route('Operator.Dashboard');
+            } elseif ($user->role == 'superadmin') {
+                return redirect()->route('Superadmin.Akun');
             }
         } else {
             return redirect()->back()->withErrors(['password' => 'Password salah'])->withInput();

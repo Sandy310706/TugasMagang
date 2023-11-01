@@ -1,13 +1,13 @@
 <div class="h-20 box-border">
-    <div class="mobile:w-full lgTablet:w-full h-20 bg-slate-900 flex fixed w-4/5 text-white" style="z-index: 999;">
+    <div class="lgMobile:w-full mobile:w-full lgTablet:w-full h-20 bg-slate-900 flex fixed w-4/5 text-white" style="z-index: 999;">
         <h1 class="w-1/2 font-medium text-3xl my-auto ml-4">@yield('headerNav')</h1>
         <div class="w-1/2 relative" style="z-index: 2">
             <button class="absolute mobile:hidden right-20 top-7 hover:text-slate-300" onclick="openDropdown()" id="dropdownTrigger">Hallo, {{ auth()->user()->nama }} <i class="HandPhone:hidden fa-solid fa-play scale-75" style="transition: transform 1s;" id="dropdownIcon"></i></button>
             <button onclick="showSidebar()" id="SidebarTrigger"><span class="hidden lgTablet:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
-            <button onclick="ShowMenu()" id="MenuTrigger"><span class="hidden mobile:inline lgTablet:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
+            <button onclick="showMenu()" id="MenuTrigger"><span class="hidden lgMobile:inline mobile:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
             <div class="absolute right-4 top-14 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden" id="dropdownMenu">
                 <ul>
-                    <li><a href="#" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Profile</a></li>
+                    <li><a href="/ubahpassword/{{ auth()->user()->nama }}" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Ubah Password</a></li>
                     <li><a href="/logout" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-b-lg">Logout</a></li>
                 </ul>
             </div>
@@ -17,25 +17,25 @@
 <div class="w-screen hidden fixed transition-all text-white bg-slate-800 z-50" id="MenuSidebar">
     <div class="flex flex-col justify-center items-center">
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="#" class="block">Beranda</a>
+            <a href="/" class="block">Beranda</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="#" class="block">Dashboard</a>
+            <a href="{{ route('Admin.Dashboard') }}" class="block">Dashboard</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
             <a href="#" class="block">Keuangan</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="#" class="block">Kelola Menu</a>
+            <a href="{{ route('Admin.Menu') }}" class="block">Kelola Menu</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="#" class="block">Kelola Pesanan</a>
+            <a href="{{ route('Admin.Pesanan') }}" class="block">Kelola Pesanan</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="#" class="block">Feedback</a>
+            <a href="{{ route('Admin.Feedback') }}" class="block">Feedback</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="#" class="block">Logout</a>
+            <a href="{{ route('Logout') }}" class="block">Logout</a>
         </div>
     </div>
 </div>
@@ -121,13 +121,10 @@
             Sidebar.classList.add("lgTablet:animate-hideSidebar");
         }
     }
-    function ShowMenu(){
+    function showMenu(){
         const MenuSidebar = document.getElementById("MenuSidebar");
         const Menu = document.getElementById("Menu");
         if( MenuSidebar.classList.contains("hidden")){
-            setTimeout(function() {
-                Menu.classList.remove("hidden");
-            }, 900);
             MenuSidebar.classList.remove("hidden");
             MenuSidebar.classList.add("animate-showMenu");
         }else{

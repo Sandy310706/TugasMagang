@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="cipay">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Gabarito&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="auth/css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('auth/css/style.css') }}">
+    <title> Ubah Password | {{ auth()->user()->nama }}</title>
 </head>
-
 <body>
     <div class="container content-container">
         <div class="judul">
@@ -19,10 +17,10 @@
         <div class="content">
             <div class="hero-content">
                 <div class="nama-akun">
-                    <div class="image"><img src="img/download.jpeg" alt=""></div>
+                    <div class="image"><img src="{{ asset('storage/fileMenu/653b6ebc39ec2Screenshot 2023-09-02 150120.png') }}" alt="" style="display: inline"></div>
                 </div>
                 <div class="content-akun">
-                    <p>Ubah akun</p>
+                    <p>Budianto Lonjong</p>
                 </div>
             </div>
         </div>

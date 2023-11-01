@@ -38,5 +38,14 @@ class Menu extends Model
         return $this->hasMany('App\Models\Keranjangs', 'menu_id');
     }
 
+    public function kantin()
+    {
+        return $this->belongsTo('App\Models\Kantin', 'kantin_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'user_id');
+    }
 
 }

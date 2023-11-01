@@ -16,5 +16,6 @@
 <body class="bg-teal-300 bg-opacity-30">
     @yield('login')
     @yield('registrasi')
+    @yield('resetpassword')
 </body>
 </html>
