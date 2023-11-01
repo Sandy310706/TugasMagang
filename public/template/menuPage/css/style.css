@@ -132,82 +132,100 @@ body {
   transform: scale(0);
 }
 
-/* style kantin */
+.svg svg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.kantin h1 {
+  margin-top: 180px;
+  font-family: Satisfy;
+}
 
 .cards-container {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  width: 64%;
-  
+  width: 75%;
 }
 
-.hero-click{
+.hero-click {
   display: flex;
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
 }
 
-
-.content{
-  display: flex;
-  align-items: center;
+.cards-container::-webkit-scrollbar {
+  display: none;
 }
 
-.text{
+.swiper-slide {
+  width: 248px;
+  height: 220px;
   text-align: center;
-}
-
-.card-container::-webkit-scrollbar{
-display: none;
-}
-
-.card {
-  margin: 10px;
-  /* or any other width */
-  scroll-snap-align: start;
-}
-
-.card-content{
-  width: 255px;
-  height: 210px;
+  display: flex;
+  justify-content: center;
   background-color: white;
+  border: 1px solid #ddd;
+  font-size: 24px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid gray;
+  margin: 3px;
+}
+
+.content {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.images img{
-  width: 240px;
-  border-top: 8px solid white;
-  height: 120px;
+.image-kantin img {
+  border: 10px solid white;
+  width: 226px;
+  height: 100%;
 }
 
-p{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.kontents-kantin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kontent-kantin a {
   color: black;
-  font-size: 20px;
+  text-decoration: none;
+  font-family: ighteous;
 }
 
-button{
+span {
+  font-size: 2px;
+}
+
+.makanan {
+  color: #FFF;
+  text-align: center;
+  font-family: Satisfy;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 1;
+  margin-top: 100px;
+}
+
+.button-click button {
+  border: none;
   background-color: transparent;
-  border: 0;
 }
 
-.btnss{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.kantin h1 {
+  margin-top: 180px;
+  color: #FFF;
+  text-align: center;
+  font-family: Satisfy;
+  font-size: 75px;
 }
-
-.button-click{
-  display: flex;
-  height: 230px;
-  justify-content: center;
-  align-items: center;
-}
-
 
 /* //style Menu// */
 .Menu-kantin {
@@ -240,16 +258,6 @@ span {
   margin-top: 100px;
 }
 
-.minuman {
-  margin-top: 80px;
-  color: #016a70;
-  text-align: center;
-  font-family: Satisfy;
-  font-size: 75px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
 .card-menu {
   display: flex;
@@ -470,167 +478,231 @@ p {
 
 @media only screen and (max-width: 600px) {
   body {
-      max-width: 100%;
+    max-width: 100%;
   }
 
   .menu-toggle {
-      display: flex;
+    display: flex;
   }
 
   nav ul {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-      height: 70vh;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: -1;
-      transform: translatey(-100%);
-      transition: all 1s;
-      opacity: 0;
-      color: #FFF;
-      gap: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 1s;
+    opacity: 0;
+    color: #FFF;
+    gap: 10px;
   }
 
   nav ul.slide {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .card {
-      display: flex;
-      justify-content: center;
+    display: flex;
+    justify-content: center;
   }
 
   .footer-containers {
-      width: 100%;
+    width: 100%;
   }
 
   .sosmed ul li a {
-      font-size: 12px;
-      margin-top: 10px;
-      line-height: 10px;
+    font-size: 8px;
+    margin-top: 10px;
+    line-height: 10px;
   }
 
   .copyright p {
-      font-size: 15px;
-      text-align: center;
+    font-size: 15px;
+    text-align: center;
   }
 
-  .biru {
-      width: 290px;
-      left: -310px;
-      top: -2110px;
-  }
-
-  .hijau-bawah {
-      width: 300px;
-      left: -310px;
-      top: 290vh;
-      left: -370px;
+  .svg svg {
+    width: 70%;
+    top: 0;
   }
 
   .ntif {
-      right: 1px;
+    right: 1px;
   }
+
+  .cards-container{
+    width: 98%;
+  }
+
+  .swiper-slide{
+    width: 103px;
+    height: 130px;
+    margin: 1px;
+  }
+
+  .image-kantin img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .kontents-kantin .kontent-kantin a{
+    display: flex;
+    align-items: start;
+  }
+
+  .kontent-kantin a{
+    font-size: 12px;
+  }
+
+  .button-click button svg{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .kantin H1{
+    margin-top: 90px;
+  }
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   .menu-toggle {
-      display: flex;
+    display: flex;
   }
 
   nav ul {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-      height: 70vh;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: -1;
-      transform: translatey(-100%);
-      transition: all 1s;
-      opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 1s;
+    opacity: 0;
   }
 
   nav ul.slide {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .footer-container {
-      width: 100%;
+    width: 100%;
   }
 
   .sosmed ul li a {
-      font-size: 14px;
-      margin-top: 10px;
-      line-height: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 10px;
   }
 
   .copyright p {
-      font-size: 17px;
-      text-align: center;
-  }
-
-  .biru {
-      width: 350px;
-      left: -370px;
-      top: -2080px;
-  }
-
-  .hijau-bawah {
-      width: 900px;
-      left: -660px;
-      top: 1775px;
-  }
-
-  .hijau {
-      width: 0;
-  }
-
-  .biru-bawah {
-      width: 0;
+    font-size: 17px;
+    text-align: center;
   }
 
   .ntif {
-      right: 1px;
+    right: 1px;
+  }
+
+  .cards-container{
+    width: 98%;
+  }
+
+  .swiper-slide{
+    width: 182px;
+    height: 180px;
+    margin: 1px;
+  }
+
+  .image-kantin img{
+    width: 175px;
+    height: 130px;
+  }
+
+  .kontent-kantin a{
+    font-size: 15px;
+  }
+
+  .kontents-kantin .kontent-kantin a{
+    display: flex;
+    align-items: start;
+  }
+
+  .button-click button svg{
+    width: 30px;
+    height: 30px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .menu-toggle {
-      display: flex;
+    display: flex;
   }
 
   nav ul {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-      height: 70vh;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: -1;
-      transform: translatey(-100%);
-      transition: all 1s;
-      opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 1s;
+    opacity: 0;
   }
 
   nav ul.slide {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .cards-container{
+    width: 98%;
+  }
+
+  .button-click button svg{
+    width: 30px;
+    height: 30px;
+  }
+
+  .swiper-slide{
+    width: 175px;
+    height: 160px;
+    margin: 1px;
+  }
+
+  .image-kantin img{
+    width: 174px;
+    height: 1px;
+  }
+
+  .kontents-kantin .kontent-kantin a{
+    display: flex;
+    align-items: start;
+  }
+
+  .kontent-kantin a{
+    font-size: 18px;
   }
 
   .ntif {
-      right: 1px;
+    right: 1px;
   }
 }
