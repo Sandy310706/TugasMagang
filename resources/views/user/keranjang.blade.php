@@ -66,7 +66,6 @@
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
-                        <input type="checkbox">
                         <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" style="margin-right: 10px" alt="Menupage">
                         <p>{{$keranjang->menu->nama}}</p>
                     </div>
@@ -107,10 +106,12 @@
     <div class="container checkouts">
         <div class="cekout">
             <div class="btnns">
-                <button type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</button>
+                <button type="sumbit" class="buttons" data-id="{{$keranjangs->first()->id}}" onclick="kirimData(this)">checkout</button>
             </div>
         </div>
     </div>
+
+
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
@@ -153,19 +154,27 @@
             });
         });
         function kirimData(bi){
-            const id = bi.getAttribute('data-id')
+        const id = bi.getAttribute('data-id')
             $.ajax({
             url: `/invoice/${id}`,
             dataType: "json",
             type: "POST",
-            data:{},
-            success: function(respone){
-                location.reload()
-                console.log ("berhasil");
+            data:{
+                "_token": "{{ csrf_token() }}",
             },
-            error: function(respone){
+            success: function(response){
+                // location.reload()
+                console.log (response);
+                console.log(response.status);
+                if(response.status == 1) {
+                    console.log('Sudah dibayar');
+                }else{
+                    console.log('Belum di bayar');
+                }
+            },
+            error: function(error){
                 console.log ("gagal");
-
+                console.log(error);
             }
             });
         };
