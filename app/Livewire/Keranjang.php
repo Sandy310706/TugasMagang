@@ -29,7 +29,7 @@ class Keranjang extends Component
     {
 
         if(!auth()){
-            return redirect('login');
+            return redirect('login')->with('alert', 'Silahkan login terlebih dahulu!');
         }
 
         $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
@@ -38,8 +38,6 @@ class Keranjang extends Component
         $menu = Menu::where('id', $id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
-
-
 
         if($cekKeranjang)
         {
@@ -58,13 +56,6 @@ class Keranjang extends Component
             $keranjang->subtotal = $keranjang->total_harga;
             $keranjang->save();
         }
-
-
-
-        session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
-        session(['lifetime' => 30]);
-
-
         return response()->json($keranjang);
     }
     public function tambah($id, $menu_id)

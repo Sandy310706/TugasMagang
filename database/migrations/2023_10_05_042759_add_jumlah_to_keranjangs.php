@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::table('keranjangs', function (Blueprint $table) {
             $table->integer('jumlah')->nullable();
             $table->integer('total_harga');
-
         });
     }
 

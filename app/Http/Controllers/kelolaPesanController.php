@@ -4,22 +4,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Invoice;
-use App\Models\kelolaPesan;
-use Illuminate\Support\Str;
 use Dirape\Token\Token;
 use App\Models\Keranjangs;
+use App\Models\kelolaPesan;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class kelolaPesanController extends Controller
 {
-  public function index()
-  {
-     $kelola = KelolaPesan::where('user_id', auth()->user()->id)->get();
-     $data = Invoice::all();
-     return response()->json([$data]);
-  }
+    public function index()
+    {
+        $kelola = KelolaPesan::where('user_id', auth()->user()->id)->get();
+        $data = Invoice::all();
+        return response()->json([$data]);
+    }
 
-  public function store(Request $request, $id)
+    public function store(Request $request, $id)
     {
         $randomString = Str::random(3);
 
@@ -33,5 +34,17 @@ class kelolaPesanController extends Controller
         $kelola->save();
 
         return redirect('babi');
+    }
+    public function konfirmasi($id)
+    {
+        $pesanan = Invoice::find($id);
+        $pesanan->status = 1;
+        $pesanan->save();
+        return response()->json($pesanan);
+    }
+    public function detail($id)
+    {
+        $data = Invoice::find($id);
+        return response()->json($data);
     }
 }
