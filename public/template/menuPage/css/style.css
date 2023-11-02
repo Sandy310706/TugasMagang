@@ -147,7 +147,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  width: 44%;
+  width: 48%;
 }
 
 .hero-click {
@@ -162,8 +162,6 @@ body {
 }
 
 .swiper-slide {
-  width: 50;
-  height: 180px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -173,6 +171,11 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border: 1px solid gray;
   margin: 2px;
+}
+
+.card-hero{
+  width: 197px;
+  height: 180px;
 }
 
 .content {
@@ -673,12 +676,12 @@ p {
     transform: translateX(0);
   }
   .cards-container{
-    width: 77%;
+    width: 76%;
   }
 
   .swiper-slide{
     width:50%;
-    height: 145px;
+    height: 160px;
   }
 
   .image-kantin img{
