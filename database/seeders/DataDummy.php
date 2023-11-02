@@ -17,6 +17,7 @@ class DataDummy extends Seeder
     {
 
 
+
         // DB::table('users')->insert([
         //     'nama' => 'robin',
         //     'email' => 'robin@email.com',
@@ -33,10 +34,20 @@ class DataDummy extends Seeder
         //     'foto' => 'ayam.jpg',
         //     'stok' => '50',
 
+        // ])
+
+
+        // DB::table('users')->insert([
+        //     'nama' => 'admin',
+        //     'email' => 'admin@email.com',
+        //     'password' => Hash::make('admin'),
+        //     'role' => 'admin',
         // ]);
 
         DB::table('kantin')->insert([
-            
+            'namaKantin' => 'smkn',
+            'id_admin' => '2',
+
 
         ]);
 
