@@ -35,6 +35,12 @@ class DataDummy extends Seeder
 
         // ]);
 
+        DB::table('kantin')->insert([
+            
+
+        ]);
+
+
 
     }
 }
