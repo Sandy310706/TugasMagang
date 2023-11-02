@@ -57,6 +57,7 @@ class Keranjang extends Component
             $keranjang->jumlah =  1;
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
+            $keranjang->kantin_id = 1;
             $keranjang->save();
         }
 
