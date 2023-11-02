@@ -42,5 +42,5 @@ class Menu extends Model
     {
         return $this->hasMany(Kantin::class, 'id_kantin');
     }
-
+ 
 }
