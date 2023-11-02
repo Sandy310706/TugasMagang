@@ -17,6 +17,7 @@ use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
 use Illuminate\Auth\Notifications\ResetPassword;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\TestController;
 
 // == Errors Route ==
@@ -82,6 +83,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
+    Route::delete('/histori', [HistoriController::class, 'index']);
 });
 
 

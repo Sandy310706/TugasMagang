@@ -15,11 +15,11 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
-        DB::table('users')->insert([
-            'nama' => 'Super admin',
-            'email' => 'super@email.com',
-            'password' => Hash::make('super'),
-            'role' => 'superadmin',
-        ]);
+        // DB::table('users')->insert([
+        //     'nama' => 'admin',
+        //     'email' => 'admin@email.com',
+        //     'password' => Hash::make('admin'),
+        //     'role' => 'admin',
+        // ]);
     }
 }
