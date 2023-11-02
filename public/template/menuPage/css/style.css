@@ -145,8 +145,9 @@ body {
 
 .cards-container {
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  width: 75%;
+  width: 48%;
 }
 
 .hero-click {
@@ -161,8 +162,6 @@ body {
 }
 
 .swiper-slide {
-  width: 248px;
-  height: 220px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -171,18 +170,22 @@ body {
   font-size: 24px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border: 1px solid gray;
-  margin: 3px;
+  margin: 2px;
+}
+
+.card-hero{
+  width: 197px;
+  height: 180px;
 }
 
 .content {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .image-kantin img {
   border: 10px solid white;
-  width: 226px;
+  width: 180px;
   height: 100%;
 }
 
@@ -538,18 +541,18 @@ p {
   }
 
   .cards-container{
-    width: 98%;
+    width: 60%;
   }
 
   .swiper-slide{
-    width: 103px;
-    height: 130px;
-    margin: 1px;
+    width: 49%;
+    height: 150px;
   }
 
   .image-kantin img{
-    width: 100px;
-    height: 100px;
+    border: 7px solid white;
+    width: 100%;
+    height: 100%;
   }
 
   .kontents-kantin .kontent-kantin a{
@@ -558,7 +561,7 @@ p {
   }
 
   .kontent-kantin a{
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .button-click button svg{
@@ -618,18 +621,18 @@ p {
   }
 
   .cards-container{
-    width: 98%;
+    width: 70%;
   }
 
   .swiper-slide{
-    width: 182px;
-    height: 180px;
+    width: 33%;
+    height: 145px;
     margin: 1px;
   }
 
   .image-kantin img{
-    width: 175px;
-    height: 130px;
+    width: 100%;
+    height: 100%;
   }
 
   .kontent-kantin a{
@@ -672,25 +675,22 @@ p {
     opacity: 1;
     transform: translateX(0);
   }
-
   .cards-container{
-    width: 98%;
-  }
-
-  .button-click button svg{
-    width: 30px;
-    height: 30px;
+    width: 76%;
   }
 
   .swiper-slide{
-    width: 175px;
+    width:50%;
     height: 160px;
-    margin: 1px;
   }
 
   .image-kantin img{
-    width: 174px;
-    height: 1px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .kontent-kantin a{
+    font-size: 15px;
   }
 
   .kontents-kantin .kontent-kantin a{
@@ -698,11 +698,9 @@ p {
     align-items: start;
   }
 
-  .kontent-kantin a{
-    font-size: 18px;
+  .button-click button svg{
+    width: 30px;
+    height: 30px;
   }
 
-  .ntif {
-    right: 1px;
-  }
 }
