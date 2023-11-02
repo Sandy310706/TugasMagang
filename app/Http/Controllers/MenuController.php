@@ -19,7 +19,11 @@ class MenuController extends Controller
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $data = count($keranjang);
 
+
         return view('user.menuPage', compact('makanan','data',));
+
+        return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
+
     }
     public function store(Request $request, $id)
     {
