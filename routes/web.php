@@ -51,7 +51,7 @@ Route::middleware(['guest'])->group(function(){
     Route::get('resetpassword/1', [AuthController::class, 'reset1'])->name('ResetPassword.1');
 });
 Route::middleware('auth')->group(function() {
-    Route::get('/logout', [AuthController::class, 'logout'])->name('Logout');
+    Route::get('/logout/{nama}', [AuthController::class, 'logout'])->name('Logout');
     Route::get('/ubahpassword/{user}', [ResetPasswordController::class, 'index'])->name('ResetPassword.1');
     Route::get('/menu', [MenuController::class, 'index'])->name('index');
     Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store');
@@ -81,8 +81,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
-    Route::get('/menu2', [TestController::class, 'index']);
-
+    Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
 });
 
 

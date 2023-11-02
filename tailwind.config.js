@@ -9,7 +9,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                outfit: ["Outfit"],
+                outfit: ["Outfit", "ui-sans-serif", "system-ui"],
                 oswald: ["Oswald"],
                 archivo: ["Archivo Black"],
                 amaranth: ["Amaranth"],

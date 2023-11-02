@@ -17,7 +17,6 @@ class Kantin extends Model
     {
         return $this->belongsTo(User::class, 'id_admin');
     }
-
     public function menu()
     {
         return $this->belongsTo(Menu::class, 'id_kantin');

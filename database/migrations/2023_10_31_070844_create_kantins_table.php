@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('kantin', function (Blueprint $table) {
             $table->id();
             $table->string('namaKantin');
-            $table->foreignId('id_admin');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kantins');
+        Schema::dropIfExists('kantin');
     }
 };
