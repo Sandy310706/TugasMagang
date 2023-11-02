@@ -127,7 +127,7 @@
                         </div>
                         <div class="kontents-kantin">
                             <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
+                                <a href="#">Kantin 1</a>
                             </div>
                         </div>
                     </div>
