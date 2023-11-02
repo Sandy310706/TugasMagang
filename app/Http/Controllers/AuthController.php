@@ -35,7 +35,7 @@ class AuthController extends Controller
         }
         $userEmail = User::where('email', $request->email)->first();
         if (!$userEmail) {
-            return redirect()->back()->withErrors(['email' => 'Email tidak terdaftar']);
+            return redirect()->back()->withErrors(['email' => 'Email tidak ditemukan']);
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();

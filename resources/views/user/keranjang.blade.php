@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Keranjang/css/style.css">
 	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -75,13 +74,13 @@
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
                             <button class="kurang" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                         </div>
-                        <input type="number">
+                        <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;" >{{ $keranjang->jumlah }}</span>
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
                             <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                     <div class="content-table total">
-                        <span id="total">Rp. {{ $keranjang->total_harga }}</span>
+                        <span id="total" data-id="{{ $keranjang->id }}">Rp. {{ $keranjang->total_harga }}</span>
                     </div>
                     <div class="content-table remove">
                         <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
@@ -117,15 +116,16 @@
                 }
             });
             $(".tambah").click(function() {
-                var keranjangId = $(this).data("keranjang-id");
-                var menuId = $(this).data("menu-id");
+                const keranjangId = $(this).data("keranjang-id");
+                const menuId = $(this).data("menu-id");
+                const spanJumlah = $("span[data-menu-id='" + menuId + "']");
+                const totalHarga = $("span[data-id='" + menuId + "']");
                 $.ajax({
                     type: "GET",
                     url: "/cartst/" + keranjangId + "/" + menuId,
                     success: function(data) {
-                        location.reload();
-                        $(".jumlah-item").text(data.jumlah);
-                        $("#total").text("Rp. " + data.total_harga);
+                        spanJumlah.text(data.jumlah);
+                        totalHarga.text("Rp. "+ data.total_harga)
                     },
                     error: function(xhr, status, error) {
                         console.log(xhr.responseText);
@@ -133,15 +133,16 @@
                 });
             });
             $(".kurang").click(function() {
-                var keranjangId = $(this).data("keranjang-id");
-                var menuId = $(this).data("menu-id");
+                const keranjangId = $(this).data("keranjang-id");
+                const menuId = $(this).data("menu-id");
+                const spanJumlah = $("span[data-menu-id='" + menuId + "']");
+                const totalHarga = $("span[data-id='" + menuId + "']");
                 $.ajax({
                     type: "GET",
                     url: "/cartsk/" + keranjangId + "/" + menuId,
                     success: function(data) {
-                        location.reload();
-                        $(".jumlah-item").text(data.jumlah);
-                        $("#total").text("Rp. " + data.total_harga);
+                        spanJumlah.text(data.jumlah);
+                        totalHarga.text("Rp. "+ data.total_harga)
                     },
                     error: function(xhr, status, error) {
                         console.log(xhr.responseText);
@@ -159,7 +160,6 @@
                 "_token": "{{ csrf_token() }}",
             },
             success: function(response){
-                // location.reload()
                 console.log (response);
                 console.log(response.status);
                 if(response.status == 1) {
@@ -170,20 +170,11 @@
             },
             error: function(error){
                 console.log ("gagal");
-                console.log(error);
             }
             });
         };
    </script>
-	<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/bootstrap/js/script.js"></script>
-	<script src="assets/bootstrap/js/scripts.js"></script>
-  <script src="script.js/script.js"></script>
-  <script src="script.js/scripts.js"></script>
-  <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
   @livewireScripts
 </body>
 </html>
