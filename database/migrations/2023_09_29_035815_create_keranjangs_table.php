@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->constrained('user');
+            $table->foreignId('kantin_id');
             $table->foreignId('menu_id');
             $table->string('nama');
             $table->string('harga');

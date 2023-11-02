@@ -22,4 +22,9 @@ class Kantin extends Model
     {
         return $this->belongsTo(Menu::class, 'id_kantin');
     }
+    public function keranjang()
+    {
+        return $this->hasOne(Keranjang::class, 'keranjang_id');
+    }
+
 }
