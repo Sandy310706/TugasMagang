@@ -40,7 +40,7 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p>{{ $data }}</p>
+                            <p>{{ $jumlah }}</p>
                         </div>
                     </div>
                     @if (auth())
@@ -172,24 +172,24 @@
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            @foreach ($makanan as $makanans)
+            @foreach ($data as $menu)
                 <div style="display: inline" id="menu-card">
                     <div class="card-menu">
                         <div class="card">
                             <div class="cards">
                                 <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $makanans->foto) }}" alt="">
+                                    <img src="{{ asset('storage/fileMenu/' . $menu->foto) }}" alt="">
                                 </div>
                                 <div class="kontents">
                                     <div class="kontent">
-                                        <h3>{{ $makanans->nama }}</h3>
-                                        <p>Rp.{{ $makanans->harga }}</p>
-                                        <p>stok : 0</p>
+                                        <h3>{{ $menu->nama }}</h3>
+                                        <p>Rp.{{ $menu->harga }}</p>
+                                        <p>stok : {{ $menu->stok }}</p>
                                     </div>
                                 </div>
                                 <div class="clicks">
                                     <button type="submit" onclick="inputData(this)" class="btn btn-submit"
-                                        data-id="{{ $makanans->id }}">Pesan</button>
+                                        data-id="{{ $menu->id }}">Pesan</button>
                                 </div>
                             </div>
                         </div>

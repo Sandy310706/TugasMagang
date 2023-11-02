@@ -15,11 +15,10 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $makanan = Menu::where('kategori','makanan')->get();
-        $minuman = Menu::where('kategori','minuman')->get();
+        $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $data = count($keranjang);
-        return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
+        $jumlah = count($keranjang);
+        return view('user.menuPage', compact('jumlah', 'data'));
     }
     public function store(Request $request)
     {

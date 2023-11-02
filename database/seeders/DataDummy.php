@@ -21,11 +21,5 @@ class DataDummy extends Seeder
         //     'password' => Hash::make('admin'),
         //     'role' => 'admin',
         // ]);
-
-        DB::table('kantin')->insert([
-            'namaKantin' => 'smkn',
-            'id_admin' => '2',
-
-        ]);
     }
 }
