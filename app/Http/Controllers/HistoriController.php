@@ -11,7 +11,7 @@ class HistoriController extends Controller
      */
     public function index()
     {
-        return view('histori.histori');
+        return view('user.histori');
     }
     
 

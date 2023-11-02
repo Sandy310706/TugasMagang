@@ -21,7 +21,7 @@ class MenuController extends Controller
         $data = count($keranjang);
         return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
     }
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
@@ -48,7 +48,7 @@ class MenuController extends Controller
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->kategori = $request->kategori;
-        $data->toko = $request->toko;
+        $data->id_kantin = 1;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
                 $newName = uniqid().$fileFoto->getClientOriginalName();
