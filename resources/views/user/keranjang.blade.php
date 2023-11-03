@@ -104,7 +104,7 @@
     <div class="container checkouts">
         <div class="cekout">
             <div class="btnns">
-                <a href="#"button type="sumbit" class="buttons" data-id="{{$keranjang}}" onclick="kirimData(this)">checkout</a>
+                <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
             </div>
         </div>
     </div>
@@ -160,7 +160,6 @@
                 "_token": "{{ csrf_token() }}",
             },
             success: function(response){
-                console.log (response);
                 console.log(response.status);
                 if(response.status == 1) {
                     console.log('Sudah dibayar');

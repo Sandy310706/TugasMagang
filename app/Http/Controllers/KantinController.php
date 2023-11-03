@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kantin;
+
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+
 
 class KantinController extends Controller
 {
@@ -16,6 +19,15 @@ class KantinController extends Controller
         $admin = User::where('role', 'admin')->get();
         return view('superadmin.kelolakantin', compact('data'));
     }
+
+    // public function store($id)
+    // {
+    //     $menu = Menu::find($id);
+
+    //     return view();
+
+    // }
+
     public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
@@ -29,5 +41,6 @@ class KantinController extends Controller
         $newData->save();
         Alert::success('Success Title', 'Success Message');
         return redirect()->back();
+
     }
 }

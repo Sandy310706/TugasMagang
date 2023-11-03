@@ -15,15 +15,13 @@ class Keranjang extends Component
     {
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
-
-        
+        $menu = Menu::where('id',$id)->first();
         $totalHarga = [];
 
         foreach($keranjangs as $keranjang)
         {
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
         }
-
         $arraySum = array_sum($totalHarga);
         return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
     }
@@ -61,10 +59,6 @@ class Keranjang extends Component
             $keranjang->save();
         }
 
-        if(auth()->check() && $keranjang->user_id == auth()->user()->id)
-        {
-            $cekKeranjang;
-        }
 
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);

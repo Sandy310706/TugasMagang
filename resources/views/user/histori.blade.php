@@ -37,15 +37,18 @@
     <h1 class="text-center Histori">Histori Pemesanan</h1>
     <div class=" container container-histori">
         <div class="card">
+            @foreach ($detail as $s )
             <div class="content">
                 <p>No Pesanan</p>
                 <div class="Detail">
-                    <button class="btn" id="openModal" onclick="modalteguh" ()>Buka Modal</button>
+                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="detailModal({{$s->id}})">Buka Modal</button>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
-    <div id="myModal" class="modal">
+    @foreach ($detail as $p )
+    <div id="myModal" class="modal modal{{$p->id}}" style="display: block;">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="hero-container">
@@ -53,61 +56,29 @@
                 <div class="content-item">
                     <div class="content-hero">
                         <div class="kode hero-item">
-                            <p>A13242</p>
+                            <p></p>
                         </div>
                         <div class="name hero-item">
-                            <p>papua</p>
+                            <p></p>
                         </div>
                         <div class="tanggal hero-item">
-                            <p>10/10/32</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
                 <div class="content-child">
                     <div class="child-content">
                         <div class="food hero-child">
-                            <p>Nasi kuning</p>
+                            <p></p>
                         </div>
                         <div class="stok hero-child">
-                            <p>2</p>
+                            <p></p>
                         </div>
                         <div class="total hero-child">
-                            <p>Rp.18.000</p>
+                            <p></p>
                         </div>
                         <div class="subtotal hero-child">
-                            <p>Rp.18.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-child">
-                    <div class="child-content">
-                        <div class="food hero-child">
-                            <p>Nasi kuning</p>
-                        </div>
-                        <div class="stok hero-child">
-                            <p>2</p>
-                        </div>
-                        <div class="total hero-child">
-                            <p>Rp.18.000</p>
-                        </div>
-                        <div class="subtotal hero-child">
-                            <p>Rp.18.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-child">
-                    <div class="child-content">
-                        <div class="food hero-child">
-                            <p>Nasi kuning</p>
-                        </div>
-                        <div class="stok hero-child">
-                            <p>2</p>
-                        </div>
-                        <div class="total hero-child">
-                            <p>Rp.18.000</p>
-                        </div>
-                        <div class="subtotal hero-child">
-                            <p>Rp.18.000</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -117,13 +88,27 @@
                             <p>Total :  Rp.100.000</p>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
+    @endforeach
 
 
     <script>
+    function modalteguh(ta)
+    const id = ta.getAttribute('data-id')
+            $.ajax({
+                type = "POST",
+                url = "/invoice/" + $id,
+                data:{
+                "_token": "{{ csrf_token() }}",
+                },
+                success: function(response)
+                {
+                console.log(response)
+                },
+            });
         // Ambil elemen modal dan tombol yang akan membukanya
         var modal = document.getElementById("myModal");
         var openModalButton = document.getElementById("openModal");
@@ -145,6 +130,14 @@
                 modal.style.display = "none";
             }
         });
+    </script>
+    <script>
+        function detailModal(id)
+        {
+            const detailModal = document.getElementById(".modal"+id)
+            console.log(id);
+            detailModal.style.display = 'block';
+        }
     </script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
