@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Gabarito:wght@400;500&family=Merriweather:wght@300&family=Oswald:wght@200&family=Outfit&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/histori.css">
     <title>Document</title>
 </head>
 
@@ -35,18 +36,19 @@
     </nav>
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
+    @foreach ($detail as $s )
     <div class=" container container-histori">
         <div class="card">
-            @foreach ($detail as $s )
             <div class="content">
                 <p>No Pesanan</p>
                 <div class="Detail">
                     <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="detailModal({{$s->id}})">Buka Modal</button>
                 </div>
             </div>
-            @endforeach
+
         </div>
     </div>
+    @endforeach
     @foreach ($detail as $p )
     <div id="myModal" class="modal modal{{$p->id}}" style="display: block;">
         <div class="modal-content">
@@ -94,8 +96,14 @@
     </div>
     @endforeach
 
-
     <script>
+        $(document).ready( function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        })
     function modalteguh(ta)
     const id = ta.getAttribute('data-id')
             $.ajax({
