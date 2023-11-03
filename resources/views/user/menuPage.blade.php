@@ -144,18 +144,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="button-click">
