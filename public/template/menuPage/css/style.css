@@ -675,6 +675,7 @@ p {
     opacity: 1;
     transform: translateX(0);
   }
+
   .cards-container{
     width: 76%;
   }
@@ -704,3 +705,34 @@ p {
   }
 
 }
+
+/* @media only screen and (min-width: 1200px){
+.cards-container{
+    width: 56%;
+  }
+
+  .swiper-slide{
+    width:25%;
+    height: 160px;
+  }
+
+  .image-kantin img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .kontent-kantin a{
+    font-size: 15px;
+  }
+
+  .kontents-kantin .kontent-kantin a{
+    display: flex;
+    align-items: start;
+  }
+
+  .button-click button svg{
+    width: 30px;
+    height: 30px;
+  }
+
+} */
