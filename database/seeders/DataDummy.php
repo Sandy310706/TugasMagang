@@ -44,12 +44,14 @@ class DataDummy extends Seeder
         //     'role' => 'admin',
         // ]);
 
+
         DB::table('kantin')->insert([
             'namaKantin' => 'smkn',
             'id_admin' => '2',
 
 
         ]);
+
 
 
 

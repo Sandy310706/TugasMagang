@@ -10,19 +10,19 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use function PHPUnit\Framework\fileExists;
+use PhpParser\Node\Stmt\Foreach_;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function index(Request $id)
     {
-        $makanan = Menu::where('kategori','makanan')->get();
+
+        $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $data = count($keranjang);
+        $jumlah = count($keranjang);
 
 
-        return view('user.menuPage', compact('makanan','data',));
-
-        return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
+        return view('user.menuPage', compact('jumlah', 'data',));
 
     }
     public function store(Request $request)
