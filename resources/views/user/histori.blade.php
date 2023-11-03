@@ -19,11 +19,18 @@
         <div class="container">
             <h3 class="navbar-brand">SMKN7Pontianak</h3>
             <div class="justift-content-end">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-box-arrow-in-right"></i>
-                            Log Out</a></li>
+                <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <div class="keranjangs">
+                        <li class="nav-item"><a class="nav-link" href="/menu">Menu</a>
+                        </li>
+                    </div>
+                    @if (auth())
+                        <li class="nav-item"><a class="nav-link" href="/logout"><i
+                                    class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                    @else
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -50,9 +57,9 @@
     </div>
     @endforeach
     @foreach ($detail as $p )
-    <div id="myModal" class="modal modal{{$p->id}}" style="display: block;">
+    <div id="myModal" class="modal modal{{$p->id}}">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closemodal()">&times;</span>
             <div class="hero-container">
                 <h1 class="text-detail">Detail Pesanan</h1>
                 <div class="content-item">
