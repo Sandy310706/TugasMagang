@@ -4,9 +4,9 @@
   var closeButton = document.querySelector(".close");
 
   // Tampilkan modal saat tombol dibuka
-  openModalButton.addEventListener("click", function () {
-      modal.style.display = "block";
-  });
+//   openModalButton.addEventListener("click", function () {
+//       modal.style.display = "block";
+//   });
 
   // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
   closeButton.addEventListener("click", function () {

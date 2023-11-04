@@ -44,12 +44,12 @@
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
     @foreach ($detail as $s )
-    <div class=" container container-histori">
+    <div class=container container-histori" style="margin-bottom: 20px;">
         <div class="card">
             <div class="content">
                 <p>No Pesanan</p>
                 <div class="Detail">
-                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="detailModal({{$s->id}})">Buka Modal</button>
+                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="phei()">Buka Modal</button>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
     </div>
     @endforeach
     @foreach ($detail as $p )
-    <div id="myModal" class="modal modal{{$p->id}}">
+    <div id="detailModal{{$p->id}}" class="modal modal{{$p->id}}">
         <div class="modal-content">
             <span class="close" onclick="closemodal()">&times;</span>
             <div class="hero-container">
@@ -110,7 +110,16 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-        })
+            $('.btn').click( function() {
+                console.log('Hello World');
+                const id = $(this).data('id');
+                const detailmodal = document.querySelector("#detailModal"+id);
+                detailmodal.style.display = 'block';
+            });
+        });
+        function phei(){
+                console.log('Hello World');
+            }
     function modalteguh(ta)
     const id = ta.getAttribute('data-id')
             $.ajax({
@@ -125,7 +134,7 @@
                 },
             });
         // Ambil elemen modal dan tombol yang akan membukanya
-        var modal = document.getElementById("myModal");
+        var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
 
