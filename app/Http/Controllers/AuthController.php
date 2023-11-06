@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Kantin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -43,7 +44,10 @@ class AuthController extends Controller
             if ($user->role == 'guest') {
                 return redirect('/');
             } elseif ($user->role == 'admin') {
-                return redirect('admin/dashboard');
+                $kantin = Auth::user()->id_kantin;
+                $namaKantin = Kantin::find($kantin);
+                dd($kantin->namaKantin + '/' + auth()->user()->nama + '/dashboard');
+                return redirect()->url($kantin->namaKantin + '/' + auth()->user()->nama + '/dashboard');
             } elseif ($user->role == 'superadmin') {
                 return redirect()->route('Superadmin.Akun');
             }
