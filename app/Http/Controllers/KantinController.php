@@ -47,7 +47,7 @@ class KantinController extends Controller
     public function show($id)
     {
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $kantin = Menu::where('id',$id)->get();
+        $kantin = Menu::all();
         $jumlah = count($keranjang);
         return view('user.kantin', compact('kantin','jumlah'));
     }
