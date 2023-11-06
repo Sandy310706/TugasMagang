@@ -40,7 +40,7 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p>{{ $jumlah }}</p>
+                            <p>{{$jumlah}}</p>
                         </div>
                     </div>
                     @if (auth())
@@ -79,12 +79,11 @@
                 </svg></button>
         </div>
     </div>
-
     <div class="card-container">
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            @foreach ($data as $menu)
+            @foreach ($kantin as $menu)
                 <div style="display: inline" id="menu-card">
                     <div class="card-menu">
                         <div class="card">
@@ -127,7 +126,7 @@
             </div>
         </footer>
     </div>
-   
+
         {{-- <script>
             $(document).ready(function(){
                 $("#alert").hide();
@@ -137,7 +136,7 @@
                     }
                 });
             });
-    
+
                 function inputData(bi) {
                     const id = bi.getAttribute('data-id')
                     $.ajax({
@@ -159,9 +158,9 @@
                         }
                     });
                 }
-    
+
         </script> --}}
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
