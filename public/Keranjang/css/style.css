@@ -211,17 +211,18 @@ h1.text-center {
 .cekout{
     display:flex;
     justify-content:center;
-    margin-top:10px;
+    margin-top:20px;
 }
 
 .buttons {
-    width: 90px;
+    width: 100px;
     background-color: #016a70;
     font-family: "Oswald", sans-serif;
     color: #fff;
-    padding: 5px;
+    padding: 10px;
     font-size: 18px;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .buttons:hover {
@@ -296,11 +297,11 @@ h1.text-center {
     }
 
     .Header-table {
-        width: 34%;
+        width: 35%;
     }
 
     .content-table {
-        width: 33%;
+        width: 35%;
     }
 
     .checkout {
@@ -330,6 +331,15 @@ h1.text-center {
     .buttons {
         width: 100px;
         font-size: 18px;
+    }
+
+    .card-pembungkus img{
+        width: 80px;
+        height: 70px;
+    }
+
+    .content p {
+        font-size: 12px;
     }
 }
 
