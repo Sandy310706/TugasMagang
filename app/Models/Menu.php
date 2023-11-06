@@ -18,6 +18,7 @@ class Menu extends Model
         'foto',
         'stok',
         'id_kantin',
+
     ];
 
     public function getTableName()

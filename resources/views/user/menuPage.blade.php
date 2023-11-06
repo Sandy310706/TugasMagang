@@ -72,100 +72,74 @@
         </div>
         <div class="cards-container">
             <div class="content">
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="img/geprek.jpeg" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Kantin 1</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Kantin 1</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Kantin 1</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Kantin 1</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="#">Kantin 1</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
-                            </div>
+                <div class="card-content swiper-slide">
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
                         </div>
-                    </div>
-                </div>
-                <div class="swiper-wrapper">
-                    <div class="card-content swiper-slide">
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <a href="">Kantin 1</a>
-                                </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <a href="">Kantin 1</a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +172,7 @@
                                     <div class="kontent">
                                         <h3>{{ $menu->nama }}</h3>
                                         <p>Rp.{{ $menu->harga }}</p>
-                                        <p>stok : {{ $menu->stok }}</p>
+                                        <p>stok : {{$menu->stok}}</p>
                                     </div>
                                 </div>
                                 <div class="clicks">
@@ -238,27 +212,29 @@
                 }
             });
         });
-        function inputData(bi) {
-            const id = bi.getAttribute('data-id')
-            $.ajax({
-                url: `/carts/${id}`,
-                dataType: "json",
-                type: "POST",
-                data: {},
-                success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').style.display = 'none';
-                    }, 7000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
-            });
-        }
+
+            function inputData(bi) {
+                const id = bi.getAttribute('data-id')
+                $.ajax({
+                    url: '/carts/'+ id,
+                    dataType: "json",
+                    type: "POST",
+                    data: {},
+                    success: function(response) {
+                        location.reload();
+                        console.log("berhasil");
+                        setTimeout(() => {
+                            document.getElementById('alerts').ustyle.display = 'none';
+                        }, 10000);
+                        document.getElementById('alerts').style.display = 'block';
+                    },
+                    error: function(error) {
+                        console.log('gagal');
+                        console.log(error)
+                    }
+                });
+            }
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">

@@ -28,7 +28,7 @@
                         <td class="p-2 group-hover:bg-slate-200">Bukan admin Kantin</td>
                         @else
                         <td class="p-2 group-hover:bg-slate-200">{{ $users->kantin->namaKantin }}</td>
-                    @endif 
+                    @endif
                     <td class="p-2 group-hover:bg-slate-200">
                         <button id="btnEdit" onclick="modalEdit({{ $users->id }})" class="text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                         <p class="inline"> | </p>

@@ -10,7 +10,13 @@ class Kantin extends Model
     use HasFactory;
     protected $table = 'kantin';
     protected $fillable = [
+
+        'user_id',
+        'menu_id',
+        'namaToko',
+        'keuangan',
         'admin_id'
+
     ];
 
     public function user()

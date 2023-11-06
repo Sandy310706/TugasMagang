@@ -17,6 +17,7 @@ use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
 use Illuminate\Auth\Notifications\ResetPassword;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\TestController;
 
 // Errors

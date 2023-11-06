@@ -10,11 +10,12 @@ use App\Models\Keranjangs;
 
 class InvoiceController extends Controller
 {
-    public function index()
+    public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
-
-        return view('admin.invoice', compact('invoices'));
+        $data = Invoice::find($id);
+        $detail = Invoice::all();
+        return view('user.histori', compact('invoices', 'data', 'detail'));
     }
 
     public function store($id)
@@ -30,7 +31,7 @@ class InvoiceController extends Controller
         $invoice->status = 0;
         $invoice->save();
 
-        
+
 
 
         return response()->json($invoice);

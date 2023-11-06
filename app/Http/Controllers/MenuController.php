@@ -10,15 +10,20 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use function PHPUnit\Framework\fileExists;
+use PhpParser\Node\Stmt\Foreach_;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function index(Request $id)
     {
+
         $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $jumlah = count($keranjang);
-        return view('user.menuPage', compact('jumlah', 'data'));
+
+
+        return view('user.menuPage', compact('jumlah', 'data',));
+
     }
     public function store(Request $request)
     {
