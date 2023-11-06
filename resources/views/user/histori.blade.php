@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -42,20 +43,21 @@
     </nav>
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
-    <div class=" container container-histori">
+    @foreach ($detail as $s )
+    <div class=container container-histori" style="margin-bottom: 20px;">
         <div class="card">
-            @foreach ($detail as $s )
             <div class="content">
                 <p>No Pesanan</p>
                 <div class="Detail">
-                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="detailModal({{$s->id}})">Buka Modal</button>
+                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="phei()">Buka Modal</button>
                 </div>
             </div>
-            @endforeach
+
         </div>
     </div>
+    @endforeach
     @foreach ($detail as $p )
-    <div id="myModal" class="modal modal{{$p->id}}">
+    <div id="detailModal{{$p->id}}" class="modal modal{{$p->id}}">
         <div class="modal-content">
             <span class="close" onclick="closemodal()">&times;</span>
             <div class="hero-container">
@@ -101,8 +103,23 @@
     </div>
     @endforeach
 
-
     <script>
+        $(document).ready( function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.btn').click( function() {
+                console.log('Hello World');
+                const id = $(this).data('id');
+                const detailmodal = document.querySelector("#detailModal"+id);
+                detailmodal.style.display = 'block';
+            });
+        });
+        function phei(){
+                console.log('Hello World');
+            }
     function modalteguh(ta)
     const id = ta.getAttribute('data-id')
             $.ajax({
@@ -117,7 +134,7 @@
                 },
             });
         // Ambil elemen modal dan tombol yang akan membukanya
-        var modal = document.getElementById("myModal");
+        var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
 

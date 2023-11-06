@@ -16,7 +16,6 @@ class Kantin extends Model
         'namaToko',
         'keuangan',
         'admin_id'
-
     ];
 
     public function user()

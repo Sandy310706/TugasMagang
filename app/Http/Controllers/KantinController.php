@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kantin;
-
+use App\Models\Keranjangs;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -42,5 +42,13 @@ class KantinController extends Controller
         Alert::success('Success Title', 'Success Message');
         return redirect()->back();
 
+    }
+
+    public function show($id)
+    {
+        $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
+        $kantin = Menu::where('id',$id)->get();
+        $jumlah = count($keranjang);
+        return view('user.kantin', compact('kantin','jumlah'));
     }
 }

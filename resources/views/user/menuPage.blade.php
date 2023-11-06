@@ -73,76 +73,19 @@
         <div class="cards-container">
             <div class="content">
                 <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
+                    @foreach($kantin as $data)
+                        <div class="card-hero">
+                            <div class="image-kantin">
+                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                            </div>
+                            <div class="kontents-kantin">
+                                <div class="kontent-kantin">
+                                    <p>{{ $data ->namaKantin }}</p>
+                                    <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="#">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -160,7 +103,7 @@
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            @foreach ($data as $menu)
+            {{-- @foreach ($data as $menu)
                 <div style="display: inline" id="menu-card">
                     <div class="card-menu">
                         <div class="card">
@@ -183,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
     </div>
     <div class="footer-containers">
