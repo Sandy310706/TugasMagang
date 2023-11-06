@@ -43,4 +43,11 @@ class KantinController extends Controller
         return redirect()->back();
 
     }
+
+    public function show($id)
+    {
+        $kantin = Kantin::find($id);
+        // $url = route('user.menuPage', ['id' => $kantin]);
+        return view('user.kantin', compact('kantin'));
+    }
 }
