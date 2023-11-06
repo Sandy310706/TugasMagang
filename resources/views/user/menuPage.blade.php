@@ -72,21 +72,21 @@
         </div>
         <div class="cards-container">
             <div class="content">
+                @foreach($kantin as $data)
                 <div class="card-content swiper-slide">
-                    @foreach($kantin as $data)
-                        <div class="card-hero">
-                            <div class="image-kantin">
-                                <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                            </div>
-                            <div class="kontents-kantin">
-                                <div class="kontent-kantin">
-                                    <p>{{ $data ->namaKantin }}</p>
-                                    <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
-                                </div>
+                    <div class="card-hero">
+                        <div class="image-kantin">
+                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                        </div>
+                        <div class="kontents-kantin">
+                            <div class="kontent-kantin">
+                                <p>{{ $data ->namaKantin }}</p>
+                                <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <div class="button-click">
