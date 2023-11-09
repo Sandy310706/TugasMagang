@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="w-full">
-        <table class="table-fixed w-full rounded-lg font-outfit text-xs h-12">
+        <table id="table" class="table-fixed w-full rounded-lg font-outfit text-xs h-12">
             <thead class="bg-slate-400">
                 <th>Nama</th>
                 <th>E-mail</th>
@@ -30,7 +30,7 @@
                         <td class="p-2 group-hover:bg-slate-200">{{ $users->kantin->namaKantin }}</td>
                     @endif
                     <td class="p-2 group-hover:bg-slate-200">
-                        <button id="btnEdit" onclick="modalEdit({{ $users->id }})" class="text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
+                        <button id="btnEdit" data-id="{{ $users->id }}"class="openModalEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                         <p class="inline"> | </p>
                         <form action="{{ route('Akun.Hapus', $users->id) }}" method="POST" class="inline">
                             @csrf
@@ -43,14 +43,14 @@
             </tbody>
         </table>
     </div>
-    {{-- <div class="pagination m-2">
+    <div class="pagination m-2">
         {{ $data->links('vendor.pagination.simple-tailwind') }}
-    </div> --}}
+    </div>
 </div>
 <div class="w-full flex justify-center">
     <div id="modal" class="hidden w-2/3 mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute  top-5 p-8  {{ $errors->any() ? 'block' : 'hidden' }} blur-none tablet:w-[80%] tablet:left-12" style="z-index: 999;">
-        <div class="p-4 mb-2">
-            <h1 class="text-4xl font-outfit">Tambah Data</h1>
+        <div class="mb-2">
+            <h1 class="text-4xl font-outfit">Tambah Kantin</h1>
         </div>
         <button id="closeModal" onclick="closeModal()" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,11 +106,11 @@
         </form>
     </div>
     @foreach ($data as $akun )
-    <div id="modalEdit" class="hidden w-2/3 mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute top-10 p-8 animate-showModal {{ $errors->any() ? 'block' : 'hidden' }} tablet:w-[80%] tablet:left-12"  style="z-index: 999;">
+    <div id="modalEdit{{ $akun->id }}" class="modalEdits hidden w-2/3 mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute top-10 p-8 animate-showModal {{ $errors->any() ? 'block' : 'hidden' }} tablet:w-[80%] tablet:left-12"  style="z-index: 999;">
         <div class="mb-2">
             <h1 class="text-4xl font-outfit">Edit Data</h1>
         </div>
-        <button id="closeModalEdit" onclick="closeEditModal()" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
+        <button id="closeModalEdit" onclick="closeEditModal({{ $akun->id }})" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -145,7 +145,7 @@
                 <select name="kantin" id="kantin" class="rounded p-1 outline-none ring-1 ring-slate-600 border-slate-500 bg-slate-300 shadow-slate-800 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800">
                     <option selected value=""></option>
                     @foreach ($kantin as $kantins )
-                        <option selected value="{{ $kantins->id }}">{{ $kantins->namaKantin }}</option>
+                        {{-- <option selected value="{{ $kantins->id }}">{{ $kantins->namaKantin }}</option> --}}
                         <option value="{{ $kantins->id }}">{{ $kantins->namaKantin }}</option>
                     @endforeach
                 </select>
@@ -158,6 +158,17 @@
     </div>
     @endforeach
 </div>
+<script>
+    $(document).ready( function() {
+        $('.openModalEdit').click( function() {
+            let id = $(this).data('id');
+            let modal = document.getElementById('modalEdit'+id);
+
+            modal.classList.remove('hidden');
+            modal.classList.add('animate-showModal')
+        });
+    });
+</script>
 <script>
     function OpenModal() {
         const modal = document.getElementById("modal");
@@ -175,18 +186,13 @@
         modal.classList.remove("animate-showModal")
         modal.classList.add("animate-hideModal");
     }
-    function modalEdit(idData) {
-        const modalEdit = document.getElementById("modalEdit");
-        modalEdit.classList.remove("hidden");
-        modalEdit.classList.add("animate-showModal");
-        modalEdit.classList.remove('animate-hideModal')
-    }
-    function closeEditModal() {
-        const modalEdit = document.getElementById("modalEdit");
+    function closeEditModal(id) {
+        console.log(id);
+        const modalEdit = document.getElementById("modalEdit"+id);
         setTimeout(() => {
             modalEdit.classList.add("hidden");
         }, 900);
-        modalEdit.classList.remove("animate-showModal")
+        modalEdit.classList.remove("animate-showModal");
         modalEdit.classList.add("animate-hideModal");
     }
 </script>

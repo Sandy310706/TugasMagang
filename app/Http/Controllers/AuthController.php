@@ -46,8 +46,7 @@ class AuthController extends Controller
             } elseif ($user->role == 'admin') {
                 $kantin = Auth::user()->id_kantin;
                 $namaKantin = Kantin::find($kantin);
-                dd($kantin->namaKantin + '/' + auth()->user()->nama + '/dashboard');
-                return redirect()->url($kantin->namaKantin + '/' + auth()->user()->nama + '/dashboard');
+                return redirect()->route('Admin.Dashboard');
             } elseif ($user->role == 'superadmin') {
                 return redirect()->route('Superadmin.Akun');
             }

@@ -12,7 +12,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class KelolaakunController extends Controller
 {
     public function index() {
-        $data = User::with('kantin')->get();
+        $data = User::latest()->paginate(10);
         $kantin = Kantin::find($data);
         return view('superadmin.kelolaakun', compact('data', 'kantin'));
     }

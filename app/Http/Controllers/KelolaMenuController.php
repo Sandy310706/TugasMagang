@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
-use App\Models\Kantin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
