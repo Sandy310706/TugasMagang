@@ -1,5 +1,7 @@
-const alert = document.getElementById("alert");
-const trigger = document.getElementById("trigger");
-trigger.addEventListener("click", function () {
-    alert.style.display = "none";
-});
+document.querySelector('.arrow.left').addEventListener('click', () => {
+    document.querySelector('.cards-container').scrollBy({ left: -201, behavior: 'smooth' });
+   });
+   
+   document.querySelector('.arrow.right').addEventListener('click', () => {
+    document.querySelector('.cards-container').scrollBy({ left: 201, behavior: 'smooth' });
+   });

@@ -18,8 +18,6 @@ return new class extends Migration
             $table->integer('perhari');
             $table->integer('perminggu');
             $table->integer('perbulan');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('kantin_id')->references('id')->on('kantins')->onDelete('cascade');
             $table->timestamps();
         });
     }

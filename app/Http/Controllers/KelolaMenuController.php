@@ -22,7 +22,6 @@ class KelolaMenuController extends Controller
     public function index(Request $request)
     {
         $data = Menu::latest()->paginate('5');
-        $kantin = Menu::where('user_id', auth()->user()->id)->get();
         return view('admin.kelolamenu', compact('data'));
     }
 
@@ -52,6 +51,7 @@ class KelolaMenuController extends Controller
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->kategori = $request->kategori;
+        $data->id_kantin = 1;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
                 $newName = uniqid().$fileFoto->getClientOriginalName();

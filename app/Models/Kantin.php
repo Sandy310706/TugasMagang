@@ -8,20 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Kantin extends Model
 {
     use HasFactory;
-
+    protected $table = 'kantin';
     protected $fillable = [
+
         'user_id',
         'menu_id',
+        'namaToko',
         'keuangan',
+        'admin_id'
     ];
 
     public function user()
     {
-        return $this->hasOne('App\Models\User','user_id');
+        return $this->belongsTo(User::class, 'id_admin');
     }
-
     public function menu()
     {
-        return $this->hasOne('App\Models\Menu','menu_id');
+        return $this->belongsTo(Menu::class, 'id_kantin');
     }
+    public function keranjang()
+    {
+        return $this->hasOne(Keranjang::class, 'keranjang_id');
+    }
+
 }

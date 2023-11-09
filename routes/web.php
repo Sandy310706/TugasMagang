@@ -10,12 +10,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\KantinController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
 use Illuminate\Auth\Notifications\ResetPassword;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\TestController;
 
 // == Errors Route ==
@@ -24,7 +26,8 @@ Route::fallback(function () {
 });
 
 Route::get('/', function () {
-    $data = Keranjangs::count();
+    $keranjang = Keranjangs::where('user_id')->get();
+    $data = count($keranjang);
     return view('user.landingpage',compact('data'));
 })->middleware('web');
 
@@ -49,7 +52,7 @@ Route::middleware(['guest'])->group(function(){
     Route::get('resetpassword/1', [AuthController::class, 'reset1'])->name('ResetPassword.1');
 });
 Route::middleware('auth')->group(function() {
-    Route::get('/logout', [AuthController::class, 'logout'])->name('Logout');
+    Route::get('/logout/{nama}', [AuthController::class, 'logout'])->name('Logout');
     Route::get('/ubahpassword/{user}', [ResetPasswordController::class, 'index'])->name('ResetPassword.1');
     Route::get('/menu', [MenuController::class, 'index'])->name('index');
     Route::post('/carts/{id}', [Keranjang::class, 'store'])->name('Keranjang.store');
@@ -76,13 +79,15 @@ Route::middleware('auth')->group(function() {
     Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah');
     Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');
     Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus');
-    Route::get('kantin', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus');
+    Route::get('/superadmin/kelolakantin', [KantinController::class, 'index'])->name('Superadmin.Kantin');
 
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
     Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
-    Route::get('/menu2', [TestController::class, 'index']);
+    Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
+    Route::delete('/histori', [HistoriController::class, 'index']);
+    Route::get('/kantin/{id}', [KantinController::class, 'show'])->name('Kantin.view');
 });
 
 

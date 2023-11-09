@@ -35,7 +35,7 @@
             <a href="{{ route('Admin.Feedback') }}" class="block">Feedback</a>
         </div>
         <div class="w-full h-10 py-6 flex justify-center items-center hover:bg-slate-900" id="Menu">
-            <a href="{{ route('Logout') }}" class="block">Logout</a>
+            <a href="/logout/{{ auth()->user()->nama }}" class="block">Logout</a>
         </div>
     </div>
 </div>

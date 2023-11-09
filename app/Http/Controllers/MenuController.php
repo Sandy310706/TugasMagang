@@ -10,17 +10,22 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use function PHPUnit\Framework\fileExists;
+use PhpParser\Node\Stmt\Foreach_;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function index(Request $id)
     {
-        $makanan = Menu::where('kategori','makanan')->get();
-        $minuman = Menu::where('kategori','minuman')->get();
-        $data = Keranjangs::count();
-        return view('user.menuPage', compact('makanan', 'minuman', 'data' ,));
+
+        $data = Menu::all();
+        $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
+        $jumlah = count($keranjang);
+        $kantin = Kantin::all();
+
+        return view('user.menuPage', compact('jumlah', 'data','kantin',));
+
     }
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
@@ -47,7 +52,7 @@ class MenuController extends Controller
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->kategori = $request->kategori;
-        $data->toko = $request->toko;
+        $data->id_kantin = 1;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
                 $newName = uniqid().$fileFoto->getClientOriginalName();
@@ -75,5 +80,6 @@ class MenuController extends Controller
             return redirect()->route('Admin.Menu');
         }
     }
+
 }
 

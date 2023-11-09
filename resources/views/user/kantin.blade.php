@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="template/menuPage/css/style.css">
+    <link rel="stylesheet" href="{{ asset("css/kantin.css") }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -40,7 +40,7 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p>{{ $jumlah }}</p>
+                            <p>{{$jumlah}}</p>
                         </div>
                     </div>
                     @if (auth())
@@ -53,71 +53,22 @@
             </div>
         </div>
     </nav>
-    <div class="swiper-container">
-        <h1 class="text-center kantin">kantin</h1>
-        <div class="content">
-            <div class="swiper-wrapper">
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Frederick Gay>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">kantin 2</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">toko pak mael</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">menengah ke atas</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <a href="">Menengah ke atas</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="svg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="377" height="512" viewBox="0 0 377 512" fill="none">
+            <path d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z" fill="#D2DE32"/>
+        </svg>
+    </div>
+    <div class="kantin">
+        <h1 class="text-center">kantin</h1>
+    </div>
+    <div class="hero-click">
+        <div class="button-click">
+            <button class="arrow left"><svg xmlns="http://www.w3.org/2000/svg" width="67" height="67"
+                    viewBox="0 0 67 67" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M46.85 59.3102C46.658 59.5019 46.43 59.6538 46.1792 59.7573C45.9284 59.8607 45.6597 59.9136 45.3884 59.9131C45.1171 59.9125 44.8486 59.8584 44.5983 59.7539C44.3479 59.6494 44.1206 59.4965 43.9295 59.304L19.2325 34.5011C19.0408 34.3091 18.8889 34.0812 18.7855 33.8304C18.682 33.5796 18.6291 33.3108 18.6297 33.0395C18.6302 32.7683 18.6843 32.4997 18.7889 32.2494C18.8934 31.999 19.0462 31.7718 19.2387 31.5806L44.0416 6.88362C44.4297 6.49716 44.9555 6.28072 45.5032 6.28189C46.0509 6.28306 46.5757 6.50176 46.9621 6.88987C47.3486 7.27798 47.565 7.80371 47.5639 8.35141C47.5627 8.89911 47.344 9.42391 46.9559 9.81036L23.6122 33.0502L46.8562 56.3898C47.0479 56.5818 47.1998 56.8097 47.3032 57.0605C47.4066 57.3113 47.4596 57.58 47.459 57.8513C47.4584 58.1226 47.4043 58.3911 47.2998 58.6414C47.1953 58.8918 47.0424 59.1191 46.85 59.3102Z"
+                        fill="white" />
+                </svg></button>
         </div>
         <div class="button-click">
             <button class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="66"
@@ -128,12 +79,11 @@
                 </svg></button>
         </div>
     </div>
-
     <div class="card-container">
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            {{-- @foreach ($data as $menu)
+            @foreach ($kantin as $menu)
                 <div style="display: inline" id="menu-card">
                     <div class="card-menu">
                         <div class="card">
@@ -156,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </div>
     <div class="footer-containers">
@@ -176,61 +126,41 @@
             </div>
         </footer>
     </div>
-    <script>
-        $(document).ready(function(){
-            $("#alert").hide();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        });
 
-        function inputData(bi) {
-            const id = bi.getAttribute('data-id')
-            $.ajax({
-                url: `/carts/${id}`,
-                dataType: "json",
-                type: "POST",
-                data: {},
-                success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').style.display = 'none';
-                    }, 7000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
-            });
-            });
-
-            function inputData(bi) {
-                const id = bi.getAttribute('data-id')
-                $.ajax({
-                    url: '/carts/'+ id,
-                    dataType: "json",
-                    type: "POST",
-                    data: {},
-                    success: function(response) {
-                        location.reload();
-                        console.log("berhasil");
-                        setTimeout(() => {
-                            document.getElementById('alerts').ustyle.display = 'none';
-                        }, 10000);
-                        document.getElementById('alerts').style.display = 'block';
-                    },
-                    error: function(error) {
-                        console.log('gagal');
-                        console.log(error)
+        {{-- <script>
+            $(document).ready(function(){
+                $("#alert").hide();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-            }
+            });
 
-    </script>
+                function inputData(bi) {
+                    const id = bi.getAttribute('data-id')
+                    $.ajax({
+                        url: '/carts/'+ id,
+                        dataType: "json",
+                        type: "POST",
+                        data: {},
+                        success: function(response) {
+                            location.reload();
+                            console.log("berhasil");
+                            setTimeout(() => {
+                                document.getElementById('alerts').ustyle.display = 'none';
+                            }, 10000);
+                            document.getElementById('alerts').style.display = 'block';
+                        },
+                        error: function(error) {
+                            console.log('gagal');
+                            console.log(error)
+                        }
+                    });
+                }
+
+        </script> --}}
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
@@ -240,4 +170,3 @@
 </body>
 
 </html>
-

@@ -14,9 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link href="/path/to/c3.css" rel="stylesheet">
-    <script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
-    <script src="/path/to/c3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -43,8 +40,6 @@
         </div>
       </div>
     <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
-    <script src="/path/to/c3.min.js"></script>
     @include('sweetalert::alert')
 </body>
 </html>

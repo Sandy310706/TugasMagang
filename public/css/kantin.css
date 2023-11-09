@@ -405,7 +405,9 @@ p {
   padding: 15px;
   border-radius: 5px;
   z-index: 999;
-}/* style footer */
+}
+
+/* style footer */
 .footer {
   width: 100%;
   height: 100%;
@@ -473,6 +475,9 @@ p {
   margin-bottom: 201%;
   margin-right: 300%;
 }
+
+
+
 
 @media only screen and (max-width: 600px) {
   body {
@@ -563,7 +568,7 @@ p {
     width: 30px;
     height: 30px;
   }
-
+  
   .kantin H1{
     margin-top: 90px;
   }
