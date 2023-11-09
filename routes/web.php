@@ -1,5 +1,5 @@
 <?php
-use App\Models\Pesanan;
+
 use App\Models\Keranjangs;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
@@ -15,10 +15,7 @@ use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\kelolaPesanController;
-use Illuminate\Auth\Notifications\ResetPassword;
-use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\HistoriController;
-use App\Http\Controllers\TestController;
 
 // Errors
 Route::fallback(function () {
@@ -87,6 +84,12 @@ Route::middleware('auth')->group(function() {
     Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
+
+    Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
+    Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
+    Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
+    Route::delete('/histori', [HistoriController::class, 'index']);
+    Route::get('/kantin/{id}', [KantinController::class, 'show'])->name('Kantin.view');
 });
 
 

@@ -15,7 +15,7 @@
         <a href="{{ route('Admin.Menu') }}" class="block py-2 pl-3 hover:ring-1 hover:ring-white text-slate-400 group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><span><i class="bi bi-journal-bookmark-fill group-hover:text-white"></i> Kelola Menu</span></a>
     </div>
     <div class="container w-3/4 font-outfit text-md group mt-1">
-        <a href="#" class="block py-2 pl-3 text-slate-400 hover:ring-1 hover:ring-white group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><span> Kelola Pesanan</span></a>
+        <a href="{{ route('Admin.Pesanan') }}" class="block py-2 pl-3 text-slate-400 hover:ring-1 hover:ring-white group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><span> Kelola Pesanan</span></a>
     </div>
     <div class="container w-3/4 font-outfit text-md group mt-1">
         <a href="{{ route('Admin.Feedback') }}" class="block py-2 pl-3 text-slate-400 hover:ring-1 hover:ring-white group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><span><i class="bi bi-chat-left-dots-fill group-hover:text-white"></i> Feedback</span></a>

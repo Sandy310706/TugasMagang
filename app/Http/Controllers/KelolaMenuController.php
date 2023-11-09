@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\DataTables as DataTablesDataTables;
+use Yajra\DataTables\Facades\DataTables;
+
 use function PHPUnit\Framework\fileExists;
 
 class KelolaMenuController extends Controller

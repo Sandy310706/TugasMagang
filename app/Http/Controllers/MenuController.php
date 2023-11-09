@@ -20,9 +20,9 @@ class MenuController extends Controller
         $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $jumlah = count($keranjang);
+        $kantin = Kantin::all();
 
-
-        return view('user.menuPage', compact('jumlah', 'data',));
+        return view('user.menuPage', compact('jumlah', 'data','kantin',));
 
     }
     public function store(Request $request)
@@ -81,5 +81,6 @@ class MenuController extends Controller
             return redirect()->route('Admin.Menu');
         }
     }
+
 }
 

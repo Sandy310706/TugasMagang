@@ -64,7 +64,8 @@
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
-                        <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" style="margin-right: 10px" alt="Menupage">
+                        <input type="checkbox" class="checkbox">
+                        <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}"     alt="Menupage">
                         <p>{{$keranjang->menu->nama}}</p>
                     </div>
                     <div id="harga" class="content-table harga">
@@ -99,15 +100,13 @@
 				<p>SubTotal:</p>
 				<p id="total" class="ml-2">{{$arraySum}}</p>
 			</div>
+            <div class="cekout">
+                <div class="btnns">
+                    <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
+                </div>
+            </div>
 		</div>
 	</div>
-    <div class="container checkouts">
-        <div class="cekout">
-            <div class="btnns">
-                <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
-            </div>
-        </div>
-    </div>
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
@@ -173,6 +172,7 @@
             });
         };
    </script>
+   <script src="script.js/script.js"></script>
    <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
   @livewireScripts
 </body>

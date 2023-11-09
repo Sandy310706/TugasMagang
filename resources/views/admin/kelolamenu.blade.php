@@ -8,8 +8,14 @@
 </div>
 <div class="w-full relative">
     <div class="flex mb-2 h-auto tablet:pl-4">
-        <div class="w-1/2">
-            <button onclick="openModal()" id="showModal" class="showModal mb-2 p-2 w-44 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah Menu</button>
+        <div class="w-full flex">
+            <div class="w-4/5">
+                <button onclick="openModal()" id="showModal" class="showModal mb-2 p-2 w-44 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah Menu</button>
+            </div>
+            <div class="w-1/5 flex">
+                <input type="text" class="w-[60%] bg-white">
+                <button class="w-[30%] rounded-md p-2 bg-gradient-to-r from-green-400 to-green-600 text-white">Cari</button>
+            </div>
         </div>
     </div>
     <div class="w-full">
@@ -33,7 +39,7 @@
                         <td class="p-2 group-hover:bg-neutral-400">
                             <button id="btnEdit" data-id="{{ $menu->id }}" class="btnEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                             <p class="inline"> | </p>
-                            <button id="btnDelete" class="btnDelete text-red-600" data-id="{{ $menu->id }}" data-confirm-delete="true"><i class="fa-solid fa-trash"></i>    Hapus</button>
+                            <button id="btnDelete" class="btnDelete text-red-600" data-id="{{ $menu->id }}" data-confirm-delete="true"><i class="fa-solid fa-trash"></i> Hapus</button>
                         </td>
                     </tr>
                 @endforeach
@@ -159,7 +165,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
         // $("#FormTambah").submit(function(e) {
         //     e.preventDefault();
         //     var form = new FormData(this);

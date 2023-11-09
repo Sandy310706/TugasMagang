@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="template/menuPage/css/style.css">
+    <link rel="stylesheet" href="{{ asset("css/kantin.css") }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -40,7 +40,7 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p>{{ $jumlah }}</p>
+                            <p>{{$jumlah}}</p>
                         </div>
                     </div>
                     @if (auth())
@@ -70,25 +70,6 @@
                         fill="white" />
                 </svg></button>
         </div>
-        <div class="cards-container">
-            <div class="content">
-                @foreach($kantin as $data)
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <p>{{ $data ->namaKantin }}</p>
-                                <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
         <div class="button-click">
             <button class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="66"
                     viewBox="0 0 66 66" fill="none">
@@ -98,12 +79,11 @@
                 </svg></button>
         </div>
     </div>
-
     <div class="card-container">
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            {{-- @foreach ($data as $menu)
+            @foreach ($kantin as $menu)
                 <div style="display: inline" id="menu-card">
                     <div class="card-menu">
                         <div class="card">
@@ -126,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </div>
     <div class="footer-containers">
@@ -146,39 +126,41 @@
             </div>
         </footer>
     </div>
-    <script>
-        $(document).ready(function(){
-            $("#alert").hide();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        });
 
-            function inputData(bi) {
-                const id = bi.getAttribute('data-id')
-                $.ajax({
-                    url: '/carts/'+ id,
-                    dataType: "json",
-                    type: "POST",
-                    data: {},
-                    success: function(response) {
-                        location.reload();
-                        console.log("berhasil");
-                        setTimeout(() => {
-                            document.getElementById('alerts').ustyle.display = 'none';
-                        }, 10000);
-                        document.getElementById('alerts').style.display = 'block';
-                    },
-                    error: function(error) {
-                        console.log('gagal');
-                        console.log(error)
+        {{-- <script>
+            $(document).ready(function(){
+                $("#alert").hide();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-            }
+            });
 
-    </script>
+                function inputData(bi) {
+                    const id = bi.getAttribute('data-id')
+                    $.ajax({
+                        url: '/carts/'+ id,
+                        dataType: "json",
+                        type: "POST",
+                        data: {},
+                        success: function(response) {
+                            location.reload();
+                            console.log("berhasil");
+                            setTimeout(() => {
+                                document.getElementById('alerts').ustyle.display = 'none';
+                            }, 10000);
+                            document.getElementById('alerts').style.display = 'block';
+                        },
+                        error: function(error) {
+                            console.log('gagal');
+                            console.log(error)
+                        }
+                    });
+                }
+
+        </script> --}}
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
