@@ -47,7 +47,8 @@ class DataDummy extends Seeder
 
 
         DB::table('kantin')->insert([
-            'namaKantin' => 'ABC Susu',
+            'namaKantin' => 'ABC',
+            'id_admin'=>'6'
         ]);
 
 

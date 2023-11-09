@@ -39,29 +39,46 @@
             <div class="navbar-brand ml-5">
                 <h3>Welcome TO......</h3>
             </div>
-            <div class="justift-content-end">
+            <div class="navbar-content justift-content-end">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    @auth
-                        @if (auth()->user()->role == 'admin')
-                            <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
-                        @endif
-                    @endauth
-                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
-                    <div class="keranjangs">
-                        <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
-                        </li>
-                        <div class="ntif">
-                            <p>{{ $data }}</p>
+                    <div class="nav-content">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        @auth
+                            @if (auth()->user()->role == 'admin')
+                                <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
+                            @endif
+                        @endauth
+                        <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
+                        <div class="keranjangs">
+                            <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
+                            </li>
+                            <div class="ntif">
+                                <p>{{ $data }}</p>
+                            </div>
                         </div>
                     </div>
-                    @auth
-                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                    @else
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    @endauth
+                    
+                    <div class="dropdown">
+                        <div class="button-sidebar">
+                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
+                                <i class="bi bi-caret-down-fill"></i></button>
+                        </div>
+                        <div class="dropdown-sidebar" id="dropdownMenu">
+                            <div class="dropdown-content">
+                                <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
+                                        Pesanan</li>
+                                @if (auth())
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
+                                                class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                                @else
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -73,7 +90,7 @@
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt="">
+                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -124,8 +141,8 @@
                 d="M421.605 420.051C354.627 549.81 167.928 586.657 4.60249 502.352C-158.723 418.047 -228.704 248.708 -161.725 118.949C-94.747 -10.8097 138.286 -23.7404 247.153 32.454C410.479 116.759 488.584 290.292 421.605 420.051Z"
                 fill="#016A70" />
         </svg>
-        <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353" height="483"
-            viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
+        <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353"
+            height="483" viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
             <path
                 d="M-95.03 245.61C-106.006 115.736 -363.615 25.7327 -116.363 4.83633C130.89 -16.0601 309.185 29.1495 351.202 202.156C362.178 332.029 262.251 458.38 14.9986 479.276C-232.254 500.173 -36.4232 423.189 -95.03 245.61Z"
                 fill="#A3A847" />
@@ -180,7 +197,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim Feedback</button></div>
+                    <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim
+                            Feedback</button></div>
                 </form>
             </div>
         </div>
@@ -199,6 +217,23 @@
             </div>
         </div>
     </footer>
+
+
+    <script>
+        function openDropdown() {
+            const dropdownTrigger = document.getElementById('dropdownTrigger');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownIcon = document.getElementById('dropdownIcon');
+
+            if (dropdownMenu.style.display === "none") {
+                dropdownMenu.style.display = "block"
+                dropdownIcon.style.transform = "rotate(50deg)"
+                dropdownMenu.classList.add('animate-showDropdownMenu');
+            } else {
+                dropdownMenu.style.display = "none";
+            }
+        }
+    </script>
     <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
