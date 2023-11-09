@@ -23,6 +23,8 @@
             @include('layouts.superadmin.navbar')
             <div class="container px-4 py-2">
                 @yield('kelola akun')
+                @yield('kantin')
+            </div>
             </div>
         </div>
       </div>

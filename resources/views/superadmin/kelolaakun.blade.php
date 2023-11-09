@@ -54,7 +54,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-        <form action="{{ route('tambah') }}" method="POST" enctype="multipart/form-data" class="p-3">
+        <form action="{{ route('Akun.Tambah') }}" method="POST" enctype="multipart/form-data" class="p-3">
             @csrf
             <div class="mb-2 flex flex-col">
                 <label for="nama" class="mb-1 font-outfit after:content-['*'] after:text-red-500 after:text-sm after:font-medium">Nama</label>

@@ -25,7 +25,7 @@
                                 <div class="w-1/6 h-full">
                                     <img src="{{ asset('img/Email.svg') }}" alt="email icon" class="flex m-auto h-full w-1/2">
                                 </div>
-                                <input type="email" placeholder="Masukan Email" name="email" value="{{ old('email') }}" class="rounded-lg w-full outline-none placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
+                                <input type="email" placeholder="Masukan Email" name="email" value="{{ old('email') }}" class="rounded-lg w-full outline-none  placeholder:font-nunito placeholder:font-medium placeholder:text-lg bg-transparent">
                             </div>
                                 @error('email')
                                     <div class="mb-5 w-3/4 pl-2 flex justify-start">

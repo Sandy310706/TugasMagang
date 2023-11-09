@@ -26,16 +26,17 @@
 }
 
 .image img {
-    width: 40px;
+    width: 50px;
     height: 40px;
     border-radius: 100%;
     display: flex;
     align-items: center;
-    margin-left: 5px;
+    margin-top: 4px;
+    margin-left: 4px;
 }
 
 .nama-akun {
-    width: 40%;
+    width: 50%;
 }
 
 .content-akun p {
@@ -58,12 +59,12 @@ h1 {
     font-style: italic;
     font-weight: bold;
     font-family: georgia;
-    text-shadow: -4px 3px 0 #3a50d9,;
+    text-shadow: -4px 3px 0 #3a50d9;
     font-size: 25px;
 }
 
- .password-content {
-    color: #7C7C7C;
+.password-content {
+    color: #7c7c7c;
     font-family: Noto Sans;
     font-size: 20px;
     font-style: normal;
@@ -77,16 +78,16 @@ h1 {
     width: 550px;
     padding: 10px;
     font-size: 15px;
-    color: #7C7C7C;
+    color: #7c7c7c;
     font-family: Noto Sans;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.child-password{
+.child-password {
     font-size: 17px;
-    color: #7C7C7C;
+    color: #7c7c7c;
     font-family: Noto Sans;
     font-style: normal;
     font-weight: 400;
@@ -94,8 +95,8 @@ h1 {
     padding-left: 5px;
 }
 
-.checkbox{
-     margin: 0;
+.checkbox {
+    margin: 0;
 }
 
 .menu-toggle {
@@ -106,7 +107,7 @@ h1 {
 }
 
 .buttons button {
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Amaranth;
     font-size: 20px;
@@ -114,7 +115,7 @@ h1 {
     font-weight: 400;
     line-height: normal;
     padding: 10px;
-    background: #3AA1FF;
+    background: #3aa1ff;
     width: 100px;
 }
 
@@ -128,19 +129,15 @@ h1 {
         width: 100%;
     }
 
-    label{
+    label {
         font-size: 12px;
     }
 
     .hero-content {
         width: 200px;
     }
-    
-    h1{
+
+    h1 {
         font-size: 20px;
     }
-
-   
-
-
 }

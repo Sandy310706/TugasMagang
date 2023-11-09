@@ -21,6 +21,9 @@
 </head>
 
 <body>
+    <div class="pembungkus-alert">
+        <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
             <div class="menu-toggle">
@@ -58,7 +61,11 @@
                 <a href="/menupage2">Kantin-2</a>
             </div>
         </div>
-        <h1 class="makanan text-center">Makanan</h1>
+
+    </div>
+
+    <div class="card-container">
+        <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
             @foreach ($makanan as $makanans)
@@ -87,35 +94,6 @@
         </div>
     </div>
 
-    <div class="card-container">
-        <h1 class="makanan text-center">Minuman</h1>
-        <div class="card-menu">
-            @foreach ($minuman as $minum)
-                <div style="display:inline;">
-                    <div class="card-menu">
-                        <div class="card">
-                            <div class="cards">
-                                <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $minum->foto) }}" alt="">
-                                </div>
-                                <div class="kontents">
-                                    <div class="kontent">
-                                        <h3>{{ $minum->nama }}</h3>
-                                        <p>{{ $minum->harga }}</p>
-                                    </div>
-                                </div>
-                                <div class="clicks">
-                                    <button type="submit" class="btn btn-submit"
-                                    id="showAutoCloseAlert"onclick="inputData(this)"
-                                    data-id="{{ $minum->id }}">Pesan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
 
     <div class="footer-containers">
         <footer class="footer">
@@ -135,17 +113,17 @@
         </footer>
     </div>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function(){
             $("#alert").hide();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-                            });
-       ol });
+            });
+        });
 
         function inputData(bi) {
-            const id = bi.getAttribute('data-id')
+            const id = bi.getAttribute('data-id');
             $.ajax({
                 url: `/carts/${id}`,
                 dataType: "json",
@@ -165,10 +143,33 @@
                 }
             });
         };
+
+            function inputData(bi) {
+                const id = bi.getAttribute('data-id')
+                $.ajax({
+                    url: '/carts/'+ id,
+                    dataType: "json",
+                    type: "POST",
+                    data: {},
+                    success: function(response) {
+                        location.reload();
+                        console.log("berhasil");
+                        setTimeout(() => {
+                            document.getElementById('alerts').ustyle.display = 'none';
+                        }, 10000);
+                        document.getElementById('alerts').style.display = 'block';
+                    },
+                    error: function(error) {
+                        console.log('gagal');
+                        console.log(error)
+                    }
+                });
+            };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
 </body>
 

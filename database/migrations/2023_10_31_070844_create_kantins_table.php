@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('kantins', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('menu_id');
+            $table->string('namaToko');
+            $table->integer('keuangan');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });
     }
