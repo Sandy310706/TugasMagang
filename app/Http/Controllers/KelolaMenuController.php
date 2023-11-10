@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Support\Facades\Validator;
-use Yajra\DataTables\DataTables as DataTablesDataTables;
-use Yajra\DataTables\Facades\DataTables;
 
 use function PHPUnit\Framework\fileExists;
 
@@ -20,13 +18,24 @@ class KelolaMenuController extends Controller
         $this->middleware('admin');
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $id = auth()->user()->id_kantin;
         $data = Menu::where('id_kantin', $id)->get();
         return view('admin.kelolamenu', compact('data'));
     }
-
+    public function getData(Request $request)
+    {
+        if($request->ajax()) {
+            $id = auth()->user()->id_kantin;
+            $data = Menu::where('id_kantin', $id)->get();
+            return datatables()->of($data)->addIndexColumn()
+            ->addColumn('action', function($row){
+                $button = '<a href="javacript:void(0)" class="btnEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span> | <a href="javascript:void(0)" class="btnDelete text-red-600" <i class="fa-solid fa-trash"></i> Hapus</a>';
+                return $button;
+            })->rawColumns(['action'])->make(true);
+        }
+    }
     public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [

@@ -12,16 +12,12 @@
             <div class="w-4/5">
                 <button onclick="openModal()" id="showModal" class="showModal mb-2 p-2 w-44 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah Menu</button>
             </div>
-            <div class="w-1/5 flex">
-                <input type="text" class="w-[60%] bg-white">
-                <button class="w-[30%] rounded-md p-2 bg-gradient-to-r from-green-400 to-green-600 text-white">Cari</button>
-            </div>
         </div>
     </div>
     <div class="w-full">
         <table id="tabel-menu" class="table-fixed w-full rounded-lg font-outfit text-xs h-12">
-            <thead class="">
-                <th>Foto</th>
+            <thead>
+                {{-- <th>Foto</th> --}}
                 <th>Nama</th>
                 <th>Kategori</th>
                 <th>Harga</th>
@@ -29,7 +25,7 @@
                 <th>Aksi</th>
             </thead>
             <tbody id="tbody" class="text-center bg-white">
-                @foreach ($data as $menu )
+                {{-- @foreach ($data as $menu )
                     <tr class="group border-b even:bg-zinc-300 odd:bg-neutral-200 border-gray-400">
                         <td class="py-2 flex justify-center h-16 w-full group-hover:bg-neutral-400"><img src="{{ asset('storage/fileMenu/'. $menu->foto) }}" alt="foto menu"></td>
                         <td class="p-2 group-hover:bg-neutral-400">{{ $menu->nama }}</td>
@@ -42,7 +38,7 @@
                             <button id="btnDelete" class="btnDelete text-red-600" data-id="{{ $menu->id }}" data-confirm-delete="true"><i class="fa-solid fa-trash"></i> Hapus</button>
                         </td>
                     </tr>
-                @endforeach
+                @endforeach --}}
             </tbody>
         </table>
     </div>
@@ -62,7 +58,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-        <form action="{{ url('/menu/store') }}" id="FormTambah" method="POST" enctype="multipart/form-data" class="p-3">
+        <form  id="FormTambah" method="POST" enctype="multipart/form-data" class="p-3">
             @csrf
             <div class="mb-2 flex flex-col">
                 <label for="nama" class="mb-1 font-outfit after:content-['*'] after:text-red-500 after:text-sm after:font-medium">Nama</label>
@@ -165,41 +161,57 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        // $("#FormTambah").submit(function(e) {
-        //     e.preventDefault();
-        //     var form = new FormData(this);
-        //     const modal = document.getElementById("modal");
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: "{{ route('Menu.Store') }}",
-        //         data: form,
-        //         processData: false,
-        //         contentType: false,
-        //         success: function(success){
-        //             Swal.fire({
-        //                 title: 'Berhasil',
-        //                 text: 'Data berhasil disimpan!',
-        //                 icon: 'success',
-        //                 confirmButtonColor: '#3085d6',
-        //                 confirmButtonText: 'OK',
-        //                 zIndex: 9999,
-        //             }).then((result) => {
-        //                 if (result.isConfirmed) {
-        //                     setTimeout(() => {
-        //                         modal.classList.add("hidden");
-        //                     }, 900);
-        //                     modal.classList.remove("animate-showModal")
-        //                     modal.classList.add("animate-hideModal")
-        //                     var form = document.getElementById('FormTambah')
-        //                     href.location = "{{ route('Admin.Menu') }}"
-        //                 }
-        //             });
-        //         },
-        //         error: function(error){
-        //             console.log('gagal');
-        //         }
-        //     });
-        // });
+        $('#tabel-menu').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route("Admin.Menu.Ajax") }}',
+                columns: [
+                    { data: 'nama', name: 'nama' },
+                    { data: 'kategori', name: 'kategori' },
+                    { data: 'harga', name: 'harga'},
+                    { data: 'stok', name: 'stok'},
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true
+                    },
+                ]
+            });
+        $("#FormTambah").submit(function(e) {
+            e.preventDefault();
+            var form = new FormData(this);
+            const modal = document.getElementById("modal");
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('Menu.Store') }}",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function(success){
+                    Swal.fire({
+                        title: 'Berhasil',
+                        text: 'Data berhasil disimpan!',
+                        icon: 'success',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        zIndex: 9999,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            setTimeout(() => {
+                                modal.classList.add("hidden");
+                            }, 900);
+                            modal.classList.remove("animate-showModal")
+                            modal.classList.add("animate-hideModal")
+                            $('#tabel-menu').DataTable().ajax.reload();
+                        }
+                    });
+                },
+                error: function(error){
+                    console.log('gagal');
+                }
+            });
+        });
         $(".btnEdit").click(function() {
             const id = $(this).data('id');
             const modalEdit = document.querySelector("#modalEdit"+id);

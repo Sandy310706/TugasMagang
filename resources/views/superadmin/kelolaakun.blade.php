@@ -27,7 +27,7 @@
                     @if(empty($users))
                         <td class="p-2 group-hover:bg-slate-200">Bukan admin Kantin</td>
                         @else
-                        <td class="p-2 group-hover:bg-slate-200">{{ $users->kantin->namaKantin }}</td>
+                        <td class="p-2 group-hover:bg-slate-200">{{ $users->kantin }}</td>
                     @endif
                     <td class="p-2 group-hover:bg-slate-200">
                         <button id="btnEdit" data-id="{{ $users->id }}"class="openModalEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>

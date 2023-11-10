@@ -60,7 +60,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <form action="{{ route('Kantin.Edit') }}" method="POST" enctype="multipart/form-data" class="p-3">
+                <form action="" method="POST" enctype="multipart/form-data" class="p-3">
                     @method('PUT')
                     @csrf
                     <div class="mb-4 flex flex-col">

@@ -52,9 +52,10 @@ Route::middleware(['guest'])->group(function(){
 });
 Route::middleware('auth')->group(function() {
     // Admin Kantin
-    Route::get('{kantin}/admin{nama}/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
+    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
     Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
     Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
+    Route::get('/admin/menu/ajax', [KelolaMenuController::class, 'getData'])->name('Admin.Menu.Ajax');
     Route::post('/menu/store', [KelolaMenuController::class, 'store'])->name('Menu.Store');
     Route::put('/menu/edit/{id}', [KelolaMenuController::class, 'update'])->name('Menu.Edit');
     Route::delete('/menu/delete/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
@@ -85,9 +86,10 @@ Route::middleware('auth')->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
 
-    Route::post('/menu', [MenuController::class, 'store'])->name('Menu.Store');
-    Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
+    Route::post('/menu', [MenuController::class, 'store']);
+    Route::delete('/menu/delete/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
+
     Route::delete('/histori', [HistoriController::class, 'index']);
     Route::get('/kantin/{id}', [KantinController::class, 'show'])->name('Kantin.view');
 });
