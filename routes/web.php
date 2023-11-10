@@ -64,8 +64,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
     Route::post('/konfirmasipesaanan/{id}', [kelolaPesanController::class, 'konfirmasi'])->name('KonfirmasiPesanan');
     Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan');
-
-    // Super Admin
+   
+  // Super Admin
     Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun');
     Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah');
     Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');

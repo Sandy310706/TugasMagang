@@ -102,34 +102,34 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur malaysia.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur merah.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
         </div>
