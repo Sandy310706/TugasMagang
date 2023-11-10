@@ -33,7 +33,9 @@ class Menu extends Model
     {
         return $this->hasMany('App\Models\Keranjangs', 'menu_id');
     }
-
+    public function invoice(){
+        return $this->belongsToMany(Invoice::class, 'menu_id');
+    }
     public function kantin()
     {
         return $this->belongsTo(Kantin::class, 'id_kantin');
