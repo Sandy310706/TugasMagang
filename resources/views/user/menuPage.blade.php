@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">t
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link
@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="template/menuPage/css/kantin.css">
+    <link rel="stylesheet" href={{asset("css/kantin.css")}}>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -80,7 +80,7 @@
                         </div>
                         <div class="kontents-kantin">
                             <div class="kontent-kantin">
-                                <p>{{ $data ->namaKantin }}</p>
+                                <p>{{ $data->namaKantin }}</p>
                                 <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
                             </div>
                         </div>
@@ -103,30 +103,6 @@
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            {{-- @foreach ($data as $menu)
-                <div style="display: inline" id="menu-card">
-                    <div class="card-menu">
-                        <div class="card">
-                            <div class="cards">
-                                <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $menu->foto) }}" alt="">
-                                </div>
-                                <div class="kontents">
-                                    <div class="kontent">
-                                        <h3>{{ $menu->nama }}</h3>
-                                        <p>Rp.{{ $menu->harga }}</p>
-                                        <p>stok : {{$menu->stok}}</p>
-                                    </div>
-                                </div>
-                                <div class="clicks">
-                                    <button type="submit" onclick="inputData(this)" class="btn btn-submit"
-                                        data-id="{{ $menu->id }}">Pesan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach --}}
         </div>
     </div>
     <div class="footer-containers">

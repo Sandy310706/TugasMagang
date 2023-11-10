@@ -25,7 +25,7 @@ class MenuController extends Controller
         return view('user.menuPage', compact('jumlah', 'data','kantin',));
 
     }
-    public function store(Request $request)
+    public function store(Request $request, $stok)
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
@@ -60,6 +60,7 @@ class MenuController extends Controller
                 Storage::disk('public')->put($path, file_get_contents($fileFoto));
                 $data->foto = $newName;
             }
+
         $data->save();
         return redirect()->route('Admin.Menu')->with('success', 'Data berhasil di input');
     }

@@ -84,7 +84,7 @@ Route::middleware('auth')->group(function() {
     Route::delete('/menu/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
     Route::delete('/histori', [HistoriController::class, 'index']);
-    Route::get('/kantin/{id}', [KantinController::class, 'show'])->name('Kantin.view');
+    Route::get('/kantin/{namaKantin}', [KantinController::class, 'show'])->name('Kantin.view');
 });
 
 

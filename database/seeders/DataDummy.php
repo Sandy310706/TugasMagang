@@ -28,14 +28,14 @@ class DataDummy extends Seeder
 
 
 
-        // DB::table('menus')->insert([
-        //     'nama' => 'bebek',
-        //     'harga' => '5000',
-        //     'kategori' => 'makanan',
-        //     'foto' => 'ayam.jpg',
-        //     'stok' => '50',
-        //     'id_kantin' => '1',
-        // ]);
+        DB::table('menus')->insert([
+            'nama' => 'ikan',
+            'harga' => '5000',
+            'kategori' => 'makanan',
+            'foto' => 'ayam.jpg',
+            'stok' => '50',
+            'id_kantin' => '1',
+        ]);
 
 
         // DB::table('users')->insert([
@@ -46,9 +46,9 @@ class DataDummy extends Seeder
         // ]);
 
 
-        DB::table('kantin')->insert([
-            'namaKantin' => 'ABC Susu',
-        ]);
+        // DB::table('kantin')->insert([
+        //     'namaKantin' => 'Kantin F rasis',
+        // ]);
 
 
 
