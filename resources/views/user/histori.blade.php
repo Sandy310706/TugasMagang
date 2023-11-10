@@ -58,6 +58,9 @@
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     @foreach ($detail as $s )
     <div class="container container-histori" style="margin-bottom: 20px;">
         <div class="card">
@@ -65,7 +68,11 @@
                 <p>No Pesanan</p>
                 <div class="Detail">
                     <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="Begini(this)">Buka Modal</button>
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     @foreach ($detail as $s)
         <div class="container container-histori" style="margin-bottom: 20px;">
             <div class="card">
@@ -75,13 +82,21 @@
                         <button class="btn" data-id="{{ $s->id }}" id="openModal" onclick="phei()">Buka
                             Modal</button>
                     </div>
+<<<<<<< HEAD
 >>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
                 </div>
 
             </div>
         </div>
     @endforeach
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     @foreach ($detail as $p )
     <div id="detailModal{{$p->id}}" class="modal modal{{$p->id}}">
         <div class="modal-content">
@@ -105,7 +120,11 @@
                     <div class="child-total">
                         <div class="total hero-total">
                             <p>{{$p->keranjang->arraySum}}</p>
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     @foreach ($detail as $p)
         <div id="detailModal{{ $p->id }}" class="modal modal{{ $p->id }}">
             <div class="modal-content">
@@ -146,7 +165,11 @@
                             <div class="total hero-total">
                                 <p>Total : Rp.100.000</p>
                             </div>
+<<<<<<< HEAD
 >>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
                         </div>
                     </div>
                 </div>
@@ -156,26 +179,42 @@
 
     <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
        $(document).ready(function() {
 =======
         $(document).ready(function() {
 >>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
+=======
+        $(document).ready(function() {
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
             $.ajaxSetup({
                 headers:{
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
 <<<<<<< HEAD
+<<<<<<< HEAD
             $('.btn').click( function() {
 =======
             $('.btn').click(function() {
                 console.log('Hello World');
 >>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
+=======
+
+
+            $('.btn').click(function() {
+                console.log('Hello World');
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
                 const id = $(this).data('id');
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
             $('.close').click(function() {
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal"+id);
@@ -201,7 +240,11 @@
             },
             error: function(response){
                 console.log('gagal');
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
         });
 
         function phei() {
@@ -239,12 +282,20 @@
         window.addEventListener("click", function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
+<<<<<<< HEAD
 >>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
             }
         });
        };
     </script>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     {{-- <script>
         function detailModal(id)
         {
@@ -257,7 +308,11 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     <script>
         function detailModal(id) {
             const detailModal = document.getElementById(".modal" + id)
@@ -284,7 +339,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+<<<<<<< HEAD
 >>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
+=======
+
+>>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
 </body>
 
 </html>

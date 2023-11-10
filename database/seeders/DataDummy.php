@@ -15,8 +15,6 @@ class DataDummy extends Seeder
     public function run(): void
     {
 
-
-
         // DB::table('users')->insert([
         //     'nama' => 'robin',
         //     'email' => 'robin@email.com',
@@ -28,12 +26,12 @@ class DataDummy extends Seeder
 
 
         DB::table('menus')->insert([
-            'nama' => 'ikan',
+            'nama' => 'ikan tenggiri',
             'harga' => '5000',
             'kategori' => 'makanan',
             'foto' => 'ayam.jpg',
             'stok' => '50',
-            'id_kantin' => '1',
+            'id_kantin' => '3',
         ]);
 
 
@@ -46,15 +44,23 @@ class DataDummy extends Seeder
 
 
         // DB::table('kantin')->insert([
-        //     'namaKantin' => 'Kantin F rasis',
+        //     'namaKantin' => 'Kantin Selalu Kalah',
         // ]);
 
-        DB::table('users')->insert([
-            'nama' => 'Budi',
-            'email' => 'Budi@super.com',
-            'role' => 'SuperAdmin',
-            'password' => Hash::make('budi'),
-        ]);
+        // DB::table('users')->insert([
+        //     'nama' => 'Budi',
+        //     'email' => 'Budi@super.com',
+        //     'role' => 'SuperAdmin',
+        //     'password' => Hash::make('budi'),
+        // ]);
+
+        // DB::table('users')->insert([
+        //     'nama' => 'Budi',
+        //     'email' => 'Budi@super.com',
+        //     'role' => 'SuperAdmin',
+        //     'password' => Hash::make('budi'),
+        // ]);
+
 
     }
 }
