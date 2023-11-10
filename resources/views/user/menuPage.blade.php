@@ -127,8 +127,7 @@
                                 </div>
                                 <div class="kontents-kantin">
                                     <div class="kontent-kantin">
-                                        <p>{{ $data->namaKantin }}</p>
-                                        <a href="kantin/{{ $data->namaKantin }}">Kantin 1</a>
+                                        <a href="kantin/{{ $data->namaKantin }}">{{ $data->namaKantin }}</a>
                                     </div>
                                 </div>
                             </div>
