@@ -91,7 +91,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
 
     Route::delete('/histori', [HistoriController::class, 'index']);
-    Route::get('/kantin/{id}', [KantinController::class, 'show'])->name('Kantin.view');
+    Route::get('/kantin/{namaKantin}', [KantinController::class, 'show'])->name('Kantin.view');
 });
 
 
