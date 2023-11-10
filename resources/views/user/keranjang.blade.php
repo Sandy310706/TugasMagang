@@ -97,6 +97,9 @@
     <div class="container-fluid Keranjang-page ">
         <h1 class="text-center">Keranjang</h1>
         <div class="content-nav">
+            <div class="Header-checkbox">
+                <p></p>
+            </div>
             <div class="Header-table 0">
                 <p>Nama</p>
             </div>
@@ -116,6 +119,9 @@
         @foreach ($keranjangs as $keranjang)
             <div class="card-pembungkus">
                 <div class="content">
+                    <div class="content-checkbox">
+                        <input type="checkbox" class="checkbox">
+                    </div>
                     <div class="content-table foto">
                         <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
                         <p>{{ $keranjang->menu->nama }}</p>
@@ -148,6 +154,10 @@
                 </div>
             </div>
         @endforeach
+        <div class="checkbox-content">
+            <input type="checkbox" class="checkbox-all">
+            <p>Pilih Semua</p>
+        </div>
     </div>
     <div class="container totals mt-3">
         <div class="checkout">
@@ -157,7 +167,9 @@
             </div>
             <div class="cekout">
                 <div class="btnns">
-                    <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
+
+       <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
+
                 </div>
             </div>
         </div>
