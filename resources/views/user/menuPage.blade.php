@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href={{asset("css/kantin.css")}}>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Gabarito:wght@400;500&family=Josefin+Sans&family=Merriweather:wght@300&family=Oswald:wght@200;500&family=Outfit:wght@500&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
         rel="stylesheet">
@@ -85,6 +86,7 @@
     </div>
 
     <div class="hero-click">
+
         <div class="button-click">
             <button class="arrow left"><svg xmlns="http://www.w3.org/2000/svg" width="67" height="67"
                     viewBox="0 0 67 67" fill="none">
@@ -105,6 +107,7 @@
                             <div class="kontent-kantin">
                                 <p>{{ $data->namaKantin }}</p>
                                 <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
+
         <div class="content-container">
             <div class="button-click">
                 <button class="arrow left"><svg xmlns="http://www.w3.org/2000/svg" width="67" height="67"
@@ -203,7 +206,7 @@
                     console.log(error)
                 }
             });
-        };
+        }
 
         function openDropdown() {
             const dropdownTrigger = document.getElementById('dropdownTrigger');
@@ -217,11 +220,14 @@
             } else {
                 dropdownMenu.style.display = "none";
             }
-        };
+        }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
+    </script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
+    <script src="script.js/scripts.js"></script>
 </body>
 </html>

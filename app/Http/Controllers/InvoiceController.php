@@ -34,10 +34,6 @@ class InvoiceController extends Controller
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
-        if($invoice->status == 1)
-        {
-            dd('[');
-        }
 
         return redirect()->route('Keranjang');
         // return response()->json($invoice);

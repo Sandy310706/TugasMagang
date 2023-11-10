@@ -57,74 +57,18 @@
     </nav>
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
-    @foreach ($detail as $s )
-    <div class="container container-histori" style="margin-bottom: 20px;">
-        <div class="card">
-            <div class="content">
-                <p>No Pesanan</p>
-                <div class="Detail">
-                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="Begini(this)">Buka Modal</button>
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     @foreach ($detail as $s)
         <div class="container container-histori" style="margin-bottom: 20px;">
             <div class="card">
                 <div class="content">
                     <p>No Pesanan</p>
                     <div class="Detail">
-                        <button class="btn" data-id="{{ $s->id }}" id="openModal" onclick="phei()">Buka
-                            Modal</button>
+                        <button class="btn" data-id="{{ $s->id }}" id="openModal" onclick="phei()">BukaModal</button>
                     </div>
-<<<<<<< HEAD
->>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
                 </div>
-
             </div>
         </div>
     @endforeach
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
-    @foreach ($detail as $p )
-    <div id="detailModal{{$p->id}}" class="modal modal{{$p->id}}">
-        <div class="modal-content">
-            <span class="close" data-id="{{$p->id}}">&times;</span>
-            <div class="hero-container">
-                <h1 class="text-detail">Detail Pesanan</h1>
-                <div class="content-item">
-                    <div class="content-hero">
-                        <div class="kode hero-item">
-                            <p>Kode: {{$p->token}}</p>
-                        </div>
-                        <div class="name hero-item">
-                            <p>Keranjang: {{$p->keranjang_id}}</p>
-                        </div>
-                        <div class="tanggal hero-item">
-                            <p>Tanggal Pemesanan: {{$p->created_at}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-total">
-                    <div class="child-total">
-                        <div class="total hero-total">
-                            <p>{{$p->keranjang->arraySum}}</p>
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
     @foreach ($detail as $p)
         <div id="detailModal{{ $p->id }}" class="modal modal{{ $p->id }}">
             <div class="modal-content">
@@ -165,11 +109,6 @@
                             <div class="total hero-total">
                                 <p>Total : Rp.100.000</p>
                             </div>
-<<<<<<< HEAD
->>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
                         </div>
                     </div>
                 </div>
@@ -178,43 +117,18 @@
     @endforeach
 
     <script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-       $(document).ready(function() {
-=======
         $(document).ready(function() {
->>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
-=======
-        $(document).ready(function() {
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
             $.ajaxSetup({
                 headers:{
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $('.btn').click( function() {
-=======
             $('.btn').click(function() {
                 console.log('Hello World');
->>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
-=======
-
-
-            $('.btn').click(function() {
-                console.log('Hello World');
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
                 const id = $(this).data('id');
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
             $('.close').click(function() {
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal"+id);
@@ -233,36 +147,17 @@
             statusCode: {
         500: function(response) {
            console.log(response)
-        }
-    },
+                }
+            },
             success: function(response){
                 console.log('berhasil');
             },
             error: function(response){
                 console.log('gagal');
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
+            },
         });
-
-        function phei() {
-            console.log('Hello World');
         }
 
-        function modalteguh(ta)
-        const id = ta.getAttribute('data-id')
-        $.ajax({
-            type = "POST",
-            url = "/invoice/" + $id,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(response) {
-                console.log(response)
-            },
-        });
         // Ambil elemen modal dan tombol yang akan membukanya
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
@@ -282,68 +177,14 @@
         window.addEventListener("click", function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
-<<<<<<< HEAD
->>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
-=======
 
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
             }
         });
-       };
-    </script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
-    {{-- <script>
-        function detailModal(id)
-        {
-            const detailModal = document.getElementById(".modal"+id)
-            console.log(id);
-            detailModal.style.display = 'block';
-        }
-    </script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-    <script src="script.js/script.js"></script>
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
-    <script>
-        function detailModal(id) {
-            const detailModal = document.getElementById(".modal" + id)
-            console.log(id);
-            detailModal.style.display = 'block';
-        }
-
-        function openDropdown() {
-            const dropdownTrigger = document.getElementById('dropdownTrigger');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const dropdownIcon = document.getElementById('dropdownIcon');
-
-            if (dropdownMenu.style.display === "none") {
-                dropdownMenu.style.display = "block"
-                dropdownIcon.style.transform = "rotate(50deg)"
-                dropdownMenu.classList.add('animate-showDropdownMenu');
-            } else {
-                dropdownMenu.style.display = "none";
-            }
-        }
     </script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
-<<<<<<< HEAD
->>>>>>> 5cb401cbedb26fde9398f71a863c073d8678d387
-=======
-
->>>>>>> 8f5cc68d6780aab9b8ec6771f7f887d78eef0171
 </body>
-
 </html>
