@@ -20,6 +20,9 @@ class Invoice extends Model
     {
         return $this->belongsTo('App\Models\kelolaPesan', 'kelolapesan_id');
     }
+    public function menu(){
+        return $this->belongsToMany(Menu::class, 'menu_id');
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
