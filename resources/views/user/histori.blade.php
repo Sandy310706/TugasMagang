@@ -12,6 +12,7 @@
         rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/histori.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -56,6 +57,14 @@
     </nav>
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
+    @foreach ($detail as $s )
+    <div class="container container-histori" style="margin-bottom: 20px;">
+        <div class="card">
+            <div class="content">
+                <p>No Pesanan</p>
+                <div class="Detail">
+                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="Begini(this)">Buka Modal</button>
+
     @foreach ($detail as $s)
         <div class="container container-histori" style="margin-bottom: 20px;">
             <div class="card">
@@ -65,11 +74,37 @@
                         <button class="btn" data-id="{{ $s->id }}" id="openModal" onclick="phei()">Buka
                             Modal</button>
                     </div>
+
                 </div>
 
             </div>
         </div>
     @endforeach
+
+    @foreach ($detail as $p )
+    <div id="detailModal{{$p->id}}" class="modal modal{{$p->id}}">
+        <div class="modal-content">
+            <span class="close" data-id="{{$p->id}}">&times;</span>
+            <div class="hero-container">
+                <h1 class="text-detail">Detail Pesanan</h1>
+                <div class="content-item">
+                    <div class="content-hero">
+                        <div class="kode hero-item">
+                            <p>Kode: {{$p->token}}</p>
+                        </div>
+                        <div class="name hero-item">
+                            <p>Keranjang: {{$p->keranjang_id}}</p>
+                        </div>
+                        <div class="tanggal hero-item">
+                            <p>Tanggal Pemesanan: {{$p->created_at}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-total">
+                    <div class="child-total">
+                        <div class="total hero-total">
+                            <p>{{$p->keranjang->arraySum}}</p>
+
     @foreach ($detail as $p)
         <div id="detailModal{{ $p->id }}" class="modal modal{{ $p->id }}">
             <div class="modal-content">
@@ -110,6 +145,7 @@
                             <div class="total hero-total">
                                 <p>Total : Rp.100.000</p>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -120,16 +156,46 @@
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
-                headers: {
+                headers:{
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
+
             $('.btn').click(function() {
                 console.log('Hello World');
+
                 const id = $(this).data('id');
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
+
+            $('.close').click(function() {
+                let id = $(this).data('id')
+                const detailmodal = document.querySelector("#detailModal"+id);
+                detailmodal.style.display = 'none';
+            });
+        });
+        function Begini(saat) {
+        const id = saat.getAttribute('data-id')
+        $.ajax({
+            url: `/invoice/${id}`,
+            dataType:'json',
+            type:'POST',
+            data:{
+                "_token": "{{ csrf_token() }}",
+            },
+            statusCode: {
+        500: function(response) {
+           console.log(response)
+        }
+    },
+            success: function(response){
+                console.log('berhasil');
+            },
+            error: function(response){
+                console.log('gagal');
+
         });
 
         function phei() {
@@ -167,9 +233,25 @@
         window.addEventListener("click", function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
+
             }
         });
+       };
     </script>
+
+    {{-- <script>
+        function detailModal(id)
+        {
+            const detailModal = document.getElementById(".modal"+id)
+            console.log(id);
+            detailModal.style.display = 'block';
+        }
+    </script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+    <script src="script.js/script.js"></script>
+
     <script>
         function detailModal(id) {
             const detailModal = document.getElementById(".modal" + id)
@@ -196,6 +278,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

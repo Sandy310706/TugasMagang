@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
-use App\Models\Kantin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+
 use Illuminate\Support\Facades\Validator;
-use Yajra\DataTables\Facades\DataTables;
 
 use function PHPUnit\Framework\fileExists;
 
@@ -19,12 +18,24 @@ class KelolaMenuController extends Controller
         $this->middleware('admin');
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $data = Menu::latest()->paginate('5');
+        $id = auth()->user()->id_kantin;
+        $data = Menu::where('id_kantin', $id)->get();
         return view('admin.kelolamenu', compact('data'));
     }
-
+    public function getData(Request $request)
+    {
+        if($request->ajax()) {
+            $id = auth()->user()->id_kantin;
+            $data = Menu::where('id_kantin', $id)->get();
+            return datatables()->of($data)->addIndexColumn()
+            ->addColumn('action', function($row){
+                $button = '<a href="javacript:void(0)" class="btnEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span> | <a href="javascript:void(0)" class="btnDelete text-red-600" <i class="fa-solid fa-trash"></i> Hapus</a>';
+                return $button;
+            })->rawColumns(['action'])->make(true);
+        }
+    }
     public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
@@ -51,7 +62,7 @@ class KelolaMenuController extends Controller
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->kategori = $request->kategori;
-        $data->id_kantin = 1;
+        $data->id_kantin = auth()->user()->id_kantin;
             if($request->hasFile('foto')){
                 $fileFoto = $request->file('foto');
                 $newName = uniqid().$fileFoto->getClientOriginalName();
@@ -60,12 +71,14 @@ class KelolaMenuController extends Controller
                 $data->foto = $newName;
             }
         $data->save();
-        return response()->json($data);
+        Alert::success('Berhasil', 'Data berhasil di tambahkan');
+        return redirect()->back();
     }
 
     public function update(Request $request, $id)
     {
         $data = Menu::find($id);
+        $test = $data->kantin;
         if(!$data){
             Alert::error('Gagal', 'Data tidak di temukan');
             return redirect()->back();
@@ -90,7 +103,8 @@ class KelolaMenuController extends Controller
                 $data->foto = $newName;
         }
         $data->save();
-        return response()->json($data);
+        Alert::success('Berhasil', 'Data berhasil di edit');
+        return redirect()->back();
     }
 
     public function delete($id)

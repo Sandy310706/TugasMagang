@@ -18,4 +18,7 @@ class Pesanan extends Model
     {
         return $this -> hasOne(Keranjangs::class);
     }
+    public function Menu() {
+        return $this -> belongsToMany(Menu::class);
+    }
 }

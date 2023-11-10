@@ -13,12 +13,15 @@ class Invoice extends Model
 
     public function keranjang()
     {
-        return $this->hasOne('App\Models\Keranjangs', 'keranjang_id');
+        return $this->belongsTo('App\Models\Keranjangs', 'keranjang_id');
     }
 
     public function kelolapesan()
     {
         return $this->belongsTo('App\Models\kelolaPesan', 'kelolapesan_id');
+    }
+    public function menu(){
+        return $this->belongsToMany(Menu::class, 'menu_id');
     }
     public function user()
     {
