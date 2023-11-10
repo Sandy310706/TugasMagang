@@ -20,7 +20,7 @@ class Kantin extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_admin');
+        return $this->hasOne(User::class, 'id_kantin');
     }
     public function menu()
     {

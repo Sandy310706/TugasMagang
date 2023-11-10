@@ -92,7 +92,6 @@
             <div class="card-pembungkus">
                 <div class="content">
                     <div class="content-table foto">
-                        <input type="checkbox" class="checkbox">
                         <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
                         <p>{{ $keranjang->menu->nama }}</p>
                     </div>
@@ -133,7 +132,7 @@
             </div>
             <div class="cekout">
                 <div class="btnns">
-                    {{-- <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a> --}}
+                    <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
                 </div>
             </div>
         </div>
