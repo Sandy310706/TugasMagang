@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('foto');
             $table->integer('quantity')->default(1);
-            $table->enum('kategori', ['makanan', 'minuman']);
+            $table->enum('kategori', ['Makanan', 'Minuman']);
             $table->integer('harga');
             $table->integer('stok');
             $table->foreignId('id_kantin');

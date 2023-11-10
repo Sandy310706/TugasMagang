@@ -17,7 +17,7 @@ class AdminController extends Controller
     public function Dashboard()
     {
         $menu = Menu::all();
-        $totalMenu = Menu::count();
+        $totalMenu = Menu::where('id_kantin', auth()->user()->id_kantin)->count();
         $totalPesanan = Invoice::count();
         $totalMasukan = Feedback::count();
         return view('admin.dashboard', compact('totalMenu','totalMasukan', 'totalPesanan'));
@@ -26,10 +26,4 @@ class AdminController extends Controller
     {
         return view('admin.kelolamenu');
     }
-
-    // public function bukti()
-    // {
-    //     $invoice = History_pesanan::all();
-    //     return view('admin.invoice', compact('invoice'));
-    // }
 }

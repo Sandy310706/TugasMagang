@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Nette\Utils\Random;
-use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,46 +14,11 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
-
-
-
-        // DB::table('users')->insert([
-        //     'nama' => 'robin',
-        //     'email' => 'robin@email.com',
-        //     'password' => Hash::make('robin'),
-        //     'role' => 'guest',
-        // ]);
-
-
-
-
-        // DB::table('menus')->insert([
-        //     'nama' => 'bebek',
-        //     'harga' => '5000',
-        //     'kategori' => 'makanan',
-        //     'foto' => 'ayam.jpg',
-        //     'stok' => '50',
-        //     'id_kantin' => '1',
-        // ]);
-
-
-        // DB::table('users')->insert([
-        //     'nama' => 'admin',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => Hash::make('admin'),
-        //     'role' => 'superadmin',
-        // ]);
-
-
-        DB::table('kantin')->insert([
-            'namaKantin' => 'ABC',
-            'id_admin'=>'6'
+        DB::table('users')->insert([
+            'nama' => 'Budi',
+            'email' => 'Budi@super.com',
+            'role' => 'SuperAdmin',
+            'password' => Hash::make('budi'),
         ]);
-
-
-
-
-
-
     }
 }

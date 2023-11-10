@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['admin', 'guest', 'superadmin'])->default('guest');
             $table->string('password');
+            $table->foreignId('id_kantin')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
