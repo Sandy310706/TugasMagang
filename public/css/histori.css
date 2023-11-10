@@ -164,8 +164,13 @@ ul {
   color: #6506c3;
 }
 
+.dropdown-content li{
+    padding: 8px;
+}
+
 .histori {
-  border-bottom: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px
 }
 
 .dropdown-sidebar ul li {
@@ -559,6 +564,16 @@ ul {
     nav ul.slide {
       opacity: 1;
       transform: translateX(0);
+    }
+    
+    .menu-toggle input:checked~span:nth-child(2) {
+      background-color: black;
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+    
+    .menu-toggle input:checked~span:nth-child(4) {
+      background-color: black;
+      transform: rotate(-45deg) translate(-1px, 0);
     }
     
     #mainNav .navbar-brand {
