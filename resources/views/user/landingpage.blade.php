@@ -41,19 +41,6 @@
             </div>
             <div class="navbar-content justift-content-end">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    @auth
-                        @if (auth()->user()->role == 'admin')
-                            <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
-                        @endif
-                    @endauth
-                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
-                    <div class="keranjangs">
-                        <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
-                        </li>
-                        <div class="ntif">
-                            <p>{{ $data }}</p>
                     <div class="nav-content">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         @auth
@@ -64,8 +51,7 @@
                         <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                         <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                         <div class="keranjangs">
-                            <li class="nav-item"><a class="nav-link" href="/carts"><i
-                                        class="bi bi-cart"></i>Keranjang</a>
+                            <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                             </li>
                             <div class="ntif">
                                 <p>{{ $data }}</p>
@@ -83,7 +69,7 @@
                                 <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
                                     <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
@@ -91,11 +77,6 @@
                             </div>
                         </div>
                     </div>
-                    @auth
-                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                    @else
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    @endauth
                 </ul>
 
             </div>
@@ -109,7 +90,8 @@
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt=""></div>
+                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,34 +102,34 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/bipang.jpg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/anggur malaysia.jpg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/anggur merah.jpg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
         </div>
@@ -215,7 +197,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim Feedback</button></div>
+                    <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim
+                            Feedback</button></div>
                 </form>
             </div>
         </div>

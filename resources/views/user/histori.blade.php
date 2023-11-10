@@ -157,19 +157,14 @@
         $(document).ready(function() {
             $.ajaxSetup({
                 headers:{
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content');
                 }
             });
-
-
             $('.btn').click(function() {
-                console.log('Hello World');
-
                 const id = $(this).data('id');
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
-
             $('.close').click(function() {
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal"+id);
@@ -177,68 +172,59 @@
             });
         });
         function Begini(saat) {
-        const id = saat.getAttribute('data-id')
-        $.ajax({
-            url: `/invoice/${id}`,
-            dataType:'json',
-            type:'POST',
-            data:{
-                "_token": "{{ csrf_token() }}",
-            },
-            statusCode: {
-        500: function(response) {
-           console.log(response)
+            const id = saat.getAttribute('data-id')
+            $.ajax({
+                url: /invoice/${id},
+                dataType:'json',
+                type:'POST',
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                },
+                statusCode: {
+                    500: function(response) {
+                        console.log(response);
+                    }
+                },
+                success: function(response){
+                    console.log('berhasil');
+                },
+                error: function(response){
+                    console.log('gagal');
+                },
+            });
         }
-    },
-            success: function(response){
-                console.log('berhasil');
-            },
-            error: function(response){
-                console.log('gagal');
-
-        });
-
         function phei() {
             console.log('Hello World');
         }
-
-        function modalteguh(ta)
-        const id = ta.getAttribute('data-id')
-        $.ajax({
-            type = "POST",
-            url = "/invoice/" + $id,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(response) {
-                console.log(response)
-            },
-        });
-        // Ambil elemen modal dan tombol yang akan membukanya
+        function modalteguh(ta){
+            const id = ta.getAttribute('data-id')
+            $.ajax({
+                type: "POST",
+                url: "/invoice/" + $id,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(response) {
+                    console.log(response)
+                },
+            });
+        }
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
-
-        // Tampilkan modal saat tombol dibuka
         openModalButton.addEventListener("click", function() {
             modal.style.display = "block";
         });
-
-        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
         closeButton.addEventListener("click", function() {
             modal.style.display = "none";
         });
-
-        // Sembunyikan modal saat latar belakang modal diklik
         window.addEventListener("click", function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
 
             }
         });
-       };
     </script>
-
     {{-- <script>
         function detailModal(id)
         {
@@ -247,14 +233,12 @@
             detailModal.style.display = 'block';
         }
     </script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-    <script src="script.js/script.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> --}}
+    {{-- <script src="script.js/script.js"></script> --}}
 
     <script>
         function detailModal(id) {
-            const detailModal = document.getElementById(".modal" + id)
+            const detailModal = document.getElementById(".modal" + id);
             console.log(id);
             detailModal.style.display = 'block';
         }
@@ -275,10 +259,7 @@
     </script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </body>
-
 </html>

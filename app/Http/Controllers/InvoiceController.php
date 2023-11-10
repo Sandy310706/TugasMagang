@@ -15,11 +15,13 @@ class InvoiceController extends Controller
     public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
+        $jumlah = $invoices->count();
         $data = Invoice::find($id);
+        // dd($id);
         $detail = Invoice::all();
 
 
-        return view('user.histori', compact('invoices', 'data', 'detail', ));
+        return view('user.histori', compact('invoices', 'data', 'detail', 'jumlah'));
     }
 
     public function store($id)

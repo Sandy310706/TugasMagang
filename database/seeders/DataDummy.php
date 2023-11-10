@@ -28,22 +28,22 @@ class DataDummy extends Seeder
 
 
 
-        DB::table('menus')->insert([
-            'nama' => 'ikan',
-            'harga' => '5000',
-            'kategori' => 'makanan',
-            'foto' => 'ayam.jpg',
-            'stok' => '50',
-            'id_kantin' => '1',
-        ]);
-
-
-        // DB::table('users')->insert([
-        //     'nama' => 'admin',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => Hash::make('admin'),
-        //     'role' => 'superadmin',
+        // DB::table('menus')->insert([
+        //     'nama' => 'ikan',
+        //     'harga' => '5000',
+        //     'kategori' => 'makanan',
+        //     'foto' => 'ayam.jpg',
+        //     'stok' => '50',
+        //     'id_kantin' => '1',
         // ]);
+
+
+        DB::table('users')->insert([
+            'nama' => 'superadmin',
+            'email' => 'superadmin@gmail.com',
+            'password' => Hash::make('admin'),
+            'role' => 'superadmin',
+        ]);
 
 
         // DB::table('kantin')->insert([
