@@ -22,34 +22,21 @@ class User extends Authenticatable
         'password',
         'konfirmasiPassword',
         'role',
+        'id_kantin'
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
 
-
     public function posts():BelongsTo
     {
         return $this -> belongsTo(Post::class);
     }
-
 
     public function Feedbacks():HasOne
     {
@@ -68,7 +55,7 @@ class User extends Authenticatable
 
     public function kantin()
     {
-        return $this->hasOne(Kantin::class, 'id_admin');
+        return $this->belongsTo(Kantin::class, 'id_kantin');
     }
 
     public function menu()
