@@ -87,11 +87,6 @@
                 <div class="col">
                     <h3 class="welcome">Welcome to Kantin SMKN 7 Pontianak</h3>
                 </div>
-                <div class="col">
-                    <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -102,33 +97,33 @@
                 <div class="image">
                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
                      <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href ="/menu"button class="btn btn-primary">Pesan</a>
             </div>
         </div>
     </section>
