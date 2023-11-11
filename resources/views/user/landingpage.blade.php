@@ -87,10 +87,10 @@
                 <div class="col">
                     <h3 class="welcome">Welcome to Kantin SMKN 7 Pontianak</h3>
                 </div>
-                
+
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt="">
+                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt="">
                         </div>
                     </div>
                 </div>
