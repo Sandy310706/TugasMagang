@@ -30,10 +30,6 @@ class InvoiceController extends Controller
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
-
-
-
-
         return response()->json($invoice);
     }
 

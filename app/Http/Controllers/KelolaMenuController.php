@@ -6,8 +6,8 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
-
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 use function PHPUnit\Framework\fileExists;
 
@@ -21,18 +21,17 @@ class KelolaMenuController extends Controller
     public function index()
     {
         $id = auth()->user()->id_kantin;
-        $data = Menu::where('id_kantin', $id)->get();
+        $data = Menu::where('id_kantin', $id)->latest()->get();
         return view('admin.kelolamenu', compact('data'));
     }
     public function getData(Request $request)
     {
         if($request->ajax()) {
             $id = auth()->user()->id_kantin;
-            $data = Menu::where('id_kantin', $id)->get();
-            return datatables()->of($data)->addIndexColumn()
+            $data = Menu::where('id_kantin', $id)->latest()->get();
+            return DataTables::of($data)->addIndexColumn()
             ->addColumn('action', function($row){
-                $button = '<a href="javacript:void(0)" class="btnEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span> | <a href="javascript:void(0)" class="btnDelete text-red-600" <i class="fa-solid fa-trash"></i> Hapus</a>';
-                return $button;
+                return view('layouts.admin.button', compact('row'));
             })->rawColumns(['action'])->make(true);
         }
     }
@@ -40,47 +39,49 @@ class KelolaMenuController extends Controller
     {
         $dataValidasi = Validator::make($request->all(), [
             'foto' => 'required|mimes:png,jpg,jpeg',
-            'nama' => 'required|unique:menus',
+            'nama' => 'required',
             'kategori' => 'required',
             'harga' => 'required|numeric',
             'stok' => 'required|numeric',
         ],
         [
-            'foto.required' => 'Kolom ini wajib di isi',
-            'nama.required' => 'Kolom ini wajib di isi',
-            'harga.required' => 'Kolom ini wajib di isi',
-            'nama.unique' => 'Nama telah di gunakan',
-            'foto.mimes' => 'Format file tidak sesuai',
-            'harga.numeric' => 'Wajib menggunakan angka',
-            'stok.numeric' => 'Wajib menggunakan angka',
+            'foto.required' => 'Kolom ini wajib di isi.',
+            'nama.required' => 'Kolom ini wajib di isi.',
+            'harga.required' => 'Kolom ini wajib di isi.',
+            'foto.mimes' => 'Format file tidak sesuai.',
+            'harga.numeric' => 'Wajib menggunakan angka.',
+            'stok.numeric' => 'Wajib menggunakan angka.',
         ]);
         if($dataValidasi->fails()){
-            return redirect()->back()->withErrors($dataValidasi)->withInput();
+            return response()->json(['errors' => $dataValidasi->errors()], 422);
+        }else{
+            $data = new Menu;
+            $data->nama = $request->nama;
+            $data->harga = $request->harga;
+            $data->stok = $request->stok;
+            $data->kategori = $request->kategori;
+            $data->id_kantin = auth()->user()->id_kantin;
+                if($request->hasFile('foto')){
+                    $fileFoto = $request->file('foto');
+                    $newName = uniqid().$fileFoto->getClientOriginalName();
+                    $path = 'fileMenu/'.$newName;
+                    Storage::disk('public')->put($path, file_get_contents($fileFoto));
+                    $data->foto = $newName;
+                }
+            $data->save();
+            return response()->json(['success' => 'Berhasil menambahkan data']);
         }
-        $data = new Menu;
-        $data->nama = $request->nama;
-        $data->harga = $request->harga;
-        $data->stok = $request->stok;
-        $data->kategori = $request->kategori;
-        $data->id_kantin = auth()->user()->id_kantin;
-            if($request->hasFile('foto')){
-                $fileFoto = $request->file('foto');
-                $newName = uniqid().$fileFoto->getClientOriginalName();
-                $path = 'fileMenu/'.$newName;
-                Storage::disk('public')->put($path, file_get_contents($fileFoto));
-                $data->foto = $newName;
-            }
-        $data->save();
-        Alert::success('Berhasil', 'Data berhasil di tambahkan');
-        return redirect()->back();
     }
-
+    public function getEditData($id)
+    {
+        $data = Menu::find($id);
+        return response()->json(['data' => $data]);
+    }
     public function update(Request $request, $id)
     {
         $data = Menu::find($id);
-        $test = $data->kantin;
         if(!$data){
-            Alert::error('Gagal', 'Data tidak di temukan');
+            Alert::error('Gagal', 'Data tidak di temukan.');
             return redirect()->back();
         }
         $dataValidasi = Validator::make($request->all(), [
@@ -89,22 +90,22 @@ class KelolaMenuController extends Controller
             'stok' => 'numeric',
         ]);
         if($dataValidasi->fails()){
-            return redirect()->back()->withErrors($dataValidasi)->withInput();
+            return response()->json(['errors' => $dataValidasi->errors()], 422);
+        }else{
+            $data->nama = $request->nama;
+            $data->harga = $request->harga;
+            $data->stok = $request->stok;
+            $data->kategori = $request->kategori;
+            if($request->hasFile('foto')){
+                $fileFoto = $request->file('foto');
+                    $newName = uniqid().$fileFoto->getClientOriginalName();
+                    $path = 'fileMenu/'.$newName;
+                    Storage::disk('public')->put($path, file_get_contents($fileFoto));
+                    $data->foto = $newName;
+            }
+            $data->save();
+            return response()->json(['succsess' => 'Data berhasil di perbarui.']);
         }
-        $data->nama = $request->nama;
-        $data->harga = $request->harga;
-        $data->stok = $request->stok;
-        $data->kategori = $request->kategori;
-        if($request->hasFile('foto')){
-            $fileFoto = $request->file('foto');
-                $newName = uniqid().$fileFoto->getClientOriginalName();
-                $path = 'fileMenu/'.$newName;
-                Storage::disk('public')->put($path, file_get_contents($fileFoto));
-                $data->foto = $newName;
-        }
-        $data->save();
-        Alert::success('Berhasil', 'Data berhasil di edit');
-        return redirect()->back();
     }
 
     public function delete($id)
@@ -115,12 +116,12 @@ class KelolaMenuController extends Controller
         if(fileExists($fotoPath)){
             if(unlink($fotoPath)){
                 $data->delete();
-                return response()->json('berhasil');
+                return response()->json(['success' => 'Data berhasil di hapus']);
             } else{
-                return redirect()->route('Admin.Dashboard');
+                return response()->json(['errors' => 'Foto gagal di hapus']);
             }
         }else{
-            return redirect()->route('Admin.Menu');
+            return response()->json(['errors' => 'Data gagal di hapus']);
         }
     }
 }
