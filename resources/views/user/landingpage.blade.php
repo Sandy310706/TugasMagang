@@ -68,7 +68,7 @@
                                 <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="{{ route('Logout', auth()->user()->nama) }}"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
                                     <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
