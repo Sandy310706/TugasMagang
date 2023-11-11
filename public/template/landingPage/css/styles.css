@@ -264,7 +264,7 @@ ul {
     font-size: 15px;
 }
 
-.dropdown-content ul li a:hover {
+.dropdown-content  li a:hover {
     color: #6506c3;
 }
 .dropdown-content li{
@@ -272,8 +272,10 @@ ul {
 }
 
 .histori {
+    border-top: 2px solid black ;
     border-bottom: 2px solid black;
-    padding-bottom: 10px
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .dropdown-sidebar ul li {
@@ -656,7 +658,7 @@ h3{
     }
 
     .button-sidebar button {
-        color: white;
+        color: gray;
     }
 
     .dropdown-content li a {
@@ -844,7 +846,7 @@ h3{
     }
 
     .button-sidebar button {
-        color: white;
+        color: gray;
     }
 
     .dropdown {
@@ -1001,7 +1003,7 @@ h3{
     }
 
     .button-sidebar button {
-        color: white;
+        color: gray;
     }
 
     .button-sidebar button i{

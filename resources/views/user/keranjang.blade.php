@@ -61,19 +61,19 @@
                     </div>
                     <div class="dropdown">
                         <div class="button-sidebar">
-                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick<i
-                                    class="bi bi-caret-down-fill"></i></button>
+                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
+                                <i class="bi bi-caret-down-fill"></i></button>
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
-                                <li class="content-dropdown histori"><a class="nav-dropdown" href="/invoice">Histori
+                                <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
+                                <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
-                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a>
-                                    </li>
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
                                 @endif
                             </div>
                         </div>
