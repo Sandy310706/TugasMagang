@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">t
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -53,18 +51,19 @@
                     </div>
                     <div class="dropdown">
                         <div class="button-sidebar">
-                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
-                                <i class="bi bi-caret-down-fill"></i></button>
+                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick<i
+                                    class="bi bi-caret-down-fill"></i></button>
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
-                                <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
+                                <li class="content-dropdown"><a class="nav-dropdown histori" href="/histori">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
-                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a>
+                                    </li>
                                 @endif
                             </div>
                         </div>
@@ -187,12 +186,11 @@
                 dropdownMenu.classList.add('animate-showDropdownMenu');
             } else {
                 dropdownMenu.style.display = "none";
-            }
-        }   
+            },
+        };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
-    <script src="script.js/scripts.js"></script>
 
 </body>
 </html>

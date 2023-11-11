@@ -13,16 +13,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/kantin.css') }}">
+    <link rel="stylesheet" href="{{ asset("css/kantin.css") }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Halaman Menu</title>
+    <title>Halaman Kantin</title>
 </head>
-
 <body>
     <div class="pembungkus-alert">
-        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+        <div class="custom-alert" id="alerts" style="display: none; font-sans" > pesan sudah ditambahkan </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid d-flex">
@@ -40,12 +39,11 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p>{{ $jumlah }}</p>
+                            <p>{{$jumlah}}</p>
                         </div>
                     </div>
                     @if (auth())
-                        <li class="nav-item"><a class="nav-link" href="/logout"><i
-                                    class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                     @else
                         <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                     @endif
@@ -71,7 +69,7 @@
                                     <div class="kontent">
                                         <h3>{{ $data->nama }}</h3>
                                         <p>Rp.{{ $data->harga }}</p>
-                                        <p>stok : {{ $data->stok }}</p>
+                                        <p>stok : {{$data->stok}}</p>
                                     </div>
                                 </div>
                                 <div class="clicks">
@@ -103,45 +101,44 @@
         </footer>
     </div>
 
-    <script>
-        $(document).ready(function() {
-            $("#alert").hide();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+        <script>
+            $(document).ready(function(){
+                $("#alert").hide();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
             });
-        });
 
-        function inputData(bi) {
-            const id = bi.getAttribute('data-id')
-            $.ajax({
-                url: '/carts/' + id,
-                dataType: "json",
-                type: "POST",
-                data: {},
-                success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').ustyle.display = 'none';
-                    }, 10000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
+                function inputData(bi) {
+                    const id = bi.getAttribute('data-id')
+                    $.ajax({
+                        url: '/carts/'+ id,
+                        dataType: "json",
+                        type: "POST",
+                        data: {},
+                        success: function(response) {
+                            location.reload();
+                            console.log("berhasil");
+                            setTimeout(() => {
+                                document.getElementById('alerts').ustyle.display = 'none';
+                            }, 10000);
+                            document.getElementById('alerts').style.display = 'block';
+                        },
+                        error: function(error) {
+                            console.log('gagal');
+                            console.log(error)
+                        }
+                    });
                 }
-            });
-        }
-    </script>
+
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
     <script src="script.js/scripts.js"></script>
 </body>
