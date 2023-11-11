@@ -84,7 +84,7 @@
                                 <p>{{$invoice->token}}</p>
                             </div>
                             <div class="tanggal hero-item">
-                                <p></p>
+                                <p>{{$invoice->created_at}}</p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                                 <p>{{$invoice->keranjang->subtotal}}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->total_harga}}</p>
+                                <p>{{$invoice->keranjang->total_harga}}</p>
                             </div>
                         </div>
                     </div>
