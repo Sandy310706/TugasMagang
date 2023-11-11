@@ -40,4 +40,8 @@
             </div>
         </div>
     </div>
+    <div class="w-full mt-10">
+        {!! $chartSatuMinggu->container() !!}
+    </div>
+    {!! $chartSatuMinggu->script() !!}
 @endsection
