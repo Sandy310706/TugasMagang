@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">t
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link
@@ -13,6 +13,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Rock+Salt&family=Satisfy&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href={{asset("css/kantin.css")}}>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Gabarito:wght@400;500&family=Josefin+Sans&family=Merriweather:wght@300&family=Oswald:wght@200;500&family=Outfit:wght@500&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
         rel="stylesheet">
@@ -82,28 +84,7 @@
     <div class="kantin">
         <h1 class="text-center">kantin</h1>
     </div>
-
     <div class="hero-click">
-        <div class="button-click">
-            <button class="arrow left"><svg xmlns="http://www.w3.org/2000/svg" width="67" height="67"
-                    viewBox="0 0 67 67" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M46.85 59.3102C46.658 59.5019 46.43 59.6538 46.1792 59.7573C45.9284 59.8607 45.6597 59.9136 45.3884 59.9131C45.1171 59.9125 44.8486 59.8584 44.5983 59.7539C44.3479 59.6494 44.1206 59.4965 43.9295 59.304L19.2325 34.5011C19.0408 34.3091 18.8889 34.0812 18.7855 33.8304C18.682 33.5796 18.6291 33.3108 18.6297 33.0395C18.6302 32.7683 18.6843 32.4997 18.7889 32.2494C18.8934 31.999 19.0462 31.7718 19.2387 31.5806L44.0416 6.88362C44.4297 6.49716 44.9555 6.28072 45.5032 6.28189C46.0509 6.28306 46.5757 6.50176 46.9621 6.88987C47.3486 7.27798 47.565 7.80371 47.5639 8.35141C47.5627 8.89911 47.344 9.42391 46.9559 9.81036L23.6122 33.0502L46.8562 56.3898C47.0479 56.5818 47.1998 56.8097 47.3032 57.0605C47.4066 57.3113 47.4596 57.58 47.459 57.8513C47.4584 58.1226 47.4043 58.3911 47.2998 58.6414C47.1953 58.8918 47.0424 59.1191 46.85 59.3102Z"
-                        fill="white" />
-                </svg></button>
-        </div>
-        <div class="cards-container">
-            <div class="content">
-                @foreach($kantin as $data)
-                <div class="card-content swiper-slide">
-                    <div class="card-hero">
-                        <div class="image-kantin">
-                            <img src="template/landingPage/assets/img/kantin 1.png" alt="">
-                        </div>
-                        <div class="kontents-kantin">
-                            <div class="kontent-kantin">
-                                <p>{{ $data->namaKantin }}</p>
-                                <a href="kantin/{{$data->namaKantin}}">Kantin 1</a>
         <div class="content-container">
             <div class="button-click">
                 <button class="arrow left"><svg xmlns="http://www.w3.org/2000/svg" width="67" height="67"
@@ -123,8 +104,7 @@
                                 </div>
                                 <div class="kontents-kantin">
                                     <div class="kontent-kantin">
-                                        <p>{{ $data->namaKantin }}</p>
-                                        <a href="kantin/{{ $data->namaKantin }}">Kantin 1</a>
+                                        <a href="kantin/{{ $data->namaKantin }}">{{ $data->namaKantin }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -141,40 +121,14 @@
                     </svg></button>
             </div>
         </div>
-
     </div>
-
-    <div class="card-container">
+     <div class="card-container">
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
-            {{-- @foreach ($data as $menu)
-                <div style="display: inline" id="menu-card">
-                    <div class="card-menu">
-                        <div class="card">
-                            <div class="cards">
-                                <div class="image">
-                                    <img src="{{ asset('storage/fileMenu/' . $menu->foto) }}" alt="">
-                                </div>
-                                <div class="kontents">
-                                    <div class="kontent">
-                                        <h3>{{ $menu->nama }}</h3>
-                                        <p>Rp.{{ $menu->harga }}</p>
-                                        <p>stok : {{$menu->stok}}</p>
-                                    </div>
-                                </div>
-                                <div class="clicks">
-                                    <button type="submit" onclick="inputData(this)" class="btn btn-submit"
-                                        data-id="{{ $menu->id }}">Pesan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach --}}
         </div>
     </div>
-    <div class="footer-containers">
+     <div class="footer-containers">
         <footer class="footer">
             <div class="container footer-container">
                 <div class="sosmed">
@@ -221,7 +175,7 @@
                     console.log(error)
                 }
             });
-        }
+        };
 
         function openDropdown() {
             const dropdownTrigger = document.getElementById('dropdownTrigger');
@@ -234,17 +188,11 @@
                 dropdownMenu.classList.add('animate-showDropdownMenu');
             } else {
                 dropdownMenu.style.display = "none";
-            }
-        }
+            },
+        };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
-    <script src="script.js/scripts.js"></script>
-</body>
 
+</body>
 </html>

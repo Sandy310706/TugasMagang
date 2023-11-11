@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Kantin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use RealRashid\SweetAlert\Facades\Alert;
+use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class KelolaakunController extends Controller
 {
@@ -15,6 +16,17 @@ class KelolaakunController extends Controller
         $data = User::latest()->paginate(10);
         $kantin = Kantin::find($data);
         return view('superadmin.kelolaakun', compact('data', 'kantin'));
+    }
+    public function getData(Request $request)
+    {
+        if($request->ajax()) {
+            $data = User::latest()->paginate(10);
+            $kantin = Kantin::find($data);
+            return DataTables::of($kantin)->addIndexColumn()
+            ->addColumn('action', function($row){
+                return view('layouts.superadmin.button', compact('row'));
+            })->rawColumns(['action'])->make(true);
+        }
     }
 
     public function tambah(Request $request) {
