@@ -66,12 +66,13 @@ class KelolaakunController extends Controller
         $data ->email=$request->email;
         $data ->role=$request->role;
         $data->save();
-        return redirect()->route('Kelolaakun');
+        Alert::success('success', 'Akun berhasil diperbarui');
+        return redirect()->route('Superadmin.Akun');
     }
 
     public function hapus($id) {
         $data = User::find($id);
         $data->delete();
-        return redirect()->route('Kelolaakun');
+        return response()->json(['success' => "Akun berhasil di hapus."]);
     }
 }

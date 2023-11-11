@@ -6,33 +6,29 @@
 <div class="w-full relative">
     <div class="flex mb-2 h-auto tablet:pl-4">
         <div class="w-1/2">
-            <button id="showModal" onclick="OpenModal()" class="mb-2 p-2 w-44 bg-sky-500 text-white rounded-md font-outfit hover:bg-sky-600">Tambah Akun</button>
+            <button id="showModal" onclick="OpenModal()" class="p-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah Akun</button>
         </div>
     </div>
     <div class="w-full">
         <table id="table" class="table-fixed w-full rounded-lg font-outfit text-xs h-12">
-            <thead class="bg-slate-400">
+            <thead class="bg-transparent">
                 <th>Nama</th>
                 <th>E-mail</th>
                 <th>Role</th>
                 <th>Sebagai Admin</th>
                 <th>Aksi</th>
             </thead>
-            <tbody class="text-center bg-white odd:bg-sky-300">
+            <tbody class="text-center bg-white">
                 @foreach ($data as $users)
-                <tr class="group border-b border-gray-400">
-                    <td class="p-4 w-full group-hover:bg-slate-200">{{ $users->nama }}</td>
-                    <td class="p-2 group-hover:bg-slate-200 selection:bg-green-700">{{ $users->role }}</td>
-                    <td class="p-2 group-hover:bg-slate-200">{{ $users->role }}</td>
-                    <td class="p-2 group-hover:bg-slate-200">{{ ($users->kantin) ? $users->kantin->namaKantin : "Bukan admin" }}</td>
-                    <td class="p-2 group-hover:bg-slate-200">
+                <tr class="group border-b odd:bg-zinc-300 even:bg-neutral-200">
+                    <td class="p-4 w-full group-hover:bg-neutral-400">{{ $users->nama }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">{{ $users->email }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">{{ $users->role }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">{{ ($users->kantin) ? $users->kantin->namaKantin : "Bukan admin" }}</td>
+                    <td class="p-2 group-hover:bg-neutral-400">
                         <button id="btnEdit" data-id="{{ $users->id }}"class="openModalEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                         <p class="inline"> | </p>
-                        <form action="{{ route('Akun.Hapus', $users->id) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" data-confirm-delete="true" class="text-pink-600"><i class="fa-solid fa-trash mobile:inline"></i><span class="mobile:hidden"> Hapus</span></button>
-                        </form>
+                        <button type="submit" data-id="{{ $users->id }}" class="btnDelete text-pink-600"><i class=" fa-solid fa-trash mobile:inline"></i><span class="mobile:hidden"> Hapus</span></button>
                     </td>
                 </tr>
                 @endforeach
@@ -44,6 +40,8 @@
     </div>
 </div>
 <div class="w-full flex justify-center">
+    <div class="w-screen h-screen bg-black bg-opacity-60 hidden absolute top-0 right-0" style="z-index: 900;" id="background">
+    </div>
     <div id="modal" class="hidden w-2/3 mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute  top-5 p-8  {{ $errors->any() ? 'block' : 'hidden' }} blur-none tablet:w-[80%] tablet:left-12" style="z-index: 999;">
         <div class="mb-2">
             <h1 class="text-4xl font-outfit">Tambah Kantin</h1>
@@ -111,7 +109,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-        <form action="{{ url('superadmin/kelolaakun/edit/'.$akun->id) }}" method="POST" class="p-3">
+        <form action="{{ url('/superadmin/kelolaakun/edit/'.$akun->id) }}" method="POST" class="p-3">
             @csrf
             @method('PUT')
             <div class="mb-2 flex flex-col">
@@ -141,7 +139,6 @@
                 <select name="kantin" id="kantin" class="rounded p-1 outline-none ring-1 ring-slate-600 border-slate-500 bg-slate-300 shadow-slate-800 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800">
                     <option selected value=""></option>
                     @foreach ($kantin as $kantins )
-                        {{-- <option selected value="{{ $kantins->id }}">{{ $kantins->namaKantin }}</option> --}}
                         <option value="{{ $kantins->id }}">{{ $kantins->namaKantin }}</option>
                     @endforeach
                 </select>
@@ -154,28 +151,81 @@
     </div>
     @endforeach
 </div>
+
 <script>
+    $(document).ready( function() {
+        $('.openModalEdit').click( function(e){
+            e.preventDefault();
+            let id = $(this).data('id')
+            let modal = document.getElementById("modalEdit"+id)
+            const body = document.getElementById("body");
+            const background = document.getElementById('background')
+            background.classList.remove("hidden")
+            modal.classList.remove("hidden")
+            modal.classList.add("animate-showModal")
+        })
+        $('body').on('click', '.btnDelete', function(e){
+            e.preventDefault();
+            var id = $(this).data("id");
+            console.log(id);
+            var token = $('meta[name="csrf-token"]').attr('content');
+            Swal.fire({
+                title: 'Konfirmasi',
+                text: 'Apakah Anda yakin ingin menghapus Akun ini?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Hapus',
+                cancelButtonText: 'Batal',
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/kelolaakun/hapus/'+ id,
+                        data: {
+                            _token: token,
+                        },
+                        success: function(response) {
+                            Swal.fire('Dihapus!', 'Item berhasil dihapus.', 'success');
+                            a.location = "/superadmin/kelolaakun"
+                        },
+                        error: function(error) {
+                            Swal.fire('Error', 'Terjadi kesalahan saat menghapus item.', 'error');
+                            Swal.fire('Dihapus!', 'Item berhasil dihapus.', 'success');
+                            console.log(error);
+                        }
+                    })
+                }
+            })
+        })
+    })
     function OpenModal() {
         const modal = document.getElementById("modal");
-        const body = document.getElementById('AdminBody');
+        const background = document.getElementById('background')
 
+        background.classList.remove("hidden")
         modal.classList.remove('hidden');
         modal.classList.add('animate-showModal');
     }
     function closeModal() {
         const modal = document.getElementById("modal");
-        const body = document.getElementById('AdminBody');
+        const background = document.getElementById('background')
         setTimeout(() => {
+            background.classList.add("hidden")
             modal.classList.add("hidden");
         }, 900);
         modal.classList.remove("animate-showModal")
         modal.classList.add("animate-hideModal");
     }
+
     function closeEditModal(id) {
         console.log(id);
         const modalEdit = document.getElementById("modalEdit"+id);
+        const background = document.getElementById('background')
         setTimeout(() => {
             modalEdit.classList.add("hidden");
+            background.classList.add("hidden")
         }, 900);
         modalEdit.classList.remove("animate-showModal");
         modalEdit.classList.add("animate-hideModal");
