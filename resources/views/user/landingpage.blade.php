@@ -49,7 +49,8 @@
                         <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                         <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                         <div class="keranjangs">
-                            <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
+                            <li class="nav-item"><a class="nav-link" href="/carts"><i
+                                        class="bi bi-cart"></i>Keranjang</a>
                             </li>
                             <div class="ntif">
                                 <p>{{ $data }}</p>
@@ -67,7 +68,7 @@
                                 <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
                                     <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
@@ -88,8 +89,7 @@
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt="">
-                        </div>
+                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -100,34 +100,34 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur malaysia.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur merah.jpg" alt="">
+                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>Manusia Rasis</h1>
+                <p>0</p>
                 <button class="btn btn-primary">Pesan</button>
             </div>
         </div>

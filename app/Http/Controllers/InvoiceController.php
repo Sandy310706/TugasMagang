@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Livewire\Keranjang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Dirape\Token\Token;
+use App\Models\Menu;
 use App\Models\Invoice;
 use App\Models\Keranjangs;
 
@@ -15,7 +17,9 @@ class InvoiceController extends Controller
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $data = Invoice::find($id);
         $detail = Invoice::all();
-        return view('user.histori', compact('invoices', 'data', 'detail'));
+
+
+        return view('user.histori', compact('invoices', 'data', 'detail', ));
     }
 
     public function store($id)

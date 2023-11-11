@@ -65,8 +65,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
     Route::post('/konfirmasipesaanan/{id}', [kelolaPesanController::class, 'konfirmasi'])->name('KonfirmasiPesanan');
     Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan');
-
-    // Super Admin
+   
+  // Super Admin
     Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun');
     Route::get('/superadmin/getdata', [KelolaakunController::class, 'getData'])->name('Superadmin.Get');
     Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah');
@@ -93,7 +93,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
 
     Route::delete('/histori', [HistoriController::class, 'index']);
-    Route::get('/kantin/{id}', [KantinController::class, 'show'])->name('Kantin.view');
+    Route::get('/kantin/{namaKantin}', [KantinController::class, 'show'])->name('Kantin.view');
 });
 
 

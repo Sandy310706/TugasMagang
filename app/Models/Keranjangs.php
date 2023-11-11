@@ -46,7 +46,7 @@ class Keranjangs extends Model
 
     public function invoice()
     {
-        return $this->belongsTo('App\Models\Invoice', 'invoice_id');
+        return $this->hasOne('App\Models\Invoice', 'invoice_id');
     }
     public function kantin()
     {

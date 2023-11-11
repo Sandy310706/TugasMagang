@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Menu;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Stmt\Foreach_;
 
 class Keranjang extends Component
@@ -18,11 +19,14 @@ class Keranjang extends Component
         $menu = Menu::where('id',$id)->first();
         $totalHarga = [];
 
+
         foreach($keranjangs as $keranjang)
         {
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
         }
         $arraySum = array_sum($totalHarga);
+
+
         return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
     }
 
@@ -39,6 +43,8 @@ class Keranjang extends Component
         $menu = Menu::where('id', $id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
+
+        // session()->forget('id', $keranjang);
 
         if($cekKeranjang)
         {
@@ -59,9 +65,10 @@ class Keranjang extends Component
             $keranjang->save();
         }
 
-
+        session()->forget('keranjang');
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
+
 
         return response()->json($keranjang);
     }
@@ -88,6 +95,7 @@ class Keranjang extends Component
     {
         $keranjang = Keranjangs::where('id',$id);
         $keranjang->delete();
+
         return redirect('carts');
     }
 }

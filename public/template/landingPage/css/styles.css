@@ -228,11 +228,11 @@ body {
 
 .button-sidebar button {
     background-color: transparent;
-    color: black;
-    border: none;
     font-family: "Amaranth", sans-serif;
     font-size: 20px;
+    color: gray;
     letter-spacing: 0.0625em;
+    border:none;
 }
 
 .button-sidebar button i {
@@ -274,9 +274,13 @@ ul {
 .dropdown-content ul li a:hover {
     color: #6506c3;
 }
+.dropdown-content li{
+    padding: 8px;
+}
 
 .histori {
     border-bottom: 2px solid black;
+    padding-bottom: 10px
 }
 
 .dropdown-sidebar ul li {
