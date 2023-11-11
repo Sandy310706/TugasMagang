@@ -89,7 +89,7 @@
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt=""></div>
+                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
         <div class="container Menu-Page mb-5">
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>Manusia Rasis</h1>
                 <p>0</p>
@@ -108,7 +108,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>Manusia Rasis</h1>
                 <p>0</p>
@@ -116,7 +116,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>Manusia Rasis</h1>
                 <p>0</p>
@@ -124,7 +124,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/manusia rasis.png" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>Manusia Rasis</h1>
                 <p>0</p>

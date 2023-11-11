@@ -122,15 +122,13 @@
                             <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
                                 data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                         </div>
-                        <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item"
-                            style="padding: 10px;">{{ $keranjang->jumlah }}</span>
+                        <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
-                            <button class="tambah" data-keranjang-id="{{ $keranjang->id }}"
-                                data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
+                            <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                     <div class="content-table total">
-                        <span id="total" data-id="{{ $keranjang->id }}">Rp. {{ $keranjang->total_harga }}</span>
+                        <span data-id="{{ $keranjang->id }}" class="total">Rp. {{ $keranjang->total_harga }}</span>
                     </div>
                     <div class="content-table remove">
                         <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
@@ -172,12 +170,15 @@
             $(".tambah").click(function() {
                 const keranjangId = $(this).data("keranjang-id");
                 const menuId = $(this).data("menu-id");
-                const spanJumlah = $("span[data-menu-id='" + menuId + "']");
-                const totalHarga = $("span[data-id='" + menuId + "']");
+                console.log("/cartst/" + keranjangId + "/" + menuId);
+                let spanJumlah = $("span[data-menu-id='" + menuId + "']");
+                let totalHarga = $("span[data-id='" + keranjangId + "']");
                 $.ajax({
                     type: "GET",
                     url: "/cartst/" + keranjangId + "/" + menuId,
                     success: function(data) {
+                        console.log(spanJumlah);
+                        console.log(totalHarga);
                         spanJumlah.text(data.jumlah);
                         totalHarga.text("Rp. " + data.total_harga)
                     },
@@ -190,7 +191,7 @@
                 const keranjangId = $(this).data("keranjang-id");
                 const menuId = $(this).data("menu-id");
                 const spanJumlah = $("span[data-menu-id='" + menuId + "']");
-                const totalHarga = $("span[data-id='" + menuId + "']");
+                const totalHarga = $("span[data-id='" + keranjangId + "']");
                 $.ajax({
                     type: "GET",
                     url: "/cartsk/" + keranjangId + "/" + menuId,
