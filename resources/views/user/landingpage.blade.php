@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="template/landingPage/css/styles.css">
     <title>Home</title>
 </head>
-
 <body>
     @if (session('login'))
         <div class="alert alert-success">
@@ -63,7 +61,7 @@
                     <div class="dropdown">
                         <div class="button-sidebar">
                             <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
-                                <i class="bi bi-caret-down-fill"></i></button>
+                            </button><i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
@@ -105,7 +103,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -113,7 +111,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur malaysia.jpg" alt="">
+                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -121,7 +119,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/anggur merah.jpg" alt="">
+                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
@@ -222,10 +220,10 @@
 
             if (dropdownMenu.style.display === "none") {
                 dropdownMenu.style.display = "block"
-                dropdownIcon.style.transform = "rotate(50deg)"
-                dropdownMenu.classList.add('animate-showDropdownMenu');
+                dropdownIcon.style.transform = "rotate(90deg)"
             } else {
                 dropdownMenu.style.display = "none";
+                dropdownIcon.style.transform = "rotate(180deg)"
             }
         }
     </script>

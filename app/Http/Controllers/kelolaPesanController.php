@@ -4,12 +4,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Invoice;
-use Dirape\Token\Token;
 use App\Models\Keranjangs;
 use App\Models\kelolaPesan;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class kelolaPesanController extends Controller
 {
@@ -20,7 +18,7 @@ class kelolaPesanController extends Controller
         return response()->json([$data]);
     }
 
-    public function store(Request $request, $id)
+    public function store($id)
     {
         $randomString = Str::random(3);
 
