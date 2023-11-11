@@ -57,20 +57,15 @@
     </nav>
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
-    @foreach ($detail as $invoice)
-        <div class="container container-histori" style="margin-bottom: 20px;">
-            <div class="card">
-                <div class="content">
-                    <p>No Pesanan</p>
-                    <div class="Detail">
-                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei()">BukaModal</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-    @foreach ($detail as $invoice)
-        <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
+    @foreach ($detail as $s )
+    <div class="container container-histori" style="margin-bottom: 20px;">
+        <div class="card">
+            <div class="content">
+                <p>No Pesanan</p>
+                <div class="Detail">
+                    <button class="btn" data-id="{{$s->id}}" id="openModal" onclick="Begini(this)">Buka Modal</button>
+    @foreach ($detail as $p)
+        <div id="detailModal{{ $p->id }}" class="modal modal{{ $p->id }}">
             <div class="modal-content">
                 <span class="close" data-id="{{ $invoice->id }}" id="close">x</span>
                 <div class="hero-container">
@@ -100,7 +95,7 @@
                                 <p>{{$invoice->keranjang->subtotal}}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->total_harga}}</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -146,8 +141,8 @@
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
-        500: function(response) {
-           console.log(response)
+            500: function(response) {
+            console.log(response)
                 }
             },
             success: function(response){
@@ -155,54 +150,40 @@
             },
             error: function(response){
                 console.log('gagal');
-            },
-        });
-        }
-
-        var modal = document.getElementsByClassName("modal");
-        var openModalButton = document.getElementById("openModal");
-        var closeButton = document.querySelector(".close");
-        
-        openModalButton.addEventListener("click", function() {
-            modal.style.display = "block";
-        });
-
-        function closemodal(){
-            var modal = document.getElementsByClassName("modal");
-            var openModalButton = document.getElementById("openModal");
-            var closeButton = document.getElementById("close")
-            modal.style.display = "none";
-        }
-
-        closeButton.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-
             }
         });
+    }
+
+        
+    </script>
+
+    <script>
+        function detailModal(id) {
+            const detailModal = document.getElementById(".modal" + id)
+            console.log(id);
+            detailModal.style.display = 'block';
+        }
 
         function openDropdown() {
             const dropdownTrigger = document.getElementById('dropdownTrigger');
             const dropdownMenu = document.getElementById('dropdownMenu');
             const dropdownIcon = document.getElementById('dropdownIcon');
 
-            if (dropdownMenu.style.display === "none") {
+            if (dropdownMenu.style.display === "none") j{
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
                 dropdownMenu.classList.add('animate-showDropdownMenu');
             } else {
                 dropdownMenu.style.display = "none";
             }
-        }
+        });
+    
     </script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
 </body>
 </html>

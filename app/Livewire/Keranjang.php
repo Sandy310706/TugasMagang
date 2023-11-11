@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\keranjangPivot;
 use Livewire\Component;
 use App\Models\Menu;
+use App\Models\Kantin;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -30,7 +31,7 @@ class Keranjang extends Component
         return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
     }
 
-    public function store($id)
+    public function store(Request $Request ,$id)
     {
 
         if(!auth()){
@@ -41,6 +42,8 @@ class Keranjang extends Component
                             ->where('menu_id', $id)
                             ->first();
         $menu = Menu::where('id', $id)->first();
+
+        $kantin = Kantin::where('id', $id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
 
@@ -61,11 +64,11 @@ class Keranjang extends Component
             $keranjang->jumlah =  1;
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
-            $keranjang->kantin_id = 1;
+            $keranjang->kantin_id = $kantin->id;
             $keranjang->save();
         }
 
-        session()->forget('keranjang');
+        $Request->session()->forget('keranjangs');
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
 

@@ -24,11 +24,7 @@
                     <td class="p-4 w-full group-hover:bg-slate-200">{{ $users->nama }}</td>
                     <td class="p-2 group-hover:bg-slate-200 selection:bg-green-700">{{ $users->role }}</td>
                     <td class="p-2 group-hover:bg-slate-200">{{ $users->role }}</td>
-                    @if(empty($users))
-                        <td class="p-2 group-hover:bg-slate-200">Bukan admin Kantin</td>
-                        @else
-                        <td class="p-2 group-hover:bg-slate-200">{{ $users->kantin }}</td>
-                    @endif
+                    <td class="p-2 group-hover:bg-slate-200">{{ ($users->kantin) ? $users->kantin->namaKantin : "Bukan admin" }}</td>
                     <td class="p-2 group-hover:bg-slate-200">
                         <button id="btnEdit" data-id="{{ $users->id }}"class="openModalEdit text-yellow-600"><i class="fa-regular fa-pen-to-square mobile:inline"></i><span class="mobile:hidden"> Edit</span></button>
                         <p class="inline"> | </p>
@@ -158,17 +154,6 @@
     </div>
     @endforeach
 </div>
-<script>
-    $(document).ready( function() {
-        $('.openModalEdit').click( function() {
-            let id = $(this).data('id');
-            let modal = document.getElementById('modalEdit'+id);
-
-            modal.classList.remove('hidden');
-            modal.classList.add('animate-showModal')
-        });
-    });
-</script>
 <script>
     function OpenModal() {
         const modal = document.getElementById("modal");

@@ -20,14 +20,6 @@ class KantinController extends Controller
         return view('superadmin.kelolakantin', compact('data'));
     }
 
-    // public function store($id)
-    // {
-    //     $menu = Menu::find($id);
-
-    //     return view();
-
-    // }
-
     public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
@@ -48,7 +40,7 @@ class KantinController extends Controller
     {
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
-        $menu = Menu::where('pp', $namaKantin['id'])->get();
+        $menu = Menu::where('id', $namaKantin['id'])->get();
         $jumlah = count($keranjang);
         return view('user.kantin', compact('menu','jumlah'));
     }

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">t
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -53,19 +51,20 @@
                     </div>
                     <div class="dropdown">
                         <div class="button-sidebar">
-                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
-                                <i class="bi bi-caret-down-fill"></i></button>
+                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick<i
+                                    class="bi bi-caret-down-fill"></i></button>
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
                                 <li class="content-dropdown"><a class="nav-dropdown" href="/invoice">Akun</li>
-                                <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
+                                    <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
-                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a>
+                                    </li>
                                 @endif
                             </div>
                         </div>
@@ -92,8 +91,7 @@
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M46.85 59.3102C46.658 59.5019 46.43 59.6538 46.1792 59.7573C45.9284 59.8607 45.6597 59.9136 45.3884 59.9131C45.1171 59.9125 44.8486 59.8584 44.5983 59.7539C44.3479 59.6494 44.1206 59.4965 43.9295 59.304L19.2325 34.5011C19.0408 34.3091 18.8889 34.0812 18.7855 33.8304C18.682 33.5796 18.6291 33.3108 18.6297 33.0395C18.6302 32.7683 18.6843 32.4997 18.7889 32.2494C18.8934 31.999 19.0462 31.7718 19.2387 31.5806L44.0416 6.88362C44.4297 6.49716 44.9555 6.28072 45.5032 6.28189C46.0509 6.28306 46.5757 6.50176 46.9621 6.88987C47.3486 7.27798 47.565 7.80371 47.5639 8.35141C47.5627 8.89911 47.344 9.42391 46.9559 9.81036L23.6122 33.0502L46.8562 56.3898C47.0479 56.5818 47.1998 56.8097 47.3032 57.0605C47.4066 57.3113 47.4596 57.58 47.459 57.8513C47.4584 58.1226 47.4043 58.3911 47.2998 58.6414C47.1953 58.8918 47.0424 59.1191 46.85 59.3102Z"
                             fill="white" />
-                    </svg>
-                </button>
+                    </svg></button>
             </div>
             <div class="cards-container">
                 <div class="content">
@@ -189,12 +187,11 @@
                 dropdownMenu.classList.add('animate-showDropdownMenu');
             } else {
                 dropdownMenu.style.display = "none";
-            }
-        }   
+            },
+        };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
-    <script src="script.js/scripts.js"></script>
 
 </body>
 </html>

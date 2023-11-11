@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Menu;
 use Nette\Utils\Random;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
 use function Laravel\Prompts\password;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -14,9 +15,6 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
-
-
-
 
         // DB::table('users')->insert([
         //     'nama' => 'robin',
@@ -26,42 +24,6 @@ class DataDummy extends Seeder
         // ]);
 
 
-
-
-        DB::table('menus')->insert([
-            'nama' => 'ikan',
-            'harga' => '5000',
-            'kategori' => 'makanan',
-            'foto' => 'ayam.jpg',
-            'stok' => '50',
-            'id_kantin' => '1',
-        ]);
-
-
-        // DB::table('users')->insert([
-        //     'nama' => 'admin',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => Hash::make('admin'),
-        //     'role' => 'superadmin',
-        // ]);
-
-
-        // DB::table('kantin')->insert([
-        //     'namaKantin' => 'Kantin F rasis',
-        // ]);
-
-
-
-
-
-
-
-        DB::table('users')->insert([
-            'nama' => 'Budi',
-            'email' => 'Budi@super.com',
-            'role' => 'SuperAdmin',
-            'password' => Hash::make('budi'),
-        ]);
 
     }
 }
