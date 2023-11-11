@@ -56,7 +56,8 @@
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
-                                <li class="content-dropdown"><a class="nav-dropdown histori" href="/histori">Histori
+                                <li class="content-dropdown"><a class="nav-dropdown" href="/invoice">Akun</li>
+                                    <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
                                     <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i

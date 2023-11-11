@@ -151,7 +151,7 @@ body {
 
 .button-sidebar button {
   background-color: transparent;
-  color: black;
+  color: gray;
   border: none;
   font-family: "Amaranth", sans-serif;
   font-size: 20px;
@@ -160,7 +160,7 @@ body {
 
 .button-sidebar button i {
   position: relative;
-  right: 1px;
+  right: 5px;
   top: 2px;
 }
 
@@ -194,16 +194,19 @@ ul {
   font-size: 15px;
 }
 
-.dropdown-content ul li a:hover {
-  color: #6506c3;
+.dropdown-content  li a.nav-dropdown:hover {
+  color: red !important;
+  cursor: progress;
 }
 .dropdown-content li{
     padding: 8px;
 }
 
 .histori {
+    border-top: 2px solid black ;
     border-bottom: 2px solid black;
-    padding-bottom: 10px
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 
@@ -582,7 +585,7 @@ h3 {
     right: 0;
     top: 0;
     width: 100%;
-    height: 70vh; 
+    height: 70vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -625,7 +628,7 @@ h3 {
   }
 
   .button-sidebar button {
-    color: white;
+    color: gray;
   }
 
   .dropdown-sidebar{
@@ -735,8 +738,8 @@ h3 {
   nav ul.slide {
     opacity: 1;
     transform: translateX(0);
-  }
 
+    }
   .nav-content {
     flex-direction: column;
     order: 2;
@@ -746,13 +749,13 @@ h3 {
     order: 1;
     margin: 15px;
   }
-   
+
   .button-sidebar{
     width: 130px ;
   }
 
   .button-sidebar button {
-    color: white;
+    color: gray;
   }
 
   .dropdown-sidebar{
@@ -852,7 +855,7 @@ h3 {
   }
 
   .button-sidebar button{
-    color: white;
+    color: gray;
   }
 
   .nav-content li {

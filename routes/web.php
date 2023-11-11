@@ -52,27 +52,25 @@ Route::middleware(['guest'])->group(function(){
 });
 Route::middleware('auth')->group(function() {
     // Admin Kantin
-    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
-    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback');
-    Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu');
-    Route::get('/admin/menu/ajax', [KelolaMenuController::class, 'getData'])->name('Admin.Menu.Ajax');
-    Route::post('/menu/store', [KelolaMenuController::class, 'store'])->name('Menu.Store');
-    Route::put('/menu/get/{id}', [KelolaMenuController::class, 'getEditData'])->name('Menu.Data.Update');
-    Route::put('/menu/edit/{id}', [KelolaMenuController::class, 'update'])->name('Menu.Edit');
-    Route::delete('/menu/delete/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete');
-    Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History');
-    Route::get('/admin/keuangan', [KeuanganController::class, 'index'])->name('Admin.Kuangan');
-    Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan');
-    Route::post('/konfirmasipesaanan/{id}', [kelolaPesanController::class, 'konfirmasi'])->name('KonfirmasiPesanan');
-    Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan');
+    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard')->middleware('admin');
+    Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback')->middleware('admin');
+    Route::get('/admin/menu', [KelolaMenuController::class, 'index'])->name('Admin.Menu')->middleware('admin');
+    Route::get('/admin/menu/ajax', [KelolaMenuController::class, 'getData'])->name('Admin.Menu.Ajax')->middleware('admin');
+    Route::post('/menu/store', [KelolaMenuController::class, 'store'])->name('Menu.Store')->middleware('admin');
+    Route::put('/menu/edit/{id}', [KelolaMenuController::class, 'update'])->name('Menu.Edit')->middleware('admin');
+    Route::delete('/menu/delete/{id}', [KelolaMenuController::class, 'delete'])->name('Menu.Delete')->middleware('admin');
+    Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History')->middleware('admin');
+    Route::get('/admin/keuangan', [KeuanganController::class, 'index'])->name('Admin.Kuangan')->middleware('admin');
+    Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan')->middleware('admin');
+    Route::post('/konfirmasipesaanan/{id}', [kelolaPesanController::class, 'konfirmasi'])->name('KonfirmasiPesanan')->middleware('admin');
+    Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan')->middleware('admin');
 
   // Super Admin
-    Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun');
-    Route::get('/superadmin/getdata', [KelolaakunController::class, 'getData'])->name('Superadmin.Get');
-    Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah');
-    Route::put('/superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit');
-    Route::delete('/kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus');
-    Route::get('/superadmin/kelolakantin', [KantinController::class, 'index'])->name('Superadmin.Kantin');
+    Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun')->middleware('superadmin');
+    Route::post('superadmin/kelolaakun/tambah', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah')->middleware('superadmin');
+    Route::post('superadmin/kelolaakun/edit/{id}', [KelolaakunController::class, 'edit'])->name('Akun.edit')->middleware('superadmin');
+    Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus')->middleware('superadmin');
+    Route::get('/superadmin/kelolakantin', [KantinController::class, 'index'])->name('Superadmin.Kantin')->middleware('superadmin');
 
     // Auth
     Route::get('/logout/{nama}', [AuthController::class, 'logout'])->name('Logout');
