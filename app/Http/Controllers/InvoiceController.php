@@ -15,13 +15,19 @@ class InvoiceController extends Controller
     public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $jumlah = $invoices->count();
-        $data = Invoice::find($id);
-        // dd($id);
-        $detail = Invoice::all();
+        $detail = Invoice::where('user_id', auth()->user()->id)->get();
+        $keranjang = Keranjangs::where('id',$id)->first();
+        $totalHarga = [];
 
 
-        return view('user.histori', compact('invoices', 'data', 'detail', 'jumlah'));
+        foreach($invoices as $keranjang)
+        {
+            $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
+        }
+        $arraySum = array_sum($totalHarga);
+
+
+        return view('user.histori', compact('invoices', 'detail','arraySum' ));
     }
 
     public function store($id)
@@ -36,7 +42,9 @@ class InvoiceController extends Controller
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
-        return response()->json($invoice);
+
+        return redirect()->route('Keranjang');
+        // return response()->json($invoice);
     }
 
 }
