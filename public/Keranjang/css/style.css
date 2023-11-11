@@ -115,85 +115,82 @@ h3 {
 }
 
 /* style dropdown */
-.content-container {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-}
 
-.button-sidebar {
+.dropdown {
+    display: flex;
+    justify-content: start;
+  }
+  
+  .button-sidebar {
     display: flex;
     align-items: center;
     width: 150px;
-}
-
-.button-click {
-    display: flex;
-    justify-content: center;
-}
-
-.button-sidebar button {
+  }
+  
+  .button-sidebar button {
     background-color: transparent;
-    color: black;
+    color: gray;
     border: none;
     font-family: "Amaranth", sans-serif;
     font-size: 20px;
     letter-spacing: 0.0625em;
-}
-
-.dropdown-sidebar {
+  }
+  
+  .button-sidebar button i {
+    position: relative;
+    right: 5px;
+    top: 2px;
+  }
+  
+  
+  .dropdown-sidebar {
     position: absolute;
     top: 30px;
-    right: 30px;
+    right: 10px;
     display: none;
     margin-top: 2px;
     background-color: white;
     text-align: center;
-    width: 150px;
+    width: 180px;
     padding: 10px;
     border-radius: 10px;
-}
-
-ul {
+  }
+  
+  .dropdowm-sidebar ul {
+    width: 0;
+  }
+  
+  ul {
     padding-left: 0;
     margin-bottom: 0;
-}
-
-.dropdown-content li a {
+  }
+  
+  .dropdown-content li a {
     color: black;
     text-decoration: none;
-    font-family: Outfit;
-    font-size: 12px;
-}
-
-.dropdown-content li a:hover {
-    color: #6506c3;
-}
-
-.dropdown-content li{
-    padding: 5px;
-}
-
-.histori {
-    border-bottom: 2px solid black;
-    padding-bottom: 8px
-}
-
-.dropdown-sidebar ul li {
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+  }
+  
+  .dropdown-content  li a.nav-dropdown:hover {
+    color: red !important;
+    cursor: progress;
+  }
+  .dropdown-content li{
+      padding: 8px;
+  }
+  
+  .histori {
+      border-top: 2px solid black ;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      padding-top: 10px;
+  }
+  
+  
+  .dropdown-sidebar ul li {
     list-style: none;
-}
-
-.dropdown-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.dropdown {
-    display: flex;
-    align-items: center;
-}
+  }
 
 /* style table keranjang */
 h1.text-center {
@@ -429,7 +426,7 @@ p{
     }
 
     .button-sidebar button {
-        color: white;
+        color: gray;
     }
 
     .hilang {
@@ -545,7 +542,7 @@ p{
     }
 
     .button-sidebar button {
-        color: white;
+        color: gray;
     }
 
     .dropdown-sidebar {
@@ -641,7 +638,7 @@ p{
     }
 
     .button-sidebar button {
-        color: white;
+        color: gray;
     }
 
     .nav-content li {
