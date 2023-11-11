@@ -61,7 +61,7 @@
                     <div class="dropdown">
                         <div class="button-sidebar">
                             <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
-                            </button><i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                           <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
@@ -86,7 +86,12 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h3 class="welcome">Welcome to Kantin SMKN 7 Pontianak</h3>
+                    <h3 class="welcome">Welcome to Kantin Sekolah</h3>
+                </div>
+                 <div class="col">
+                    <div class="makanan">
+                        <div class="image"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
+                    </div>
                 </div>
             </div>
         </div>
