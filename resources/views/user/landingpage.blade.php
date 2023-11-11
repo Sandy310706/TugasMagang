@@ -89,11 +89,6 @@
                 <div class="col">
                     <h3 class="welcome">Welcome to Kantin SMKN 7 Pontianak</h3>
                 </div>
-                <div class="col">
-                    <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt=""></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -106,7 +101,7 @@
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
-                <button class="btn btn-primary">Pesan</button>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
@@ -114,7 +109,7 @@
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
-                <button class="btn btn-primary">Pesan</button>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
@@ -122,7 +117,7 @@
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
-                <button class="btn btn-primary">Pesan</button>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
@@ -130,7 +125,7 @@
                 </div>
                 <h1>nasi</h1>
                 <p>1.000.000</p>
-                <button class="btn btn-primary">Pesan</button>
+                <a href ="/menu"button class="btn btn-primary">Pesan</a>
             </div>
         </div>
     </section>
