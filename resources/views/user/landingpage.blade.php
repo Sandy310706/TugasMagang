@@ -49,8 +49,7 @@
                         <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                         <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                         <div class="keranjangs">
-                            <li class="nav-item"><a class="nav-link" href="/carts"><i
-                                        class="bi bi-cart"></i>Keranjang</a>
+                            <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                             </li>
                             <div class="ntif">
                                 <p>{{ $data }}</p>
@@ -69,7 +68,7 @@
                                 <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
                                 @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="/logout"><i
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
                                 @else
                                     <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
@@ -88,6 +87,14 @@
                 <div class="col">
                     <h3 class="welcome">Welcome to Kantin SMKN 7 Pontianak</h3>
                 </div>
+                
+                <div class="col">
+                    <div class="makanan">
+                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
