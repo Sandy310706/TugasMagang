@@ -16,13 +16,19 @@ class DataDummy extends Seeder
     public function run(): void
     {
 
-        // DB::table('users')->insert([
-        //     'nama' => 'robin',
-        //     'email' => 'robin@email.com',
-        //     'password' => Hash::make('robin'),
-        //     'role' => 'guest',
-        // ]);
+        DB::table('menus')->insert([
+            'nama' => 'ayam',
+            'quantity' => '1',
+            'kategori'=> 'makanan',
+            'harga'=> '15000',
+            'stok' => '10',
+            'foto' => 'ayam',
+            'id_kantin' => '2',
+        ]);
 
+        // DB::table('kantin')->insert([
+        //     'namaKantin' => 'bbbb',
+        // ]);
 
 
     }

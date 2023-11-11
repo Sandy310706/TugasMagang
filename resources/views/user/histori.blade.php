@@ -174,14 +174,14 @@
             const dropdownMenu = document.getElementById('dropdownMenu');
             const dropdownIcon = document.getElementById('dropdownIcon');
 
-            if (dropdownMenu.style.display === "none") j{
+            if (dropdownMenu.style.display === "none") {
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
                 dropdownMenu.classList.add('animate-showDropdownMenu');
             } else {
                 dropdownMenu.style.display = "none";
             }
-        });
+        };
     </script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
