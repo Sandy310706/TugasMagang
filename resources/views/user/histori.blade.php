@@ -57,20 +57,20 @@
     </nav>
 
     <h1 class="text-center Histori">Histori Pemesanan</h1>
-    @foreach ($detail as $s)
+    @foreach ($detail as $invoice)
         <div class="container container-histori" style="margin-bottom: 20px;">
             <div class="card">
                 <div class="content">
                     <p>No Pesanan</p>
                     <div class="Detail">
-                        <button class="btn" data-id="{{ $s->id }}" id="openModal" onclick="phei()">BukaModal</button>
+                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei()">BukaModal</button>
                     </div>
                 </div>
             </div>
         </div>
     @endforeach
-    @foreach ($detail as $p)
-        <div id="detailModal{{ $p->id }}" class="modal modal{{ $p->id }}">
+    @foreach ($detail as $invoice)
+        <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
             <div class="modal-content">
                 <span class="close" onclick="closemodal()">&times;</span>
                 <div class="hero-container">
@@ -78,10 +78,10 @@
                     <div class="content-item">
                         <div class="content-hero">
                             <div class="kode hero-item">
-                                <p></p>
+                                <p>{{$invoice->keranjang_id}}</p>
                             </div>
                             <div class="name hero-item">
-                                <p></p>
+                                <p>{{$invoice->token}}</p>
                             </div>
                             <div class="tanggal hero-item">
                                 <p></p>
@@ -91,23 +91,23 @@
                     <div class="content-child">
                         <div class="child-content">
                             <div class="food hero-child">
-                                <p></p>
+                                <p>{{$invoice->keranjang->menu->nama}}</p>
                             </div>
                             <div class="stok hero-child">
-                                <p></p>
+                                <p>{{$invoice->keranjang->jumlah}}</p>
                             </div>
                             <div class="total hero-child">
-                                <p></p>
+                                <p>{{$invoice->keranjang->subtotal}}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p></p>
+                                <p>{{$invoice->keranjang->total_harga}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="content-total">
                         <div class="child-total">
                             <div class="total hero-total">
-                                <p>Total : Rp.100.000</p>
+                                <p>{{$arraySum}}</p>
                             </div>
                         </div>
                     </div>

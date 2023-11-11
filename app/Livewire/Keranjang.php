@@ -31,7 +31,7 @@ class Keranjang extends Component
         return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
     }
 
-    public function store($id)
+    public function store(Request $Request ,$id)
     {
 
         if(!auth()){
@@ -68,7 +68,7 @@ class Keranjang extends Component
             $keranjang->save();
         }
 
-        session()->forget('keranjang');
+        $Request->session()->forget('keranjangs');
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
 
