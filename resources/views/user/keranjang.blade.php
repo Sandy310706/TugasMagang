@@ -140,7 +140,7 @@
             <div class="cekout">
                 <div class="btnns">
 
-       <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
+                <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a>
 
                 </div>
             </div>
