@@ -39,8 +39,8 @@
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
-                                <li class="content-dropdown histori"><a class="nav-dropdown" href="/invoice">Histori
-                                        Pesanan</li>
+                                <li class="content-dropdown"><a class="nav-dropdown" href="/invoice">Akun</li>
+                                <li class="content-dropdown histori"><a class="nav-dropdown" href="/invoice">Histori Pesanan</li>
                                 @if (auth())
                                     <li class="content-dropdown"><a class="nav-dropdown" href="/logout"><i
                                                 class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
@@ -55,7 +55,6 @@
             </div>
         </div>
     </nav>
-
     <h1 class="text-center Histori">Histori Pemesanan</h1>
     @foreach ($detail as $invoice)
         <div class="container container-histori" style="margin-bottom: 20px;">
@@ -72,7 +71,7 @@
     @foreach ($detail as $invoice)
         <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
             <div class="modal-content">
-                <span class="close" onclick="closemodal()">&times;</span>
+                <span class="close" data-id="{{ $invoice->id }}" id="close">x</span>
                 <div class="hero-container">
                     <h1 class="text-detail">Detail Pesanan</h1>
                     <div class="content-item">
@@ -84,7 +83,7 @@
                                 <p>{{$invoice->token}}</p>
                             </div>
                             <div class="tanggal hero-item">
-                                <p></p>
+                                <p>{{$invoice->created_at}}</p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +99,7 @@
                                 <p>{{$invoice->keranjang->subtotal}}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->total_harga}}</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -133,6 +132,7 @@
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal"+id);
                 detailmodal.style.display = 'none';
+                console.log('Apaa');
             });
         });
         function Begini(saat) {
@@ -145,8 +145,8 @@
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
-        500: function(response) {
-           console.log(response)
+            500: function(response) {
+            console.log(response)
                 }
             },
             success: function(response){
@@ -154,30 +154,32 @@
             },
             error: function(response){
                 console.log('gagal');
+
             },
         });
+    }
+
+        
+    </script>
+
+    <script>
+        function detailModal(id) {
+            const detailModal = document.getElementById(".modal" + id)
+            console.log(id);
+            detailModal.style.display = 'block';
         }
 
-        // Ambil elemen modal dan tombol yang akan membukanya
-        var modal = document.getElementsByClassName("modal");
-        var openModalButton = document.getElementById("openModal");
-        var closeButton = document.querySelector(".close");
+        function openDropdown() {
+            const dropdownTrigger = document.getElementById('dropdownTrigger');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownIcon = document.getElementById('dropdownIcon');
 
-        // Tampilkan modal saat tombol dibuka
-        openModalButton.addEventListener("click", function() {
-            modal.style.display = "block";
-        });
-
-        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
-        closeButton.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-
-        // Sembunyikan modal saat latar belakang modal diklik
-        window.addEventListener("click", function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-
+            if (dropdownMenu.style.display === "none") j{
+                dropdownMenu.style.display = "block"
+                dropdownIcon.style.transform = "rotate(50deg)"
+                dropdownMenu.classList.add('animate-showDropdownMenu');
+            } else {
+                dropdownMenu.style.display = "none";
             }
         });
     </script>
