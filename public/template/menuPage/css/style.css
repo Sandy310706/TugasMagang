@@ -585,7 +585,7 @@ h3 {
     right: 0;
     top: 0;
     width: 100%;
-    height: 70vh; 
+    height: 70vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -738,8 +738,8 @@ h3 {
   nav ul.slide {
     opacity: 1;
     transform: translateX(0);
-  }
 
+    }
   .nav-content {
     flex-direction: column;
     order: 2;
@@ -749,7 +749,7 @@ h3 {
     order: 1;
     margin: 15px;
   }
-   
+
   .button-sidebar{
     width: 130px ;
   }
