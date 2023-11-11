@@ -69,8 +69,6 @@
             </div>
         </div>
     @endforeach
-    @foreach ($detail as $invoice)
-        <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
             <div class="modal-content">
                 <span class="close" onclick="closemodal()">&times;</span>
                 <div class="hero-container">
@@ -145,6 +143,7 @@
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
+
         500: function(response) {
            console.log(response)
                 }
@@ -154,6 +153,7 @@
             },
             error: function(response){
                 console.log('gagal');
+
             },
         });
         }
@@ -181,10 +181,13 @@
             }
         });
     </script>
+    
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
 </body>
 </html>
