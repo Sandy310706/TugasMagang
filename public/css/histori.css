@@ -128,7 +128,7 @@ body {
 
 .button-sidebar button {
   background-color: transparent;
-  color: black;
+  color: gray;
   border: none;
   font-family: "Amaranth", sans-serif;
   font-size: 20px;
@@ -170,7 +170,9 @@ ul {
 
 .histori {
     border-bottom: 2px solid black;
-    padding-bottom: 10px
+    border-top: 2px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .dropdown-sidebar ul li {
@@ -426,7 +428,7 @@ ul {
     }
 
     .button-sidebar button{
-      color: white;
+      color: gray;
     }
 
     .dropdown-sidebar{
@@ -527,7 +529,7 @@ ul {
     }
 
     .button-sidebar button{
-      color: white;
+      color: gray;
     }
 
     .dropdown-sidebar{
@@ -605,7 +607,7 @@ ul {
     }
 
     .button-sidebar button{
-      color: white;
+      color: gray;
     }
 
     .nav-content li{
