@@ -15,7 +15,6 @@ class InvoiceController extends Controller
     public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
-        // dd($invoices);
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id',$id)->first();
         $totalHarga = [];
@@ -44,8 +43,7 @@ class InvoiceController extends Controller
         $invoice->status = 0;
         $invoice->save();
 
-        return redirect()->route('Keranjang');
-        // return response()->json($invoice);
+        return response()->json($invoice);
     }
 
 }
