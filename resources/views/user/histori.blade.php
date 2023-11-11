@@ -84,7 +84,7 @@
                                 <p>{{$invoice->token}}</p>
                             </div>
                             <div class="tanggal hero-item">
-                                <p>s</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>
