@@ -39,10 +39,10 @@ class DataDummy extends Seeder
 
 
         DB::table('users')->insert([
-            'nama' => 'superadmin',
-            'email' => 'superadmin@gmail.com',
+            'nama' => 'admin',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
-            'role' => 'superadmin',
+            'role' => 'admin',
         ]);
 
 
@@ -56,12 +56,12 @@ class DataDummy extends Seeder
 
 
 
-        DB::table('users')->insert([
-            'nama' => 'Budi',
-            'email' => 'Budi@super.com',
-            'role' => 'SuperAdmin',
-            'password' => Hash::make('budi'),
-        ]);
+        // DB::table('users')->insert([
+        //     'nama' => 'Budi',
+        //     'email' => 'Budi@super.com',
+        //     'role' => 'SuperAdmin',
+        //     'password' => Hash::make('budi'),
+        // ]);
 
     }
 }
