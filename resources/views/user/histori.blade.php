@@ -176,7 +176,7 @@
             } else {
                 dropdownMenu.style.display = "none";
             }
-        };
+        }
     
     </script>
     <script src="script.js/script.js"></script>
