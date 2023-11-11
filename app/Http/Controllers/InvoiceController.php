@@ -15,6 +15,7 @@ class InvoiceController extends Controller
     public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
+        // dd($invoices);
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id',$id)->first();
         $totalHarga = [];

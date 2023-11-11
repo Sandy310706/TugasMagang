@@ -215,7 +215,7 @@ ul {
 .content-container {
   display: flex;
   justify-content: center;
-  width: 55%;
+  width: 100%;
 }
 
 .svg svg {
@@ -631,6 +631,10 @@ h3 {
   .dropdown-sidebar{
      right: -12px;
   }
+  
+  .card-hero{
+    height: 50px;
+  }
 
   .card {
     display: flex;
@@ -673,7 +677,7 @@ h3 {
 
   .swiper-slide {
     width: 49%;
-    height: 190px;
+    height: 150px;
   }
 
   .image-kantin img {

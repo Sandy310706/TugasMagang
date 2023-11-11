@@ -100,7 +100,7 @@
                                 <p>{{$invoice->keranjang->subtotal}}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->keranjang->total_harga}}</p>
+                                <p>{{$invoice->total_harga}}</p>
                             </div>
                         </div>
                     </div>

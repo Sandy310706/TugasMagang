@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-	<link rel="stylesheet" href="Keranjang/css/style.css">
-	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap" rel="stylesheet">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -36,7 +23,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bebas+Neue&family=Merriweather:wght@300&family=Oswald:wght@200&family=Righteous&family=Roboto+Slab:wght@500&family=Rock+Salt&family=Satisfy&family=Ubuntu:ital@1&display=swap"
         rel="stylesheet">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Keranjang</title>
     @livewireStyles
@@ -122,15 +108,13 @@
                             <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
                                 data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                         </div>
-                        <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item"
-                            style="padding: 10px;">{{ $keranjang->jumlah }}</span>
+                        <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
                         <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
-                            <button class="tambah" data-keranjang-id="{{ $keranjang->id }}"
-                                data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
+                            <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                     <div class="content-table total">
-                        <span id="total" data-id="{{ $keranjang->id }}">Rp. {{ $keranjang->total_harga }}</span>
+                        <span data-id="{{ $keranjang->id }}" class="total">Rp. {{ $keranjang->total_harga }}</span>
                     </div>
                     <div class="content-table remove">
                         <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
@@ -172,12 +156,15 @@
             $(".tambah").click(function() {
                 const keranjangId = $(this).data("keranjang-id");
                 const menuId = $(this).data("menu-id");
-                const spanJumlah = $("span[data-menu-id='" + menuId + "']");
-                const totalHarga = $("span[data-id='" + menuId + "']");
+                console.log("/cartst/" + keranjangId + "/" + menuId);
+                let spanJumlah = $("span[data-menu-id='" + menuId + "']");
+                let totalHarga = $("span[data-id='" + keranjangId + "']");
                 $.ajax({
                     type: "GET",
                     url: "/cartst/" + keranjangId + "/" + menuId,
                     success: function(data) {
+                        console.log(spanJumlah);
+                        console.log(totalHarga);
                         spanJumlah.text(data.jumlah);
                         totalHarga.text("Rp. " + data.total_harga)
                     },
@@ -190,7 +177,7 @@
                 const keranjangId = $(this).data("keranjang-id");
                 const menuId = $(this).data("menu-id");
                 const spanJumlah = $("span[data-menu-id='" + menuId + "']");
-                const totalHarga = $("span[data-id='" + menuId + "']");
+                const totalHarga = $("span[data-id='" + keranjangId + "']");
                 $.ajax({
                     type: "GET",
                     url: "/cartsk/" + keranjangId + "/" + menuId,

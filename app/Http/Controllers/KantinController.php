@@ -20,14 +20,6 @@ class KantinController extends Controller
         return view('superadmin.kelolakantin', compact('data'));
     }
 
-    // public function store($id)
-    // {
-    //     $menu = Menu::find($id);
-
-    //     return view();
-
-    // }
-
     public function store(Request $request)
     {
         $dataValidasi = Validator::make($request->all(), [
