@@ -245,8 +245,7 @@
             e.preventDefault()
             let formData = $(this).serialize()
             let id = $('.btnEdit').data('id')
-            console.log(id);
-            var token = $('meta[name="csrf-token"]').attr('content')
+            let token = $('meta[name="csrf-token"]').attr('content')
             const modal = document.getElementById("modal");
             const background = document.getElementById("background")
             const body = document.getElementById("body")
@@ -254,35 +253,32 @@
                 type: 'PUT',
                 url: "/menu/edit/"+id,
                 data: formData,
-                processData: false,
-                contentType: false,
                 success: function(response){
-                    console.log(response);
+                    setTimeout(() => {
+                        modal.classList.add("hidden")
+                        background.classList.add("hidden")
+                        body.classList.remove("overflow-hidden")
+                    }, 900);
+                    modal.classList.remove("animate-showModal")
+                    modal.classList.add("animate-hideModal")
                     Swal.fire({
                         title: 'Berhasil',
                         text: 'Data berhasil disimpan!',
                         icon: 'success',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        zIndex: 9999,
+                        zIndex: 99999,
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            setTimeout(() => {
-                                modal.classList.add("hidden")
-                                background.classList.add("hidden")
-                                body.classList.remove("overflow-hidden")
-                            }, 900);
-                            modal.classList.remove("animate-showModal")
-                            modal.classList.add("animate-hideModal")
                             $('#tabel-menu').DataTable().ajax.reload()
-                            $('#FormTambah')[0].reset()
+                            $('#FormEdit')[0].reset()
+                            $('#nama').val(response.data.nama)
+                            console.log(response.data.nama);
                         }
                     });
                 },
                 error: function(error){
                     console.log(error);
-                    console.log(formData);
-                    console.log(selectedFile);
                 }
             });
         });
@@ -290,7 +286,6 @@
             e.preventDefault();
             var id = $(this).data("id");
             var token = $('meta[name="csrf-token"]').attr('content');
-            console.log('/menu/delete/'+id);
             Swal.fire({
                 title: 'Konfirmasi',
                 text: 'Apakah Anda yakin ingin menghapus item ini?',
