@@ -99,7 +99,7 @@
                                 <p>{{$invoice->keranjang->subtotal}}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p></p>
+                                <p>{{$invoice->total_harga}}</p>
                             </div>
                         </div>
                     </div>
@@ -145,8 +145,8 @@
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
-            500: function(response) {
-            console.log(response)
+        500: function(response) {
+           console.log(response)
                 }
             },
             success: function(response){
@@ -154,27 +154,28 @@
             },
             error: function(response){
                 console.log('gagal');
-
             },
         });
-    }
-
-
-    </script>
-
-    <script>
-        function detailModal(id) {
-            const detailModal = document.getElementById(".modal" + id)
-            console.log(id);
-            detailModal.style.display = 'block';
         }
 
-        function openDropdown() {
-            const dropdownTrigger = document.getElementById('dropdownTrigger');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const dropdownIcon = document.getElementById('dropdownIcon');
+        // Ambil elemen modal dan tombol yang akan membukanya
+        var modal = document.getElementsByClassName("modal");
+        var openModalButton = document.getElementById("openModal");
+        var closeButton = document.querySelector(".close");
 
-            if (dropdownMenu.style.display === "none") {
+        // Tampilkan modal saat tombol dibuka
+        openModalButton.addEventListener("click", function() {
+            modal.style.display = "block";
+        });
+
+        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
+        closeButton.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // Sembunyikan modal saat latar belakang modal diklik
+        window.addEventListener("click", function(event) {
+            if (dropdownMenu.style.display === "none") j{
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
                 dropdownMenu.classList.add('animate-showDropdownMenu');
@@ -188,5 +189,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
- </body>
+</body>
 </html>
