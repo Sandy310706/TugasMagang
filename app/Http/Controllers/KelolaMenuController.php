@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\Validator;
-use Yajra\DataTables\Facades\DataTables;
 
+use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 use function PHPUnit\Framework\fileExists;
 
 class KelolaMenuController extends Controller
@@ -104,7 +105,7 @@ class KelolaMenuController extends Controller
                     $data->foto = $newName;
             }
             $data->save();
-            return response()->json(['succsess' => 'Data berhasil di perbarui.']);
+            return response()->json(['success' => $data]);
         }
     }
 

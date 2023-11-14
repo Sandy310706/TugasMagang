@@ -435,7 +435,7 @@ h3 {
   body {
     max-width: 100%;
   }
-  
+
   .card-hero{
     height: 50px;
   }
@@ -539,8 +539,8 @@ h3 {
   nav ul.slide {
     opacity: 1;
     transform: translateX(0);
-  }
 
+    }
   .nav-content {
     flex-direction: column;
     order: 2;
@@ -550,7 +550,7 @@ h3 {
     order: 1;
     margin: 15px;
   }
-   
+
   .button-sidebar{
     width: 130px ;
   }
