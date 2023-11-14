@@ -24,9 +24,9 @@ Route::fallback(function () {
 
 // Landing Page
 Route::get('/', function () {
-    $keranjang = Keranjangs::where('user_id')->get();
-    $data = count($keranjang);
-    return view('user.landingpage',compact('data'));
+    $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
+    $jumlah = count($keranjang);
+    return view('user.landingpage',compact('jumlah'));
 })->middleware('web');
 
 

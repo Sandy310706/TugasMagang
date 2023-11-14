@@ -52,7 +52,7 @@
                             <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                             </li>
                             <div class="ntif">
-                                <p>{{ $data }}</p>
+                                <p>{{ $jumlah }}</p>
                             </div>
                         </div>
                     </div>

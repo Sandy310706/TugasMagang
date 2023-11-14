@@ -20,12 +20,12 @@ class Keranjang extends Component
         $menu = Menu::where('id',$id)->first();
         $totalHarga = [];
 
-
         foreach($keranjangs as $keranjang)
         {
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
         }
         $arraySum = array_sum($totalHarga);
+
 
 
         return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
@@ -46,8 +46,6 @@ class Keranjang extends Component
         $kantin = Kantin::where('id', $id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
-
-        // session()->forget('id', $keranjang);
 
         if($cekKeranjang)
         {
