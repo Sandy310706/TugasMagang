@@ -41,7 +41,8 @@ class InvoiceController extends Controller
         $invoice->status = 0;
         $invoice->save();
 
-        return response()->json($invoice);
+        return redirect()->route('Keranjang');
+        // return response()->json($invoice);
     }
 
 }
