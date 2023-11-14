@@ -1,7 +1,7 @@
 body {
     background-color: #f0f0f0;
   }
-
+/* 
   #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -189,7 +189,7 @@ ul {
 .dropdown {
   display: flex;
   align-items: center;
-}
+} */
 
   /* card histori */
   .Histori {
@@ -294,6 +294,8 @@ ul {
 
   .tanggal p{
     text-align: center;
+    display: flex;
+    align-items: center;
   }
 
   .kode p{
@@ -379,62 +381,7 @@ ul {
     body {
       max-width: 100%;
     }
-
-    .menu-toggle {
-      display: flex;
-      position: relative;
-      z-index: 9999;
-    }
-
-    nav ul {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-      height: 40vh;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: -1;
-      transform: translatey(-100%);
-      transition: all 1s;
-      opacity: 0;
-    }
-
-    nav ul.slide {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    #mainNav .navbar-brand {
-      position: absolute;
-      z-index: -1;
-    }
-
-    .nav-content{
-      flex-direction: column;
-      order: 2;
-    }
-
-    .button-sidebar{
-      width: 130px;
-      margin: 10px;
-    }
-
-    .nav-content li {
-      width: 120px;
-      margin: 10px;
-    }
-
-    .button-sidebar button{
-      color: gray;
-    }
-
-    .dropdown-sidebar{
-      right: -5px;
-    }
-
+    
     .content p {
       font-size: 15px;
     }
@@ -473,69 +420,6 @@ ul {
   }
 
   @media only screen and (min-width: 600px) and (max-width: 767px) {
-    .menu-toggle {
-      display: flex;
-      position: relative;
-      z-index: 9999;
-    }
-
-    nav ul {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 50%;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: -1;
-      transform: translatex(-100%);
-      transition: all 1s;
-      opacity: 0;
-    }
-
-    nav ul.slide {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    #mainNav .navbar-brand {
-      position: absolute;
-      z-index: -1;
-    }
-
-    .menu-toggle input:checked~span:nth-child(2) {
-      background-color: black;
-      transform: rotate(45deg) translate(-1px, -1px);
-    }
-
-    .menu-toggle input:checked~span:nth-child(4) {
-      background-color: black;
-      transform: rotate(-45deg) translate(-1px, 0);
-    }
-
-    .nav-content{
-      flex-direction: column;
-      order: 2;
-    }
-
-    .nav-content li{
-      width: 120px;
-    }
-
-    .button-sidebar{
-      width: 130px;
-    }
-
-    .button-sidebar button{
-      color: gray;
-    }
-
-    .dropdown-sidebar{
-      right: -15px;
-    }
-
     .modal-content{
       width: 80%;
       margin: 100px auto;
@@ -555,69 +439,6 @@ ul {
   }
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .menu-toggle {
-      display: flex;
-      position: relative;
-      z-index: 9999;
-    }
-
-    nav ul {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 50%;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: black;
-      z-index: -1;
-      transform: translatex(-100%);
-      transition: all 1s;
-      opacity: 0;
-    }
-
-    nav ul.slide {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .menu-toggle input:checked~span:nth-child(2) {
-      background-color: black;
-      transform: rotate(45deg) translate(-1px, -1px);
-    }
-
-    .menu-toggle input:checked~span:nth-child(4) {
-      background-color: black;
-      transform: rotate(-45deg) translate(-1px, 0);
-    }
-
-    #mainNav .navbar-brand {
-      position: absolute;
-      z-index: -1;
-    }
-
-    .nav-content{
-      flex-direction: column;
-      order: 2;
-    }
-
-    .button-sidebar{
-      width: 130px;
-    }
-
-    .button-sidebar button{
-      color: gray;
-    }
-
-    .nav-content li{
-      width: 120px;
-    }
-
-    .dropdown-sidebar{
-      right: -16px;
-    }
-
     .modal-content{
       width: 80%;
       margin: 100px auto;
