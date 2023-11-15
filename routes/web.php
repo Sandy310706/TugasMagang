@@ -16,6 +16,7 @@ use App\Http\Controllers\KantinController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\kelolaPesanController;
 use App\Http\Controllers\HistoriController;
 
@@ -25,16 +26,7 @@ Route::fallback(function () {
 });
 
 // Landing Page
-Route::get('/', function () {
-    $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-    $data = Keranjangs::where('id')->first();
-    $user = User::where('id', auth()->user()->id)->first();
-    $dataUser = User::where('id')->first();
-    $makanan = Menu::where('kategori','makanan')->get();
-    $minuman = Menu::where('kategori', 'minuman')->get();
-    $angka = count($keranjang);
-    return view('user.landingpage',compact('angka','makanan','minuman','user'));
-})->middleware('web');
+Route::get('/', [LandingController::class, 'index'])->name('landingPage')->middleware('web');
 
 
 Route::middleware(['guest'])->group(function(){
