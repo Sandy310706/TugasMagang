@@ -62,6 +62,7 @@
                         @method('Delete')
                         <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -75,7 +76,6 @@
             </div>
         </div>
     </div>
-
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
@@ -89,9 +89,7 @@
         </div>
         <div class="cekout">
             <div class="btnns">
-
                <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
-
             </div>
         </div>
     </div>

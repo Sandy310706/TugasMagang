@@ -12,7 +12,7 @@
             viewBox="0 0 435 556" fill="none">
             <path
                 d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z"
-                fill="#D2DE32" />
+                fill="#D2DE32"/>
         </svg>
     </div>
     <div class="masthead">
@@ -32,72 +32,30 @@
     <section class="menu page-section" id="portfolio">
         <h1 class="makanan mt-5">Makanan</h1>
         <div class="container Menu-Page mb-5">
+            @foreach ($makanan as $item)
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>{{$item->nama}}</h1>
+                <p>{{$item->harga}}</p>
                 <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href ="/menu"button class="btn btn-primary">Pesan</a>
+            @endforeach
             </div>
         </div>
         <h1 class="makanan mt-5">Minuman</h1>
         <div class="container Menu-Page mb-5">
+            @foreach ($minuman as $item)
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>{{$item->nama}}</h1>
+                <p>{{$item->harga}}</p>
                 <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href ="/menu"button class="btn btn-primary">Pesan</a>
+            @endforeach
             </div>
         </div>
     </section>

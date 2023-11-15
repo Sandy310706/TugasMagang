@@ -24,14 +24,12 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p></p>
+                            <p>{{ $angka }}</p>
                         </div>
                     </div>
-                </div>
-
                 <div class="dropdown">
                     <div class="button-sidebar">
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$user->nama}}
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
                     </div>
                     <div class="dropdown-sidebar" id="dropdownMenu">
@@ -41,9 +39,9 @@
                                     Pesanan</li>
                             @if (auth())
                                 <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
-                                        href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                                        href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a></li>
                             @else
-                                <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
+                                <li class="content-dropdown"><a class="nav-dropdown" href="/logout">logout</a></li>
                             @endif
                         </div>
                     </div>
@@ -85,7 +83,7 @@
         var navbar = document.getElementById("mainNav");
 
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            navbar.style.backgroundColor = "#000000"; 
+            navbar.style.backgroundColor = "#000000";
             navbar.style.padding = "20px";
             navbar.h3.style.color = "#898989"
         } else {
