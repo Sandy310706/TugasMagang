@@ -134,7 +134,7 @@ span {
 
 .kantin  {
   margin-top: 150px;
-  color: #FFF;
+  color: #96C291;
   text-align: center;
   font-family: Satisfy;
   font-size: 75px;
@@ -402,14 +402,19 @@ h3 {
     width: 100%;
   }
 
-  .sosmed ul li a {
-    font-size: 8px;
-    margin-top: 10px;
+  .sosmed ul  a {
+    font-size: 12px;
     line-height: 10px;
+    padding: 3px;
+  }
+
+
+  .copyright {
+    width: 50%
   }
 
   .copyright p {
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
   }
 
@@ -509,55 +514,19 @@ h3 {
   .hero-click-2{
     display: none;
   }
-<<<<<<< HEAD
-  .hero-click-4{
-    display: none;
-=======
-
-  nav ul.slide {
-    opacity: 1;
-    transform: translateX(0);
-
-    }
-  .nav-content {
-    flex-direction: column;
-    order: 2;
-  }
-
-  .dropdown{
-    order: 1;
-    margin: 15px;
-  }
-
-  .button-sidebar{
-    width: 130px ;
-  }
-
-  .button-sidebar button {
-    color: gray;
-  }
-
-  .dropdown-sidebar{
-    right: -12px;
- }
-
-  .nav-content li {
-    margin: 15px;
->>>>>>> a15723f53cb12219ba4b049ffa2206437bf1daa5
-  }
 
   .footer-container {
     width: 100%;
   }
 
-  .sosmed ul li a {
+  .sosmed ul  a {
     font-size: 14px;
-    margin-top: 10px;
     line-height: 10px;
+    padding: 3px;
   }
 
   .copyright p {
-    font-size: 17px;
+    font-size: 14px;
     text-align: center;
   }
 
@@ -569,7 +538,7 @@ h3 {
   .content-container-3 {
     display: flex;
     justify-content: center;
-    width: 595px;
+    width: 545px;
   }
 
   .cards-container-3 {
@@ -649,7 +618,7 @@ h3 {
   .content-container-4 {
     display: flex;
     justify-content: center;
-    width: 595px;
+    width: 550px;
   }
 
   .cards-container-4 {
@@ -707,6 +676,21 @@ h3 {
     text-decoration: none;
     color: black;
     font-family: ighteous
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+
+  .sosmed ul  a {
+    font-size: 15px;
+    line-height: 10px;
+    padding: 3px;
+  }
+
+  .copyright p {
+    font-size: 15px;
+    text-align: center;
   }
 }
 

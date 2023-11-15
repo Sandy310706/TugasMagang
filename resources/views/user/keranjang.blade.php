@@ -70,11 +70,7 @@
         <div class="content-img">
             <div class="hero-image">
                 <div class="image">
-                    <img src="img/keranjang.jpg" alt="">
-                </div>
-                <div class="content-text">
-                    <p class="content-child">Tidak ada pesanan di keranjang</p>
-                    <p class="content-child-1">Harap pesan agar masuk kekeranjang</p>
+                    <img src="img/img-keranjang.png" alt="">
                 </div>
             </div>
         </div>
