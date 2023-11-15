@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container-fluid d-flex">
+
+  <div class="container-fluid d-flex">
         <div class="menu-toggle">
             <input type="checkbox">
             <span></span>
@@ -50,7 +50,6 @@
 
         </div>
     </div>
-</nav>
 
 <script>
     function openDropdown() {
