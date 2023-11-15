@@ -16,12 +16,16 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    @include('layouts.user.nav')
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        @include('layouts.user.nav')
+    </nav>
+    
     @yield('landingpage')
     @yield('menupage')
     @yield('keranjang')
     @yield('histori')
     @yield('kantinPage')
+    @yield('kantin')
 
 </body>
 </html>
