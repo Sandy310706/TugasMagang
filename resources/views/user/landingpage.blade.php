@@ -7,12 +7,12 @@
             <h1>{{ session('login') }}</h1>
         </div>
     @endif
-    <div class="svg-container">
-        <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646"
-            viewBox="0 0 517 646" fill="none">
+    <div class="svg-container position-relative">
+        <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="435" height="556"
+            viewBox="0 0 435 556" fill="none">
             <path
-                d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z"
-                fill="#016A70" />
+                d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z"
+                fill="#D2DE32"/>
         </svg>
     </div>
     <div class="masthead">
@@ -32,72 +32,30 @@
     <section class="menu page-section" id="portfolio">
         <h1 class="makanan mt-5">Makanan</h1>
         <div class="container Menu-Page mb-5">
+            @foreach ($makanan as $item)
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>{{$item->nama}}</h1>
+                <p>{{$item->harga}}</p>
                 <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href ="/menu"button class="btn btn-primary">Pesan</a>
+            @endforeach
             </div>
         </div>
         <h1 class="makanan mt-5">Minuman</h1>
         <div class="container Menu-Page mb-5">
+            @foreach ($minuman as $item)
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>{{$item->nama}}</h1>
+                <p>{{$item->harga}}</p>
                 <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href ="/menu"button class="btn btn-primary">Pesan</a>
+            @endforeach
             </div>
         </div>
     </section>
@@ -110,15 +68,15 @@
                     d="M421.605 420.051C354.627 549.81 167.928 586.657 4.60249 502.352C-158.723 418.047 -228.704 248.708 -161.725 118.949C-94.747 -10.8097 138.286 -23.7404 247.153 32.454C410.479 116.759 488.584 290.292 421.605 420.051Z"
                     fill="#016A70" />
             </svg>
-            <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353" height="483"
-                viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
+            <svg class=" position-absolute about-hijau" xmlns="http://www.w3.org/2000/svg" width="438" height="657"
+                viewBox="0 0 438 657" fill="none">
                 <path
-                    d="M-95.03 245.61C-106.006 115.736 -363.615 25.7327 -116.363 4.83633C130.89 -16.0601 309.185 29.1495 351.202 202.156C362.178 332.029 262.251 458.38 14.9986 479.276C-232.254 500.173 -36.4232 423.189 -95.03 245.61Z"
-                    fill="#A3A847" />
+                    d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z"
+                    fill="#D2DE32" />
             </svg>
         </div>
-        <div class="text-center mt-5">
-            <h2 class="tentang section-heading text-capatalize mb-5">Tentang Kami</h2>
+        <div class="text-center">
+            <h2 class="tentang section-heading text-capatalize ">Tentang Kami</h2>
         </div>
         <div class="About container">
             <div class="about-1">
@@ -151,37 +109,24 @@
 
 
     </section>
+
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="sosmed">
-                <ul>
-                    <li class=""><a href=""><i class="bi bi-envelope-fill"></i> SMKN7@gmail.com</a></li>
-                    <li class=""><a href=""><i class="bi bi-telephone-fill"></i> 1244234</a></li>
-                    <li class=""><a href=""><i class="bi bi-instagram"></i> SMKN7Pontianak</a></li>
-                </ul>
-            </div>
+        <div class=" footer-container">
             <div class="copyright">
                 <p>Copyright&copy; by Babang Frederick</p>
+            </div>
+            <div class="sosmed">
+                <ul>
+                    <a href=""><i class="bi bi-envelope-fill"></i> SMKN7@gmail.com</a>
+                    <a href=""><i class="bi bi-telephone-fill"></i> 1244234</a>
+                    <a href=""><i class="bi bi-instagram"></i> SMKN7Pontianak</a>
+                </ul>
             </div>
         </div>
     </footer>
 
 
-    <script>
-        function openDropdown() {
-            const dropdownTrigger = document.getElementById('dropdownTrigger');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const dropdownIcon = document.getElementById('dropdownIcon');
 
-            if (dropdownMenu.style.display === "none") {
-                dropdownMenu.style.display = "block"
-                dropdownIcon.style.transform = "rotate(90deg)"
-            } else {
-                dropdownMenu.style.display = "none";
-                dropdownIcon.style.transform = "rotate(180deg)"
-            }
-        }
-    </script>
 
     <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Keranjangs;
+use App\Models\User;
+use App\Models\Menu;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +27,13 @@ Route::fallback(function () {
 // Landing Page
 Route::get('/', function () {
     $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
+    $data = Keranjangs::where('id')->first();
+    $user = User::where('id', auth()->user()->id)->first();
+    $dataUser = User::where('id')->first();
+    $makanan = Menu::where('kategori','makanan')->get();
+    $minuman = Menu::where('kategori', 'minuman')->get();
     $angka = count($keranjang);
-    return view('user.landingpage',compact('angka'));
+    return view('user.landingpage',compact('angka','makanan','minuman','user'));
 })->middleware('web');
 
 

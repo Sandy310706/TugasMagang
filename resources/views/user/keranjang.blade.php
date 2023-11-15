@@ -2,6 +2,12 @@
 @section('title','Keranjang')
 @section('keranjang')
 
+
+<div class="svg-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="241" height="307" viewBox="0 0 241 307" fill="none">
+        <path d="M237.798 73.7377C243.288 214.012 35.4739 363.38 -178.18 284.823C-319.791 243.915 -115.129 -15.9893 -340.571 -105.373C-459.148 -182.289 -428.244 -284.674 -323.268 -337.795C-234.046 -404.876 279.609 -184.559 237.798 73.7377Z" fill="#96C291"/>
+    </svg>
+</div>
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
     <div class="content-nav">
@@ -47,26 +53,47 @@
                         <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                     </div>
                 </div>
+                <div class="content-table total">
+                    <span data-id="{{ $keranjang->id }}" class="total">Rp. {{ $keranjang->total_harga }}</span>
+                </div>
+                <div class="content-table remove">
+                    <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
+                        @csrf
+                        @method('Delete')
+                        <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+
+                </div>
             </div>
-        @endforeach
-        <div class="checkbox-content">
-            <input type="checkbox" id="checkboxId" class="checkbox-all">
-            <p>Pilih Semua</p>
         </div>
-    </div>
-    <div class="container totals mt-3">
-        <div class="checkout">
-            <div class="subtotal">
-                <p>SubTotal:</p>
-                <p id="total" class="ml-2">{{ $arraySum }}</p>
-            </div>
-            <div class="cekout">
-                <div class="btnns">
-                <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang}}" onclick="kirimData(this)">checkout</a>
+    @endforeach
+    <div class="container-img">
+        <div class="content-img">
+            <div class="hero-image">
+                <div class="image">
+                    <img src="img/img-keranjang.png" alt="">
                 </div>
             </div>
         </div>
     </div>
+    <div class="checkbox-content">
+        <input type="checkbox" class="checkbox-all">
+        <p>Pilih Semua</p>
+    </div>
+</div>
+<div class="container totals mt-3">
+    <div class="checkout">
+        <div class="subtotal">
+            <p>SubTotal:</p>
+            <p id="total" class="ml-2">{{ $arraySum }}</p>
+        </div>
+        <div class="cekout">
+            <div class="btnns">
+               <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(document).ready(function() {
         $.ajaxSetup({

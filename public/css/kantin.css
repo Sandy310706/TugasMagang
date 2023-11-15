@@ -12,244 +12,9 @@ body {
   flex-direction: column;
 }
 
-/* navbar */
-
-/* .masthead {
-  padding-top: 10.5rem;
-  text-align: center;
-  color: #000000;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-  height: 750px;
-} */
-
-#mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #ffffdd;
-}
-
-#mainNav {
-  background-color: transparent;
-}
-
-#mainNav .navbar-toggler {
-  padding: 0.75rem;
-  font-size: 0.75rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-#mainNav .navbar-brand {
-  color: #000000;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  text-transform: uppercase;
-  font-size: 30px;
-}
-
-#mainNav .navbar-brand img {
-  height: 1.5rem;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link {
-  font-family: 'Amaranth', sans-serif;
-  font-size: 0.95rem;
-  color: gray;
-  letter-spacing: 0.0625em;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link.active,
-#mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
-}
-
-.welcome {
-  font-family: 'Rock Salt', cursive;
-  font-size: 35px;
-  margin-left: 0px;
-  text-align: center;
-  line-height: 80px;
-}
-
-/* hamburger menu */
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  height: 20px;
-  background-color: transparent;
-  justify-content: space-between;
-  position: relative;
-  order: 2 !important;
-}
-
-.menu-toggle input {
-  position: absolute;
-  width: 40px;
-  height: 28px;
-  opacity: 0;
-  left: -5px;
-  top: -3px;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background-color: black;
-  border-radius: 3px;
-  transition: all 0.5s;
-}
-
-/* hamburger menu animation*/
-
-.menu-toggle span:nth-child(2) {
-  transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4) {
-  transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked~span:nth-child(2) {
-  background-color: white;
-  transform: rotate(45deg) translate(-1px, -1px);
-}
-
-.menu-toggle input:checked~span:nth-child(4) {
-  background-color: white;
-  transform: rotate(-45deg) translate(-1px, 0);
-}
-
-.menu-toggle input:checked~span:nth-child(3) {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.svg svg {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
-
 .kantin h1 {
   margin-top: 180px;
   font-family: Satisfy;
-}
-
-.cards-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  width: 48%;
-}
-
-.hero-click {
-  display: flex;
-  overflow-x: hidden;
-  justify-content: center;
-  align-items: center;
-}
-
-.cards-container::-webkit-scrollbar {
-  display: none;
-}
-
-.swiper-slide {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  border: 1px solid #ddd;
-  font-size: 24px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border: 1px solid gray;
-  margin: 2px;
-}
-
-.card-hero{
-  width: 197px;
-  height: 180px;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-}
-
-.image-kantin img {
-  border: 10px solid white;
-  width: 180px;
-  height: 100%;
-}
-
-.kontents-kantin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.kontent-kantin a {
-  color: black;
-  text-decoration: none;
-  font-family: ighteous;
-}
-
-span {
-  font-size: 2px;
-}
-
-.makanan {
-  color: #FFF;
-  text-align: center;
-  font-family: Satisfy;
-  font-size: 75px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  z-index: 1;
-  margin-top: 100px;
-}
-
-.button-click button {
-  border: none;
-  background-color: transparent;
-}
-
-.kantin h1 {
-  margin-top: 180px;
-  color: #FFF;
-  text-align: center;
-  font-family: Satisfy;
-  font-size: 75px;
-}
-
-/* //style Menu// */
-.Menu-kantin {
-  margin: 30px;
-}
-
-.Menu-kantin a {
-  text-decoration: none;
-  color: wheat;
-  font-size: 25px;
-}
-
-.Menu-kantin a:hover {
-  color: #ffc800;
-}
-
-span {
-  font-size: 2px;
 }
 
 .makanan {
@@ -453,12 +218,8 @@ section#contact {
 
 /* style footer */
 .footer {
-  width: 100%;
-  height: 100%;
   background-color: #fff;
   margin-top: auto;
-  position: fixed-bottom;
-
 }
 
 .footer-container {
@@ -499,7 +260,6 @@ section#contact {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -520,7 +280,9 @@ section#contact {
   margin-right: 300%;
 }
 
-
+ul{
+  margin-bottom: 0;
+}
 
 
 @media only screen and (max-width: 600px) {

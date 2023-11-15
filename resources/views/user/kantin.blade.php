@@ -1,6 +1,6 @@
 @extends('layouts.user.app')
 @section('title','Kantin')
-@section('halamankantin')
+@section('kantin')
     <div class="pembungkus-alert">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
     </div>
