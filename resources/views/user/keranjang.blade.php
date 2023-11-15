@@ -2,6 +2,12 @@
 @section('title','Keranjang')
 @section('keranjang')
 
+
+<div class="svg-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="241" height="307" viewBox="0 0 241 307" fill="none">
+        <path d="M237.798 73.7377C243.288 214.012 35.4739 363.38 -178.18 284.823C-319.791 243.915 -115.129 -15.9893 -340.571 -105.373C-459.148 -182.289 -428.244 -284.674 -323.268 -337.795C-234.046 -404.876 279.609 -184.559 237.798 73.7377Z" fill="#96C291"/>
+    </svg>
+</div>
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
     <div class="content-nav">
@@ -60,6 +66,20 @@
             </div>
         </div>
     @endforeach
+    <div class="container-img">
+        <div class="content-img">
+            <div class="hero-image">
+                <div class="image">
+                    <img src="img/keranjang.jpg" alt="">
+                </div>
+                <div class="content-text">
+                    <p class="content-child">Tidak ada pesanan di keranjang</p>
+                    <p class="content-child-1">Harap pesan agar masuk kekeranjang</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
@@ -74,7 +94,7 @@
         <div class="cekout">
             <div class="btnns">
 
-   {{-- <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a> --}}
+               <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
 
             </div>
         </div>
