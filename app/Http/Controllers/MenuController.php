@@ -22,7 +22,7 @@ class MenuController extends Controller
         $angka = count($keranjang);
         $kantin = Kantin::all();
 
-        return view('user.menuPage', compact('angka', 'data','kantin',));
+        return view('user.menuPage', compact('data','kantin','angka'));
 
     }
     public function store(Request $request, $stok)
