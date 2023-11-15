@@ -19,10 +19,10 @@ class MenuController extends Controller
 
         $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $jumlah = count($keranjang);
+        $angka = count($keranjang);
         $kantin = Kantin::all();
 
-        return view('user.menuPage', compact('jumlah', 'data','kantin',));
+        return view('user.menuPage', compact('angka', 'data','kantin',));
 
     }
     public function store(Request $request, $stok)

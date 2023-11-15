@@ -66,27 +66,7 @@
                 </div>
             </div>
         </div>
-    @endforeach
-    <div class="checkbox-content">
-        <input type="checkbox" class="checkbox-all">
-        <p>Pilih Semua</p>
     </div>
-</div>
-<div class="container totals mt-3">
-    <div class="checkout">
-        <div class="subtotal">
-            <p>SubTotal:</p>
-            <p id="total" class="ml-2">{{ $arraySum }}</p>
-        </div>
-        <div class="cekout">
-            <div class="btnns">
-
-   {{-- <a href="/invoice" type="sumbit" class="buttons" data-id="{{$keranjang->id}}" onclick="kirimData(this)">checkout</a> --}}
-
-            </div>
-        </div>
-    </div>
-</div>
 <script>
     $(document).ready(function() {
         $.ajaxSetup({

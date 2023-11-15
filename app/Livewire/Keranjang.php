@@ -18,6 +18,7 @@ class Keranjang extends Component
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
         $menu = Menu::where('id',$id)->first();
+        $angka = count($keranjangs);
         $totalHarga = [];
 
         foreach($keranjangs as $keranjang)
@@ -28,7 +29,7 @@ class Keranjang extends Component
 
 
 
-        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka'));
     }
 
     public function store(Request $Request ,$id)

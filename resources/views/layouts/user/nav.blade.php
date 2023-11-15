@@ -21,15 +21,12 @@
                     <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                     <div class="keranjangs">
-                        <li class="nav-item"><a class="nav-link" href="/carts"><i
-                                    class="bi bi-cart"></i>Keranjang</a>
+                        <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p></p>
+                            <p>{{ $angka }}</p>
                         </div>
                     </div>
-                </div>
-
                 <div class="dropdown">
                     <div class="button-sidebar">
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
