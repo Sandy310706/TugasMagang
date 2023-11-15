@@ -7,7 +7,7 @@
             <span></span>
         </div>
         <div class="navbar-brand ml-5">
-            <h3 class="navbars">Welcome To Kantin</h3>
+            <h3 class="navbars">Welcome To Kantin Sekolah</h3>
         </div>
         <div class="navbar-content justift-content-end">
             <ul class="navbar-nav text-uppercase">

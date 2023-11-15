@@ -292,6 +292,10 @@ p {
     .content p {
         font-size: 12px;
     }
+
+    .image img{
+        width: 180px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {

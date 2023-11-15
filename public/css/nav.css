@@ -16,7 +16,7 @@
 }
 
 #mainNav .navbar-brand {
-    color: #000;
+    color: gray;
     text-align: center;
     font-family: Oswald;
     font-size: 48px;
@@ -161,8 +161,6 @@
   padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
-
- 
 }
 
 .dropdowm-sidebar ul {
