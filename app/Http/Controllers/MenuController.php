@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Keranjangs;
 use App\Models\Kantin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -19,10 +20,11 @@ class MenuController extends Controller
 
         $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
+        $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
         $kantin = Kantin::all();
 
-        return view('user.menuPage', compact('data','kantin','angka'));
+        return view('user.menuPage', compact('data','kantin','angka','user'));
 
     }
     public function store(Request $request, $stok)

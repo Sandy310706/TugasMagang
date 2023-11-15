@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Dirape\Token\Token;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Invoice;
 use App\Models\Keranjangs;
 
@@ -16,6 +17,7 @@ class InvoiceController extends Controller
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
+        $user = User::where('id', auth()->user->id)->first();
         $keranjang = Keranjangs::where('id',$id)->first();
         $angka = count($invoices);
         $totalHarga = [];
@@ -26,7 +28,7 @@ class InvoiceController extends Controller
         $arraySum = array_sum($totalHarga);
 
 
-        return view('user.histori', compact('invoices', 'detail','arraySum','angka'));
+        return view('user.histori', compact('invoices', 'detail','arraySum','angka','user'));
     }
 
     public function store($id)

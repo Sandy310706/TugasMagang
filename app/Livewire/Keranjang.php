@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Menu;
 use App\Models\Kantin;
 use App\Models\Keranjangs;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Stmt\Foreach_;
@@ -17,6 +18,7 @@ class Keranjang extends Component
     {
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
+        $user = User::where('id', auth()->user()->id)->first();
         $menu = Menu::where('id',$id)->first();
         $angka = count($keranjangs);
         $totalHarga = [];
@@ -29,7 +31,7 @@ class Keranjang extends Component
 
 
 
-        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka'));
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user'));
     }
 
     public function store(Request $Request ,$id)

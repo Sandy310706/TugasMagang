@@ -29,20 +29,29 @@
                     </div>
                 <div class="dropdown">
                     <div class="button-sidebar">
+                        @guest
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
+                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                         </button>
+                        @else
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$user->nama}}
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
+                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                         </button>
+                        @endguest
+
                     </div>
                     <div class="dropdown-sidebar" id="dropdownMenu">
                         <div class="dropdown-content">
                             <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
                             <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                     Pesanan</li>
-                            @if (auth())
-                                <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
-                                        href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a></li>
+                            @guest
+                            <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                                href="/login"><i class="bi bi-box-arrow-in-right"></i>login</a></li>
                             @else
-                                <li class="content-dropdown"><a class="nav-dropdown" href="/logout">logout</a></li>
-                            @endif
+                            <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                                href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
+                            @endguest
                         </div>
                     </div>
                 </div>
