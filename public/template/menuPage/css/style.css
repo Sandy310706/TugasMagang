@@ -388,7 +388,7 @@ h3 {
   body {
     max-width: 100%;
   }
-  
+
   .card-hero{
     height: 50px;
   }
@@ -509,8 +509,41 @@ h3 {
   .hero-click-2{
     display: none;
   }
+<<<<<<< HEAD
   .hero-click-4{
     display: none;
+=======
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+
+    }
+  .nav-content {
+    flex-direction: column;
+    order: 2;
+  }
+
+  .dropdown{
+    order: 1;
+    margin: 15px;
+  }
+
+  .button-sidebar{
+    width: 130px ;
+  }
+
+  .button-sidebar button {
+    color: gray;
+  }
+
+  .dropdown-sidebar{
+    right: -12px;
+ }
+
+  .nav-content li {
+    margin: 15px;
+>>>>>>> a15723f53cb12219ba4b049ffa2206437bf1daa5
   }
 
   .footer-container {

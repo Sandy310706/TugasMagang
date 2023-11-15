@@ -18,8 +18,6 @@ class InvoiceController extends Controller
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id',$id)->first();
         $totalHarga = [];
-
-
         foreach($invoices as $keranjang)
         {
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
@@ -43,7 +41,8 @@ class InvoiceController extends Controller
         $invoice->status = 0;
         $invoice->save();
 
-        return response()->json($invoice);
+        return redirect()->route('Keranjang');
+        // return response()->json($invoice);
     }
 
 }
