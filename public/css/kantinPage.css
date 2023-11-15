@@ -20,6 +20,14 @@ body {
   }
 }
 
+/* svg */
+
+.svg-content svg{
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
 /* navbar */
 
 #mainNav {
