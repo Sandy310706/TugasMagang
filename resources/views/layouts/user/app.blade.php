@@ -19,7 +19,7 @@
     @yield('menupage')
     @yield('keranjang')
     @yield('histori')
-    @yield('halamankantin')
+    @yield('kantinPage')
 
 </body>
 </html>
