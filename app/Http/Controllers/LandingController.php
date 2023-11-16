@@ -13,7 +13,10 @@ class LandingController extends Controller
     {
         $keranjang = Keranjangs::all();
         $angka = count($keranjang);
-        $user = User::where('role','guest')->first();
+        $user = User::where('role','guest')
+                        ->orwhere('role','superadmin')
+                        ->orwhere('role','admin')
+                        ->first();
         $makanan = Menu::where('kategori','makanan')->get();
         $minuman = Menu::where('kategori', 'minuman')->get();
 

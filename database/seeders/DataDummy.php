@@ -16,24 +16,24 @@ class DataDummy extends Seeder
     public function run(): void
     {
 
-        DB::table('menus')->insert([
-            'nama' => 'ayam',
-            'quantity' => '1',
-            'kategori'=> 'makanan',
-            'harga'=> '15000',
-            'stok' => '10',
-            'foto' => 'ayam',
-            'id_kantin' => '2',
-        ]);
+        // DB::table('menus')->insert([
+        //     'nama' => 'ayam',
+        //     'quantity' => '1',
+        //     'kategori'=> 'makanan',
+        //     'harga'=> '15000',
+        //     'stok' => '10',
+        //     'foto' => 'ayam',
+        //     'id_kantin' => '2',
+        // ]);
 
-        DB::table('menus')->insert([
-            'nama' => 'teh es',
-            'harga' => '10000',
-            'stok' => '10',
-            'kategori' => 'minuman',
-            'foto' => 'tehes.jpg',
-            'id_kantin' => '2',
-        ]);
+        // DB::table('menus')->insert([
+        //     'nama' => 'teh es',
+        //     'harga' => '10000',
+        //     'stok' => '10',
+        //     'kategori' => 'minuman',
+        //     'foto' => 'tehes.jpg',
+        //     'id_kantin' => '2',
+        // ]);
 
     }
 }

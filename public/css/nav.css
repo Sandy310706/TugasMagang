@@ -131,7 +131,6 @@
 .button-sidebar {
   display: flex;
   align-items: center;
-  width: 150px;
 }
 
 .button-sidebar button {
@@ -204,7 +203,7 @@ ul {
     position: relative;
     display: flex;
   }
-  
+
   .ntif {
     position: relative;
     right: 10px;
@@ -218,7 +217,7 @@ ul {
     align-items: center;
     margin-bottom: 5px;
   }
-  
+
   .ntif p {
     color: white;
     font-size: 15px;
