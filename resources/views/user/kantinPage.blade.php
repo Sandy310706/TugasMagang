@@ -15,8 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('css/kantinPage.css') }}">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<div class="pembungkus-alert">
+    <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+</div>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container-fluit d-flex container-content">
@@ -44,33 +50,34 @@
                             <div class="keranjangs">
                                 <a class="nav-link" href="/carts" class="bi bi-cart">Keranjang</a>
                                 <div class="ntif">
-                                    <p></p>
+                                    <p>{{$angka}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="dropdown">
                             <div class="button-sidebar">
-                                <button class="button-dropdown" onclick="openDropdown()"
-                                    id="dropdownTrigger">Frederick
-                                    <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
+                        @guest
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
+                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                         </button>
+                        @else
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
+                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                         </button>
+                        @endguest
                             </div>
                             <div class="dropdown-sidebar" id="dropdownMenu">
                                 <div class="dropdown-content">
                                     <ul>
-                                        <li class="content-dropdown"><a class="nav-dropdown" href="">Akun
-                                        </li>
-                                        <li class="content-dropdown"><a class="nav-dropdown histori-page"
-                                                href="/invoice">Histori
-                                                Pesanan</li>
-                                        @if (auth())
-                                            <li class="content-dropdown"><a class="nav-dropdown"
-                                                    style="padding-top: 20px" href="/logout"><i
-                                                        class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                                        @guest
+                                        <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                                        href="/login"><i class="bi bi-box-arrow-in-right"></i>login</a></li>
                                         @else
-                                            <li class="content-dropdown"><a class="nav-dropdown"
-                                                    href="/login">Login</a>
-                                            </li>
-                                        @endif
+                                        <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
+                                        <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori Pesanan</li>
+                                        <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                                        href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
+                                        @endguest
                                     </ul>
                                 </div>
                             </div>
@@ -94,17 +101,18 @@
 <div class="cards">
     <div class="content-hero">
         <div class="content-child">
-            @foreach ($menu as $m)
+            @foreach ($menu as $data)
                 <div class="card-content">
                     <div class="card-image">
                         <img src="img/bipang.jpg" alt="">
                     </div>
                     <div class="content-text">
-                        <p>Ayam geprek</p>
-                        <p>RP.100.000</p>
+                        <p>{{$data->nama}}</p>
+                        <p>RP. {{$data->harga}}</p>
                     </div>
                     <div class="content">
-                        <button>Pesan</button>
+                        <button type="submit" onclick="inputData(this)" class="btn btn-submit"
+                        data-id="{{ $data->id }}">Pesan</button>
                     </div>
                 </div>
             @endforeach
@@ -115,11 +123,8 @@
 <div class="contact page-section">
     <div class="container contact-form">
         <div class="text-center mt-5">
-            <h2 class="feedback section-heading text-capatalize mb-5">Feedback</h2>
+            <h2 class="feedback section-heading text-capatalize mb-5">Feedback Kantin</h2>
         </div>
-        <form method="POST" action="{{ route('Feedback') }}" data-sb-form-api-token="API_TOKEN"
-            style="position: relative; z-index: 9999;">
-            @csrf
             <div class="row align-items-stretch mb-5">
                 <div class="col">
                     <div class="form-group form-group-textarea mb-md-0">
@@ -129,11 +134,11 @@
                     </div>
                 </div>
             </div>
-            <div class="text-end"><button class="button btn btn-info" id="submitButton" type="submit">Kirim
-                    Feedback</button></div>
-        </form>
+            <div class="text-end">
+                <button class="button btn btn-info" onclick="kirimSaran(this)" id="submitButton" type="submit" invoice="{{$user->id}}">Kirim Feedback</button>
+            </div>
+        </div>
     </div>
-</div>
 
 
 <footer class="footer">
@@ -154,36 +159,65 @@
 </footer>
 
 <script>
-    // $(document).ready(function() {
-    //     $.ajaxSetup({
-    //         headers: {
-    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //         }
-    //     });
-    // });
+
+$(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    });
 
     function inputData(bi) {
         const id = bi.getAttribute('data-id')
         $.ajax({
-            url: '/carts/' + id,
+            url : `/carts/+${id}`,
             dataType: "json",
             type: "POST",
-            data: {},
-            success: function(response) {
-                location.reload();
-                console.log("berhasil");
-                setTimeout(() => {
-                    document.getElementById('alerts').ustyle.display = 'none';
-                }, 10000);
-                document.getElementById('alerts').style.display = 'block';
+            data: {
+                "_token": "{{ csrf_token() }}",
             },
-            error: function(error) {
-                console.log('gagal');
-                console.log(error)
-            }
+            success: function(response) {
+                    location.reload();
+                    console.log("berhasil");
+                    setTimeout(() => {
+                        document.getElementById('alerts').ustyle.display = 'none';
+                    }, 10000);
+                    document.getElementById('alerts').style.display = 'block';
+                },
+                error: function(error) {
+                    console.log('gagal');
+                    console.log(error)
+                }
         });
-    }
+    };
 
+    function kirimSaran(ini){
+        const id = ini.getAttribute('invoice')
+        $.ajax({
+            url : `/feedback`,
+            type : 'GET',
+            dataType: "json",
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(response) {
+                    location.reload();
+                    console.log("berhasil");
+                    setTimeout(() => {
+                        document.getElementById('alerts').ustyle.display = 'none';
+                    }, 10000);
+                    document.getElementById('alerts').style.display = 'block';
+                },
+                error: function(error) {
+                    console.log('gagal');
+                    console.log(error)
+                }
+        });
+    };
+
+    </script>
+    <script>
     function openDropdown() {
         const dropdownTrigger = document.getElementById('dropdownTrigger');
         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -217,10 +251,8 @@
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 navbar.style.backgroundColor = "#000000";
                 navbar.style.padding = "10px";
-                navbar.h3.style.color = "#f0f0f0f0"
             } else {
                 navbar.style.backgroundColor = "transparent";
-                navbar.h3.style.color = "#898989";
                 navbar.style.padding = "0";
             }
         }

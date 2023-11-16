@@ -41,8 +41,12 @@ class KantinController extends Controller
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
         $menu = Menu::where('id', $namaKantin['id'])->get();
+        $userNav = User::where('role','guest')
+                        ->orWhere('role','superadmin')
+                        ->orWhere('role', 'admin')
+                        ->first();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
-        return view('user.kantin', compact('menu','angka','user'));
+        return view('user.kantinPage', compact('menu','angka','user','userNav'));
     }
 }

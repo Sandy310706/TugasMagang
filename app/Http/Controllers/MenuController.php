@@ -21,10 +21,14 @@ class MenuController extends Controller
         $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $user = User::where('id', auth()->user()->id)->first();
+        $userNav = User::where('role','guest')
+                    ->orWhere('role','superadmin')
+                    ->orWhere('role', 'admin')
+                    ->first();
         $angka = count($keranjang);
         $kantin = Kantin::all();
 
-        return view('user.menuPage', compact('data','kantin','angka','user'));
+        return view('user.menuPage', compact('data','kantin','angka','user','userNav'));
 
     }
     public function store(Request $request, $stok)

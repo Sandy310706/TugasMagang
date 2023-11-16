@@ -13,7 +13,7 @@ class LandingController extends Controller
     {
         $keranjang = Keranjangs::all();
         $angka = count($keranjang);
-        $user = User::where('role','guest')
+        $userNav = User::where('role','guest')
                     ->orWhere('role','superadmin')
                     ->orWhere('role', 'admin')
                     ->first();
@@ -25,6 +25,6 @@ class LandingController extends Controller
                         ->get();
 
 
-        return view('user.landingpage',compact('makanan','minuman','angka','user'));
+        return view('user.landingpage',compact('makanan','minuman','angka','userNav'));
     }
 }
