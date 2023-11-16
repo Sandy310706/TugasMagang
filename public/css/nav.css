@@ -158,7 +158,6 @@
   background-color: white;
   text-align: center;
   width: 180px;
-  padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
 }
@@ -181,19 +180,20 @@ ul {
 }
 
 .dropdown-content  li a.nav-dropdown:hover {
-  color: red !important;
-  cursor: progress;
+    opacity: 60%;
+    cursor: progress;
 }
+
 .dropdown-content li{
     padding: 8px;
 }
 
-.histori {
-    border-top: 2px solid black ;
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-    padding-top: 10px;
+.dropdown-content li:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 10px;
 }
+
 
 
 .dropdown-sidebar ul li {

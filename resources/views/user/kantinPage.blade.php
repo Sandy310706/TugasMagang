@@ -30,61 +30,55 @@
                 <h3 class="navbars">Welcome To Kantin Sekolah</h3>
             </div>
             <div class="navbar-content justift-content-end">
-                <div class="hero-nav">
-                    <div class="content-nav">
-                        <div class="navbar-nav text-uppercase">
-                            <div class="nav-content">
-                                <a class="nav-link" href="/">Home</a>
-                                @auth @if (auth()->user()->role == 'admin')
-                                    <a class="nav-link" href="/admin/dashboard">Dashboard</a>
-                                @endif
-                            @endauth
-                            <a class="nav-link" href="#feedback">Feedback</a>
-                            <a class="nav-link" href="/menu">Kantin</a></li>
-                            <div class="keranjangs">
-                                <a class="nav-link" href="/carts" class="bi bi-cart">Keranjang</a>
-                                <div class="ntif">
-                                    <p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <div class="button-sidebar">
-                                <button class="button-dropdown" onclick="openDropdown()"
-                                    id="dropdownTrigger">Frederick
-                                    <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
-                            </div>
-                            <div class="dropdown-sidebar" id="dropdownMenu">
-                                <div class="dropdown-content">
-                                    <ul>
-                                        <li class="content-dropdown"><a class="nav-dropdown" href="">Akun
-                                        </li>
-                                        <li class="content-dropdown"><a class="nav-dropdown histori-page"
-                                                href="/invoice">Histori
-                                                Pesanan</li>
-                                        @if (auth())
-                                            <li class="content-dropdown"><a class="nav-dropdown"
-                                                    style="padding-top: 20px" href="/logout"><i
-                                                        class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
-                                        @else
-                                            <li class="content-dropdown"><a class="nav-dropdown"
-                                                    href="/login">Login</a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                </div>
+                <ul class="navbar-nav text-uppercase">
+                    <div class="nav-content">
+                        <a class="nav-link" href="/">Home</a>
+                        @auth @if (auth()->user()->role == 'admin')
+                            <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                        @endif
+                        @endauth
+                        <a class="nav-link" href="#feedback">Feedback</a>
+                        <a class="nav-link" href="/menu">Kantin</a></li>
+                        <div class="keranjangs">
+                            <a class="nav-link" href="/carts" class="bi bi-cart">Keranjang</a>
+                            <div class="ntif">
+                                <p></p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+                    <div class="dropdown">
+                        <div class="button-sidebar">
+                            <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
+                                <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
+                        </div>
+                        <div class="dropdown-sidebar" id="dropdownMenu">
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li class="content-dropdown"><a class="nav-dropdown" href="">Akun
+                                    </li>
+                                    <li class="content-dropdown"><a class="nav-dropdown histori-page"
+                                            href="/invoice">Histori Pesanan</li>
+                                    @if (auth())
+                                        <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                                                href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                                    @else
+                                        <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+           </div>
+       </div>
+   </nav>
 
 <div class="svg-content">
     <svg xmlns="http://www.w3.org/2000/svg" width="377" height="512" viewBox="0 0 377 512" fill="none">
-        <path d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z" fill="#96C291"/>
+        <path
+            d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z"
+            fill="#96C291" />
     </svg>
 </div>
 <div class="menu-page">

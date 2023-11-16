@@ -18,7 +18,6 @@
                             <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
                         @endif
                     @endauth
-                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                     <div class="keranjangs">
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>

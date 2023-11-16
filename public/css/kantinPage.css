@@ -74,7 +74,7 @@ nav{
   display: flex;
 }
 
-.content-nav .navbar-nav .nav-link {
+ .navbar-nav .nav-link {
   padding: 10px;
   text-decoration: none;
   font-family: 'Amaranth', sans-serif;
@@ -82,7 +82,7 @@ nav{
   letter-spacing: 0.0625em;
 }
 
-.content-nav .navbar-nav .nav-link:hover {
+ .navbar-nav .nav-link:hover {
   color: #ffc800;
 }
 
@@ -94,6 +94,7 @@ nav{
 .nav-content {
   display: flex;
   align-items: center;
+  justify-content: end;
 }
 
 .navbars {
@@ -195,8 +196,8 @@ nav{
 
 .button-sidebar button i {
   position: relative;
-  right: 5px;
-  top: 2px;
+  right: 8px;
+  top: 1px;
 }
 
 .dropdown-sidebar {
@@ -207,8 +208,7 @@ nav{
   margin-top: 2px;
   background-color: white;
   text-align: center;
-  width: 150px;
-  padding: 10px;
+  width: 200px;
   border-radius: 10px;
   border: 1px solid black;
   animation: Menu 1s;
@@ -232,22 +232,21 @@ ul {
 }
 
 .dropdown-content li a.nav-dropdown:hover {
-  color: red !important;
+  opacity: 60%;
   cursor: progress;
 }
 
 .dropdown-content li {
   padding: 8px;
   list-style: none;
+  display: block;
 }
 
-.histori-page {
-  border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
-  padding-bottom: 10px;
-  padding-top: 10px;
+.dropdown-content li:hover{
+  --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 5px;
 }
-
 
 .dropdown-sidebar ul li {
   list-style: none;
@@ -261,7 +260,7 @@ ul {
 .ntif {
   position: relative;
   right: 15px;
-  top: -10px;
+  top: -12px;
   width: 23px;
   height: 23px;
   background-color: gray;
@@ -280,7 +279,7 @@ ul {
   align-items: center;
 }
 
-
+/* style menu */
 .cards {
   display: flex;
   justify-content: center;
