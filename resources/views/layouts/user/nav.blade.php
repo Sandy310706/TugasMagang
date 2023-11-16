@@ -34,7 +34,7 @@
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
                          </button>
                         @else
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$user->nama}}
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
                          </button>
                         @endguest

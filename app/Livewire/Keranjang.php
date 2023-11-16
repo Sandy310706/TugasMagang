@@ -19,6 +19,10 @@ class Keranjang extends Component
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
         $user = User::where('id', auth()->user()->id)->first();
+        $userNav = User::where('role','guest')
+                    ->orWhere('role','superadmin')
+                    ->orWhere('role', 'admin')
+                    ->first();
         $menu = Menu::where('id',$id)->first();
         $angka = count($keranjangs);
         $totalHarga = [];
@@ -31,7 +35,7 @@ class Keranjang extends Component
 
 
 
-        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user'));
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user','userNav'));
     }
 
     public function store(Request $Request ,$id)
