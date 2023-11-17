@@ -111,6 +111,7 @@
                 type: "GET",
                 url: "/cartst/" + keranjangId + "/" + menuId,
                 success: function(data) {
+                    location.reload();
                     console.log(spanJumlah);
                     console.log(totalHarga);
                     spanJumlah.text(data.jumlah);
@@ -130,6 +131,7 @@
                 type: "GET",
                 url: "/cartsk/" + keranjangId + "/" + menuId,
                 success: function(data) {
+                    location.reload();
                     spanJumlah.text(data.jumlah);
                     totalHarga.text("Rp. " + data.total_harga)
                 },

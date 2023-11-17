@@ -19,6 +19,10 @@ class InvoiceController extends Controller
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
         $user = User::where('id', auth()->user->id)->first();
         $keranjang = Keranjangs::where('id',$id)->first();
+        $user = User::where('role','guest')
+                    ->orWhere('role','superadmin')
+                    ->orWhere('role', 'admin')
+                    ->first();
         $angka = count($invoices);
         $totalHarga = [];
         foreach($invoices as $keranjang)
@@ -28,7 +32,7 @@ class InvoiceController extends Controller
         $arraySum = array_sum($totalHarga);
 
 
-        return view('user.histori', compact('invoices', 'detail','arraySum','angka','user'));
+        return view('user.histori', compact('invoices', 'detail','arraySum','angka','user','userNav'));
     }
 
     public function store($id)

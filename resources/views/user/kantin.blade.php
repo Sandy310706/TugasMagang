@@ -76,6 +76,7 @@
     </div>
 
     <script>
+        
         $(document).ready(function() {
             $("#alert").hide();
             $.ajaxSetup({

@@ -20,30 +20,25 @@ body {
   }
 }
 
+/* svg */
+
+.svg-content svg{
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
 /* navbar */
 
-.masthead {
-  padding-top: 10.5rem;
-  text-align: center;
-  color: #000000;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-  height: 750px;
-}
-
 #mainNav {
-  padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #ffffdd;
-  display: flex;
-  flex-direction: row;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
 }
 
-#mainNav {
-  background-color: transparent;
+nav{
+  padding: 0;
 }
 
 #mainNav .navbar-toggler {
@@ -72,22 +67,22 @@ body {
 
 .navbar-content {
   display: flex;
+
 }
 
-.content-nav ul {
+.content-nav .navbar-nav {
   display: flex;
 }
 
-.content-nav ul .nav-link {
+.content-nav .navbar-nav .nav-link {
   padding: 10px;
   text-decoration: none;
   font-family: 'Amaranth', sans-serif;
-  font-size: 20px;
   color: gray;
   letter-spacing: 0.0625em;
 }
 
-.content-nav ul .nav-link:hover {
+.content-nav .navbar-nav .nav-link:hover {
   color: #ffc800;
 }
 
@@ -180,6 +175,7 @@ body {
 .dropdown {
   display: flex;
   justify-content: start;
+  position: relative;
 }
 
 .button-sidebar {
@@ -205,8 +201,8 @@ body {
 
 .dropdown-sidebar {
   position: absolute;
-  top: 60px;
-  right: 10px;
+  top: 32px;
+  right: 5px;
   display: none;
   margin-top: 2px;
   background-color: white;
@@ -218,7 +214,7 @@ body {
   animation: Menu 1s;
 }
 
-.dropdowm-sidebar ul {
+.dropdowm-sidebar .navbar-nav {
   width: 0;
 }
 
@@ -285,7 +281,7 @@ ul {
 }
 
 
-.card {
+.cards {
   display: flex;
   justify-content: center;
 }
@@ -298,6 +294,7 @@ ul {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 200px;
 }
 
 .card-content {
@@ -371,6 +368,50 @@ button {
   border-radius: 5px;
 }
 
+.contact .section-heading {
+  color: #fff;
+  z-index: 3;
+}
+
+section#contact {
+  background-color: #a2c579;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+}
+
+.contact .section-heading {
+  color: #016a70;
+}
+
+.contact form#contactForm .form-control:focus {
+  border-color: #ffc800;
+  box-shadow: none;
+}
+
+.feedback {
+  color: white;
+  text-align: center;
+  font-family: Satisfy;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 3;
+}
+
+.button {
+    margin-bottom: 50px;
+    padding: 15px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* footer */
 
 .footer {
   width: 100%;
@@ -420,17 +461,20 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
 
 .footer ul li {
   list-style: none;
 }
 
+.footer-content{
+  display: flex;
+  justify-content: center;
+}
+
 p {
   margin: 0;
 }
-
 
 @media only screen and (max-width: 600px) {
   body {
@@ -461,7 +505,7 @@ p {
     display: flex;
   }
 
-  nav ul {
+  nav .navbar-nav {
     position: absolute;
     right: 0;
     top: 0;
@@ -479,7 +523,7 @@ p {
     gap: 10px;
   }
 
-  nav ul.slide {
+  nav .navbar-nav.slide {
     opacity: 1;
     transform: translateX(0);
   }
@@ -487,6 +531,10 @@ p {
   .navbar-brand {
     display: flex;
     justify-content: center;
+  }
+
+  .content-nav .navbar-nav .nav-content .nav-link{
+    padding: 20px;
   }
 
   .nav-content {
@@ -500,13 +548,17 @@ p {
   }
 
   .ntif {
-    top: 15px;
+    top: -10px;
     right: 25px;
   }
 
   .dropdown {
     order: 1;
-    margin: 20px;
+  }
+
+  .dropdown-sidebar{
+    top: 35px;
+    right: 8px;
   }
 
   .button-sidebar button {
@@ -534,13 +586,39 @@ p {
     height: 100%;
   }
 
-  .welcome {
-    font-size: 12px;
+  .navbars {
+    font-size: 18px;
     line-height: 28px;
     z-index: 5;
     display: flex;
     justify-content: center;
   }
+
+  .copyright {
+    width: 46%;
+  }
+
+  .sosmed {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .sosmed ul {
+    padding: 10px;
+  }
+
+  .sosmed ul a {
+    font-size: 9px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .copyright p {
+    font-size: 10px;
+    text-align: center;
+  }
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -550,7 +628,7 @@ p {
     z-index: 9999;
   }
 
-  nav ul {
+  nav .navbar-nav {
     position: absolute;
     left: 0;
     top: 0;
@@ -568,7 +646,7 @@ p {
     gap: 10px;
   }
 
-  nav ul.slide {
+  nav .navbar-nav.slide {
     opacity: 1;
     transform: translateX(0);
   }
@@ -583,18 +661,18 @@ p {
     transform: rotate(-45deg) translate(-1px, 0);
   }
 
-  .masthead {
-    height: 500px;
-  }
-
   .nav-content {
     display: grid;
     flex-direction: column;
     order: 2;
   }
 
-  .nav-content li {
-    margin: 20px;
+  .content-nav .navbar-nav .nav-content .nav-link{
+    padding: 20px;
+  }
+   
+  .button-sidebar{
+    padding: 5px;
   }
 
   .button-sidebar button {
@@ -603,17 +681,41 @@ p {
 
   .dropdown {
     order: 1;
-    margin: 20px;
-  }
-
-  .welcome {
-    font-size: 20px;
-    line-height: 38px;
   }
 
   .ntif {
     right: 25px;
-    top: 12px;
+    top: -10px;
+  }
+
+  .navbars {
+    font-size: 18px;
+    line-height: 28px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sosmed {
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sosmed ul {
+    padding: 10px;
+  }
+
+  .sosmed ul a {
+    font-size: 12px;
+    padding: 1px;
+    text-align: center;
+  }
+
+  .copyright p {
+    font-size: 16px;
+    text-align: center;
   }
 }
 
@@ -624,7 +726,7 @@ p {
     z-index: 9999;
   }
 
-  nav ul {
+  nav .navbar-nav {
     position: absolute;
     left: 0;
     top: 0;
@@ -642,7 +744,7 @@ p {
     gap: 10px;
   }
 
-  nav ul.slide {
+  nav .navbar-nav.slide {
     opacity: 1;
     transform: translateX(0);
   }
@@ -658,21 +760,17 @@ p {
   }
 
   .nav-content {
+    display: grid;
     flex-direction: column;
     order: 2;
   }
 
-  .nav-content li {
-    margin: 20px;
+  .content-nav .navbar-nav .nav-content .nav-link{
+    padding: 20px;
   }
-
-  .dropdown {
-    order: 1;
-    margin: 20px;
-  }
-
-  .masthead {
-    height: 100%;
+   
+  .button-sidebar{
+    padding: 5px;
   }
 
   .button-sidebar button {
@@ -690,11 +788,32 @@ p {
   }
 
   .ntif {
-    right: 25px;
-    top: 15px;
+    right: 23px;
+    top: -10px;
+  }
+
+  .sosmed {
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sosmed ul {
+    padding: 10px;
+  }
+
+  .sosmed ul a {
+    font-size: 16px;
+    padding: 1px;
+    text-align: center;
+  }
+
+  .copyright p {
+    font-size: 16px;
+    text-align: center;
   }
 }
-
 
 @media only screen and (min-width: 1200px) {
   .welcome {
