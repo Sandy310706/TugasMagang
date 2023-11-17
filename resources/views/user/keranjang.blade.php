@@ -10,7 +10,6 @@
         <svg class="svg-hijau" width="165" height="176" viewBox="0 0 165 176" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="139.5" cy="36.5" r="139.5" fill="#D2DE32"/>
         </svg>      
-        
     </div>
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
@@ -34,6 +33,17 @@
             <p>Hapus</p>
         </div>
     </div>
+    @if ($check == 0)
+    <div class="container-img">
+        <div class="content-img">
+            <div class="hero-image">
+                <div class="image">
+                    <img src="img/img-keranjang.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    @else
     @foreach ($keranjangs as $keranjang)
         <div class="card-pembungkus">
             <div class="content">
@@ -71,15 +81,9 @@
             </div>
         </div>
     @endforeach
-    <div class="container-img">
-        <div class="content-img">
-            <div class="hero-image">
-                <div class="image">
-                    <img src="img/img-keranjang.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+    @endif
+    
+   
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
@@ -100,7 +104,7 @@
 </div>
 
 
-<div class="svg-container">
+<div class="svg-container-2">
     <svg class="hijau-kanan" width="250" height="200" viewBox="0 0 352 390" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_1859_1681)">
         <circle cx="253.5" cy="249.5" r="249.5" fill="#96C291"/>
