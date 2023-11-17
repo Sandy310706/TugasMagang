@@ -18,7 +18,6 @@
                             <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
                         @endif
                     @endauth
-                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                     <div class="keranjangs">
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
@@ -27,15 +26,16 @@
                             <p>{{ $angka }}</p>
                         </div>
                     </div>
+                </div>
                 <div class="dropdown">
                     <div class="button-sidebar">
                         @guest
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                            <i class="bi bi-caret-down-fill"></i>
                          </button>
                         @else
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                            <i class="bi bi-caret-down-fill"></i>
                          </button>
                         @endguest
 

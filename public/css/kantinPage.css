@@ -74,7 +74,7 @@ nav{
   display: flex;
 }
 
-.content-nav .navbar-nav .nav-link {
+ .navbar-nav .nav-link {
   padding: 10px;
   text-decoration: none;
   font-family: 'Amaranth', sans-serif;
@@ -82,7 +82,7 @@ nav{
   letter-spacing: 0.0625em;
 }
 
-.content-nav .navbar-nav .nav-link:hover {
+ .navbar-nav .nav-link:hover {
   color: #ffc800;
 }
 
@@ -94,6 +94,7 @@ nav{
 .nav-content {
   display: flex;
   align-items: center;
+  justify-content: end;
 }
 
 .navbars {
@@ -195,8 +196,8 @@ nav{
 
 .button-sidebar button i {
   position: relative;
-  right: 5px;
-  top: 2px;
+  right: 8px;
+  top: 1px;
 }
 
 .dropdown-sidebar {
@@ -207,8 +208,7 @@ nav{
   margin-top: 2px;
   background-color: white;
   text-align: center;
-  width: 150px;
-  padding: 10px;
+  width: 200px;
   border-radius: 10px;
   border: 1px solid black;
   animation: Menu 1s;
@@ -232,22 +232,21 @@ ul {
 }
 
 .dropdown-content li a.nav-dropdown:hover {
-  color: red !important;
+  opacity: 60%;
   cursor: progress;
 }
 
 .dropdown-content li {
   padding: 8px;
   list-style: none;
+  display: block;
 }
 
-.histori-page {
-  border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
-  padding-bottom: 10px;
-  padding-top: 10px;
+.dropdown-content li:hover{
+  --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 5px;
 }
-
 
 .dropdown-sidebar ul li {
   list-style: none;
@@ -261,7 +260,7 @@ ul {
 .ntif {
   position: relative;
   right: 15px;
-  top: -10px;
+  top: -12px;
   width: 23px;
   height: 23px;
   background-color: gray;
@@ -280,13 +279,31 @@ ul {
   align-items: center;
 }
 
+/* style alert */
 
+.pembungkus-alert{
+   display: flex;
+   justify-content: center;
+}
+
+.custom-alert{
+  background-color: red;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-family: outfit;
+}
+
+/* style menu */
 .cards {
   display: flex;
   justify-content: center;
 }
+.menu-page{
+  margin-top: 200px;
+}
 
-.menu {
+.menu{
   text-align: center;
   color: #96C291;
   font-family: Satisfy;
@@ -294,7 +311,7 @@ ul {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 200px;
+
 }
 
 .card-content {
@@ -355,7 +372,7 @@ ul {
   padding: 5px;
 }
 
-button {
+.content button {
   background-color: red;
   width: 170px;
   color: #FFF;
@@ -366,6 +383,11 @@ button {
   font-weight: 400;
   line-height: normal;
   border-radius: 5px;
+}
+
+.content button:hover{
+  --tw-bg-opacity: 10;
+    background-color: rgb(190, 7, 7);
 }
 
 .contact .section-heading {
@@ -476,6 +498,10 @@ p {
   margin: 0;
 }
 
+h3{
+  margin: 0;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     max-width: 100%;
@@ -489,6 +515,10 @@ p {
     display: flex;
     position: relative;
     z-index: 9999;
+  }
+
+  .menu-toggle span{
+    background-color: gray;
   }
 
   .menu-toggle input:checked~span:nth-child(2) {
@@ -601,24 +631,35 @@ p {
   .sosmed {
     padding: 0;
     display: flex;
+    justify-content: start;
     align-items: center;
   }
 
   .sosmed ul {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
   }
 
   .sosmed ul a {
     font-size: 9px;
     padding: 0;
-    text-align: center;
+
   }
 
   .copyright p {
     font-size: 10px;
     text-align: center;
+  }  
+
+  .svg-content svg{
+    width: 150px; 
+    height: 150px;
   }
 
+  .feedback{
+    font-size: 40px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -649,6 +690,10 @@ p {
   nav .navbar-nav.slide {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  .menu-toggle span{
+    background-color: gray;
   }
 
   .menu-toggle input:checked~span:nth-child(2) {
@@ -717,6 +762,12 @@ p {
     font-size: 16px;
     text-align: center;
   }
+
+  .svg-content svg{
+    width: 300px; 
+    height: 300px;
+  }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -747,6 +798,10 @@ p {
   nav .navbar-nav.slide {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  .menu-toggle span{
+    background-color: gray;
   }
 
   .menu-toggle input:checked~span:nth-child(2) {
@@ -812,6 +867,11 @@ p {
   .copyright p {
     font-size: 16px;
     text-align: center;
+  }
+
+  .svg-content svg{
+    width: 300px; 
+    height: 300px;
   }
 }
 

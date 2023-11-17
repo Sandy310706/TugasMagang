@@ -6,12 +6,10 @@
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
     </div>
     <div class="svg">
-        <svg class="svg-hijau" xmlns="http://www.w3.org/2000/svg" width="377" height="512" viewBox="0 0 377 512"
-            fill="none">
-            <path
-                d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z"
-                fill="#96C291" />
+        <svg class="svg-hijau" xmlns="http://www.w3.org/2000/svg" width="377" height="512" viewBox="0 0 377 512" fill="none">
+            <path d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z" fill="#D2DE32"/>
         </svg>
+        
     </div>
     {{-- <div class="hero-click">
         <div class="content-container">
@@ -74,7 +72,7 @@
                                     </div>
                                     <div class="kontents-kantin">
                                         <div class="kontent-kantin">
-                                            <a href="kantin/{{ $data->namaKantin }}">{{ $data->namaKantin }}</a>
+                                            <b><a href="kantin/{{ $data->namaKantin }}">{{ $data->namaKantin }}</a></b>
                                         </div>
                                     </div>
                                 </div>
@@ -217,12 +215,103 @@
 
 
     </div>
+
+    <h1 class="makanan-menu text-center">Menu</h1>
+    <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
+
     <div class="card-container">
-        <h1 class="makanan text-center">Menu</h1>
-        <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
         <div class="card-menu">
+            <div class="cards-menu">
+                <div class="content-menu">
+                    <div class="image-menu">
+                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
+                    </div>
+                    <div class="clicks">
+                        <button class="btn-submit">Pesan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-menu">
+                <div class="content-menu">
+                    <div class="image-menu">
+                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
+                    </div>
+                    <div class="clicks">
+                        <button class="btn-submit">Pesan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-menu">
+                <div class="content-menu">
+                    <div class="image-menu">
+                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
+                    </div>
+                    <div class="clicks">
+                        <button class="btn-submit">Pesan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-menu">
+                <div class="content-menu">
+                    <div class="image-menu">
+                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
+                    </div>
+                    <div class="clicks">
+                        <button class="btn-submit">Pesan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-menu">
+                <div class="content-menu">
+                    <div class="image-menu">
+                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
+                    </div>
+                    <div class="clicks">
+                        <button class="btn-submit">Pesan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-menu">
+                <div class="content-menu">
+                    <div class="image-menu">
+                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
+                    </div>
+                    <div class="clicks">
+                        <button class="btn-submit">Pesan</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    {{-- <div class="svg">
+        <svg  class="svg-green" xmlns="http://www.w3.org/2000/svg" width="443" height="500" viewBox="0 0 443 500" fill="none">
+            <path d="M12.2903 467.534C-55.2906 344.49 185.726 26.9603 411.968 1.78809C556.937 -24.8803 489.952 299.079 731.577 278.327C872.026 294.164 768.291 490.624 698.107 585.048C648.254 684.923 90.282 717.3 12.2903 467.534Z" fill="#96C291"/>
+        </svg>
+    </div> --}}
     <footer class="footer">
         <div class="footer-container">
             <div class="copyright">

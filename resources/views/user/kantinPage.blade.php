@@ -20,9 +20,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<div class="pembungkus-alert">
-    <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
-</div>
+
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container-fluit d-flex container-content">
@@ -36,65 +35,73 @@
                 <h3 class="navbars">Welcome To Kantin Sekolah</h3>
             </div>
             <div class="navbar-content justift-content-end">
-                <div class="hero-nav">
-                    <div class="content-nav">
-                        <div class="navbar-nav text-uppercase">
-                            <div class="nav-content">
-                                <a class="nav-link" href="/">Home</a>
-                                @auth @if (auth()->user()->role == 'admin')
-                                    <a class="nav-link" href="/admin/dashboard">Dashboard</a>
-                                @endif
+                <div class="content-nav">
+                    <ul class="navbar-nav text-uppercase">
+                        <div class="nav-content">
+                            <a class="nav-link" href="/">Home</a>
+                            @auth @if (auth()->user()->role == 'admin')
+                                <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                            @endif
                             @endauth
                             <a class="nav-link" href="#feedback">Feedback</a>
                             <a class="nav-link" href="/menu">Kantin</a></li>
                             <div class="keranjangs">
                                 <a class="nav-link" href="/carts" class="bi bi-cart">Keranjang</a>
                                 <div class="ntif">
-                                    <p>{{$angka}}</p>
+                                    <p>{{ $angka }}</p>
                                 </div>
                             </div>
-                        </div>
+                            </div>
                         <div class="dropdown">
                             <div class="button-sidebar">
-                        @guest
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
-                         </button>
-                        @else
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
-                         </button>
-                        @endguest
+                                @guest
+                                    <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
+                                        <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                                    </button>
+                                @else
+                                    <button class="button-dropdown" onclick="openDropdown()"
+                                        id="dropdownTrigger">{{ $userNav->nama }}
+                                        <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                                    </button>
+                                @endguest
                             </div>
                             <div class="dropdown-sidebar" id="dropdownMenu">
                                 <div class="dropdown-content">
                                     <ul>
                                         @guest
-                                        <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
-                                        href="/login"><i class="bi bi-box-arrow-in-right"></i>login</a></li>
+                                            <li class="content-dropdown"><a class="nav-dropdown"
+                                                    style="padding-top: 20px" href="/login"><i
+                                                        class="bi bi-box-arrow-in-right"></i>login</a></li>
                                         @else
-                                        <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
-                                        <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori Pesanan</li>
-                                        <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
-                                        href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
+                                            <li class="content-dropdown"><a class="nav-dropdown" href="">Akun
+                                            </li>
+                                            <li class="content-dropdown"><a class="nav-dropdown histori"
+                                                    href="/invoice">Histori Pesanan</li>
+                                            <li class="content-dropdown"><a class="nav-dropdown"
+                                                    style="padding-top: 20px" href="/login"><i
+                                                        class="bi bi-box-arrow-in-right"></i>logout</a></li>
                                         @endguest
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <div class="svg-content">
     <svg xmlns="http://www.w3.org/2000/svg" width="377" height="512" viewBox="0 0 377 512" fill="none">
-        <path d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z" fill="#96C291"/>
+        <path
+            d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z"
+            fill="#96C291" />
     </svg>
 </div>
 <div class="menu-page">
+    <div class="pembungkus-alert">
+        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+    </div>
     <h1 class="menu">MENU</h1>
 </div>
 
@@ -107,12 +114,12 @@
                         <img src="img/bipang.jpg" alt="">
                     </div>
                     <div class="content-text">
-                        <p>{{$data->nama}}</p>
-                        <p>RP. {{$data->harga}}</p>
+                        <p>{{ $data->nama }}</p>
+                        <p>RP. {{ $data->harga }}</p>
                     </div>
                     <div class="content">
                         <button type="submit" onclick="inputData(this)" class="btn btn-submit"
-                        data-id="{{ $data->id }}">Pesan</button>
+                            data-id="{{ $data->id }}">Pesan</button>
                     </div>
                 </div>
             @endforeach
@@ -125,20 +132,21 @@
         <div class="text-center mt-5">
             <h2 class="feedback section-heading text-capatalize mb-5">Feedback Kantin</h2>
         </div>
-            <div class="row align-items-stretch mb-5">
-                <div class="col">
-                    <div class="form-group form-group-textarea mb-md-0">
-                        <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
-                            data-sb-validations="required"></textarea>
-                        <div class="invalid-feedback">A Feedback is required.</div>
-                    </div>
+        <div class="row align-items-stretch mb-5">
+            <div class="col">
+                <div class="form-group form-group-textarea mb-md-0">
+                    <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
+                        data-sb-validations="required"></textarea>
+                    <div class="invalid-feedback">A Feedback is required.</div>
                 </div>
             </div>
-            <div class="text-end">
-                <button class="button btn btn-info" onclick="kirimSaran(this)" id="submitButton" type="submit" invoice="{{$user->id}}">Kirim Feedback</button>
-            </div>
+        </div>
+        <div class="text-end">
+            <button class="button btn btn-info" onclick="kirimSaran(this)" id="submitButton" type="submit"
+                invoice="{{ $user->id }}">Kirim Feedback</button>
         </div>
     </div>
+</div>
 
 
 <footer class="footer">
@@ -159,8 +167,7 @@
 </footer>
 
 <script>
-
-$(document).ready(function() {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -171,53 +178,52 @@ $(document).ready(function() {
     function inputData(bi) {
         const id = bi.getAttribute('data-id')
         $.ajax({
-            url : `/carts/+${id}`,
+            url: `/carts/+${id}`,
             dataType: "json",
             type: "POST",
             data: {
                 "_token": "{{ csrf_token() }}",
             },
             success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').ustyle.display = 'none';
-                    }, 10000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
+                location.reload();
+                console.log("berhasil");
+                setTimeout(() => {
+                    document.getElementById('alerts').ustyle.display = 'none';
+                }, 5000);
+                document.getElementById('alerts').style.display = 'block';
+            },
+            error: function(error) {
+                console.log('gagal');
+                console.log(error)
+            }
         });
     };
 
-    function kirimSaran(ini){
+    function kirimSaran(ini) {
         const id = ini.getAttribute('invoice')
         $.ajax({
-            url : `/feedback`,
-            type : 'GET',
+            url: `/feedback`,
+            type: 'GET',
             dataType: "json",
             data: {
                 "_token": "{{ csrf_token() }}",
             },
             success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').ustyle.display = 'none';
-                    }, 10000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
+                location.reload();
+                console.log("berhasil");
+                setTimeout(() => {
+                    document.getElementById('alerts').ustyle.display = 'none';
+                }, 10000);
+                document.getElementById('alerts').style.display = 'block';
+            },
+            error: function(error) {
+                console.log('gagal');
+                console.log(error)
+            }
         });
     };
-
-    </script>
-    <script>
+</script>
+<script>
     function openDropdown() {
         const dropdownTrigger = document.getElementById('dropdownTrigger');
         const dropdownMenu = document.getElementById('dropdownMenu');
