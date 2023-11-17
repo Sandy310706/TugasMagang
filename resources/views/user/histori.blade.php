@@ -45,7 +45,7 @@
                                 <p>{{ $invoice->keranjang->subtotal }}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->total_harga}}</p>
+                                <p>{{$invoice->keranjang->total_harga}}</p>
                             </div>
                         </div>
                     </div>
@@ -107,28 +107,11 @@
             });
         }
     </script>
-
-        function Begini(saat) {
-        const id = saat.getAttribute('data-id')
-        $.ajax({
-            url: `/invoice/${id}`,
-            dataType:'json',
-            type:'POST',
-            data:{
-                "_token": "{{ csrf_token() }}",
-            },
-            statusCode: {
-        500: function(response) {
-           console.log(response)
-                }
-            },
-            success: function(response){
-                console.log('berhasil');
-            },
-            error: function(response){
-                console.log('gagal');
-            },
-        });
+    <script>
+        function detailModal(id) {
+            const detailModal = document.getElementById(".modal" + id)
+            console.log(id);
+            detailModal.style.display = 'block';
         }
 
         // Ambil elemen modal dan tombol yang akan membukanya
@@ -147,11 +130,11 @@
         });
 
 
-            if (dropdownMenu.style.display === "none") {
+
 
         // Sembunyikan modal saat latar belakang modal diklik
         window.addEventListener("click", function(event) {
-            if (dropdownMenu.style.display === "none") j{
+            if (dropdownMenu.style.display === "none") {
 
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
@@ -159,7 +142,7 @@
             } else {
                 dropdownMenu.style.display = "none";
             }
-        }
+        });
     </script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>

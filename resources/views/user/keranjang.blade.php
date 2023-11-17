@@ -3,11 +3,15 @@
 @section('keranjang')
 
 
-<div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="241" height="307" viewBox="0 0 241 307" fill="none">
-        <path d="M237.798 73.7377C243.288 214.012 35.4739 363.38 -178.18 284.823C-319.791 243.915 -115.129 -15.9893 -340.571 -105.373C-459.148 -182.289 -428.244 -284.674 -323.268 -337.795C-234.046 -404.876 279.609 -184.559 237.798 73.7377Z" fill="#96C291"/>
-    </svg>
-</div>
+    <div class="svg-container">
+        <svg class="svg-kuning" xmlns="http://www.w3.org/2000/svg" width="241" height="307" viewBox="0 0 241 307" fill="none">
+            <path d="M237.798 73.7377C243.288 214.012 35.4739 363.38 -178.18 284.823C-319.791 243.915 -115.129 -15.9893 -340.571 -105.373C-459.148 -182.289 -428.244 -284.674 -323.268 -337.795C-234.046 -404.876 279.609 -184.559 237.798 73.7377Z" fill="#96C291"/>
+        </svg>
+        <svg class="svg-hijau" width="165" height="176" viewBox="0 0 165 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="139.5" cy="36.5" r="139.5" fill="#D2DE32"/>
+        </svg>      
+        
+    </div>
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
     <div class="content-nav">
@@ -62,6 +66,7 @@
                         @method('Delete')
                         <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -75,7 +80,6 @@
             </div>
         </div>
     </div>
-
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
@@ -89,13 +93,39 @@
         </div>
         <div class="cekout">
             <div class="btnns">
-
                <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
-
             </div>
         </div>
     </div>
 </div>
+
+
+<div class="svg-container">
+    <svg class="hijau-kanan" width="250" height="200" viewBox="0 0 352 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_1859_1681)">
+        <circle cx="253.5" cy="249.5" r="249.5" fill="#96C291"/>
+        <circle cx="253.5" cy="249.5" r="249" stroke="black"/>
+        <circle cx="253.5" cy="249.5" r="249" stroke="black" stroke-opacity="0.2"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_1859_1681" x="0" y="0" width="507" height="507" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1859_1681"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1859_1681" result="shape"/>
+        </filter>
+        </defs>
+    </svg>
+    <svg class="kuning-kiri" width="197" height="206" viewBox="0 0 197 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="57.5" cy="139.5" r="139.5" fill="#D2DE32"/>
+    </svg>
+</div>
+
+
 <script>
     $(document).ready(function() {
         $.ajaxSetup({
@@ -113,6 +143,7 @@
                 type: "GET",
                 url: "/cartst/" + keranjangId + "/" + menuId,
                 success: function(data) {
+                    location.reload();
                     console.log(spanJumlah);
                     console.log(totalHarga);
                     spanJumlah.text(data.jumlah);
@@ -132,6 +163,7 @@
                 type: "GET",
                 url: "/cartsk/" + keranjangId + "/" + menuId,
                 success: function(data) {
+                    location.reload();
                     spanJumlah.text(data.jumlah);
                     totalHarga.text("Rp. " + data.total_harga)
                 },

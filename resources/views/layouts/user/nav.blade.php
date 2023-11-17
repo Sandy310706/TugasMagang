@@ -23,27 +23,34 @@
                         <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                         </li>
                         <div class="ntif">
-                            <p></p>
+                            <p>{{ $angka }}</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="dropdown">
                     <div class="button-sidebar">
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Frederick
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i> </button>
+                        @guest
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
+                            <i class="bi bi-caret-down-fill"></i>
+                         </button>
+                        @else
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
+                            <i class="bi bi-caret-down-fill"></i>
+                         </button>
+                        @endguest
+
                     </div>
                     <div class="dropdown-sidebar" id="dropdownMenu">
                         <div class="dropdown-content">
-                            <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
-                            <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
-                                    Pesanan</li>
-                            @if (auth())
-                                <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
-                                        href="/logout"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                            @guest
+                            <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                                href="/login"><i class="bi bi-box-arrow-in-right"></i>login</a></li>
                             @else
-                                <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
-                            @endif
+                            <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
+                            <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori Pesanan</li>
+                            <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
+                            href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -83,7 +90,7 @@
         var navbar = document.getElementById("mainNav");
 
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            navbar.style.backgroundColor = "#000000"; 
+            navbar.style.backgroundColor = "#000000";
             navbar.style.padding = "20px";
             navbar.h3.style.color = "#898989"
         } else {
