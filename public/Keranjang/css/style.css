@@ -11,6 +11,11 @@ svg */
     position: relative;
 }
 
+.svg-container-2{
+    position: relative;
+    height: 50vh;
+}
+
 .svg-container .svg-kuning{
     position: absolute;
     top: 0;
@@ -24,14 +29,14 @@ svg */
     z-index: -1;
 }
 
-.svg-container .hijau-kanan{
+.svg-container-2 .hijau-kanan{
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: -1;
 }
 
-.svg-container .kuning-kiri{
+.svg-container-2 .kuning-kiri{
     position: absolute;
     z-index: -1;
     bottom: 0;
