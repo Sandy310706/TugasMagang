@@ -107,6 +107,7 @@
             });
         }
     </script>
+
     <script>
         function detailModal(id) {
             const detailModal = document.getElementById(".modal" + id)
@@ -119,7 +120,7 @@
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
 
-        Tampilkan modal saat tombol dibuka
+        // Tampilkan modal saat tombol dibuka
         openModalButton.addEventListener("click", function() {
             modal.style.display = "block";
         });
@@ -143,7 +144,7 @@
     </script>
     <script src="main.js"></script>
     <script src="script.js/script.js"></script>
-    <script src="script.js/modal.js"></script>
+    {{-- <script src="script.js/modal.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>

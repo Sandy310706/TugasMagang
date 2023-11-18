@@ -155,6 +155,11 @@
             data: {
                 "_token": "{{ csrf_token() }}",
             },
+            statusCode: {
+                    500: function(response) {
+                        console.log(response)
+                    }
+                },
             success: function(response) {
                 console.log(response.status);
                 if (response.status == 1) {
