@@ -135,10 +135,7 @@
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
-
-
-
-        openModalButton.addEventListener("click", function() {
+r("click", function() {
             modal.style.display = "block";
         });
 
