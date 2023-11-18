@@ -152,8 +152,13 @@
             $('#background').removeClass('hidden')
             $('#modal').addClass('animate-showModal')
             $('#modalHeading').html('Mengajukan Menu baru.')
+            var isSubmitting = false;
             $('#FormData').submit( function(e) {
                 e.preventDefault()
+                if (isSubmitting) {
+                    return;
+                }
+                isSubmitting = true;
                 $('#saveBtn').html('Mengirim...')
                 $.ajax({
                     data: new FormData(this),
@@ -162,6 +167,7 @@
                     processData: false,
                     contentType:false,
                     success: function(response){
+                        var isSubmitting = false;
                         Swal.fire({
                             title: 'Berhasil',
                             text: 'Menu berhasil diajukan!',

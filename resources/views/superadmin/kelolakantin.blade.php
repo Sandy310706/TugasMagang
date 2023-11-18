@@ -42,7 +42,7 @@
                         <p class="pt-1 text-xs text-red-500"></p>
                     </div>
                     <div class="flex justify-end">
-                        <button id="submitBtn" type="submit" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white hover:from-blue-500 hover:to-blue-800 tracking-widest"></button>
+                        <button id="submitBtn" type="submit" class="submitBtn rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white hover:from-blue-500 hover:to-blue-800 tracking-widest"></button>
                     </div>
                 </form>
             </div>
@@ -70,7 +70,7 @@
                         <p class="pt-1 text-xs text-red-500"></p>
                     </div>
                     <div class="flex justify-end">
-                        <button id="submitBtnEdit" type="submit" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white hover:from-blue-500 hover:to-blue-800 tracking-widest">Update</button>
+                        <button id="submitBtnEdit" type="button" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white hover:from-blue-500 hover:to-blue-800 tracking-widest">Update</button>
                     </div>
                 </form>
             </div>
@@ -114,16 +114,24 @@
                 $('#submitBtn').html('Tambahkan')
                 $('#background').removeClass('hidden')
                 $('#modalTitle').html('Tambah Kantin')
+                var isSubmitting = false;
                 $('#formKantin').submit(function(e){
                     e.preventDefault()
-                    $('#submitBtn').html('Menambahkan ...')
+                    $('.submitBtn').html('Menambahkan ...')
+                    if (isSubmitting) {
+                        return;
+                    }
+                    isSubmitting = true;
+                    var dataSubmit = new FormData(this)
+                    dataSubmit.append('_token', $('meta[name="csrf-token"]').attr('content'))
                     $.ajax({
                         url: "{{ route('Kantin.Create') }}",
                         type: "POST",
-                        data: new FormData(this),
+                        data: dataSubmit,
                         processData: false,
                         contentType:false,
                         success: function(response){
+                            var isSubmitting = false;
                             Swal.fire({
                                 title: 'Berhasil',
                                 text: 'Berhasil menambahkan Kantin.',
@@ -138,9 +146,11 @@
                                         $('#background').addClass('hidden')
                                         $('#submitBtn').html('Tambahkan')
                                         $('#tabel-akun').DataTable().ajax.reload()
+                                        // location.reload();
                                     }, 900);
                                     $('#modal').removeClass('animate-showModal')
                                     $('#modal').addClass('animate-hideModal')
+                                    $('#formKantin').trigger("reset")
                                 }
                             })
                         },
@@ -210,6 +220,40 @@
                 }, 900);
                 $('#modalEdit').removeClass('animate-showModal')
                 $('#modalEdit').addClass('animate-hideModal')
+            })
+            $('body').on('click', '.btnDelete', function(e){
+                e.preventDefault();
+                var id = $(this).data("id");
+                var token = $('meta[name="csrf-token"]').attr('content');
+                Swal.fire({
+                    title: 'Konfirmasi',
+                    text: 'Apakah Anda yakin ingin menghapus Kantin ini?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, Hapus',
+                    cancelButtonText: 'Batal',
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'DELETE',
+                            url: '/kantin/'+id+'/delete',
+                            data: {
+                                _token: token,
+                            },
+                            success: function(response) {
+                                $('#tabel-akun').DataTable().ajax.reload()
+                                Swal.fire('Dihapus!', 'Kantin berhasil dihapus.', 'success');
+                            },
+                            error: function(error) {
+                                Swal.fire('Error', 'Terjadi kesalahan saat menghapus item.', 'error');
+                                Swal.fire('Dihapus!', 'Item berhasil dihapus.', 'success');
+                                console.log(error);
+                            }
+                        })
+                    }
+                })
             })
         })
     </script>

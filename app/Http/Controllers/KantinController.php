@@ -93,4 +93,10 @@ class KantinController extends Controller
         $angka = count($keranjang);
         return view('user.kantinPage', compact('menu','angka','user','userNav'));
     }
+    public function delete($id)
+    {
+        $hapus = Kantin::find($id);
+        $hapus->delete();
+        return response()->json(['success' => 'Kantin berhasil diHapus']);
+    }
 }
