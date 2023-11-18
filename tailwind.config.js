@@ -15,6 +15,7 @@ export default {
                 amaranth: ["Amaranth"],
                 montserrat: ["Montserrat Alternates"],
                 nunito: ["Nunito Sans"],
+                balsamiq: ["Balsamiq Sans"],
             },
             keyframes: {
                 ToptoBottom: {
