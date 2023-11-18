@@ -1,5 +1,4 @@
-
-  <div class="container-fluid d-flex">
+    <div class="container-fluid d-flex">
         <div class="menu-toggle">
             <input type="checkbox">
             <span></span>
