@@ -19,7 +19,7 @@
             <div class="p-1">
                 <h2 class="pl-1 font-semibold text-2xl">{{ $totalPesanan }}</h2>
                 <h1 class="pl-1 font-amaranth text-3xl">Pesanan</h1>
-                <img src="{{ asset('img/Pesanan.svg') }}" alt="card-icon" class="scale-110 lgTablet:scale-100 absolute right-4 lgTablet:-right-1 top-4">
+                <img src="{{ asset('img/Pesanan.svg') }}" alt="card-icon" class="scale-100 lgTablet:scale-100 absolute right-4 lgTablet:-right-1 top-3">
             </div>
             <div class="absolute bottom-0 w-full bg-black bg-opacity-20 rounded-b-md">
                 <div class="w-full flex p-1">

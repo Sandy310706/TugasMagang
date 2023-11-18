@@ -20,16 +20,18 @@ class KelolaakunController extends Controller
     public function getData(Request $request)
     {
         if($request->ajax()) {
-            $data = User::latest()->paginate(10);
-            $kantin = Kantin::find($data);
-            return DataTables::of($kantin)->addIndexColumn()
+            return DataTables::eloquent(User::with('kantin')->select('users.*'))
+            ->addColumn('nama_kantin', function($kantin){
+                return $kantin->kantin ? $kantin->kantin->namaKantin : 'Bukan admin';
+            })->addIndexColumn()
             ->addColumn('action', function($row){
                 return view('layouts.superadmin.button', compact('row'));
             })->rawColumns(['action'])->make(true);
         }
     }
 
-    public function tambah(Request $request) {
+    public function tambah(Request $request)
+    {
         $dataValidasi = Validator::make($request->all(), [
             'nama' => 'required',
             'email' => ['required', 'unique:users', 'email'],
@@ -43,11 +45,13 @@ class KelolaakunController extends Controller
             'email.unique' => 'Email sudah di pakai.',
             'password.unique' => 'Password wajib di isi.',
             'password.min' => 'Password minimal 8 digit.',
+            'password.required' => 'Kolom password wajib di isi.',
+            'email.required' => 'Kolom email wajib di isi.',
             'role.required' => 'Role wajib di isi pilih.',
             'kantin.required' => 'Jika admin kantin wajib di pilih.'
         ]);
         if($dataValidasi->fails()){
-        return redirect()->route('Superadmin.Akun')->withErrors($dataValidasi)->withInput();
+        return response()->json(['errors' => $dataValidasi->errors()], 422);
         }
         $newData = new User;
         $newData->nama = $request->nama;
@@ -56,18 +60,23 @@ class KelolaakunController extends Controller
         $newData->role = $request->role;
         $newData->id_kantin = $request->kantin;
         $newData->save();
-        Alert::success('Berhasil', 'Akun berhasil di tambahkan');
-        return redirect()->back();
+        return response()->json(['success', 'Berhasil menambahkan user baru']);
     }
 
-    public function edit(Request $request,$id) {
+    public function edit($id)
+    {
+        $data = User::where('id', $id)->with('kantin')->first();
+        return response()->json($data);
+    }
+
+    public function update(Request $request,$id)
+    {
         $data = User::find($id);
         $data ->nama=$request->nama;
         $data ->email=$request->email;
         $data ->role=$request->role;
         $data->save();
-        Alert::success('success', 'Akun berhasil diperbarui');
-        return redirect()->route('Superadmin.Akun');
+        return response()->json(['success' => 'Data User berhasil di update.']);
     }
 
     public function hapus($id) {

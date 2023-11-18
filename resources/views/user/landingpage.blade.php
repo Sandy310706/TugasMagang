@@ -49,8 +49,7 @@
                         <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
                         <li class="nav-item"><a class="nav-link" href="/menu">Kantin</a></li>
                         <div class="keranjangs">
-                            <li class="nav-item"><a class="nav-link" href="/carts"><i
-                                        class="bi bi-cart"></i>Keranjang</a>
+                            <li class="nav-item"><a class="nav-link" href="/carts"><i class="bi bi-cart"></i>Keranjang</a>
                             </li>
                             <div class="ntif">
                                 <p>{{ $data }}</p>
@@ -65,13 +64,13 @@
                         </div>
                         <div class="dropdown-sidebar" id="dropdownMenu">
                             <div class="dropdown-content">
+                                <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
                                 <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori
                                         Pesanan</li>
-                                @if (auth())
-                                    <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="{{ route('Logout', auth()->user()->nama) }}"><i
-                                                class="bi bi-box-arrow-in-right"></i>Log Out</a></li>
+                                @if (!auth())
+                                        <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
                                 @else
-                                    <li class="content-dropdown"><a class="nav-dropdown" href="/login">Login</a></li>
+                                        {{-- <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px" href="{{ route('Logout', auth()->user()->nama) }}"><i class="bi bi-box-arrow-in-right"></i>Log Out</a></li> --}}
                                 @endif
                             </div>
                         </div>
@@ -87,11 +86,14 @@
                 <div class="col">
                     <h3 class="welcome">Welcome to Kantin Sekolah</h3>
                 </div>
+
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
+                        <div class="images"><img src="template/landingPage/assets/img/robin_botak.png" alt="">
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -102,33 +104,33 @@
                 <div class="image">
                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
                      <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
             <div class="box">
                 <div class="image">
                     <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
                 </div>
-                <h1>Manusia Rasis</h1>
-                <p>0</p>
-                <button class="btn btn-primary">Pesan</button>
+                <h1>nasi</h1>
+                <p>1.000.000</p>
+                <a href ="/menu"button class="btn btn-primary">Pesan</a>
             </div>
         </div>
     </section>
