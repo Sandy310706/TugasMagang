@@ -1,5 +1,4 @@
-
-  <div class="container-fluid d-flex">
+<div class="container-fluid d-flex ">
         <div class="menu-toggle">
             <input type="checkbox">
             <span></span>
@@ -30,12 +29,10 @@
                 <div class="dropdown">
                     <div class="button-sidebar">
                         @guest
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                            <i class="bi bi-caret-down-fill"></i>
-                         </button>
+                        <a class="button-dropdown button-login" onclick="openDropdown()" id="dropdownTrigger"href="/login">login</a>
                         @else
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">
-                            <i class="bi bi-caret-down-fill"></i>
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
+                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
                          </button>
                         @endguest
 
@@ -55,7 +52,6 @@
                     </div>
                 </div>
             </ul>
-
         </div>
     </div>
 

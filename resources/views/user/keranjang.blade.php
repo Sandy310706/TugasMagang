@@ -81,13 +81,14 @@
             </div>
         </div>
     @endforeach
-    @endif
-    
-   
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
     </div>
+    @endif
+    
+   
+  
 </div>
 <div class="container totals mt-3">
     <div class="checkout">
