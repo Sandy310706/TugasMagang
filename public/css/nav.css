@@ -178,6 +178,18 @@ ul {
   animation:Menu 1s;
 }
 
+.button-login{
+    text-decoration: none;
+    font-family: "Amaranth", sans-serif;
+    font-size: 0.95rem;
+    color: gray;
+    letter-spacing: 0.0625em;
+}
+
+.button-login:hover{
+    color: #ffc800;
+}
+
 .dropdown-content  li a.nav-dropdown:hover {
     opacity: 60%;
     cursor: progress;
@@ -200,28 +212,28 @@ ul {
 .keranjangs {
     position: relative;
     display: flex;
-  }
+}
   
-  .ntif {
-    position: relative;
-    right: 10px;
-    width: 23px;
-    height: 23px;
-    background-color: gray;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .ntif p {
-    color: white;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-  }
+.ntif {
+position: relative;
+right: 10px;
+width: 23px;
+height: 23px;
+background-color: gray;
+border-radius: 50%;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 5px;
+}
+
+.ntif p {
+color: white;
+font-size: 15px;
+display: flex;
+align-items: center;
+}
 
 @media only screen and (max-width: 600px) {
     body {
