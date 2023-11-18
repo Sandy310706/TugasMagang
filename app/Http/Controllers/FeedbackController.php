@@ -6,6 +6,7 @@ use App\Models\Feedback;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Kantin;
 use Illuminate\Support\Facades\Validator;
 
 class FeedbackController extends Controller
@@ -16,11 +17,12 @@ class FeedbackController extends Controller
     public function index()
     {
         $feedback = Feedback::latest()->paginate('10');
-        return view('admin.feedback', compact('feedback'));
+        return view('admin.feedback', compact('feedback',));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $namaKantin)
     {
+        $kantin = Kantin::where('id',$namaKantin)->get();
         $nama = Feedback::all();
         if(auth()->check()) {
 
@@ -38,6 +40,7 @@ class FeedbackController extends Controller
                 'user_id' => auth()->user()->id,
                 'nama_id'  => auth()->user()->nama,
                 'feedback' => $request->input('feedback'),
+                'kantin_id' => $kantin,
             ]);
             return redirect('/')->with('success','Feedback berhasil terkirim');
         }else{

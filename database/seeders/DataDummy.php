@@ -23,15 +23,18 @@ class DataDummy extends Seeder
         //     'role' => 'guest',
         // ]);
 
-        DB::table('menus')->insert([
-            'nama' => 'teh es',
-            'harga' => '10000',
-            'stok' => '10',
-            'kategori' => 'minuman',
-            'foto' => 'tehes.jpg',
-            'id_kantin' => '2',
-        ]);
+        // DB::table('menus')->insert([
+        //     'nama' => 'teh es',
+        //     'harga' => '10000',
+        //     'stok' => '10',
+        //     'kategori' => 'minuman',
+        //     'foto' => 'tehes.jpg',
+        //     'id_kantin' => '3',
+        // ]);
 
+        DB::table('kantin')->insert([
+            'namaKantin' => 'Kantin Murah',
+        ]);
 
 
 

@@ -30,7 +30,7 @@
                 <div class="dropdown">
                     <div class="button-sidebar">
                         @guest
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">login
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
                          </button>
                         @else

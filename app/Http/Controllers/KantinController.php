@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kantin;
+use App\Models\Feedback;
 use App\Models\Keranjangs;
 use App\Models\Menu;
 use Illuminate\Http\Request;
@@ -47,6 +48,6 @@ class KantinController extends Controller
                         ->first();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
-        return view('user.kantinPage', compact('menu','angka','user','userNav'));
+        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin'));
     }
 }
