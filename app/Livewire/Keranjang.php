@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Menu;
 use App\Models\Kantin;
 use App\Models\Keranjangs;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Stmt\Foreach_;
@@ -15,11 +16,17 @@ class Keranjang extends Component
 {
     public function render(Request $id)
     {
+        $check = Keranjangs::count();
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
+        $user = User::where('id', auth()->user()->id)->first();
+        $userNav = User::where('role','guest')
+                    ->orWhere('role','superadmin')
+                    ->orWhere('role', 'admin')
+                    ->first();
         $menu = Menu::where('id',$id)->first();
+        $angka = count($keranjangs);
         $totalHarga = [];
-
 
         foreach($keranjangs as $keranjang)
         {
@@ -28,7 +35,8 @@ class Keranjang extends Component
         $arraySum = array_sum($totalHarga);
 
 
-        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang'));
+
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user','userNav','check'));
     }
 
     public function store(Request $Request ,$id)
@@ -46,8 +54,6 @@ class Keranjang extends Component
         $kantin = Kantin::where('id', $id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
-
-        // session()->forget('id', $keranjang);
 
         if($cekKeranjang)
         {

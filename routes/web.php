@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Keranjangs;
+use App\Models\User;
+use App\Models\Menu;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +16,7 @@ use App\Http\Controllers\KantinController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\kelolaPesanController;
 use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\SuperAdminController;
@@ -24,11 +27,7 @@ Route::fallback(function () {
 });
 
 // Landing Page
-Route::get('/', function () {
-    $keranjang = Keranjangs::where('user_id')->get();
-    $data = count($keranjang);
-    return view('user.landingpage',compact('data'));
-})->middleware('web');
+Route::get('/', [LandingController::class, 'index'])->name('landingPage')->middleware('web');
 
 
 Route::middleware(['guest'])->group(function(){
