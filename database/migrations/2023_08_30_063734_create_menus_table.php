@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('quantity')->default(1);
             $table->enum('kategori', ['Makanan', 'Minuman']);
             $table->integer('harga');
+            $table->string('per')->nullable();
+            $table->boolean('is_konfirmasi');
             $table->integer('stok');
             $table->foreignId('id_kantin');
             $table->timestamps();

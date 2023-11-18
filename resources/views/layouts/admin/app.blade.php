@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Archivo+Black&display=swap" rel="stylesheet">
 
     {{-- jQuery DataTable --}}
-    <link rel="stylesheet" href="{{ asset('css/test.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/DataTable.css') }}">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     {{-- Icon --}}
@@ -50,7 +50,6 @@
             </div>
         </div>
     </div>
-    @include('sweetalert::alert')
     {{-- jQuery DataTable --}}
     <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 

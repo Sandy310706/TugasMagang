@@ -1,15 +1,46 @@
 body {
     background-color: #fff !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* 
 svg */
-.svg-container svg {
+.svg-container{
+    position: relative;
+}
+
+.svg-container-2{
+    position: relative;
+    height: 50vh;
+}
+
+.svg-container .svg-kuning{
     position: absolute;
     top: 0;
     z-index: -1;
 }
 
+.svg-container .svg-hijau{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.svg-container-2 .hijau-kanan{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.svg-container-2 .kuning-kiri{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
 /* style img keranjang kalau kosong */
 .content-img {
     display: flex;
@@ -213,14 +244,6 @@ p {
     padding-left: 5px;
 }
 
-/* footer */
-.footer {
-    width: 100%;
-    height: 100%;
-    background-color: #B5B5B5;
-    margin-top: 50px;
-}
-
 @media only screen and (max-width: 600px) {
 
     .hilang {
@@ -296,6 +319,26 @@ p {
     .image img{
         width: 180px;
     }
+
+    .svg-container .svg-kuning{
+        width: 150px;
+        height: 100px;
+    }
+    
+    .svg-container .svg-hijau{
+        width: 100px ;
+        height: 90px;
+    }
+    
+    .svg-container .hijau-kanan{
+       width: 100px;
+       height: 100px;
+    }
+    
+    .svg-container .kuning-kiri{
+        width: 120px;
+        height: 100px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
@@ -334,6 +377,27 @@ p {
 
     .content-nav {
         width: 100%;
+    }
+
+    
+    .svg-container .svg-kuning{
+        width: 200px;
+        height: 200px;
+    }
+    
+    .svg-container .svg-hijau{
+        width: 150px ;
+        height: 150px;
+    }
+    
+    .svg-container .hijau-kanan{
+       width: 200px;
+       height: 200px;
+    }
+    
+    .svg-container .kuning-kiri{
+        width: 150px;
+        height: 150px;
     }
 }
 
