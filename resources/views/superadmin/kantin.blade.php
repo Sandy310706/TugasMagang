@@ -75,16 +75,16 @@
                                     </div>
                                 </div>
                                 <div class="clicks">
-                                    <button type="submit" onclick="inputData(this)" class="btn btn-submit"
-                                        data-id="{{ $data->id }}">Pesan</button>
+                                    <button type="submit" class="btn btn-submit"
+                                        data-id="{{ $data->id }}" id="button">Pesan</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
     <div class="footer-containers">
         <footer class="footer">
             <div class="container footer-container">
@@ -111,15 +111,14 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-            });
-
                 function inputData(bi) {
                     const id = bi.getAttribute('data-id')
+                    console.log(bi)
                     $.ajax({
-                        url: '/carts/'+ id,
+                        url: '/carts/' + bi,
                         dataType: "json",
                         type: "POST",
-                        data: {},
+                        data: 'pantek',
                         success: function(response) {
                             location.reload();
                             console.log("berhasil");
@@ -130,10 +129,23 @@
                         },
                         error: function(error) {
                             console.log('gagal');
+                            console.log(id)
                             console.log(error)
                         }
                     });
                 }
+
+                // $("body").on("click","#button",function(e) {
+                //     e.preventDefault()
+                //     console.log('kacong');
+
+                // })
+            });
+
+
+
+
+
 
         </script>
 
@@ -142,6 +154,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="script.js/script.js"></script>
+
     <script src="script.js/scripts.js"></script>
 </body>
 

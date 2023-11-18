@@ -41,44 +41,46 @@ class Keranjang extends Component
     public function store(Request $Request ,$id)
     {
 
-        if(!auth()){
-            return redirect('login')->with('alert', 'Silahkan login terlebih dahulu!');
-        }
+        dd($Request->all());
+        // if(!auth()){
+        //     return redirect('login')->with('alert', 'Silahkan login terlebih dahulu!');
+        // }
+        // dd($id);
 
-        $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
-                            ->where('menu_id', $id)
-                            ->first();
-        $menu = Menu::where('id', $id)->first();
+        // $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
+        //                     ->where('menu_id', $id)
+        //                     ->first();
+        // $menu = Menu::where('id', $id)->first();
 
-        $kantin = Kantin::where('id', $id)->first();
+        // $kantin = Kantin::where('id', $id)->first();
 
-        $keranjang = Keranjangs::where('id', $id);
+        // $keranjang = Keranjangs::where('id', $id);
 
-        if($cekKeranjang)
-        {
-            $keranjang = Keranjangs::find($cekKeranjang->id);
-            $jumlah = $keranjang->jumlah + 1;
-            $keranjang->jumlah = $jumlah;
-            $total_harga = $menu->harga * $keranjang->jumlah;
-            $keranjang->total_harga = $total_harga;
-            $keranjang->save();
-        } else {
-            $keranjang = new Keranjangs;
-            $keranjang->menu_id = $id;
-            $keranjang->user_id = auth()->user()->id;
-            $keranjang->jumlah =  1;
-            $keranjang->total_harga = $menu->harga * $menu->quantity;
-            $keranjang->subtotal = $keranjang->total_harga;
-            $keranjang->kantin_id = $kantin->id;
-            $keranjang->save();
-        }
+        // if($cekKeranjang)
+        // {
+        //     $keranjang = Keranjangs::find($cekKeranjang->id);
+        //     $jumlah = $keranjang->jumlah + 1;
+        //     $keranjang->jumlah = $jumlah;
+        //     $total_harga = $menu->harga * $keranjang->jumlah;
+        //     $keranjang->total_harga = $total_harga;
+        //     $keranjang->save();
+        // } else {
+        //     $keranjang = new Keranjangs;
+        //     $keranjang->menu_id = $id;
+        //     $keranjang->user_id = auth()->user()->id;
+        //     $keranjang->jumlah =  1;
+        //     $keranjang->total_harga = $menu->harga * $menu->quantity;
+        //     $keranjang->subtotal = $keranjang->total_harga;
+        //     $keranjang->kantin_id = $kantin->id;
+        //     $keranjang->save();
+        // }
 
-        $Request->session()->forget('keranjangs');
-        session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
-        session(['lifetime' => 30]);
+        // $Request->session()->forget('keranjangs');
+        // session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
+        // session(['lifetime' => 30]);
 
 
-        return response()->json($keranjang);
+        // return response()->json($keranjang);
     }
     public function tambah($id, $menu_id)
     {

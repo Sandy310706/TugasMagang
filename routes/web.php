@@ -91,6 +91,7 @@ Route::middleware('auth')->group(function() {
 
     Route::delete('/histori', [HistoriController::class, 'index']);
     Route::get('/kantin/{namaKantin}', [KantinController::class, 'show'])->name('Kantin.view');
+    Route::get('/kantin/{id}/anjing', [KantinController::class, 'getmenu']);
 });
 
 

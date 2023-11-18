@@ -111,10 +111,16 @@
                         <p>RP. {{$data->harga}}</p>
                     </div>
                     <div class="content">
-                        <button type="submit" onclick="inputData(this)" class="btn btn-submit"
+                        <button id="btn-pesan" type="submit" class="btn btn-submit"
                         data-id="{{ $data->id }}">Pesan</button>
                     </div>
                 </div>
+                <form id="menu" enctype="multipart/form-data">
+                    <input type="hidden" value="" id="namaMenu">
+                    <input type="hidden" value="" id="hargaMenu">
+                    <input type="hidden" value="" id="id">
+                    <input type="hidden" value="" id="id">
+                </form>
             @endforeach
         </div>
     </div>
@@ -168,29 +174,57 @@ $(document).ready(function() {
         });
     });
 
-    function inputData(bi) {
-        const id = bi.getAttribute('data-id')
-        $.ajax({
-            url : `/carts/+${id}`,
-            dataType: "json",
-            type: "POST",
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').ustyle.display = 'none';
-                    }, 10000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
-        });
-    };
+    $('body').on('click','#btn-pesan',function(e){
+        e.preventDefault()
+        let id = $(this).data('id');
+        $.get('/kantin/' + id + '/anjing', function(data){
+            console.log(data)
+        })
+
+        // $.ajax({
+        //     url : '/carts/' + id,
+        //     dataType: "json",
+        //     type: "POST",
+        //     data: ,
+        //     success: function(response) {
+        //             location.reload();
+        //             console.log("berhasil");
+        //             setTimeout(() => {
+        //                 document.getElementById('alerts').ustyle.display = 'none';
+        //             }, 10000);
+        //             document.getElementById('alerts').style.display = 'block';
+        //         },
+        //         error: function(error) {
+        //             console.log('gagal');
+        //             console.log(error)
+        //         }
+        // });
+    });
+
+
+
+    // function inputData(bi) {
+    //     console.log(bi)
+    //     const id = bi.getAttribute('data-id')
+    //     $.ajax({
+    //         url : '/carts/' + id,
+    //         dataType: "json",
+    //         type: "POST",
+    //         data: ,
+    //         success: function(response) {
+    //                 location.reload();
+    //                 console.log("berhasil");
+    //                 setTimeout(() => {
+    //                     document.getElementById('alerts').ustyle.display = 'none';
+    //                 }, 10000);
+    //                 document.getElementById('alerts').style.display = 'block';
+    //             },
+    //             error: function(error) {
+    //                 console.log('gagal');
+    //                 console.log(error)
+    //             }
+    //     });
+    // };
 
     function kirimSaran(ini){
         const id = ini.getAttribute('invoice')
