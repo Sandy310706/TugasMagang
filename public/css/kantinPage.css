@@ -74,6 +74,7 @@ nav {
     display: flex;
 }
 
+
 .content-nav .navbar-nav .nav-link {
     padding: 10px;
     text-decoration: none;
@@ -84,6 +85,7 @@ nav {
 
 .content-nav .navbar-nav .nav-link:hover {
     color: #ffc800;
+
 }
 
 .navbar-nav {
@@ -92,8 +94,10 @@ nav {
 
 
 .nav-content {
+
     display: flex;
     align-items: center;
+
 }
 
 .navbars {
@@ -216,6 +220,7 @@ nav {
 }
 
 .button-sidebar button i {
+
     position: relative;
     right: 5px;
     top: 2px;
@@ -234,6 +239,7 @@ nav {
     border-radius: 10px;
     border: 1px solid black;
     animation: Menu 1s;
+
 }
 
 .dropdowm-sidebar .navbar-nav {
@@ -254,6 +260,7 @@ ul {
 }
 
 .dropdown-content li a.nav-dropdown:hover {
+
     color: red !important;
     cursor: progress;
 }
@@ -268,8 +275,8 @@ ul {
     border-bottom: 2px solid gray;
     padding-bottom: 10px;
     padding-top: 10px;
-}
 
+}
 
 .dropdown-sidebar ul li {
     list-style: none;
@@ -281,6 +288,7 @@ ul {
 }
 
 .ntif {
+
     position: relative;
     right: 15px;
     top: -10px;
@@ -293,6 +301,7 @@ ul {
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
+
 }
 
 .ntif p {
@@ -302,11 +311,30 @@ ul {
     align-items: center;
 }
 
+/* style alert */
 
+.pembungkus-alert{
+   display: flex;
+   justify-content: center;
+}
+
+.custom-alert{
+  background-color: red;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-family: outfit;
+}
+
+/* style menu */
 .cards {
     display: flex;
     justify-content: center;
 }
+.menu-page{
+  margin-top: 200px;
+}
+
 
 .menu {
     text-align: center;
@@ -317,6 +345,7 @@ ul {
     font-weight: 400;
     line-height: normal;
     margin-top: 200px;
+
 }
 
 .card-content {
@@ -377,6 +406,7 @@ ul {
     padding: 5px;
 }
 
+
 button {
     background-color: red;
     width: 170px;
@@ -388,6 +418,12 @@ button {
     font-weight: 400;
     line-height: normal;
     border-radius: 5px;
+
+}
+
+.content button:hover{
+  --tw-bg-opacity: 10;
+    background-color: rgb(190, 7, 7);
 }
 
 .contact .section-heading {
@@ -498,7 +534,12 @@ p {
     margin: 0;
 }
 
+h3{
+  margin: 0;
+}
+
 @media only screen and (max-width: 600px) {
+
     body {
         max-width: 100%;
     }
@@ -641,9 +682,14 @@ p {
         text-align: center;
     }
 
+
+  .feedback{
+    font-size: 40px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
+
     .menu-toggle {
         display: flex;
         position: relative;
@@ -835,6 +881,7 @@ p {
         font-size: 16px;
         text-align: center;
     }
+
 }
 
 @media only screen and (min-width: 1200px) {

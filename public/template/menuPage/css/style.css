@@ -1,7 +1,7 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -16,17 +16,16 @@ body {
   right: 0;
 }
 .masthead {
-  padding-top: 10.5rem;
-  text-align: center;
-  color: #000000;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-  height: 750px;
+    padding-top: 10.5rem;
+    text-align: center;
+    color: #000000;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 750px;
 }
-
 .welcome {
   font-family: 'Rock Salt', cursive;
   font-size: 40px;
@@ -42,32 +41,43 @@ body {
   width: 916px;  
 }
 
+.svg{
+  position: relative;
+}
+
 .svg svg {
   position: absolute;
   left:0;
   z-index: -1;
 }
 
+.svg-green{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
 .kantin h1 {
-  margin-top: 180px;
-  font-family: Satisfy;
+    margin-top: 180px;
+    font-family: Satisfy;
 }
 
 .cards-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 .hero-click {
-  display: flex;
-  overflow-x: hidden;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 .cards-container::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .swiper-slide {
@@ -85,54 +95,53 @@ body {
 }
 
 .button-click {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
-
 .content {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+}
+.image-kantin{
+  padding: 10px;
 }
 
 .image-kantin img {
-  border: 10px solid white;
   width: 180px;
   height: 100%;
 }
 
 .kontents-kantin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .kontent-kantin a {
-  color: black;
-  text-decoration: none;
-  font-family: ighteous;
+    color: black;
+    text-decoration: none;
+    font-family: ighteous;
 }
 
 span {
-  font-size: 2px;
+    font-size: 2px;
 }
 
-.makanan {
-  color: #FFF;
+.makanan-menu {
+  color: #96C291;
   text-align: center;
   font-family: Satisfy;
   font-size: 75px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  z-index: 1;
   margin-top: 100px;
 }
 
 .button-click button {
-  border: none;
-  background-color: transparent;
+    border: none;
+    background-color: transparent;
 }
-
 .kantin  {
   margin-top: 150px;
   color: #96C291;
@@ -146,109 +155,77 @@ span {
 }
 
 /* //style Menu// */
-.Menu-kantin {
-  margin: 30px;
-}
 
-.Menu-kantin a {
-  text-decoration: none;
-  color: wheat;
-  font-size: 25px;
+.card-container{
+ display: grid;
+ justify-items: center;
 }
-
-.Menu-kantin a:hover {
-  color: #ffc800;
-}
-
-span {
-  font-size: 2px;
-}
-
 .makanan {
-  color: #FFF;
-  text-align: center;
-  font-family: Satisfy;
-  font-size: 75px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  z-index: 1;
-  margin-top: 100px;
+    color: #fff;
+    text-align: center;
+    font-family: Satisfy;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 1;
+    margin-top: 100px;
 }
-
 
 .card-menu {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.hero-content{
   display: flex;
   justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  flex-wrap: wrap
+}
+
+.content-menus{
+   display: flex;
+   justify-content: center;
+   background-color: aqua;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
-
-.card {
-  width: 300px;
+.cards-menu {
+  width: 250px;
   height: 1;
   border-radius: 8px;
   overflow: hidden;
   margin: 8px;
   background-color: #f0f0f0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 290px;
   transition: 0.5s;
 }
 
-.cards {
-  height: 100%;
-}
 
-.card:hover {
-  transform: scale(1.1);
-  z-index: 1;
-}
-
-.image {
-  width: 100%;
-  height: 50%;
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  border: 10px solid white;
-}
-
-.kontents {
-  height: 30%;
+.image-menu{
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.kontent {
   padding: 10px;
-  height: 30%;
+}
+
+.image-menu img {
+  width:220px;
+  height: 120px;
+}
+
+.text-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  padding: 5px;
 }
 
-.kontent h3 {
-  color: #000;
-  text-align: center;
-  font-family: Righteous;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.kontent p {
+.text-content p {
   color: #000;
   text-align: center;
   font-family: Righteous;
@@ -262,27 +239,26 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20%;
+  padding: 5px;
 }
 
 .clicks .btn-submit {
-  text-align: center;
-  display: inline-block;
-  border-radius: 4px;
-  background: green;
-  width: 90%;
-  color: #ffff;
-  font-family: Righteous;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    background: green;
+    width: 90%;
+    color: #ffff;
+    font-family: Righteous;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .btn-submit:hover {
-  background-color: black;
+    background-color: black;
 }
-
 .custom-alert {
   display: none;
   position: fixed;
@@ -305,13 +281,14 @@ p {
 }
 
 .footer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sosmed {
   padding: 20px;
+  width: 60%;
 }
 
 .sosmed ul a {
@@ -345,18 +322,16 @@ p {
   width: 100%;
   padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }
-
-
 .image-1 img {
-  z-index: -1;
-  margin-bottom: 201%;
-  margin-right: 300%;
+    z-index: -1;
+    margin-bottom: 201%;
+    margin-right: 300%;
 }
 
 h3 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .hero-click-2 {
@@ -367,10 +342,6 @@ h3 {
 }
 .hero-click-4 {
   display: none;
-}
-
-.svg-container .contact-hijau{
-  top: -900px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -390,13 +361,32 @@ h3 {
     max-width: 100%;
   }
 
-  .card-hero{
-    height: 50px;
+  .card-menu {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 10px;
   }
 
-  .card {
-    display: flex;
-    justify-content: center;
+  .image-menu{
+    padding: 1px;
+  }
+
+  .image-menu img {
+    width:120px;
+    height: 80px;
+  }
+
+  .text-content {
+    padding: 0;
+  }
+
+  .text-content p {
+     font-size: 12px;
+  }
+
+  .cards-menu {
+    width: 150px;
   }
 
   .footer-containers {
@@ -409,6 +399,11 @@ h3 {
     padding: 3px;
   }
 
+  .sosmed ul{
+    display: flex;
+    flex-direction: column;
+  }
+
 
   .copyright {
     width: 50%
@@ -417,11 +412,6 @@ h3 {
   .copyright p {
     font-size: 12px;
     text-align: center;
-  }
-
-  .svg svg {
-    width: 70%;
-    top: 0;
   }
 
   .ntif {
@@ -466,7 +456,7 @@ h3 {
     font-size: 24px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border: 1px solid gray;
-    margin: 2px;
+    margin: 1px;
   }
 
   .content-2 {
@@ -506,6 +496,10 @@ h3 {
     font-family: ighteous
   }
 
+  .svg .svg-hijau{
+    width: 150px;
+    top: -120px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 767px) {
@@ -516,11 +510,20 @@ h3 {
     display: none;
   }
 
-  .footer-container {
+  .footer-container{
     width: 100%;
   }
 
-  .sosmed ul  a {
+  .sosmed{
+    width: 50%;
+  }
+
+  .sosmed ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sosmed ul a{
     font-size: 14px;
     line-height: 10px;
     padding: 3px;
@@ -598,6 +601,15 @@ h3 {
     color: black;
     font-family: ighteous
   }
+  
+  .card-menu {
+    grid-template-columns: auto auto;
+  }
+
+  .svg-hijau{
+    width: 250px;
+  }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -679,11 +691,28 @@ h3 {
     font-family: ighteous
   }
 
+  .card-menu {
+    grid-template-columns: auto auto;
+  }
+
+  .svg-hijau{
+    width: 250px;
+  }
+
   .footer-container {
     width: 100%;
   }
 
-  .sosmed ul  a {
+  .sosmed{
+    width: 50%;
+  }
+
+  .sosmed ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sosmed ul a {
     font-size: 15px;
     line-height: 10px;
     padding: 3px;
@@ -692,6 +721,12 @@ h3 {
   .copyright p {
     font-size: 15px;
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+  .card-menu {
+    grid-template-columns: auto auto auto;
   }
 }
 

@@ -16,6 +16,7 @@ class Keranjang extends Component
 {
     public function render(Request $id)
     {
+        $check = Keranjangs::count();
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
         $user = User::where('id', auth()->user()->id)->first();
@@ -35,7 +36,7 @@ class Keranjang extends Component
 
 
 
-        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user','userNav'));
+        return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user','userNav','check'));
     }
 
     public function store(Request $Request ,$id)
