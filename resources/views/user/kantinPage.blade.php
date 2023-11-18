@@ -54,12 +54,12 @@
                             <div class="button-sidebar">
                                 @guest
                                     <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                                        <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                                        <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
                                     </button>
                                 @else
                                     <button class="button-dropdown" onclick="openDropdown()"
                                         id="dropdownTrigger">{{ $userNav->nama }}
-                                        <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                                        <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
                                     </button>
                                 @endguest
                             </div>

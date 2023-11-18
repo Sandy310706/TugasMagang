@@ -149,6 +149,7 @@ img {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+   
 }
 
 .container-card {
@@ -190,8 +191,9 @@ img {
 }
 
 .card-image img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 100px;
+    object-fit: cover;
 }
 
 .card-content p {
@@ -296,6 +298,7 @@ img {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    --animate-delay: 0.5s;
 }
 
 .kantin-content p {
@@ -307,6 +310,7 @@ img {
     line-height: normal;
     text-indent: 30px;
     text-align: justify;
+    --animate-delay: 0.8s;
 }
 
 .img-1 {
@@ -324,11 +328,13 @@ img {
 .img-1 img {
     width: 100%;
     height: auto;
+    --animate-duration: 2s;
 }
 
 .img-2 img {
     width: 100%;
     height: auto;
+    --animate-duration: 2s;
 }
 
 /* footer */
