@@ -20,8 +20,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container-fluit d-flex container-content">
@@ -98,6 +96,11 @@
             fill="#96C291" />
     </svg>
 </div>
+<div class="pembungkus-alert">
+    <div class="alert-content">
+        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+    </div>
+</div>
 <div class="menu-page">
     <div class="pembungkus-alert">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
@@ -129,22 +132,24 @@
 
 <div class="contact page-section">
     <div class="container contact-form">
+        <form action="{{route('Feedback.Store' , $namaKantin )}}" method="post">
+            @csrf
         <div class="text-center mt-5">
             <h2 class="feedback section-heading text-capatalize mb-5">Feedback Kantin</h2>
         </div>
         <div class="row align-items-stretch mb-5">
             <div class="col">
                 <div class="form-group form-group-textarea mb-md-0">
-                    <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
-                        data-sb-validations="required"></textarea>
+                        <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
+                            data-sb-validations="required"></textarea>
                     <div class="invalid-feedback">A Feedback is required.</div>
                 </div>
             </div>
         </div>
         <div class="text-end">
-            <button class="button btn btn-info" onclick="kirimSaran(this)" id="submitButton" type="submit"
-                invoice="{{ $user->id }}">Kirim Feedback</button>
+                <button class="button btn btn-info"  id="submitButton" type="submit">Kirim Feedback</button>
         </div>
+        </form>
     </div>
 </div>
 
@@ -199,31 +204,10 @@
         });
     };
 
-    function kirimSaran(ini) {
-        const id = ini.getAttribute('invoice')
-        $.ajax({
-            url: `/feedback`,
-            type: 'GET',
-            dataType: "json",
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(response) {
-                location.reload();
-                console.log("berhasil");
-                setTimeout(() => {
-                    document.getElementById('alerts').ustyle.display = 'none';
-                }, 10000);
-                document.getElementById('alerts').style.display = 'block';
-            },
-            error: function(error) {
-                console.log('gagal');
-                console.log(error)
-            }
-        });
-    };
-</script>
-<script>
+
+
+    </script>
+    <script>
     function openDropdown() {
         const dropdownTrigger = document.getElementById('dropdownTrigger');
         const dropdownMenu = document.getElementById('dropdownMenu');

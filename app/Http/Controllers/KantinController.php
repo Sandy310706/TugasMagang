@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Kantin;
+use App\Models\Feedback;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -91,7 +92,7 @@ class KantinController extends Controller
                         ->first();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
-        return view('user.kantinPage', compact('menu','angka','user','userNav'));
+        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin'));
     }
     public function delete($id)
     {
