@@ -48,6 +48,7 @@ export default {
                 },
             },
             animation: {
+                sementara: "sementara 1s ease-in-out",
                 showModal: "ToptoBottom 1s ease-in-out",
                 hideModal: "BottomtoTop 1s ease-in-out",
                 showDropdownMenu: "showDropdownMenu 0.5s ease-in-out",

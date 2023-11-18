@@ -114,7 +114,7 @@
             @foreach ($menu as $data)
                 <div class="card-content">
                     <div class="card-image">
-                        <img src="img/bipang.jpg" alt="">
+                        <img src="{{ asset('storage/fileMenu/' . $data->foto) }}" alt="">
                     </div>
                     <div class="content-text">
                         <p>{{ $data->nama }}</p>

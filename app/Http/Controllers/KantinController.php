@@ -85,7 +85,7 @@ class KantinController extends Controller
     {
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
-        $menu = Menu::where('id', $namaKantin['id'])->get();
+        $menu = Menu::where('id_kantin', $namaKantin['id'])->get();
         $userNav = User::where('role','guest')
                         ->orWhere('role','superadmin')
                         ->orWhere('role', 'admin')
