@@ -17,7 +17,7 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 </head>
 
 <body>
@@ -195,6 +195,11 @@
             data: {
                 "_token": "{{ csrf_token() }}",
             },
+            statusCode: {
+                    500: function(response) {
+                        console.log(response)
+                    }
+                },
             success: function(response) {
                     location.reload();
                     console.log("berhasil");
@@ -209,8 +214,6 @@
                 }
         });
     };
-
-
 
     </script>
     <script>
