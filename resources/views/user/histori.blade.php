@@ -24,7 +24,7 @@
                 <div class="content">
                     <p>No Pesanan</p>
                     <div class="Detail">
-                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei()">BukaModal</button>
+                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei(this)">BukaModal</button>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
 
-      
+
         openModalButton.addEventListener("click", function() {
             modal.style.display = "block";
         });
@@ -157,12 +157,12 @@
             }
         });
     </script>
+    <script src="main.js"></script>
     <script src="script.js/script.js"></script>
     <script src="script.js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
-
 @endsection
 @push('style')
 <link rel="stylesheet" href="css/histori.css">
