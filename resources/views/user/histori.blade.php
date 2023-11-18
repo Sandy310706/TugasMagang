@@ -135,9 +135,7 @@
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
-
-
-        openModalButton.addEventListener("click", function() {
+r("click", function() {
             modal.style.display = "block";
         });
 
@@ -145,6 +143,7 @@
         closeButton.addEventListener("click", function() {
             modal.style.display = "none";
         });
+
 
         window.addEventListener("click", function(event) {
             if (dropdownMenu.style.display === "none") {

@@ -160,8 +160,10 @@ span {
  display: grid;
  justify-items: center;
 }
+
+
 .makanan {
-    color: #fff;
+  color: #96C291;
     text-align: center;
     font-family: Satisfy;
     font-size: 75px;

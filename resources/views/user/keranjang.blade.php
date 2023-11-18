@@ -81,6 +81,7 @@
         </div>
     </div>
     @endforeach
+
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
