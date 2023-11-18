@@ -32,4 +32,9 @@ class Kantin extends Model
         return $this->hasOne(Keranjang::class, 'keranjang_id');
     }
 
+    public function feedback()
+    {
+        return $this->belongsTo(Kantin::class, 'kantin_id');
+    }
+
 }

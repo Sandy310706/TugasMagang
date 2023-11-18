@@ -79,6 +79,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/superadmin/create/kantin', [KantinController::class, 'store'])->name('Kantin.Create')->middleware('superadmin');
     Route::get('/superadmin/{id}/edit', [KantinController::class, 'edit'])->name('Kantin.Edit')->middleware('superadmin');
     Route::post('/superadmin/{id}/update', [KantinController::class, 'update'])->name('Kantin.Update')->middleware('superadmin');
+    Route::delete('/kantin/{id}/delete', [KantinController::class, 'delete'])->name('Kantin.Delete')->middleware('superadmin');
     Route::get('/superadmin/getKantin', [KantinController::class, 'getKantin'])->name('Superadmin.getKantin')->middleware('superadmin');
 
     // Auth
@@ -92,7 +93,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/invoice/{id}',[InvoiceController::class, 'store'])->name('Invoice.store');
     Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
-    Route::post('/feedback',[FeedbackController::class, 'store'])->name('Feedback.Store');
+    Route::post('/feedback/{namaKantin}',[FeedbackController::class, 'store'])->name('Feedback.Store');
 
     Route::post('/menu', [MenuController::class, 'store']);
     Route::delete('/menu/delete/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');

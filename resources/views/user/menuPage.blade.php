@@ -49,7 +49,6 @@
             </div>
         </div>
     </div> --}}
-
     <h1 class="text-center kantin">kantin</h1>
     <div class="hero-click">
         <div class="content-container">
@@ -72,7 +71,8 @@
                                     </div>
                                     <div class="kontents-kantin">
                                         <div class="kontent-kantin">
-                                            <b><a href="kantin/{{ $data->namaKantin }}">{{ $data->namaKantin }}</a></b>
+
+                                            <a href="kantin/{{ $data->namaKantin }}" button="button">{{ $data->namaKantin }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -91,6 +91,7 @@
             </div>
         </div>
     </div>
+    {{-- <<<<<<< HEAD
     <div class="hero-click-2">
         <div class="content-container-2">
             <div class="button-click-2">
@@ -219,6 +220,7 @@
     <h1 class="makanan-menu text-center">Menu</h1>
     <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
 
+======= --}}
     <div class="card-container">
         <div class="card-menu">
             <div class="cards-menu">
