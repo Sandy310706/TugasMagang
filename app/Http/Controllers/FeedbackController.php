@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+use App\Models\Keranjangs;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Kantin;
 use Illuminate\Support\Facades\Validator;
 
 class FeedbackController extends Controller
@@ -16,11 +18,13 @@ class FeedbackController extends Controller
     public function index()
     {
         $feedback = Feedback::latest()->paginate('10');
-        return view('admin.feedback', compact('feedback'));
+        $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
+        return view('admin.feedback', compact('feedback',));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $namaKantin)
     {
+        $kantin = Kantin::where('id',$namaKantin)->first();
         $nama = Feedback::all();
         if(auth()->check()) {
 
@@ -34,12 +38,14 @@ class FeedbackController extends Controller
             if($validasiData->fails()) {
                 return redirect()->back()->withErrors($validasiData)->withInput();
             }
-            Feedback::create([
+            $feedback = Feedback::create([
                 'user_id' => auth()->user()->id,
                 'nama_id'  => auth()->user()->nama,
                 'feedback' => $request->input('feedback'),
+                'kantin_id' => $kantin->id,
             ]);
-            return redirect('/')->with('success','Feedback berhasil terkirim');
+
+            return redirect('/menu')->with('success','Feedback berhasil terkirim');
         }else{
             return redirect()->route('login')->with('error','anda belum login');
         }

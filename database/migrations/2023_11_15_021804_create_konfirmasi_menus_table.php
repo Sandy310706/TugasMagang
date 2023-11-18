@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kantin', function (Blueprint $table) {
+        Schema::create('konfirmasi_menus', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
-            $table->string('namaKantin');
+            $table->foreignId('id_menu');
+            $table->boolean('is_konfirmasi');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kantin');
+        Schema::dropIfExists('konfirmasi_menus');
     }
 };

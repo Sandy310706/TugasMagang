@@ -15,10 +15,16 @@ class Menu extends Model
         'nama',
         'harga',
         'kategori',
+        'per',
+        'is_konfirmasi',
         'foto',
         'stok',
         'id_kantin',
     ];
+    public function konfirmasiMenu()
+    {
+        $this->hasMany(KonfirmasiMenu::class, 'menu_id');
+    }
 
     public function getTableName()
     {

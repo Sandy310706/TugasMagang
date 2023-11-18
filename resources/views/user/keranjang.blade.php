@@ -33,7 +33,7 @@
             <p>Hapus</p>
         </div>
     </div>
-    @if ($check == 0)
+    @if($keranjang == null)
     <div class="container-img">
         <div class="content-img">
             <div class="hero-image">
@@ -45,42 +45,43 @@
     </div>
     @else
     @foreach ($keranjangs as $keranjang)
-        <div class="card-pembungkus">
-            <div class="content">
-                <div class="content-checkbox">
-                    <input type="checkbox" class="checkbox">
+    <div class="card-pembungkus">
+        <div class="content">
+            <div class="content-checkbox">
+                <input type="checkbox" class="checkbox">
+            </div>
+            <div class="content-table foto">
+                <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
+                <p>{{ $keranjang->menu->nama }}</p>
+            </div>
+            <div id="harga" class="content-table harga">
+                <p>Rp. {{ $keranjang->menu->harga }}</p>
+            </div>
+            <div class="content-table btns">
+                <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
+                    <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
+                        data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                 </div>
-                <div class="content-table foto">
-                    <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
-                    <p>{{ $keranjang->menu->nama }}</p>
-                </div>
-                <div id="harga" class="content-table harga">
-                    <p>Rp. {{ $keranjang->menu->harga }}</p>
-                </div>
-                <div class="content-table btns">
-                    <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
-                        <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
-                            data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
-                    </div>
-                    <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
-                    <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
-                        <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="content-table total">
-                    <span data-id="{{ $keranjang->id }}" class="total">Rp. {{ $keranjang->total_harga }}</span>
-                </div>
-                <div class="content-table remove">
-                    <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
-                        @csrf
-                        @method('Delete')
-                        <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
-                    </form>
-
+                <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
+                <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
+                    <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
+            <div class="content-table total">
+                <span data-id="{{ $keranjang->id }}" class="total">Rp. {{ $keranjang->total_harga }}</span>
+            </div>
+            <div class="content-table remove">
+                <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
+                    @csrf
+                    @method('Delete')
+                    <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                </form>
+
+            </div>
         </div>
+    </div>
     @endforeach
+
     <div class="checkbox-content">
         <input type="checkbox" class="checkbox-all">
         <p>Pilih Semua</p>
