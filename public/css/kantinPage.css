@@ -234,8 +234,7 @@ nav {
     margin-top: 2px;
     background-color: white;
     text-align: center;
-    width: 150px;
-    padding: 10px;
+    width: 180px;
     border-radius: 10px;
     border: 1px solid black;
     animation: Menu 1s;
@@ -252,22 +251,27 @@ ul {
 }
 
 .dropdown-content li a {
-    color: gray;
-    text-decoration: none;
-    font-family: "Amaranth", sans-serif;
-    font-size: 18px;
-    animation: Menu 1s;
+  color: black;
+  text-decoration: none;
+  font-family: "Amaranth", sans-serif;
+  font-size: 15px;
+  animation:Menu 1s;
 }
 
 .dropdown-content li a.nav-dropdown:hover {
-
-    color: red !important;
+    opacity: 60%;
     cursor: progress;
 }
 
 .dropdown-content li {
     padding: 8px;
     list-style: none;
+}
+
+.dropdown-content li:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 10px;
 }
 
 .histori-page {
@@ -309,6 +313,89 @@ ul {
     font-size: 15px;
     display: flex;
     align-items: center;
+}
+
+
+/* style profile */
+.container-gradient {
+    margin-top: 100px;
+}
+
+.gradient {
+    background-color: gray;
+    height: 180px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.child-hero{
+    display: flex;
+    flex-direction: column;
+}
+
+.descript-hero{
+    display: flex;
+}
+
+.image{
+    padding: 30px;
+}
+
+.image img{
+    width: 200px;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+.container-child{
+    display: flex;
+}
+
+.content-descript{
+    padding: 30px;
+}
+
+.content-descript .Name-kasir{
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.content-descript .name{
+    font-family: "Amaranth", sans-serif;
+    font-size: 30px;
+}
+
+.content-descript .number{
+    font-family: "Amaranth", sans-serif;
+    font-size:20px;
+}
+
+.content-descript .email{
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.content-descript .produk{
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.content-descript .produk .nilai{
+    color: red;
+}
+
+.text-1{
+    justify-content: center;
+}
+
+.text-content2{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+p{
+    margin: 0;
 }
 
 /* style alert */
@@ -403,7 +490,7 @@ ul {
 }
 
 
-button {
+.content button {
     background-color: red;
     width: 170px;
     color: #FFF;

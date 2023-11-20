@@ -53,9 +53,7 @@
                         <div class="dropdown">
                             <div class="button-sidebar">
                                 @guest
-                                    <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                                        <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
-                                    </button>
+                                    <a href="/login" class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Login</a>
                                 @else
                                     <button class="button-dropdown" onclick="openDropdown()"
                                         id="dropdownTrigger">{{ $userNav->nama }}
@@ -95,6 +93,36 @@
             d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z"
             fill="#96C291" />
     </svg>
+</div>
+
+<div class="container-fluid container-gradient">
+    <div class="hero-content">
+        <div class="child-hero">
+            <div class="gradient">
+                <div class="container descript-hero">
+                    <div class="image">
+                        <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                    </div>
+                    <div class="content-descript">
+                        <div class="text-content">
+                            <p class="name">Nama Kanti2n</p>
+                        </div>
+                        <div class="text-content2">
+                            <div class="text-1">    
+                                <p class="Name-kasir">Nama Kasir</p>
+                                <p class="number">Nomor Telpon</p>
+                            </div>
+                            <div class="text-2">
+                                <p class="email">email</p>
+                                <p class="produk">produk:  <span class="nilai">100</span</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
 </div>
 <div class="pembungkus-alert">
     <div class="alert-content">

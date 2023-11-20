@@ -16,7 +16,7 @@
 }
 
 #mainNav .navbar-brand {
-    color: gray;
+    color: black;
     text-align: center;
     font-family: Oswald;
     font-size: 48px;
@@ -39,7 +39,7 @@
 #mainNav .navbar-nav .nav-item .nav-link {
     font-family: "Amaranth", sans-serif;
     font-size: 0.95rem;
-    color: gray;
+    color: black    ;
     letter-spacing: 0.0625em;
 }
 
@@ -135,7 +135,7 @@
 
 .button-sidebar button {
   background-color: transparent;
-  color: gray;
+  color: black;
   border: none;
   font-family: "Amaranth", sans-serif;
   font-size: 20px;
@@ -219,7 +219,7 @@ position: relative;
 right: 10px;
 width: 23px;
 height: 23px;
-background-color: gray;
+background-color: black;
 border-radius: 50%;
 text-align: center;
 display: flex;

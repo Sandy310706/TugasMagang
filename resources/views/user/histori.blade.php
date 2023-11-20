@@ -24,7 +24,7 @@
                 <div class="content">
                     <p>No Pesanan</p>
                     <div class="Detail">
-                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei(this)">BukaModal</button>
+                        <button class="btn"  id="openModal" onclick="phei(this)">BukaModal</button>
                     </div>
                 </div>
             </div>
@@ -91,6 +91,7 @@
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
+
             $('.close').click(function() {
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal" + id);
@@ -135,11 +136,10 @@
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
-r("click", function() {
+        open.addEventListener("click", function () {
             modal.style.display = "block";
         });
 
-       
         closeButton.addEventListener("click", function() {
             modal.style.display = "none";
         });
@@ -147,7 +147,6 @@ r("click", function() {
 
         window.addEventListener("click", function(event) {
             if (dropdownMenu.style.display === "none") {
-
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
                 dropdownMenu.classList.add('animate-showDropdownMenu');
