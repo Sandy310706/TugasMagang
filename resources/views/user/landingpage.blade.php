@@ -14,7 +14,7 @@
         </svg>
         <svg class="right-kuning" xmlns="http://www.w3.org/2000/svg" width="435" height="556" viewBox="0 0 435 556" fill="none">
             <path d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z" fill="#D2DE32"/>
-        </svg>   
+        </svg>
     </div>
 
     <div class="masthead">
@@ -59,11 +59,11 @@
                             @endforeach
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
-            
+
+
             {{-- <div class="container Menu-Page mb-5">
                 @foreach ($makanan as $item)
                 <div class="box">
@@ -141,23 +141,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-        
+
         <div class="container Menu-Page mb-5">
-            @foreach ($minuman as $item)
-            <div class="box">
-                <div class="image">
-                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
-                </div>
-                <h1>{{$item->nama}}</h1>
-                <p>{{$item->harga}}</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            @endforeach
-            </div>
+            
         </div>
     </section>
 
@@ -206,7 +196,7 @@
                 <path d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z" fill="#D2DE32"/>
             </svg>
         </div>
-        
+
     </section>
 
     <footer class="footer">

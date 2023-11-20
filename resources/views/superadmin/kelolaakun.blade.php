@@ -179,6 +179,8 @@
         })
         $('body').on('click', '#btnEdit', function(e){
             e.preventDefault()
+            $('#btnSubmit').html('Update')
+            $('#inputPassword').addClass('hidden')
             let id = $(this).data('id')
             $.get('/user/'+id+'/edit', function(data){
                 console.log(data);

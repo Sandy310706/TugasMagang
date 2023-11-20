@@ -3,7 +3,7 @@
 @section('headerNav', 'Kelola Pesanan')
 @section('kelola pesanan')
 <div class="w-full">
-    <table class="table-fixed w-full mt-4 rounded-lg font-outfit text-xs h-12">
+    <table id="tabel-pesanan" class="table-fixed w-full mt-4 rounded-lg font-outfit text-xs h-12">
         <thead class="">
             <th>No</th>
             <th>Kode Pemasanan</th>
@@ -12,23 +12,6 @@
             <th></th>
         </thead>
         <tbody class="text-center bg-white odd:bg-sky-300">
-            @foreach ($data as $pesanan )
-                <tr class="group border-b even:bg-zinc-300 odd:bg-neutral-200 border-gray-400">
-                    <td class="p-2 group-hover:bg-neutral-400">{{ $loop->iteration }}</td>
-                    <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->token }}</td>
-                    <td class="p-2 group-hover:bg-neutral-400">{{ $pesanan->user->nama}}</td>
-                    <td class="p-2 group-hover:bg-neutral-400">
-                        @if($pesanan->status == 0)
-                            <button type="input" id="ConfirmPembayaran" data-id="{{ $pesanan->id }}" class="text-red-500"><i class="fa-solid fa-triangle-exclamation"></i> Belum dibayar</button>
-                        @else
-                            <button class="text-green-500"><i class="fa-solid fa-circle-check"></i> Sudah dibayar</button>
-                        @endif
-                    </td>
-                    <td class="p-2 group-hover:bg-neutral-400">
-                        <button data-id="{{ $pesanan->id }}" class="detail text-yellow-400" id="Detail">Detail</button>
-                    </td>
-                </tr>
-            @endforeach
         </tbody>
     </table>
     <div class="w-full flex justify-center">
@@ -86,6 +69,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $('#tabel-pesanan').DataTable();
         $('.detail').click( function(e) {
             e.preventDefault();
             const id = $(this).data('id');
