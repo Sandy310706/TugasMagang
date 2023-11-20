@@ -74,14 +74,13 @@
                     @method('Delete')
                     <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
                 </form>
-
             </div>
         </div>
     </div>
     @endforeach
     @endif
     <div class="checkbox-content">
-        <input type="checkbox" class="checkbox-all">
+        <input type="checkbox" class="checkbox-all" id="myCheckbox">
         <p>Pilih Semua</p>
     </div>
 </div>
@@ -115,7 +114,6 @@
                 type: "GET",
                 url: "/cartst/" + keranjangId + "/" + menuId,
                 success: function(data) {
-                    location.reload();
                     console.log(spanJumlah);
                     console.log(totalHarga);
                     spanJumlah.text(data.jumlah);
@@ -135,7 +133,6 @@
                 type: "GET",
                 url: "/cartsk/" + keranjangId + "/" + menuId,
                 success: function(data) {
-                    location.reload();
                     spanJumlah.text(data.jumlah);
                     totalHarga.text("Rp. " + data.total_harga)
                 },

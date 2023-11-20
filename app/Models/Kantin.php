@@ -36,4 +36,9 @@ class Kantin extends Model
         return $this->belongsTo(Kantin::class, 'kantin_id');
     }
 
+    public function invoice()
+    {
+        return $this->belongsTo(Kantin::class, 'kantin_id');
+    }
+
 }
