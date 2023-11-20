@@ -131,7 +131,6 @@
 .button-sidebar {
   display: flex;
   align-items: center;
-  width: 150px;
 }
 
 .button-sidebar button {
@@ -151,14 +150,13 @@
 
 .dropdown-sidebar {
   position: absolute;
-  top: 30px;
-  right: 10px;
+  top: 29px;
+  right: 5px;
   display: none;
   margin-top: 2px;
   background-color: white;
   text-align: center;
   width: 180px;
-  padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
 }
@@ -180,21 +178,32 @@ ul {
   animation:Menu 1s;
 }
 
-.dropdown-content  li a.nav-dropdown:hover {
-  color: red !important;
-  cursor: progress;
+.button-login{
+    text-decoration: none;
+    font-family: "Amaranth", sans-serif;
+    font-size: 0.95rem;
+    color: gray;
+    letter-spacing: 0.0625em;
 }
+
+.button-login:hover{
+    color: #ffc800;
+}
+
+.dropdown-content  li a.nav-dropdown:hover {
+    opacity: 60%;
+    cursor: progress;
+}
+
 .dropdown-content li{
     padding: 8px;
 }
 
-.histori {
-    border-top: 2px solid black ;
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-    padding-top: 10px;
+.dropdown-content li:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 10px;
 }
-
 
 .dropdown-sidebar ul li {
   list-style: none;
@@ -203,28 +212,28 @@ ul {
 .keranjangs {
     position: relative;
     display: flex;
-  }
+}
   
-  .ntif {
-    position: relative;
-    right: 10px;
-    width: 23px;
-    height: 23px;
-    background-color: gray;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .ntif p {
-    color: white;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-  }
+.ntif {
+position: relative;
+right: 10px;
+width: 23px;
+height: 23px;
+background-color: gray;
+border-radius: 50%;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 5px;
+}
+
+.ntif p {
+color: white;
+font-size: 15px;
+display: flex;
+align-items: center;
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -298,8 +307,8 @@ ul {
     }
 
     .dropdown {
-        order: 1;
-        margin: 20px;
+       width: 150px;
+       padding: 10px;
     }
 
     .button-sidebar button {
@@ -312,7 +321,7 @@ ul {
 
     .button-sidebar button i{
         top: 1px;
-        right: 10px;
+        right: 5px;
     }
 
     #mainNav .navbar-brand {
@@ -395,8 +404,8 @@ ul {
     }
 
     .dropdown {
-        order: 1;
-        margin: 20px;
+        padding: 12px;
+        width: 150px;
     }
 
     .welcome {
@@ -460,8 +469,8 @@ ul {
     }
 
     .dropdown {
-        order: 1;
-        margin: 20px;
+        width: 150px;
+        padding: 15px;
     }
 
     .masthead {
