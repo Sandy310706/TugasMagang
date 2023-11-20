@@ -30,7 +30,7 @@ Route::fallback(function () {
 Route::get('/', [LandingController::class, 'index'])->name('landingPage')->middleware('web');
 
 
-Route::middleware(['guest'])->group(function(){
+Route::middleware('guest')->group(function(){
     // Auth
     Route::get('/login', [AuthController::class, 'login']);
     Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
