@@ -1,5 +1,5 @@
 @extends('layouts.user.app')
-@section('title', 'His  tori')
+@section('title', 'Histori')
 @section('histori')
 
 <div class="svg-container">
@@ -8,29 +8,29 @@
     </svg>
     <svg class="hijau-2" width="165" height="176" viewBox="0 0 165 176" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="139.5" cy="36.5" r="139.5" fill="#96C291"/>
-    </svg> 
+    </svg>
     <svg class="kuning-3" width="176" height="195" viewBox="0 0 176 195" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="36.5" cy="139.5" r="139.5" fill="#96C291"/>
     </svg>
     <svg class="hijau-4" width="359" height="288" viewBox="0 0 359 288" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="249.5" cy="249.5" r="249.5" fill="#D2DE32"/>
-    </svg> 
-        
+    </svg>
+
 </div>
     <h1 class="text-center Histori">Histori Pemesanan</h1>
-    @foreach ($detail as $invoice)
         <div class="container container-histori" style="margin-bottom: 20px;">
             <div class="card">
                 <div class="content">
+                    @foreach($detail as $invoice)
                     <p>No Pesanan</p>
                     <div class="Detail">
                         <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei(this)">BukaModal</button>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    @endforeach
-  
+
     @foreach ($detail as $invoice)
         <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
             <div class="modal-content">
@@ -136,7 +136,7 @@
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
 
-        Tampilkan modal saat tombol dibuka
+        // Tampilkan modal saat tombol dibuka
         openModalButton.addEventListener("click", function() {
             modal.style.display = "block";
         });

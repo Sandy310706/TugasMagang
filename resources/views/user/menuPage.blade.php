@@ -221,6 +221,8 @@
     <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>
 
 ======= --}}
+
+    <h1 class="makanan">Menu Rekomendasi</h1>
     <div class="card-container">
         <div class="card-menu">
             <div class="cards-menu">

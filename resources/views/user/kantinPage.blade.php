@@ -17,7 +17,7 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -54,12 +54,12 @@
                             <div class="button-sidebar">
                                 @guest
                                     <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                                        <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                                        <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
                                     </button>
                                 @else
                                     <button class="button-dropdown" onclick="openDropdown()"
                                         id="dropdownTrigger">{{ $userNav->nama }}
-                                        <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                                        <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
                                     </button>
                                 @endguest
                             </div>
@@ -114,7 +114,7 @@
             @foreach ($menu as $data)
                 <div class="card-content">
                     <div class="card-image">
-                        <img src="{{ asset("storage/fileMenu/". $data->foto) }}" alt="{{ $data->foto }}">
+                        <img src="img/bipang.jpg" alt="">
                     </div>
                     <div class="content-text">
                         <p>{{ $data->nama }}</p>
@@ -122,15 +122,9 @@
                     </div>
                     <div class="content">
                         <button type="submit" onclick="inputData(this)" class="btn btn-submit"
-                        data-id="{{ $data->id }}">Pesan</button>
+                            data-id="{{ $data->id }}">Pesan</button>
                     </div>
                 </div>
-                <form id="menu" enctype="multipart/form-data">
-                    <input type="hidden" value="" id="namaMenu">
-                    <input type="hidden" value="" id="hargaMenu">
-                    <input type="hidden" value="" id="id">
-                    <input type="hidden" value="" id="id">
-                </form>
             @endforeach
         </div>
     </div>
@@ -189,31 +183,28 @@
     function inputData(bi) {
         const id = bi.getAttribute('data-id')
         $.ajax({
-            url : `/carts/+${id}`,
+            url: `/carts/+${id}`,
             dataType: "json",
             type: "POST",
             data: {
                 "_token": "{{ csrf_token() }}",
             },
-            statusCode: {
-                    500: function(response) {
-                        console.log(response)
-                    }
-                },
             success: function(response) {
-                    location.reload();
-                    console.log("berhasil");
-                    setTimeout(() => {
-                        document.getElementById('alerts').ustyle.display = 'none';
-                    }, 10000);
-                    document.getElementById('alerts').style.display = 'block';
-                },
-                error: function(error) {
-                    console.log('gagal');
-                    console.log(error)
-                }
+                location.reload();
+                console.log("berhasil");
+                setTimeout(() => {
+                    document.getElementById('alerts').ustyle.display = 'none';
+                }, 5000);
+                document.getElementById('alerts').style.display = 'block';
+            },
+            error: function(error) {
+                console.log('gagal');
+                console.log(error)
+            }
         });
     };
+
+
 
     </script>
     <script>

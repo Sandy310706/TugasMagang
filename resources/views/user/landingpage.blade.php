@@ -14,18 +14,18 @@
         </svg>
         <svg class="right-kuning" xmlns="http://www.w3.org/2000/svg" width="435" height="556" viewBox="0 0 435 556" fill="none">
             <path d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z" fill="#D2DE32"/>
-        </svg>   
+        </svg>
     </div>
 
     <div class="masthead">
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    <h3 class="welcome">Welcome to SMKN 7 Pontianak </h3>
+                    <h3 class="welcome animate__animated animate__fadeInLeft animate__delay-1s">Welcome to Kantin Sekolah</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt=""></div>
+                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt=""></div>
                     </div>
                 </div>
 
@@ -44,61 +44,27 @@
                     </div>
                     <div class="hero-content">
                         <div class="menu-page">
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
+                            @foreach ($makanan as $item)
+                                <div class="card-container">
+                                    <div class="card-image">
+                                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{$item->nama}}</p>
+                                        <p>{{$item->harga}}</p>
+                                    </div>
+                                    <div class="card-click">
+                                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
-            
+
+
             {{-- <div class="container Menu-Page mb-5">
                 @foreach ($makanan as $item)
                 <div class="box">
@@ -176,11 +142,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-        
+
         <div class="container Menu-Page mb-5">
             @foreach ($minuman as $item)
             <div class="box">
@@ -211,24 +177,24 @@
         <div class="About container">
             <div class="about-1">
                 <div class="kantin-content">
-                    <h2>Sejarah Kantin</h2>
-                    <p>
+                    <h2 class="animate__animated animate__fadeInLeft animate__delay-1s">Sejarah Kantin</h2>
+                    <p class="animate__animated animate__fadeInLeft animate__delay-1s ">
                         Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
                         semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
                         komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
                     </p>
                 </div>
                 <div class="img-1 mt-5">
-                    <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                    <img src="template/landingPage/assets/img/kantin 1.png" class="animate__animated animate__fadeIn" alt="">
                 </div>
             </div>
             <div class="about-2">
                 <div class="img-2">
-                    <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                    <img src="template/landingPage/assets/img/kantin 1.png" class="animate__animated animate__fadeIn" alt="">
                 </div>
                 <div class="kantin-content">
-                    <h2>Sejarah Kantin</h2>
-                    <p>
+                    <h2 class="animate__animated animate__fadeInRight animate__delay-1s">Sejarah Kantin</h2>
+                    <p class="animate__animated animate__fadeInRight animate__delay-1s">
                         Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
                         semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
                         komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
@@ -241,7 +207,7 @@
                 <path d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z" fill="#D2DE32"/>
             </svg>
         </div>
-        
+
     </section>
 
     <footer class="footer">
