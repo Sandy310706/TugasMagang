@@ -135,7 +135,10 @@
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
-r("click", function() {
+
+
+        // Tampilkan modal saat tombol dibuka
+        openModalButton.addEventListener("click", function() {
             modal.style.display = "block";
         });
 
