@@ -74,6 +74,7 @@ nav {
     display: flex;
 }
 
+
 .content-nav .navbar-nav .nav-link {
     padding: 10px;
     text-decoration: none;
@@ -84,6 +85,7 @@ nav {
 
 .content-nav .navbar-nav .nav-link:hover {
     color: #ffc800;
+
 }
 
 .navbar-nav {
@@ -92,8 +94,10 @@ nav {
 
 
 .nav-content {
+
     display: flex;
     align-items: center;
+
 }
 
 .navbars {
@@ -216,6 +220,7 @@ nav {
 }
 
 .button-sidebar button i {
+
     position: relative;
     right: 5px;
     top: 2px;
@@ -229,11 +234,11 @@ nav {
     margin-top: 2px;
     background-color: white;
     text-align: center;
-    width: 150px;
-    padding: 10px;
+    width: 180px;
     border-radius: 10px;
     border: 1px solid black;
     animation: Menu 1s;
+
 }
 
 .dropdowm-sidebar .navbar-nav {
@@ -246,15 +251,15 @@ ul {
 }
 
 .dropdown-content li a {
-    color: gray;
+    color: black;
     text-decoration: none;
     font-family: "Amaranth", sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     animation: Menu 1s;
 }
 
 .dropdown-content li a.nav-dropdown:hover {
-    color: red !important;
+    opacity: 60%;
     cursor: progress;
 }
 
@@ -263,13 +268,19 @@ ul {
     list-style: none;
 }
 
+.dropdown-content li:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 10px;
+}
+
 .histori-page {
     border-top: 2px solid gray;
     border-bottom: 2px solid gray;
     padding-bottom: 10px;
     padding-top: 10px;
-}
 
+}
 
 .dropdown-sidebar ul li {
     list-style: none;
@@ -281,6 +292,7 @@ ul {
 }
 
 .ntif {
+
     position: relative;
     right: 15px;
     top: -10px;
@@ -293,6 +305,7 @@ ul {
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
+
 }
 
 .ntif p {
@@ -303,6 +316,144 @@ ul {
 }
 
 
+/* style profile */
+.container-gradient {
+    margin-top: 100px;
+}
+
+.gradient {
+    border-radius: 10px;
+    border: 1px solid #BDBDBD;
+    background: #FFF;
+}
+
+.gradient-content {
+    display: flex;
+}
+
+.child-hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-image {
+    display: flex;
+    margin: 10px;
+    width: 25%;
+    height: 149px;
+    background-image: url("/img/img-profile.png");
+    background-size: cover;
+}
+
+.descript-hero {
+    display: flex;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.image img {
+    width: 106px;
+    height: 106px;
+    flex-shrink: 0;
+    border-radius: 106px;
+    border: 3px solid #FFF;
+}
+
+.text-content {
+    display: flex;
+    padding: 30px;
+}
+
+.container-child {
+    display: flex;
+}
+
+.content-descript {
+    display: flex;
+    align-items: center;
+}
+
+.content-descript .Name-kasir {
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.text-content .name {
+    color: #FFF;
+    text-align: center;
+    font-family: "Amaranth", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.content-descript .number {
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.content-descript .email {
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.content-descript .produk {
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+}
+
+.content-descript .produk .nilai {
+    color: red;
+}
+
+.text-1 {
+    justify-content: center;
+}
+
+.text-1 p {
+    padding: 2px;
+    margin-left: 1px;
+}
+
+.text-1 i {
+    margin-right: 10px;
+}
+
+.text-2 i {
+    margin-right: 10px;
+}
+
+.text-content2 {
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+}
+
+p {
+    margin: 0;
+}
+
+/* style alert */
+
+.pembungkus-alert {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-alert {
+    background-color: red;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: outfit;
+}
+
+/* style menu */
 .cards {
     display: flex;
     justify-content: center;
@@ -317,6 +468,7 @@ ul {
     font-weight: 400;
     line-height: normal;
     margin-top: 200px;
+
 }
 
 .card-content {
@@ -377,7 +529,8 @@ ul {
     padding: 5px;
 }
 
-button {
+
+.content button {
     background-color: red;
     width: 170px;
     color: #FFF;
@@ -388,6 +541,12 @@ button {
     font-weight: 400;
     line-height: normal;
     border-radius: 5px;
+
+}
+
+.content button:hover {
+    --tw-bg-opacity: 10;
+    background-color: rgb(190, 7, 7);
 }
 
 .contact .section-heading {
@@ -498,6 +657,10 @@ p {
     margin: 0;
 }
 
+h3 {
+    margin: 0;
+}
+
 @media only screen and (max-width: 600px) {
     body {
         max-width: 100%;
@@ -559,6 +722,11 @@ p {
         padding: 20px;
     }
 
+    .content-nav .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+
     .nav-content {
         display: grid;
         flex-direction: column;
@@ -570,8 +738,13 @@ p {
     }
 
     .ntif {
+        background-color: #fff;
         top: -10px;
         right: 25px;
+    }
+
+    .ntif p {
+        color: #000;
     }
 
     .dropdown {
@@ -583,8 +756,12 @@ p {
         right: 8px;
     }
 
+    .button-sidebar {
+        width: 121px;
+    }
+
     .button-sidebar button {
-        color: gray;
+        color: #fff;
     }
 
     .dropdown-content li a {
@@ -616,6 +793,76 @@ p {
         justify-content: center;
     }
 
+    /* style profile */
+    .child-hero {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gradient {
+        display: flex;
+        justify-content: start;
+        height: 100%;
+        border-radius: 0;
+    }
+
+
+    .text-content2 {
+        width: 100%;
+        margin-right: 10px;
+        flex-direction: column;
+    }
+
+    .content-image {
+        justify-content: space-around;
+        width: 100%;
+        height: 100px;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .content-descript {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .image img {
+        width: 50px;
+        height: 50px;
+        border-radius: 132px;
+        object-fit: cover;
+    }
+
+    .text-content .name {
+        font-size: 14px;
+    }
+
+    .text-1 .Name-kasir {
+        font-size: 13px;
+    }
+
+    .text-1 .number {
+        font-size: 13px;
+    }
+
+    .text-1 .email {
+        font-size: 13px;
+    }
+
+    .text-2 .produk {
+        font-size: 13px;
+    }
+
+
     .copyright {
         width: 46%;
     }
@@ -641,9 +888,14 @@ p {
         text-align: center;
     }
 
+
+    .feedback {
+        font-size: 40px;
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
+
     .menu-toggle {
         display: flex;
         position: relative;
@@ -693,12 +945,16 @@ p {
         padding: 20px;
     }
 
-    .button-sidebar {
-        padding: 5px;
+    .content-nav .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+    .button-sidebar{
+        width: 121px;
     }
 
     .button-sidebar button {
-        color: gray;
+        color: #fff;
     }
 
     .dropdown {
@@ -717,6 +973,77 @@ p {
         display: flex;
         justify-content: center;
     }
+
+    .child-hero {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gradient{
+        display: flex;
+        justify-content: start;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .text-content2 {
+        width: 100%;
+        margin-right: 10px;
+        justify-content: space-between;
+    }
+
+    .content-image{
+        width: 45%;
+        justify-content: start;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .content-descript {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 132px;
+        object-fit: cover;
+    }
+
+    .text-content .name {
+        font-size: 18px;
+    }
+
+    .text-1 .Name-kasir {
+        font-size: 15px;
+    }
+
+    .text-1 .number {
+        font-size: 15px;
+    }
+
+    .text-2 .email {
+        font-size: 15px;
+    }
+
+    .text-2 .produk {
+        font-size: 15px;
+    }
+
+    .text-content2{
+        width: 100%;
+    }	
+
+
 
     .sosmed {
         width: 70%;
@@ -791,12 +1118,16 @@ p {
         padding: 20px;
     }
 
-    .button-sidebar {
-        padding: 5px;
+    .content-nav .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+    .button-sidebar{
+        width: 121px;
     }
 
     .button-sidebar button {
-        color: gray;
+        color: #fff;
     }
 
     .button-sidebar button i {
@@ -810,10 +1141,79 @@ p {
     }
 
     .ntif {
+        background-color: #fff;
         right: 23px;
         top: -10px;
     }
 
+    .ntif p{
+        color: #000;
+    }
+     
+    .gradient{
+        display: flex;
+        justify-content: start;
+        height: 100%;
+        border-radius: 0;
+    }
+
+
+    .text-content2 {
+        width: 100%;
+        margin-right: 10px;
+        justify-content: space-between;
+    }
+
+    .content-image{
+        width: 80%;
+        justify-content: start;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .content-descript {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 400px;
+    }
+
+    .image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 132px;
+        object-fit: cover;
+    }
+
+    .text-content .name {
+        font-size: 18px;
+    }
+
+    .text-1 .Name-kasir {
+        font-size: 15px;
+    }
+
+    .text-1 .number {
+        font-size: 15px;
+    }
+
+    .text-2 .email {
+        font-size: 15px;
+    }
+
+    .text-2 .produk {
+        font-size: 15px;
+    }
+
+    .text-content{
+        padding: 40px;
+    }
     .sosmed {
         width: 70%;
         padding: 10px;
@@ -835,6 +1235,7 @@ p {
         font-size: 16px;
         text-align: center;
     }
+
 }
 
 @media only screen and (min-width: 1200px) {

@@ -1,6 +1,22 @@
 @extends('layouts.user.app')
-@section('title', 'Histori')
+@section('title', 'His  tori')
 @section('histori')
+
+<div class="svg-container">
+    <svg class="kuning-1" width="316" height="333" viewBox="0 0 316 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="66.5" cy="83.5" r="249.5" fill="#D2DE32"/>
+    </svg>
+    <svg class="hijau-2" width="165" height="176" viewBox="0 0 165 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="139.5" cy="36.5" r="139.5" fill="#96C291"/>
+    </svg>
+    <svg class="kuning-3" width="176" height="195" viewBox="0 0 176 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36.5" cy="139.5" r="139.5" fill="#96C291"/>
+    </svg>
+    <svg class="hijau-4" width="359" height="288" viewBox="0 0 359 288" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="249.5" cy="249.5" r="249.5" fill="#D2DE32"/>
+    </svg>
+
+</div>
     <h1 class="text-center Histori">Histori Pemesanan</h1>
     @foreach ($detail as $invoice)
         <div class="container container-histori" style="margin-bottom: 20px;">
@@ -8,12 +24,13 @@
                 <div class="content">
                     <p>No Pesanan</p>
                     <div class="Detail">
-                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei(this)">BukaModal</button>
+                        <button class="btn"  id="openModal" onclick="phei(this)">BukaModal</button>
                     </div>
                 </div>
             </div>
         </div>
     @endforeach
+
     @foreach ($detail as $invoice)
         <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
             <div class="modal-content">
@@ -74,6 +91,7 @@
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
+
             $('.close').click(function() {
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal" + id);
@@ -114,25 +132,23 @@
             detailModal.style.display = 'block';
         }
 
-        // Ambil elemen modal dan tombol yang akan membukanya
+
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
 
-        // Tampilkan modal saat tombol dibuka
-        openModalButton.addEventListener("click", function() {
+        open.addEventListener("click", function () {
+
             modal.style.display = "block";
         });
 
-        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
         closeButton.addEventListener("click", function() {
             modal.style.display = "none";
         });
 
-        // Sembunyikan modal saat latar belakang modal diklik
+
         window.addEventListener("click", function(event) {
             if (dropdownMenu.style.display === "none") {
-
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
                 dropdownMenu.classList.add('animate-showDropdownMenu');

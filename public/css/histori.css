@@ -1,6 +1,39 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #15be02;
   }
+
+  /* style svg */
+
+  .kuning-1{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+  }
+
+  .hijau-2{
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+  }
+
+  .svg-container .kuning-3{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
+  }
+
+  .svg-container .hijau-4{
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+  }
+
+
+
+
   /* card histori */
   .Histori {
     margin-top: 100px;
@@ -39,7 +72,6 @@ body {
   }
 
   .btn:hover {
-    transform: rotate(39deg);
     background-color: rgb(99, 93, 93);
   }
 

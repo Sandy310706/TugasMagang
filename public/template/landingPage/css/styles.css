@@ -23,9 +23,11 @@ body {
         opacity: 100;
     }
 }
-img{
+
+img {
     margin-bottom: 0;
 }
+
 .masthead {
     padding-top: 7rem;
     text-align: center;
@@ -38,13 +40,13 @@ img{
     height: 750px;
     transition: background-color 10s ease, opacity 0.8s ease;
     position: relative;
-    min-width: 100% ;
+    min-width: 100%;
 }
 
 
 /* svg style */
 .svg-container {
-    position: absolute;
+    position: relative;
 }
 
 .biru {
@@ -52,9 +54,24 @@ img{
     right: 0;
 }
 
-.about-hijau{
+.about-hijau {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.left-hijau {
+    position: absolute;
+    z-index: -1;
+}
+
+.right-kuning {
+    position: absolute;
+    z-index: -1;
     right: 0;
 }
+
 /* syle header */
 .welcome {
     font-family: "Rock Salt", cursive;
@@ -70,10 +87,6 @@ img{
     align-items: center;
 }
 
-.makanan {
-    display: flex;
-    align-items: center;
-}
 
 /* style alert */
 .alert {
@@ -102,17 +115,17 @@ img{
     right: -13px;
     cursor: pointer;
 }
+
 /* Menu rekomendasi */
 
 .menu {
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
     flex-direction: column;
 }
 
-h1.makanan {
+.makanan {
     text-transform: capitalize;
     color: #016a70;
     font-family: "Satisfy", cursive;
@@ -120,62 +133,92 @@ h1.makanan {
     font-weight: 400;
     line-height: 108px;
     letter-spacing: 0em;
-    text-align: center;
+    text-align: start;
 }
 
-.Menu-Page {
+.makanan-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
+    justify-self: start;
 }
 
-.Menu-Page .box {
+.makanan-content h2 {
+    color: #1A5255;
+    text-align: center;
+    font-family: Righteous;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+   
+}
+
+.container-card {
+    display: grid;
+    margin: 15px;
+}
+.content-hero{
+    display: grid;
+    justify-items: center;
+}
+
+.menu-content{
+    display: grid;
+}
+
+.menu-page {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 18px;
+}
+
+ .card-container {
     position: relative;
-    height: 350px;
+    width: 220px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
+    background-color: #fff;
     text-align: center;
     transition: 0.5s;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
-.box:hover {
+.card-container:hover {
     transform: scale(1.1);
     z-index: 1;
 }
 
-.Menu-Page .box .image {
-    width: 100%;
-    height: 60%;
-    background-size: auto;
+.card-image  {
+    padding: 10px;
 }
 
-.Menu-Page .box .image img {
-    width: 100%;
-    height: 100%;
+.card-image img {
+    width: 90%;
+    height: 100px;
+    object-fit: cover;
 }
 
-.Menu-Page .box h1 {
+.card-content p {
     font-family: "Righteous", cursive;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 27px;
     letter-spacing: 0em;
     text-align: center;
 }
 
-.Menu-Page .box p {
-    font-family: "Righteous", cursive;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0em;
-    text-align: center;
+.card-click {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 
-.Menu-Page .btn {
-    width: 80%;
+.card-click a {
+    background-color: #F00; 
+    padding:3px;
+    width: 90%;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-family: Righteous;
 }
 
 .Menu {
@@ -212,7 +255,6 @@ h1.makanan {
 
 .about {
     position: relative;
-    margin-bottom: 80px;
 }
 
 .about-1 {
@@ -234,6 +276,7 @@ h1.makanan {
     align-items: center;
     width: 100%;
     transition: 0.9s;
+    margin-bottom: 50px;
 }
 
 .about-2:hover {
@@ -255,6 +298,7 @@ h1.makanan {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    --animate-delay: 0.5s;
 }
 
 .kantin-content p {
@@ -266,6 +310,7 @@ h1.makanan {
     line-height: normal;
     text-indent: 30px;
     text-align: justify;
+    --animate-delay: 0.8s;
 }
 
 .img-1 {
@@ -283,12 +328,15 @@ h1.makanan {
 .img-1 img {
     width: 100%;
     height: auto;
+    --animate-duration: 2s;
 }
 
 .img-2 img {
     width: 100%;
     height: auto;
+    --animate-duration: 2s;
 }
+
 /* footer */
 
 .footer {
@@ -303,14 +351,13 @@ h1.makanan {
 }
 
 .sosmed {
-    width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px;
 
 }
 
-.sosmed ul  a {
+.sosmed ul a {
     color: #000;
     font-family: Outfit;
     font-size: 18px;
@@ -323,6 +370,7 @@ h1.makanan {
 }
 
 .sosmed ul {
+    display: flex;
     text-align: start;
 }
 
@@ -344,8 +392,7 @@ h1.makanan {
 
 .copyright {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: end;
     padding: 20px;
 }
 
@@ -394,21 +441,6 @@ h1 {
         justify-content: center;
     }
 
-    .menu {
-        margin-top: 120px;
-    }
-
-    .Menu-Page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Menu-Page .box {
-        width: 290px;
-        border: 10px solid white;
-    }
-
     .masthead {
         height: 100%;
     }
@@ -421,21 +453,35 @@ h1 {
         justify-content: center;
     }
 
-    .Menu-Page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .images img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+     
+    /* style menu */
+    .makanan{
+        font-size: 48px;
     }
 
-    .Menu-Page .box {
-        width: 270px;
+    .makanan-content h2{
+        font-size: 30px;
     }
 
+    .menu-page {
+        grid-template-columns: auto auto;
+        gap: 8px;
+    }
+
+    .card-container{
+        width: 165px;
+    }
+    
+    /* about */
     .tentang {
         font-size: 50px;
     }
 
-    .about{
+    .about {
         margin-bottom: 50px;
     }
 
@@ -473,25 +519,26 @@ h1 {
         margin-top: 50px;
     }
 
-    .copyright{
+    /* footer */
+    .copyright {
         padding: 10px;
-        width: 50%;
     }
 
-    .sosmed{
-        width: 60%;
+    .sosmed {
         padding: 0;
-        display:flex;
+        display: flex;
         align-items: center;
     }
 
-    .sosmed ul{
+    .sosmed ul {
         padding: 10px;
+        display: flex;
+        flex-direction: column;
     }
 
-    .sosmed ul  a {
-        font-size: 40%;
-        padding: 0;
+    .sosmed ul a {
+        font-size: 50%;
+        padding: 5px;
     }
 
     .copyright p {
@@ -499,30 +546,27 @@ h1 {
         text-align: center;
     }
 
-    .biru {
-        width: 230px;
-        top: -170px;
+    /* svg */
+
+    .left-hijau{
+       width: 30%;
+       top: -50px;
+    }
+
+    .right-kuning{
+       width: 40%;
+       top: -190px;
     }
 
     .about-biru {
-        width: 250px;
+        width: 70%;
         top: 100px;
         left: 0;
     }
 
-    .contact-hijau {
-        width: 200px;
-        top: 800px;
-        left: 0;
-    }
-
-    .image img {
-        width: 100%;
-    }
-
-    .images img {
-        width: 100%;
-        margin-bottom: 20px;
+    .about-hijau {
+        width: 70%;
+        bottom: -120px;
     }
 }
 
@@ -531,55 +575,37 @@ h1 {
         height: 500px;
     }
 
-    .welcome{
+    .welcome {
         font-size: 20px;
         line-height: 20px;
-    }
-
-    .biru {
-        width: 400px;
-        top: -100px;
-    }
-
-    .about-biru {
-        width: 300px;
-        top: 100px;
-        left: 0;
-    }
-
-    .contact-hijau {
-        width: 250px;
-        top: 800px;
-        left: 0;
     }
 
     .images img {
         width: 100%;
     }
 
-    .Menu-Page {
-        display: grid;
-        grid-template-columns: auto auto;
+    /* menu */
+    .makanan{
+        font-size: 48px;
     }
 
-    .Menu-Page .box {
-        width: 100%;
-        border: 10px solid white;
+    .makanan-content h2{
+        font-size: 30px;
     }
 
-    .Menu-Page .box .image img {
-        object-fit: cover;
-        width: 100%;
+    .menu-page {
+        grid-template-columns: auto auto auto;
+        gap: 8px;
     }
 
-    .Menu-Page .box p {
-        font-size: 20px;
+    .card-container{
+        width: 165px;
     }
 
-    .Menu-Page .box h1 {
-        font-size: 28px;
+    .card-content p{
+        font-size: 15px;
     }
-
+     /* about */
     .about-1 {
         width: 100%;
         flex-direction: column;
@@ -610,6 +636,9 @@ h1 {
         order: 1;
     }
 
+
+
+    /* footer */
     .sosmed {
         display: flex;
         justify-content: center;
@@ -617,17 +646,40 @@ h1 {
     }
 
     .sosmed ul a {
-        font-size: 10px;
-        padding: 0;
+        font-size: 12px;
+        padding: 5px;
     }
 
-    .copyright{
-        width: 100%;
+    .copyright {
         text-align: center;
     }
 
     .copyright p {
         font-size: 12px;
+    }
+     
+    /* svg */
+    .biru {
+        width: 400px;
+        top: -100px;
+    }
+
+    .about-biru {
+        width: 300px;
+        top: 100px;
+        left: 0;
+    }
+
+    .contact-hijau {
+        width: 250px;
+        top: 800px;
+        left: 0;
+    }
+
+    .right-kuning{
+       width: 300px;
+       height: 400px;
+       top: -10px;
     }
 }
 
@@ -641,43 +693,41 @@ h1 {
         line-height: 30px;
     }
 
-    .biru {
-        width: 400px;
-        top: -121px;
-    }
-
-    .menu{
-        margin-top: 100px;
-    }
-
     .about-biru {
-        width: 380px;
+        width: 300px;
         top: 0;
         left: 0;
     }
-
-    .contact-hijau {
-        width: 200px;
-        top: 670px;
-        left: 0;
-    }
-
-    .Menu-Page .box {
-        border: 10px solid white;
-    }
-
-    .Menu-Page .box h1 {
-        margin-top: 10px;
-    }
-
-    .images img {
+    
+    .images img{
         width: 100%;
+        height: 100%;
     }
 
-    .img-1 {
-        order: 2;
+    /* style menu */
+    
+    .makanan{
+        font-size: 48px;
     }
 
+    .makanan-content h2{
+        font-size: 30px;
+    }
+
+    .menu-page {
+        grid-template-columns: auto auto auto auto;
+        gap: 8px;
+    }
+
+    .card-container{
+        width: 165px;
+    }
+
+    .card-content p{
+        font-size: 15px;
+    }
+
+    /* style about */
     .about-1 h2 {
         margin-top: 50px;
         font-size: 30px;
@@ -702,7 +752,8 @@ h1 {
         font-size: 18px;
         letter-spacing: -1px;
     }
-
+    
+    /* style footer */
     .footer-container {
         width: 100%;
         padding: 10px;
@@ -710,15 +761,17 @@ h1 {
 
     .sosmed ul a {
         font-size: 15px;
-        padding: 2px;
-    }
-    .copyright{
-        width: 80%;
+        padding: 5px;
     }
 
     .copyright p {
         font-size: 18px;
         text-align: center;
+    }
+
+    .about-hijau {
+        width: 300px;
+        bottom: -50px;
     }
 }
 
@@ -732,11 +785,7 @@ h1 {
         line-height: 38px;
     }
 
-    .copyright{
-        width:70%;
-    }
-
-    .sosmed ul a{
+    .sosmed ul a {
         padding: 10px;
     }
 
@@ -748,7 +797,7 @@ h1 {
         width: 100%;
     }
 
-    .menu{
+    .menu {
         margin-top: 160px;
     }
 
@@ -762,9 +811,13 @@ h1 {
         border: 10px solid white;
     }
 
-    .contact-hijau {
+    .about-biru {
         width: 300px;
-        top: 700px;
+    }
+
+    .about-hijau {
+        width: 300px;
+        bottom: -50px;
     }
 }
 
@@ -804,16 +857,7 @@ h1 {
     .Menu-Page {
         display: grid;
         grid-template-columns: 280px 280px 280px 280px;
-        justify-content: center;
-    }
-
-    .Menu-Page .box {
-        width: 285px;
-        border: 10px solid white;
-    }
-
-    .Menu-Page .box h1 {
-        font-size: 28px;
+        justify-items: center;
     }
 
     .Menu-Page .box p {

@@ -36,9 +36,8 @@ class InvoiceController extends Controller
         $arraySum = array_sum($totalHarga);
 
 
-
-
         return view('user.histori', compact('invoices', 'detail','arraySum','angka','userNav'));
+
     }
 
     public function store($id)
