@@ -22,4 +22,5 @@ class Feedback extends Model
     {
         return $this -> hasMany(Kantin::class, 'kantin_id');
     }
+     
 }

@@ -136,7 +136,9 @@
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
+
         open.addEventListener("click", function () {
+
             modal.style.display = "block";
         });
 
