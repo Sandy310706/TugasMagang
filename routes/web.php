@@ -29,6 +29,9 @@ Route::fallback(function () {
 
 // Landing Page
 Route::get('/', [LandingController::class, 'index'])->name('landingPage')->middleware('web');
+Route::get('/testing', function(){
+    dd(auth()->check());
+});
 
 
 Route::middleware(['guest'])->group(function(){

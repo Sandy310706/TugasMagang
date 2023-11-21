@@ -31,9 +31,9 @@
                 <div class="dropdown">
                     <div class="button-sidebar">
                         @guest
-                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">login
+                        {{-- <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">login
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
-                         </button>
+                         </button> --}}
                         <a class="button-dropdown button-login" onclick="openDropdown()" id="dropdownTrigger"href="/login">login</a>
                         @else
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
@@ -51,7 +51,7 @@
                             <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
                             <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori Pesanan</li>
                             <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
-                            href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
+                            href="/logout/{{ auth()->user()->nama }}"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
                             @endguest
                         </div>
                     </div>
