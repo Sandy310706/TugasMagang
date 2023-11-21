@@ -19,7 +19,7 @@ class InvoiceController extends Controller
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
-
+        
 
         $keranjang = Keranjangs::where('id',$id)->first();
         $userNav = User::where('role','guest')
