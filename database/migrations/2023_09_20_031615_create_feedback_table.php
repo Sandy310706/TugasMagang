@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id')->constrained('users');
             $table->string('nama_id')->constrained('users');
+            $table->foreignId('kantin_id');
             $table->string('feedback');
             $table->timestamps();
         });

@@ -11,6 +11,7 @@ class Kantin extends Model
     protected $table = 'kantin';
     protected $fillable = [
 
+        'foto',
         'user_id',
         'menu_id',
         'namaToko',
@@ -29,6 +30,16 @@ class Kantin extends Model
     public function keranjang()
     {
         return $this->hasOne(Keranjang::class, 'keranjang_id');
+    }
+
+    public function feedback()
+    {
+        return $this->belongsTo(Kantin::class, 'kantin_id');
+    }
+
+    public function invoice()
+    {
+        return $this->belongsTo(Kantin::class, 'kantin_id');
     }
 
 }

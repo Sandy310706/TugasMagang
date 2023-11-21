@@ -16,12 +16,13 @@
 }
 
 #mainNav .navbar-brand {
-    color: #000000;
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.0625em;
-    text-transform: uppercase;
-    font-size: 30px;
+    color: gray;
+    text-align: center;
+    font-family: Oswald;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     z-index: 1;
 }
 
@@ -49,6 +50,16 @@
 
 .nav-content {
     display: flex;
+}
+
+@keyframes Menu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
 }
 
 /* hamburger menu */
@@ -120,7 +131,6 @@
 .button-sidebar {
   display: flex;
   align-items: center;
-  width: 150px;
 }
 
 .button-sidebar button {
@@ -138,18 +148,17 @@
   top: 2px;
 }
 
-
 .dropdown-sidebar {
   position: absolute;
-  top: 30px;
-  right: 10px;
+  top: 29px;
+  right: 5px;
   display: none;
   margin-top: 2px;
   background-color: white;
   text-align: center;
   width: 180px;
-  padding: 10px;
   border-radius: 10px;
+  border: 1px solid black;
 }
 
 .dropdowm-sidebar ul {
@@ -164,30 +173,67 @@ ul {
 .dropdown-content li a {
   color: black;
   text-decoration: none;
-  font-family: 'Merriweather', serif;
+  font-family: "Amaranth", sans-serif;
   font-size: 15px;
+  animation:Menu 1s;
+}
+
+.button-login{
+    text-decoration: none;
+    font-family: "Amaranth", sans-serif;
+    font-size: 0.95rem;
+    color: gray;
+    letter-spacing: 0.0625em;
+}
+
+.button-login:hover{
+    color: #ffc800;
 }
 
 .dropdown-content  li a.nav-dropdown:hover {
-  color: red !important;
-  cursor: progress;
+    opacity: 60%;
+    cursor: progress;
 }
+
 .dropdown-content li{
     padding: 8px;
 }
 
-.histori {
-    border-top: 2px solid black ;
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-    padding-top: 10px;
+.dropdown-content li:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235);
+    border-radius: 10px;
 }
-
 
 .dropdown-sidebar ul li {
   list-style: none;
 }
 
+.keranjangs {
+    position: relative;
+    display: flex;
+}
+  
+.ntif {
+position: relative;
+right: 10px;
+width: 23px;
+height: 23px;
+background-color: gray;
+border-radius: 50%;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 5px;
+}
+
+.ntif p {
+color: white;
+font-size: 15px;
+display: flex;
+align-items: center;
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -204,12 +250,12 @@ ul {
     }
 
     .menu-toggle input:checked~span:nth-child(2) {
-        background-color: white;
+        background-color: gray;
         transform: rotate(45deg) translate(-1px, -1px);
     }
 
     .menu-toggle input:checked~span:nth-child(4) {
-        background-color: white;
+        background-color: gray;
         transform: rotate(-45deg) translate(-1px, 0);
     }
 
@@ -261,8 +307,8 @@ ul {
     }
 
     .dropdown {
-        order: 1;
-        margin: 20px;
+       width: 150px;
+       padding: 10px;
     }
 
     .button-sidebar button {
@@ -275,7 +321,7 @@ ul {
 
     .button-sidebar button i{
         top: 1px;
-        right: 10px;
+        right: 5px;
     }
 
     #mainNav .navbar-brand {
@@ -329,6 +375,16 @@ ul {
         transform: translateX(0);
     }
 
+    .menu-toggle input:checked~span:nth-child(2) {
+        background-color: gray;
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .menu-toggle input:checked~span:nth-child(4) {
+        background-color: gray;
+        transform: rotate(-45deg) translate(-1px, 0);
+    }
+
     .masthead {
         height: 500px;
     }
@@ -348,13 +404,18 @@ ul {
     }
 
     .dropdown {
-        order: 1;
-        margin: 20px;
+        padding: 12px;
+        width: 150px;
     }
 
     .welcome {
         font-size: 20px;
         line-height: 38px;
+    }
+
+    .ntif{
+       right: 25px;
+       top: 12px;
     }
 }
 
@@ -388,6 +449,16 @@ ul {
         transform: translateX(0);
     }
 
+    .menu-toggle input:checked~span:nth-child(2) {
+        background-color: gray;
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .menu-toggle input:checked~span:nth-child(4) {
+        background-color: gray;
+        transform: rotate(-45deg) translate(-1px, 0);
+    }
+
     .nav-content {
         flex-direction: column;
         order: 2;
@@ -398,8 +469,8 @@ ul {
     }
 
     .dropdown {
-        order: 1;
-        margin: 20px;
+        width: 150px;
+        padding: 15px;
     }
 
     .masthead {
@@ -418,6 +489,11 @@ ul {
     .welcome {
         font-size: 20px;
         line-height: 30px;
+    }
+
+    .ntif{
+        right: 25px;
+        top: 15px;
     }
 }
 

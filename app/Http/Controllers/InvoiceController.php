@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Livewire\Keranjang;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Dirape\Token\Token;
+use App\Models\Kantin;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Invoice;
 use App\Models\Keranjangs;
 
@@ -16,7 +19,14 @@ class InvoiceController extends Controller
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
+
+
         $keranjang = Keranjangs::where('id',$id)->first();
+        $userNav = User::where('role','guest')
+                    ->orWhere('role','superadmin')
+                    ->orWhere('role', 'admin')
+                    ->first();
+        $angka = count($invoices);
         $totalHarga = [];
         foreach($invoices as $keranjang)
         {
@@ -25,23 +35,31 @@ class InvoiceController extends Controller
         $arraySum = array_sum($totalHarga);
 
 
-        return view('user.histori', compact('invoices', 'detail','arraySum' ));
+
+        return view('user.histori', compact('invoices', 'detail','arraySum','angka','userNav'));
+
     }
 
     public function store($id)
     {
         $randomString = Str::random(3);
 
-        $keranjang = Keranjangs::where('id',$id)->first();
+        $keranjangId = Keranjangs::where('user_id', auth()->user()->id)
+                            ->where('kantin_id',$id)
+                            ->first();
+
+
+        $keranjang = Keranjangs::where('user_id', auth()->user()->id)->first();
 
         $invoice = new Invoice;
         $invoice->user_id = auth()->user()->id;
         $invoice->keranjang_id = $keranjang->id;
+        $invoice->kantin_id = $keranjangId->kantin_id;
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
 
-        return redirect()->route('Keranjang');
+        return redirect('carts')->response()->json($invoice);
         // return response()->json($invoice);
     }
 

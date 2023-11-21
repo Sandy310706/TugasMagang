@@ -16,6 +16,11 @@ class Feedback extends Model
         return $this -> belongsTo(user::class);
     }
 
-    protected $fillable = ['user_id', 'nama_id', 'feedback'];
+    protected $fillable = ['user_id', 'nama_id','kantin_id', 'feedback'];
 
+    public function Kantin()
+    {
+        return $this -> hasMany(Kantin::class, 'kantin_id');
+    }
+     
 }

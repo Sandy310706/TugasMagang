@@ -1,195 +1,38 @@
 body {
     background-color: #f0f0f0;
   }
-/* 
-  #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #ffffdd;
-    margin-bottom: 10px;
+
+  /* style svg */
+
+  .kuning-1{
+    position: absolute;
+    z-index: -1;
+    top: 0;
   }
 
-  #mainNav {
-    background-color: transparent;
+  .hijau-2{
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
   }
 
-  #mainNav .navbar-toggler {
-    padding: 0.75rem;
-    font-size: 0.75rem;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    text-transform: uppercase;
-    font-weight: 700;
+  .svg-container .kuning-3{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
   }
 
-  #mainNav .navbar-brand {
-    color: #000000;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.0625em;
-    text-transform: uppercase;
-    font-size: 30px;
+  .svg-container .hijau-4{
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
   }
 
-  #mainNav .navbar-brand img {
-    height: 1.5rem;
-  }
-
-  #mainNav .navbar-nav .nav-item .nav-link {
-    font-family: 'Amaranth', sans-serif;
-    font-size: 0.95rem;
-    color: gray;
-    letter-spacing: 0.0625em;
-  }
-
-  #mainNav .navbar-nav .nav-item .nav-link.active,
-  #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
-  }
-  /* hamburger menu */
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  height: 20px;
-  background-color: transparent;
-  justify-content: space-between;
-  position: relative;
-  order: 2 !important;
-}
-
-.menu-toggle input {
-  position: absolute;
-  width: 40px;
-  height: 28px;
-  opacity: 0;
-  left: -5px;
-  top: -3px;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background-color: black;
-  border-radius: 3px;
-  transition: all 0.5s;
-}
-
-/* hamburger menu animation*/
-
-.menu-toggle span:nth-child(2) {
-  transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4) {
-  transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked~span:nth-child(2) {
-  background-color: white;
-  transform: rotate(45deg) translate(-1px, -1px);
-}
-
-.menu-toggle input:checked~span:nth-child(4) {
-  background-color: white;
-  transform: rotate(-45deg) translate(-1px, 0);
-}
-
-.menu-toggle input:checked~span:nth-child(3) {
-  opacity: 0;
-  transform: scale(0);
-}
 
 
-  .nav-content{
-    display: flex;
-  }
-
-  /* style dropdown */
-.content-container {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-
-.button-sidebar {
-  display: flex;
-  align-items: center;
-  width: 150px;
-}
-
-.button-click {
-  display: flex;
-  justify-content: center;
-}
-
-.button-sidebar button {
-  background-color: transparent;
-  color: gray;
-  border: none;
-  font-family: "Amaranth", sans-serif;
-  font-size: 20px;
-  letter-spacing: 0.0625em;
-}
-
-.dropdown-sidebar {
-  position: absolute;
-  top: 32px;
-  right: 10px;
-  display: none;
-  margin-top: 2px;
-  background-color: white;
-  text-align: center;
-  width: 180px;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-ul {
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.dropdown-content li a {
-  color: black;
-  text-decoration: none;
-  font-family: Outfit;
-  font-size: 15px;
-}
-
-.dropdown-content li a:hover {
-  color: #6506c3;
-}
-
-.dropdown-content li{
-    padding: 8px;
-}
-
-.histori {
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-.dropdown-sidebar ul li {
-  list-style: none;
-}
-
-.dropdown-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.dropdown {
-  display: flex;
-  align-items: center;
-} */
 
   /* card histori */
   .Histori {

@@ -1,59 +1,77 @@
 body {
-    background-color: #f0f0f0 !important;
-}
-
-#mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #ffffdd;
-    margin-bottom: 10px;
-}
-
-#mainNav {
-    background-color: transparent;
-}
-
-#mainNav .navbar-toggler {
-    padding: 0.75rem;
-    font-size: 0.75rem;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-#mainNav .navbar-brand {
-    color: #000000;
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.0625em;
-    text-transform: uppercase;
-    font-size: 30px;
-}
-
-h3 {
-    margin: 0;
-}
-
-#mainNav .navbar-brand img {
-    height: 1.5rem;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link {
-    font-family: "Amaranth", sans-serif;
-    font-size: 0.95rem;
-    color: gray;
-    letter-spacing: 0.0625em;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link.active,
-#mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
-}
-
-.nav-content {
+    background-color: #fff !important;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+/* 
+svg */
+.svg-container{
+    position: relative;
+}
+
+.svg-container-2{
+    position: relative;
+    height: 50vh;
+}
+
+.svg-container .svg-kuning{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.svg-container .svg-hijau{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.svg-container-2 .hijau-kanan{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.svg-container-2 .kuning-kiri{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+/* style img keranjang kalau kosong */
+.content-img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-img {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-text .content-child {
+    color: #000;
+    text-align: center;
+    font-family: Sansation;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.content-text .content-child-1 {
+    color: #5A5A5A;
+    text-align: center;
+    font-family: Sansation;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 /* style table keranjang */
@@ -78,7 +96,7 @@ h1.text-center {
     font-weight: bold;
 }
 
-.Header-checkbox{
+.Header-checkbox {
     display: flex;
     justify-content: center;
     width: 1%;
@@ -90,7 +108,7 @@ h1.text-center {
     border-bottom: 1px solid black;
 }
 
-.content-checkbox{
+.content-checkbox {
     display: flex;
     justify-content: center;
 }
@@ -186,6 +204,7 @@ h1.text-center {
     font-size: 18px;
     border-radius: 8px;
     text-decoration: none;
+    letter-spacing: 0.1em;
 }
 
 .buttons:hover {
@@ -200,40 +219,34 @@ h1.text-center {
     color: red;
 }
 
-.Header-checkbox{
+.Header-checkbox {
     display: flex;
     justify-content: start;
     padding: 0;
 }
 
-.content-checkbox{
+.content-checkbox {
     display: flex;
     justify-content: center;
 }
 
-.checkbox-content{
+.checkbox-content {
     display: flex;
     align-items: center;
     height: 50px;
     width: 100%;
 }
-p{
+
+p {
     margin: 0;
 }
 
 .checkbox-content p {
     padding-left: 5px;
 }
-/* footer */
-.footer {
-    width: 100%;
-    height: 100%;
-    background-color: #B5B5B5;
-    margin-top: 50px;
-}
 
 @media only screen and (max-width: 600px) {
-    
+
     .hilang {
         display: block;
     }
@@ -303,10 +316,34 @@ p{
     .content p {
         font-size: 12px;
     }
+
+    .image img{
+        width: 180px;
+    }
+
+    .svg-container .svg-kuning{
+        width: 150px;
+        height: 100px;
+    }
+    
+    .svg-container .svg-hijau{
+        width: 100px ;
+        height: 90px;
+    }
+    
+    .svg-container .hijau-kanan{
+       width: 100px;
+       height: 100px;
+    }
+    
+    .svg-container .kuning-kiri{
+        width: 120px;
+        height: 100px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
-   
+
     .Keranjang-page {
         width: 100%;
     }
@@ -342,10 +379,31 @@ p{
     .content-nav {
         width: 100%;
     }
+
+    
+    .svg-container .svg-kuning{
+        width: 200px;
+        height: 200px;
+    }
+    
+    .svg-container .svg-hijau{
+        width: 150px ;
+        height: 150px;
+    }
+    
+    .svg-container .hijau-kanan{
+       width: 200px;
+       height: 200px;
+    }
+    
+    .svg-container .kuning-kiri{
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  
+
     .Keranjang-page {
         width: 100%;
     }

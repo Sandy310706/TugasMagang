@@ -7,13 +7,14 @@
             <h1>{{ session('login') }}</h1>
         </div>
     @endif
+
     <div class="svg-container">
-        <svg class="biru position-absolute" xmlns="http://www.w3.org/2000/svg" width="517" height="646"
-            viewBox="0 0 517 646" fill="none">
-            <path
-                d="M361.465 304.235C294.256 497.317 290.508 699.921 95.0345 631.879C-100.439 563.838 -141.498 282.874 -131.689 91.7876C-134.046 -86.9524 238.703 -22.4574 433.5 -45.4999C628.974 22.5419 428.674 111.154 361.465 304.235Z"
-                fill="#016A70" />
+        <svg class="left-hijau" width="217" height="210" viewBox="0 0 217 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="77.5" cy="70.5" r="139.5" fill="#96C291"/>
         </svg>
+        <svg class="right-kuning" xmlns="http://www.w3.org/2000/svg" width="435" height="556" viewBox="0 0 435 556" fill="none">
+            <path d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z" fill="#D2DE32"/>
+        </svg>   
     </div>
 
     <div class="masthead">
@@ -28,79 +29,135 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
     <section class="menu page-section" id="portfolio">
-        <h1 class="makanan mt-5">Makanan</h1>
-        <div class="container Menu-Page mb-5">
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+        <div class="menu-rekomendasi">
+            <h1 class="makanan mt-5 text-center">Menu rekomendasi</h1>
+        </div>
+        <div class="container-card">
+            <div class="content-hero">
+                <div class="menu-content">
+                    <div class="makanan-content">
+                        <h2>Makanan</h2>
+                    </div>
+                    <div class="hero-content">
+                        <div class="menu-page">
+                            @foreach ($makanan as $item)
+                                <div class="card-container">
+                                    <div class="card-image">
+                                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{$item->nama}}</p>
+                                        <p>{{$item->harga}}</p>
+                                    </div>
+                                    <div class="card-click">
+                                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+            
+            
+            {{-- <div class="container Menu-Page mb-5">
+                @foreach ($makanan as $item)
+                <div class="box">
+                    <div class="image">
+                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                    </div>
+                    <div class="content-hero">
+                        <p>{{$item->nama}}</p>
+                        <p>{{$item->harga}}</p>
+                    </div>
+                    <div class="content-click">
+                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                    </div>
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                @endforeach
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+            </div> --}}
+        </div>
+
+        <div class="container-card">
+            <div class="content-hero">
+                <div class="menu-content">
+                    <div class="makanan-content">
+                        <h2>Makanan</h2>
+                    </div>
+                    <div class="hero-content">
+                        <div class="menu-page">
+                            <div class="card-container">
+                                <div class="card-image">
+                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <p>Geprek Tiren Halal</p>
+                                    <p>Rp.20.000</p>
+                                </div>
+                                <div class="card-click">
+                                    <a href="">Pesan</a>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card-image">
+                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <p>Geprek Tiren Halal</p>
+                                    <p>Rp.20.000</p>
+                                </div>
+                                <div class="card-click">
+                                    <a href="">Pesan</a>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card-image">
+                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <p>Geprek Tiren Halal</p>
+                                    <p>Rp.20.000</p>
+                                </div>
+                                <div class="card-click">
+                                    <a href="">Pesan</a>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card-image">
+                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <p>Geprek Tiren Halal</p>
+                                    <p>Rp.20.000</p>
+                                </div>
+                                <div class="card-click">
+                                    <a href="">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href ="/menu"button class="btn btn-primary">Pesan</a>
             </div>
         </div>
-        <h1 class="makanan mt-5">Minuman</h1>
+        
         <div class="container Menu-Page mb-5">
+            @foreach ($minuman as $item)
             <div class="box">
                 <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
+                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                 </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
+                <h1>{{$item->nama}}</h1>
+                <p>{{$item->harga}}</p>
                 <a href="/menu"button class="btn btn-primary">Pesan</a>
             </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="template/landingPage/assets/img/ayam panggang.jpeg" alt="">
-                </div>
-                <h1>nasi</h1>
-                <p>1.000.000</p>
-                <a href ="/menu"button class="btn btn-primary">Pesan</a>
+            @endforeach
             </div>
         </div>
     </section>
@@ -113,37 +170,31 @@
                     d="M421.605 420.051C354.627 549.81 167.928 586.657 4.60249 502.352C-158.723 418.047 -228.704 248.708 -161.725 118.949C-94.747 -10.8097 138.286 -23.7404 247.153 32.454C410.479 116.759 488.584 290.292 421.605 420.051Z"
                     fill="#016A70" />
             </svg>
-            <svg class="contact-hijau position-absolute" xmlns="http://www.w3.org/2000/svg" width="353" height="483"
-                viewBox="0 0 353 483" fill="none" class="contact-ijau position-absolute">
-                <path
-                    d="M-95.03 245.61C-106.006 115.736 -363.615 25.7327 -116.363 4.83633C130.89 -16.0601 309.185 29.1495 351.202 202.156C362.178 332.029 262.251 458.38 14.9986 479.276C-232.254 500.173 -36.4232 423.189 -95.03 245.61Z"
-                    fill="#A3A847" />
-            </svg>
         </div>
-        <div class="text-center mt-5">
-            <h2 class="tentang section-heading text-capatalize mb-5">Tentang Kami</h2>
+        <div class="text-center">
+            <h2 class="tentang section-heading text-capatalize ">Tentang Kami</h2>
         </div>
         <div class="About container">
             <div class="about-1">
                 <div class="kantin-content">
-                    <h2>Sejarah Kantin</h2>
-                    <p>
+                    <h2 class="animate__animated animate__fadeInLeft animate__delay-1s">Sejarah Kantin</h2>
+                    <p class="animate__animated animate__fadeInLeft animate__delay-1s ">
                         Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
                         semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
                         komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
                     </p>
                 </div>
                 <div class="img-1 mt-5">
-                    <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                    <img src="template/landingPage/assets/img/kantin 1.png" class="animate__animated animate__fadeIn" alt="">
                 </div>
             </div>
             <div class="about-2">
                 <div class="img-2">
-                    <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                    <img src="template/landingPage/assets/img/kantin 1.png" class="animate__animated animate__fadeIn" alt="">
                 </div>
                 <div class="kantin-content">
-                    <h2>Sejarah Kantin</h2>
-                    <p>
+                    <h2 class="animate__animated animate__fadeInRight animate__delay-1s">Sejarah Kantin</h2>
+                    <p class="animate__animated animate__fadeInRight animate__delay-1s">
                         Selamat datang di dunia kreativitas dan inovasi kami! Kami adalah kelompok individu yang penuh
                         semangat dan dedikasi untuk menciptakan pengalaman luar biasa. Dengan visi yang kuat dan
                         komitmen yang tak tergoyahkan, kami menjelajahi perjalanan.
@@ -151,40 +202,27 @@
                 </div>
             </div>
         </div>
-
+        <div class="svg-container">
+            <svg class="about-hijau" xmlns="http://www.w3.org/2000/svg" width="438" height="635" viewBox="0 0 438 635" fill="none">
+                <path d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z" fill="#D2DE32"/>
+            </svg>
+        </div>
     </section>
+
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="sosmed">
-                <ul>
-                    <li class=""><a href=""><i class="bi bi-envelope-fill"></i> SMKN7@gmail.com</a></li>
-                    <li class=""><a href=""><i class="bi bi-telephone-fill"></i> 1244234</a></li>
-                    <li class=""><a href=""><i class="bi bi-instagram"></i> SMKN7Pontianak</a></li>
-                </ul>
-            </div>
+        <div class=" footer-container">
             <div class="copyright">
                 <p>Copyright&copy; by Babang Frederick</p>
             </div>
+            <div class="sosmed">
+                <ul>
+                    <a href=""><i class="bi bi-envelope-fill"></i> SMKN7@gmail.com</a>
+                    <a href=""><i class="bi bi-telephone-fill"></i> 1244234</a>
+                    <a href=""><i class="bi bi-instagram"></i> SMKN7Pontianak</a>
+                </ul>
+            </div>
         </div>
     </footer>
-
-
-    <script>
-        function openDropdown() {
-            const dropdownTrigger = document.getElementById('dropdownTrigger');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const dropdownIcon = document.getElementById('dropdownIcon');
-
-            if (dropdownMenu.style.display === "none") {
-                dropdownMenu.style.display = "block"
-                dropdownIcon.style.transform = "rotate(90deg)"
-            } else {
-                dropdownMenu.style.display = "none";
-                dropdownIcon.style.transform = "rotate(180deg)"
-            }
-        }
-    </script>
-
     <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
