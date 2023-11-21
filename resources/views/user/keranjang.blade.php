@@ -62,9 +62,12 @@
                     <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
                         data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                 </div>
-                <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
-                <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
-                    <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
+                <div class="content-table remove">
+                    <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
+                        @csrf
+                        @method('Delete')
+                        <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
                 </div>
             </div>
             <div class="content-table total">
@@ -177,7 +180,8 @@
         });
     });
 
-    function kirimData(bi) {
+
+function kirimData(bi) {
         const id = bi.getAttribute('data-id')
         $.ajax({
             url: `/invoice/${id}`,
@@ -187,10 +191,10 @@
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
-                    500: function(response) {
-                        console.log(response)
-                    }
-                },
+            500: function(response) {
+            console.log(response)
+                }
+            },
             success: function(response) {
                 console.log(response.status);
                 if (response.status == 1) {
@@ -223,7 +227,6 @@
 <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
 @livewireScripts
 @endsection
-
 @push('style')
    <link rel="stylesheet" href="Keranjang/css/style.css">
 @endpush
