@@ -28,10 +28,13 @@ Route::fallback(function () {
 });
 
 // Landing Page
-Route::get('/', [LandingController::class, 'index'])->name('landingPage')->middleware('web');
+Route::get('/', [LandingController::class, 'index'])->name('landingPage');
 
 
-Route::middleware('guest')->group(function(){
+Route::middleware(['guest'])->group(function(){
+    Route::get('/test', function(){
+        dd(auth()->check());
+    });
     // Auth
     Route::get('/login', [AuthController::class, 'login']);
     Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
@@ -40,18 +43,10 @@ Route::middleware('guest')->group(function(){
     Route::post('/registrasi', [AuthController::class, 'store'])->name('registrasi');
     Route::get('resetpassword/1', [AuthController::class, 'reset1'])->name('ResetPassword.1');
     Route::get('/home', function() {
-        if(Auth::user()->role == 'guest'){
-            return redirect('');
-        }elseif(Auth::user()->role == 'admin'){
-            return redirect()->route('Admin.Dashboard');
-        }elseif(Auth::user()->role == 'superadmin'){
-            return redirect()->route('Superadmin.Akun');
-        }else{
-            return redirect('login');
-        }
+        return redirect()->back();
     });
 });
-Route::middleware('auth')->group(function() {
+Route::middleware(['auth'])->group(function() {
     // Admin Kantin
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('Admin.Dashboard')->middleware('admin');
     Route::get('/admin/feedback', [FeedbackController::class, 'index'])->name('Admin.Feedback')->middleware('admin');
@@ -68,13 +63,13 @@ Route::middleware('auth')->group(function() {
     Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan')->middleware('admin');
 
   // Super Admin
-    Route::get('/test', [KelolaakunController::class, "getData"]);
     Route::get('superadmin/dashboard', [SuperAdminController::class, 'index'])->name('Superadmin.Dashboard')->middleware('superadmin');
     Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun')->middleware('superadmin');
     Route::get('/superadmin/getAkun',[KelolaakunController::class, 'getData'])->name('Superadmin.getAkun')->middleware('superadmin');
     Route::post('/superadmin/addUser', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah')->middleware('superadmin');
     Route::get('/user/{id}/edit', [KelolaakunController::class, 'edit'])->name('Akun.Edit')->middleware('superadmin');
     Route::post('/user/{id}/update', [KelolaakunController::class, 'update'])->name('Akun.Update')->middleware('superadmin');
+    Route::post('/user/{id}/editPassword', [KelolaakunController::class, 'editPassword'])->name('Akun.editPassword')->middleware('superadmin');
     Route::delete('kelolaakun/hapus/{id}', [KelolaakunController::class, 'hapus'])->name('Akun.Hapus')->middleware('superadmin');
     Route::get('/superadmin/kelolakantin', [KantinController::class, 'index'])->name('Superadmin.Kantin')->middleware('superadmin');
     Route::post('/superadmin/create/kantin', [KantinController::class, 'store'])->name('Kantin.Create')->middleware('superadmin');

@@ -15,27 +15,26 @@
         </tbody>
     </table>
     <div class="w-full flex justify-center">
-        @foreach ($data as $pesanan)
-        <div id="modal{{ $pesanan->id }}" class="modal{{ $pesanan->id }} w-2/3 lgMobile:w-[95%] mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute  top-10 p-8  {{ $errors->any() ? 'block' : 'hidden' }} blur-none transition-all tablet:w-[80%] tablet:left-12" style="z-index: 999;">
+        <div id="modal" class="modal w-2/3 lgMobile:w-[95%] mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute  top-10 p-8   blur-none transition-all tablet:w-[80%] tablet:left-12" style="z-index: 999;">
             <div class="mb-2">
                 <h1 class="text-4xl font-outfit">Detail Pesanan</h1>
             </div>
-            <button id="closeModal" data-id="{{ $pesanan->id }}" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
+            <button id="closeModal" data-id="" class="absolute top-0 right-0 p-2 m-2 text-gray-700 hover:text-red-500 cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             <div class="w-full flex flex-col justify-center mt-10">
                 <div class="flex border-dashed border-y-2 border-black">
-                    <div class="px-4 py-1 text-lg flex-1">{{ $pesanan->token }}</div>
-                    <div class="px-2 py-1 text-lg flex-1">{{ $pesanan->user->nama }}</div>
-                    <div class="px-4 py-1 text-lg flex-1 items-center text-end">{{ $pesanan->created_at }}</div>
+                    <div class="px-4 py-1 text-lg flex-1"></div>
+                    <div class="px-2 py-1 text-lg flex-1"></div>
+                    <div class="px-4 py-1 text-lg flex-1 items-center text-end"></div>
                 </div>
                 <div class="flex justify-center mt-1">
                     <table id="tabel-menu" class="table-fixed w-full rounded-lg font-outfit text-lg h-12">
                         <tbody>
                             <tr>
-                                <td class="text-center">{{ $pesanan->kantin }}</td>
+                                <td class="text-center"></td>
                                 <td class="text-center">5</td>
                                 <td class="text-center">Rp. 10.000</td>
                                 <td class="text-center">Rp. 50.000</td>
@@ -54,7 +53,6 @@
                 </div>
             </div>
         </div>
-        @endforeach
     </div>
 </div>
 <script>

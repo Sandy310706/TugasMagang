@@ -62,4 +62,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Menu','menu_id');
     }
+    public function log()
+    {
+        $this->hasMany(Log::class, 'id_akun', 'id');
+    }
 }

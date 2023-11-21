@@ -6,7 +6,7 @@
 <div class="w-full relative">
     <div class="flex h-auto tablet:pl-4">
         <div class="w-1/2">
-            <button id="showModal" class="showModal mb-2 p-2 w-44 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah Akun</button>
+            <button id="showModal" class="showModal mb-2 p-2 w-44 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah User</button>
         </div>
     </div>
     <div class="w-full">
@@ -89,7 +89,7 @@
                 <input type="text" id="newPassword" name="newPassword" value="" class="rounded p-1 outline-none ring-1 ring-slate-600 border-slate-500 bg-slate-300 shadow-slate-900 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800 {{ $errors->has('nama') ? 'border-red-500 ring-red-600' : ''}}">
                 <p id="errorNewPassword" class="pt-1 text-xs text-red-500"></p>
             </div>
-            <input type="hidden" value="" id="idUser">
+            <input type="hidden" value="" name="idUser" id="idUser">
             <div class="flex justify-end">
                 <button id="btnPassword" type="submit" class="rounded-sm w-3/12 py-1 px-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white tracking-widest hover:from-blue-500 hover:to-blue-800"></button>
             </div>
@@ -132,7 +132,7 @@
         $('#showModal').on('click', function(e) {
             e.preventDefault()
             $('#body').addClass('overflow-hidden')
-            $('#titleModal').html("Tambah Akun")
+            $('#titleModal').html("Tambah User")
             $('#btnSubmit').html('Tambahkan')
             $('#modal').removeClass('hidden')
             $('#modal').addClass('animate-showModal')
@@ -260,11 +260,51 @@
             e.preventDefault()
             let id = $(this).data('id')
             $.get('/user/'+id+'/edit', function(data){
+                $('#idUser').val(data.id)
                 $('#modalPassword').removeClass('hidden')
                 $('#modalPassword').addClass('animate-showModal')
                 $('#background').removeClass('hidden')
                 $('#titlePassword').html('Ganti password')
                 $('#btnPassword').html('Ganti Password')
+                $('#body').addClass('overflow-hidden')
+                $('#btnPassword').click( function(e){
+                    $(this).html('Mengubah ...')
+                    e.preventDefault()
+                    $.ajax({
+                        url: "/user/"+id+"/editPassword",
+                        type: "post",
+                        data: new FormData(document.getElementById('formEditPassword')),
+                        processData: false,
+                        contentType: false,
+                        success: function(response){
+                            Swal.fire({
+                                title: 'Berhasil',
+                                text: 'Berhasil mengubah password User.',
+                                icon: 'success',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                zIndex: 9999,
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    setTimeout(() => {
+                                        $('#modalPassword').addClass('hidden')
+                                        $('#background').addClass('hidden')
+                                        $('#btnPassword').html('Tambahkan')
+                                        $('#body').removeClass('overflow-hidden')
+                                    }, 900);
+                                    $('#formEditPassword').trigger("reset")
+                                    $('#modalPassword').addClass('animate-hideModal')
+                                    $('#tabel-user').DataTable().ajax.reload()
+                                    $('#modalPassword').removeClass('animate-showModal')
+                                }
+                            })
+                        },
+                        error: function(error){
+                            $('#errorNewPassword').removeClass('hidden')
+                            $('#errorNewPassword').html(error.responseJSON.errors.newPassword)
+                        }
+                    })
+                })
             })
         })
         $('body').on('click', '#closeModal', function(e){
