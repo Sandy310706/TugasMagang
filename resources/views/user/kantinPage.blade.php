@@ -134,7 +134,7 @@
             <div class="col">
                 <div class="form-group form-group-textarea mb-md-0">
                         <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
-                            data-sb-validations="required"></textarea>
+                            data-sb-validations="required" value=""></textarea>
                     <div class="invalid-feedback">A Feedback is required.</div>
                 </div>
             </div>
