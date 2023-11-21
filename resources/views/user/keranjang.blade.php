@@ -9,7 +9,7 @@
         </svg>
         <svg class="svg-hijau" width="165" height="176" viewBox="0 0 165 176" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="139.5" cy="36.5" r="139.5" fill="#D2DE32"/>
-        </svg>      
+        </svg>
     </div>
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
@@ -76,20 +76,19 @@
                     @method('Delete')
                     <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
                 </form>
-
             </div>
         </div>
     </div>
     @endforeach
 
     <div class="checkbox-content">
-        <input type="checkbox" class="checkbox-all">
+        <input type="checkbox" class="checkbox-all" id="myCheckbox">
         <p>Pilih Semua</p>
     </div>
     @endif
-    
-   
-  
+
+
+
 </div>
 <div class="container totals mt-3">
     <div class="checkout">
@@ -149,7 +148,6 @@
                 type: "GET",
                 url: "/cartst/" + keranjangId + "/" + menuId,
                 success: function(data) {
-                    location.reload();
                     console.log(spanJumlah);
                     console.log(totalHarga);
                     spanJumlah.text(data.jumlah);
@@ -169,7 +167,6 @@
                 type: "GET",
                 url: "/cartsk/" + keranjangId + "/" + menuId,
                 success: function(data) {
-                    location.reload();
                     spanJumlah.text(data.jumlah);
                     totalHarga.text("Rp. " + data.total_harga)
                 },
@@ -191,10 +188,11 @@ function kirimData(bi) {
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
-            500: function(response) {
-            console.log(response)
-                }
-            },
+
+                    500: function(response) {
+                        console.log(response)
+                    }
+                },
             success: function(response) {
                 console.log(response.status);
                 if (response.status == 1) {

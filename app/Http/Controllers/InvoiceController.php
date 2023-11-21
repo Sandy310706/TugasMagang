@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Livewire\Keranjang;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Dirape\Token\Token;
+use App\Models\Kantin;
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Invoice;
@@ -30,8 +32,6 @@ class InvoiceController extends Controller
         }
         $arraySum = array_sum($totalHarga);
 
-        dd($detail);
-
         return view('user.histori', compact('invoices', 'detail','arraySum','angka','userNav'));
 
     }
@@ -40,19 +40,24 @@ class InvoiceController extends Controller
     {
         $randomString = Str::random(3);
 
-        $keranjang = Keranjangs::where('id',$id)->first();
+        $keranjangId = Keranjangs::where('user_id', auth()->user()->id)
+                            ->where('kantin_id',$id)
+                            ->first();
+
+
+        $keranjang = Keranjangs::where('user_id', auth()->user()->id)->first();
 
         $invoice = new Invoice;
         $invoice->user_id = auth()->user()->id;
         $invoice->keranjang_id = $keranjang->id;
+        $invoice->kantin_id = $keranjang ->kantin_id;
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
 
-        dd($invoice);
 
-        // return redirect()->route('Keranjang');
         return response()->json($invoice);
+        // return response()->json($invoice);
     }
 
 }

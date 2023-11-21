@@ -31,13 +31,10 @@
                 <div class="dropdown">
                     <div class="button-sidebar">
                         @guest
-<<<<<<<<< Temporary merge branch 1
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">login
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
                          </button>
-=========
                         <a class="button-dropdown button-login" onclick="openDropdown()" id="dropdownTrigger"href="/login">login</a>
->>>>>>>>> Temporary merge branch 2
                         @else
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
                             <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
@@ -96,10 +93,10 @@
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
             navbar.style.backgroundColor = "#000000";
             navbar.style.padding = "20px";
-            navbar.h3.style.color = "#898989"
+
         } else {
             navbar.style.backgroundColor = "transparent";
-            navbar.h3.style.color = "#898989";
+
         }
     }
 });
