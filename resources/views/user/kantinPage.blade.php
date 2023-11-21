@@ -99,25 +99,26 @@
     <div class="hero-content">
         <div class="child-hero">
             <div class="gradient">
-                <div class="container descript-hero">
-                    <div class="image">
-                        <img src="template/landingPage/assets/img/kantin 1.png" alt="">
+                <div class="gradient-content">
+                    <div class="content-image">
+                        <div class="image">
+                            <img src="{{ asset('template/landingPage/assets/img/kantin 1.png') }}" alt="">
+                        </div>
+                        <div class="text-content">
+                            <p class="name">Nama Kantin</p>
+                        </div>
                     </div>
                     <div class="content-descript">
-                        <div class="text-content">
-                            <p class="name">Nama Kanti2n</p>
-                        </div>
                         <div class="text-content2">
                             <div class="text-1">    
-                                <p class="Name-kasir">Nama Kasir</p>
-                                <p class="number">Nomor Telpon</p>
+                                <p class="Name-kasir"><i class="bi bi-person-circle"></i>Nama Kasir</p>
+                                <p class="number"><i class="bi bi-telephone-fill"></i>Nomor Telpon</p>
+                                <p class="email"><i class="bi bi-envelope-at-fill"></i>email</p>
                             </div>
                             <div class="text-2">
-                                <p class="email">email</p>
-                                <p class="produk">produk:  <span class="nilai">100</span</p>
+                                <p class="produk"><i class="bi bi-collection"></i>produk:  <span class="nilai">100</span></p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>   
