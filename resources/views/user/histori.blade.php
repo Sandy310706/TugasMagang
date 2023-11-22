@@ -1,5 +1,5 @@
 @extends('layouts.user.app')
-@section('title', 'His  tori')
+@section('title', 'Histori')
 @section('histori')
 
 <div class="svg-container">

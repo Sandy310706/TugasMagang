@@ -96,7 +96,7 @@
                             <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
                                 @csrf
                                 @method('Delete')
-                                <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                                <button type="submit" style="border: none "><i class="bi bi-trash3-fill"></i></button>
                             </form>
 
                         </div>
