@@ -90,8 +90,10 @@
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
             navbar.style.backgroundColor = "#96C291";
             navbar.style.padding = "20px";
+
         } else {
             navbar.style.backgroundColor = "transparent";
+
         }
     }
 });

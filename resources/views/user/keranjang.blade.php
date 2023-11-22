@@ -30,11 +30,26 @@
             <div class="Header-table 2">
                 <p>Jumlah</p>
             </div>
+
             <div class="Header-table 3 total">
                 <p>Total</p>
             </div>
             <div class="Header-table 4">
                 <p>Hapus</p>
+
+            <div class="content-table btns">
+                <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
+                    <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
+                        data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
+                </div>
+                <div class="content-table remove">
+                    <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
+                        @csrf
+                        @method('Delete')
+                        <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+                </div>
+
             </div>
         </div>
         @if ($keranjang == null)
@@ -47,6 +62,7 @@
                     </div>
                 </div>
             </div>
+
         @else
             @foreach ($keranjangs as $keranjang)
                 <div class="card-pembungkus">
@@ -91,8 +107,13 @@
             <div class="checkbox-content">
                 <input type="checkbox" class="checkbox-all">
                 <p>Pilih Semua</p>
+            <div class="content-table remove">
+                <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
+                    @csrf
+                    @method('Delete')
+                    <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                </form>
             </div>
-
     </div>
 
 
@@ -141,13 +162,14 @@
     </div>
 
 
-    <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
             $(".tambah").click(function() {
                 const keranjangId = $(this).data("keranjang-id");
                 const menuId = $(this).data("menu-id");
@@ -192,6 +214,7 @@
         function kirimData(bi) {
             const id = bi.getAttribute('data-id')
             $.ajax({
+
                 url: `/invoice/${id}`,
                 dataType: "json",
                 type: "POST",
@@ -212,10 +235,41 @@
             });
         };
 
-        function openDropdown() {
-            const dropdownTrigger = document.getElementById('dropdownTrigger');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const dropdownIcon = document.getElementById('dropdownIcon');
+
+        //function openDropdown() {
+            //const dropdownTrigger = document.getElementById('dropdownTrigger');
+            //const dropdownMenu = document.getElementById('dropdownMenu');
+            //const dropdownIcon = document.getElementById('dropdownIcon');
+
+
+function kirimData(bi) {
+        const id = bi.getAttribute('data-id')
+        $.ajax({
+            url: `/invoice/${id}`,
+            dataType: "json",
+            type: "POST",
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            statusCode: {
+            500: function(response) {
+            console.log(response)
+                }
+            },
+            success: function(response) {
+                console.log(response.status);
+                if (response.status == 1) {
+                    console.log('Sudah dibayar');
+                } else {
+                    console.log('Belum di bayar');
+                }
+            },
+            error: function(error) {
+                console.log("gagal");
+            }
+        });
+    };
+
 
             if (dropdownMenu.style.display === "none") {
                 dropdownMenu.style.display = "block"
@@ -230,7 +284,6 @@
     <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
     @livewireScripts
 @endsection
-
 @push('style')
     <link rel="stylesheet" href="Keranjang/css/style.css">
 @endpush

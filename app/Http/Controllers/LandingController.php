@@ -12,17 +12,16 @@ class LandingController extends Controller
 {
     public function index(Request $id)
     {
-        $idUser = null;
-        if(Auth::check()){
-            $idUser = auth()->user()->nama;
-        }else{
-            $idUser = null;
-        }
-        $keranjang = Keranjangs::where('user_id', $idUser)->first();
-        if($keranjang == null) {
-            $angka = 0;
-        }else{
-            $angka = $keranjang->count();
+        $angka = 0;
+
+        if(auth::check()) {
+            $user = Auth::user();
+            $keranjang = Keranjangs::where('user_id', auth()->user()->id)->first();
+
+            if($keranjang)
+            {
+                $angka = $keranjang->count();
+            }
         }
 
         $userNav = User::where('role','guest')
