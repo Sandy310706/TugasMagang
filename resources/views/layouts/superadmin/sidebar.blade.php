@@ -14,5 +14,6 @@
     <div class="container w-3/4 font-outfit text-md group mt-1">
         <a href="{{ route('Superadmin.Kantin') }}" class="block py-2 pl-3 text-slate-400 hover:ring-1 hover:ring-white group-hover:text-white rounded-r-xl hover:bg-sky-400 transition duration-200 hover:ease-in"><span><i class="fa-solid fa-shop"></i> Kelola Kantin</span></a>
     </div>
+    
 </div>
 

@@ -94,6 +94,37 @@
             fill="#96C291" />
     </svg>
 </div>
+
+<div class="container-fluid container-gradient">
+    <div class="hero-content">
+        <div class="child-hero">
+            <div class="gradient">
+                <div class="gradient-content">
+                    <div class="content-image">
+                        <div class="image">
+                            <img src="{{ asset('template/landingPage/assets/img/kantin 1.png') }}" alt="">
+                        </div>
+                        <div class="text-content">
+                            <p class="name">Nama Kantin</p>
+                        </div>
+                    </div>
+                    <div class="content-descript">
+                        <div class="text-content2">
+                            <div class="text-1">
+                                <p class="Name-kasir"><i class="bi bi-person-circle"></i>Nama Kasir</p>
+                                <p class="number"><i class="bi bi-telephone-fill"></i>Nomor Telpon</p>
+                                <p class="email"><i class="bi bi-envelope-at-fill"></i>email</p>
+                            </div>
+                            <div class="text-2">
+                                <p class="produk"><i class="bi bi-collection"></i>produk:  <span class="nilai">100</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="pembungkus-alert">
     <div class="alert-content">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
@@ -105,7 +136,11 @@
     </div>
     <h1 class="menu">MENU</h1>
 </div>
-
+<div class="pembungkus-alert">
+    <div class="alert-content">
+        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+    </div>
+</div>
 <div class="cards">
     <div class="content-hero">
         <div class="content-child">
@@ -139,7 +174,7 @@
             <div class="col">
                 <div class="form-group form-group-textarea mb-md-0">
                         <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
-                            data-sb-validations="required"></textarea>
+                            data-sb-validations="required" value=""></textarea>
                     <div class="invalid-feedback">A Feedback is required.</div>
                 </div>
             </div>
@@ -237,7 +272,7 @@
             var navbar = document.getElementById("mainNav");
 
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.style.backgroundColor = "#000000";
+                navbar.style.backgroundColor = "#96C291";
                 navbar.style.padding = "10px";
             } else {
                 navbar.style.backgroundColor = "transparent";

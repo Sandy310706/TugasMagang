@@ -121,12 +121,7 @@
 }
 
 
-/* style dropdown */
-
-.dropdown {
-    display: flex;
-    justify-content: start;
-}
+/* style dropdown */s
 
 .button-sidebar {
     display: flex;
@@ -207,6 +202,10 @@ ul {
 
 .dropdown-sidebar ul li {
     list-style: none;
+}
+
+.button-sidebar a{
+    color: black;
 }
 
 .keranjangs {
@@ -325,6 +324,10 @@ ul {
         color: #fff;
     }
 
+    .button-sidebar a{
+        color: black;
+    }
+
     .dropdown-content li a {
         color: black;
     }
@@ -401,6 +404,10 @@ ul {
 
     #mainNav .navbar-nav .nav-item .nav-link {
         color: #fff;
+    }
+    
+    .button-sidebar a{
+        color: black;
     }
 
     .nav-content {
@@ -504,6 +511,10 @@ ul {
         color: #fff;
     }
 
+    .button-sidebar a{
+        color: black;
+    }
+
     .button-sidebar button i {
         position: relative;
         right: 1px;
@@ -524,7 +535,6 @@ ul {
         color: #000;
     }
 }
-
 
 @media only screen and (min-width: 1200px) {
     .welcome {

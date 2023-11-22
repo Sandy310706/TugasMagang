@@ -88,7 +88,7 @@
             <div class="content-hero">
                 <div class="menu-content">
                     <div class="makanan-content">
-                        <h2>Makanan</h2>
+                        <h2>Minuman</h2>
                     </div>
                     <div class="hero-content">
                         @foreach ($minuman as $item)

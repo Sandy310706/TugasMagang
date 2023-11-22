@@ -83,6 +83,7 @@ class KantinController extends Controller
 
     public function show($namaKantin)
     {
+        $admin = User::where('role','admin')->first();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
         $menu = Menu::where('id_kantin', $namaKantin['id'])->get();
@@ -92,7 +93,7 @@ class KantinController extends Controller
                         ->first();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
-        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin'));
+        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin'));
     }
     public function delete($id)
     {
