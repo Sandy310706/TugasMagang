@@ -105,15 +105,15 @@
                             <img src="{{ asset('template/landingPage/assets/img/kantin 1.png') }}" alt="">
                         </div>
                         <div class="text-content">
-                            <p class="name">Nama Kantin</p>
+                            <p class="name">{{$namaKantin->namaKantin}}</p>
                         </div>
                     </div>
                     <div class="content-descript">
                         <div class="text-content2">
-                            <div class="text-1">    
-                                <p class="Name-kasir"><i class="bi bi-person-circle"></i>{{ $namaKantin->namaKantin }}</p>
+                            <div class="text-1">
+                                <p class="Name-kasir"><i class="bi bi-person-circle"></i></p>
                                 <p class="number"><i class="bi bi-telephone-fill"></i>Nomor Telpon</p>
-                                <p class="email"><i class="bi bi-envelope-at-fill"></i>email</p>
+                                <p class="email"><i class="bi bi-envelope-at-fill"> </i></p>
                             </div>
                             <div class="text-2">
                                 <p class="produk"><i class="bi bi-collection"></i>produk:  <span class="nilai">100</span></p>
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </div>
 </div>
@@ -170,7 +170,7 @@
             <div class="col">
                 <div class="form-group form-group-textarea mb-md-0">
                         <textarea class="form-control" rows="6" id="feedback" name="feedback" placeholder="Feedback*"
-                            data-sb-validations="required"></textarea>
+                            data-sb-validations="required" value=""></textarea>
                     <div class="invalid-feedback">A Feedback is required.</div>
                 </div>
             </div>
