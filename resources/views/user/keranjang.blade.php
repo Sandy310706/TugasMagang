@@ -9,7 +9,7 @@
         </svg>
         <svg class="svg-hijau" width="165" height="176" viewBox="0 0 165 176" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="139.5" cy="36.5" r="139.5" fill="#D2DE32"/>
-        </svg>      
+        </svg>
     </div>
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
@@ -86,9 +86,9 @@
         <p>Pilih Semua</p>
     </div>
     @endif
-    
-   
-  
+
+
+
 </div>
 <div class="container totals mt-3">
     <div class="checkout">

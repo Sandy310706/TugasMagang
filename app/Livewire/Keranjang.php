@@ -79,6 +79,7 @@ class Keranjang extends Component
         session(['lifetime' => 30]);
 
 
+
         return response()->json($keranjang);
     }
     public function tambah($id, $menu_id)

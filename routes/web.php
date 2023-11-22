@@ -1,30 +1,35 @@
 <?php
 
-use App\Models\Keranjangs;
-use App\Models\User;
 use App\Models\Menu;
+use App\Models\User;
+use App\Models\Invoice;
+use App\Models\Keranjangs;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\KalkuController;
+use Yajra\DataTables\Facades\DataTables;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KalkuController;
+use App\Http\Controllers\KantinController;
+use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\KantinController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
-use App\Http\Controllers\LandingController;
-use App\Http\Controllers\kelolaPesanController;
-use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\kelolaPesanController;
 
 // Errors
 Route::fallback(function () {
     return view('errors.404');
+});
+Route::get('/test', function(){
+    dd(Invoice::with(['keranjang', 'user'])->get());
 });
 
 // Landing Page
@@ -32,9 +37,6 @@ Route::get('/', [LandingController::class, 'index'])->name('landingPage');
 
 
 Route::middleware(['guest'])->group(function(){
-    Route::get('/test', function(){
-        dd(auth()->check());
-    });
     // Auth
     Route::get('/login', [AuthController::class, 'login']);
     Route::post('/login', [AuthController::class, 'authtentication'])->name('login');
@@ -59,6 +61,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/admin/invoice', [AdminController::class,'bukti'])->name('History')->middleware('admin');
     Route::get('/admin/keuangan', [KeuanganController::class, 'index'])->name('Admin.Kuangan')->middleware('admin');
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('Admin.Pesanan')->middleware('admin');
+    Route::get('/admin/getPesanan', [kelolaPesanController::class, "getPesanan"])->name('Admin.getPesanan')->middleware('admin');
     Route::post('/konfirmasipesaanan/{id}', [kelolaPesanController::class, 'konfirmasi'])->name('KonfirmasiPesanan')->middleware('admin');
     Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan')->middleware('admin');
 

@@ -53,9 +53,7 @@
                         <div class="dropdown">
                             <div class="button-sidebar">
                                 @guest
-                                    <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">User
-                                        <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
-                                    </button>
+                                    <a href="/login" class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">Login</a>
                                 @else
                                     <button class="button-dropdown" onclick="openDropdown()"
                                         id="dropdownTrigger">{{ $userNav->nama }}
@@ -96,6 +94,37 @@
             fill="#96C291" />
     </svg>
 </div>
+
+<div class="container-fluid container-gradient">
+    <div class="hero-content">
+        <div class="child-hero">
+            <div class="gradient">
+                <div class="gradient-content">
+                    <div class="content-image">
+                        <div class="image">
+                            <img src="{{ asset('template/landingPage/assets/img/kantin 1.png') }}" alt="">
+                        </div>
+                        <div class="text-content">
+                            <p class="name">Nama Kantin</p>
+                        </div>
+                    </div>
+                    <div class="content-descript">
+                        <div class="text-content2">
+                            <div class="text-1">
+                                <p class="Name-kasir"><i class="bi bi-person-circle"></i>Nama Kasir</p>
+                                <p class="number"><i class="bi bi-telephone-fill"></i>Nomor Telpon</p>
+                                <p class="email"><i class="bi bi-envelope-at-fill"></i>email</p>
+                            </div>
+                            <div class="text-2">
+                                <p class="produk"><i class="bi bi-collection"></i>produk:  <span class="nilai">100</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="pembungkus-alert">
     <div class="alert-content">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
@@ -114,7 +143,7 @@
             @foreach ($menu as $data)
                 <div class="card-content">
                     <div class="card-image">
-                        <img src="{{ asset('storage/fileMenu/' . $data->foto) }}" alt="">
+                        <img src="img/bipang.jpg" alt="">
                     </div>
                     <div class="content-text">
                         <p>{{ $data->nama }}</p>
