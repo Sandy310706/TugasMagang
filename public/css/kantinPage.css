@@ -79,7 +79,7 @@ nav {
     padding: 10px;
     text-decoration: none;
     font-family: 'Amaranth', sans-serif;
-    color: gray;
+    color: black;
     letter-spacing: 0.0625em;
 }
 
@@ -94,14 +94,12 @@ nav {
 
 
 .nav-content {
-
     display: flex;
     align-items: center;
-
 }
 
 .navbars {
-    color: gray;
+    color: black;
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     letter-spacing: 0.0625em;
@@ -211,12 +209,16 @@ nav {
 
 .button-sidebar button {
     background-color: transparent;
-    color: gray;
+    color: black;
     border: none;
     font-family: "Amaranth", sans-serif;
     font-size: 20px;
     letter-spacing: 0.0625em;
     padding: 5px;
+}
+
+.button-sidebar a{
+    background-color: black;
 }
 
 .button-sidebar button i {
@@ -298,7 +300,7 @@ ul {
     top: -10px;
     width: 23px;
     height: 23px;
-    background-color: gray;
+    background-color: black;
     border-radius: 50%;
     text-align: center;
     display: flex;
@@ -322,8 +324,8 @@ ul {
 }
 
 .gradient {
-    border-radius: 10px;
-    border: 1px solid #BDBDBD;
+    border-top: 1px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
     background: #FFF;
 }
 
@@ -339,10 +341,11 @@ ul {
 .content-image {
     display: flex;
     margin: 10px;
-    width: 25%;
+    width: 406px;
     height: 149px;
     background-image: url("/img/img-profile.png");
     background-size: cover;
+    border-radius: 5px;
 }
 
 .descript-hero {
@@ -375,6 +378,7 @@ ul {
 .content-descript {
     display: flex;
     align-items: center;
+    justify-content: start;
 }
 
 .content-descript .Name-kasir {
@@ -726,7 +730,6 @@ h3 {
         color: #fff;
     }
 
-
     .nav-content {
         display: grid;
         flex-direction: column;
@@ -793,10 +796,20 @@ h3 {
         justify-content: center;
     }
 
+    .menu {
+        margin-top: 100px;
+    }
+
     /* style profile */
     .child-hero {
         display: flex;
         justify-content: center;
+    }
+
+    .gradient-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
     .gradient {
@@ -806,6 +819,10 @@ h3 {
         border-radius: 0;
     }
 
+    .text-content{
+        padding: 0;
+        align-items: center;
+    }
 
     .text-content2 {
         width: 100%;
@@ -814,7 +831,6 @@ h3 {
     }
 
     .content-image {
-        justify-content: space-around;
         width: 100%;
         height: 100px;
     }
@@ -823,7 +839,6 @@ h3 {
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     .content-descript {
@@ -891,6 +906,11 @@ h3 {
 
     .feedback {
         font-size: 40px;
+    }
+
+    .svg-content svg{
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -993,7 +1013,8 @@ h3 {
     }
 
     .content-image{
-        width: 45%;
+        width: 406px;
+        height: 149px;
         justify-content: start;
     }
 
@@ -1009,7 +1030,6 @@ h3 {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
     }
 
     .image img {
@@ -1018,6 +1038,12 @@ h3 {
         border-radius: 132px;
         object-fit: cover;
     }
+    
+    .text-content {
+        display: flex;
+        padding: 0;
+        padding-top: 35px;
+    }   
 
     .text-content .name {
         font-size: 18px;
@@ -1043,8 +1069,6 @@ h3 {
         width: 100%;
     }	
 
-
-
     .sosmed {
         width: 70%;
         padding: 10px;
@@ -1065,6 +1089,15 @@ h3 {
     .copyright p {
         font-size: 16px;
         text-align: center;
+    }
+
+    .svg-content svg{
+        width: 300px;
+        height: 300px;
+    }
+
+    .menu{
+        margin-top: 150px;
     }
 }
 
@@ -1234,6 +1267,11 @@ h3 {
     .copyright p {
         font-size: 16px;
         text-align: center;
+    }
+
+    .svg-content svg{
+        width: 400px;
+        height: 400px;
     }
 
 }

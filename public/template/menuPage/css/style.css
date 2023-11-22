@@ -274,6 +274,13 @@ p {
   z-index: 999;
 }
 
+/* style image null */
+
+.hero-null{
+  display:flex;
+  justify-content: center;
+}
+
 /* style footer */
 .footer {
   width: 100%;
