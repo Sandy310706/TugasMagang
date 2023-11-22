@@ -8,7 +8,7 @@
             <span></span>
         </div>
         <div class="navbar-brand ml-5">
-            <h3 class="navbars">Welcome To Kantin Sekolah</h3>
+            <h3 class="text">Welcome To Kantin Sekolah</h3>
         </div>
         <div class="navbar-content justift-content-end">
             <ul class="navbar-nav text-uppercase">
@@ -37,13 +37,13 @@
                         <a class="button-dropdown button-login" onclick="openDropdown()" id="dropdownTrigger"href="/login">login</a>
                         @else
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}
-                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                            <i class="bi bi-caret-down-fill" id="dropdownIcon"></i>
                          </button>
                         @endguest
 
                     </div>
-                    <div class="dropdown-sidebar" id="dropdownMenu">
-                        <div class="dropdown-content">
+                    <div class="dropdown-sidebar  animate__animated animate__fadeInDown" id="dropdownMenu">
+                        <div class="dropdown-content  animate__delay-2s">
                             @guest
                             <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
                                 href="/login"><i class="bi bi-box-arrow-in-right"></i>login</a></li>
@@ -91,7 +91,7 @@
         var navbar = document.getElementById("mainNav");
 
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            navbar.style.backgroundColor = "#000000";
+            navbar.style.backgroundColor = "#96C291";
             navbar.style.padding = "20px";
 
         } else {

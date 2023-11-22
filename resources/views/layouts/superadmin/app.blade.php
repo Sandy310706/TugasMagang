@@ -47,6 +47,7 @@
                 @yield('dashboard')
                 @yield('kelola akun')
                 @yield('kelola kantin')
+                @yield('detail kantin')
             </div>
         </div>
     </div>

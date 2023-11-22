@@ -1,10 +1,39 @@
 @extends('layouts.user.app')
 @section('title','Kantin')
 @section('kantin')
+    
+    <div class="container-fluid container-gradient">
+        <div class="hero-content">
+            <div class="child-hero">
+                <div class="gradient">
+                    <div class="container descript-hero">
+                        <div class="image">
+                            <img src="img/jordi.jpeg" alt="">
+                        </div>
+                        <div class="content-descript">
+                            <div class="text-content">
+                                <p class="name">Nama Kantin</p>
+                            </div>
+                            <div class="text-content2">
+                                <div class="text-1">    
+                                    <p class="Name-kasir">Nama Kasir</p>
+                                    <p class="number">Nomor Telpon</p>
+                                </div>
+                                <div class="text-2">
+                                    <p class="email">email</p>
+                                    <p class="produk">produk:  <span class="nilai">100</span</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
     <div class="pembungkus-alert">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
     </div>
-
     <div class="card-container">
         <h1 class="makanan text-center">Menu</h1>
         <div class="alert" id="alerts" style="display: none">Pesanan sudah masuk keranjang</div>

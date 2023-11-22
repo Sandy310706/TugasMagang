@@ -1,17 +1,12 @@
 <?php
 
-use App\Models\Menu;
-use App\Models\User;
 use App\Models\Invoice;
-use App\Models\Keranjangs;
 use App\Livewire\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
-use Yajra\DataTables\Facades\DataTables;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\KalkuController;
 use App\Http\Controllers\KantinController;
 use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\InvoiceController;
@@ -30,6 +25,9 @@ Route::fallback(function () {
 });
 Route::get('/test', function(){
     dd(Invoice::with(['keranjang', 'user'])->get());
+});
+Route::get('/cekLogin', function(){
+    dd(Auth::check());
 });
 
 // Landing Page
@@ -80,6 +78,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/superadmin/{id}/update', [KantinController::class, 'update'])->name('Kantin.Update')->middleware('superadmin');
     Route::delete('/kantin/{id}/delete', [KantinController::class, 'delete'])->name('Kantin.Delete')->middleware('superadmin');
     Route::get('/superadmin/getKantin', [KantinController::class, 'getKantin'])->name('Superadmin.getKantin')->middleware('superadmin');
+    Route::get('/superadmin/detailKantin/{namaKantin}', [KantinController::class, 'detailKantin'])->name('Superadmin.DetailKantin')->middleware('superadmin');
 
     // Auth
     Route::get('/logout/{nama}', [AuthController::class, 'logout'])->name('Logout');
