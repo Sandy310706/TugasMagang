@@ -24,7 +24,7 @@
                     @foreach($detail as $invoice)
                     <p>No Pesanan</p>
                     <div class="Detail">
-                        <button class="btn" data-id="{{ $invoice->id }}" id="openModal" onclick="phei(this)">BukaModal</button>
+                        <button class="btn"  id="openModal" onclick="phei(this)">BukaModal</button>
                     </div>
                     @endforeach
                 </div>
@@ -91,6 +91,7 @@
                 const detailmodal = document.querySelector("#detailModal" + id);
                 detailmodal.style.display = 'block';
             });
+
             $('.close').click(function() {
                 let id = $(this).data('id')
                 const detailmodal = document.querySelector("#detailModal" + id);
@@ -137,11 +138,16 @@
         var closeButton = document.querySelector(".close");
 
         // Tampilkan modal saat tombol dibuka
-        openModalButton.addEventListener("click", function() {
+        // openModalButton.addEventListener("click", function() {
+        //     modal.style.display = "block";
+        // });
+
+        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
+        open.addEventListener("click", function () {
+
             modal.style.display = "block";
         });
 
-        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
         closeButton.addEventListener("click", function() {
             modal.style.display = "none";
         });
@@ -149,7 +155,6 @@
         // Sembunyikan modal saat latar belakang modal diklik
         window.addEventListener("click", function(event) {
             if (dropdownMenu.style.display === "none") {
-
                 dropdownMenu.style.display = "block"
                 dropdownIcon.style.transform = "rotate(50deg)"
                 dropdownMenu.classList.add('animate-showDropdownMenu');

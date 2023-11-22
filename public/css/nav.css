@@ -16,7 +16,7 @@
 }
 
 #mainNav .navbar-brand {
-    color: gray;
+    color: black;
     text-align: center;
     font-family: Oswald;
     font-size: 48px;
@@ -39,7 +39,7 @@
 #mainNav .navbar-nav .nav-item .nav-link {
     font-family: "Amaranth", sans-serif;
     font-size: 0.95rem;
-    color: gray;
+    color: black;
     letter-spacing: 0.0625em;
 }
 
@@ -124,61 +124,61 @@
 /* style dropdown */
 
 .dropdown {
-  display: flex;
-  justify-content: start;
+    display: flex;
+    justify-content: start;
 }
 
 .button-sidebar {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .button-sidebar button {
-  background-color: transparent;
-  color: gray;
-  border: none;
-  font-family: "Amaranth", sans-serif;
-  font-size: 20px;
-  letter-spacing: 0.0625em;
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-family: "Amaranth", sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.0625em;
 }
 
 .button-sidebar button i {
-  position: relative;
-  right: 5px;
-  top: 2px;
+    position: relative;
+    right: 5px;
+    top: 2px;
 }
 
 .dropdown-sidebar {
-  position: absolute;
-  top: 29px;
-  right: 5px;
-  display: none;
-  margin-top: 2px;
-  background-color: white;
-  text-align: center;
-  width: 180px;
-  border-radius: 10px;
-  border: 1px solid black;
+    position: absolute;
+    top: 29px;
+    right: 5px;
+    display: none;
+    margin-top: 2px;
+    background-color: white;
+    text-align: center;
+    width: 180px;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .dropdowm-sidebar ul {
-  width: 0;
+    width: 0;
 }
 
 ul {
-  padding-left: 0;
-  margin-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
 .dropdown-content li a {
-  color: black;
-  text-decoration: none;
-  font-family: "Amaranth", sans-serif;
-  font-size: 15px;
-  animation:Menu 1s;
+    color: black;
+    text-decoration: none;
+    font-family: "Amaranth", sans-serif;
+    font-size: 15px;
+    animation: Menu 1s;
 }
 
-.button-login{
+.button-login {
     text-decoration: none;
     font-family: "Amaranth", sans-serif;
     font-size: 0.95rem;
@@ -186,27 +186,27 @@ ul {
     letter-spacing: 0.0625em;
 }
 
-.button-login:hover{
+.button-login:hover {
     color: #ffc800;
 }
 
-.dropdown-content  li a.nav-dropdown:hover {
+.dropdown-content li a.nav-dropdown:hover {
     opacity: 60%;
     cursor: progress;
 }
 
-.dropdown-content li{
+.dropdown-content li {
     padding: 8px;
 }
 
-.dropdown-content li:hover{
+.dropdown-content li:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235);
     border-radius: 10px;
 }
 
 .dropdown-sidebar ul li {
-  list-style: none;
+    list-style: none;
 }
 
 .keranjangs {
@@ -237,26 +237,26 @@ ul {
   }
 =======
 }
-  
+
 .ntif {
-position: relative;
-right: 10px;
-width: 23px;
-height: 23px;
-background-color: gray;
-border-radius: 50%;
-text-align: center;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 5px;
+    position: relative;
+    right: 10px;
+    width: 23px;
+    height: 23px;
+    background-color: black;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .ntif p {
-color: white;
-font-size: 15px;
-display: flex;
-align-items: center;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
 }
 >>>>>>> b84b2859c7d13468f3f022d5c20b67039327270a
 
@@ -264,7 +264,8 @@ align-items: center;
     body {
         max-width: 100%;
     }
-    #mainNav{
+
+    #mainNav {
         background-color: transparent;
     }
 
@@ -306,6 +307,10 @@ align-items: center;
         gap: 10px;
     }
 
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: #fff;
+    }
+
     nav ul.slide {
         opacity: 1;
         transform: translateX(0);
@@ -327,24 +332,29 @@ align-items: center;
     }
 
     .ntif {
+        background-color: #fff;
         top: 15px;
         right: 25px;
     }
 
+    .ntif p {
+        color: #000;
+    }
+
     .dropdown {
-       width: 150px;
-       padding: 10px;
+        width: 150px;
+        padding: 10px;
     }
 
     .button-sidebar button {
-        color: gray;
+        color: #fff;
     }
 
     .dropdown-content li a {
         color: black;
     }
 
-    .button-sidebar button i{
+    .button-sidebar button i {
         top: 1px;
         right: 5px;
     }
@@ -414,6 +424,10 @@ align-items: center;
         height: 500px;
     }
 
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: #fff;
+    }
+
     .nav-content {
         display: grid;
         flex-direction: column;
@@ -425,7 +439,7 @@ align-items: center;
     }
 
     .button-sidebar button {
-        color: gray;
+        color: #fff;
     }
 
     .dropdown {
@@ -438,9 +452,14 @@ align-items: center;
         line-height: 38px;
     }
 
-    .ntif{
-       right: 25px;
-       top: 12px;
+    .ntif {
+        background-color: #fff;
+        right: 25px;
+        top: 12px;
+    }
+
+    .ntif p{
+        color: #000;
     }
 }
 
@@ -483,6 +502,10 @@ align-items: center;
         background-color: gray;
         transform: rotate(-45deg) translate(-1px, 0);
     }
+    
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: #fff;
+    }
 
     .nav-content {
         flex-direction: column;
@@ -503,7 +526,7 @@ align-items: center;
     }
 
     .button-sidebar button {
-        color: gray;
+        color: #fff;
     }
 
     .button-sidebar button i {
@@ -516,9 +539,14 @@ align-items: center;
         line-height: 30px;
     }
 
-    .ntif{
+    .ntif {
+        background-color: #fff;
         right: 25px;
         top: 15px;
+    }
+
+    .ntif p{
+        color: #000;
     }
 }
 

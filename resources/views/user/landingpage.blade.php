@@ -12,7 +12,7 @@
         <svg class="left-hijau" width="217" height="210" viewBox="0 0 217 210" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="77.5" cy="70.5" r="139.5" fill="#96C291"/>
         </svg>
-        <svg class="right-kuning" xmlns="http://www.w3.org/2000/svg" width="435" height="556" viewBox="0 0 435 556" fill="none">
+        <svg class="right-kuning animate__animated animate__rotateInDownRight" xmlns="http://www.w3.org/2000/svg" width="435" height="556" viewBox="0 0 435 556" fill="none">
             <path d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z" fill="#D2DE32"/>
         </svg>
     </div>
@@ -21,11 +21,18 @@
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    <h3 class="welcome animate__animated animate__fadeInLeft animate__delay-1s">Welcome to Kantin Sekolah</h3>
+                    {{-- <h3 class="welcome animate__animated animate__fadeInLeft animate__delay-1s">Welcome to Kantin Sekolah</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt=""></div>
+                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt=""></div> --}}
+
+                    <h3 class="welcome">Kacong Beringas yang mampu mengalah GOLIAT sekaligus    </h3>
+                </div>
+                <div class="col">
+                    <div class="makanan">
+                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -91,63 +98,29 @@
                         <h2>Makanan</h2>
                     </div>
                     <div class="hero-content">
+                        @foreach ($minuman as $item)
                         <div class="menu-page">
                             <div class="card-container">
                                 <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
+                                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                                 </div>
                                 <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
+                                    <p>{{$item->nama}}</p>
+                                    <p>{{$item->harga}}</p>
                                 </div>
                                 <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
-                                </div>
-                            </div>
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="template/landingPage/assets/img/geprek.jpeg" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>Geprek Tiren Halal</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="">Pesan</a>
+                                    <a href="/menu">Pesan</a>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
 
                 </div>
             </div>
         </div>
 
-        <div class="container Menu-Page mb-5">
+        {{-- <div class="container Menu-Page mb-5">
             @foreach ($minuman as $item)
             <div class="box">
                 <div class="image">
@@ -159,7 +132,7 @@
             </div>
             @endforeach
             </div>
-        </div>
+        </div> --}}
     </section>
 
     <section class="about" id="about">
@@ -208,8 +181,6 @@
             </svg>
         </div>
 
-    </section>
-
     <footer class="footer">
         <div class=" footer-container">
             <div class="copyright">
@@ -224,10 +195,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
     <script src="script.js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">

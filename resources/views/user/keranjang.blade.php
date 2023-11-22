@@ -177,8 +177,7 @@
         });
     });
 
-
-function kirimData(bi) {
+    function kirimData(bi) {
         const id = bi.getAttribute('data-id')
         $.ajax({
             url: `/invoice/${id}`,
@@ -188,7 +187,6 @@ function kirimData(bi) {
                 "_token": "{{ csrf_token() }}",
             },
             statusCode: {
-
                     500: function(response) {
                         console.log(response)
                     }
@@ -225,6 +223,7 @@ function kirimData(bi) {
 <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>
 @livewireScripts
 @endsection
+
 @push('style')
    <link rel="stylesheet" href="Keranjang/css/style.css">
 @endpush

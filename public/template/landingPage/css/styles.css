@@ -636,6 +636,8 @@ h1 {
         order: 1;
     }
 
+
+
     /* footer */
     .sosmed {
         display: flex;
@@ -672,6 +674,12 @@ h1 {
         width: 250px;
         top: 800px;
         left: 0;
+    }
+
+    .right-kuning{
+       width: 300px;
+       height: 400px;
+       top: -10px;
     }
 }
 

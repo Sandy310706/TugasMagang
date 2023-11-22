@@ -14,7 +14,6 @@ class DataDummy extends Seeder
     public function run(): void
     {
 
-
         // DB::table('users')->insert([
         //     'nama' => 'robin',
         //     'email' => 'robin@email.com',
@@ -34,7 +33,6 @@ class DataDummy extends Seeder
         DB::table('kantin')->insert([
             'namaKantin' => 'Kantin Murah',
         ]);
-
 
 
     }
