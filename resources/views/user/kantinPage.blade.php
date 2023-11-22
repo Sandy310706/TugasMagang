@@ -95,7 +95,7 @@
     </svg>
 </div>
 
-<div class="container-fluid container-gradient">
+<div class="container-gradient">
     <div class="hero-content">
         <div class="child-hero">
             <div class="gradient">
@@ -125,18 +125,18 @@
         </div>
     </div>
 </div>
-<div class="pembungkus-alert">
-    <div class="alert-content">
-        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
-    </div>
-</div>
+
 <div class="menu-page">
     <div class="pembungkus-alert">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
     </div>
     <h1 class="menu">MENU</h1>
 </div>
-
+<div class="pembungkus-alert">
+    <div class="alert-content">
+        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+    </div>
+</div>
 <div class="cards">
     <div class="content-hero">
         <div class="content-child">
@@ -268,7 +268,7 @@
             var navbar = document.getElementById("mainNav");
 
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.style.backgroundColor = "#000000";
+                navbar.style.backgroundColor = "#96C291";
                 navbar.style.padding = "10px";
             } else {
                 navbar.style.backgroundColor = "transparent";

@@ -211,6 +211,10 @@ h1.text-center {
     background-color: #140e0e;
 }
 
+.remove button{
+        background-color: transprent
+}
+
 .remove i {
     color: #000000;
 }
