@@ -111,9 +111,9 @@
                     <div class="content-descript">
                         <div class="text-content2">
                             <div class="text-1">
-                                <p class="Name-kasir"><i class="bi bi-person-circle">{{$admin->nama}}</i></p>
+                                <p class="Name-kasir"><i class="bi bi-person-circle"></i></p>
                                 <p class="number"><i class="bi bi-telephone-fill"></i>Nomor Telpon</p>
-                                <p class="email"><i class="bi bi-envelope-at-fill">{{$admin->email}}</i></p>
+                                <p class="email"><i class="bi bi-envelope-at-fill"> </i></p>
                             </div>
                             <div class="text-2">
                                 <p class="produk"><i class="bi bi-collection"></i>produk:  <span class="nilai">100</span></p>

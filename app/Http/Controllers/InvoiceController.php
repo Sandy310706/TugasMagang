@@ -54,12 +54,12 @@ class InvoiceController extends Controller
         $invoice = new Invoice;
         $invoice->user_id = auth()->user()->id;
         $invoice->keranjang_id = $keranjang->id;
-        $invoice->kantin_id = $keranjang->kantin_id;
+        $invoice->kantin_id = $keranjangId->kantin_id;
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
 
-        keranjang::truncate();
+        // keranjang::truncate();
 
         return redirect('carts')->response()->json($invoice);
         // return response()->json($invoice);
