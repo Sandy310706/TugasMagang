@@ -105,4 +105,7 @@ Route::middleware('auth')->group(function() {
 });
 
 
-
+Route::get('/logakun/{nama}', function($nama){
+    $angka = 1;
+    return view('user.logakun', compact('angka'));
+});
