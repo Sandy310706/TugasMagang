@@ -133,7 +133,6 @@
                 console.log(e.target.getAttribute('call-modal'));
                 $('#' + e.target.getAttribute('call-modal')).modal("show");
             });
-
         });
 
         window.addEventListener("click", function(event) {
