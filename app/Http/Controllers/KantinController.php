@@ -102,6 +102,8 @@ class KantinController extends Controller
     }
     public function detailKantin($namaKantin)
     {
-        return view('superadmin.detailkantin', compact('namaKantin'));
+        $kantinMenu = Kantin::where('namaKantin', $namaKantin)->first();
+        $menu = Menu::where('id_kantin', $kantinMenu['id'])->get();
+        return view('superadmin.detailkantin', compact('menu'));
     }
 }

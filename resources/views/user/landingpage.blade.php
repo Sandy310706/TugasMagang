@@ -43,24 +43,23 @@
                         <h2>Makanan</h2>
                     </div>
                     <div class="hero-content">
+                        @foreach ($makanan as $item)
                         <div class="menu-page">
-                            @foreach ($makanan as $item)
-                                <div class="card-container">
-                                    <div class="card-image">
-                                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
-                                    </div>
-                                    <div class="card-content">
-                                        <p>{{$item->nama}}</p>
-                                        <p>{{$item->harga}}</p>
-                                    </div>
-                                    <div class="card-click">
-                                        <a href="/menu"button class="btn btn-primary">Pesan</a>
-                                    </div>
+                            <div class="card-container">
+                                <div class="card-image">
+                                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
                                 </div>
-                            @endforeach
+                                <div class="card-content">
+                                    <p>{{$item->nama}}</p>
+                                    <p>{{$item->harga}}</p>
+                                </div>
+                                <div class="card-click">
+                                    <a href="/menu"button class="btn btn-primary">Pesan</a>
+                                </div>
+                            </div>
                         </div>
+                        @endforeach
                     </div>
-
                 </div>
             </div>
             {{-- <div class="container Menu-Page mb-5">
@@ -81,7 +80,6 @@
                 </div>
             </div> --}}
         </div>
-
         <div class="container-card">
             <div class="content-hero">
                 <div class="menu-content">
@@ -106,7 +104,6 @@
                         </div>
                         @endforeach
                     </div>
-
                 </div>
             </div>
         </div>

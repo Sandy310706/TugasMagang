@@ -18,10 +18,7 @@ class InvoiceController extends Controller
     public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $detail = Invoice::where('user_id', auth()->user()->id)
-                        ->latest()
-                        ->get();
-        $invoice = Invoice::where('id',$id)->first();
+        $detail = Invoice::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id',$id)->first();
         $userNav = auth()->user();
         $angka = count($invoices);
@@ -56,14 +53,11 @@ class InvoiceController extends Controller
         $invoice->status = 0;
         $invoice->save();
 
-        foreach ($keranjang as $keranjangItem) {
-            $keranjangItem->invoice_id = $invoice->id;
-            $keranjang->save();
-        }
-
+    
         // keranjang::truncate();
 
-        return redirect('carts')->response()->json($invoice);
+
+        return response()->json($invoice);
         // return response()->json($invoice);
     }
 
