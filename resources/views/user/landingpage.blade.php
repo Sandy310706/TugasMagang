@@ -27,7 +27,7 @@
                     <div class="makanan">
                         <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt=""></div> --}}
 
-                    <h3 class="welcome">Kacong Beringas yang mampu mengalah GOLIAT sekaligus    </h3>
+                    <h3 class="welcome">Kantin School Indonesian</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">

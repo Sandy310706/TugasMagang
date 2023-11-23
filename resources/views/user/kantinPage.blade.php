@@ -95,7 +95,7 @@
     </svg>
 </div>
 
-<div class="container-fluid container-gradient">
+<div class="container-gradient">
     <div class="hero-content">
         <div class="child-hero">
             <div class="gradient">
@@ -105,15 +105,15 @@
                             <img src="{{ asset('template/landingPage/assets/img/kantin 1.png') }}" alt="">
                         </div>
                         <div class="text-content">
-                            <p class="name">Nama Kantin</p>
+                            <p class="name">{{$namaKantin->namaKantin}}</p>
                         </div>
                     </div>
                     <div class="content-descript">
                         <div class="text-content2">
                             <div class="text-1">
-                                <p class="Name-kasir"><i class="bi bi-person-circle"></i>Nama Kasir</p>
+                                <p class="Name-kasir"><i class="bi bi-person-circle"></i></p>
                                 <p class="number"><i class="bi bi-telephone-fill"></i>Nomor Telpon</p>
-                                <p class="email"><i class="bi bi-envelope-at-fill"></i>email</p>
+                                <p class="email"><i class="bi bi-envelope-at-fill"> </i></p>
                             </div>
                             <div class="text-2">
                                 <p class="produk"><i class="bi bi-collection"></i>produk:  <span class="nilai">100</span></p>
@@ -125,11 +125,7 @@
         </div>
     </div>
 </div>
-<div class="pembungkus-alert">
-    <div class="alert-content">
-        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
-    </div>
-</div>
+
 <div class="menu-page">
     <div class="pembungkus-alert">
         <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>

@@ -39,7 +39,7 @@
                         @endguest
 
                     </div>
-                    <div class="dropdown-sidebar  animate__animated animate__fadeInDown" id="dropdownMenu">
+                    <div class="dropdown-sidebar" id="dropdownMenu">
                         <div class="dropdown-content  animate__delay-2s">
                             @guest
                             <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
