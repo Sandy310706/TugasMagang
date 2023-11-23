@@ -50,7 +50,7 @@
                             @else
                             <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
                             <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori Pesanan</li>
-                            <li class="content-dropdown"><a class="nav-dropdown" href="">Log Akun</li>
+                            <li class="content-dropdown"><a class="nav-dropdown" href="/logakun/{{ auth()->user()->nama }}">Log Akun</li>
                             <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
                             href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
                             @endguest

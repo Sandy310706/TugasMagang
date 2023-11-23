@@ -18,6 +18,7 @@ use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\kelolaPesanController;
+use App\Http\Controllers\LogPasswordController;
 
 // Errors
 Route::fallback(function () {
@@ -27,7 +28,7 @@ Route::get('/test', function(){
     dd(Invoice::with(['keranjang', 'user'])->get());
 });
 Route::get('/cekLogin', function(){
-    dd(Auth::check());
+    dd(Auth::user());
 });
 
 // Landing Page
@@ -93,16 +94,11 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback/{namaKantin}',[FeedbackController::class, 'store'])->name('Feedback.Store');
 
+    Route::get('/logakun/{nama}', [LogPasswordController::class, 'index'])->name('LogAkun');
     Route::post('/menu', [MenuController::class, 'store']);
     Route::delete('/menu/delete/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
 
     Route::delete('/histori', [HistoriController::class, 'index']);
     Route::get('/kantin/{namaKantin}', [KantinController::class, 'show'])->name('Kantin.view');
-});
-
-
-Route::get('/logakun/{nama}', function($nama){
-    $angka = 1;
-    return view('user.logakun', compact('angka'));
 });
