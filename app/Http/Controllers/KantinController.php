@@ -9,7 +9,6 @@ use App\Models\Feedback;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,7 +27,7 @@ class KantinController extends Controller
             $kantin = Kantin::all();
             return DataTables::of($kantin)->addIndexColumn()
             ->addColumn('action', function($row){
-                return view('layouts.superadmin.button', compact('row'));
+                return view('layouts.superadmin.buttonKantin', compact('row'));
             })->rawColumns(['action'])->make(true);
         }
     }
@@ -86,8 +85,11 @@ class KantinController extends Controller
         $admin = User::where('role','admin')->first();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
-        $menu = Menu::where('id', $namaKantin['id'])->get();
-        $userNav = auth()->user();
+        $menu = Menu::where('id_kantin', $namaKantin['id'])->get();
+        $userNav = User::where('role','guest')
+                        ->orWhere('role','superadmin')
+                        ->orWhere('role', 'admin')
+                        ->first();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
         return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin'));
@@ -97,5 +99,11 @@ class KantinController extends Controller
         $hapus = Kantin::find($id);
         $hapus->delete();
         return response()->json(['success' => 'Kantin berhasil diHapus']);
+    }
+    public function detailKantin($namaKantin)
+    {
+        $kantinMenu = Kantin::where('namaKantin', $namaKantin)->first();
+        $menu = Menu::where('id_kantin', $kantinMenu['id'])->get();
+        return view('superadmin.detailkantin', compact('menu'));
     }
 }

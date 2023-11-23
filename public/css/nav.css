@@ -121,11 +121,16 @@
 }
 
 
-/* style dropdown */s
+/* style dropdown */
 
-.button-sidebar {
+
+.dropdown{
     display: flex;
     align-items: center;
+}
+
+.button-sidebar {
+    padding-bottom: 3px;
 }
 
 .button-sidebar button {

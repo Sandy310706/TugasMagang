@@ -17,9 +17,11 @@ class FeedbackController extends Controller
      */
     public function index()
     {
+        $jumlahFeedback = Feedback::where('kantin_id', auth()->user()->id_kantin)->get();
+        $cekFeedback = $jumlahFeedback->count();
         $feedback = Feedback::latest()->paginate('10');
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-        return view('admin.feedback', compact('feedback',));
+        return view('admin.feedback', compact('feedback', 'cekFeedback'));
     }
 
     public function store(Request $request, $namaKantin)
