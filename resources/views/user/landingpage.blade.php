@@ -14,14 +14,14 @@
         </svg>
         <svg class="right-kuning animate__animated animate__rotateInDownRight" xmlns="http://www.w3.org/2000/svg" width="435" height="556" viewBox="0 0 435 556" fill="none">
             <path d="M654.798 322.738C660.288 463.012 452.474 612.38 238.82 533.823C97.2086 492.915 301.871 233.011 76.4293 143.627C-42.1483 66.7111 -11.2438 -35.6737 93.7324 -88.7948C182.954 -155.876 696.609 64.4405 654.798 322.738Z" fill="#D2DE32"/>
-        </svg>   
+        </svg>
     </div>
 
     <div class="masthead">
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    <h3 class="welcome">Kacong Beringas yang mampu mengalah GOLIAT sekaligus    </h3>
+                    <h3 class="welcome">Welcome To Kantin SMKN7 Pontianak</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
@@ -60,9 +60,11 @@
                             @endforeach
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
+
+
         </div>
 
         <div class="container-card">
@@ -73,27 +75,27 @@
                     </div>
                     <div class="hero-content">
                         @foreach ($minuman as $item)
-                        <div class="menu-page">
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                            <div class="menu-page">
+                                <div class="card-container">
+                                    <div class="card-image">
+                                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{$item->nama}}</p>
+                                        <p>{{$item->harga}}</p>
+                                    </div>
+                                    <div class="card-click">
+                                        <a href="/menu">Pesan</a>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <p>{{$item->nama}}</p>
-                                    <p>{{$item->harga}}</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="/menu">Pesan</a>
-                                </div>
-                            </div>
-                        </div>
+                            </div>  
                         @endforeach
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-        
+
         {{-- <div class="container Menu-Page mb-5">
             @foreach ($minuman as $item)
             <div class="box">

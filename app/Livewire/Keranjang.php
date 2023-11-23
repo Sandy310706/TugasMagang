@@ -20,10 +20,7 @@ class Keranjang extends Component
         $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
         $user = User::where('id', auth()->user()->id)->first();
-        $userNav = User::where('role','guest')
-                    ->orWhere('role','superadmin')
-                    ->orWhere('role', 'admin')
-                    ->first();
+        $userNav = auth()->user();
         $menu = Menu::where('id',$id)->first();
         $angka = count($keranjangs);
         $totalHarga = [];

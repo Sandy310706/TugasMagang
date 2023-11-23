@@ -4,7 +4,7 @@
 
 @section('histori')
 
-    <div class="svg-container">
+    {{-- <div class="svg-container">
         <svg class="kuning-1" width="316" height="333" viewBox="0 0 316 333" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <circle cx="66.5" cy="83.5" r="249.5" fill="#D2DE32" />
@@ -22,7 +22,7 @@
             <circle cx="249.5" cy="249.5" r="249.5" fill="#D2DE32" />
         </svg>
 
-    </div>
+    </div> --}}
     <div class="container-fluid">
         <h1 class="text-center Histori">Histori Pemesanan</h1>
         @foreach ($detail as $invoice)
@@ -31,7 +31,7 @@
                     <div class="content">
                         <p>No Pesanan</p>
                         <div class="Detail">
-                            <button tytpe="button" class="btn" id="openModalx"
+                            <button tytpe="button" class="btns" id="openModalx"
                                 call-modal="detailModal{{ $invoice->id }}">Detail Pesanan</button>
                         </div>
                     </div>
@@ -46,15 +46,46 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
                     </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                    <h1 class="text-detail">Detail Pesanan</h1>
+                    <div class="hero-container">
+                        <div class="content-item">
+                            <div class="content-hero">
+                                <div class="kode hero-item">
+                                    <p>{{ $invoice->keranjang_id }}</p>
+                                </div>
+                                <div class="name hero-item">
+                                    <p>{{ $invoice->token }}</p>
+                                </div>
+                                <div class="tanggal hero-item">
+                                    <p>{{ $invoice->created_at }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-child">
+                            <div class="child-content">
+                                <div class="food hero-child">
+                                    <p>{{ $invoice->keranjang->menu->nama }}</p>
+                                </div>
+                                <div class="stok hero-child">
+                                    <p>{{ $invoice->keranjang->jumlah }}</p>
+                                </div>
+                                <div class="total hero-child">
+                                    <p>{{ $invoice->keranjang->subtotal }}</p>
+                                </div>
+                                <div class="subtotal hero-child">
+                                    <p>{{$invoice->keranjang->total_harga}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-total">
+                            <div class="child-total">
+                                <div class="total hero-total">
+                                    <p>{{ $arraySum }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +100,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
     <script src="main.js"></script>
-    <script src="script.js/script.js"></script>
+
     {{-- <script src="script.js/modal.js"></script> --}}
     <script>
         $(document).ready(function() {
@@ -135,15 +166,6 @@
             });
         });
 
-        window.addEventListener("click", function(event) {
-            if (dropdownMenu.style.display === "none") {
-                dropdownMenu.style.display = "block"
-                dropdownIcon.style.transform = "rotate(50deg)"
-                dropdownMenu.classList.add('animate-showDropdownMenu');
-            } else {
-                dropdownMenu.style.display = "none";
-            }
-        });
     </script>
 @endsection
 @push('style')
