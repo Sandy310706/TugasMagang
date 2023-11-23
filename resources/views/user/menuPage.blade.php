@@ -9,7 +9,6 @@
         <svg class="svg-hijau" xmlns="http://www.w3.org/2000/svg" width="377" height="512" viewBox="0 0 377 512" fill="none">
             <path d="M373.798 278.738C379.288 419.012 171.474 568.38 -42.1802 489.823C-183.791 448.915 20.8707 189.011 -204.571 99.6273C-323.148 22.7111 -292.244 -79.6737 -187.268 -132.795C-98.0457 -199.876 415.609 20.4405 373.798 278.738Z" fill="#D2DE32"/>
         </svg>
-
     </div>
     @if($kantin == null)
     <div class="content-null">
@@ -81,8 +80,8 @@
                         <img src="template/landingPage/assets/img/bipang.jpg" alt="">
                     </div>
                     <div class="text-content">
-                        <p>{{$item->nama}}</p>
-                        <p>Rp.{{$item->harga}}</p>
+                        <p>Geprek Ayam Tiren</p>
+                        <p>Rp.10.000</p>
                     </div>
                     <div class="clicks">
                         <button class="btn-submit">Pesan</button>

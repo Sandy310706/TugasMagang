@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function phei()
     {
         return view('auth.loginAlternatif');
