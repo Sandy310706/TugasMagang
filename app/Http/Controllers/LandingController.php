@@ -24,10 +24,8 @@ class LandingController extends Controller
             }
         }
 
-        $userNav = User::where('role','guest')
-                    ->orWhere('role','superadmin')
-                    ->orWhere('role', 'admin')
-                    ->first();
+        $userNav = auth()->user();
+
         $makanan = Menu::where('kategori','makanan')
                         ->take(4)
                         ->get();
