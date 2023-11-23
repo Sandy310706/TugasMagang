@@ -17,7 +17,7 @@ class MenuController extends Controller
 {
     public function index(Request $id)
     {
-
+        
         $data = Menu::all();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $user = User::where('id', auth()->user()->id)->first();

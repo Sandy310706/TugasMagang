@@ -63,6 +63,7 @@
 
                 </div>
             </div>
+<<<<<<< HEAD
 
 
             {{-- <div class="container Menu-Page mb-5">
@@ -82,13 +83,15 @@
                 @endforeach
                 </div>
             </div> --}}
+=======
+>>>>>>> 5d77f4786932192d76b52ea4c44ab7901a7d2d6b
         </div>
 
         <div class="container-card">
             <div class="content-hero">
                 <div class="menu-content">
                     <div class="makanan-content">
-                        <h2>Makanan</h2>
+                        <h2>Minuman</h2>
                     </div>
                     <div class="hero-content">
                         @foreach ($minuman as $item)
