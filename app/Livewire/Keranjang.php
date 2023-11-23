@@ -77,6 +77,7 @@ class Keranjang extends Component
         $Request->session()->forget('keranjangs');
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
+        // keranjang::truncate();
 
 
         return response()->json($keranjang);
@@ -107,4 +108,6 @@ class Keranjang extends Component
 
         return redirect('carts');
     }
+
+
 }

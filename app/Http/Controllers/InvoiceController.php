@@ -19,6 +19,8 @@ class InvoiceController extends Controller
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
+
+
         $keranjang = Keranjangs::where('id',$id)->first();
         $userNav = User::where('role','guest')
                     ->orWhere('role','superadmin')
@@ -31,6 +33,7 @@ class InvoiceController extends Controller
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
         }
         $arraySum = array_sum($totalHarga);
+
 
         return view('user.histori', compact('invoices', 'detail','arraySum','angka','userNav'));
 
@@ -54,6 +57,7 @@ class InvoiceController extends Controller
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
+        // keranjang::truncate();
 
 
         return response()->json($invoice);

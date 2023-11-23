@@ -1,5 +1,5 @@
 @extends('layouts.user.app')
-@section('title', 'Histori')
+@section('title', 'His  tori')
 @section('histori')
 
 <div class="svg-container">
@@ -18,66 +18,49 @@
 
 </div>
     <h1 class="text-center Histori">Histori Pemesanan</h1>
+    @foreach ($detail as $invoice)
         <div class="container container-histori" style="margin-bottom: 20px;">
             <div class="card">
                 <div class="content">
-                    @foreach($detail as $invoice)
                     <p>No Pesanan</p>
                     <div class="Detail">
                         <button class="btn"  id="openModal" onclick="phei(this)">BukaModal</button>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-
-    @foreach ($detail as $invoice)
-        <div id="detailModal{{ $invoice->id }}" class="modal modal{{ $invoice->id }}">
-            <div class="modal-content">
-                <span class="close" data-id="{{ $invoice->id }}" id="close">x</span>
-                <div class="hero-container">
-                    <h1 class="text-detail">Detail Pesanan</h1>
-                    <div class="content-item">
-                        <div class="content-hero">
-                            <div class="kode hero-item">
-                                <p>{{ $invoice->keranjang_id }}</p>
-                            </div>
-                            <div class="name hero-item">
-                                <p>{{ $invoice->token }}</p>
-                            </div>
-                            <div class="tanggal hero-item">
-                                <p>{{ $invoice->created_at }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-child">
-                        <div class="child-content">
-                            <div class="food hero-child">
-                                <p>{{ $invoice->keranjang->menu->nama }}</p>
-                            </div>
-                            <div class="stok hero-child">
-                                <p>{{ $invoice->keranjang->jumlah }}</p>
-                            </div>
-                            <div class="total hero-child">
-                                <p>{{ $invoice->keranjang->subtotal }}</p>
-                            </div>
-                            <div class="subtotal hero-child">
-                                <p>{{$invoice->keranjang->total_harga}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-total">
-                        <div class="child-total">
-                            <div class="total hero-total">
-                                <p>{{ $arraySum }}</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     @endforeach
 
+    @foreach ($detail as $invoice)
+        <div class="modal" tabindex="1000" id="detailModal{{ $invoice->id }}">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+
+
+@endsection
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+    <script src="script.js/script.js"></script>
+    {{-- <script src="script.js/modal.js"></script> --}}
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
@@ -85,18 +68,22 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $('.btn').click(function() {
-                console.log('Hello World');
-                const id = $(this).data('id');
-                const detailmodal = document.querySelector("#detailModal" + id);
-                detailmodal.style.display = 'block';
-            });
+            // $('.btn').click(function() {
+            //     console.log('Hello World');
+            //     const id = $(this).data('id');
+            //     const detailmodal = document.querySelector("#detailModal" + id);
+            //     detailmodal.style.display = 'block';
+            // });
 
-            $('.close').click(function() {
-                let id = $(this).data('id')
-                const detailmodal = document.querySelector("#detailModal" + id);
-                detailmodal.style.display = 'none';
-                console.log('Apaa');
+            // $('.close').click(function() {
+            //     let id = $(this).data('id')
+            //     const detailmodal = document.querySelector("#detailModal" + id);
+            //     detailmodal.style.display = 'none';
+            //     console.log('Apaa');
+            // });
+            $('.modal').on('shown.bs.modal', function(){
+                console.log('hello');
+                $('.modal-backdrop').css('z-index','-99');
             });
         });
 
@@ -132,17 +119,11 @@
             detailModal.style.display = 'block';
         }
 
-        // Ambil elemen modal dan tombol yang akan membukanya
+
         var modal = document.getElementsByClassName("modal");
         var openModalButton = document.getElementById("openModal");
         var closeButton = document.querySelector(".close");
-
-        // Tampilkan modal saat tombol dibuka
-        // openModalButton.addEventListener("click", function() {
-        //     modal.style.display = "block";
-        // });
-
-        // Sembunyikan modal saat tombol close diklik atau latar belakang modal diklik
+        
         open.addEventListener("click", function () {
 
             modal.style.display = "block";
@@ -152,7 +133,7 @@
             modal.style.display = "none";
         });
 
-        // Sembunyikan modal saat latar belakang modal diklik
+
         window.addEventListener("click", function(event) {
             if (dropdownMenu.style.display === "none") {
                 dropdownMenu.style.display = "block"
@@ -163,15 +144,7 @@
             }
         });
     </script>
-    <script src="main.js"></script>
-    <script src="script.js/script.js"></script>
-    <script src="script.js/modal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
 @endsection
 @push('style')
-<link rel="stylesheet" href="css/histori.css">
+    <link rel="stylesheet" href="css/histori.css">
 @endpush
-
-

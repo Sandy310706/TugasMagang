@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
     @stack('style')
     <title>@yield('title')</title>
 </head>
@@ -20,13 +21,16 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top  animate__animated animate__fadeInDown " id="mainNav">
         @include('layouts.user.nav')
     </nav>
-    
+
     @yield('landingpage')
     @yield('menupage')
     @yield('keranjang')
     @yield('histori')
     @yield('kantinPage')
     @yield('kantin')
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @yield('js')
 
 </body>
 </html>

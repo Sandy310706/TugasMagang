@@ -48,7 +48,7 @@
     <div class="card-pembungkus">
         <div class="content">
             <div class="content-checkbox">
-                <input type="checkbox" class="checkbox">
+                <input type="checkbox" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
             </div>
             <div class="content-table foto">
                 <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="content-table total">
-                <span data-id="{{ $keranjang->id }}" class="total">Rp. {{ $keranjang->total_harga }}</span>
+                <span data-id="{{ $keranjang->id }}"  class="total">Rp. {{ $keranjang->total_harga }}</span>
             </div>
             <div class="content-table remove">
                 <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
@@ -87,14 +87,11 @@
     </div>
     @endif
 
-
-
-</div>
 <div class="container totals mt-3">
     <div class="checkout">
-        <div class="subtotal">
-            <p>SubTotal:</p>
-            <p id="total" class="ml-2">{{ $arraySum }}</p>
+        <div class="subtotal mr-3">
+            <p>Total Harga :   Rp.</p>
+            <p id="total" class="ml-2"></p>
         </div>
         <div class="cekout">
             <div class="btnns">
@@ -205,9 +202,34 @@
         });
     };
 
+    document.addEventListener('DOMContentLoaded', function () {
+    // Ambil elemen-elemen checkbox
+    var checkboxes = document.querySelectorAll('.checkbox');
+    var totalHargaElem = document.getElementById('total');
+
+    checkboxes.forEach(function (checkbox) {
+    console.log(checkbox.getAttribute('data-harga'));
+      checkbox.addEventListener('change', function () {
+        // Hitung total harga saat checkbox berubah
+        var totalHarga = 0;
+        checkboxes.forEach(function (ini) {
+          if (ini.checked) {
+            var harga = parseFloat(ini.getAttribute('data-harga'));
+            totalHarga +=  harga ;
+          }
+        });
+
+
+        totalHargaElem.textContent  = new Intl.NumberFormat().format(totalHarga);
+      });
+    });
+  });
+
+
+
     function openDropdown() {
         const dropdownTrigger = document.getElementById('dropdownTrigger');
-        const dropdownMenu = document.getElementById('dropdownMenu');2
+        const dropdownMenu = document.getElementById('dropdownMenu');
         const dropdownIcon = document.getElementById('dropdownIcon');
 
         if (dropdownMenu.style.display === "none") {
@@ -218,6 +240,9 @@
             dropdownMenu.style.display = "none";
         }
     }
+
+
+
 </script>
 <script src="script.js/script.js"></script>
 <script src="https://kit.fontawesome.com/c0dc21dad4.js" crossorigin="anonymous"></script>

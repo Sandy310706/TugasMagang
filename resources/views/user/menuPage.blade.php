@@ -85,9 +85,16 @@
                 <button class="arrow right "><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                         viewBox="0 0 40 40" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M11.5538 4.09333C11.6693 3.97754 11.8065 3.88566 11.9576 3.82298C12.1086 3.76029 12.2706 3.72803 12.4341 3.72803C12.5977 3.72803 12.7596 3.76029 12.9107 3.82298C13.0618 3.88566 13.199 3.97754 13.3145 4.09333L28.2357 19.0146C28.3515 19.1301 28.4434 19.2673 28.5061 19.4184C28.5688 19.5694 28.601 19.7314 28.601 19.8949C28.601 20.0585 28.5688 20.2204 28.5061 20.3715C28.4434 20.5226 28.3515 20.6598 28.2357 20.7753L13.3145 35.6965C13.081 35.93 12.7643 36.0612 12.4341 36.0612C12.1039 36.0612 11.7873 35.93 11.5538 35.6965C11.3203 35.4631 11.1891 35.1464 11.1891 34.8162C11.1891 34.486 11.3203 34.1693 11.5538 33.9358L25.5972 19.8949L11.5538 5.85404C11.438 5.73854 11.3461 5.60132 11.2834 5.45026C11.2207 5.29919 11.1885 5.13724 11.1885 4.97369C11.1885 4.81013 11.2207 4.64818 11.2834 4.49712C11.3461 4.34605 11.438 4.20884 11.5538 4.09333Z"
-                            fill="black" />
-                    </svg></button>
+                        d="M11.5538 4.09333C11.6693 3.97754 11.8065 3.88566 11.9576 3.82298C12.1086 3.76029 12.2706 3.72803 12.4341 3.72803C12.5977 3.72803 12.7596 3.76029 12.9107 3.82298C13.0618 3.88566 13.199 3.97754 13.3145 4.09333L28.2357 19.0146C28.3515 19.1301 28.4434 19.2673 28.5061 19.4184C28.5688 19.5694 28.601 19.7314 28.601 19.8949C28.601 20.0585 28.5688 20.2204 28.5061 20.3715C28.4434 20.5226 28.3515 20.6598 28.2357 20.7753L13.3145 35.6965C13.081 35.93 12.7643 36.0612 12.4341 36.0612C12.1039 36.0612 11.7873 35.93 11.5538 35.6965C11.3203 35.4631 11.1891 35.1464 11.1891 34.8162C11.1891 34.486 11.3203 34.1693 11.5538 33.9358L25.5972 19.8949L11.5538 5.85404C11.438 5.73854 11.3461 5.60132 11.2834 5.45026C11.2207 5.29919 11.1885 5.13724 11.1885 4.97369C11.1885 4.81013 11.2207 4.64818 11.2834 4.49712C11.3461 4.34605 11.438 4.20884 11.5538 4.09333Z"
+                        fill="black" /></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="content-null">
+        <div class="hero-null">
+            <div class="image-null">
+                <img src="{{ asset('img/kantin-menu.png') }}" alt="">
             </div>
         </div>
     </div>
@@ -239,75 +246,12 @@
                     </div>
                 </div>
             </div>
-            <div class="cards-menu">
-                <div class="content-menu">
-                    <div class="image-menu">
-                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
-                    </div>
-                    <div class="text-content">
-                        <p>Geprek Ayam Tiren</p>
-                        <p>Rp.10.000</p>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn-submit">Pesan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cards-menu">
-                <div class="content-menu">
-                    <div class="image-menu">
-                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
-                    </div>
-                    <div class="text-content">
-                        <p>Geprek Ayam Tiren</p>
-                        <p>Rp.10.000</p>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn-submit">Pesan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cards-menu">
-                <div class="content-menu">
-                    <div class="image-menu">
-                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
-                    </div>
-                    <div class="text-content">
-                        <p>Geprek Ayam Tiren</p>
-                        <p>Rp.10.000</p>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn-submit">Pesan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cards-menu">
-                <div class="content-menu">
-                    <div class="image-menu">
-                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
-                    </div>
-                    <div class="text-content">
-                        <p>Geprek Ayam Tiren</p>
-                        <p>Rp.10.000</p>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn-submit">Pesan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cards-menu">
-                <div class="content-menu">
-                    <div class="image-menu">
-                        <img src="template/landingPage/assets/img/bipang.jpg" alt="">
-                    </div>
-                    <div class="text-content">
-                        <p>Geprek Ayam Tiren</p>
-                        <p>Rp.10.000</p>
-                    </div>
-                    <div class="clicks">
-                        <button class="btn-submit">Pesan</button>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="content-null">
+        <div class="hero-null">
+            <div class="image-null">
+                <img src="{{ asset('img/menu-kantin.png') }}" alt="">
             </div>
         </div>
     </div>
