@@ -207,7 +207,7 @@
 
     function openDropdown() {
         const dropdownTrigger = document.getElementById('dropdownTrigger');
-        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownMenu = document.getElementById('dropdownMenu');2
         const dropdownIcon = document.getElementById('dropdownIcon');
 
         if (dropdownMenu.style.display === "none") {
