@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Keranjangs;
 use App\Models\LogPassword;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreLogPasswordRequest;
 use App\Http\Requests\UpdateLogPasswordRequest;
 
@@ -11,9 +13,22 @@ class LogPasswordController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($nama)
     {
-        //
+        $angka = 0;
+
+        if(Auth::check()) {
+            $user = Auth::user();
+            $keranjang = Keranjangs::where('user_id', auth()->user()->id)->first();
+
+            if($keranjang)
+            {
+                $angka = $keranjang->count();
+            }
+        }
+        $userNav = auth()->user();
+        $data = LogPassword::where('id_user', auth()->user()->id)->get();
+        return view('user.logakun', compact('angka', 'userNav', 'data'));
     }
 
     /**
