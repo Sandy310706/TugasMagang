@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    <h3 class="welcome">Kacong Beringas yang mampu mengalah GOLIAT sekaligus    </h3>
+                    <h3 class="welcome">Welcome To Kantin SMKN7 Pontianak</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
@@ -63,8 +63,6 @@
 
                 </div>
             </div>
-
-
             {{-- <div class="container Menu-Page mb-5">
                 @foreach ($makanan as $item)
                 <div class="box">

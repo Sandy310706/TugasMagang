@@ -17,18 +17,15 @@ class MenuController extends Controller
 {
     public function index(Request $id)
     {
-        
-        $data = Menu::all();
+
+        $menu = Menu::all()->take(4);
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $user = User::where('id', auth()->user()->id)->first();
-        $userNav = User::where('role','guest')
-                    ->orWhere('role','superadmin')
-                    ->orWhere('role', 'admin')
-                    ->first();
+        $userNav = auth()->user();
         $angka = count($keranjang);
         $kantin = Kantin::all();
 
-        return view('user.menuPage', compact('data','kantin','angka','user','userNav'));
+        return view('user.menuPage', compact('menu','kantin','angka','user','userNav'));
 
     }
     public function store(Request $request, $stok)

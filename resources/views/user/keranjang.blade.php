@@ -111,9 +111,7 @@
                 </form>
             </div>
     </div>
-
-
-    <div class="container totals mt-3">
+    {{-- <div class="container totals mt-3">
         <div class="checkout">
             <div class="subtotal">
                 <p>SubTotal:</p>
@@ -122,7 +120,16 @@
             <div class="cekout">
                 <div class="btnns">
                     <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
-                </div>
+                </div> --}}
+<div class="container totals mt-3">
+    <div class="checkout">
+        <div class="subtotal mr-3">
+            <p>Total Harga :   Rp.</p>
+            <p id="total"  class="ml-2"></p>
+        </div>
+        <div class="cekout">
+            <div class="btnns">
+               <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
             </div>
         </div>
     </div>

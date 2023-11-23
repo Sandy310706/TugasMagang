@@ -23,10 +23,7 @@ class InvoiceController extends Controller
                         ->get();
         $invoice = Invoice::where('id',$id)->first();
         $keranjang = Keranjangs::where('id',$id)->first();
-        $userNav = User::where('role','guest')
-                    ->orWhere('role','superadmin')
-                    ->orWhere('role', 'admin')
-                    ->first();
+        $userNav = auth()->user();
         $angka = count($invoices);
         $totalHarga = [];
         foreach($invoices as $keranjang)
@@ -58,6 +55,11 @@ class InvoiceController extends Controller
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
+
+        foreach ($keranjang as $keranjangItem) {
+            $keranjangItem->invoice_id = $invoice->id;
+            $keranjang->save();
+        }
 
         // keranjang::truncate();
 
