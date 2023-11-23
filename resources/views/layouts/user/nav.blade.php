@@ -31,6 +31,9 @@
                 <div class="dropdown">
                     <div class="button-sidebar">
                         @guest
+                        <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">login
+                            <i class="bi bi-caret-right-fill" id="dropdownIcon"></i>
+                         </button>
                         <a class="button-dropdown button-login" onclick="openDropdown()" id="dropdownTrigger"href="/login">login</a>
                         @else
                         <button class="button-dropdown" onclick="openDropdown()" id="dropdownTrigger">{{$userNav->nama}}

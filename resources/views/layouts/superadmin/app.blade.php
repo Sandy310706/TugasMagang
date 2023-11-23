@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     {{-- jQuery DataTable --}}
     <link rel="stylesheet" href="{{ asset('css/DataTable.css') }}">
@@ -46,6 +47,7 @@
                 @yield('dashboard')
                 @yield('kelola akun')
                 @yield('kelola kantin')
+                @yield('detail kantin')
                 @yield('detail menu')
             </div>
         </div>
