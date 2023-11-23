@@ -89,9 +89,9 @@
 
 <div class="container totals mt-3">
     <div class="checkout">
-        <div class="subtotal mr-3">
+        <div class="subtotal mr-3" >
             <p>Total Harga :   Rp.</p>
-            <p id="total" class="ml-2"></p>
+            <p id="total"  class="ml-2"></p>
         </div>
         <div class="cekout">
             <div class="btnns">
