@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    <h3 class="welcome">Welcome To Kantin SMKN7 Pontianak</h3>
+                    <h3 class="welcome">welcome To Kantin SMKN7 Pontianak   </h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
@@ -29,6 +29,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -43,23 +44,24 @@
                         <h2>Makanan</h2>
                     </div>
                     <div class="hero-content">
-                        @foreach ($makanan as $item)
                         <div class="menu-page">
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                            @foreach ($makanan as $item)
+                                <div class="card-container">
+                                    <div class="card-image">
+                                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{$item->nama}}</p>
+                                        <p>{{$item->harga}}</p>
+                                    </div>
+                                    <div class="card-click">
+                                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <p>{{$item->nama}}</p>
-                                    <p>{{$item->harga}}</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="/menu"button class="btn btn-primary">Pesan</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
+
                 </div>
             </div>
         </div>
@@ -70,40 +72,27 @@
                         <h2>Minuman</h2>
                     </div>
                     <div class="hero-content">
-                        @foreach ($minuman as $item)
                         <div class="menu-page">
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                            @foreach ($minuman as $item)
+                                <div class="card-container">
+                                    <div class="card-image">
+                                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{$item->nama}}</p>
+                                        <p>{{$item->harga}}</p>
+                                    </div>
+                                    <div class="card-click">
+                                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <p>{{$item->nama}}</p>
-                                    <p>{{$item->harga}}</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="/menu">Pesan</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
+
                 </div>
             </div>
         </div>
-
-        {{-- <div class="container Menu-Page mb-5">
-            @foreach ($minuman as $item)
-            <div class="box">
-                <div class="image">
-                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
-                </div>
-                <h1>{{$item->nama}}</h1>
-                <p>{{$item->harga}}</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            @endforeach
-            </div>
-        </div> --}}
     </section>
 
     <section class="about" id="about">
@@ -151,7 +140,6 @@
                 <path d="M654.798 423.738C660.288 564.012 452.474 713.38 238.82 634.823C97.2086 593.915 301.871 334.011 76.4293 244.627C-42.1483 167.711 -11.2438 65.3263 93.7324 12.2052C182.954 -54.8757 696.609 165.441 654.798 423.738Z" fill="#D2DE32"/>
             </svg>
         </div>
-    </section>
 
     <footer class="footer">
         <div class=" footer-container">
