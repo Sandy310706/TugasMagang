@@ -64,8 +64,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan')->middleware('admin');
 
   // Super Admin
-    Route::get('superadmin/dashboard', [SuperAdminController::class, 'index'])->name('Superadmin.Dashboard')->middleware('superadmin');
-    Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun')->middleware('superadmin');
+    Route::get('/superadmin/dashboard', [SuperAdminController::class, 'index'])->name('Superadmin.Dashboard')->middleware('superadmin');
+    Route::get('/superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun')->middleware('superadmin');
     Route::get('/superadmin/getAkun',[KelolaakunController::class, 'getData'])->name('Superadmin.getAkun')->middleware('superadmin');
     Route::post('/superadmin/addUser', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah')->middleware('superadmin');
     Route::get('/user/{id}/edit', [KelolaakunController::class, 'edit'])->name('Akun.Edit')->middleware('superadmin');

@@ -8,10 +8,10 @@
                 <div class="w-[45%] h-[90%] ml-3 bg-cover bg-center rounded-xl" style="background-image: url('/img/Bg-Cover.jpg')">
                     <div class="w-full h-full flex justify-between items-center rounded-xl backdrop-blur-[1.5px] backdrop-brightness-50">
                         <div class="w-[40%] ml-2">
-                            <img src="{{ asset('img/Frederick.png') }}" alt="" class="rounded-full border-[3px] border-white h-32 w-32">
+                            <img src="{{ asset('storage/fotoKantin/'. $kantin->foto) }}" alt="" class="rounded-full border-[3px] border-white h-32 w-32">
                         </div>
                         <div class="w-[60%] mr-2">
-                            <h1 class="text-xl text-white font-outfit">Nama Kantin</h1>
+                            <h1 class="text-xl text-white font-outfit">{{ $kantin->namaKantin }}</h1>
                         </div>
                     </div>
                 </div>
@@ -36,8 +36,9 @@
                     </div>
                     <div class="w-full flex flex-col justify-center items-center font-outfit">
                         <span class="text-lg">{{ $menuKantin->nama }}</span>
-                        <span class="text-sm">{{ $menuKantin->stok }}</span>
-                        <span class="text-md">Rp. {{ $menuKantin->harga }}</span>
+                        <span class="text-sm">Stok : {{ $menuKantin->stok }}</span>
+                        <span class="text-md mb-0">Rp. {{ $menuKantin->harga }} </span>
+                        <span class="text-xs text-slate-700">per {{ $menuKantin->per }}</span>
                     </div>
                 </div>
             @endforeach
