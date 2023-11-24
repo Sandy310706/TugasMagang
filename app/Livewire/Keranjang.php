@@ -23,6 +23,7 @@ class Keranjang extends Component
         $userNav = auth()->user();
         $menu = Menu::where('id',$id)->first();
         $angka = count($keranjangs);
+
         $totalHarga = [];
 
         foreach($keranjangs as $keranjang)
