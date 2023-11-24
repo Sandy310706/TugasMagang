@@ -84,7 +84,8 @@ nav {
 }
 
 .content-nav .navbar-nav .nav-link:hover {
-    color: #ffc800;
+    --tw-bg-opacity: 20;
+    color: #cac6c6;
 
 }
 

@@ -45,7 +45,8 @@
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
+    --tw-bg-opacity: 20;
+    color: #cac6c6;
 }
 
 .nav-content {

@@ -56,7 +56,7 @@
                                         <p>{{$item->harga}}</p>
                                     </div>
                                     <div class="card-click">
-                                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                                        <a href="/menu" class="buttons">Pesan</a>
                                     </div>
                                 </div>
                             @endforeach
