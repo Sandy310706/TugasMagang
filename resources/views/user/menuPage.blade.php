@@ -11,7 +11,7 @@
         </svg>
 
     </div>
-    @if($kantin == null)
+    @if($menu == null)
     <div class="content-null">
         <div class="hero-null">
             <div class="image-null">
@@ -205,7 +205,7 @@
                         <p>Rp.{{$item->harga}}</p>
                     </div>
                     <div class="clicks">
-                        <button class="btn-submit">Pesan</button>
+                        <button class="btn-submit" type="sumbit" onclick="sisisi(this)" data-id={{$item->id}}>Pesan</button>
                     </div>
                 </div>
             </div>
@@ -233,22 +233,29 @@
         </div>
     </footer>
     <script>
-        $(document).ready(function() {
-            $("#alert").hide();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+    $(document).ready(function() {
+        $("#alert").hide();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
+    });
 
-        function inputData(bi) {
-            const id = bi.getAttribute('data-id')
-            $.ajax({
-                url: '/carts/' + id,
-                dataType: "json",
-                type: "POST",
-                data: {},
+    function sisisi(gi) {
+        const id = gi.getAttribute('data-id')
+        $.ajax({
+            url: `/carts/${id}`,
+            dataType: "json",
+            type: "POST",
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            statusCode: {
+                    500: function(response) {
+                        console.log(response)
+                    }
+                },
                 success: function(response) {
                     location.reload();
                     console.log("berhasil");
@@ -261,8 +268,8 @@
                     console.log('gagal');
                     console.log(error)
                 }
-            });
-        };
+        });
+    };
 
         function openDropdown() {
             const dropdownTrigger = document.getElementById('dropdownTrigger');
@@ -275,7 +282,7 @@
                 dropdownMenu.classList.add('animate-showDropdownMenu');
             } else {
                 dropdownMenu.style.display = "none";
-            },
+            }
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

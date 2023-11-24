@@ -30,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -108,53 +109,9 @@
                             @endforeach
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-        {{-- <div class="container-card">
-            <div class="content-hero">
-                <div class="menu-content">
-                    <div class="makanan-content">
-                        <h2>Minuman</h2>
-                    </div>
-                    <div class="hero-content">
-                        @foreach ($minuman as $item)
-                        <div class="menu-page">
-                            <div class="card-container">
-                                <div class="card-image">
-                                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <p>{{$item->nama}}</p>
-                                    <p>{{$item->harga}}</p>
-                                </div>
-                                <div class="card-click">
-                                    <a href="/menu">Pesan</a>
-                                </div>
-                            </div>
-                        </div>
-                        @foreach ($minuman as $item)
-                    </div>
-
-                </div>
-            </div>
-        </div> --}}
-
-        {{-- <div class="container Menu-Page mb-5">
-            @foreach ($minuman as $item)
-            <div class="box">
-                <div class="image">
-                    <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
-                </div>
-                <h1>{{$item->nama}}</h1>
-                <p>{{$item->harga}}</p>
-                <a href="/menu"button class="btn btn-primary">Pesan</a>
-            </div>
-            @endforeach
-            </div>
-        </div> --}}
     </section>
 
     <section class="about" id="about">
