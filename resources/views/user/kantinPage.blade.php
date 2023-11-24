@@ -105,7 +105,7 @@
                             <img src="{{ asset('template/landingPage/assets/img/kantin 1.png') }}" alt="">
                         </div>
                         <div class="text-content">
-                            <p class="name">{{$namaKantin->namaKantin}}</p>
+                            <p class="name">{{$Kantin->namaKantin}}</p>
                         </div>
                     </div>
                     <div class="content-descript">
