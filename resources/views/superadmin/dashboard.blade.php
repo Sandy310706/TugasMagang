@@ -5,26 +5,22 @@
     <div class="w-full p-2">
         <div class="flex justify-center">
             <div class="w-full relative">
-                    <div id="modal" class="hidden w-[70%] p-2 bg-white rounded-lg absolute top-10 right-36 border-2 border-slate-500 z-10">
-                        <button onclick="closeModal()" class="absolute top-0 right-1 text-xl text-slate-400"><i class="fa-solid fa-circle-xmark"></i></button>
-                        <div class="w-full flex justify-center py-10">
-                            @foreach ($data as $konfirmasi)
-                                <div class="w-[90%] mb-2 rounded-sm flex ring-1 ring-slate-400">
-                                    <div class="w-[20%] p-2 flex justify-center items-center">
-                                        <img class="" src="{{ asset('storage/fileMenu/'.$konfirmasi->foto) }}" alt="">
-                                    </div>
-                                    <div class="w-[80%] h-full flex justify-center items-center">
-                                        <div class="w-[40%] text-sm font-balsamiq font-bold text-center">{{ $konfirmasi->nama }}</div>
-                                        <div class="w-[30%] text-sm font-balsamiq font-bold">Rp. {{ $konfirmasi->harga }}</div>
-                                        <div class="w-[30%] text-sm font-balsamiq font-bold flex justify-evenly">
-                                            <button id="terima" data-id="{{ $konfirmasi->id }}" class="text-green-500 text-4xl"><i class="fa-regular fa-square-check"></i></button>
-                                            <button id="tolak" data-id="{{ $konfirmasi->id }}" class="text-red-500 text-4xl"><i class="fa-regular fa-rectangle-xmark"></i></button>
-                                        </div>
-                                    </div>
+                <div id="modal" class="hidden w-[70%] p-2 bg-white rounded-lg absolute top-10 right-36 border-2 border-slate-500 z-10">
+                    <button onclick="closeModal()" class="absolute top-0 right-1 text-xl text-slate-400"><i class="fa-solid fa-circle-xmark"></i></button>
+                    <div class="w-full flex flex-col justify-center items-center py-10">
+                        <div class="w-[90%] mb-2 rounded-sm flex ring-1 ring-slate-400">
+                            <div class="w-full p-2 flex justify-center items-center">
+                                <img class="w-20 h-15" src="{{ asset('storage/fileMenu/'.$konfirmasi->foto) }}" alt="">
+                                <div class="w-[30%] ml-5 h-full font-balsamiq text-sm flex justify-center items-center">{{ $konfirmasi->nama }}</div>
+                                <div class="w-[30%] ml-5 h-full font-balsamiq text-sm flex justify-center items-center">Rp. {{ $konfirmasi->harga }}</div>
+                                <div class="w-[30%] ml-5 h-full flex justify-center items-center">
+                                    <button id="terima" data-id="{{ $konfirmasi->id }}" class="text-green-500 text-4xl mr-1"><i class="fa-regular fa-square-check"></i></button>
+                                    <button id="tolak" data-id="{{ $konfirmasi->id }}" class="text-red-500 text-4xl"><i class="fa-regular fa-rectangle-xmark"></i></button>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
         <div class="w-full flex justify-between">
