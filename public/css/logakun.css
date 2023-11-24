@@ -1,40 +1,44 @@
 .Histori {
     margin-top: 100px;
     margin-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
-  }
-  
-  .container-histori {
+    font-family: outfit;
+}
+
+.container-histori {
+    width: 100vw;
+    align-items: center;
     display: flex;
     justify-content: center;
-  }
-  
-  .card {
-    border-radius: 100px;
+}
+
+.card {
+    font-family: outfit;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 10px 0px;
     width: 80%;
-  }
-  
-  .content {
+}
+
+.content {
     display: flex;
     justify-content: space-between;
     margin: 30px;
-  
-  }
-  
-  .content p {
+}
+
+.content p {
     font-size: 20px;
     margin-top: auto;
     margin-bottom: auto;
-  }
-  
-  .btn {
+}
+
+.btn {
     width: 150px;
     border-radius: 100px;
     background-color: rgb(19, 120, 236);
     color: ivory;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     transform: rotate(39deg);
     background-color: rgb(99, 93, 93);
-  }
+}

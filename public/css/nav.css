@@ -72,6 +72,7 @@
     justify-content: space-between;
     position: relative;
     order: 2 !important;
+
 }
 
 .menu-toggle input {
@@ -90,7 +91,7 @@
     display: block;
     width: 28px;
     height: 3px;
-    background-color: grey;
+    background-color: black;
     border-radius: 3px;
     transition: all 0.5s;
 }
@@ -239,6 +240,9 @@ ul {
     align-items: center;
 }
 
+p{
+    margin: 0;
+}
 @media only screen and (max-width: 600px) {
     body {
         max-width: 100%;

@@ -21,21 +21,15 @@
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    {{-- <h3 class="welcome animate__animated animate__fadeInLeft animate__delay-1s">Welcome to Kantin Sekolah</h3>
+                    <h3 class="welcome animate__animated animate__fadeInLeft animate__delay-1s">Welcome to Kantin Sekolah</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt=""></div> --}}
-
-                    <h3 class="welcome">Kantin School Indonesian</h3>
-                </div>
-                <div class="col">
-                    <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt="">
+                        <div class="images">
+                            <img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt="">
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

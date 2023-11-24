@@ -18,6 +18,7 @@ use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\kelolaPesanController;
+use App\Http\Controllers\LogPasswordController;
 
 // Errors
 Route::fallback(function () {
@@ -27,7 +28,7 @@ Route::get('/test', function(){
     dd(Invoice::with(['keranjang', 'user'])->get());
 });
 Route::get('/cekLogin', function(){
-    dd(Auth::check());
+    dd(Auth::user());
 });
 
 // Landing Page
@@ -64,8 +65,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/detailpesanan/{id}', [kelolaPesanController::class, 'detail'])->name('DetailPesanan')->middleware('admin');
 
   // Super Admin
-    Route::get('superadmin/dashboard', [SuperAdminController::class, 'index'])->name('Superadmin.Dashboard')->middleware('superadmin');
-    Route::get('superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun')->middleware('superadmin');
+    Route::get('/superadmin/dashboard', [SuperAdminController::class, 'index'])->name('Superadmin.Dashboard')->middleware('superadmin');
+    Route::get('/superadmin/kelolaakun', [KelolaakunController::class, 'index'])->name('Superadmin.Akun')->middleware('superadmin');
     Route::get('/superadmin/getAkun',[KelolaakunController::class, 'getData'])->name('Superadmin.getAkun')->middleware('superadmin');
     Route::post('/superadmin/addUser', [KelolaakunController::class, 'tambah'])->name('Akun.Tambah')->middleware('superadmin');
     Route::get('/user/{id}/edit', [KelolaakunController::class, 'edit'])->name('Akun.Edit')->middleware('superadmin');
@@ -79,6 +80,7 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/kantin/{id}/delete', [KantinController::class, 'delete'])->name('Kantin.Delete')->middleware('superadmin');
     Route::get('/superadmin/getKantin', [KantinController::class, 'getKantin'])->name('Superadmin.getKantin')->middleware('superadmin');
     Route::get('/superadmin/detailKantin/{namaKantin}', [KantinController::class, 'detailKantin'])->name('Superadmin.DetailKantin')->middleware('superadmin');
+    Route::get('/superadmin/detailpesanan', [KantinController::class, 'detailPesanan'])->name('Superadmin.DetailPesanan')->middleware('superadmin');
 
     // Auth
     Route::get('/logout/{nama}', [AuthController::class, 'logout'])->name('Logout');
@@ -93,16 +95,11 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback/{namaKantin}',[FeedbackController::class, 'store'])->name('Feedback.Store');
 
+    Route::get('/logakun/{nama}', [LogPasswordController::class, 'index'])->name('LogAkun');
     Route::post('/menu', [MenuController::class, 'store']);
     Route::delete('/menu/delete/{id}', [MenuController::class, 'delete'])->name('Menu.Delete');
     Route::post('/kantin/create', [KantinController::class, 'store'])->name('Kantin.Create');
 
     Route::delete('/histori', [HistoriController::class, 'index']);
     Route::get('/kantin/{namaKantin}', [KantinController::class, 'show'])->name('Kantin.view');
-});
-
-
-Route::get('/logakun/{nama}', function($nama){
-    $angka = 1;
-    return view('user.logakun', compact('angka'));
 });

@@ -481,10 +481,6 @@ h1 {
         font-size: 50px;
     }
 
-    .about {
-        margin-bottom: 50px;
-    }
-
     .about-1 {
         width: 100%;
         flex-direction: column;
@@ -559,14 +555,13 @@ h1 {
     }
 
     .about-biru {
-        width: 70%;
+        width: 50%;
         top: 100px;
         left: 0;
     }
 
     .about-hijau {
-        width: 70%;
-        bottom: -120px;
+        width: 50%;
     }
 }
 
