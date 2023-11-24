@@ -28,13 +28,13 @@ class DataDummy extends Seeder
         // ]);
 
         DB::table('menus')->insert([
-            'nama' => 'Tempe',
+            'nama' => 'Tahu',
             'harga' => '5000',
             'quantity' => '1',
             'kategori' => 'makanan',
             'stok' => '10',
             'foto' => 'tempe.jpg',
-            'id_kantin'=>'1',
+            'id_kantin'=>'5',
             'per'=>'0',
             'is_konfirmasi' =>'0',
 
