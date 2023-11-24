@@ -42,13 +42,12 @@
     @foreach ($detail as $invoice)
     <div class="modal" tabindex="1000" id="detailModal{{ $invoice->id }}">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content animate__animated animate__fadeInDown">
                 <div class="modal-header">
                     <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
                 </div>
                 <h1 class="text-detail">Detail Pesanan</h1>
                 <div class="hero-container">
-
                     <div class="content-item">
                         <div class="content-hero">
                             <div class="kode hero-item">
@@ -163,7 +162,6 @@
                 console.log(e.target.getAttribute('call-modal'));
                 $('#' + e.target.getAttribute('call-modal')).modal("show");
             });
-
         });
 
     </script>

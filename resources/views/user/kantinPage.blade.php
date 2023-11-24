@@ -73,6 +73,8 @@
                                             </li>
                                             <li class="content-dropdown"><a class="nav-dropdown histori"
                                                     href="/invoice">Histori Pesanan</li>
+                                            <li class="content-dropdown"><a class="nav-dropdown histori"
+                                                    href="/logakun/{{ auth()->user()->nama }}">Log Akun</li>
                                             <li class="content-dropdown"><a class="nav-dropdown"
                                                     style="padding-top: 20px" href="/login"><i
                                                         class="bi bi-box-arrow-in-right"></i>logout</a></li>
@@ -128,14 +130,9 @@
 
 <div class="menu-page">
     <div class="pembungkus-alert">
-        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
+        <div class="custom-alert" id="alerts" style="display: none; font-sans"> <p>pesan sudah ditambahkan</p> </div>
     </div>
     <h1 class="menu">MENU</h1>
-</div>
-<div class="pembungkus-alert">
-    <div class="alert-content">
-        <div class="custom-alert" id="alerts" style="display: none; font-sans"> pesan sudah ditambahkan </div>
-    </div>
 </div>
 <div class="cards">
     <div class="content-hero">

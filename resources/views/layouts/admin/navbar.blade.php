@@ -7,7 +7,8 @@
             <button onclick="showMenu()" id="MenuTrigger"><span class="hidden lgMobile:inline mobile:inline absolute right-10 top-7 scale-150"><i id="IconSidebar" class="fa-solid fa-bars"></i></span></button>
             <div class="absolute right-4 top-14 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden" id="dropdownMenu">
                 <ul>
-                    <li><a href="/ubahpassword/{{ auth()->user()->nama }}" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Ubah Password</a></li>
+                    <li><a href="/log/user/{{ auth()->user()->nama }}" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-t-lg">Log Akun</a></li>
+                    <li><a href="/ubahpassword/{{ auth()->user()->nama }}" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200">Ubah Password</a></li>
                     <li><a href="/logout/{{ auth()->user()->nama }}" class="block px-4 py-2 text-gray-800 font-outfit hover:bg-gray-200 hover:rounded-b-lg">Logout</a></li>
                 </ul>
             </div>

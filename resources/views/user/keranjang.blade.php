@@ -74,7 +74,7 @@
                 <form action="{{ route('Keranjang.Delete', $keranjang->id) }}" method="POST">
                     @csrf
                     @method('Delete')
-                    <button type="submit" style="border: none"><i class="bi bi-trash3-fill"></i></button>
+                    <button type="submit" style="background-color: transparent; border: none; "><i class="bi bi-trash3-fill"></i></button>
                 </form>
             </div>
         </div>
@@ -91,7 +91,9 @@
     <div class="checkout">
         <div class="subtotal mr-3" >
             <p>Total Harga :   Rp.</p>
+
             <p id="total"  class="ml-2"></p>
+
         </div>
         <div class="cekout">
             <div class="btnns">
@@ -102,7 +104,7 @@
 </div>
 
 
-<div class="svg-container-2">
+{{-- <div class="svg-container-2">
     <svg class="hijau-kanan" width="250" height="200" viewBox="0 0 352 390" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_1859_1681)">
         <circle cx="253.5" cy="249.5" r="249.5" fill="#96C291"/>
@@ -125,7 +127,7 @@
     <svg class="kuning-kiri" width="197" height="206" viewBox="0 0 197 206" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="57.5" cy="139.5" r="139.5" fill="#D2DE32"/>
     </svg>
-</div>
+</div> --}}
 
 
 <script>

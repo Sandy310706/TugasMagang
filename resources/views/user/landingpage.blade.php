@@ -21,11 +21,12 @@
         <div class="container">
             <div class="row">
                 <div class="col kantin-sekolah">
-                    <h3 class="welcome">welcome To Kantin SMKN7 Pontianak   </h3>
+                    <h3 class="welcome animate__animated animate__fadeInLeft animate__delay-1s">Welcome to Kantin Sekolah</h3>
                 </div>
                 <div class="col">
                     <div class="makanan">
-                        <div class="images"><img src="template/landingPage/assets/img/nasikuning.png" alt="">
+                        <div class="images">
+                            <img src="template/landingPage/assets/img/nasikuning.png" class="animate__animated animate__fadeInRight animate__delay-1s" alt="">
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,26 @@
 
                 </div>
             </div>
+
+            {{-- <div class="container Menu-Page mb-5">
+                @foreach ($makanan as $item)
+                <div class="box">
+                    <div class="image">
+                        <img src="{{ asset('storage/fileMenu/' . $item->foto) }}" alt="">
+                    </div>
+                    <div class="content-hero">
+                        <p>{{$item->nama}}</p>
+                        <p>{{$item->harga}}</p>
+                    </div>
+                    <div class="content-click">
+                        <a href="/menu"button class="btn btn-primary">Pesan</a>
+                    </div>
+                </div>
+                @endforeach
+                </div>
+            </div> --}}
         </div>
+
         <div class="container-card">
             <div class="content-hero">
                 <div class="menu-content">
@@ -89,7 +109,6 @@
                             @endforeach
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
