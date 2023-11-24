@@ -25,6 +25,7 @@ class MenuController extends Controller
         $angka = count($keranjang);
         $kantin = Kantin::all();
 
+
         return view('user.menuPage', compact('menu','kantin','angka','user','userNav'));
 
     }

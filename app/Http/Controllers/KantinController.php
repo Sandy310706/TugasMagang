@@ -86,10 +86,7 @@ class KantinController extends Controller
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
         $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
         $menu = Menu::where('id_kantin', $namaKantin['id'])->get();
-        $userNav = User::where('role','guest')
-                        ->orWhere('role','superadmin')
-                        ->orWhere('role', 'admin')
-                        ->first();
+        $userNav = auth()->user();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
         return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin'));
@@ -104,6 +101,18 @@ class KantinController extends Controller
     {
         $kantin = Kantin::where('namaKantin', $namaKantin)->first();
         $menu = Menu::where('id_kantin', $kantin['id'])->get();
-        return view('superadmin.detailkantin', compact('menu','kantin'));
+        $data = Menu::where('id_kantin', $kantin['id'])->where('is_konfirmasi', 0)->get();
+        return view('superadmin.detailkantin', compact('menu','kantin','data'));
+    }
+    public function konfirmasiMenu($id)
+    {
+        $data = Menu::find($id);
+        $data->is_konfirmasi = 1;
+        $data->save();
+        return response()->json(['success' => 'Menu berhasil di konfirmasi.']);
+    }
+    public function detailPesanan()
+    {
+        return view('superadmin.detailpesanan');
     }
 }

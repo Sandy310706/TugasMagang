@@ -80,6 +80,8 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/kantin/{id}/delete', [KantinController::class, 'delete'])->name('Kantin.Delete')->middleware('superadmin');
     Route::get('/superadmin/getKantin', [KantinController::class, 'getKantin'])->name('Superadmin.getKantin')->middleware('superadmin');
     Route::get('/superadmin/detailKantin/{namaKantin}', [KantinController::class, 'detailKantin'])->name('Superadmin.DetailKantin')->middleware('superadmin');
+    Route::post('/terimaKonfirmasi/{id}', [KantinController::class, 'konfirmasiMenu'])->name('TerimaMenu')->middleware('superadmin');
+    Route::get('/superadmin/detailpesanan', [KantinController::class, 'detailPesanan'])->name('Superadmin.DetailPesanan')->middleware('superadmin');
 
     // Auth
     Route::get('/logout/{nama}', [AuthController::class, 'logout'])->name('Logout');

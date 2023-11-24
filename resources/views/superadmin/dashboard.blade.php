@@ -3,26 +3,26 @@
 @section('headerNav', 'Dashboard')
 @section('dashboard')
     <div class="w-full p-2">
-        <div class="flex justify-center">
+        {{-- <div class="flex justify-center">
             <div class="w-full relative">
                 <div id="modal" class="hidden w-[70%] p-2 bg-white rounded-lg absolute top-10 right-36 border-2 border-slate-500 z-10">
                     <button onclick="closeModal()" class="absolute top-0 right-1 text-xl text-slate-400"><i class="fa-solid fa-circle-xmark"></i></button>
                     <div class="w-full flex flex-col justify-center items-center py-10">
                         <div class="w-[90%] mb-2 rounded-sm flex ring-1 ring-slate-400">
                             <div class="w-full p-2 flex justify-center items-center">
-                                <img class="w-20 h-15" src="{{ asset('storage/fileMenu/'.$konfirmasi->foto) }}" alt="">
-                                <div class="w-[30%] ml-5 h-full font-balsamiq text-sm flex justify-center items-center">{{ $konfirmasi->nama }}</div>
-                                <div class="w-[30%] ml-5 h-full font-balsamiq text-sm flex justify-center items-center">Rp. {{ $konfirmasi->harga }}</div>
+                                <img class="w-20 h-15" src="{{ asset('img/Kantin.png') }}" alt="">
+                                <div class="w-[30%] ml-5 h-full font-balsamiq text-sm flex justify-center items-center"></div>
+                                <div class="w-[30%] ml-5 h-full font-balsamiq text-sm flex justify-center items-center"></div>
                                 <div class="w-[30%] ml-5 h-full flex justify-center items-center">
-                                    <button id="terima" data-id="{{ $konfirmasi->id }}" class="text-green-500 text-4xl mr-1"><i class="fa-regular fa-square-check"></i></button>
-                                    <button id="tolak" data-id="{{ $konfirmasi->id }}" class="text-red-500 text-4xl"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                                    <button id="terima" data-id="" class="text-green-500 text-4xl mr-1"><i class="fa-regular fa-square-check"></i></button>
+                                    <button id="tolak" data-id="" class="text-red-500 text-4xl"><i class="fa-regular fa-rectangle-xmark"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="w-full flex justify-between">
             <div class="w-[49%] h-28 rounded-xl bg-white flex flex-col justify-start">
                 <div class="w-full h-[70%] flex items-center">
@@ -50,21 +50,21 @@
             </div>
         </div>
         <div class="w-full">
-            <h1 class="text-lg font-balsamiq pt-6">Pemberharuan Terbaru</h1>
+            <h1 class="text-lg font-balsamiq pt-6">Detail Kantin</h1>
             @foreach ($kantin as $kantins )
                 <div class="w-full font-balsamiq mb-2">
                     <div class="w-full bg-white flex rounded-lg">
-                        <div class="w-[20%] p-5 flex justify-center ">
-                            <img class="scale-125 z-1" src="{{ asset('img/Kantin.png') }}" alt="">
+                        <div class="px-3 py-2 flex justify-center ">
+                            <img class="h-20 w-15 ring-2 ring-slate-600 rounded-xl z-1" src="{{ asset('storage/fotoKantin/'.$kantins->foto) }}" alt="">
                         </div>
-                        <div class="w-[80%] p-5 flex">
+                        <div class="w-[80%] p-2 flex justify-center items-center">
                             <div class="w-[50%]">
                                 <span class="w-[70%]">{{ $kantins->namaKantin }}</span>
                                 <br>
-                                <span class="w-[30%] text-neutral-500 text-sm">Pemberitahuan tentang kantin {{ $kantins->namaKantin }}</span>
+                                <span class="w-[30%] text-neutral-500 text-sm">Detail tentang {{ $kantins->namaKantin }}</span>
                             </div>
                             <div class="w-[50%] flex justify-end items-center">
-                                <button id="openModal" class="border-2 border-blue-700 rounded-lg px-5 h-[50%] bg-blue-700 bg-opacity-40 hover:bg-opacity-60">Lihat</button>
+                                <a href="/superadmin/detailKantin/{{ $kantins->namaKantin }}" class="border-2 border-blue-700 rounded-lg px-5 h-[50%] bg-blue-700 bg-opacity-40 hover:bg-opacity-60">Lihat</a>
                             </div>
                         </div>
                     </div>
