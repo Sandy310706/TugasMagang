@@ -52,7 +52,11 @@
             </div>
             <div class="content-table foto">
                 <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
-                <p>{{ $keranjang->menu->nama }}</p>
+                <div class="content-cart">
+                    <p class="kantin-name">kantin anjay</p>
+                    <p class="menu-name">{{ $keranjang->menu->nama }}</p>
+                </div>
+
             </div>
             <div id="harga" class="content-table harga">
                 <p>Rp. {{ $keranjang->menu->harga }}</p>

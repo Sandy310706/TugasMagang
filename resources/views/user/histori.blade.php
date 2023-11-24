@@ -64,16 +64,16 @@
                     <div class="content-child">
                         <div class="child-content">
                             <div class="food hero-child">
-                                <p>{{ $invoice->keranjang->menu->nama }}</p>
+                                <p>{{ $invoice->keranjang}}</p>
                             </div>
                             <div class="stok hero-child">
-                                <p>{{ $invoice->keranjang->jumlah }}</p>
+                                <p>{{ $invoice->keranjang }}</p>
                             </div>
                             <div class="total hero-child">
-                                <p>{{ $invoice->keranjang->subtotal }}</p>
+                                <p>{{ $invoice->keranjang }}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->keranjang->total_harga}}</p>
+                                <p>{{$invoice->keranjang }}</p>
                             </div>
                         </div>
                     </div>

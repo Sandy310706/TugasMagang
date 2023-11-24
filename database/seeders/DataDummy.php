@@ -27,6 +27,7 @@ class DataDummy extends Seeder
 
         // ]);
 
+
         DB::table('menus')->insert([
             'nama' => 'Tahu',
             'harga' => '5000',
@@ -34,7 +35,7 @@ class DataDummy extends Seeder
             'kategori' => 'makanan',
             'stok' => '10',
             'foto' => 'tempe.jpg',
-            'id_kantin'=>'5',
+            'id_kantin'=>'1',
             'per'=>'0',
             'is_konfirmasi' =>'0',
 

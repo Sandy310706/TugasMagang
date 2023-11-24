@@ -53,7 +53,7 @@ class InvoiceController extends Controller
         $invoice->status = 0;
         $invoice->save();
 
-    
+
         // keranjang::truncate();
 
 

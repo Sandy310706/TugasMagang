@@ -11,9 +11,9 @@ class Invoice extends Model
 
     protected $fillable = ['id','user_id','token', 'status','keranjang_id'];
 
-    public function keranjang()
+    public function invoiceitem()
     {
-        return $this->belongsTo('App\Models\Keranjangs', 'keranjang_id');
+        return $this->belongsToMany(invoiceItem::class, 'invoice_id', 'id');
     }
 
     public function kelolapesan()

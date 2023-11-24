@@ -44,13 +44,18 @@ class Keranjangs extends Model
         return $this->belongsto('App\Models\kelolapesan', 'kelolapesan_id');
     }
 
-    public function invoice()
+    public function invoiceitem()
     {
-        return $this->hasOne('App\Models\Invoice', 'invoice_id');
+        return $this->belongsToMany(invoiceItem::class, 'keranjang_id');
     }
     public function kantin()
     {
         return $this->belongsTo(Kantin::class, 'kantin_id');
+    }
+
+    public function jumlahPesanan()
+    {
+        return $this->belongsToMany(jumlahPesanan::class,'keranjang_id');
     }
 
 }
