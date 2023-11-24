@@ -8,10 +8,10 @@
                 <div class="w-[45%] h-[90%] ml-3 bg-cover bg-center rounded-xl" style="background-image: url('/img/Bg-Cover.jpg')">
                     <div class="w-full h-full flex justify-between items-center rounded-xl backdrop-blur-[1.5px] backdrop-brightness-50">
                         <div class="w-[40%] ml-2">
-                            <img src="{{ asset('storage/fotoKantin/'. $kantin->foto) }}" alt="" class="rounded-full border-[3px] border-white h-32 w-32">
+                            <img src="" alt="" class="rounded-full border-[3px] border-white h-32 w-32">
                         </div>
                         <div class="w-[60%] mr-2">
-                            <h1 class="text-xl text-white font-outfit">{{ $kantin->namaKantin }}</h1>
+                            <h1 class="text-xl text-white font-outfit">Cipay</h1>
                         </div>
                     </div>
                 </div>
@@ -23,25 +23,30 @@
                 </div>
             </div>
             <div class="w-full h-[25%] font-outfit text-xl flex items-end justify-evenly">
-                <a href="#" class="border-b-2 border-blue-950">Menu Kantin</a>
-                <a href="/superadmin/detailpesanan" class="border-b-2 border-transparent">Pesanan</a>
+                <a href="#" class="border-b-2 border-transparent">Menu Kantin</a>
+                <a href="#" class="border-b-2 border-blue-950">Pesanan</a>
                 <a href="#" class="border-b-2 border-transparent">Pemasukan</a>
             </div>
         </div>
-        <div class="w-full mt-5 p-5 grid grid-cols-4 grid-flow-row gap-4">
-            @foreach ($menu as $menuKantin )
-                <div class="p-1 bg-white rounded-lg border-2 border-neutral-400 transition duration-300 transform hover:scale-[1.1]">
-                    <div class="w-[90%] flex m-auto">
-                        <img src="{{ asset('storage/fileMenu/'. $menuKantin->foto) }}" alt="foto menu" class="rounded-md h-24 w-full">
-                    </div>
-                    <div class="w-full flex flex-col justify-center items-center font-outfit">
-                        <span class="text-lg">{{ $menuKantin->nama }}</span>
-                        <span class="text-sm">Stok : {{ $menuKantin->stok }}</span>
-                        <span class="text-md mb-0">Rp. {{ $menuKantin->harga }} </span>
-                        <span class="text-xs text-slate-700">per {{ $menuKantin->per }}</span>
+        <div class="w-full">
+            <h1 class="text-lg font-balsamiq pt-6">Pemberharuan Terbaru</h1>
+                <div class="w-full font-balsamiq mb-2">
+                    <div class="w-full bg-white flex rounded-lg">
+                        <div class="w-[20%] p-5 flex justify-center ">
+                            <img class="scale-125 z-1" src="{{ asset('img/Kantin.png') }}" alt="">
+                        </div>
+                        <div class="w-[80%] p-5 flex">
+                            <div class="w-[50%]">
+                                <span class="w-[70%]">kantin kadrun 212</span>
+                                <br>
+                                <span class="w-[30%] text-neutral-500 text-sm">Pemberitahuan tentang kantin kuntul</span>
+                            </div>
+                            <div class="w-[50%] flex justify-end items-center">
+                                <button id="openModal" class="border-2 border-blue-700 rounded-lg px-5 h-[50%] bg-blue-700 bg-opacity-40 hover:bg-opacity-60">Lihat</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            @endforeach
         </div>
     </div>
 @endsection

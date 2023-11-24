@@ -39,7 +39,7 @@
                         @endguest
 
                     </div>
-                    <div class="dropdown-sidebar  animate__animated animate__fadeInDown" id="dropdownMenu">
+                    <div class="dropdown-sidebar" id="dropdownMenu">
                         <div class="dropdown-content  animate__delay-2s">
                             @guest
                             <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
@@ -47,6 +47,7 @@
                             @else
                             <li class="content-dropdown"><a class="nav-dropdown" href="">Akun</li>
                             <li class="content-dropdown"><a class="nav-dropdown histori" href="/invoice">Histori Pesanan</li>
+                            <li class="content-dropdown"><a class="nav-dropdown" href="/logakun/{{ auth()->user()->nama }}">Log Akun</li>
                             <li class="content-dropdown"><a class="nav-dropdown" style="padding-top: 20px"
                             href="/login"><i class="bi bi-box-arrow-in-right"></i>logout</a></li>
                             @endguest

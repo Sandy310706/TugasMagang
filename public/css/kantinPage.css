@@ -447,14 +447,28 @@ p {
 .pembungkus-alert {
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 
 .custom-alert {
+    position: absolute;
     background-color: red;
     padding: 10px;
     font-size: 18px;
     border-radius: 10px;
     font-family: outfit;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-alert p{
+    display: flex;
+     justify-content:  center;
+}
+
+.alert-content{
+    display: flex;
+    justify-content: center;
 }
 
 /* style menu */
@@ -471,8 +485,7 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 200px;
-
+    margin-top: 50px;
 }
 
 .card-content {

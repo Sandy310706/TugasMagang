@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kantin;
+use App\Models\LogPassword;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -78,7 +81,27 @@ class KelolaakunController extends Controller
         $data->save();
         return response()->json(['success' => 'Data User berhasil di update.']);
     }
-
+    public function editPassword(Request $request, $id)
+    {
+        $dataValidasi = Validator::make($request->all(), [
+            'newPassword' => 'required|min:8'
+        ],
+        [
+            'newPassword.required' => 'Password wajib di isi.',
+            'newPassword.min' => 'Password minimal 8 digit.',
+        ]);
+        if($dataValidasi->fails()){
+            return response()->json(['errors' => $dataValidasi->errors()], 422);
+        }
+        $data = User::find($id);
+        $data->password = Hash::make($request->newPassword);
+        $log = new LogPassword;
+        $log->id_user = $data->id;
+        $log->id_superadmin = Auth::user()->id;
+        $data->save();
+        $log->save();
+        return response()->json(['success' => 'Berhasil mengubah Password']);
+    }
     public function hapus($id) {
         $data = User::find($id);
         $data->delete();

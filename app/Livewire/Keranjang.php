@@ -79,6 +79,7 @@ class Keranjang extends Component
         // keranjang::truncate();
 
 
+
         return response()->json($keranjang);
     }
     public function tambah($id, $menu_id)

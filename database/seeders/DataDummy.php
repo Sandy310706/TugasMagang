@@ -13,6 +13,7 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
+
         // DB::table('users')->insert([
         //     'nama' => 'robin',
         //     'email' => 'robin@gmail.com',
@@ -36,6 +37,7 @@ class DataDummy extends Seeder
             'id_kantin'=>'5',
             'per'=>'0',
             'is_konfirmasi' =>'0',
+
         ]);
     }
 }
