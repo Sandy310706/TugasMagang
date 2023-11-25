@@ -83,28 +83,21 @@
         </div>
     </div>
     @endforeach
-
-    <div class="checkbox-content">
-        <input type="checkbox" class="checkbox-all" id="myCheckbox">
-        <p>Pilih Semua</p>
-    </div>
     @endif
 
-<div class="container totals mt-3">
-    <div class="checkout">
-        <div class="subtotal mr-3" >
-            <p>Total Harga :   Rp.</p>
-
-            <p id="total"  class="ml-2"></p>
-
-        </div>
-        <div class="cekout">
-            <div class="btnns">
-               <a href="/invoice" type="sumbit" id="checkoutBTN" class="buttons" onclick="kirimData(this)">checkout</a>
+    <div class="container totals mt-3">
+        <div class="checkout">
+            <div class="subtotal mr-3" >
+                <p>Total Harga :   Rp.</p>
+                <p id="total"  class="ml-2"></p>
+            </div>
+            <div class="cekout">
+                <div class="btnns">
+                <a href="/invoice" type="sumbit" id="checkoutBTN" class="buttons" onclick="kirimData(this)">checkout</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
