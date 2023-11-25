@@ -44,6 +44,7 @@
         <div class="modal-dialog">
             <div class="modal-content animate__animated animate__fadeInDown">
                 <div class="modal-header">
+                    
                     <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
                 </div>
                 <h1 class="text-detail">Detail Pesanan</h1>
@@ -64,16 +65,16 @@
                     <div class="content-child">
                         <div class="child-content">
                             <div class="food hero-child">
-                                <p>{{ $invoice->keranjang}}</p>
+                                <p>{{ $invoice->keranjang->menu->nama}}</p>
                             </div>
                             <div class="stok hero-child">
-                                <p>{{ $invoice->keranjang }}</p>
+                                <p>{{ $invoice->keranjang->jumlah }}</p>
                             </div>
                             <div class="total hero-child">
-                                <p>{{ $invoice->keranjang }}</p>
+                                <p>{{ $invoice->keranjang->subtotal }}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->keranjang }}</p>
+                                <p>{{$invoice->keranjang->total_harga}}</p>
                             </div>
                         </div>
                     </div>

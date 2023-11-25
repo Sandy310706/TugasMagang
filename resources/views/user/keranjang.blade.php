@@ -48,7 +48,7 @@
     <div class="card-pembungkus">
         <div class="content">
             <div class="content-checkbox">
-                <input type="checkbox" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
+                <input type="checkbox" id="checkboxID" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
             </div>
             <div class="content-table foto">
                 <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
@@ -56,7 +56,6 @@
                     <p class="kantin-name">kantin anjay</p>
                     <p class="menu-name">{{ $keranjang->menu->nama }}</p>
                 </div>
-
             </div>
             <div id="harga" class="content-table harga">
                 <p>Rp. {{ $keranjang->menu->harga }}</p>
@@ -101,37 +100,14 @@
         </div>
         <div class="cekout">
             <div class="btnns">
-               <a href="/invoice" type="sumbit" class="buttons" onclick="kirimData(this)">checkout</a>
+               <a href="/invoice" type="sumbit" id="checkoutBTN" class="buttons" onclick="kirimData(this)">checkout</a>
             </div>
         </div>
     </div>
 </div>
 
 
-{{-- <div class="svg-container-2">
-    <svg class="hijau-kanan" width="250" height="200" viewBox="0 0 352 390" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_d_1859_1681)">
-        <circle cx="253.5" cy="249.5" r="249.5" fill="#96C291"/>
-        <circle cx="253.5" cy="249.5" r="249" stroke="black"/>
-        <circle cx="253.5" cy="249.5" r="249" stroke="black" stroke-opacity="0.2"/>
-        </g>
-        <defs>
-        <filter id="filter0_d_1859_1681" x="0" y="0" width="507" height="507" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="4"/>
-        <feGaussianBlur stdDeviation="2"/>
-        <feComposite in2="hardAlpha" operator="out"/>
-        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1859_1681"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1859_1681" result="shape"/>
-        </filter>
-        </defs>
-    </svg>
-    <svg class="kuning-kiri" width="197" height="206" viewBox="0 0 197 206" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="57.5" cy="139.5" r="139.5" fill="#D2DE32"/>
-    </svg>
-</div> --}}
+
 
 
 <script>
@@ -182,7 +158,12 @@
 
     function kirimData(bi) {
         const id = bi.getAttribute('data-id')
-        $.ajax({
+        var checkoutBTN = document.getElementById('checkoutBTN');
+        var checkboxID = document.getElementById('checkboxID');
+
+        if(checkboxID.checked)
+        {
+            $.ajax({
             url: `/invoice/${id}`,
             dataType: "json",
             type: "POST",
@@ -206,7 +187,16 @@
                 console.log("gagal");
             }
         });
+        }else{
+            alert('Anda belum memilih Pesanan')
+        }
+
     };
+
+    document.getElementById('checkboxID').addEventListener('change', function() {
+        var checkoutBTN = document.getElementById('checkoutBTN');
+        checkoutBTN.disabled =!this.checked;
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
     // Ambil elemen-elemen checkbox
