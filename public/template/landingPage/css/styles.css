@@ -208,6 +208,7 @@ img {
 .card-click {
     display: flex;
     justify-content: center;
+    align-items: end;
     padding: 10px;
 }
 
