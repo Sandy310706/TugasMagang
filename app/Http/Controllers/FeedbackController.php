@@ -24,9 +24,9 @@ class FeedbackController extends Controller
         return view('admin.feedback', compact('feedback', 'cekFeedback'));
     }
 
-    public function store(Request $request, $namaKantin)
+    public function store(Request $request, $id)
     {
-        $kantin = Kantin::where('id',$namaKantin)->first();
+        $kantin = Kantin::where('id',$id)->first();
         $nama = Feedback::all();
         if(auth()->check()) {
 

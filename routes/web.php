@@ -13,6 +13,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\invoiceItemController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\KelolaakunController;
 use App\Http\Controllers\KelolaMenuController;
@@ -91,6 +92,7 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/carts/{id}', [Keranjang::class, 'delete'])->name('Keranjang.Delete');
     Route::get('/invoice', [InvoiceController::class, 'index'])->name('Invoice');
     Route::post('/invoice/{id}',[InvoiceController::class, 'store'])->name('Invoice.store');
+    Route::post('/invoiceItem/{id}', [invoiceItemController::class, 'store'])->name('invoiceItem.store');
     Route::get('/carts', [Keranjang::class, 'render'])->name('Keranjang');
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('Feedback');
     Route::post('/feedback/{namaKantin}',[FeedbackController::class, 'store'])->name('Feedback.Store');

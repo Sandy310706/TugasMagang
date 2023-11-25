@@ -44,13 +44,10 @@
         <div class="modal-dialog">
             <div class="modal-content animate__animated animate__fadeInDown">
                 <div class="modal-header">
-                    <div class="header-child">
-                        <div class="button-btn">
-                            <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
-                        </div>
-                        <h1 class="text-detail text-center">Detail Pesanan</h1>
-                    </div>
+                    
+                    <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
                 </div>
+                <h1 class="text-detail">Detail Pesanan</h1>
                 <div class="hero-container">
                     <div class="content-item">
                         <div class="content-hero">
@@ -68,7 +65,7 @@
                     <div class="content-child">
                         <div class="child-content">
                             <div class="food hero-child">
-                                <p>{{ $invoice->keranjang->menu->nama }}</p>
+                                <p>{{ $invoice->keranjang->menu->nama}}</p>
                             </div>
                             <div class="stok hero-child">
                                 <p>{{ $invoice->keranjang->jumlah }}</p>
