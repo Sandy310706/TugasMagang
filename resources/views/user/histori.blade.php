@@ -24,7 +24,7 @@
 
     </div> --}}
     <div class="container-fluid">
-        <h1 class="text-center Histori">Histori Pemesanan</h1>
+        <h1 class="text-center Histori">Histori Pemesanan </h1>
         @foreach ($detail as $invoice)
             <div class="container container-histori" style="margin-bottom: 20px;">
                 <div class="card">
@@ -32,7 +32,7 @@
                         <p>No Pesanan</p>
                         <div class="Detail">
                             <button tytpe="button" class="btns" id="openModalx"
-                                call-modal="detailModal{{ $invoice->id }}">Detail Pesanan</button>
+                                call-modal="detailModal{{ $invoice->id }}">Detail Pesanan {{ $invoice->id }}</button>
                         </div>
                     </div>
                 </div>
@@ -44,11 +44,9 @@
         <div class="modal-dialog">
             <div class="modal-content animate__animated animate__fadeInDown">
                 <div class="modal-header">
-                   <div class="button-btn">
-                      <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
-                   </div>
+                    <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
                 </div>
-                <h1 class="text-detail">Detail Pesanan</h1>
+                <h1 class="text-detail">Detail Pesanan {{ $invoice->id }}</h1>
                 <div class="hero-container">
                     <div class="content-item">
                         <div class="content-hero">
@@ -63,22 +61,24 @@
                             </div>
                         </div>
                     </div>
+                    @foreach ($invoices as $invoice )
                     <div class="content-child">
                         <div class="child-content">
                             <div class="food hero-child">
-                                <p>{{ $invoice->keranjang->menu->nama}}</p>
+                                <p>{{ $invoice->menu->nama}}</p>
                             </div>
                             <div class="stok hero-child">
-                                <p>{{ $invoice->keranjang->jumlah }}</p>
+                                <p>{{ $invoice->jumlah }}</p>
                             </div>
                             <div class="total hero-child">
-                                <p>{{ $invoice->keranjang->subtotal }}</p>
+                                <p>{{ $invoice->subtotal }}</p>
                             </div>
                             <div class="subtotal hero-child">
-                                <p>{{$invoice->keranjang->total_harga}}</p>
+                                <p>{{$invoice->total_harga}}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="content-total">
                         <div class="child-total">
                             <div class="total hero-total">
@@ -91,7 +91,6 @@
         </div>
     </div>
     @endforeach
-
 
 
 @endsection
@@ -122,10 +121,14 @@
             //     detailmodal.style.display = 'none';
             //     console.log('Apaa');
             // });
+            // $('[id^=openModalx]').on('click',function(){
+            //     console.log($(this).attr('call-modal'))
+            // });
             $('.modal').on('shown.bs.modal', function(){
-                console.log('hello');
+                // console.log('hello');
                 $('.modal-backdrop').css('z-index','-99');
             });
+
         });
 
 
@@ -161,7 +164,7 @@
 
         open.forEach(function(btnModal) {
             btnModal.addEventListener('click', function(e) {
-                console.log(e.target.getAttribute('call-modal'));
+                // console.log(e.target.getAttribute('call-modal'));
                 $('#' + e.target.getAttribute('call-modal')).modal("show");
             });
         });

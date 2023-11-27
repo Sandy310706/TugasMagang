@@ -19,6 +19,7 @@ class InvoiceController extends Controller
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
+        // dd($detail->toArray() );
         $keranjang = Keranjangs::where('id',$id)->first();
         $userNav = auth()->user();
         $angka = count($invoices);

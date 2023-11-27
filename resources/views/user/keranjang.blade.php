@@ -53,7 +53,7 @@
     <div class="card-pembungkus">
         <div class="content">
             <div class="content-checkbox">
-                <input type="checkbox" id="checkboxID" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
+                <input type="checkbox" id="checkboxID" data-menu-id="{{ $keranjang->menu_id }}" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
             </div>
             <div class="content-table foto">
                 <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
@@ -67,11 +67,11 @@
             </div>
             <div class="content-table btns">
                 <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
-                    <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
+                    <button id="kurang" unique-id="{{ $keranjang->id }}" class="kurang" data-keranjang-id="{{ $keranjang->id }}"
                         data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                 </div>
                 <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
-                <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
+                <div id="keranjang" unique-id="{{ $keranjang->id }}" style="display: inline;">
                     <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
@@ -89,7 +89,6 @@
     </div>
     @endforeach
     @endif
-
     <div class="container totals mt-3">
         <div class="checkout">
             <div class="subtotal mr-3" >
@@ -118,34 +117,43 @@
         $(".tambah").click(function() {
             const keranjangId = $(this).data("keranjang-id");
             const menuId = $(this).data("menu-id");
-            console.log("/cartst/" + keranjangId + "/" + menuId);
+            // console.log("/cartst/" + keranjangId + "/" + menuId);
             let spanJumlah = $("span[data-menu-id='" + menuId + "']");
             let totalHarga = $("span[data-id='" + keranjangId + "']");
+            let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
+
             $.ajax({
                 type: "GET",
                 url: "/cartst/" + keranjangId + "/" + menuId,
                 success: function(data) {
-                    console.log(spanJumlah);
-                    console.log(totalHarga);
+                    // console.log(spanJumlah);
+                    // console.log(totalHarga);
                     spanJumlah.text(data.jumlah);
                     totalHarga.text("Rp. " + data.total_harga)
+                    checkbox.attr('data-harga', data.total_harga);
+                    console.log(  checkbox.attr('data-harga'));
+                    // console.log(spanJumlah.text(), totalHarga.text());
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
                 }
             });
+
         });
         $(".kurang").click(function() {
             const keranjangId = $(this).data("keranjang-id");
             const menuId = $(this).data("menu-id");
             const spanJumlah = $("span[data-menu-id='" + menuId + "']");
             const totalHarga = $("span[data-id='" + keranjangId + "']");
+            let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
             $.ajax({
                 type: "GET",
                 url: "/cartsk/" + keranjangId + "/" + menuId,
                 success: function(data) {
                     spanJumlah.text(data.jumlah);
                     totalHarga.text("Rp. " + data.total_harga)
+                    checkbox.attr('data-harga', data.total_harga);
+                    console.log(  checkbox.attr('data-harga'));
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
@@ -157,10 +165,10 @@
     function kirimData(bi) {
         const id = bi.getAttribute('data-id')
         var checkoutBTN = document.getElementById('checkoutBTN');
-        var checkboxID = document.getElementById('checkboxID');
+        var checkboxID = document.querySelectorAll('. checkboxID');
+        console.log(checkboxID.checked);
 
-        if(checkboxID.checked)
-        {
+        if(checkboxID.checked){
             $.ajax({
             url: `/invoice/${id}`,
             dataType: "json",
@@ -186,19 +194,18 @@
             }
         });
         }else{
+
+            alert('Anda Belum memilih pesanan yang ada di keranjang');
+            return true;
+
             setTimeout(() => {
                     document.getElementById('alerts').style.display = 'none';
                 }, 8000);
                 document.getElementById('alerts').style.display = 'block';
             
         }
-
     };
 
-    document.getElementById('checkboxID').addEventListener('change', function() {
-        var checkoutBTN = document.getElementById('checkoutBTN');
-        checkoutBTN.disabled =!this.checked;
-    });
 
     document.addEventListener('DOMContentLoaded', function () {
     // Ambil elemen-elemen checkbox
