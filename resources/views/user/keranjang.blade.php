@@ -48,7 +48,7 @@
     <div class="card-pembungkus">
         <div class="content">
             <div class="content-checkbox">
-                <input type="checkbox" id="checkboxID" data-menu-id="{{ $keranjang->menu_id }}" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
+                <input type="checkbox" id="checkboxID" data-menu-id="{{ $keranjang->menu_id }}" data-id="{{ $keranjang->id }}" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
             </div>
             <div class="content-table foto">
                 <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
@@ -116,23 +116,8 @@
             let spanJumlah = $("span[data-menu-id='" + menuId + "']");
             let totalHarga = $("span[data-id='" + keranjangId + "']");
             let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
+            hargaTotal("/cartst/" + keranjangId + "/" + menuId, spanJumlah, totalHarga,checkbox)
 
-            $.ajax({
-                type: "GET",
-                url: "/cartst/" + keranjangId + "/" + menuId,
-                success: function(data) {
-                    // console.log(spanJumlah);
-                    // console.log(totalHarga);
-                    spanJumlah.text(data.jumlah);
-                    totalHarga.text("Rp. " + data.total_harga)
-                    checkbox.attr('data-harga', data.total_harga);
-                    console.log(  checkbox.attr('data-harga'));
-                    // console.log(spanJumlah.text(), totalHarga.text());
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
-            });
 
         });
         $(".kurang").click(function() {
@@ -141,19 +126,7 @@
             const spanJumlah = $("span[data-menu-id='" + menuId + "']");
             const totalHarga = $("span[data-id='" + keranjangId + "']");
             let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
-            $.ajax({
-                type: "GET",
-                url: "/cartsk/" + keranjangId + "/" + menuId,
-                success: function(data) {
-                    spanJumlah.text(data.jumlah);
-                    totalHarga.text("Rp. " + data.total_harga)
-                    checkbox.attr('data-harga', data.total_harga);
-                    console.log(  checkbox.attr('data-harga'));
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
-            });
+           hargaTotal("/cartsk/" +   + "/" + menuId, spanJumlah,totalHarga,checkbox);
         });
     });
 
@@ -167,7 +140,8 @@
 
         if(checkboxID.checked){
             $.ajax({
-            url: `/invoice/${id}`,
+                url: '/invoice/'+ id,
+            // url: `/carts/`,
             dataType: "json",
             type: "POST",
             data: {
@@ -210,7 +184,13 @@
     var totalHargaElem = document.getElementById('total');
 
     checkboxes.forEach(function (checkbox) {
-    console.log(checkbox.getAttribute('data-harga'));
+        const keranjangId = $(this).data("keranjang-id");
+            const menuId = $(this).data("menu-id");
+            const spanJumlah = $("span[data-menu-id='" + menuId + "']");
+            const totalHarga = $("span[data-id='" + keranjangId + "']");
+
+        hargaTotal("/cartsk/" + keranjangId + "/" + menuId, spanJumlah,totalHarga,checkbox);
+    // console.log(checkbox.getAttribute('data-harga'));
       checkbox.addEventListener('change', function () {
         // Hitung total harga saat checkbox berubah
         var totalHarga = 0;
@@ -241,6 +221,21 @@
         } else {
             dropdownMenu.style.display = "none";
         }
+    }
+    function hargaTotal(url, spanJumlah, totalHarga,checkbox){
+        $.ajax({
+                type: "GET",
+                url: url,
+                success: function(data) {
+                    spanJumlah.text(data.jumlah);
+                    totalHarga.text("Rp. " + data.total_harga)
+                    checkbox.attr('data-harga', data.total_harga);
+                    // console.log(  checkbox.attr('data-harga'));
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
     }
 
 

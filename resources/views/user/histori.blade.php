@@ -25,7 +25,7 @@
     </div> --}}
     <div class="container-fluid">
         <h1 class="text-center Histori">Histori Pemesanan </h1>
-        @foreach ($detail as $invoice)
+        @foreach ($invoices as $invoice)
             <div class="container container-histori" style="margin-bottom: 20px;">
                 <div class="card">
                     <div class="content">

@@ -18,19 +18,18 @@ class InvoiceController extends Controller
     public function index(Request $id)
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $detail = Invoice::where('user_id', auth()->user()->id)->get();
-        // dd($detail->toArray() );
+        $detail = Invoice::where('user_id', auth()->user()->id)->with('Keranjang')->get();
+        // dd($invoices->toArray() );
         $keranjang = Keranjangs::where('id',$id)->first();
         $userNav = auth()->user();
         $angka = count($invoices);
         $totalHarga = [];
-        dd($invoices);
+        // dd($invoices->toArray());
         foreach($invoices as $keranjang)
         {
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
         }
         $arraySum = array_sum($totalHarga);
-
 
         return view('user.histori', compact('invoices', 'detail','arraySum','angka','userNav'));
 
