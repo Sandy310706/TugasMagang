@@ -199,9 +199,10 @@
             return true;
 
             setTimeout(() => {
-                    document.getElementById('alerts').ustyle.display = 'none';
-                }, 5000);
+                    document.getElementById('alerts').style.display = 'none';
+                }, 8000);
                 document.getElementById('alerts').style.display = 'block';
+            
         }
     };
 
