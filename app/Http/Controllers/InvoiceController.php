@@ -24,6 +24,7 @@ class InvoiceController extends Controller
         $userNav = auth()->user();
         $angka = count($invoices);
         $totalHarga = [];
+        dd($invoices);
         foreach($invoices as $keranjang)
         {
             $totalHarga[] = (int)$keranjang->menu->harga * $keranjang->jumlah;
