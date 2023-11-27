@@ -11,11 +11,6 @@
             <circle cx="139.5" cy="36.5" r="139.5" fill="#D2DE32"/>
         </svg>
     </div>
-
-    <div class="pembungkus-alert">
-        <div class="custom-alert" id="alerts" style="display: none; font-sans"> <p>Anda Belum Memilih Pesanan</p> </div>
-    </div>
-
 <div class="container-fluid Keranjang-page ">
     <h1 class="text-center">Keranjang</h1>
     <div class="content-nav">
@@ -162,10 +157,12 @@
         });
     });
 
+
     function kirimData(bi) {
         const id = bi.getAttribute('data-id')
+        document.addEventListener('DOMContentLoaded', function () {
         var checkoutBTN = document.getElementById('checkoutBTN');
-        var checkboxID = document.querySelectorAll('. checkboxID');
+        var checkboxID = document.querySelectorAll('.checkboxID');
         console.log(checkboxID.checked);
 
         if(checkboxID.checked){
@@ -194,15 +191,10 @@
             }
         });
         }else{
-
             alert('Anda Belum memilih pesanan yang ada di keranjang');
             return true;
-
-            setTimeout(() => {
-                    document.getElementById('alerts').ustyle.display = 'none';
-                }, 5000);
-                document.getElementById('alerts').style.display = 'block';
         }
+    });
     };
 
 
