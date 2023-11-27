@@ -35,7 +35,7 @@ class Keranjang extends Component
         $arraySum = array_sum($totalHarga);
 
 
-
+        
         return view('user.keranjang' ,  compact('keranjangs', 'arraySum', 'keranjang','angka','user','userNav','check'));
     }
 

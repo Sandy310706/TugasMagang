@@ -25,7 +25,7 @@
     </div> --}}
     <div class="container-fluid">
         <h1 class="text-center Histori">Histori Pemesanan </h1>
-        @foreach ($detail as $invoice)
+        @foreach ($invoices as $invoice)
             <div class="container container-histori" style="margin-bottom: 20px;">
                 <div class="card">
                     <div class="content">
@@ -39,7 +39,7 @@
             </div>
         @endforeach
     </div>
-    @foreach ($detail as $invoice)
+    @foreach ($invoices as $invoice)
     <div class="modal" tabindex="1000" id="detailModal{{ $invoice->id }}">
         <div class="modal-dialog">
             <div class="modal-content animate__animated animate__fadeInDown">
@@ -91,6 +91,8 @@
         </div>
     </div>
     @endforeach
+
+
 
 
 @endsection
