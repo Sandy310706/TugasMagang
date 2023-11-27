@@ -2,7 +2,7 @@
 @section('title', 'Super Admin | Detail Kantin')
 @section('headerNav', 'Detail Kantin')
 @section('detail kantin')
-    <div class="w-full h-screen flex items-center flex-col">
+    <div class="w-full flex items-center flex-col">
         <div class="w-full flex justify-center">
             <div class="w-screen h-screen bg-black bg-opacity-60 hidden absolute top-0 right-0" style="z-index: 900;" id="background">
             </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full h-[40%] bg-white flex flex-col justify-between items-center rounded-xl">
+        <div class="w-full h-[250px] bg-white flex flex-col justify-between items-center rounded-xl">
             <div class="w-full h-[75%] flex items-center">
                 <div class="w-[45%] h-[90%] ml-3 bg-cover bg-center rounded-xl" style="background-image: url('/img/Bg-Cover.jpg')">
                     <div class="w-full h-full flex justify-between items-center rounded-xl backdrop-blur-[1.5px] backdrop-brightness-50">
@@ -43,15 +43,15 @@
                     </div>
                 </div>
                 <div class="w-[50%] ml-3 grid grid-rows-3 gap-2 grid-flow-col font-outfit text-md">
-                    <span>Nama Admin : Admin Sandy</span>
+                    <span>Nama Admin : {{ $admin->nama }}</span>
                     <span>No.Telpn Kantin : 08000000</span>
                     <span>Email Kantin : kantin@email.com</span>
-                    <span>Jumlah Produk : 4</span>
+                    <span>Jumlah Produk : {{ $jumlahProduk }}</span>
                 </div>
             </div>
             <div class="w-full h-[25%] font-outfit text-xl flex items-end justify-evenly">
                 <a href="#" class="border-b-2 border-blue-950">Menu Kantin</a>
-                <a href="/superadmin/detailpesanan" class="border-b-2 border-transparent">Pesanan</a>
+                <a href="/superadmin/detailpesanan/{{ $kantinName }}" class="border-b-2 border-transparent">Pesanan</a>
                 <a href="#" class="border-b-2 border-transparent">Pemasukan</a>
             </div>
         </div>
@@ -88,7 +88,6 @@
                 $('#modal').addClass('animate-showModal')
                 $('#modal').removeClass("animate-hideModal");
                 $('#background').removeClass('hidden')
-                $('#body').addClass('overflow-hidden')
             });
             $('body').on('click', '#closeModal', function(e){
                 e.preventDefault()

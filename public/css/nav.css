@@ -45,7 +45,8 @@
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
+    --tw-bg-opacity: 20;
+    color: white;
 }
 
 .nav-content {
@@ -72,7 +73,6 @@
     justify-content: space-between;
     position: relative;
     order: 2 !important;
-
 }
 
 .menu-toggle input {
@@ -106,26 +106,24 @@
     transform-origin: 0 100%;
 }
 
-.menu-toggle input:checked~span:nth-child(2) {
+.menu-toggle input:checked ~ span:nth-child(2) {
     background-color: black;
     transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.menu-toggle input:checked~span:nth-child(4) {
+.menu-toggle input:checked ~ span:nth-child(4) {
     background-color: black;
     transform: rotate(-45deg) translate(-1px, 0);
 }
 
-.menu-toggle input:checked~span:nth-child(3) {
+.menu-toggle input:checked ~ span:nth-child(3) {
     opacity: 0;
     transform: scale(0);
 }
 
-
 /* style dropdown */
 
-
-.dropdown{
+.dropdown {
     display: flex;
     align-items: center;
 }
@@ -210,8 +208,13 @@ ul {
     list-style: none;
 }
 
-.button-sidebar a{
+.button-sidebar a {
     color: black;
+}
+
+.button-sidebar a:hover {
+    --tw-bg-opacity: 20;
+    color: white;
 }
 
 .keranjangs {
@@ -240,7 +243,7 @@ ul {
     align-items: center;
 }
 
-p{
+p {
     margin: 0;
 }
 @media only screen and (max-width: 600px) {
@@ -258,12 +261,12 @@ p{
         z-index: 9999;
     }
 
-    .menu-toggle input:checked~span:nth-child(2) {
+    .menu-toggle input:checked ~ span:nth-child(2) {
         background-color: gray;
         transform: rotate(45deg) translate(-1px, -1px);
     }
 
-    .menu-toggle input:checked~span:nth-child(4) {
+    .menu-toggle input:checked ~ span:nth-child(4) {
         background-color: gray;
         transform: rotate(-45deg) translate(-1px, 0);
     }
@@ -333,7 +336,7 @@ p{
         color: #fff;
     }
 
-    .button-sidebar a{
+    .button-sidebar a {
         color: black;
     }
 
@@ -397,12 +400,12 @@ p{
         transform: translateX(0);
     }
 
-    .menu-toggle input:checked~span:nth-child(2) {
+    .menu-toggle input:checked ~ span:nth-child(2) {
         background-color: gray;
         transform: rotate(45deg) translate(-1px, -1px);
     }
 
-    .menu-toggle input:checked~span:nth-child(4) {
+    .menu-toggle input:checked ~ span:nth-child(4) {
         background-color: gray;
         transform: rotate(-45deg) translate(-1px, 0);
     }
@@ -414,8 +417,8 @@ p{
     #mainNav .navbar-nav .nav-item .nav-link {
         color: #fff;
     }
-    
-    .button-sidebar a{
+
+    .button-sidebar a {
         color: black;
     }
 
@@ -449,7 +452,7 @@ p{
         top: 12px;
     }
 
-    .ntif p{
+    .ntif p {
         color: #000;
     }
 }
@@ -484,16 +487,16 @@ p{
         transform: translateX(0);
     }
 
-    .menu-toggle input:checked~span:nth-child(2) {
+    .menu-toggle input:checked ~ span:nth-child(2) {
         background-color: gray;
         transform: rotate(45deg) translate(-1px, -1px);
     }
 
-    .menu-toggle input:checked~span:nth-child(4) {
+    .menu-toggle input:checked ~ span:nth-child(4) {
         background-color: gray;
         transform: rotate(-45deg) translate(-1px, 0);
     }
-    
+
     #mainNav .navbar-nav .nav-item .nav-link {
         color: #fff;
     }
@@ -520,7 +523,7 @@ p{
         color: #fff;
     }
 
-    .button-sidebar a{
+    .button-sidebar a {
         color: black;
     }
 
@@ -540,7 +543,7 @@ p{
         top: 15px;
     }
 
-    .ntif p{
+    .ntif p {
         color: #000;
     }
 }

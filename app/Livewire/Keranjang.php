@@ -17,8 +17,10 @@ class Keranjang extends Component
     public function render(Request $id)
     {
         $check = Keranjangs::count();
-        $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $keranjang = Keranjangs::where('id',$id)->first();
+        $keranjangs = Keranjangs::where('user_id', auth()->user()->id)
+                                ->latest()
+                                ->get();
+        $keranjang = Keranjangs::where('id', $id)->first();
         $user = User::where('id', auth()->user()->id)->first();
         $userNav = auth()->user();
         $menu = Menu::where('id',$id)->first();
@@ -77,7 +79,6 @@ class Keranjang extends Component
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
         // keranjang::truncate();
-
 
 
         return response()->json($keranjang);

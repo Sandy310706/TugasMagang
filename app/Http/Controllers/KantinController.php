@@ -6,6 +6,7 @@ use App\Models\Menu;
 use App\Models\User;
 use App\Models\Kantin;
 use App\Models\Feedback;
+use App\Models\Invoice;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -89,7 +90,7 @@ class KantinController extends Controller
         $userNav = auth()->user();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
-        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin','Kantin'));
+        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin','Kantin',));
     }
     public function delete($id)
     {
@@ -99,10 +100,14 @@ class KantinController extends Controller
     }
     public function detailKantin($namaKantin)
     {
+        $kantinName = $namaKantin;
         $kantin = Kantin::where('namaKantin', $namaKantin)->first();
         $menu = Menu::where('id_kantin', $kantin['id'])->get();
         $data = Menu::where('id_kantin', $kantin['id'])->where('is_konfirmasi', 0)->get();
-        return view('superadmin.detailkantin', compact('menu','kantin','data'));
+        $admin = User::where('id_kantin', $kantin->id)->first();
+        $Produk = Menu::where('id_kantin', $kantin->id)->get();
+        $jumlahProduk = $Produk->count();
+        return view('superadmin.detailkantin', compact('menu','kantin','data','kantinName', 'admin', 'jumlahProduk'));
     }
     public function konfirmasiMenu($id)
     {
@@ -111,8 +116,15 @@ class KantinController extends Controller
         $data->save();
         return response()->json(['success' => 'Menu berhasil di konfirmasi.']);
     }
-    public function detailPesanan()
+    public function detailPesanan($namaKantin)
     {
-        return view('superadmin.detailpesanan');
+
+        $kantin = Kantin::where('namaKantin', $namaKantin)->first();
+        $data = Invoice::all();
+        $admin = User::where('id_kantin', $kantin->id)->first();
+        $Produk = Menu::where('id_kantin', $kantin->id)->get();
+        $Pesanan = Invoice::where('kantin_id', $kantin->id)->get();
+        $jumlahProduk = $Produk->count();
+        return view('superadmin.detailpesanan', compact('kantin', 'admin', 'jumlahProduk', 'Pesanan', 'data'));
     }
 }

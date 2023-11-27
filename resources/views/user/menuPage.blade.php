@@ -12,13 +12,13 @@
 
     </div>
     @if($menu == null)
-    <div class="content-null">
-        <div class="hero-null">
-            <div class="image-null">
-                <img src="{{ asset('img/kantin-menu.png') }}" alt="">
+        <div class="content-null">
+            <div class="hero-null">
+                <div class="image-null">
+                    <img src="{{ asset('img/kantin-menu.png') }}" alt="">
+                </div>
             </div>
         </div>
-    </div>
     @else
     <h1 class="text-center kantin">kantin</h1>
     <div class="hero-click">

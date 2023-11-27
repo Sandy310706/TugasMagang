@@ -16,7 +16,9 @@ class Kantin extends Model
         'menu_id',
         'namaToko',
         'keuangan',
-        'admin_id'
+        'admin_id',
+        'noTelpn',
+        'email',
     ];
 
     public function user()
@@ -40,6 +42,11 @@ class Kantin extends Model
     public function invoice()
     {
         return $this->belongsTo(Kantin::class, 'kantin_id');
+    }
+
+    public function jumlahPesanan()
+    {
+        return $this->belongsTo(jumlahPesanan::class, 'kantin_id');
     }
 
 }

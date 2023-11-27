@@ -52,7 +52,7 @@ class AuthController extends Controller
                 $namaKantin = Kantin::find($kantin);
                 return redirect()->route('Admin.Dashboard');
             } elseif ($user->role == 'superadmin') {
-                return redirect()->route('Superadmin.Akun');
+                return redirect()->route('Superadmin.Dashboard');
             }
         } else {
             return redirect()->back()->withErrors(['password' => 'Password salah'])->withInput();
