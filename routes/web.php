@@ -26,7 +26,7 @@ Route::fallback(function () {
     return view('errors.404');
 });
 Route::get('/test', function(){
-    dd(Invoice::with(['keranjang', 'user'])->get());
+    return response()->json('pppp');
 });
 Route::get('/cekLogin', function(){
     dd(Auth::user());

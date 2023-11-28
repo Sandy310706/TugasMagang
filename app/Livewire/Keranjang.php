@@ -17,15 +17,12 @@ class Keranjang extends Component
     public function render(Request $id)
     {
         $check = Keranjangs::count();
-        $keranjangs = Keranjangs::where('user_id', auth()->user()->id)
-                        ->latest()
-                        ->get();
+        $keranjangs = Keranjangs::where('user_id', auth()->user()->id)->get();
         $keranjang = Keranjangs::where('id', $id)->first();
         $user = User::where('id', auth()->user()->id)->first();
         $userNav = auth()->user();
         $menu = Menu::where('id',$id)->first();
         $angka = count($keranjangs);
-
         $totalHarga = [];
 
         foreach($keranjangs as $keranjang)
@@ -49,10 +46,9 @@ class Keranjang extends Component
         $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
                             ->where('menu_id', $id)
                             ->first();
-
         $menu = Menu::where('id', $id)->first();
 
-        $kantin = Kantin::where('id',$id)->first();
+        $kantin = Kantin::where('id', $id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
 
@@ -71,7 +67,7 @@ class Keranjang extends Component
             $keranjang->jumlah =  1;
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
-            $keranjang->kantin_id = $keranjang->menu->id_kantin;
+            $keranjang->kantin_id = $kantin->id;
             $keranjang->save();
         }
 
@@ -79,6 +75,7 @@ class Keranjang extends Component
         session(['success' => 'Menu berhasil di tambahkan ke Keranjang']);
         session(['lifetime' => 30]);
         // keranjang::truncate();
+
 
 
         return response()->json($keranjang);
