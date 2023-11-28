@@ -215,6 +215,12 @@ ul {
     color: black;
 }
 
+
+.button-sidebar a:hover{
+    --tw-bg-opacity: 20;
+    color: #cac6c6;
+}
+
 .keranjangs {
     position: relative;
     display: flex;

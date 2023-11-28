@@ -48,7 +48,7 @@
     <div class="card-pembungkus">
         <div class="content">
             <div class="content-checkbox">
-                <input type="checkbox" id="checkboxID" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
+                <input type="checkbox" id="checkboxID" data-menu-id="{{ $keranjang->menu_id }}" data-id="{{ $keranjang->id }}" class="checkbox" data-harga="{{ $keranjang->total_harga }}">
             </div>
             <div class="content-table foto">
                 <img src="{{ asset('storage/fileMenu/' . $keranjang->menu->foto) }}" alt="Menupage">
@@ -62,11 +62,11 @@
             </div>
             <div class="content-table btns">
                 <div id="keranjang-{{ $keranjang->id }}" style="display: inline">
-                    <button class="kurang" data-keranjang-id="{{ $keranjang->id }}"
+                    <button id="kurang" unique-id="{{ $keranjang->id }}" class="kurang" data-keranjang-id="{{ $keranjang->id }}"
                         data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-minus"></i></button>
                 </div>
                 <span data-menu-id="{{ $keranjang->menu_id }}" class="jumlah-item" style="padding: 10px;">{{ $keranjang->jumlah }}</span>
-                <div id="keranjang-{{ $keranjang->id }}" style="display: inline;">
+                <div id="keranjang" unique-id="{{ $keranjang->id }}" style="display: inline;">
                     <button class="tambah" data-keranjang-id="{{ $keranjang->id }}" data-menu-id="{{ $keranjang->menu_id }}"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
@@ -83,28 +83,20 @@
         </div>
     </div>
     @endforeach
-
-    <div class="checkbox-content">
-        <input type="checkbox" class="checkbox-all" id="myCheckbox">
-        <p>Pilih Semua</p>
-    </div>
     @endif
-
-<div class="container totals mt-3">
-    <div class="checkout">
-        <div class="subtotal mr-3" >
-            <p>Total Harga :   Rp.</p>
-
-            <p id="total"  class="ml-2"></p>
-
-        </div>
-        <div class="cekout">
-            <div class="btnns">
-               <a href="/invoice" type="sumbit" id="checkoutBTN" class="buttons" onclick="kirimData(this)">checkout</a>
+    <div class="container totals mt-3">
+        <div class="checkout">
+            <div class="subtotal mr-3" >
+                <p>Total Harga :   Rp.</p>
+                <p id="total"  class="ml-2"></p>
+            </div>
+            <div class="cekout">
+                <div class="btnns">
+                <a href="/invoice" type="sumbit" id="checkoutBTN" class="buttons" onclick="kirimData(this)">checkout</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
@@ -120,51 +112,36 @@
         $(".tambah").click(function() {
             const keranjangId = $(this).data("keranjang-id");
             const menuId = $(this).data("menu-id");
-            console.log("/cartst/" + keranjangId + "/" + menuId);
+            // console.log("/cartst/" + keranjangId + "/" + menuId);
             let spanJumlah = $("span[data-menu-id='" + menuId + "']");
             let totalHarga = $("span[data-id='" + keranjangId + "']");
-            $.ajax({
-                type: "GET",
-                url: "/cartst/" + keranjangId + "/" + menuId,
-                success: function(data) {
-                    console.log(spanJumlah);
-                    console.log(totalHarga);
-                    spanJumlah.text(data.jumlah);
-                    totalHarga.text("Rp. " + data.total_harga)
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
-            });
+            let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
+            hargaTotal("/cartst/" + keranjangId + "/" + menuId, spanJumlah, totalHarga,checkbox)
+
+
         });
         $(".kurang").click(function() {
             const keranjangId = $(this).data("keranjang-id");
             const menuId = $(this).data("menu-id");
             const spanJumlah = $("span[data-menu-id='" + menuId + "']");
             const totalHarga = $("span[data-id='" + keranjangId + "']");
-            $.ajax({
-                type: "GET",
-                url: "/cartsk/" + keranjangId + "/" + menuId,
-                success: function(data) {
-                    spanJumlah.text(data.jumlah);
-                    totalHarga.text("Rp. " + data.total_harga)
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
-            });
+            let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
+           hargaTotal("/cartsk/" +   + "/" + menuId, spanJumlah,totalHarga,checkbox);
         });
     });
 
+
     function kirimData(bi) {
         const id = bi.getAttribute('data-id')
+        document.addEventListener('DOMContentLoaded', function () {
         var checkoutBTN = document.getElementById('checkoutBTN');
-        var checkboxID = document.getElementById('checkboxID');
+        var checkboxID = document.querySelectorAll('.checkboxID');
+        console.log(checkboxID.checked);
 
-        if(checkboxID.checked)
-        {
+        if(checkboxID.checked){
             $.ajax({
-            url: `/invoice/${id}`,
+                url: '/invoice/'+ id,
+            // url: `/carts/`,
             dataType: "json",
             type: "POST",
             data: {
@@ -188,15 +165,18 @@
             }
         });
         }else{
-            alert('Anda belum memilih Pesanan')
-        }
+            alert('Anda Belum memilih pesanan yang ada di keranjang');
+            return true;
 
+            setTimeout(() => {
+                    document.getElementById('alerts').style.display = 'none';
+                }, 8000);
+                document.getElementById('alerts').style.display = 'block';
+
+        }
+    });
     };
 
-    document.getElementById('checkboxID').addEventListener('change', function() {
-        var checkoutBTN = document.getElementById('checkoutBTN');
-        checkoutBTN.disabled =!this.checked;
-    });
 
     document.addEventListener('DOMContentLoaded', function () {
     // Ambil elemen-elemen checkbox
@@ -204,7 +184,13 @@
     var totalHargaElem = document.getElementById('total');
 
     checkboxes.forEach(function (checkbox) {
-    console.log(checkbox.getAttribute('data-harga'));
+        const keranjangId = $(this).data("keranjang-id");
+            const menuId = $(this).data("menu-id");
+            const spanJumlah = $("span[data-menu-id='" + menuId + "']");
+            const totalHarga = $("span[data-id='" + keranjangId + "']");
+
+        hargaTotal("/cartsk/" + keranjangId + "/" + menuId, spanJumlah,totalHarga,checkbox);
+    // console.log(checkbox.getAttribute('data-harga'));
       checkbox.addEventListener('change', function () {
         // Hitung total harga saat checkbox berubah
         var totalHarga = 0;
@@ -235,6 +221,21 @@
         } else {
             dropdownMenu.style.display = "none";
         }
+    }
+    function hargaTotal(url, spanJumlah, totalHarga,checkbox){
+        $.ajax({
+                type: "GET",
+                url: url,
+                success: function(data) {
+                    spanJumlah.text(data.jumlah);
+                    totalHarga.text("Rp. " + data.total_harga)
+                    checkbox.attr('data-harga', data.total_harga);
+                    // console.log(  checkbox.attr('data-harga'));
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
     }
 
 
