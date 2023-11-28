@@ -46,7 +46,7 @@
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
     --tw-bg-opacity: 20;
-    color: #cac6c6;
+    color: #948383;
 }
 
 .nav-content {
@@ -330,6 +330,9 @@ p{
     .ntif p {
         color: #000;
     }
+    .dropdown-sidebar{
+       top: 35px;
+    }
 
     .dropdown {
         width: 150px;
@@ -443,6 +446,10 @@ p{
     .dropdown {
         padding: 12px;
         width: 150px;
+    }
+
+    .dropdown-sidebar{
+        top: 38px;
     }
 
     .welcome {
