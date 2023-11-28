@@ -42,3 +42,39 @@
     transform: rotate(39deg);
     background-color: rgb(99, 93, 93);
 }
+
+
+/* .style img akun kosong */
+
+.content-img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-img {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.content-text .content-child {
+    color: #000;
+    text-align: center;
+    font-family: Sansation;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.content-text .content-child-1 {
+    color: #5A5A5A;
+    text-align: center;
+    font-family: Sansation;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

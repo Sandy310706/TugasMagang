@@ -508,7 +508,6 @@ p {
     display: flex;
     padding: 20px;
     margin: 10px;
-    
    flex-direction: column;
 }
 
@@ -570,7 +569,10 @@ p {
 .content button:hover {
     --tw-bg-opacity: 10;
     background-color: rgb(190, 7, 7);
+    color: white;
 }
+
+
 
 .contact .section-heading {
     color: #fff;
