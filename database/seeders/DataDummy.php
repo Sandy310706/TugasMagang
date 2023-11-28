@@ -13,7 +13,12 @@ class DataDummy extends Seeder
 {
     public function run(): void
     {
-
+        DB::table('users')->insert([
+            'nama' => 'budi',
+            'email' => 'budi@super.com',
+            'role' => 'superadmin',
+            'password' => hash::make('budi'),
+        ]);
         // DB::table('users')->insert([
         //     'nama' => 'robin',
         //     'email' => 'robin@gmail.com',
@@ -27,18 +32,16 @@ class DataDummy extends Seeder
 
         // ]);
 
-
-        DB::table('menus')->insert([
-            'nama' => 'Tahu',
-            'harga' => '5000',
-            'quantity' => '1',
-            'kategori' => 'makanan',
-            'stok' => '10',
-            'foto' => 'tempe.jpg',
-            'id_kantin'=>'1',
-            'per'=>'0',
-            'is_konfirmasi' =>'0',
-
-        ]);
+        // DB::table('menus')->insert([
+        //     'nama' => 'Tahu',
+        //     'harga' => '5000',
+        //     'quantity' => '1',
+        //     'kategori' => 'makanan',
+        //     'stok' => '10',
+        //     'foto' => 'tempe.jpg',
+        //     'id_kantin'=>'5',
+        //     'per'=>'0',
+        //     'is_konfirmasi' =>'0',
+        // ]);
     }
 }

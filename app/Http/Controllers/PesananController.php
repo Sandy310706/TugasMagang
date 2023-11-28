@@ -9,6 +9,7 @@ class PesananController extends Controller
 {
     public function index()
     {
-        return view('admin.kelolapesanan');
+        $data = Invoice::where('status', 0)->get();
+        return view('admin.kelolapesanan', compact('data'));
     }
 }

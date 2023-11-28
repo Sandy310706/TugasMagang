@@ -12,6 +12,6 @@ class LogPassword extends Model
     protected $guarded = ['id'];
 
     public function user(){
-        return $this->belongsTo(User::class, 'id_user', 'id');
+        return $this->belongsTo(User::class, 'id_superadmin', 'id');
     }
 }

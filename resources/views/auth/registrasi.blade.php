@@ -10,6 +10,11 @@
         <div class="w-full h-[92%] flex justify-center items-center">
             <div class="w-[35%] m-10 bg-white rounded-3xl flex shadow-xl shadow-stone-500 bg-opacity-25 mobile:w-11/12 lgMobile:w-11/12 Tablet:w-[70%] lgTablet:w-[60%]">
                 <div class="w-full h-full flex flex-col mt-10 items-center">
+                    <div class="w-full relative">
+                        <a href="/login" class="absolute -right-[0.85rem] -top-[3.5rem] rounded-full  text-center bg-white hover:bg-slate-100 py-2 px-3">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                        </a>
+                    </div>
                     <div class="w-full flex justify-center items-center mb-10">
                         <h1 class="text-4xl font-montserrat">R e g i s</h1>
                     </div>

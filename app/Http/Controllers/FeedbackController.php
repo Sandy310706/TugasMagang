@@ -24,9 +24,9 @@ class FeedbackController extends Controller
         return view('admin.feedback', compact('feedback', 'cekFeedback'));
     }
 
-    public function store(Request $request, $kantin)
+    public function store(Request $request, $id)
     {
-        $keranjang = Keranjangs::where('kantin_id', auth()->user()->id)->first();
+        $keranjang = Keranjangs::where('user_id', auth()->user()->id)->first();
         $nama = Feedback::all();
         if(auth()->check()) {
 
@@ -47,7 +47,8 @@ class FeedbackController extends Controller
                 'kantin_id' => $keranjang->kantin_id,
             ]);
 
-            return redirect('/menu')->with('success','Feedback berhasil terkirim');
+
+            return redirect()->back()->with('success','Feedback berhasil terkirim');
         }else{
             return redirect()->route('login')->with('error','anda belum login');
         }

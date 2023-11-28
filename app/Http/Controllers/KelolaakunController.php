@@ -57,8 +57,8 @@ class KelolaakunController extends Controller
         return response()->json(['errors' => $dataValidasi->errors()], 422);
         }
         $newData = new User;
-        $newData->nama = $request->nama;
-        $newData->email = $request->email;
+        $newData->nama = ucfirst($request->nama);
+        $newData->email = strtolower($request->email);
         $newData->password = $request->password;
         $newData->role = $request->role;
         $newData->id_kantin = $request->kantin;
