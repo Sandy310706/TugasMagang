@@ -94,7 +94,7 @@
 
         } else {
             navbar.style.backgroundColor = "transparent";
-
+            navbar.style.padding = "10px";
         }
     }
 });
