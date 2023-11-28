@@ -246,21 +246,22 @@ p {
 }
 
 .clicks .btn-submit {
-    text-align: center;
-    display: inline-block;
-    border-radius: 4px;
-    background: green;
-    width: 90%;
-    color: #ffff;
-    font-family: Righteous;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F00;
+  width: 90%;
+  color: #ffff;
+  font-family: Righteous;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .btn-submit:hover {
-    background-color: black;
+  --tw-bg-opacity: 10;
+    background-color: rgb(190, 7, 7);
 }
 .custom-alert {
   display: none;
@@ -335,9 +336,9 @@ p {
   justify-content: end;
 }
 .image-1 img {
-    z-index: -1;
-    margin-bottom: 201%;
-    margin-right: 300%;
+  z-index: -1;
+  margin-bottom: 201%;
+  margin-right: 300%;
 }
 
 h3 {

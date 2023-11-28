@@ -110,8 +110,6 @@ e
     font-weight: bold;
   }
 
-
-
   .text-detail {
     text-align: center;
   }
@@ -190,6 +188,7 @@ e
   }
 
   .button-btn{
+    width: 100%;
     display: flex;
     justify-content: end;
   }

@@ -27,7 +27,7 @@
                         <span>Email Kantin : </span><span id="spanEmail" class="ml-1">frederick@email.com</span><input id="inputEmail" class="hidden ml-1 w-[33%] outline-none border-b border-black" type="text" value="000000"><button id="btnEmail" class="ml-2"><i class="fa-regular fa-pen-to-square"></i></button>
                     </div>
                     <span>Jumlah Produk : {{ $totalMenu }} </span>
-                    <button class="p-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:ring-1 focus:ring-blue-600 text-white">Edit profil</button>
+                    {{-- <button class="p-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:ring-1 focus:ring-blue-600 text-white">Edit profil</button> --}}
                 </div>
             </div>
         </div>

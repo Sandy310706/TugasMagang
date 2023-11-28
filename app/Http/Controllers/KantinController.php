@@ -107,7 +107,8 @@ class KantinController extends Controller
         $admin = User::where('id_kantin', $kantin->id)->first();
         $Produk = Menu::where('id_kantin', $kantin->id)->get();
         $jumlahProduk = $Produk->count();
-        return view('superadmin.detailkantin', compact('menu','kantin','data','kantinName', 'admin', 'jumlahProduk'));
+        $jumlahData = $data->count();
+        return view('superadmin.detailkantin', compact('menu','kantin','data','kantinName', 'admin', 'jumlahProduk', 'jumlahData'));
     }
     public function konfirmasiMenu($id)
     {

@@ -18,15 +18,15 @@
         <table id="tabel-menu" class="table-fixed  w-full rounded-lg font-outfit text-xs h-12">
             <thead class="">
                 <tr>
-                    <th>#</th>
-                    <th>FOTO</th>
-                    <th>NAMA</th>
-                    <th>KATEGORI</th>
-                    <th>HARGA</th>
-                    <th>PER</th>
-                    <th>STATUS</th>
-                    <th>STOK</th>
-                    <th>AKSI</th>
+                    {{-- <th>#</th> --}}
+                    <th>Foto</th>
+                    <th>Nama</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Per</th>
+                    <th>Status</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody id="tbody" class="bg-white">
@@ -108,7 +108,7 @@
             },
             ajax: '{{ route("Admin.Menu.Ajax") }}',
             columns: [
-                {   data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false, width: 20 },
+                // {   data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false, width: 20 },
                 {
                     data: 'foto',
                     name: 'foto',

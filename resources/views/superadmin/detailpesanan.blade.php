@@ -17,16 +17,17 @@
                         </svg>
                     </button>
                     <div class="w-full flex flex-col justify-center mt-10">
-                        <div class="flex w-full border-dashed justify-between border-y-2 border-black">
-                            <div id="tokenPesanan" class="px-4 w-[30%] py-1 text-lg text-center">{{ $pesanan->token }}</div>
-                            <div id="namaPemesan" class="px-2 w-[30%] py-1 text-lg text-center">{{ $pesanan->user->nama }}</div>
-                            <div id="waktuPesanan" class="px-4 w-[30%] py-1 text-lg text-center">{{ $pesanan->created_at }}</div>
+                        <div class="w-1/2 border-b border-black">
+                            <div id="tokenPesanan" class="text-md">Kode Pesanan : {{ $pesanan->token }}</div>
+                            <div id="namaPemesan" class="text-md">Nama Pemesan : {{ $pesanan->user->nama }}</div>
+                            <div id="waktuPesanan" class="text-md mb-1">Tanggal Pemesanan : {{ $pesanan->created_at }}</div>
                         </div>
-                        <div class="w-full flex justify-between mt-1">
-                            <div class="px-2 w-[22%] py-1 text-lg text-center">{{ $pesanan->Keranjang->menu->nama }}</div>
-                            <div class="px-2 w-[22%] py-1 text-lg text-center">{{ $pesanan->Keranjang->jumlah }}</div>
-                            <div class="px-2 w-[22%] py-1 text-lg text-center">Rp. {{ $pesanan->Keranjang->subtotal }}</div>
-                            <div class="px-2 w-[22%] py-1 text-lg text-center">Rp. {{ $pesanan->Keranjang->total_harga }}</div>
+                        <div class="w-full flex justify-evenly items-center mt-1 p-2 bg-white rounded-md border border-slate-400 font-outfit">
+                            <img src="{{ asset('storage/fileMenu/'. $pesanan->keranjang->menu->foto) }}" alt="foto Menu" class="h-20 w-22 rounded-sm w-[22%]">
+                            <span class="">{{ $pesanan->keranjang->menu->nama }}</span>
+                            <span>{{ $pesanan->Keranjang->menu->kategori }}</span>
+                            <span class="">Rp. {{ number_format($pesanan->keranjang->subtotal, 0, ',', '.') }}/{{ $pesanan->keranjang->menu->per }}</span>
+                            <span class="">{{ $pesanan->keranjang->jumlah }}</span>
                         </div>
                         <div class="w-[30%] h-10 flex mt-4 items-center self-end border-dashed border-y-2 border-black">
                             <div class="font-outfit text-lg">Total : <span>Rp. {{ $pesanan->Keranjang->total_harga }}</span></div>

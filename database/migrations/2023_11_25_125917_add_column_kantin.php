@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('kantin', function (Blueprint $table) {
-            $table->integer('noTelpn');
-            $table->string('email');
+            $table->integer('noTelpn')->nullable();
+            $table->string('email')->nullable();
         });
     }
 

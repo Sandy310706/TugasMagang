@@ -16,17 +16,21 @@
                     </svg>
                 </button>
                 <div class="w-full flex flex-col justify-center">
-                    @foreach ($data as $notKonfirmasi)
-                        <div id="cardMenu" class="cardMenu{{ $notKonfirmasi->id }} w-full h-full flex items-center bg-white rounded-sm p-4 mb-2">
-                            <img  src="{{ asset('storage/fileMenu/'. $notKonfirmasi->foto) }}" class="mr-4 h-20 w-25 rounded-md border-2 border-slate-600" alt="foto kantin">
-                            <span id="namaMenu" class="w-[35%] font-outfit text-center">{{ $notKonfirmasi->nama }}</span>
-                            <span id="hargaMenu" class="w-[35%] font-outfit text-center">Rp. {{ $notKonfirmasi->harga }}</span>
-                            <div class="w-[20%] flex justify-center">
-                                <button data-id="{{ $notKonfirmasi->id }}" data-code="satu" id="terima" class="terima text-green-500 text-2xl mr-1"><i class="fa-regular fa-square-check"></i></button>
-                                <button data-id="{{ $notKonfirmasi->id }}" data-code="dua" id="tolak" class="text-red-500 text-2xl"><i class="fa-regular fa-square-minus"></i></button>
+                    @if ($jumlahData == 0)
+                        Kosong
+                    @else
+                        @foreach ($data as $notKonfirmasi)
+                            <div id="cardMenu" class="cardMenu{{ $notKonfirmasi->id }} w-full h-full flex items-center bg-white rounded-sm p-4 mb-2">
+                                <img  src="{{ asset('storage/fileMenu/'. $notKonfirmasi->foto) }}" class="mr-4 h-20 w-25 rounded-md border-2 border-slate-600" alt="foto kantin">
+                                <span id="namaMenu" class="w-[35%] font-outfit text-center">{{ $notKonfirmasi->nama }}</span>
+                                <span id="hargaMenu" class="w-[35%] font-outfit text-center">Rp. {{ $notKonfirmasi->harga }}</span>
+                                <div class="w-[20%] flex justify-center">
+                                    <button data-id="{{ $notKonfirmasi->id }}" data-code="satu" id="terima" class="terima text-green-500 text-2xl mr-1"><i class="fa-regular fa-square-check"></i></button>
+                                    <button data-id="{{ $notKonfirmasi->id }}" data-code="dua" id="tolak" class="text-red-500 text-2xl"><i class="fa-regular fa-square-minus"></i></button>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
