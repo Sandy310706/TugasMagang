@@ -4,5 +4,5 @@
     <a href="javascript:void(0)" id="btnDelete{{ $row->id }}" data-id="{{ $row->id }}" class="btnDelete text-red-600"><i class="fa-solid fa-trash"></i><span> Hapus</span></a>
 </div>
 <div class="w-full">
-    <a href="javascript:void(0)" id="btnEditPassword" data-id="{{ $row->id }}" class="text-yellow-600"><i class="fa-solid fa-key"></i> Ubah password</a>
+    <a href="/superadmin/detailKantin/{{ $row->namaKantin }}" id="btnDetailKantin" data-id="{{ $row->id }}" class="text-sky-500"> Detail Kantin</a>
 </div>

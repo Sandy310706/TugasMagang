@@ -42,4 +42,9 @@ class Kantin extends Model
         return $this->belongsTo(Kantin::class, 'kantin_id');
     }
 
+    public function jumlahPesanan()
+    {
+        return $this->belongsTo(jumlahPesanan::class, 'kantin_id');
+    }
+
 }

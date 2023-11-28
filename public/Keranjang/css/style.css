@@ -52,6 +52,7 @@ svg */
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 100px;
 }
 
 .content-text .content-child {
@@ -142,15 +143,29 @@ h1.text-center {
     display: flex;
 }
 
-.content p {
+.content-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.content-cart .kantin-name{
+    color: #A69F9F;
+    font-size: 15px;
+    font-family: Amaranth;
+}
+
+.content-cart .menu-name {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 15px;
+    font-family: Amaranth;
 }
 
 .card-pembungkus img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 60px;
     border-radius: 10px;
+    margin-right: 10px;
 }
 
 .btns button {
@@ -250,7 +265,6 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-
     .hilang {
         display: block;
     }
@@ -313,11 +327,16 @@ p {
     }
 
     .card-pembungkus img {
-        width: 80px;
-        height: 70px;
+        width: 50px;
+        height: 30px;
+        margin-right: 0;
     }
 
-    .content p {
+    .content .menu-name {
+        font-size: 12px;
+    }
+    
+    .content-cart .kantin-name{
         font-size: 12px;
     }
 

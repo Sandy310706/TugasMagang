@@ -23,6 +23,7 @@ class Keranjang extends Component
         $userNav = auth()->user();
         $menu = Menu::where('id',$id)->first();
         $angka = count($keranjangs);
+
         $totalHarga = [];
 
         foreach($keranjangs as $keranjang)
@@ -46,9 +47,10 @@ class Keranjang extends Component
         $cekKeranjang = Keranjangs::where('user_id', auth()->user()->id)
                             ->where('menu_id', $id)
                             ->first();
+
         $menu = Menu::where('id', $id)->first();
 
-        $kantin = Kantin::where('id', $id)->first();
+        $kantin = Kantin::where('id',$id)->first();
 
         $keranjang = Keranjangs::where('id', $id);
 
@@ -67,7 +69,7 @@ class Keranjang extends Component
             $keranjang->jumlah =  1;
             $keranjang->total_harga = $menu->harga * $menu->quantity;
             $keranjang->subtotal = $keranjang->total_harga;
-            $keranjang->kantin_id = $kantin->id;
+            $keranjang->kantin_id = $keranjang->menu->id_kantin;
             $keranjang->save();
         }
 

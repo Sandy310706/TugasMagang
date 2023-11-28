@@ -100,7 +100,7 @@ e
     width: 100%;
     height: 100%;
     position: relative;
-    top: 50px;
+    top: 100px;
   }
 
   .close {
@@ -177,6 +177,20 @@ e
 
   .modal-header{
     display: flex;
+    flex-direction: column;
+  }
+
+  .modal-header{
+    padding: 0;
+    border: 0;
+  }
+
+  .header-child{
+    width: 100%;
+  }
+
+  .button-btn{
+    display: flex;
     justify-content: end;
   }
 
@@ -245,7 +259,6 @@ e
     }
 
     .btn {
-      width: 100%;
       font-size: 15px;
     }
 

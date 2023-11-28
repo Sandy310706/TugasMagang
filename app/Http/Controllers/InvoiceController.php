@@ -19,8 +19,6 @@ class InvoiceController extends Controller
     {
         $invoices = Keranjangs::where('user_id', auth()->user()->id)->get();
         $detail = Invoice::where('user_id', auth()->user()->id)->get();
-
-
         $keranjang = Keranjangs::where('id',$id)->first();
         $userNav = auth()->user();
         $angka = count($invoices);
@@ -50,15 +48,11 @@ class InvoiceController extends Controller
         $invoice = new Invoice;
         $invoice->user_id = auth()->user()->id;
         $invoice->keranjang_id = $keranjang->id;
-        $invoice->kantin_id = $keranjang ->kantin_id;
+        $invoice->kantin_id = $keranjang->kantin_id;
         $invoice->token = $randomString;
         $invoice->status = 0;
         $invoice->save();
 
-        foreach ($keranjang as $keranjangItem) {
-            $keranjangItem->invoice_id = $invoice->id;
-            $keranjang->save();
-        }
 
         // keranjang::truncate();
 

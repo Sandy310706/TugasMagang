@@ -45,7 +45,8 @@
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
+    --tw-bg-opacity: 20;
+    color: #cac6c6;
 }
 
 .nav-content {
@@ -72,6 +73,7 @@
     justify-content: space-between;
     position: relative;
     order: 2 !important;
+
 }
 
 .menu-toggle input {
@@ -90,7 +92,7 @@
     display: block;
     width: 28px;
     height: 3px;
-    background-color: grey;
+    background-color: black;
     border-radius: 3px;
     transition: all 0.5s;
 }
@@ -121,11 +123,16 @@
 }
 
 
-/* style dropdown */s
+/* style dropdown */
 
-.button-sidebar {
+
+.dropdown{
     display: flex;
     align-items: center;
+}
+
+.button-sidebar {
+    padding-bottom: 3px;
 }
 
 .button-sidebar button {
@@ -259,6 +266,9 @@ ul {
 }
 >>>>>>> b84b2859c7d13468f3f022d5c20b67039327270a
 
+p{
+    margin: 0;
+}
 @media only screen and (max-width: 600px) {
     body {
         max-width: 100%;

@@ -38,58 +38,57 @@
                 </div>
             </div>
         @endforeach
-
-
     </div>
     @foreach ($detail as $invoice)
-        <div class="modal" tabindex="1000" id="detailModal{{ $invoice->id }}">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
+    <div class="modal" tabindex="1000" id="detailModal{{ $invoice->id }}">
+        <div class="modal-dialog">
+            <div class="modal-content animate__animated animate__fadeInDown">
+                <div class="modal-header">
+                    
+                    <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
+                </div>
+                <h1 class="text-detail">Detail Pesanan</h1>
+                <div class="hero-container">
+                    <div class="content-item">
+                        <div class="content-hero">
+                            <div class="kode hero-item">
+                                <p>{{ $invoice->keranjang_id }}</p>
+                            </div>
+                            <div class="name hero-item">
+                                <p>{{ $invoice->token }}</p>
+                            </div>
+                            <div class="tanggal hero-item">
+                                <p>{{ $invoice->created_at }}</p>
+                            </div>
+                        </div>
                     </div>
-                    <h1 class="text-detail">Detail Pesanan</h1>
-                    <div class="hero-container">
-
-                        <div class="content-item">
-                            <div class="content-hero">
-                                <div class="kode hero-item">
-                                    <p>{{ $invoice->keranjang_id }}</p>
-                                </div>
-                                <div class="name hero-item">
-                                    <p>{{ $invoice->token }}</p>
-                                </div>
-                                <div class="tanggal hero-item">
-                                    <p>{{ $invoice->created_at }}</p>
-                                </div>
+                    <div class="content-child">
+                        <div class="child-content">
+                            <div class="food hero-child">
+                                <p>{{ $invoice->keranjang->menu->nama}}</p>
+                            </div>
+                            <div class="stok hero-child">
+                                <p>{{ $invoice->keranjang->jumlah }}</p>
+                            </div>
+                            <div class="total hero-child">
+                                <p>{{ $invoice->keranjang->subtotal }}</p>
+                            </div>
+                            <div class="subtotal hero-child">
+                                <p>{{$invoice->keranjang->total_harga}}</p>
                             </div>
                         </div>
-                        <div class="content-child">
-                            <div class="child-content">
-                                <div class="food hero-child">
-                                    <p>{{ $invoice->keranjang->menu->nama }}</p>
-                                </div>
-                                <div class="stok hero-child">
-                                    <p>{{ $invoice->keranjang->jumlah }}</p>
-                                </div>
-                                <div class="total hero-child">
-                                    <p>{{ $invoice->keranjang->subtotal }}</p>
-                                </div>
-                                <div class="subtotal hero-child">
-                                    <p>{{$invoice->keranjang->total_harga}}</p>
-                                </div>
+                    </div>
+                    <div class="content-total">
+                        <div class="child-total">
+                            <div class="total hero-total">
+                                <p>{{ $arraySum }}</p>
                             </div>
                         </div>
-                        <div class="content-total">
-                            <div class="child-total">
-                                <div class="total hero-total">
-                                    <p>{{ $arraySum }}</p>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     @endforeach
 
 
@@ -164,7 +163,6 @@
                 console.log(e.target.getAttribute('call-modal'));
                 $('#' + e.target.getAttribute('call-modal')).modal("show");
             });
-
         });
 
     </script>

@@ -9,7 +9,6 @@ use App\Models\Feedback;
 use App\Models\Keranjangs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,7 +27,7 @@ class KantinController extends Controller
             $kantin = Kantin::all();
             return DataTables::of($kantin)->addIndexColumn()
             ->addColumn('action', function($row){
-                return view('layouts.superadmin.button', compact('row'));
+                return view('layouts.superadmin.buttonKantin', compact('row'));
             })->rawColumns(['action'])->make(true);
         }
     }
@@ -85,12 +84,12 @@ class KantinController extends Controller
     {
         $admin = User::where('role','admin')->first();
         $keranjang = Keranjangs::where('user_id', auth()->user()->id)->get();
-        $namaKantin = Kantin::where('namaKantin', $namaKantin)->first();
-        $menu = Menu::where('id', $namaKantin['id'])->get();
+        $Kantin = Kantin::where('namaKantin', $namaKantin)->first();
+        $menu = Menu::where('id_kantin', $Kantin->id)->get();
         $userNav = auth()->user();
         $user = User::where('id', auth()->user()->id)->first();
         $angka = count($keranjang);
-        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin'));
+        return view('user.kantinPage', compact('menu','angka','user','userNav','namaKantin','admin','Kantin'));
     }
     public function delete($id)
     {
@@ -98,10 +97,24 @@ class KantinController extends Controller
         $hapus->delete();
         return response()->json(['success' => 'Kantin berhasil diHapus']);
     }
+    
 
-    public function getmenu(Request $request, $id){
-        $menu = Menu::where('id', $id)->get();
-        dd($menu);
+    // yang lama
+    // public function getmenu(Request $request, $id){
+    //     $menu = Menu::where('id', $id)->get();
+    //     dd($menu);
+    // }
+
+
+    public function detailKantin($namaKantin)
+    {
+        $kantin = Kantin::where('namaKantin', $namaKantin)->first();
+        $menu = Menu::where('id_kantin', $kantin['id'])->get();
+        return view('superadmin.detailkantin', compact('menu','kantin'));
+    }
+    public function detailPesanan()
+    {
+        return view('superadmin.detailpesanan');
     }
 
 }
