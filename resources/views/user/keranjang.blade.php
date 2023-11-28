@@ -165,8 +165,10 @@
             }
         });
         }else{
+
             alert('Anda Belum memilih pesanan yang ada di keranjang');
             return true;
+
 
             setTimeout(() => {
                     document.getElementById('alerts').style.display = 'none';

@@ -11,6 +11,15 @@
             </div>
     @endforeach
 </div>
+<div class="container-img">
+    <div class="content-img">
+        <div class="hero-image">
+            <div class="image">
+                <img src="{{ asset('img/akun-log.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('style')
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">

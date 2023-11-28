@@ -44,7 +44,9 @@
         <div class="modal-dialog">
             <div class="modal-content animate__animated animate__fadeInDown">
                 <div class="modal-header">
-                    <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
+                    <div class="button-btn">
+                        <button type="button" class="btn btn-closes" data-bs-dismiss="modal">x</button>
+                    </div>
                 </div>
                 <h1 class="text-detail">Detail Pesanan {{ $invoice->id }}</h1>
                 <div class="hero-container">
