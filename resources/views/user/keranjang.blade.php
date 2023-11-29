@@ -126,7 +126,7 @@
             const spanJumlah = $("span[data-menu-id='" + menuId + "']");
             const totalHarga = $("span[data-id='" + keranjangId + "']");
             let checkbox = $("input[type='checkbox'][data-menu-id='" + menuId + "']");
-           hargaTotal("/cartsk/" +   + "/" + menuId, spanJumlah,totalHarga,checkbox);
+           hargaTotal("/cartsk/" + keranjangId + "/" + menuId, spanJumlah,totalHarga,checkbox);
         });
     });
 
@@ -140,7 +140,7 @@
 
         if(checkboxID.checked){
             $.ajax({
-                url: '/invoice/'+ id,
+             url: '/invoice/'+ id,
             // url: `/carts/`,
             dataType: "json",
             type: "POST",
@@ -222,6 +222,7 @@
             dropdownMenu.style.display = "none";
         }
     }
+
     function hargaTotal(url, spanJumlah, totalHarga,checkbox){
         $.ajax({
                 type: "GET",

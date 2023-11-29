@@ -20,7 +20,7 @@ class LandingController extends Controller
 
             if($keranjang)
             {
-                $angka = $keranjang->count();
+                $angka = Keranjangs::where('user_id', auth()->user()->id)->count();
             }
         }
 
