@@ -14,11 +14,9 @@ return new class extends Migration
     {
         Schema::create('log_passwords', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_superadmin');
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->unsignedBigInteger('id_user');
             $table->foreign('id_superadmin')->references('id')->on('users');
-            $table->timestamp('tanggal_pengedtian')->default(Carbon::now());
             $table->timestamps();
         });
     }

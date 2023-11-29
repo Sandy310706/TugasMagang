@@ -160,7 +160,7 @@
                 </div>
             @endforeach
             </div>
-               
+
         </div>
     </div>
 </div>
@@ -225,12 +225,12 @@
                 "_token": "{{ csrf_token() }}",
             },
             success: function(response) {
-                location.reload();
                 console.log("berhasil");
                 setTimeout(() => {
-                    document.getElementById('alerts').ustyle.display = 'none';
-                }, 5000);
-                document.getElementById('alerts').style.display = 'block';
+                    $('.custom-alert').css('display', 'none')
+                }, 3000);
+                $('.custom-alert').css('display', 'block')
+                // document.getElementById('alerts').style.display = 'block';
             },
             error: function(error) {
                 console.log('gagal');

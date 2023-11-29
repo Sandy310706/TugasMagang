@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Keranjangs;
 use App\Models\LogPassword;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,9 @@ class LogPasswordController extends Controller
             }
         }
         $userNav = auth()->user();
-        $data = LogPassword::where('id_user', auth()->user()->id)->get();
+        $data = LogPassword::with(['user' => function($query){
+            $test = $query->where('role', '=', 'superadmin');
+        }])->where('id_user', auth()->user()->id)->get();
         return view('user.logakun', compact('angka', 'userNav', 'data'));
     }
 

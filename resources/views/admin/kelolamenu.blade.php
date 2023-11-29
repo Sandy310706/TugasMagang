@@ -16,9 +16,9 @@
     </div>
     <div class="w-full">
         <table id="tabel-menu" class="table-fixed  w-full rounded-lg font-outfit text-xs h-12">
-            <thead>
+            <thead class="">
                 <tr>
-                    <th>No</th>
+                    {{-- <th>#</th> --}}
                     <th>Foto</th>
                     <th>Nama</th>
                     <th>Kategori</th>
@@ -29,13 +29,13 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <tbody id="tbody">
+            <tbody id="tbody" class="bg-white">
             </tbody>
         </table>
     </div>
 </div>
 <div class="w-full flex justify-center">
-    <div class="w-screen h-screen bg-black bg-opacity-60 hidden absolute top-0 right-0" style="z-index: 900;" id="background">
+    <div class="w-screen h-[200vh] bg-black bg-opacity-60 hidden absolute top-0 right-0" style="z-index: 900;" id="background">
     </div>
     <div id="modal" class="modal w-2/3 lgMobile:w-[95%] mobile:w-[95%] bg-slate-200 shadow-sm shadow-black rounded-md absolute  top-10 p-8  {{ $errors->any() ? 'block' : 'hidden' }} blur-none transition-all tablet:w-[80%] tablet:left-12" style="z-index: 999;">
         <div class="mb-2">
@@ -108,7 +108,7 @@
             },
             ajax: '{{ route("Admin.Menu.Ajax") }}',
             columns: [
-                {   data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false, width: 20 },
+                // {   data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false, width: 20 },
                 {
                     data: 'foto',
                     name: 'foto',
@@ -148,7 +148,6 @@
             $('#saveBtn').html('Kirim')
             $('#FormData').trigger("reset")
             $('#modal').removeClass('hidden')
-            $('#body').addClass('overflow-hidden')
             $('#background').removeClass('hidden')
             $('#modal').addClass('animate-showModal')
             $('#modalHeading').html('Mengajukan Menu baru.')

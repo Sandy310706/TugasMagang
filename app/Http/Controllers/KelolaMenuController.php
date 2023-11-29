@@ -63,7 +63,7 @@ class KelolaMenuController extends Controller
             $newData->kategori = $request->kategori;
             $newData->harga = $request->harga;
             $newData->stok = $request->stok;
-            $newData->per = $request->per;
+            $newData->per = strtolower($request->per);
             $newData->is_konfirmasi = 0;
             $newData->id_kantin = auth()->user()->id_kantin;
             if($request->hasFile('foto')){

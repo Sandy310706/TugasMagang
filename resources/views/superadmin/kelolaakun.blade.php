@@ -65,7 +65,9 @@
                 <label for="kantin" id="labelKantin" class="mb-1 font-outfit">Sebagai Admin</label>
                 <select name="kantin" id="kantin" class="rounded p-1 outline-none ring-1 ring-slate-600 border-slate-500 bg-slate-300 shadow-slate-800 focus:shadow-xl focus:ring-blue-700 focus:border-sky-800">
                     <option id="adminSelected" selected value=""></option>
-                    <option id="admminValue" value=""></option>
+                    @foreach ($kantin as $data)
+                        <option id="adminValue" value="{{ $data->id }}">{{ $data->namaKantin }}</option>
+                    @endforeach
                 </select>
                 <span class="pt-1 text-xs text-slate-600 after:content-['*'] after:text-red-500 after:text-sm after:font-medium">Jika role admin wajib di pilih</span>
             </div>
@@ -182,6 +184,7 @@
                             $('#ErrorRole').html(errorText.role)
                         }else{
                             Swal.fire('Gagal', 'Terjadi kesalahan saat menambah User.', 'error');
+                            console.log(error);
                         }
                     }
                 })

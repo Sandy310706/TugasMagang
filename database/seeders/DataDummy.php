@@ -20,13 +20,26 @@ class DataDummy extends Seeder
             'role' => 'admin',
             'password' => hash::make('admin'),
         ]);
+      
+        DB::table('users')->insert([
+            'nama' => 'budi',
+            'email' => 'budi@super.com',
+            'role' => 'superadmin',
+            'password' => hash::make('budi'),
+        ]);
+        // DB::table('users')->insert([
+        //     'nama' => 'robin',
+        //     'email' => 'robin@gmail.com',
+        //     'role' => 'guest',
+        //     'password' => hash::make('robin'),
+        // ]);
+
 
         // DB::table('kantin')->insert([
         //     'foto'=>'kantin.jpg',
         //     'namaKantin' => 'KantinMaele',
 
         // ]);
-
 
         // DB::table('menus')->insert([
         //     'nama' => 'Tahu',
@@ -35,10 +48,12 @@ class DataDummy extends Seeder
         //     'kategori' => 'makanan',
         //     'stok' => '10',
         //     'foto' => 'tempe.jpg',
+
         //     'id_kantin'=>'1',
         //     'per'=>'0',
         //     'is_konfirmasi' =>'0',
 
-        // ]);
+
+        //     'id_kantin'=>'5'
     }
 }

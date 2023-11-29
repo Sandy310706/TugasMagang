@@ -4,7 +4,7 @@
 @section('kelola kantin')
     <div class="w-full">
         <div class="w-1/5 mb-4">
-            <button id="openModal" class="p-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800">Tambah Kantin</button>
+            <button id="openModal" class="p-2 bg-gradient-to-r from-blue-400 to-blue-700 text-white rounded-md font-outfit  hover:from-blue-500 hover:to-blue-800 tracking-wide">Tambah Kantin</button>
         </div>
         <div class="w-full">
             <table id="tabel-akun" class="w-full mt-2 table-fixed rounded-lg font-outfit text-xs h-12">
@@ -157,6 +157,7 @@
                         error: function(error){
                             Swal.fire('Gagal', 'Terjadi kesalahan saat menambah Kantin.', 'error');
                             $('#submitBtn').html('Tambahkan')
+                            console.log(error);
                         }
                     })
                 })

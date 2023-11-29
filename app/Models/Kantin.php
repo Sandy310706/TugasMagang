@@ -16,7 +16,9 @@ class Kantin extends Model
         'menu_id',
         'namaToko',
         'keuangan',
-        'admin_id'
+        'admin_id',
+        'noTelpn',
+        'email',
     ];
 
     public function user()

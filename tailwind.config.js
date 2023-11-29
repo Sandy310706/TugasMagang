@@ -57,6 +57,7 @@ export default {
                 hideSidebar: "hideSidebar 0.5s  ease-in-out",
                 showMenu: "showMenu 1s ease-in-out",
                 hideMenu: "hideMenu 1s ease-in-out",
+                hideCardMenu: "hideDropdownMenu 0.5s ease-in-out",
             },
             screens: {
                 mobile: { max: "480px" },

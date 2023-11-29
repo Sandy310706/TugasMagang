@@ -22,7 +22,7 @@ class kelolaPesanController extends Controller
     public function getPesanan(Request $request)
     {
         if($request->ajax()) {
-            return DataTables::eloquent(Invoice::with(['keranjang', 'user']))
+            return DataTables::eloquent(Invoice::with(['keranjang', 'user'])->latest())
             ->addIndexColumn()
             ->addColumn('nama', function($nama){
                 return $nama->user->nama;
